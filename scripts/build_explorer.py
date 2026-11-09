@@ -3,6 +3,7 @@
 import html
 import json
 import re
+import subprocess
 from collections import Counter
 from pathlib import Path
 
@@ -59,23 +60,13 @@ def findings_html(section):
 
 
 def short_head():
-    # Worktree HEAD is read directly; the worker never invokes git.
-    marker = (ROOT / ".git").read_text(encoding="utf-8").strip()
-    git_dir = Path(marker.split(":", 1)[1].strip())
-    head = (git_dir / "HEAD").read_text(encoding="utf-8").strip()
-    if not head.startswith("ref: "):
-        return head[:7]
-    ref = head[5:]
-    for base in (git_dir, git_dir.parent.parent):
-        path = base / ref
-        if path.exists():
-            return path.read_text(encoding="utf-8").strip()[:7]
-    packed = git_dir.parent.parent / "packed-refs"
-    if packed.exists():
-        for line in packed.read_text(encoding="utf-8").splitlines():
-            if line.endswith(" " + ref):
-                return line.split()[0][:7]
-    raise ValueError(f"Cannot resolve HEAD ref {ref}")
+    # Hem normal repoda hem worktree'de çalışır; git yoksa "unknown" döner.
+    try:
+        result = subprocess.run(["git", "rev-parse", "--short=7", "HEAD"], cwd=ROOT,
+                                capture_output=True, text=True, check=True)
+        return result.stdout.strip() or "unknown"
+    except (OSError, subprocess.CalledProcessError):
+        return "unknown"
 
 
 def build_data():
