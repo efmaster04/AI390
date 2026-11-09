@@ -17,7 +17,7 @@ Instructor: Huseyin Ulusoy. Reference: `../Prompt_Engineering_Project_Handbook.p
 | `src/baseline/` | Provider adapters and Week 1 runner |
 | `prompts/` | Versioned system prompts |
 | `eval/testsets/` | Synthetic evaluation inputs |
-| `eval/results/` | Generated runs and summaries (do not commit run outputs) |
+| `eval/results/week1/` | Committed Week 1 baseline runs and summaries as evidence; ad-hoc runs go to `/tmp` |
 | `scripts/` | Temperature comparison and cost estimation |
 | `config/` | Dated list price assumptions |
 | `tests/` | Offline acceptance test |
@@ -39,7 +39,7 @@ export OLLAMA_HOST='http://localhost:11434' # Ollama only
 
 ## Reproduce week 1
 
-The Week 1 baseline model is **Gemini 3.1 Flash-Lite** (`gemini-3.1-flash-lite`, free tier). It was chosen because it still applies `temperature`; Gemini 3.5 Flash-Lite ignores sampling parameters, which would make the temperature experiment meaningless. The runner sends one request per input (25 synthetic inputs in `eval/testsets/week1_inputs.jsonl`) at temperatures 0, 0.7 and 1.2. Outputs are committed under `eval/results/week1/`, so every number in `reports/week-1.md` can be traced to a file at the `week-1` tag.
+The Week 1 baseline model is **Gemini 3.1 Flash-Lite** (`gemini-3.1-flash-lite`, free tier). It was chosen because it still applies `temperature`; Gemini 3.5 Flash-Lite ignores sampling parameters, which would make the temperature experiment meaningless. The runner sends one request per input (25 synthetic inputs in `eval/testsets/week1_inputs.jsonl`) at temperatures 0, 0.7 and 1.2. Week 1 baseline outputs are kept under `eval/results/week1/` in the repository as evidence. Ad-hoc experiments belong in `/tmp`. The deliverable commit will be tagged `week-1`; the tag has not been created yet.
 
 ```sh
 .venv/bin/python -m src.baseline.run --provider gemini --model gemini-3.1-flash-lite --inputs eval/testsets/week1_inputs.jsonl --out-dir eval/results/week1
@@ -49,4 +49,8 @@ The Week 1 baseline model is **Gemini 3.1 Flash-Lite** (`gemini-3.1-flash-lite`,
 
 Offline smoke test (no network, synthetic tokens): `.venv/bin/python -m src.baseline.run --provider dry --model dry --inputs eval/testsets/sample_inputs.jsonl --out-dir /tmp/w1dry`. Other providers are supported (`--provider ollama --model qwen3:8b`, `--provider openai_compat --model openai/gpt-oss-20b`); point the last two commands at their output directory and model. `--base-url` and `--api-key-env` override the OpenAI compatible defaults; `--rpm` defaults to 10. The run metadata records input and prompt hashes, command, timestamp, and commit hash. The cost script reports measured token averages, list price estimates for every configured model, and `null` where token counts or prices are unavailable. Free tier actual spend is assumed to be zero; list price is still shown. Dry run token counts are synthetic.
 
-The full Week 1 report should use a tagged commit and the exact scripts, data, and commands from that commit (R8). No real personal data is allowed (R10); writes are sandbox only (R11), and API keys must never enter the repository (R13). Weekly reports go in `reports/week-N.md` and are due at least 24 hours before class with a `week-N` tag (R4).
+## Trying the model
+
+With `GEMINI_API_KEY` set in your shell, run `.venv/bin/python scripts/try_chat.py` from the repository root. Type a Turkish or English message; submit an empty line or press Ctrl+C to exit. Use `--temperature 0` to sample at zero temperature, or `--no-system` to compare with a raw model response. Each message is sent independently without chat history. This interactive script uses the provider and is separate from the committed Week 1 baseline results.
+
+The full Week 1 report should use the commit that will be tagged `week-1` and the exact scripts, data, and commands from that commit (R8). No real personal data is allowed (R10); writes are sandbox only (R11), and API keys must never enter the repository (R13). Weekly reports go in `reports/week-N.md` and are due at least 24 hours before class with a `week-N` tag (R4).

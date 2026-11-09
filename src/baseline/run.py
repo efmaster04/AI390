@@ -29,6 +29,14 @@ def commit_hash():
         return None
 
 
+def git_dirty():
+    try:
+        result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, check=True)
+        return bool(result.stdout.strip())
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
 def parser():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--provider", required=True, choices=["gemini", "ollama", "openai_compat", "dry"])
@@ -69,7 +77,7 @@ def main(argv=None):
     files = {t: args.out_dir / f"{args.provider}__{safe}__t{t:g}.jsonl" for t in args.temps}
     for path in files.values():
         path.write_text("", encoding="utf-8")
-    command = list(sys.argv if argv is None else ["python", "-m", "src.baseline.run", *argv])
+    command = ["python", "-m", "src.baseline.run", *(sys.argv[1:] if argv is None else argv)]
     # Özel URL sorgusu veya kullanıcı bilgisi sır taşıyabilir.
     for index, part in enumerate(command[:-1]):
         if part == "--base-url":
@@ -78,7 +86,8 @@ def main(argv=None):
     meta = {"provider": args.provider, "model": args.model, "temps": args.temps,
             "prompt": str(args.prompt), "prompt_sha256": sha256(args.prompt),
             "inputs": str(args.inputs), "inputs_sha256": sha256(args.inputs),
-            "git_commit": commit_hash(), "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+            "git_commit": commit_hash(), "git_dirty": git_dirty(),
+            "timestamp_utc": datetime.now(timezone.utc).isoformat(),
             "max_output_tokens": args.max_output_tokens, "seed": args.seed,
             "command": command}
     (args.out_dir / f"run_meta_{args.provider}__{safe}.json").write_text(

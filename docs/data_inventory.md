@@ -38,10 +38,10 @@ The core schema below extends the draft provided in the project brief. Extension
 |--------|------|---------------|-------|
 | `ticket_id` | TEXT PK | `YV-2026-000123` | Format: `YV-YYYY-NNNNNN`; human-readable, year-scoped |
 | `created_at` | DATETIME | `2026-11-09T18:34:00Z` | UTC ISO-8601 |
-| `updated_at` | DATETIME | `2026-11-09T19:00:00Z` | *Added:* tracks last status change for SLA monitoring |
+| `updated_at` | DATETIME | `2026-11-09T19:00:00Z` | UTC ISO-8601; AFTER UPDATE trigger refreshes it on ticket changes |
 | `channel` | TEXT | `web` | Values: `web`, `whatsapp`, `phone`, `email`, `walk-in` |
 | `language` | TEXT | `tr` | Values: `tr`, `en`; drives reply language |
-| `category` | TEXT | `infrastructure` | Values: `infrastructure`, `waste`, `social`, `permit`, `environment`, `other` |
+| `category` | TEXT | `roads_sidewalks` | Values: `roads_sidewalks`, `street_lighting`, `waste_collection`, `water_sewer`, `parks_green`, `traffic_signals`, `permits_licensing`, `social_services`, `animals`, `noise_environment`, `other` |
 | `department_id` | INTEGER FK | `3` | References `departments.id` |
 | `neighborhood_id` | INTEGER FK | `7` | References `neighborhoods.id` |
 | `street` | TEXT | `Çınar Sokak` | Free text; not FK — residents may use informal names |
@@ -51,11 +51,45 @@ The core schema below extends the draft provided in the project brief. Extension
 | `citizen_ref` | TEXT | `HASH-7f3a` | *Added:* hashed identifier (no real TC kimlik no); links repeat contacts anonymously |
 | `contact_last4` | TEXT | `4821` | Last 4 digits of phone; used for ticket status lookup |
 | `duplicate_of` | TEXT | `YV-2026-000119` | FK → `tickets.ticket_id`; NULL if not a duplicate |
-| `confirmed` | INTEGER | `1` | *Added:* 0 = pending citizen confirmation, 1 = confirmed before API call (sandbox gate) |
 | `staff_note` | TEXT | `Assigned to road crew` | *Added:* internal note by Beyaz Masa staff; untrusted input |
 | `resolved_at` | DATETIME | `2026-11-10T10:00:00Z` | *Added:* NULL until resolved; enables SLA breach calculation |
 
-**Rationale for additions:** `updated_at` and `resolved_at` are needed for SLA breach detection (P1 must resolve in 4 h). `confirmed` enforces the sandbox confirmation step (R11). `citizen_ref` allows duplicate detection without storing real identity. `staff_note` is a known untrusted input (see section d).
+**Rationale for additions:** `updated_at` and `resolved_at` support SLA monitoring. The canonical urgency rubric and response targets are in [Use Case Brief, “Urgency rubric”](use_case_brief.md#urgency-rubric). The separate `ticket_drafts` table defines an optional persistence schema for draft lifecycle work; the no-write draft endpoint described below uses a short-lived in-memory proposal. Only confirmed complaints enter `tickets`. `citizen_ref` links repeat contacts without storing real identity. `staff_note` is untrusted input (see section d).
+
+### Canonical category → department routing
+
+| Category | Department (English / Turkish) |
+|----------|--------------------------------|
+| `roads_sidewalks` | Public Works / Fen İşleri |
+| `street_lighting` | Public Works / Fen İşleri |
+| `waste_collection` | Sanitation / Temizlik İşleri |
+| `water_sewer` | Water & Sewerage / Su ve Kanalizasyon |
+| `parks_green` | Parks and Gardens / Park ve Bahçeler |
+| `traffic_signals` | Transportation / Ulaşım |
+| `permits_licensing` | Zoning & Licensing / İmar ve Ruhsat |
+| `social_services` | Social Services / Sosyal Hizmetler |
+| `animals` | Veterinary Services / Veteriner İşleri |
+| `noise_environment` | Environmental Protection / Zabıta |
+| `other` | Citizen Relations Desk / Beyaz Masa |
+
+### Table: `ticket_drafts`
+
+| Column | Type | Example Value | Notes |
+|--------|------|---------------|-------|
+| `draft_id` | TEXT PK | `DRAFT-0047` | Opaque draft reference |
+| `created_at` | DATETIME | `2026-11-09T18:34:00Z` | UTC ISO-8601 |
+| `payload_json` | TEXT | `{...}` | Proposed ticket fields, if draft persistence is enabled later; no ticket row yet |
+| `expires_at` | DATETIME | `2026-11-09T19:34:00Z` | UTC ISO-8601; stale drafts cannot be confirmed |
+
+### Table: `ticket_updates`
+
+| Column | Type | Example Value | Notes |
+|--------|------|---------------|-------|
+| `update_id` | INTEGER PK | `1` | |
+| `ticket_id` | TEXT FK | `YV-2026-000123` | References confirmed ticket |
+| `created_at` | DATETIME | `2026-11-09T19:00:00Z` | UTC ISO-8601 |
+| `text` | TEXT | `The bench has collapsed.` | Citizen-provided extra information; untrusted |
+| `source` | TEXT | `citizen` | `citizen`, `agent`, `staff` |
 
 ---
 
@@ -64,6 +98,7 @@ The core schema below extends the draft provided in the project brief. Extension
 | Column | Type | Example Value | Notes |
 |--------|------|---------------|-------|
 | `id` | INTEGER PK | `3` | |
+| `code` | TEXT UNIQUE | `public_works` | Stable routing identifier |
 | `name_tr` | TEXT | `Fen İşleri Müdürlüğü` | Turkish name |
 | `name_en` | TEXT | `Public Works Directorate` | English name |
 | `sla_hours` | INTEGER | `4` | *Added per urgency override:* default SLA; ticket urgency may tighten this |
@@ -111,6 +146,7 @@ The core schema below extends the draft provided in the project brief. Extension
 | Column | Type | Example Value | Notes |
 |--------|------|---------------|-------|
 | `id` | INTEGER PK | `1` | |
+| `item_code` | TEXT UNIQUE | `PET_REG_2026` | Stable fee item identifier |
 | `service` | TEXT | `Pet registration` | English service name |
 | `service_tr` | TEXT | `Evcil hayvan kaydı` | *Added:* Turkish service name for bilingual lookup |
 | `amount_try` | REAL | `150.00` | Amount in Turkish Lira (synthetic) |
@@ -145,7 +181,9 @@ http://localhost:8000/api/v1
 
 ---
 
-### POST /tickets — Submit a new complaint
+### POST /tickets/drafts — Prepare a complaint
+
+The agent checks for duplicates, classifies the complaint using the [canonical urgency rubric](use_case_brief.md#urgency-rubric), and returns a draft ID and summary for citizen review. This step **writes nothing to the database**. The `draft_id` refers to a short-lived in-memory proposal; it cannot appear in the staff queue. The `ticket_drafts` schema is reserved for a later persisted-draft option and is not used in this no-write flow.
 
 **Request:**
 ```json
@@ -155,16 +193,15 @@ http://localhost:8000/api/v1
   "description": "Çınarlık Mahallesi Çınar Sokak'ta açık rögar kapağı var.",
   "neighborhood_id": 7,
   "street": "Çınar Sokak",
-  "contact_last4": "4821",
-  "confirmed": false
+  "contact_last4": "4821"
 }
 ```
 
-**Response (before confirmation — draft):**
+**Response (draft; awaiting citizen confirmation):**
 ```json
 {
-  "draft_ticket_id": "DRAFT-0047",
-  "category": "infrastructure",
+  "draft_id": "DRAFT-0047",
+  "category": "roads_sidewalks",
   "department": "Public Works Directorate",
   "urgency": "P1",
   "urgency_reason": "Open manhole — safety risk",
@@ -173,7 +210,13 @@ http://localhost:8000/api/v1
 }
 ```
 
-**Response (after confirmation — submitted):**
+### POST /tickets/drafts/{draft_id}/confirm — Submit a confirmed complaint
+
+The citizen reviews the summary and explicitly confirms. The agent calls this endpoint with the `draft_id`; the sandbox atomically creates a ticket with `status=open` and removes the draft. Expired drafts are rejected. No unconfirmed complaint enters `tickets`.
+
+**Request:** `POST /tickets/drafts/DRAFT-0047/confirm` with `{"citizen_confirmed": true}`.
+
+**Response (submitted):**
 ```json
 {
   "ticket_id": "YV-2026-000123",
@@ -199,20 +242,26 @@ http://localhost:8000/api/v1
   "ticket_id": "YV-2026-000123",
   "status": "in_progress",
   "urgency": "P1",
-  "category": "infrastructure",
+  "category": "roads_sidewalks",
   "created_at": "2026-11-09T18:34:00Z",
   "message_tr": "Şikayetiniz işleme alındı.",
   "message_en": "Your complaint is being processed."
 }
 ```
 
-**Auth rule:** `contact_last4` must match; returns 403 otherwise. Citizens may only view their own tickets.
+**Access rule:** The ticket ID and `contact_last4` must both match, or return 403 without ticket information. If the requester says the ticket belongs to someone else, withhold status even when both values match and ask that person to inquire themselves. **Known limitation:** ID plus last 4 digits does not prove ownership; SMS/OTP or e-Devlet verification is future work outside course scope. Do not present this lookup as strong authentication.
+
+---
+
+### POST /tickets/{ticket_id}/updates — Add information to own ticket
+
+The agent first applies the ticket ID + phone last-4 access rule above and refuses a disclosed third-party ticket. It then shows the proposed extra text and asks the citizen to confirm before writing. Example request after confirmation: `{"contact_last4":"4455","text":"The bench has fully collapsed and a child tripped.","citizen_confirmed":true}`. The sandbox appends a `ticket_updates` row with `source=citizen`; it does not silently overwrite the original description. Staff or the agent classifier reassesses urgency under the [rubric](use_case_brief.md#urgency-rubric), with a possible P4 → P3 recommendation for the collapsed bench. The response reports the accepted update and any *proposed* reclassification; it does not claim an unapproved status change.
 
 ---
 
 ### GET /tickets/duplicates?neighborhood_id=&category=&hours= — Check for duplicates
 
-**Example:** `GET /tickets/duplicates?neighborhood_id=7&category=infrastructure&hours=48`
+**Example:** `GET /tickets/duplicates?neighborhood_id=7&category=roads_sidewalks&hours=48`
 
 **Response:**
 ```json
@@ -229,7 +278,7 @@ http://localhost:8000/api/v1
 }
 ```
 
-**Purpose:** Agent calls this before `POST /tickets` to detect near-duplicates and avoid double submission.
+**Access and disclosure:** This is an internal, server-side agent tool only; citizens cannot call the endpoint directly. The agent uses it before preparing a draft. To the citizen it may reveal only minimal information, such as “A similar open report exists, ID: YV-2026-000119.” It never exposes another person's description, contact details, or internal notes.
 
 ---
 
@@ -244,7 +293,7 @@ http://localhost:8000/api/v1
     {
       "ticket_id": "YV-2026-000123",
       "urgency": "P1",
-      "category": "infrastructure",
+      "category": "roads_sidewalks",
       "neighborhood": "Çınarlık",
       "description_snippet": "Open manhole cover on Çınar Sokak",
       "created_at": "2026-11-09T18:34:00Z",
@@ -260,7 +309,7 @@ http://localhost:8000/api/v1
 ---
 
 ### Sandbox Note (R11)
-All write endpoints (`POST /tickets` and future status updates) require a two-step confirmation: the agent first returns a draft summary, the citizen confirms, and only then the agent calls the API. The sandbox database is reset nightly. No real external system is called at any point during Weeks 1–6.
+Ticket creation follows `POST /tickets/drafts` → citizen confirmation → `POST /tickets/drafts/{draft_id}/confirm`. Citizen ticket updates also require an explicit summary and confirmation before `POST /tickets/{ticket_id}/updates`. The sandbox database is reset nightly. No real external system is called during Weeks 1–6.
 
 ---
 

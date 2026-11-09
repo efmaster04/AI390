@@ -17,8 +17,8 @@
 
 ## 2. Meeting Schedule
 
-- **Meeting 1:** [TBD — day and time] — Sprint planning and task review.
-- **Meeting 2:** [TBD — day and time] — Integration check and deliverable review before submission.
+- Meeting 1: [to be agreed by the team before signing] — Sprint planning and task review.
+- Meeting 2: [to be agreed by the team before signing] — Integration check and deliverable review before submission.
 - **Format:** In-person or online (Discord/Google Meet); decisions are logged in a shared document.
 
 ## 3. Decision Rule

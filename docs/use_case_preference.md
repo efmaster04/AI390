@@ -1,3 +1,5 @@
+> Internal planning note (Turkish), not a deliverable. Superseded where it conflicts with the Beldesk documents.
+> Superseded: the instructor approved the team's own use case (Beldesk). The UC2/UC7/UC6 ranking below is kept for the record only.
 # Use case tercih formu (Ek C) — taslak
 
 Takım olarak ilk seansta teslim edilir. Hoca takım başına bir use case atar, mümkünse tercihlerden birini.

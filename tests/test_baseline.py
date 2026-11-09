@@ -24,6 +24,10 @@ def test_dry_pipeline(tmp_path):
     assert len(meta["temps"]) == 3
     assert len(meta["prompt_sha256"]) == 64
     assert len(meta["inputs_sha256"]) == 64
+    assert meta["command"] == ["python", "-m", "src.baseline.run", "--provider", "dry",
+                               "--model", "dry", "--inputs", "eval/testsets/sample_inputs.jsonl",
+                               "--out-dir", str(tmp_path)]
+    assert meta["git_dirty"] is None or isinstance(meta["git_dirty"], bool)
 
     compare = subprocess.run(
         [sys.executable, "scripts/compare_temps.py", "--results-dir", str(tmp_path),

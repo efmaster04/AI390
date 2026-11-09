@@ -1,3 +1,4 @@
+> Internal planning note (Turkish), not a deliverable. Superseded where it conflicts with the Beldesk documents.
 # Plan takibi (deliverable ID → durum → kanıt)
 
 Kural: kanıtı olmayan deliverable "yapılmadı" sayılır. Durum: ☐ yok · ◐ kısmi · ☑ tamam

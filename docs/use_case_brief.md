@@ -40,11 +40,11 @@
 
 ### US-2: Complaint Submission
 **As a** citizen, **I want to** describe a pothole on my street via chat, **so that** the assistant creates a complaint ticket with the correct category, department, and urgency level.
-- **Acceptance criteria:** The assistant extracts location (neighborhood, street), assigns a category (road infrastructure), routes to the correct department (Public Works), assigns urgency (P3), checks for duplicates in the same neighborhood within the last 7 days, and returns a ticket ID in the format `YV-2026-XXXXXX`.
+- **Acceptance criteria:** The assistant extracts location (neighborhood, street), assigns `roads_sidewalks`, routes to Public Works, assigns P3 for an ordinary pothole, checks for duplicates in the same neighborhood within the last 7 days, asks for confirmation, and then returns a ticket ID in the format `YV-YYYY-NNNNNN`.
 
 ### US-3: Ticket Status Inquiry
 **As a** citizen, **I want to** check the status of my complaint by providing my ticket ID and the last 4 digits of my phone number, **so that** I can see whether it is open, in progress, or resolved.
-- **Acceptance criteria:** The assistant returns status only if both the ticket ID and the last 4 digits of the phone number match the record. If they do not match, the assistant refuses and does not reveal any information about the ticket.
+- **Acceptance criteria:** The assistant returns status only if both the ticket ID and the phone's last 4 digits match the record. If either does not match, it refuses without revealing ticket information. If the requester says the ticket belongs to someone else (for example, a neighbor), it withholds status even when both values match and asks that person to inquire themselves. **Known limitation:** ID + last 4 digits does not prove ownership; stronger verification (SMS/OTP or e-Devlet) is future work, outside course scope.
 
 ### US-4: Priority Queue for Staff
 **As a** Beyaz Masa officer, **I want to** view incoming complaints sorted by urgency (P1 → P4), **so that** I can address safety-critical issues first.
@@ -62,7 +62,7 @@
 - FAQ answering from municipal service documents with source citations.
 - Complaint intake: category classification, department routing, urgency assignment (P1–P4), and duplicate detection.
 - Ticket creation in a sandbox environment (no real municipal system integration).
-- Ticket status inquiry authenticated by ticket ID + last 4 digits of phone number.
+- Ticket status lookup gated by ticket ID + phone last 4 digits, with the third-party disclosure rule and known ownership-verification limitation in US-3.
 - Priority-sorted complaint queue for Beyaz Masa staff.
 - Bilingual operation (Turkish and English).
 - Emergency redirection to 112 / 110 / 155 with optional P1 ticket creation.
@@ -75,6 +75,7 @@
 - Real personal data (all data is synthetic per course rule R10).
 - Real crew or field-team dispatch.
 - e-Devlet (national e-Government) identity verification or SSO integration.
+- Strong ticket ownership verification by SMS/OTP.
 
 ---
 
@@ -105,13 +106,24 @@ Mid-size district municipalities in Turkey that operate a Beyaz Masa (citizen re
 | 4 | **Untrusted input** | Citizen free-text complaints via chat: may contain exaggerated urgency to game prioritization, embedded prompt-injection attempts in complaint descriptions, or social-engineering to extract other citizens' ticket data. |
 | 5 | **What it must not answer** | Resolution dates or crew arrival times not in the data; legal interpretations beyond written policy; other citizens' ticket details; political opinions; promises of action the municipality has not authorized. |
 | 6 | **A multi-step task** | Citizen reports a problem → assistant classifies it → checks for duplicates in the same neighborhood → confirms details with the citizen → creates the ticket → returns the ticket ID and expected SLA. |
-| 7 | **Exact identifiers** | Ticket IDs (`YV-2026-XXXXXX`), department codes, neighborhood names, phone last-4-digits, fee schedule item codes. |
-| 8 | **The request classifier** | Intent (FAQ, complaint, status inquiry, emergency, out-of-scope), language (TR/EN), category (infrastructure, sanitation, parks, traffic, social services, other), urgency (P1–P4), extracted location (neighborhood, street). |
+| 7 | **Exact identifiers** | Ticket IDs (`YV-YYYY-NNNNNN`), `departments.code`, neighborhood names, phone last-4-digits, `fees_2026.item_code`. |
+| 8 | **The request classifier** | Intent (FAQ, complaint, status inquiry, emergency, out-of-scope), language (TR/EN), category (`roads_sidewalks`, `street_lighting`, `waste_collection`, `water_sewer`, `parks_green`, `traffic_signals`, `permits_licensing`, `social_services`, `animals`, `noise_environment`, `other`), urgency (P1–P4), extracted location (neighborhood, street). |
 
 ### The Hard Part
-**Manipulation-resistant prioritization.** Citizens may exaggerate urgency ("someone will die!") to bump their complaint to P1. Complaint text may contain prompt-injection attempts designed to override classification logic. The assistant must apply the urgency rubric consistently based on objective criteria (P1: open safety hazard; P2: critical infrastructure failure; P3: routine maintenance; P4: suggestion or cosmetic issue) and resist attempts to override it through emotional language or injected instructions.
+**Manipulation-resistant prioritization.** Citizens may exaggerate urgency ("someone will die!") to bump their complaint to P1. Complaint text may contain prompt-injection attempts designed to override classification logic. The assistant applies the rubric below to the described condition and resists emotional pressure or injected instructions.
 
-**Privacy boundary.** The assistant must never reveal another citizen's ticket details, even if the requester provides a valid ticket ID without the matching phone digits.
+#### Urgency rubric
+
+These are sandbox response targets, subject to the cited municipal SLA policy once it exists; they are not promises of resolution.
+
+| Level | Target response time | Definition | Examples |
+|-------|----------------------|------------|----------|
+| P1 | 4 hours | Immediate safety hazard requiring urgent municipal response. | Exposed electrical cable, open manhole, tree blocking a road. Redirect an immediate life-threatening emergency to 112 as well. |
+| P2 | 24 hours | High-impact failure or road/sidewalk defect with injury risk to pedestrians or vehicles. | Deep pothole near a school with near-miss vehicle risk; fully collapsed sidewalk; street- or neighborhood-wide lighting outage; burst pipe flooding a road. |
+| P3 | 72 hours | Routine repair or localized service failure without the P2 injury-risk threshold. | Ordinary pothole, one failed streetlight, missed waste collection; collapsed park bench with a reported trip requiring reassessment from its earlier P4 label. |
+| P4 | 7 days | Suggestion or cosmetic defect without current functional or safety impact. | Broken but usable park bench; landscaping suggestion. |
+
+**Privacy boundary.** The assistant must never reveal another citizen's ticket details, even if the requester provides a matching ticket ID and phone digits while stating that the ticket belongs to someone else.
 
 **Not making promises beyond the corpus.** When a document does not cover the citizen's question, the assistant must say so rather than fabricate an answer. Municipal commitments (e.g., SLA times) are cited from policy documents, never invented.
 

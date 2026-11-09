@@ -23,7 +23,7 @@ Every ingredient from handbook section 10 is exercised by at least 2 inputs.
 | # | Ingredient           | Input IDs                                           | Count |
 |---|----------------------|-----------------------------------------------------|:-----:|
 | 1 | Documents            | W1-01, 02, 03, 04, 05, 06                           | 6     |
-| 2 | Structured data      | W1-06, 07, 08, 09, 10, 20, 21, 25                   | 8     |
+| 2 | Structured data      | W1-04, 06, 07, 08, 09, 10, 20, 21, 22, 25           | 10    |
 | 3 | Action               | W1-11, 12, 13, 14, 15, 20, 21, 22, 23, 24           | 10    |
 | 4 | Untrusted input      | W1-23, 24, 25                                        | 3     |
 | 5 | Must not answer      | W1-16, 17, 18, 19, 22, 25                            | 6     |
@@ -35,17 +35,31 @@ Every ingredient from handbook section 10 is exercised by at least 2 inputs.
 
 1. **`category`** — Primary test purpose. One of: `question`, `lookup`, `action`, `unanswerable`, `multi_step`, `untrusted`.
 2. **`ingredients`** — Array of integers (1–8) referencing handbook section 10. Ingredient 8 (request classifier) applies to every input because all messages must be routed.
-3. **`expected_urgency`** — `"P1"` through `"P4"` for inputs that should result in a ticket; `null` for questions, lookups, unanswerable cases, and untrusted inputs with no legitimate ticket action.
+3. **`expected_urgency`** — `"P1"` through `"P4"` when the described condition can be classified; `null` for questions, lookups, unanswerable cases, untrusted inputs with no legitimate ticket action, and incomplete complaints such as W1-22.
 4. **`expected_behavior`** — English, 1–2 sentences describing the ideal assistant response.
 5. **`lang`** — `"tr"` for Turkish, `"en"` for English. Reflects the primary language of the user message.
 6. **Realism** — Inputs include deliberate typos, missing punctuation, mixed register, angry tone, and incomplete information to simulate real citizen messages.
 7. **Untrusted inputs** — Prompt injections target only the Beldesk assistant. They do not contain instructions aimed at evaluators, graders, or external tools.
-8. **Synthetic data only** — All names, ticket IDs (YV-2026-NNNNNN), phone digits, and addresses are fictional. No real personal data is used.
+8. **Synthetic data only** — All names, ticket IDs (`YV-YYYY-NNNNNN`), phone digits, and addresses are fictional. No real personal data is used.
+
+The canonical P1–P4 criteria and response targets are defined in [Use Case Brief, “Urgency rubric”](use_case_brief.md#urgency-rubric). The distribution below was counted from the 25 JSONL records after label corrections.
+
+| Expected urgency | Inputs |
+|------------------|-------:|
+| P1 | 1 |
+| P2 | 4 |
+| P3 | 4 |
+| P4 | 0 |
+| `null` | 16 |
 
 ## Limitations
 
 - The set covers all 8 ingredients but is small (n = 25); statistical conclusions about category-level accuracy require larger sets in later weeks.
-- Street lighting rule added to the urgency rubric: a single lamp out = P3; a street- or neighborhood-wide outage = P2.
-- Urgency boundary cases (e.g., P2 vs. P3 for lighting outages) are subjective; the `expected_urgency` reflects the team's best-effort interpretation of the rubric and may be revised after instructor feedback.
+- The [urgency rubric](use_case_brief.md#urgency-rubric) assigns one failed lamp to P3 and a street- or neighborhood-wide outage to P2. W1-22 has `null` urgency because the citizen has not described their own problem yet.
 - Multi-language inputs (code-switching within a single message) are not explicitly represented; all messages are predominantly single-language.
 - The untrusted inputs test three injection styles (system tag, curly-brace command, HTML comment); other vectors (e.g., Unicode tricks, base64 encoding) are deferred to red-teaming in week 5.
+
+## Known gaps
+
+- No P4 example appears in this fixed 25-input Week 1 set. Add a P4 example and a P3/P4 boundary case to the 40-case Week 2 set.
+- There are no matched Turkish/English pairs of the same request. Add paired TR/EN examples to the 40-case Week 2 set so language comparisons control for request content.

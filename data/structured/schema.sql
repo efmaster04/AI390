@@ -12,6 +12,7 @@ PRAGMA foreign_keys = ON;
 -- ------------------------------------------------------------
 CREATE TABLE departments (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    code        TEXT    NOT NULL UNIQUE,
     name_tr     TEXT    NOT NULL,
     name_en     TEXT    NOT NULL,
     sla_hours   INTEGER NOT NULL CHECK (sla_hours > 0),
@@ -32,15 +33,16 @@ CREATE TABLE neighborhoods (
 -- tickets
 -- ------------------------------------------------------------
 CREATE TABLE tickets (
-    ticket_id    TEXT    PRIMARY KEY,  -- format: YV-YYYY-NNNNNN
-    created_at   DATETIME NOT NULL DEFAULT (datetime('now')),
-    updated_at   DATETIME NOT NULL DEFAULT (datetime('now')),
+    ticket_id    TEXT    PRIMARY KEY
+        CHECK (ticket_id GLOB 'YV-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]'),
+    created_at   DATETIME NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
+    updated_at   DATETIME NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
     channel      TEXT    NOT NULL
         CHECK (channel IN ('web','whatsapp','phone','email','walk-in')),
     language     TEXT    NOT NULL DEFAULT 'tr'
         CHECK (language IN ('tr','en')),
     category     TEXT    NOT NULL
-        CHECK (category IN ('infrastructure','waste','social','permit','environment','other')),
+        CHECK (category IN ('roads_sidewalks','street_lighting','waste_collection','water_sewer','parks_green','traffic_signals','permits_licensing','social_services','animals','noise_environment','other')),
     department_id    INTEGER NOT NULL REFERENCES departments(id),
     neighborhood_id  INTEGER REFERENCES neighborhoods(id),
     street       TEXT,
@@ -52,11 +54,34 @@ CREATE TABLE tickets (
     citizen_ref  TEXT,               -- hashed, non-identifiable
     contact_last4 TEXT,              -- last 4 digits of phone
     duplicate_of TEXT REFERENCES tickets(ticket_id),
-    confirmed    INTEGER NOT NULL DEFAULT 0
-        CHECK (confirmed IN (0,1)),  -- 0 = pending, 1 = citizen confirmed
     staff_note   TEXT,
     resolved_at  DATETIME
 );
+
+-- Only confirmed complaints enter tickets. Draft creation does not write a ticket.
+CREATE TABLE ticket_drafts (
+    draft_id     TEXT PRIMARY KEY,
+    created_at   DATETIME NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
+    payload_json TEXT NOT NULL CHECK (json_valid(payload_json)),
+    expires_at   DATETIME NOT NULL
+);
+
+CREATE TABLE ticket_updates (
+    update_id    INTEGER PRIMARY KEY AUTOINCREMENT,
+    ticket_id    TEXT NOT NULL REFERENCES tickets(ticket_id),
+    created_at   DATETIME NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
+    text         TEXT NOT NULL,
+    source       TEXT NOT NULL CHECK (source IN ('citizen','agent','staff'))
+);
+
+CREATE TRIGGER tickets_updated_at_after_update
+AFTER UPDATE ON tickets
+FOR EACH ROW
+WHEN NEW.updated_at = OLD.updated_at
+BEGIN
+    UPDATE tickets SET updated_at = strftime('%Y-%m-%dT%H:%M:%SZ','now')
+    WHERE ticket_id = NEW.ticket_id;
+END;
 
 -- ------------------------------------------------------------
 -- collection_schedule
@@ -89,6 +114,7 @@ CREATE TABLE facilities (
 -- ------------------------------------------------------------
 CREATE TABLE fees_2026 (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_code   TEXT    NOT NULL UNIQUE,
     service     TEXT    NOT NULL,       -- English
     service_tr  TEXT    NOT NULL,       -- Turkish
     amount_try  REAL    NOT NULL CHECK (amount_try >= 0),
@@ -106,7 +132,7 @@ CREATE TABLE audit_log (
         CHECK (event_type IN ('created','status_change','duplicate_flagged','confirmed','rejected')),
     actor       TEXT    NOT NULL
         CHECK (actor IN ('agent','staff','citizen')),
-    timestamp   DATETIME NOT NULL DEFAULT (datetime('now')),
+    timestamp   DATETIME NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
     detail      TEXT
 );
 

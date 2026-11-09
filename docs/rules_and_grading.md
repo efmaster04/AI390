@@ -1,3 +1,4 @@
+> Internal planning note (Turkish), not a deliverable. Superseded where it conflicts with the Beldesk documents.
 # Kurallar ve not hesabı (handbook özeti)
 
 ## Not
