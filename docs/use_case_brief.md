@@ -1,14 +1,14 @@
-# Use Case Brief — [PRODUCT NAME]
+# Use Case Brief — Beldesk
 
 **Course:** AIC390 Prompt Engineering
-**Team:** Efe İncirci, Tarık [TBD], Doruk [TBD]
+**Team:** Efe İncirci, Tarık Edip Yenikomşu, Doruk Kal
 **Use Case:** Custom (instructor-approved) — Bilingual Municipal AI Assistant
 
 ---
 
 ## Product Track
 
-**First customer:** The Beyaz Masa (citizen relations desk) of a mid-size district municipality. Today they receive complaints and inquiries through a web form, phone calls, and WhatsApp. Staff manually read each message, categorize it, assign it to the relevant department, and track follow-ups in a spreadsheet. They also answer the same frequently asked questions repeatedly over the phone. **[PRODUCT NAME]** automates FAQ answering, complaint intake and classification, duplicate detection, and priority-sorted queue management so the Beyaz Masa team can focus on resolution instead of triage.
+**First customer:** The Beyaz Masa (citizen relations desk) of a mid-size district municipality. Today they receive complaints and inquiries through a web form, phone calls, and WhatsApp. Staff manually read each message, categorize it, assign it to the relevant department, and track follow-ups in a spreadsheet. They also answer the same frequently asked questions repeatedly over the phone. **Beldesk** automates FAQ answering, complaint intake and classification, duplicate detection, and priority-sorted queue management so the Beyaz Masa team can focus on resolution instead of triage.
 
 ---
 
@@ -116,6 +116,6 @@ Mid-size district municipalities in Turkey that operate a Beyaz Masa (citizen re
 **Not making promises beyond the corpus.** When a document does not cover the citizen's question, the assistant must say so rather than fabricate an answer. Municipal commitments (e.g., SLA times) are cited from policy documents, never invented.
 
 ### After the Course
-Position [PRODUCT NAME] as a SaaS product for Turkish municipalities, priced per resolved conversation or per municipality per month. Before launch: (1) verify compliance with KVKK (Turkish data protection law) for citizen data handling, (2) integrate with real municipal ticket management systems (e.g., CİMER referrals and the municipality's existing ticketing software), (3) obtain municipality IT security approval, and (4) add voice channel support (IVR / call center integration).
+Position Beldesk as a SaaS product for Turkish municipalities, priced per resolved conversation or per municipality per month. Before launch: (1) verify compliance with KVKK (Turkish data protection law) for citizen data handling, (2) integrate with real municipal ticket management systems (e.g., CİMER referrals and the municipality's existing ticketing software), (3) obtain municipality IT security approval, and (4) add voice channel support (IVR / call center integration).
 
 ---

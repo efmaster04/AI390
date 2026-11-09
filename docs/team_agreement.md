@@ -1,4 +1,4 @@
-# Team Agreement — [PRODUCT NAME]
+# Team Agreement — Beldesk
 
 **Course:** AIC390 Prompt Engineering (Instructor: Hüseyin Ulusoy)
 **Date:** November 2026
@@ -11,10 +11,9 @@
 | Member | Role | 7-Week Responsibilities |
 |--------|------|------------------------|
 | Efe İncirci | Agent and Tools Lead | Designs and maintains the tools (search, data query, write/sandbox action with confirmation), the agent loop, and the MCP server; owns tool-call safety and the baseline/prompt runner. Owns `src/tools/`, `src/agent/`, `src/mcp_server/` and `sandbox/`. |
-| Tarık [TBD] | [TBD — Data and Retrieval Lead **or** Evaluation and Safety Lead] | If Data & Retrieval: curates the document corpus and structured data, builds and tunes the retrieval pipeline, manages `data/` directory. If Evaluation & Safety: designs test sets, runs red-team and injection tests, writes evaluation reports. |
-| Doruk [TBD] | [TBD — the role Tarık does not take] | See above; takes the remaining role. |
+| Doruk Kal | Data and Retrieval Lead | Writes and curates the document corpus and the synthetic structured data (`data/`), builds chunking, hybrid search (BM25 + dense) and reranking, and owns retrieval metrics (hit@5, MRR). |
+| Tarık Edip Yenikomşu | Evaluation and Safety Lead | Owns the test sets and evaluation harness (`eval/`), the scoreboard and its statistics, abstention and faithfulness checks, injection tests and the red-team exchange. |
 
-> Role assignments for Tarık and Doruk must be filled in before this agreement is signed (Week 1).
 
 ## 2. Meeting Schedule
 
@@ -47,5 +46,5 @@
 | Name | Signature | Date |
 |------|-----------|------|
 | Efe İncirci | _______________ | _______________ |
-| Tarık [TBD] | _______________ | _______________ |
-| Doruk [TBD] | _______________ | _______________ |
+| Tarık Edip Yenikomşu | _______________ | _______________ |
+| Doruk Kal | _______________ | _______________ |

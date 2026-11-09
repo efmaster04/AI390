@@ -1,14 +1,14 @@
-# AIC390 — [PRODUCT NAME]
+# AIC390 — Beldesk
 
-[PRODUCT NAME] is a bilingual Turkish and English citizen assistant for the fictional Yeşilvadi Municipality. It is being built in seven stages: understand requests with a classifier, answer with retrieval, look up structured data, act through sandbox writes with approval, connect via MCP, orchestrate an agent loop, and measure results. Week 1 establishes a reproducible prompt baseline without documents or tools.
+Beldesk is a bilingual Turkish and English citizen assistant for the fictional Yeşilvadi Municipality. It is being built in seven stages: understand requests with a classifier, answer with retrieval, look up structured data, act through sandbox writes with approval, connect via MCP, orchestrate an agent loop, and measure results. Week 1 establishes a reproducible prompt baseline without documents or tools.
 
 Instructor: Huseyin Ulusoy. Reference: `../Prompt_Engineering_Project_Handbook.pdf`.
 
 ## Team
 
 - Efe İncirci — Agent and tools lead
-- Tarık [TBD] — Data and retrieval lead
-- Doruk [TBD] — Evaluation and safety lead
+- Doruk Kal — Data and retrieval lead
+- Tarık Edip Yenikomşu — Evaluation and safety lead
 
 ## Repository structure
 

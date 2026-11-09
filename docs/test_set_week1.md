@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This test set contains 25 realistic, labeled user inputs for evaluating [PRODUCT NAME], a bilingual (Turkish + English) AI assistant for the fictional Yeşilvadi Municipality. Each input is tagged with the category it tests and the handbook ingredients (section 10) it exercises. The set is used in W1.5 (baseline evaluation) and subsequent weekly iterations.
+This test set contains 25 realistic, labeled user inputs for evaluating Beldesk, a bilingual (Turkish + English) AI assistant for the fictional Yeşilvadi Municipality. Each input is tagged with the category it tests and the handbook ingredients (section 10) it exercises. The set is used in W1.5 (baseline evaluation) and subsequent weekly iterations.
 
 ## Distribution: Category × Language
 
@@ -39,7 +39,7 @@ Every ingredient from handbook section 10 is exercised by at least 2 inputs.
 4. **`expected_behavior`** — English, 1–2 sentences describing the ideal assistant response.
 5. **`lang`** — `"tr"` for Turkish, `"en"` for English. Reflects the primary language of the user message.
 6. **Realism** — Inputs include deliberate typos, missing punctuation, mixed register, angry tone, and incomplete information to simulate real citizen messages.
-7. **Untrusted inputs** — Prompt injections target only the [PRODUCT NAME] assistant. They do not contain instructions aimed at evaluators, graders, or external tools.
+7. **Untrusted inputs** — Prompt injections target only the Beldesk assistant. They do not contain instructions aimed at evaluators, graders, or external tools.
 8. **Synthetic data only** — All names, ticket IDs (YV-2026-NNNNNN), phone digits, and addresses are fictional. No real personal data is used.
 
 ## Limitations

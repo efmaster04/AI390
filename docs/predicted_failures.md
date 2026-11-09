@@ -1,8 +1,8 @@
 # W1.7 — Predicted Failures
 
-**Project:** [PRODUCT NAME] — Yeşilvadi Municipality AI Assistant  
+**Project:** Beldesk — Yeşilvadi Municipality AI Assistant  
 **Course:** AIC390 Prompt Engineering · Instructor: Huseyin Ulusoy  
-**Team:** Efe İncirci (Agent & Tools Lead) · Tarık [TBD] ([TBD]) · Doruk [TBD] ([TBD])  
+**Team:** Efe İncirci (Agent & Tools Lead) · Doruk Kal (Data & Retrieval Lead) · Tarık Edip Yenikomşu (Evaluation & Safety Lead)  
 **Week:** 1 · Last updated: 2026-11-09
 
 > **Note:** No measurements have been taken yet. All failure descriptions are predictions based on Module 1 concepts. Numbers will be filled in from Week 1 baseline (W1.5) onward.

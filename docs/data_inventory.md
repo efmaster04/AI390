@@ -1,8 +1,8 @@
 # W1.4 — Data Inventory
 
-**Project:** [PRODUCT NAME] — Yeşilvadi Municipality AI Assistant  
+**Project:** Beldesk — Yeşilvadi Municipality AI Assistant  
 **Course:** AIC390 Prompt Engineering · Instructor: Huseyin Ulusoy  
-**Team:** Efe İncirci (Agent & Tools Lead) · Tarık [TBD] ([TBD]) · Doruk [TBD] ([TBD])  
+**Team:** Efe İncirci (Agent & Tools Lead) · Doruk Kal (Data & Retrieval Lead) · Tarık Edip Yenikomşu (Evaluation & Safety Lead)  
 **Week:** 1 · Last updated: 2026-11-09
 
 ---
