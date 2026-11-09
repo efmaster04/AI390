@@ -1,0 +1,7 @@
+[
+  {"provider":"gemini","model":"gemini-3.1-flash-lite","price_in_per_1m_usd":0.25,"price_out_per_1m_usd":1.50,"free_tier":true,"source_url":"https://aistudio.google.com/docs/pricing","checked_on":"2026-11-09"},
+  {"provider":"gemini","model":"gemini-3.5-flash-lite","price_in_per_1m_usd":0.30,"price_out_per_1m_usd":2.50,"free_tier":true,"source_url":"https://aistudio.google.com/docs/pricing","checked_on":"2026-11-09"},
+  {"provider":"gemini","model":"gemini-2.5-flash-lite","price_in_per_1m_usd":0.10,"price_out_per_1m_usd":0.40,"free_tier":true,"source_url":"https://aistudio.google.com/docs/pricing","checked_on":"2026-11-09"},
+  {"provider":"ollama","model":"qwen3:8b","price_in_per_1m_usd":0,"price_out_per_1m_usd":0,"free_tier":true,"source_url":"https://ollama.com/library/qwen3","checked_on":"2026-11-09"},
+  {"provider":"openai_compat","model":"openai/gpt-oss-20b","price_in_per_1m_usd":null,"price_out_per_1m_usd":null,"free_tier":true,"source_url":"https://groq.com/pricing","checked_on":"2026-11-09"}
+]
