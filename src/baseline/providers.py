@@ -43,13 +43,20 @@ class GeminiProvider:
             headers={"x-goog-api-key": self.api_key},
             payload={"systemInstruction": {"parts": [{"text": system}]},
                      "contents": [{"role": "user", "parts": [{"text": user}]}],
-                     "generationConfig": {"temperature": temperature, "maxOutputTokens": max_tokens}},
+                     "generationConfig": {"temperature": temperature, "maxOutputTokens": max_tokens,
+                                          "seed": seed}},
         )
-        parts = (data.get("candidates") or [{}])[0].get("content", {}).get("parts", [])
+        candidate = (data.get("candidates") or [{}])[0]
+        parts = candidate.get("content", {}).get("parts", [])
         usage = data.get("usageMetadata") or {}
-        return {"output": "".join(p.get("text", "") for p in parts),
+        # Thinking token'ları da çıktı olarak faturalanır; maliyet için çıktıya eklenir.
+        out_tokens = usage.get("candidatesTokenCount")
+        if out_tokens is not None:
+            out_tokens += usage.get("thoughtsTokenCount") or 0
+        return {"output": "".join(p.get("text", "") for p in parts if not p.get("thought")),
                 "input_tokens": usage.get("promptTokenCount"),
-                "output_tokens": usage.get("candidatesTokenCount")}
+                "output_tokens": out_tokens,
+                "finish_reason": candidate.get("finishReason")}
 
 
 class OllamaProvider:

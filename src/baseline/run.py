@@ -96,8 +96,11 @@ def main(argv=None):
                     time.sleep(max(0, 60 / args.rpm - (time.monotonic() - last_request)))
                 last_request = time.monotonic()
                 try:
+                    call_start = time.monotonic()
                     result.update(provider.generate(system, item["text"], temperature,
                                                     args.max_output_tokens, args.seed))
+                    # Gecikme yalnızca başarılı çağrıyı ölçer (bekleme ve retry hariç).
+                    result["latency_s"] = round(time.monotonic() - call_start, 6)
                     result["error"] = None
                     break
                 except ProviderError as exc:
@@ -108,7 +111,7 @@ def main(argv=None):
                 except Exception as exc:
                     result["error"] = type(exc).__name__
                     break
-            result["latency_s"] = round(time.monotonic() - start, 6)
+            result["wall_time_s"] = round(time.monotonic() - start, 6)
             with files[temperature].open("a", encoding="utf-8") as handle:
                 handle.write(json.dumps(result, ensure_ascii=False) + "\n")
     return 0
