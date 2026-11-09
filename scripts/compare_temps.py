@@ -6,12 +6,22 @@ from pathlib import Path
 import re
 
 
-TURKISH_WORDS = {"ve", "bir", "için", "nasıl", "nerede", "belediye", "merhaba", "şikayet", "şikâyet", "lütfen", "teşekkür", "istiyorum", "sokak"}
+TURKISH_WORDS = {"ve", "bir", "bu", "için", "ile", "de", "da", "mi", "mı", "olarak", "size", "lütfen", "nasıl",
+                 "nerede", "belediye", "belediyemiz", "başvuru", "gerekli", "merhaba", "teşekkür", "şikayet", "şikâyet"}
+ENGLISH_WORDS = {"the", "and", "to", "of", "you", "your", "is", "for", "please", "can", "with", "this", "we", "our",
+                 "hello", "thank"}
+# Özel adlar (ör. "Yeşilvadi") Türkçe harf içerir ama dili belirlemez; sayımdan çıkarılır.
+PROPER_NOUNS = ("yeşilvadi",)
 
 
 def guessed_language(text):
-    words = set(re.findall(r"[\wçğıöşüÇĞİÖŞÜ]+", text.lower()))
-    return "tr" if re.search(r"[çğıöşü]", text.lower()) or words & TURKISH_WORDS else "en"
+    lowered = text.lower()
+    for noun in PROPER_NOUNS:
+        lowered = lowered.replace(noun, " ")
+    words = re.findall(r"[a-zçğıöşüâîû]+", lowered)
+    turkish = sum(word in TURKISH_WORDS for word in words)
+    english = sum(word in ENGLISH_WORDS for word in words)
+    return "tr" if turkish > english else "en"
 
 
 def safe_name(value):
@@ -40,8 +50,11 @@ def main(argv=None):
     baseline = by_temp[temps[0]]
     ids = list(baseline)
     lines = [f"# Temperature comparison: {args.provider} / {args.model}", "",
-             "Language heuristic: a reply is classified Turkish if it contains ç, ğ, ı, ö, ş, ü or one of: " +
-             ", ".join(sorted(TURKISH_WORDS)) + ". Otherwise it is classified English. This is a rough proxy, not a validated language detector.", "",
+             "Language heuristic: count common Turkish function words (" + ", ".join(sorted(TURKISH_WORDS)) +
+             ") and common English function words (" + ", ".join(sorted(ENGLISH_WORDS)) +
+             ") after removing proper nouns such as 'Yeşilvadi'; the larger count wins (ties = English). "
+             "This is a rough proxy, not a validated language detector. An earlier version counted any Turkish "
+             "letter as Turkish and misclassified English replies that mention 'Yeşilvadi'.", "",
              "| ID | Category | " + " | ".join(f"t{t:g} first 200 chars | t{t:g} length" for t in temps) + " |",
              "|---|---|" + "---|---:|" * len(temps)]
     for id_ in ids:

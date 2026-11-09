@@ -1,0 +1,28 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "temps": [
+    0,
+    0.7,
+    1.2
+  ],
+  "prompt": "prompts/baseline_v1.md",
+  "prompt_sha256": "55a49d15b284c359c701dac4ebc7d88d76a9f2f41b8bc8be01a4c9119a58b931",
+  "inputs": "eval/testsets/week1_inputs.jsonl",
+  "inputs_sha256": "f80b4a2aa0391cc9eb6a1db7ef70700237344ba9fd79c744b73bb9cfbd6a52e7",
+  "git_commit": "29080dd69a80a52c1936b089bb32eedbb952528d",
+  "timestamp_utc": "2026-11-09T20:21:47.040371+00:00",
+  "max_output_tokens": 400,
+  "seed": 42,
+  "command": [
+    "/Users/efeincirci/Desktop/Dersler/AIC390/Project/src/baseline/run.py",
+    "--provider",
+    "gemini",
+    "--model",
+    "gemini-3.1-flash-lite",
+    "--inputs",
+    "eval/testsets/week1_inputs.jsonl",
+    "--out-dir",
+    "eval/results/week1"
+  ]
+}

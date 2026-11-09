@@ -1,0 +1,197 @@
+{
+  "formula": "cost_per_request = in_tok/1e6*price_in + out_tok/1e6*price_out; cost_per_1000 = 1000*cost_per_request",
+  "assumptions": "Token means exclude error rows; missing token counts and unknown prices yield null. Free tier actual spend is 0 USD by assumption. List prices are estimates, not billed amounts. Dry-run tokens are synthetic.",
+  "prices": [
+    {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "price_in_per_1m_usd": 0.25,
+      "price_out_per_1m_usd": 1.5,
+      "free_tier": true,
+      "source_url": "https://aistudio.google.com/docs/pricing",
+      "checked_on": "2026-11-09"
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "price_in_per_1m_usd": 0.3,
+      "price_out_per_1m_usd": 2.5,
+      "free_tier": true,
+      "source_url": "https://aistudio.google.com/docs/pricing",
+      "checked_on": "2026-11-09"
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-lite",
+      "price_in_per_1m_usd": 0.1,
+      "price_out_per_1m_usd": 0.4,
+      "free_tier": true,
+      "source_url": "https://aistudio.google.com/docs/pricing",
+      "checked_on": "2026-11-09"
+    },
+    {
+      "provider": "ollama",
+      "model": "qwen3:8b",
+      "price_in_per_1m_usd": 0,
+      "price_out_per_1m_usd": 0,
+      "free_tier": true,
+      "source_url": "https://ollama.com/library/qwen3",
+      "checked_on": "2026-11-09"
+    },
+    {
+      "provider": "openai_compat",
+      "model": "openai/gpt-oss-20b",
+      "price_in_per_1m_usd": null,
+      "price_out_per_1m_usd": null,
+      "free_tier": true,
+      "source_url": "https://groq.com/pricing",
+      "checked_on": "2026-11-09"
+    }
+  ],
+  "results": [
+    {
+      "file": "gemini__gemini-3.1-flash-lite__t0.7.jsonl",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "n": 25,
+      "avg_input_tokens": 93.64,
+      "avg_output_tokens": 119.12,
+      "by_language": {
+        "tr": {
+          "avg_input_tokens": 93.0,
+          "avg_output_tokens": 134.84615384615384
+        },
+        "en": {
+          "avg_input_tokens": 94.33333333333333,
+          "avg_output_tokens": 102.08333333333333
+        }
+      },
+      "error_count": 0,
+      "actual_spend_usd": 0,
+      "list_price_cost_per_1000_usd": 0.20209,
+      "list_price_comparisons": [
+        {
+          "provider": "gemini",
+          "model": "gemini-3.1-flash-lite",
+          "list_price_cost_per_1000_usd": 0.20209
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-3.5-flash-lite",
+          "list_price_cost_per_1000_usd": 0.325892
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-2.5-flash-lite",
+          "list_price_cost_per_1000_usd": 0.057012
+        },
+        {
+          "provider": "ollama",
+          "model": "qwen3:8b",
+          "list_price_cost_per_1000_usd": 0.0
+        },
+        {
+          "provider": "openai_compat",
+          "model": "openai/gpt-oss-20b",
+          "list_price_cost_per_1000_usd": null
+        }
+      ]
+    },
+    {
+      "file": "gemini__gemini-3.1-flash-lite__t0.jsonl",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "n": 25,
+      "avg_input_tokens": 93.64,
+      "avg_output_tokens": 121.68,
+      "by_language": {
+        "tr": {
+          "avg_input_tokens": 93.0,
+          "avg_output_tokens": 132.76923076923077
+        },
+        "en": {
+          "avg_input_tokens": 94.33333333333333,
+          "avg_output_tokens": 109.66666666666667
+        }
+      },
+      "error_count": 0,
+      "actual_spend_usd": 0,
+      "list_price_cost_per_1000_usd": 0.20593,
+      "list_price_comparisons": [
+        {
+          "provider": "gemini",
+          "model": "gemini-3.1-flash-lite",
+          "list_price_cost_per_1000_usd": 0.20593
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-3.5-flash-lite",
+          "list_price_cost_per_1000_usd": 0.33229200000000003
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-2.5-flash-lite",
+          "list_price_cost_per_1000_usd": 0.058036000000000004
+        },
+        {
+          "provider": "ollama",
+          "model": "qwen3:8b",
+          "list_price_cost_per_1000_usd": 0.0
+        },
+        {
+          "provider": "openai_compat",
+          "model": "openai/gpt-oss-20b",
+          "list_price_cost_per_1000_usd": null
+        }
+      ]
+    },
+    {
+      "file": "gemini__gemini-3.1-flash-lite__t1.2.jsonl",
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "n": 25,
+      "avg_input_tokens": 93.64,
+      "avg_output_tokens": 124.24,
+      "by_language": {
+        "tr": {
+          "avg_input_tokens": 93.0,
+          "avg_output_tokens": 138.84615384615384
+        },
+        "en": {
+          "avg_input_tokens": 94.33333333333333,
+          "avg_output_tokens": 108.41666666666667
+        }
+      },
+      "error_count": 0,
+      "actual_spend_usd": 0,
+      "list_price_cost_per_1000_usd": 0.20976999999999998,
+      "list_price_comparisons": [
+        {
+          "provider": "gemini",
+          "model": "gemini-3.1-flash-lite",
+          "list_price_cost_per_1000_usd": 0.20976999999999998
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-3.5-flash-lite",
+          "list_price_cost_per_1000_usd": 0.338692
+        },
+        {
+          "provider": "gemini",
+          "model": "gemini-2.5-flash-lite",
+          "list_price_cost_per_1000_usd": 0.05906
+        },
+        {
+          "provider": "ollama",
+          "model": "qwen3:8b",
+          "list_price_cost_per_1000_usd": 0.0
+        },
+        {
+          "provider": "openai_compat",
+          "model": "openai/gpt-oss-20b",
+          "list_price_cost_per_1000_usd": null
+        }
+      ]
+    }
+  ]
+}
