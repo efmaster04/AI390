@@ -1,6 +1,6 @@
 # Product Name Candidates — Yeşilvadi Municipal AI Assistant
 
-Three candidate names for the bilingual municipal AI assistant. The final choice will replace the `[PRODUCT NAME]` placeholder across all project documents.
+**Decision (Week 1):** the team chose **Beldesk** (from *belediye* + help desk) as the working product name; it may change later. The three earlier candidates are kept below for the record.
 
 ---
 

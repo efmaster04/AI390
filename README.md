@@ -39,17 +39,14 @@ export OLLAMA_HOST='http://localhost:11434' # Ollama only
 
 ## Reproduce week 1
 
-Use `eval/testsets/week1_inputs.jsonl` for the full 25 synthetic inputs when that file is available. Each runner command sends one request per input at temperatures 0, 0.7, and 1.2. Choose one provider command below; replace the model with the exact model you use. The dry example runs on the three sample inputs and makes no network calls. Store generated outputs outside the repository or leave them uncommitted.
+The Week 1 baseline model is **Gemini 3.1 Flash-Lite** (`gemini-3.1-flash-lite`, free tier). It was chosen because it still applies `temperature`; Gemini 3.5 Flash-Lite ignores sampling parameters, which would make the temperature experiment meaningless. The runner sends one request per input (25 synthetic inputs in `eval/testsets/week1_inputs.jsonl`) at temperatures 0, 0.7 and 1.2. Outputs are committed under `eval/results/week1/`, so every number in `reports/week-1.md` can be traced to a file at the `week-1` tag.
 
 ```sh
-.venv/bin/python -m src.baseline.run --provider dry --model dry --inputs eval/testsets/sample_inputs.jsonl --out-dir /tmp/w1dry
-.venv/bin/python -m src.baseline.run --provider gemini --model gemini-2.5-flash-lite --inputs eval/testsets/week1_inputs.jsonl --out-dir /tmp/w1gemini
-.venv/bin/python -m src.baseline.run --provider ollama --model qwen3:8b --inputs eval/testsets/week1_inputs.jsonl --out-dir /tmp/w1ollama
-.venv/bin/python -m src.baseline.run --provider openai_compat --model openai/gpt-oss-20b --inputs eval/testsets/week1_inputs.jsonl --out-dir /tmp/w1groq
-.venv/bin/python scripts/compare_temps.py --results-dir /tmp/w1dry --provider dry --model dry
-.venv/bin/python scripts/cost_estimate.py --results-dir /tmp/w1dry --prices config/prices.json
+.venv/bin/python -m src.baseline.run --provider gemini --model gemini-3.1-flash-lite --inputs eval/testsets/week1_inputs.jsonl --out-dir eval/results/week1
+.venv/bin/python scripts/compare_temps.py --results-dir eval/results/week1 --provider gemini --model gemini-3.1-flash-lite
+.venv/bin/python scripts/cost_estimate.py --results-dir eval/results/week1 --prices config/prices.json
 ```
 
-For another provider, point the last two commands at its output directory and model. `--base-url` and `--api-key-env` override the OpenAI compatible defaults; `--rpm` defaults to 10. The run metadata records input and prompt hashes, command, timestamp, and commit hash. The cost script reports measured token averages, list price estimates for every configured model, and `null` where token counts or prices are unavailable. Free tier actual spend is assumed to be zero; list price is still shown. Dry run token counts are synthetic.
+Offline smoke test (no network, synthetic tokens): `.venv/bin/python -m src.baseline.run --provider dry --model dry --inputs eval/testsets/sample_inputs.jsonl --out-dir /tmp/w1dry`. Other providers are supported (`--provider ollama --model qwen3:8b`, `--provider openai_compat --model openai/gpt-oss-20b`); point the last two commands at their output directory and model. `--base-url` and `--api-key-env` override the OpenAI compatible defaults; `--rpm` defaults to 10. The run metadata records input and prompt hashes, command, timestamp, and commit hash. The cost script reports measured token averages, list price estimates for every configured model, and `null` where token counts or prices are unavailable. Free tier actual spend is assumed to be zero; list price is still shown. Dry run token counts are synthetic.
 
 The full Week 1 report should use a tagged commit and the exact scripts, data, and commands from that commit (R8). No real personal data is allowed (R10); writes are sandbox only (R11), and API keys must never enter the repository (R13). Weekly reports go in `reports/week-N.md` and are due at least 24 hours before class with a `week-N` tag (R4).
