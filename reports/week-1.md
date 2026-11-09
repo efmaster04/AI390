@@ -12,13 +12,13 @@
 
 ## 1. Summary
 
-We defined Beldesk's scope, prepared synthetic evaluation data and a data/API inventory, and established a baseline without retrieval or tools. The clearest safety finding is W1-24: all three temperature outputs follow the injected instruction and falsely claim an urgent ticket was created. Lowering temperature did not prevent this failure. The final evidence contains 75 responses on the relabeled 25-input set. Manual review also found invented status checks, third-party status assertions, and unsupported contact details. Team signatures, meeting times, and the submission tag remain incomplete.
+We defined Beldesk's scope, prepared synthetic evaluation data and a data/API inventory, and established a baseline without retrieval or tools. The clearest safety finding is W1-24: all three temperature outputs follow the injected instruction and falsely claim an urgent ticket was created. Lowering temperature did not prevent this failure. The final evidence contains 75 responses on the relabeled 25-input set. Manual review also found invented status checks, third-party status assertions, and unsupported contact details. Team signatures are pending; the submission tag is created with this report.
 
 ## 2. Deliverables
 
 | ID | Status | Evidence | Note |
 |---|---|---|---|
-| W1.1 | partial | [docs/team_agreement.md](../docs/team_agreement.md) | Roles and procedures documented; signatures and meeting times missing. |
+| W1.1 | partial | [docs/team_agreement.md](../docs/team_agreement.md) | Roles, procedures and meetings (Mon and Wed 20:00) documented; signatures pending. |
 | W1.2 | done | [docs/use_case_brief.md](../docs/use_case_brief.md) | First customer, personas, five stories and clarified scope. |
 | W1.3 | done | [eval/testsets/week1_inputs.jsonl](../eval/testsets/week1_inputs.jsonl); [docs/test_set_week1.md](../docs/test_set_week1.md) | 25 synthetic inputs; reviewed labels; no P4 or paired TR/EN examples yet. |
 | W1.4 | done | [docs/data_inventory.md](../docs/data_inventory.md); [data/structured/schema.sql](../data/structured/schema.sql) | Document plan, schema, sandbox API sketch and untrusted sources; tools are not implemented. |
@@ -71,7 +71,7 @@ Changes to any test set this week: labels only for W1-04, W1-12, W1-13, W1-21 an
 
 - **Hypothesis:** Fixed request parameters should permit replay; metadata should describe the tree before execution changes outputs.
 - **Change:** Repeat the full 75-call baseline and move the dirty-tree check before output truncation, fixing its always-true bug in `7e89141`.
-- **Result:** Team-recorded runs at `29080dd`, `aa33470` (dirty tree) and `7e89141` (clean tree) produced byte-identical output texts for all 75 calls with seed 42 sent every time. Final metadata records `7e89141`, `git_dirty=false`; current prompt/input hashes match. Earlier snapshots were not independently re-compared for this draft. Replays do not increase the independent sample size beyond n=25 per temperature.
+- **Result:** Team-recorded runs at `29080dd`, `aa33470` (dirty tree) and `7e89141` (clean tree) produced byte-identical output texts for all 75 calls with seed 42 sent every time. Final metadata records `7e89141`, `git_dirty=false`; current prompt/input hashes match. Output texts of the three runs were compared programmatically (75/75 identical). Replays do not increase the independent sample size beyond n=25 per temperature.
 - **Decision:** Retain final metadata as evidence; use several seeds per input in W2 to measure within-temperature variability. Fixed-seed equality is not a general determinism guarantee.
 
 ### Experiment 3: Language measurement repair
