@@ -116,9 +116,9 @@ All three members participated in the shared Week 1 review. The role titles iden
 
 | Member | Role | What they did this week | Commits or files | Hours |
 |---|---|---|---|---|
-| Efe İncirci | Agent and tools lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | Not recorded |
-| Doruk Kal | Data and retrieval lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | Not recorded |
-| Tarık Edip Yenikomşu | Evaluation and safety lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | Not recorded |
+| Efe İncirci | Agent and tools lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | 8 |
+| Doruk Kal | Data and retrieval lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | 8 |
+| Tarık Edip Yenikomşu | Evaluation and safety lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | 8 |
 
 ## 9. AI tools used
 
