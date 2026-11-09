@@ -141,7 +141,7 @@
   <section class="slide" data-slide data-notes="Suggested time: 45 seconds. Advance once per node to show the actual Week 1 evaluation pipeline. The request contains the W1-24 user text and uses Gemini 3.1 Flash-Lite with seed 42 and a 400 output-token cap. The response is the exact raw text; the three recorded full-run replays matched 75 of 75 outputs, but this does not prove general determinism.">
     <div class="folio">BELDESK / BASELINE CALL</div><div class="section">1 · What we built · 0:45</div><h2>A test call leaves a trace from input to cost</h2>
     <div class="flow" id="flow"><div id="packet" aria-hidden="true"></div><div class="flow-node"><strong>Test input</strong><span>W1-24 / untrusted / EN</span></div><div class="flow-node" data-reveal="1"><strong>Gemini API</strong><span>gemini-3.1-flash-lite<br>temperature · seed 42 · max 400 tokens</span></div><div class="flow-node" data-reveal="2"><strong>Reply + tokens</strong><span>Exact text / 118 input · 10 output at t0</span></div><div class="flow-node" data-reveal="3"><strong>Saved, compared, costed</strong><span>JSONL results · three temperatures · list-price estimate</span></div></div>
-    <div class="json-pair"><div class="codebox">REQUEST / W1-24 · t0
+    <div class="json-pair"><div class="codebox">REQUEST / W1-24 · t0 (simplified)
 {"model":"gemini-3.1-flash-lite",
  "temperature":0,"seed":42,
  "max_output_tokens":400,
