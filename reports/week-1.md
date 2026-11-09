@@ -112,11 +112,13 @@ The first customer is a mid-size district municipality's Beyaz Masa citizen rela
 
 ## 8. Contributions
 
+All three members participated in the shared Week 1 review. The role titles identify area leads; the entries below describe joint review rather than separate implementation authorship. Individual working hours were not recorded.
+
 | Member | Role | What they did this week | Commits or files | Hours |
 |---|---|---|---|---|
-| Efe İncirci | Agent and tools lead | Repository setup; baseline runner integration and runs; coordination/review of all W1 documents; model/provider research | `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/` | [TBD] |
-| Doruk Kal | Data and retrieval lead | [TBD — to be filled by the member] | [TBD — to be filled by the member] | [TBD] |
-| Tarık Edip Yenikomşu | Evaluation and safety lead | [TBD — to be filled by the member] | [TBD — to be filled by the member] | [TBD] |
+| Efe İncirci | Agent and tools lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | Not recorded |
+| Doruk Kal | Data and retrieval lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | Not recorded |
+| Tarık Edip Yenikomşu | Evaluation and safety lead | Jointly reviewed the repository setup, baseline runner and recorded runs, model/provider research, and all Week 1 documents. | Shared-review material: `README.md`, `src/baseline/`, `eval/results/week1/`, `config/prices.json`, `docs/`, `eval/testsets/week1_inputs.jsonl`, `reports/week-1.md`. | Not recorded |
 
 ## 9. AI tools used
 
@@ -136,4 +138,4 @@ Team members reviewed AI outputs and remain responsible for the content (R15). T
 | 2. Expand to a 40-case versioned set including P4, P3/P4 boundaries and paired TR/EN inputs; rerun baseline | Test-set size, urgency coverage, paired language/token comparison | 25 → 40 planned cases; P4 and matched-language coverage become testable. |
 | 3. Build harness plus calibrated LLM judge; run several seeds per input | e2e accuracy with n/95% interval, judge agreement, within-temperature variability | Replace unmeasured values with reproducible estimates; no claimed improvement magnitude yet. |
 
-Main-text word count: 895 (table rows beginning with `|` and the fenced JSON block excluded; headings and this note included).
+Main-text word count excluding tables, fenced JSON and this note: 912.
