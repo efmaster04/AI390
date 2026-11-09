@@ -49,6 +49,8 @@ CREATE TABLE tickets (
     description  TEXT    NOT NULL,
     urgency      TEXT    NOT NULL
         CHECK (urgency IN ('P1','P2','P3','P4')),
+    urgency_reason TEXT,
+    classifier_version TEXT,
     status       TEXT    NOT NULL DEFAULT 'open'
         CHECK (status IN ('open','in_progress','resolved','rejected')),
     citizen_ref  TEXT,               -- hashed, non-identifiable
@@ -62,7 +64,7 @@ CREATE TABLE tickets (
 CREATE TABLE ticket_drafts (
     draft_id     TEXT PRIMARY KEY,
     created_at   DATETIME NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
-    payload_json TEXT NOT NULL CHECK (json_valid(payload_json)),
+    payload_json TEXT NOT NULL CHECK (json_valid(payload_json)), -- kategori, aciliyet, gerekce ve siniflandirici surumunu tasiyabilir
     expires_at   DATETIME NOT NULL
 );
 

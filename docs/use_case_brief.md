@@ -58,6 +58,8 @@
 
 ## Scope
 
+Beldesk answers questions about all municipal services but only files tickets for field problems (roads, lighting, waste, water/sewer, parks, signals, animals, noise); it never submits applications on a citizen's behalf.
+
 ### In Scope
 - FAQ answering from municipal service documents with source citations.
 - Complaint intake: category classification, department routing, urgency assignment (P1–P4), and duplicate detection.
@@ -68,6 +70,7 @@
 - Emergency redirection to 112 / 110 / 155 with optional P1 ticket creation.
 
 ### Out of Scope
+- Submitting applications (marriage, permits, subscriptions, social assistance) — Beldesk only explains the process and points to the official channel.
 - Payment processing (tax, water bills, or any financial transactions).
 - Legal advice or interpretation of regulations beyond documented municipal procedures.
 - Real emergency dispatch or coordination with emergency services.
@@ -102,12 +105,12 @@ Mid-size district municipalities in Turkey that operate a Beyaz Masa (citizen re
 |---|-----------|-----------------|
 | 1 | **Documents for RAG** | Municipal service guides: marriage application, building permits, water subscription, social aid application, pet registration, event/stand permits, complaint handling & SLA policy, KVKK (data protection) disclosure text, emergency redirection guide, 2026 fee schedule. |
 | 2 | **Structured data** | `tickets` (ID, status, urgency, department, timestamps), `departments` (name TR/EN, SLA hours), `neighborhoods` (name, district zone), `collection_schedule` (waste type, weekday, time window), `facilities` (type, name, opening hours), `fees_2026` (service, amount, source doc). |
-| 3 | **The action** | Create a complaint ticket in the sandbox: classify category and department, assign urgency P1–P4, run duplicate check, and return a ticket ID. Confirmation step before writing. |
+| 3 | **The action** | For field complaints only, the classifier proposes a canonical category, urgency (P1–P4), and short urgency reason; the server derives the department and prepares a draft after a duplicate check. The citizen confirms the draft before the sandbox creates a ticket and returns its ID. |
 | 4 | **Untrusted input** | Citizen free-text complaints via chat: may contain exaggerated urgency to game prioritization, embedded prompt-injection attempts in complaint descriptions, or social-engineering to extract other citizens' ticket data. |
 | 5 | **What it must not answer** | Resolution dates or crew arrival times not in the data; legal interpretations beyond written policy; other citizens' ticket details; political opinions; promises of action the municipality has not authorized. |
 | 6 | **A multi-step task** | Citizen reports a problem → assistant classifies it → checks for duplicates in the same neighborhood → confirms details with the citizen → creates the ticket → returns the ticket ID and expected SLA. |
 | 7 | **Exact identifiers** | Ticket IDs (`YV-YYYY-NNNNNN`), `departments.code`, neighborhood names, phone last-4-digits, `fees_2026.item_code`. |
-| 8 | **The request classifier** | Intent (FAQ, complaint, status inquiry, emergency, out-of-scope), language (TR/EN), category (`roads_sidewalks`, `street_lighting`, `waste_collection`, `water_sewer`, `parks_green`, `traffic_signals`, `permits_licensing`, `social_services`, `animals`, `noise_environment`, `other`), urgency (P1–P4), extracted location (neighborhood, street). |
+| 8 | **The request classifier** | Intent (FAQ, field complaint, status inquiry, emergency, out-of-scope) and language (TR/EN). For a field complaint it supplies a category from the canonical dictionary (`roads_sidewalks`, `street_lighting`, `waste_collection`, `water_sewer`, `parks_green`, `traffic_signals`, `permits_licensing`, `social_services`, `animals`, `noise_environment`, `other`), urgency (P1–P4), short `urgency_reason`, `classifier_version`, and extracted location (neighborhood, street) for the draft request; the server derives `department_id`. Application questions remain FAQ requests. |
 
 ### The Hard Part
 **Manipulation-resistant prioritization.** Citizens may exaggerate urgency ("someone will die!") to bump their complaint to P1. Complaint text may contain prompt-injection attempts designed to override classification logic. The assistant applies the rubric below to the described condition and resists emotional pressure or injected instructions.

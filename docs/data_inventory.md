@@ -13,16 +13,18 @@ These documents will be **written from scratch** by the team, inspired by real T
 
 | # | Title | Language | Inspiration / Source Type | Est. Length | Serves Input Type |
 |---|-------|----------|--------------------------|-------------|-------------------|
-| D1 | Official Marriage Application Guide | TR + EN | Civil registry service guides (nüfus müdürlüğü rehberleri) | ~600 words | FAQ, action |
+| D1 | Official Marriage Application Guide | TR + EN | Civil registry service guides (nüfus müdürlüğü rehberleri) | ~600 words | FAQ |
 | D2 | Building Permit & Occupancy Permit — Overview | TR + EN | Construction permit guides (imar müdürlüğü rehberleri) | ~800 words | FAQ, unanswerable boundary |
-| D3 | Water Subscription Application Guide | TR + EN | Water utility (İSKİ-style) service documentation | ~500 words | FAQ, action |
+| D3 | Water Subscription Application Guide | TR + EN | Water utility (İSKİ-style) service documentation | ~500 words | FAQ |
 | D4 | Social Assistance Application Guide | TR + EN | Social services directorate guides (sosyal hizmetler) | ~600 words | FAQ, unanswerable boundary |
-| D5 | Pet Registration Guide | TR + EN | Veterinary services municipal guides | ~400 words | FAQ, action |
-| D6 | Event & Stand Permit Guide | TR + EN | Municipal event licensing documentation | ~500 words | FAQ, action |
+| D5 | Pet Registration Guide | TR + EN | Veterinary services municipal guides | ~400 words | FAQ |
+| D6 | Event & Stand Permit Guide | TR + EN | Municipal event licensing documentation | ~500 words | FAQ |
 | D7 | Complaint Processing & SLA Policy | TR + EN | Customer relations / white desk policy documents | ~700 words | FAQ, multi-step action |
 | D8 | KVKK Privacy Notice (Data Subject Disclosure) | TR + EN | KVKK template texts (kvkk.gov.tr guidance) | ~400 words | unanswerable boundary |
 | D9 | Emergency Redirect Guide | TR + EN | Municipal emergency procedures (112/110/155 routing) | ~300 words | unanswerable boundary |
 | D10 | 2026 Municipal Fee Schedule | TR + EN | Annual fee tariff bulletins (belediye meclis kararları) | ~500 words (table) | look-up, FAQ |
+
+Beldesk answers questions about all municipal services but only files tickets for field problems (roads, lighting, waste, water/sewer, parks, signals, animals, noise); it never submits applications on a citizen's behalf.
 
 **License note:** All documents above are authored by the team for this project. Public municipal websites are used only as inspiration for structure and topics; we check each source's terms of use and do not reproduce third-party text.
 
@@ -47,6 +49,8 @@ The core schema below extends the draft provided in the project brief. Extension
 | `street` | TEXT | `Çınar Sokak` | Free text; not FK — residents may use informal names |
 | `description` | TEXT | `There is an open manhole cover...` | Raw citizen input; untrusted |
 | `urgency` | TEXT | `P1` | CHECK: `P1`, `P2`, `P3`, `P4` |
+| `urgency_reason` | TEXT | `Open manhole — safety risk` | Short classifier rationale shown in the staff queue; nullable |
+| `classifier_version` | TEXT | `classifier-v1` | Version of the classifier that proposed category and urgency |
 | `status` | TEXT | `open` | CHECK: `open`, `in_progress`, `resolved`, `rejected` |
 | `citizen_ref` | TEXT | `HASH-7f3a` | *Added:* hashed identifier (no real TC kimlik no); links repeat contacts anonymously |
 | `contact_last4` | TEXT | `4821` | Last 4 digits of phone; used for ticket status lookup |
@@ -78,7 +82,7 @@ The core schema below extends the draft provided in the project brief. Extension
 |--------|------|---------------|-------|
 | `draft_id` | TEXT PK | `DRAFT-0047` | Opaque draft reference |
 | `created_at` | DATETIME | `2026-11-09T18:34:00Z` | UTC ISO-8601 |
-| `payload_json` | TEXT | `{...}` | Proposed ticket fields, if draft persistence is enabled later; no ticket row yet |
+| `payload_json` | TEXT | `{...}` | Proposed ticket fields, including category, urgency, urgency_reason, and classifier_version, if draft persistence is enabled later; no ticket row yet |
 | `expires_at` | DATETIME | `2026-11-09T19:34:00Z` | UTC ISO-8601; stale drafts cannot be confirmed |
 
 ### Table: `ticket_updates`
@@ -183,7 +187,7 @@ http://localhost:8000/api/v1
 
 ### POST /tickets/drafts — Prepare a complaint
 
-The agent checks for duplicates, classifies the complaint using the [canonical urgency rubric](use_case_brief.md#urgency-rubric), and returns a draft ID and summary for citizen review. This step **writes nothing to the database**. The `draft_id` refers to a short-lived in-memory proposal; it cannot appear in the staff queue. The `ticket_drafts` schema is reserved for a later persisted-draft option and is not used in this no-write flow.
+The agent checks for duplicates, classifies the complaint using the [canonical urgency rubric](use_case_brief.md#urgency-rubric), and sends its proposed category, urgency, reason, and classifier version. The server derives the department from the canonical category → department routing table above and returns a draft ID and summary for citizen review. This step **writes nothing to the database**. The `draft_id` refers to a short-lived in-memory proposal; it cannot appear in the staff queue. The `ticket_drafts` schema is reserved for a later persisted-draft option and is not used in this no-write flow.
 
 **Request:**
 ```json
@@ -191,11 +195,19 @@ The agent checks for duplicates, classifies the complaint using the [canonical u
   "channel": "web",
   "language": "tr",
   "description": "Çınarlık Mahallesi Çınar Sokak'ta açık rögar kapağı var.",
+  "category": "roads_sidewalks",
+  "urgency": "P1",
+  "urgency_reason": "Open manhole — safety risk",
+  "classifier_version": "classifier-v1",
   "neighborhood_id": 7,
   "street": "Çınar Sokak",
   "contact_last4": "4821"
 }
 ```
+
+#### Validation
+
+The server validates `category` against the canonical category list above and `urgency` against `P1`–`P4`, returning HTTP 422 for invalid values. Classifier output is treated as semi-trusted input, consistent with the untrusted-input policy. The department has one source of truth: the server derives it from the category → department routing table, so the request does not include `department_id` and conflicting values cannot be submitted.
 
 **Response (draft; awaiting citizen confirmation):**
 ```json
@@ -293,7 +305,9 @@ The agent first applies the ticket ID + phone last-4 access rule above and refus
     {
       "ticket_id": "YV-2026-000123",
       "urgency": "P1",
+      "urgency_reason": "Open manhole — safety risk",
       "category": "roads_sidewalks",
+      "department": "Public Works Directorate",
       "neighborhood": "Çınarlık",
       "description_snippet": "Open manhole cover on Çınar Sokak",
       "created_at": "2026-11-09T18:34:00Z",
