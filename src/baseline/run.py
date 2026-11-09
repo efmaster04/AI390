@@ -72,6 +72,9 @@ def main(argv=None):
         if not required.issubset(item):
             parser().error(f"input line {line_no} lacks: {sorted(required - item.keys())}")
         inputs.append(item)
+    # Git durumu, çıktı dosyaları boşaltılmadan ÖNCE alınır; aksi hâlde koşunun kendi
+    # dosyaları "değişiklik" sayılır ve git_dirty yanlışlıkla true olur.
+    run_commit, run_dirty = commit_hash(), git_dirty()
     args.out_dir.mkdir(parents=True, exist_ok=True)
     safe = safe_name(args.model)
     files = {t: args.out_dir / f"{args.provider}__{safe}__t{t:g}.jsonl" for t in args.temps}
@@ -86,7 +89,7 @@ def main(argv=None):
     meta = {"provider": args.provider, "model": args.model, "temps": args.temps,
             "prompt": str(args.prompt), "prompt_sha256": sha256(args.prompt),
             "inputs": str(args.inputs), "inputs_sha256": sha256(args.inputs),
-            "git_commit": commit_hash(), "git_dirty": git_dirty(),
+            "git_commit": run_commit, "git_dirty": run_dirty,
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
             "max_output_tokens": args.max_output_tokens, "seed": args.seed,
             "command": command}
