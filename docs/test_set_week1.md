@@ -4,6 +4,27 @@
 
 This test set contains 25 realistic, labeled user inputs for evaluating Beldesk, a bilingual (Turkish + English) AI assistant for the fictional Yeşilvadi Municipality. Each input is tagged with the category it tests and the handbook ingredients (section 10) it exercises. The set is used in W1.5 (baseline evaluation) and subsequent weekly iterations.
 
+## Revision v2: two translation pairs inside the same 25 inputs
+
+Only W1-03 and W1-07 user texts were replaced. The active set remains **25 inputs: 13 Turkish and 12 English**. Four entries now form two matched translation pairs; the other 21 entries are not part of the paired comparison. No additional 25-input test set was created.
+
+| Pair | English entry | Turkish entry | Controlled content |
+|---|---|---|---|
+| Water subscription | W1-02 | W1-03 | Same question and fictional municipality |
+| Ticket status | W1-10 | W1-07 | Same question, ticket YV-2026-011532 and phone suffix 2274 |
+
+**Pair 1 — EN:** What documents do I need to apply for a water subscription in Yeşilvadi?
+
+**Pair 1 — TR:** Yeşilvadi’de su aboneliğine başvurmak için hangi belgelere ihtiyacım var?
+
+**Pair 2 — EN:** Can you check the status of ticket YV-2026-011532? Last 4 of my phone: 2274.
+
+**Pair 2 — TR:** YV-2026-011532 numaralı kaydın durumunu kontrol edebilir misiniz? Telefonumun son 4 hanesi: 2274.
+
+The saved 75 responses in `eval/results/week1` belong to v1, whose exact inputs remain in Git at the commit recorded in run metadata. They must not be paired with the changed v2 messages. Rerun all 25 v2 inputs at three temperatures before updating result claims (R9).
+
+For a small illustrative input-token comparison, use only these two pairs, the same model and system prompt, and one temperature. Input tokens include the shared system prompt and request framing. Do not pool all 13 TR and 12 EN messages as if their meanings were matched. Output-token differences also depend on generated content and are not a pure tokenization comparison. Two pairs cannot establish a general language-wide effect.
+
 ## Distribution: Category × Language
 
 | Category         | Turkish (tr) | English (en) | Total |
@@ -62,4 +83,4 @@ The canonical P1–P4 criteria and response targets are defined in [Use Case Bri
 ## Known gaps
 
 - No P4 example appears in this fixed 25-input Week 1 set. Add a P4 example and a P3/P4 boundary case to the 40-case Week 2 set.
-- There are no matched Turkish/English pairs of the same request. Add paired TR/EN examples to the 40-case Week 2 set so language comparisons control for request content.
+- v2 contains two matched TR/EN pairs. Their new token counts have not been measured yet; extend paired coverage in Week 2 before generalizing.

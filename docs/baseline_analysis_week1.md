@@ -1,5 +1,7 @@
 # Week 1 baseline analysis — Beldesk
 
+> **Historical v1 evidence.** The active 25-input set was revised on 10 November 2026 to include two matched TR/EN pairs (W1-02/03 and W1-10/07). The 75 responses and all conclusions in this document still concern v1. Original v1 messages are recoverable from the recorded run commit. Do not compare these old token counts as measurements of the new translation pairs.
+
 ## Evidence and method
 
 Beldesk is the working product name for the instructor-approved bilingual municipal citizen assistant for fictional Yeşilvadi Municipality. This analysis reads every output for all 25 inputs at temperatures 0, 0.7, and 1.2: 75 responses, with no retrieval, database access, action tools, or conversation history. The runner sends only the system prompt and the current input text; expected labels are evaluation material, not model context.
@@ -11,7 +13,7 @@ Evidence paths (relative to the repository root):
 - `eval/results/week1/run_meta_gemini__gemini-3.1-flash-lite.json`, `eval/results/week1/temperature_comparison.md`, and `eval/results/week1/cost_summary.json`.
 - `src/baseline/run.py`, `src/baseline/providers.py`, `scripts/compare_temps.py`, `scripts/cost_estimate.py`, and `config/prices.json`.
 
-Configuration: Google AI Studio free tier, `gemini-3.1-flash-lite`, `max_output_tokens=400`, seed 42 on every request, and runner default 10 requests/minute. Final metadata records commit `7e8914188aad5eb8344afe2fcaa7cced6abbda1b`, `git_dirty=false`, and timestamp `2026-11-09T21:15:25.921319+00:00`. Python recomputation confirmed that both current input and prompt SHA-256 hashes match metadata.
+Configuration: Google AI Studio free tier, `gemini-3.1-flash-lite`, `max_output_tokens=400`, seed 42 on every request, and runner default 10 requests/minute. Final metadata records commit `7e8914188aad5eb8344afe2fcaa7cced6abbda1b`, `git_dirty=false`, and timestamp `2026-11-09T21:15:25.921319+00:00`. The prompt SHA-256 matches metadata. The original v1 input snapshot at the recorded run commit matches the input hash; current v2 texts intentionally differ.
 
 The team's run history records three full 75-call runs at `29080dd`, `aa33470` (dirty tree), and `7e89141` (clean tree), with all 75 output texts byte-identical across runs under seed 42. This historical comparison is supplied by the team; the available final files independently establish only the last run. Fixed-seed replay is not an independent sampling experiment or a guarantee of future determinism. The runner's former `git_dirty` bug checked status after truncating its own output files, making it always true; commit `7e89141` moved that check before truncation. No Git command or provider call was executed for this analysis.
 
@@ -126,10 +128,10 @@ from scripts.cost_estimate import summarize
 
 base = Path('eval/results/week1')
 read_rows = lambda p: [json.loads(s) for s in p.read_text().splitlines() if s.strip()]
-inputs = read_rows(Path('eval/testsets/week1_inputs.jsonl'))
 meta = json.loads((base / 'run_meta_gemini__gemini-3.1-flash-lite.json').read_text())
-for key in ('inputs', 'prompt'):
-    assert hashlib.sha256(Path(meta[key]).read_bytes()).hexdigest() == meta[key + '_sha256']
+from scripts.build_explorer import result_inputs
+inputs, historical = result_inputs(meta)
+assert hashlib.sha256(Path(meta['prompt']).read_bytes()).hexdigest() == meta['prompt_sha256']
 print('categories', Counter(x['category'] for x in inputs))
 print('languages', Counter(x['lang'] for x in inputs))
 print('urgencies', Counter(x['expected_urgency'] for x in inputs))
