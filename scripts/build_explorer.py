@@ -1,6 +1,7 @@
 """Build the self-contained Week 1 baseline Artifact from repository evidence."""
 
 import html
+import hashlib
 import json
 import re
 import subprocess
@@ -69,10 +70,28 @@ def short_head():
         return "unknown"
 
 
+def result_inputs(meta):
+    """Match the input snapshot to the recorded run, including after an R9 dataset revision."""
+    path = ROOT / meta["inputs"]
+    content = path.read_bytes()
+    historical = hashlib.sha256(content).hexdigest() != meta["inputs_sha256"]
+    if historical:
+        try:
+            content = subprocess.run(
+                ["git", "show", f'{meta["git_commit"]}:{meta["inputs"]}'],
+                cwd=ROOT, capture_output=True, check=True,
+            ).stdout
+        except (OSError, subprocess.CalledProcessError) as exc:
+            raise ValueError("Historical baseline inputs unavailable. Fetch the run commit/history before rebuilding; never mix current inputs with old responses.") from exc
+    if hashlib.sha256(content).hexdigest() != meta["inputs_sha256"]:
+        raise ValueError("Baseline input hash mismatch")
+    return [json.loads(line) for line in content.decode("utf-8").splitlines() if line.strip()], historical
+
+
 def build_data():
-    inputs = read_jsonl("eval/testsets/week1_inputs.jsonl")
-    results = {t: {r["id"]: r for r in read_jsonl(RESULT_FILES[t])} for t in TEMPS}
     meta = json.loads((ROOT / SOURCES[4]).read_text(encoding="utf-8"))
+    inputs, historical = result_inputs(meta)
+    results = {t: {r["id"]: r for r in read_jsonl(RESULT_FILES[t])} for t in TEMPS}
     costs = json.loads((ROOT / SOURCES[5]).read_text(encoding="utf-8"))
     analysis = (ROOT / SOURCES[7]).read_text(encoding="utf-8")
     assessment_section = analysis.split("## Per-input assessment\n", 1)[1].split("\n## ", 1)[0]
@@ -112,7 +131,7 @@ def build_data():
         raise ValueError("Expected 25 complete inputs and three complete result sets")
     return {"inputs": items, "meta": meta, "summary": summary, "findings": findings,
             "prompt": (ROOT / SOURCES[6]).read_text(encoding="utf-8").strip(),
-            "sources": SOURCES, "head": short_head()}
+            "sources": SOURCES, "head": short_head(), "historical_inputs": historical}
 
 
 def render(data):
@@ -170,6 +189,7 @@ def render(data):
 <div class="wrap">
 <header class="masthead"><button id="theme-toggle" class="theme-button" type="button">Toggle theme</button><div class="eyebrow">Municipal citizen relations · evaluation record</div><h1>Beldesk — Week 1 baseline</h1><p class="subhead">A field record of how 25 citizen requests changed across three model temperatures.</p><div class="meta">{chip_html}</div></header>
 <main>
+<p class="caveat"><b>Dataset version:</b> {"Historical v1 responses: input texts are loaded from the recorded run commit. The active v2 set has two TR/EN translation pairs and needs a fresh 75-call run. These saved responses do not measure the new pairs." if data["historical_inputs"] else "Input texts match the recorded baseline hash."}</p>
 <section class="major" aria-labelledby="flow-title"><h2 id="flow-title">How a test call works</h2><div class="flow"><div class="step"><span class="step-num">01 / INPUT</span>Test input from <code>week1_inputs.jsonl</code></div><div class="step"><span class="step-num">02 / REQUEST</span>Request to Gemini API</div><div class="step"><span class="step-num">03 / REPLY</span>Model reply + token counts</div><div class="step"><span class="step-num">04 / RECORD</span>Saved to results JSONL, compared and costed</div></div><div class="code-grid"><div class="code-panel"><h3>Request · W1-24, t=0</h3><pre>{esc(request_text)}</pre></div><div class="code-panel"><h3>Response (saved fields) · W1-24, t=0</h3><pre>{esc(json.dumps(saved, ensure_ascii=False, indent=2))}</pre></div></div><details><summary>System prompt</summary><pre>{esc(data["prompt"])}</pre></details><p class="reproduce"><b>Reproduce</b><br><code>{esc(" ".join(meta["command"]))}</code></p></section>
 <section class="major" aria-labelledby="summary-title"><h2 id="summary-title">Summary by temperature</h2><div class="table-scroll"><table><thead><tr><th scope="col">Temperature</th><th scope="col">Mean output chars</th><th scope="col">Exact match to t=0</th><th scope="col">Mean output tokens</th><th scope="col">List USD / 1,000</th><th scope="col">Meets</th><th scope="col">Partial</th><th scope="col">Fails</th></tr></thead><tbody>{table_rows}</tbody></table></div><div class="bar-area">{bars}</div><p class="caveat">Manual, single-annotator AI-assisted coding — not a measured metric.</p></section>
 <section class="major" aria-labelledby="findings-title"><h2 id="findings-title">Key findings</h2><div class="findings">{findings_html(data["findings"])}</div></section>
