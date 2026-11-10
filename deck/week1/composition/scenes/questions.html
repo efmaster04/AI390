@@ -1,0 +1,64 @@
+<template id="questions-template">
+  <style>
+    #root { position: absolute; inset: 0; }
+    /* Üç kart = üç dal. Hotspot düğmeleri (yalnız sunucu penceresinde) deck.json region'ı ile kartların alt "go" şeridine (y %77–86) oturur. */
+    [data-composition-id="questions"] .questions-grid {
+      position: absolute; left: var(--edge-x); top: 336px; width: 1170px; height: 604px;
+      display: grid; grid-template-columns: repeat(3, 370px); column-gap: 30px;
+    }
+    [data-composition-id="questions"] .questions-card { display: flex; flex-direction: column; padding: 46px 34px 26px; }
+    [data-composition-id="questions"] .questions-q { line-height: 1.06; }
+    [data-composition-id="questions"] .questions-go {
+      margin-top: auto; display: flex; align-items: center; justify-content: space-between;
+      padding-top: 18px; border-top: 4px dashed var(--ink);
+    }
+    [data-composition-id="questions"] .questions-num { font-family: var(--font-display); font-weight: 900; font-size: 96px; line-height: .9; }
+    [data-composition-id="questions"] .questions-go .bk-arrow { width: 96px; margin: 0 10px 0 0; }
+    [data-composition-id="questions"] #questions-mascot { left: 1292px; top: 420px; --h: 540px; }
+  </style>
+  <div id="root" data-composition-id="questions" data-hold data-width="1920" data-height="1080" data-window="8" data-fragments="1.4">
+    <div class="bk-stage">
+      <div class="bk-sheet"></div>
+      <header class="bk-band">
+        <span class="bk-folio">BELDESK / QUESTIONS</span>
+        <span class="bk-section">Questions</span>
+        <span class="bk-no">22 / 22</span>
+      </header>
+      <div class="bk-rule"></div>
+      <h2 class="bk-title">Three questions frame the next decision</h2>
+
+      <div class="questions-grid">
+        <article id="questions-card-1" class="bk-panel questions-card">
+          <span class="bk-tab bk-tab--teal">01 / measurement</span>
+          <h3 class="bk-h3 questions-q">What did you measure, and how sure are you?</h3>
+          <div class="questions-go"><span class="questions-num">01</span><span class="bk-arrow"></span></div>
+        </article>
+        <article id="questions-card-2" class="bk-panel bk-panel--paper questions-card">
+          <span class="bk-tab bk-tab--tomato">02 / failure</span>
+          <h3 class="bk-h3 questions-q">What failed, and do you know why?</h3>
+          <div class="questions-go"><span class="questions-num">02</span><span class="bk-arrow"></span></div>
+        </article>
+        <article id="questions-card-3" class="bk-panel bk-panel--sun questions-card">
+          <span class="bk-tab">03 / priority</span>
+          <h3 class="bk-h3 questions-q">Is next week’s plan the change that matters most?</h3>
+          <div class="questions-go"><span class="questions-num">03</span><span class="bk-arrow"></span></div>
+        </article>
+      </div>
+
+      <div id="questions-mascot" class="bk-mascot bk-mascot--yaziyor"><img class="bk-mascot-pose" src="assets/maskot/yaziyor.png" alt=""></div>
+    </div>
+  </div>
+  <script>
+    BK.scene("questions", function (tl, root, BK) {
+      var $ = function (s) { return root.querySelectorAll(s); };
+      BK.frame(tl, root, 0);
+      // Kartlar soldan sağa sırayla oturur (düz)
+      BK.slam(tl, $(".questions-card"), 0.25, { stagger: 0.1, duration: 0.42 });
+      // Numara ve ok: dalın kapısı
+      BK.formula(tl, $(".questions-num"), 0.62, { stagger: 0.08 });
+      BK.draw(tl, $(".questions-go .bk-arrow"), 0.7, { duration: 0.35, stagger: 0.08 });
+      // Maskot girer ve durur
+      BK.mascotIn(tl, "#questions-mascot", 0.2, { from: "right" });
+    });
+  </script>
+</template>

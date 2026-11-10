@@ -1,0 +1,141 @@
+<template id="data-inventory-template">
+  <style>
+    #root { position: absolute; inset: 0; }
+    /* Fikir: dört bölmeli envanter rafı (+ maskotun durduğu küçük göz). Bölme başlıkları baştan durur (W1.4'ün dört alt başlığı), içleri adım adım dolar. */
+    /* "planned / schema only" damgası başlığın ikinci satırının sağında (raf tam genişliği kullanır) */
+    [data-composition-id="data-inventory"] #di-stamp { position: absolute; right: 104px; top: 244px; font-size: 28px; padding: 8px 18px; }
+    [data-composition-id="data-inventory"] .di-cab { position: absolute; left: var(--edge-x); top: 340px; width: 1728px; height: 620px; padding: 0; background: var(--tan); }
+    [data-composition-id="data-inventory"] #di-mascot { --h: 260px; left: 120px; top: 684px; }
+    [data-composition-id="data-inventory"] .di-box { position: absolute; padding: 14px 22px 10px; background: var(--paper); border: 3px solid var(--ink); border-radius: 12px; box-shadow: inset 6px 6px 0 var(--shadow); }
+    [data-composition-id="data-inventory"] #di-box-docs { left: 110px; top: 354px; width: 900px; height: 316px; }
+    [data-composition-id="data-inventory"] #di-box-tab  { left: 1022px; top: 354px; width: 788px; height: 316px; }
+    [data-composition-id="data-inventory"] #di-box-api  { left: 372px; top: 682px; width: 836px; height: 264px; }
+    [data-composition-id="data-inventory"] #di-box-unt  { left: 1220px; top: 682px; width: 590px; height: 264px; }
+    [data-composition-id="data-inventory"] .di-h { display: flex; align-items: center; gap: 14px; height: 44px; }
+    [data-composition-id="data-inventory"] .di-h i { font-style: normal; display: inline-flex; align-items: center; height: 40px; padding: 0 10px; border: 3px solid var(--ink); border-radius: 8px; background: var(--cream);
+      font-family: var(--font-mono); font-weight: 700; font-size: 28px; }
+    [data-composition-id="data-inventory"] .di-h b { font-family: var(--font-display); font-weight: 900; font-size: 40px; line-height: 1; }
+    [data-composition-id="data-inventory"] .di-h small { margin-left: auto; font-family: var(--font-mono); font-weight: 700; font-size: 28px; color: var(--ink-2); }
+    /* 01 belgeler: kesikli = henüz yazılmadı; her kutuda kod + konu */
+    [data-composition-id="data-inventory"] .di-docs { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 8px; }
+    [data-composition-id="data-inventory"] .di-doc { height: 40px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px 0 8px; border: 3px dashed var(--ink); border-radius: 6px;
+      background: linear-gradient(225deg, var(--paper) 0 11px, var(--ink) 11px 14px, var(--cream) 14px); font-size: 30px; font-weight: 800; white-space: nowrap; }
+    [data-composition-id="data-inventory"] .di-doc i { font-style: normal; font-family: var(--font-mono); font-weight: 700; font-size: 28px; color: var(--ink-2); }
+    [data-composition-id="data-inventory"] .di-docs-l { display: flex; align-items: center; gap: 14px; margin-top: 10px; font-size: 32px; font-weight: 800; white-space: nowrap; }
+    [data-composition-id="data-inventory"] .di-pill { display: inline-block; padding: 2px 14px; border: 3px solid var(--ink); border-radius: 22px; background: var(--sun); font-family: var(--font-mono); font-weight: 700; font-size: 28px; }
+    /* 02 tablolar (kod >= 34 px) */
+    [data-composition-id="data-inventory"] .di-h .di-nine { margin-left: auto; font-size: 64px; font-variant-numeric: tabular-nums; }
+    [data-composition-id="data-inventory"] .di-h .di-nine + small { margin-left: 0; }
+    [data-composition-id="data-inventory"] .di-chips { display: flex; flex-wrap: nowrap; align-items: center; gap: 6px; margin-top: 8px; }
+    [data-composition-id="data-inventory"] .di-chip { padding: 1px 7px; border: 3px solid var(--ink); border-radius: 8px; background: var(--cream); font-family: var(--font-mono); font-weight: 700; font-size: 34px; line-height: 1.2; white-space: nowrap; }
+    [data-composition-id="data-inventory"] .di-chip--key { background: var(--sun); }
+    [data-composition-id="data-inventory"] .di-chip--more { border-color: transparent; background: transparent; color: var(--ink-2); padding: 1px 2px; }
+    [data-composition-id="data-inventory"] .di-cols-k { display: block; margin-top: 10px; font-family: var(--font-mono); font-weight: 700; font-size: 28px; line-height: 1.2; color: var(--ink-2); }
+    [data-composition-id="data-inventory"] .di-cols { display: inline-grid; grid-template-columns: repeat(2, auto); margin-top: 4px; border: 3px solid var(--ink); border-left: 12px solid var(--sun); border-radius: 8px; background: var(--cream); overflow: hidden; }
+    [data-composition-id="data-inventory"] .di-cols span { padding: 1px 14px; font-family: var(--font-mono); font-size: 34px; line-height: 1.2; border-right: 2px solid var(--shadow); border-bottom: 2px solid var(--shadow); white-space: nowrap; }
+    /* 03 aksiyon API */
+    [data-composition-id="data-inventory"] .di-api-c { position: relative; }
+    [data-composition-id="data-inventory"] .di-flow { display: flex; align-items: center; margin-top: 10px; }
+    [data-composition-id="data-inventory"] .di-node { padding: 4px 14px; border: 3px solid var(--ink); border-radius: 12px; background: var(--cream); box-shadow: 4px 4px 0 var(--ink); font-size: 34px; line-height: 1.2; font-weight: 800; white-space: nowrap; }
+    [data-composition-id="data-inventory"] .di-node--ok { border-left: 12px solid var(--teal); }
+    [data-composition-id="data-inventory"] .di-flow .bk-arrow { width: 36px; margin: 0 16px 0 10px; color: var(--ink); }
+    [data-composition-id="data-inventory"] .di-ep { display: block; margin-top: 6px; font-family: var(--font-mono); font-weight: 700; font-size: 34px; line-height: 1.2; white-space: nowrap; }
+    [data-composition-id="data-inventory"] #di-ep1 { margin-top: 16px; }
+    [data-composition-id="data-inventory"] #di-note { left: 520px; top: 64px; }
+    /* 04 güvenilmeyen girdi */
+    [data-composition-id="data-inventory"] .di-unt { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 10px; }
+    [data-composition-id="data-inventory"] .di-src { padding: 1px 14px 1px 12px; border: 3px solid var(--ink); border-left: 10px solid var(--tomato); border-radius: 8px; background: var(--cream); font-size: 36px; line-height: 1.2; font-weight: 800; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="data-inventory" data-hold data-width="1920" data-height="1080" data-window="8" data-fragments="1.4,2.5,3.6,4.7">
+    <div class="bk-stage">
+      <div class="bk-sheet"></div>
+      <header class="bk-band"><span class="bk-deliv"><span class="bk-deliv-id">W1.4</span>Data inventory</span><span class="bk-section">W1.4 · data inventory</span><span class="bk-no">07 / 22</span></header>
+      <div class="bk-rule"></div>
+      <h2 class="bk-title">The plan: ten documents, nine tables, one confirm-first action</h2>
+
+      <span id="di-stamp" class="bk-stamp bk-stamp--ink" data-layout-allow-overlap>planned · schema only</span>
+
+      <div id="di-cab" class="bk-panel di-cab"></div>
+
+      <section id="di-box-docs" class="di-box" data-layout-allow-overlap>
+        <div class="di-h"><i>01</i><b>Documents</b></div>
+        <div class="di-docs">
+          <span class="di-doc"><i>D1</i>marriage</span><span class="di-doc"><i>D2</i>building permit</span><span class="di-doc"><i>D3</i>water subscription</span>
+          <span class="di-doc"><i>D4</i>social aid</span><span class="di-doc"><i>D5</i>pet registration</span><span class="di-doc"><i>D6</i>event permit</span>
+          <span class="di-doc"><i>D7</i>complaint &amp; SLA</span><span class="di-doc"><i>D8</i>KVKK notice</span><span class="di-doc"><i>D9</i>emergency redirect</span>
+          <span class="di-doc"><i>D10</i>2026 fees</span>
+        </div>
+        <div id="di-docs-l" class="di-docs-l"><span class="di-pill">TR + EN</span>to be written by the team</div>
+      </section>
+
+      <section id="di-box-tab" class="di-box" data-layout-allow-overlap>
+        <div class="di-h"><i>02</i><b>Tables</b><b id="di-nine" class="di-nine">9</b><small id="di-nine-k">in schema.sql</small></div>
+        <div class="di-chips">
+          <span class="di-chip di-chip--key">tickets</span><span class="di-chip">ticket_drafts</span><span class="di-chip">audit_log</span><span class="di-chip di-chip--more">+6</span>
+        </div>
+        <span id="di-cols-k" class="di-cols-k">tickets · key columns</span>
+        <div id="di-cols" class="di-cols">
+          <span>ticket_id</span><span>category</span>
+          <span>urgency</span><span>status</span>
+          <span>contact_last4</span><span>duplicate_of</span>
+        </div>
+      </section>
+
+      <section id="di-box-api" class="di-box" data-layout-allow-overlap>
+        <div class="di-h"><i>03</i><b>Action API</b><small>sandbox</small></div>
+        <div class="di-api-c">
+          <div class="di-flow">
+            <span id="di-n1" class="di-node">draft</span><span id="di-a1" class="bk-arrow"></span>
+            <span id="di-n2" class="di-node">citizen confirms</span><span id="di-a2" class="bk-arrow"></span>
+            <span id="di-n3" class="di-node di-node--ok">ticket ID</span>
+          </div>
+          <span id="di-ep1" class="di-ep">1 · POST /tickets/drafts</span>
+          <span id="di-ep2" class="di-ep">2 · POST /tickets/drafts/{id}/confirm</span>
+          <span id="di-note" class="bk-note bk-note--teal">writes nothing</span>
+        </div>
+      </section>
+
+      <section id="di-box-unt" class="di-box" data-layout-allow-overlap>
+        <div class="di-h"><i>04</i><b>Untrusted input</b></div>
+        <div class="di-unt">
+          <span class="di-src">chat</span><span class="di-src">complaint text</span><span class="di-src">photo OCR</span>
+          <span class="di-src">staff note</span><span class="di-src">email</span><span class="di-src">documents</span>
+        </div>
+      </section>
+
+      <div class="bk-repo"><span class="bk-repo-k">repo</span>docs/data_inventory.md</div>
+      <div id="di-mascot" class="bk-mascot bk-mascot--aide bk-mascot--buyutec"><img class="bk-mascot-pose" src="assets/maskot/buyutec.png" alt=""></div>
+    </div>
+  </div>
+  <script>
+    BK.scene("data-inventory", function (tl, root, BK) {
+      var $ = function (s) { return root.querySelectorAll(s); };
+      BK.frame(tl, root, 0);
+
+      // 0 → 1.4: raf çarpar, dört bölme başlığı görünür; 01 belgeler dolar (kesikli = henüz yazılmadı); "planned" damgası
+      BK.slam(tl, "#di-cab", 0.2, { duration: 0.45 });
+      BK.fade(tl, $(".di-box"), 0.3, { duration: 0.3, stagger: 0.05 });
+      BK.slam(tl, $(".di-doc"), 0.45, { stagger: 0.035, duration: 0.35 });
+      BK.rise(tl, "#di-docs-l", 0.85, { y: 12, duration: 0.3 });
+      BK.stamp(tl, "#di-stamp", 0.75, { rotation: -2 });
+      BK.mascotIn(tl, "#di-mascot", 0.3, { from: "left" });
+
+      // 1.45 → 2.5: 02 tablolar — 9 sayar, örnek tablolar, tickets sütunları
+      BK.fade(tl, ["#di-nine", "#di-nine-k"], 1.45, { duration: 0.25 });
+      BK.count(tl, "#di-nine", 9, 1.45, { duration: 0.5 });
+      BK.slam(tl, $(".di-chip"), 1.5, { stagger: 0.07, duration: 0.35 });
+      BK.rise(tl, ["#di-cols-k", "#di-cols"], 1.8, { y: 12, duration: 0.35, stagger: 0.08 });
+      BK.mascotReact(tl, "#di-mascot", 1.5, { kind: "hop" });
+
+      // 2.55 → 3.6: 03 aksiyon API — iki adım: taslak → vatandaş onayı → ticket
+      BK.formula(tl, ["#di-n1", "#di-a1", "#di-n2", "#di-a2", "#di-n3"], 2.55, { stagger: 0.1 });
+      BK.rise(tl, ["#di-ep1", "#di-ep2"], 2.95, { y: 10, duration: 0.3, stagger: 0.1 });
+      BK.note(tl, "#di-note", 3.2);
+      BK.mascotReact(tl, "#di-mascot", 2.6, { kind: "tilt", angle: 3 });
+
+      // 3.65 → 4.7: 04 güvenilmeyen girdi kaynakları
+      BK.slam(tl, $(".di-src"), 3.65, { stagger: 0.06, duration: 0.35 });
+      BK.mascotReact(tl, "#di-mascot", 3.7, { kind: "hop" });
+    });
+  </script>
+</template>

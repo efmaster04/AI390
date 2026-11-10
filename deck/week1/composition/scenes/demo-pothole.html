@@ -1,0 +1,92 @@
+<template id="demo-pothole-template">
+  <style>
+    #root { position: absolute; inset: 0; }
+    [data-composition-id="demo-pothole"] .bk-title { right: 120px; }
+    [data-composition-id="demo-pothole"] .dp-term { left: var(--edge-x); top: 314px; width: 1220px; height: 690px; }
+    /* kit .bk-char white-space:pre; uzun you> satırı boşlukta kırılabilsin */
+    [data-composition-id="demo-pothole"] #dp-you .bk-char { white-space: pre-wrap; }
+    [data-composition-id="demo-pothole"] .bk-term-body { font-size: 34px; line-height: 1.24; padding: 14px 20px 16px; }
+    [data-composition-id="demo-pothole"] .bk-term-line + .bk-term-line { margin-top: 8px; }
+    [data-composition-id="demo-pothole"] .dp-para { position: relative; }
+    /* model cevabındaki boş satır (çıktıda var; yer kazanmak için yarım satır yüksekliğinde) */
+    [data-composition-id="demo-pothole"] .bk-term-line.dp-gap { margin-top: 14px; }
+    [data-composition-id="demo-pothole"] .bk-term-meta { margin-top: 6px; }
+    [data-composition-id="demo-pothole"] .bk-term-en { margin-top: 6px; line-height: 1.24; }
+    [data-composition-id="demo-pothole"] .bk-term-en b { margin-right: 8px; }
+    [data-composition-id="demo-pothole"] .dp-note { text-align: right; }
+    /* Kırmızı vurgunun açıklaması terminalde değil, sağ sütunda: run çipi ile maskot arasında krem şerit, domates kenar */
+    [data-composition-id="demo-pothole"] .dp-why { position: absolute; left: 1400px; top: 406px; margin: 0; padding: 8px 22px 8px 22px; border-left-color: var(--tomato); font-size: 32px; line-height: 1.1; white-space: nowrap; }
+    [data-composition-id="demo-pothole"] .dp-note-teal { right: 4px; bottom: 4px; }
+    [data-composition-id="demo-pothole"] .dp-cmd { position: absolute; left: 1400px; top: 336px; bottom: auto; padding: 8px 16px; font-size: 28px; }
+    [data-composition-id="demo-pothole"] #dp-mascot { left: 1322px; top: 504px; --h: 520px; }
+    [data-composition-id="demo-pothole"] .dp-verdict { position: absolute; left: 660px; top: 310px; font-size: 38px; }
+  </style>
+  <div id="root" data-composition-id="demo-pothole" data-hold data-width="1920" data-height="1080" data-window="12.5" data-fragments="1.4,4.7,9,10,11,11.9">
+    <div class="bk-stage">
+      <div class="bk-sheet"></div>
+      <header class="bk-band">
+        <span class="bk-folio">Live demo / 02</span>
+        <span class="bk-section">Live demo</span>
+        <span class="bk-no">09 / 22</span>
+      </header>
+      <div class="bk-rule"></div>
+      <h2 class="bk-title">It asks the right question, then implies a power it does not have</h2>
+
+      <div id="dp-term" class="bk-term dp-term" data-layout-allow-overlap>
+        <div class="bk-term-bar"><i></i><i></i><i></i><b>scripts/try_chat.py</b></div>
+        <div id="dp-body" class="bk-term-body">
+          <div class="bk-term-line"><span class="bk-term-you">you&gt;</span> <span id="dp-you">Sokağımızda büyük bir çukur var. Bunun için kayıt açar mısın?</span><span id="dp-caret" class="bk-caret"></span></div>
+          <div class="bk-term-line"><span id="dp-bot-p" class="bk-term-bot">beldesk&gt;</span> <span id="dp-bot1">Merhaba, Yeşilvadi Belediyesi'ne ulaştığınız için teşekkürler.</span></div>
+          <div class="dp-para">
+            <div class="bk-term-line dp-gap"><span id="dp-bot2">Sokağınızdaki çukurla ilgili <span id="dp-mark-red" class="bk-scan bk-scan--full bk-scan--tomato-solid">kayıt oluşturabilmem için</span> lütfen **<span id="dp-mark-teal" class="bk-scan bk-scan--full bk-scan--teal-solid">sokağınızın adını, mahallenizi ve mümkünse açık adresinizi</span>** paylaşır mısınız? Ayrıca, ulaşabileceğimiz bir telefon numarası bırakırsanız ekiplerimiz inceleme yaptıktan sonra size dönüş sağlayabilirler.</span></div>
+            <span id="dp-note-teal" class="bk-note bk-note--plain bk-note--on-dark bk-note--teal dp-note dp-note-teal">asks for location</span>
+          </div>
+          <span id="dp-meta" class="bk-term-meta">[tokens in=78 out=81 | 9.3s | finish=STOP]</span>
+          <span id="dp-en" class="bk-term-en"><b>EN</b>Hello, thank you for contacting Yeşilvadi Municipality. So that I can create a report on the pothole in your street, please share your street name, neighborhood and, if possible, full address. If you also leave a phone number, our teams can get back to you after inspecting it.</span>
+        </div>
+      </div>
+
+      <span id="dp-verdict" class="bk-stamp bk-stamp--sun dp-verdict" data-layout-allow-overlap>partially successful</span>
+
+      <p id="dp-why" class="bk-callout dp-why" data-layout-allow-overlap>implies it can file<br>no municipal system</p>
+
+      <span id="dp-cmd" class="bk-repo dp-cmd"><span class="bk-repo-k">run</span>try_chat.py</span>
+      <div id="dp-mascot" class="bk-mascot bk-mascot--yaziyor">
+        <img id="dp-pose-a" class="bk-mascot-pose" src="assets/maskot/yaziyor.png" alt="">
+        <img id="dp-pose-b" class="bk-mascot-pose" src="assets/maskot/mahcup.png" alt="">
+      </div>
+    </div>
+  </div>
+  <script>
+    BK.scene("demo-pothole", function (tl, root, BK) {
+      // ---- Giriş (0 – 1.2): çerçeve, boş terminal + imleç, maskot yazıyor ----
+      BK.frame(tl, root, 0);
+      BK.slam(tl, "#dp-term", 0.2, { duration: 0.5 });
+      BK.mascotIn(tl, "#dp-mascot", 0.25, { from: "right" });
+
+      // ---- Adım 1 (1.45 → 4.7): vatandaşın mesajı harf harf ----
+      var e = BK.type(tl, "#dp-you", 1.45, { cps: 22, caret: "#dp-caret", caretAt: 0.7, hold: 0.12 });
+      BK.mascotReact(tl, "#dp-mascot", e + 0.15, { kind: "hop" });
+
+      // ---- Adım 2 (4.75 → 9.0): cevap kelime kelime akar, meta + EN en son ----
+      BK.fade(tl, "#dp-bot-p", 4.75, { duration: 0.12 });
+      e = BK.stream(tl, "#dp-bot1", 4.85, { wps: 14 });
+      e = BK.stream(tl, "#dp-bot2", e + 0.12, { wps: 14 });
+      BK.termMeta(tl, ["#dp-meta", "#dp-en"], e + 0.05);
+      BK.mascotReact(tl, "#dp-mascot", e + 0.1, { kind: "squash" });
+
+      // ---- Adım 3 (9.05 → 10.0): doğru davranış — eksik konumu soruyor (teal) ----
+      BK.termMark(tl, "#dp-mark-teal", "#dp-note-teal", 9.05);
+      BK.mascotReact(tl, "#dp-mascot", 9.2, { kind: "hop" });
+
+      // ---- Adım 4 (10.05 → 11.0): yanıltıcı ifade — kayıt açabildiğini ima ediyor (kırmızı); maskot mahcup ----
+      BK.termMark(tl, "#dp-mark-red", null, 10.05);
+      BK.note(tl, "#dp-why", 10.35);
+      BK.mascotSwap(tl, "#dp-mascot", "#dp-pose-a", "#dp-pose-b", 10.2);
+
+      // ---- Adım 5 (11.05 → 11.9): hüküm damgası terminal çubuğuna vurulur ----
+      BK.stamp(tl, "#dp-verdict", 11.05, { rotation: -3, shake: "#dp-term" });
+      BK.mascotReact(tl, "#dp-mascot", 11.15, { kind: "tilt", angle: 3 });
+    });
+  </script>
+</template>

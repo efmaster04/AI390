@@ -1,0 +1,146 @@
+<template id="repository-template">
+  <style>
+    #root { position: absolute; inset: 0; }
+    /* Başlık maskota yer bırakır (maskot sağ üst köşede) */
+    [data-composition-id="repository"] .bk-title { right: 360px; }
+
+    /* Sol: repo ağacı (README panelleriyle aynı ızgara: üst 410, alt 850) */
+    [data-composition-id="repository"] .rp-shade { left: 118px; top: 432px; width: 760px; height: 440px; }
+    [data-composition-id="repository"] .rp-treebox { position: absolute; left: var(--edge-x); top: 410px; width: 760px; height: 440px; padding: 38px 30px 12px; }
+    [data-composition-id="repository"] .rp-tree, [data-composition-id="repository"] .rp-tree ul { font-size: 34px; line-height: 1; }
+    [data-composition-id="repository"] .rp-tree ul { margin-left: 14px; padding-left: 28px; }
+    [data-composition-id="repository"] .rp-tree ul > li::before { left: -28px; width: 20px; }
+    [data-composition-id="repository"] .rp-tree li { padding: 3px 0; white-space: nowrap; }
+    [data-composition-id="repository"] .rp-tree ul > li::before { top: 20px; }
+    [data-composition-id="repository"] .rp-root { font-weight: 700; }
+    [data-composition-id="repository"] .rp-row { display: flex; align-items: center; }
+    [data-composition-id="repository"] .rp-d { flex: none; width: 272px; font-weight: 700; }
+    [data-composition-id="repository"] .rp-key { font-weight: 700; }
+    [data-composition-id="repository"] .rp-w { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 700; font-size: 34px; color: var(--ink); }
+    /* Grup işareti: CODE = mürekkep, DATA = sarı, EVIDENCE = teal (sağ üstteki lejant ile aynı) */
+    [data-composition-id="repository"] .rp-dot { flex: none; display: inline-block; width: 18px; height: 18px; border-radius: 50%; border: 3px solid var(--ink); }
+    [data-composition-id="repository"] .rp-dot.is-code { background: var(--ink); }
+    [data-composition-id="repository"] .rp-dot.is-data { background: var(--sun); }
+    [data-composition-id="repository"] .rp-dot.is-ev { background: var(--teal); }
+    [data-composition-id="repository"] .rp-legend { position: absolute; top: -22px; right: 24px; display: flex; align-items: center; gap: 16px; height: 44px; padding: 0 14px; background: var(--cream); border: 3px solid var(--ink); border-radius: 10px; }
+    [data-composition-id="repository"] .rp-legend .bk-label { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
+
+    /* Sağ: README ne anlatıyor */
+    [data-composition-id="repository"] .rp-readme { position: absolute; left: 900px; top: 410px; width: 924px; height: 440px; padding: 30px 32px 10px; }
+    [data-composition-id="repository"] .rp-item { display: flex; align-items: baseline; gap: 16px; font-size: 40px; line-height: 1.02; }
+    [data-composition-id="repository"] .rp-item + .rp-item, [data-composition-id="repository"] .rp-code + .rp-item { margin-top: 5px; }
+    [data-composition-id="repository"] .rp-n { flex: none; width: 40px; font-family: var(--font-mono); font-weight: 700; font-size: 30px; color: var(--teal-ink); }
+    [data-composition-id="repository"] .rp-code { margin: 4px 0 0 56px; padding: 4px 18px; font-size: 34px; line-height: 1.1; white-space: pre; }
+    [data-composition-id="repository"] .rp-code .k { color: var(--sun); }
+    [data-composition-id="repository"] .rp-code .c { color: var(--cream); opacity: .62; }
+    [data-composition-id="repository"] .rp-rules { display: grid; grid-template-columns: max-content max-content; column-gap: 26px; row-gap: 0; font-size: 34px; line-height: 1.1; }
+    [data-composition-id="repository"] .rp-rules b { font-family: var(--font-mono); font-size: 30px; color: var(--teal-ink); margin-right: 8px; }
+
+    /* Giriş karesinde sonraki adımların yeri: kesikli boş yer tutucu */
+    [data-composition-id="repository"] .rp-ghost { position: absolute; border: 3px dashed var(--shadow); border-radius: var(--radius); }
+    [data-composition-id="repository"] #rp-ghost1 { left: 900px; top: 410px; width: 924px; height: 440px; }
+    [data-composition-id="repository"] #rp-ghost2 { left: var(--edge-x); top: 878px; width: 760px; height: 88px; }
+    [data-composition-id="repository"] #rp-ghost3 { left: 900px; top: 878px; width: 924px; height: 88px; }
+
+    /* Alt şerit: week-1 etiketi + link */
+    [data-composition-id="repository"] .rp-tag { position: absolute; left: var(--edge-x); top: 878px; width: 760px; height: 88px; display: flex; align-items: center; gap: 22px; padding: 0 26px; }
+    [data-composition-id="repository"] .rp-label { position: relative; display: inline-flex; align-items: center; height: 60px; padding: 0 22px 0 44px; border: 3px dashed var(--ink-2); border-radius: 8px 30px 30px 8px; font-family: var(--font-mono); font-weight: 700; font-size: 36px; color: var(--ink-2); }
+    [data-composition-id="repository"] .rp-label::before { content: ""; position: absolute; left: 14px; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; border: 3px solid var(--ink-2); }
+    [data-composition-id="repository"] .rp-tag .bk-stamp { font-size: 34px; padding: 4px 18px; }
+    [data-composition-id="repository"] .rp-link { position: absolute; left: 900px; top: 878px; width: 924px; height: 88px; display: flex; align-items: center; gap: 22px; padding: 0 30px; }
+    [data-composition-id="repository"] .rp-url { font-family: var(--font-mono); font-weight: 700; font-size: 42px; white-space: nowrap; }
+
+    [data-composition-id="repository"] #repository-mascot { left: 1604px; top: 146px; --h: 262px; }
+  </style>
+  <div id="root" data-composition-id="repository" data-hold data-width="1920" data-height="1080" data-window="8" data-fragments="1.4,2.5,3.6">
+    <div class="bk-stage">
+      <div class="bk-sheet"></div>
+      <header class="bk-band"><span class="bk-deliv"><span class="bk-deliv-id">W1.8</span>Repository</span><span class="bk-section">W1.8</span><span class="bk-no">18 / 22</span></header>
+      <div class="bk-rule"></div>
+      <h2 class="bk-title">One repository holds the code, the data and <span id="rp-hl" class="bk-scan">the evidence</span></h2>
+
+      <!-- Giriş: ağaç (gruplu: kod, veri, kanıt) -->
+      <div class="bk-halftone rp-shade"></div>
+      <div id="rp-treebox" class="bk-panel rp-treebox">
+        <span class="bk-tab bk-tab--sun">Repository</span>
+        <div class="rp-legend"><span class="bk-label"><i class="rp-dot is-code"></i>code</span><span class="bk-label"><i class="rp-dot is-data"></i>data</span><span class="bk-label"><i class="rp-dot is-ev"></i>evidence</span></div>
+        <ul class="bk-tree rp-tree">
+          <li class="rp-root">AI390/
+            <ul>
+              <li class="rp-row"><span class="rp-d">src/baseline/</span><span class="rp-w"><i class="rp-dot is-code"></i>runner</span></li>
+              <li class="rp-row"><span class="rp-d">scripts/</span><span class="rp-w"><i class="rp-dot is-code"></i>comparison + cost</span></li>
+              <li class="rp-row"><span class="rp-d">prompts/</span><span class="rp-w"><i class="rp-dot is-code"></i>system prompts</span></li>
+              <li class="rp-row"><span class="rp-d">data/</span><span class="rp-w"><i class="rp-dot is-data"></i>documents + tables</span></li>
+              <li class="rp-row"><span class="rp-d">eval/</span><span class="rp-w"><i class="rp-dot is-data"></i>inputs <i class="rp-dot is-ev"></i><span id="rp-ev1" class="bk-scan bk-scan--teal">Week 1 runs</span></span></li>
+              <li class="rp-row"><span class="rp-d">reports/</span><span class="rp-w"><i class="rp-dot is-ev"></i><span id="rp-ev2" class="bk-scan bk-scan--teal">weekly reports</span></span></li>
+              <li class="rp-row"><span class="rp-d">docs/</span><span class="rp-w"><i class="rp-dot is-ev"></i><span id="rp-ev3" class="bk-scan bk-scan--teal">plans + analysis</span></span></li>
+              <li class="rp-row"><span id="rp-readme-k" class="rp-key bk-scan">README.md</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Giriş yer tutucuları: README kartı ve alt şeridin yeri -->
+      <div id="rp-ghost1" class="rp-ghost" data-layout-allow-overlap></div>
+      <div id="rp-ghost2" class="rp-ghost" data-layout-allow-overlap></div>
+      <div id="rp-ghost3" class="rp-ghost" data-layout-allow-overlap></div>
+
+      <!-- Adım 2: README ne anlatıyor -->
+      <div id="rp-readme" class="bk-panel rp-readme">
+        <span class="bk-tab bk-tab--teal">README.md covers</span>
+        <div class="rp-item"><span class="rp-n">01</span><span>What Beldesk is</span></div>
+        <div class="rp-item"><span class="rp-n">02</span><span>Reproduce Week 1 in <span id="rp-three" class="bk-scan bk-scan--teal">three commands</span></span></div>
+        <div id="rp-code" class="bk-code rp-code"><span class="c"># shown without .venv/bin/</span>
+<span class="k">1</span> python -m src.baseline.run …
+<span class="k">2</span> python scripts/compare_temps.py …
+<span class="k">3</span> python scripts/cost_estimate.py …</div>
+        <div class="rp-item"><span class="rp-n">03</span><span>Offline dry run · try the model</span></div>
+        <div class="rp-item"><span class="rp-n">04</span><span class="rp-rules"><span><b>R8</b>tagged commit</span><span><b>R10</b>no real personal data</span><span><b>R11</b>sandbox-only writes</span><span><b>R13</b>no keys in repo</span></span></div>
+      </div>
+
+      <!-- Adım 3: etiket + link -->
+      <div id="rp-tag" class="bk-panel rp-tag">
+        <span class="bk-label">git tag</span>
+        <span class="rp-label">week-1</span>
+        <span id="rp-stamp" class="bk-stamp bk-stamp--ink bk-stamp--on-cream">pending</span>
+      </div>
+      <div id="rp-link" class="bk-panel rp-link">
+        <span class="bk-label t-teal">link</span>
+        <span id="rp-url" class="rp-url bk-scan bk-scan--teal">github.com/efmaster04/AI390</span>
+      </div>
+
+      <div class="bk-repo"><span class="bk-repo-k">repo</span>README.md</div>
+      <div id="repository-mascot" class="bk-mascot bk-mascot--aide bk-mascot--gorevli"><img class="bk-mascot-pose" src="assets/maskot/gorevli.png" alt=""></div>
+    </div>
+  </div>
+  <script>
+    BK.scene("repository", function (tl, root, BK) {
+      var $ = function (s) { return root.querySelectorAll(s); };
+      // Giriş (→ 1.4): ağaç paneli çarpar, klasörler sırayla yükselir
+      BK.frame(tl, root, 0);
+      BK.slam(tl, "#rp-treebox", 0.3, { duration: 0.45 });
+      BK.fade(tl, ".rp-shade", 0.4, { duration: 0.3 });
+      BK.rise(tl, $(".rp-row"), 0.5, { y: 10, duration: 0.3, stagger: 0.05 });
+      BK.fade(tl, ".rp-ghost", 0.6, { duration: 0.3 });
+      BK.mascotIn(tl, "#repository-mascot", 0.25, { from: "right" });
+
+      // Adım 2 (1.45 → 2.5): README ağaçta taranır, README kartı açılır, üç komut belirir
+      var t2 = 1.45;
+      BK.scan(tl, "#rp-readme-k", t2, { duration: 0.35 });
+      BK.slam(tl, "#rp-readme", t2 + 0.1, { duration: 0.42 });
+      BK.rise(tl, $(".rp-item, #rp-code"), t2 + 0.3, { y: 10, duration: 0.3, stagger: 0.08 });
+      BK.scan(tl, "#rp-three", t2 + 0.65, { duration: 0.3 });
+      BK.mascotReact(tl, "#repository-mascot", t2 + 0.4, { kind: "hop" });
+
+      // Adım 3 (2.55 → 3.6): week-1 etiketi henüz yok → "pending" damgası; repo linki taranır
+      var t3 = 2.55;
+      BK.slam(tl, "#rp-tag", t3, { duration: 0.4 });
+      BK.stamp(tl, "#rp-stamp", t3 + 0.35, { rotation: -3 });
+      BK.slam(tl, "#rp-link", t3 + 0.12, { duration: 0.4 });
+      BK.scan(tl, "#rp-url", t3 + 0.45, { duration: 0.4 });
+      // Başlıktaki "the evidence" ile ağaçtaki kanıt satırları aynı anda taranır
+      BK.scan(tl, ["#rp-hl", "#rp-ev1", "#rp-ev2", "#rp-ev3"], t3 + 0.2, { duration: 0.4 });
+      BK.mascotReact(tl, "#repository-mascot", t3 + 0.55, { kind: "tilt", angle: -4 });
+    });
+  </script>
+</template>

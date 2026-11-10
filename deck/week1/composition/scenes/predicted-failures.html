@@ -1,0 +1,132 @@
+<template id="predicted-failures-template">
+  <style>
+    #root { position: absolute; inset: 0; }
+    /* 4 × 2 tahmin kartı panosu (sol), sağda iki sayaç paneli + maskot.
+       Kart = ID (+ sağ üstte damga ya da soluk durum etiketi) + kısa tahmin + altta Module 1 kavram çipi.
+       Kanıt ayrıntıları (W1-04, 444 00 00, W1-24 P1, W4 testi) konuşmacı notunda. */
+    [data-composition-id="predicted-failures"] .pf-grid { position: absolute; left: var(--edge-x); top: 280px; width: 1464px; height: 682px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 18px 22px; }
+    [data-composition-id="predicted-failures"] .pf-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 16px 18px 16px; border-radius: 16px; }
+    [data-composition-id="predicted-failures"] .pf-id { align-self: flex-start; padding: 0 10px; border: 3px solid var(--ink); border-radius: 8px; background: var(--paper); font-family: var(--font-mono); font-weight: 700; font-size: 28px; line-height: 1.36; }
+    [data-composition-id="predicted-failures"] .pf-pred { margin-top: 12px; font-family: var(--font-body); font-weight: 800; font-size: 40px; line-height: 1.08; letter-spacing: -.005em; }
+    /* Module 1 kavram çipi: teal kontur + solda çizilen teal bağ; her kartta alt kenara oturur (aynı taban) */
+    [data-composition-id="predicted-failures"] .pf-con { position: relative; display: block; margin-top: auto; padding: 6px 12px 8px 30px; border: 3px solid var(--teal-ink); border-radius: 10px; background: var(--paper); font-size: 34px; font-weight: 800; line-height: 1.12; color: var(--teal-ink); }
+    [data-composition-id="predicted-failures"] .pf-link { position: absolute; left: 9px; top: 9px; bottom: 9px; width: 8px; border-radius: 4px; background: var(--teal); }
+    [data-composition-id="predicted-failures"] .pf-nb { white-space: nowrap; }
+    /* Damgasız kartlarda sağ üstte soluk durum etiketi */
+    [data-composition-id="predicted-failures"] .pf-tag { position: absolute; right: 14px; top: 18px; padding: 0 8px; border: 3px dashed var(--shadow); border-radius: 8px; font-size: 28px; font-weight: 800; line-height: 1.3; color: var(--ink-2); white-space: nowrap; }
+    [data-composition-id="predicted-failures"] .pf-stamp { position: absolute; right: 16px; top: 14px; font-size: 28px; padding: 2px 12px; border-width: 4px; }
+    /* Sayaç: üst panel 8 tahmin, alt panel 3 görülen (adım 2'de ayrı iner) */
+    [data-composition-id="predicted-failures"] .pf-tally { position: absolute; left: 1592px; width: 232px; text-align: center; }
+    [data-composition-id="predicted-failures"] #pf-tally { top: 280px; padding: 38px 14px 18px; }
+    [data-composition-id="predicted-failures"] #pf-seen { top: 538px; padding: 14px 14px 14px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+    [data-composition-id="predicted-failures"] .pf-tally .bk-tab { left: 16px; }
+    [data-composition-id="predicted-failures"] .pf-tn { display: block; font-family: var(--font-display); font-weight: 900; font-size: 92px; line-height: 1; font-variant-numeric: tabular-nums lining-nums; }
+    [data-composition-id="predicted-failures"] .pf-tl { display: block; margin-top: 4px; font-family: var(--font-mono); font-weight: 700; font-size: 28px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); line-height: 1.15; }
+    [data-composition-id="predicted-failures"] #pf-seen .pf-tl { margin-top: 0; }
+    [data-composition-id="predicted-failures"] .pf-req { display: inline-block; margin-top: 10px; padding: 0 10px; border: 3px solid var(--teal-ink); border-radius: 8px; font-family: var(--font-mono); font-weight: 700; font-size: 28px; color: var(--teal-ink); white-space: nowrap; }
+    [data-composition-id="predicted-failures"] #pf-seen-n { color: var(--tomato-ink); }
+    [data-composition-id="predicted-failures"] .pf-legend { position: absolute; left: 708px; bottom: 44px; display: flex; align-items: center; gap: 14px; font-family: var(--font-mono); font-weight: 700; font-size: 28px; letter-spacing: .04em; text-transform: uppercase; color: var(--teal-ink); white-space: nowrap; }
+    [data-composition-id="predicted-failures"] .pf-legend i { display: inline-block; width: 34px; height: 30px; border: 3px solid var(--teal-ink); border-left: 10px solid var(--teal); border-radius: 6px; background: var(--paper); }
+    [data-composition-id="predicted-failures"] #predicted-failures-mascot { left: 1600px; top: 692px; }
+  </style>
+  <div id="root" data-composition-id="predicted-failures" data-hold data-width="1920" data-height="1080" data-window="8" data-fragments="1.4,2.5,3.6">
+    <div class="bk-stage">
+      <div class="bk-sheet"></div>
+      <header class="bk-band"><span class="bk-deliv"><span class="bk-deliv-id">W1.7</span>Predicted failures</span><span class="bk-section">W1.7</span><span class="bk-no">17 / 22</span></header>
+      <div class="bk-rule"></div>
+      <h2 class="bk-title">We predicted eight failures; <span id="pf-hl" class="bk-scan">three already left traces</span></h2>
+
+      <div class="pf-grid" data-layout-allow-overlap>
+        <article class="bk-panel pf-card">
+          <span class="pf-id">PF-01</span>
+          <span class="pf-pred">Turkish inflates tokens</span>
+          <span class="pf-con"><i class="pf-link"></i>Tokens</span>
+          <span class="pf-tag">not tested</span>
+        </article>
+        <article class="bk-panel pf-card">
+          <span class="pf-id">PF-02</span>
+          <span class="pf-pred">Ticket ID <span class="pf-nb">mis-copied</span></span>
+          <span class="pf-con"><i class="pf-link"></i>Tokens + <span class="pf-nb">next-token</span> prediction</span>
+          <span class="pf-tag">not observed</span>
+        </article>
+        <article class="bk-panel pf-card">
+          <span class="pf-id">PF-03</span>
+          <span class="pf-pred">2026 fee hallucination</span>
+          <span class="pf-con"><i class="pf-link"></i>Knowledge cutoff + training data</span>
+          <span id="pf-s3" class="bk-stamp bk-stamp--on-cream pf-stamp" data-layout-allow-overlap>seen</span>
+        </article>
+        <article class="bk-panel pf-card">
+          <span class="pf-id">PF-04</span>
+          <span class="pf-pred">Multi-turn detail loss</span>
+          <span class="pf-con"><i class="pf-link"></i>Statelessness</span>
+          <span id="pf-s4" class="bk-stamp bk-stamp--ink bk-stamp--on-cream pf-stamp" data-layout-allow-overlap>demo</span>
+        </article>
+        <article class="bk-panel pf-card">
+          <span class="pf-id">PF-05</span>
+          <span class="pf-pred">Temperature flips urgency</span>
+          <span class="pf-con"><i class="pf-link"></i>Temperature</span>
+          <span class="pf-tag">not tested</span>
+        </article>
+        <article class="bk-panel pf-card">
+          <span class="pf-id">PF-06</span>
+          <span class="pf-pred">Fabricated phone, address</span>
+          <span class="pf-con"><i class="pf-link"></i><span class="pf-nb">Next-token</span> prediction + training data</span>
+          <span id="pf-s6" class="bk-stamp bk-stamp--on-cream pf-stamp" data-layout-allow-overlap>seen</span>
+        </article>
+        <article class="bk-panel pf-card">
+          <span class="pf-id">PF-07</span>
+          <span class="pf-pred">Istanbul/Ankara rules generalized</span>
+          <span class="pf-con"><i class="pf-link"></i>Training data</span>
+          <span id="pf-s7" class="bk-stamp bk-stamp--muted bk-stamp--on-cream pf-stamp" data-layout-allow-overlap>partly</span>
+        </article>
+        <article class="bk-panel pf-card">
+          <span class="pf-id">PF-08</span>
+          <span class="pf-pred">Injection inflates urgency</span>
+          <span class="pf-con"><i class="pf-link"></i>Training data + context</span>
+          <span id="pf-s8" class="bk-stamp bk-stamp--on-cream pf-stamp" data-layout-allow-overlap>seen</span>
+        </article>
+      </div>
+
+      <section id="pf-tally" class="bk-panel pf-tally">
+        <span class="bk-tab bk-tab--sun">Count</span>
+        <span id="pf-n8" class="pf-tn">8</span>
+        <span class="pf-tl">predicted</span>
+        <span class="pf-req">need ≥ 5</span>
+      </section>
+      <section id="pf-seen" class="bk-panel pf-tally">
+        <span id="pf-seen-n" class="pf-tn">3</span>
+        <span class="pf-tl">seen</span>
+      </section>
+
+      <span id="pf-legend" class="pf-legend"><i></i>Module 1 concept</span>
+      <div class="bk-repo"><span class="bk-repo-k">repo</span>docs/predicted_failures.md</div>
+      <div id="predicted-failures-mascot" class="bk-mascot bk-mascot--aide bk-mascot--dusunen"><img class="bk-mascot-pose" src="assets/maskot/dusunen.png" alt=""></div>
+    </div>
+  </div>
+  <script>
+    BK.scene("predicted-failures", function (tl, root, BK) {
+      var $ = function (s) { return root.querySelectorAll(s); };
+      // ---- Giriş (0 – 1.2): sekiz kart panoya oturur, sayaç 8'e sayar ----
+      BK.frame(tl, root, 0);
+      BK.mascotIn(tl, "#predicted-failures-mascot", 0.25, { from: "right" });
+      BK.slam(tl, $(".pf-card"), 0.2, { stagger: 0.06, duration: 0.42 });
+      BK.slam(tl, "#pf-tally", 0.3, { duration: 0.42 });
+      BK.count(tl, "#pf-n8", 8, 0.4, { duration: 0.6 });
+      BK.scan(tl, "#pf-hl", 0.9, { duration: 0.3 });
+
+      // ---- Adım 1 (1.45 → 2.25): her kart bir Module 1 kavram çipine bağlanır ----
+      BK.slam(tl, $(".pf-con"), 1.45, { stagger: 0.05, duration: 0.35 });
+      BK.draw(tl, $(".pf-link"), 1.6, { axis: "y", duration: 0.3, stagger: 0.05 });
+      BK.rise(tl, "#pf-legend", 1.55, { y: 12, duration: 0.35 });
+      BK.mascotReact(tl, "#predicted-failures-mascot", 1.6, { kind: "tilt", angle: -3 });
+
+      // ---- Adım 2 (2.55 → 3.4): Week 1 durumu: 'seen' damgaları, etiketler, ayrı '3 seen' paneli ----
+      BK.stamp(tl, ["#pf-s3", "#pf-s6", "#pf-s8"], 2.6, { stagger: 0.12 });
+      BK.stamp(tl, ["#pf-s4", "#pf-s7"], 2.95, { rotation: 2, stagger: 0.08 });
+      BK.fade(tl, $(".pf-tag"), 2.55, { duration: 0.25, stagger: 0.04 });
+      BK.slam(tl, "#pf-seen", 2.6, { duration: 0.4 });
+      BK.count(tl, "#pf-seen-n", 3, 2.7, { duration: 0.45 });
+      BK.mascotReact(tl, "#predicted-failures-mascot", 3.0, { kind: "hop" });
+    });
+  </script>
+</template>

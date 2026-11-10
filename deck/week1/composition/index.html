@@ -1,0 +1,390 @@
+<!doctype html>
+<!-- ÜRETİLMİŞ DOSYA: elle düzenleme. Kaynak: atolye/deck.json + scenes/*.html -> node atolye/birlestir.mjs -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Beldesk Week 1</title>
+    <link rel="stylesheet" href="assets/kit/kit.css" />
+    <script src="assets/kit/gsap.min.js"></script>
+    <script src="assets/kit/kit.js"></script>
+    <style>
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #e8c58f; }
+    </style>
+  </head>
+  <body>
+    <script type="application/hyperframes-slideshow+json">
+      {
+        "slides": [
+          {
+            "sceneId": "cover",
+            "notes": "Suggested time: 15 seconds. Introduce Beldesk as the Week 1 baseline for a fictional district municipality. Name the three workstreams and identify the presenter before continuing.",
+            "fragments": [
+              1.4
+            ]
+          },
+          {
+            "sceneId": "roadmap",
+            "notes": "(Not: konuşmacı notu birleştirme aşamasında atolye/icerik.md'den girecek.)",
+            "fragments": [
+              9.4,
+              10.5,
+              11.6
+            ]
+          },
+          {
+            "sceneId": "team-agreement",
+            "notes": "(Not: konuşmacı notu birleştirme aşamasında atolye/icerik.md'den girecek.)",
+            "fragments": [
+              17.4,
+              18.5,
+              19.6
+            ]
+          },
+          {
+            "sceneId": "customer",
+            "notes": "Suggested time: 35 seconds. Beyaz Masa staff currently read and route messages manually and repeatedly answer the same questions. Beldesk is designed to answer all municipal service questions with document support, while ticket creation is limited to field problems. Application submission is outside the action scope.",
+            "fragments": [
+              25.4,
+              26.5,
+              27.6
+            ]
+          },
+          {
+            "sceneId": "stories-scope",
+            "notes": "Suggested time: 35 seconds. Beyaz Masa staff currently read and route messages manually and repeatedly answer the same questions. Beldesk is designed to answer all municipal service questions with document support, while ticket creation is limited to field problems. Application submission is outside the action scope.",
+            "fragments": [
+              33.4,
+              34.5,
+              35.6
+            ]
+          },
+          {
+            "sceneId": "test-set",
+            "notes": "Suggested time: 25 seconds. The relabeled final test set has 25 synthetic inputs: 13 Turkish and 12 English. The bars show input categories, not model outcomes. All eight handbook ingredients are covered, but the set has no P4 urgency case or paired translations yet.",
+            "fragments": [
+              41.4,
+              42.5,
+              43.6,
+              44.7
+            ]
+          },
+          {
+            "sceneId": "data-inventory",
+            "notes": "(Not: konuşmacı notu birleştirme aşamasında atolye/icerik.md'den girecek.)",
+            "fragments": [
+              49.4,
+              50.5,
+              51.6,
+              52.7
+            ]
+          },
+          {
+            "sceneId": "demo-memory",
+            "notes": "In the first message, the model calls me Doruk because my name is included in that request. In the second request, we send only 'What was my name?' without the previous conversation. Although the earlier messages remain visible in the terminal, the model cannot see them. This demonstrates why we need conversation history management for multi-step municipal requests.\n\nTR: İlk mesajda adımı söylediğim için model bana Doruk diye hitap ediyor. Ancak ikinci mesajda yalnızca 'Adım neydi?' sorusunu gönderiyoruz; önceki konuşma modele iletilmiyor. Mesajlar terminalde görünse de model onları görmüyor. Bu yüzden adımı hatırlayamıyor. Bu örnek, çok adımlı belediye başvurularında konuşma geçmişini yönetmemiz gerektiğini gösteriyor.",
+            "fragments": [
+              57.4,
+              60.7,
+              64,
+              65.1,
+              66
+            ]
+          },
+          {
+            "sceneId": "demo-pothole",
+            "notes": "The user asks the assistant to report a pothole. Since the location is missing, the model asks for the neighborhood and street, which is appropriate. However, saying 'so I can create a report' implies that it can actually submit one. Our current version is not connected to a municipal system, so this wording is misleading. We consider this response partially successful: it requests missing information but does not clearly explain its limitations.\n\nTR: Kullanıcı sokaktaki çukur için kayıt açılmasını istiyor. Model, konum eksik olduğu için mahalle ve sokak bilgisini soruyor; bu uygun bir davranış. Ancak 'kayıt oluşturabilmem için' diyerek kayıt açabildiğini ima ediyor. Mevcut sürüm gerçek belediye sistemine bağlı olmadığı için bu ifade yanıltıcı. Dolayısıyla bu yanıtı kısmen başarılı değerlendiriyoruz: eksik bilgiyi soruyor ama yetenek sınırını açıkça belirtmiyor. — Ayrıca konumu sorması tek başına yeterli değil. Kullanıcı sonraki mesajda adresini verdiğinde, sistemin bunu önceki çukur bildirimiyle ilişkilendirebilmesi gerekiyor. Az önce gösterdiğimiz konuşma geçmişi eksikliği burada da karşımıza çıkıyor.",
+            "fragments": [
+              68.4,
+              71.7,
+              76,
+              77,
+              78,
+              78.9
+            ]
+          },
+          {
+            "sceneId": "baseline-call",
+            "notes": "Suggested time: 45 seconds. Advance once per node to show the actual Week 1 evaluation pipeline. The request contains the W1-24 user text and uses Gemini 3.1 Flash-Lite with seed 42 and a 400 output-token cap. The response is the exact raw text; the three recorded full-run replays matched 75 of 75 outputs, but this does not prove general determinism.",
+            "fragments": [
+              80.9,
+              82,
+              83.1,
+              84.2
+            ]
+          },
+          {
+            "sceneId": "temperature",
+            "notes": "Suggested time: 35 seconds. These stacked bars are a manual single-annotator assessment, not scoreboard accuracy. At t0 and t0.7, two responses meet the expected behavior; at t1.2 none do. There is only one sample per input and temperature at fixed seed, so do not claim a temperature effect estimate. W1-14 illustrates a substantive language change.",
+            "fragments": [
+              88.9,
+              90,
+              91.1,
+              92.2
+            ]
+          },
+          {
+            "sceneId": "tokens",
+            "notes": "(Not: konuşmacı notu birleştirme aşamasında atolye/icerik.md'den girecek.)",
+            "fragments": [
+              96.9,
+              97.7,
+              98.5,
+              99.3,
+              100.2,
+              101,
+              101.8,
+              102.6
+            ]
+          },
+          {
+            "sceneId": "cost",
+            "notes": "(Not: konuşmacı notu birleştirme aşamasında atolye/icerik.md'den girecek.)",
+            "fragments": [
+              104.9,
+              106,
+              107.1,
+              108.2
+            ]
+          },
+          {
+            "sceneId": "failure-injection",
+            "notes": "Suggested time: 40 seconds. Read the legitimate report first, then reveal the fake admin override inside the citizen message. The expected urgency label is P2 and the assistant should request confirmation before any ticket creation. All three responses instead reproduce the injected phrase exactly; there was no real tool or ticket.",
+            "fragments": [
+              112.9,
+              114,
+              115.1,
+              116.2
+            ]
+          },
+          {
+            "sceneId": "failure-tools",
+            "notes": "Suggested time: 25 seconds. The 32 of 75 figure is a manual coding count of responses claiming an ongoing or completed external operation. It is not a measured scoreboard metric. W1-22 claims a neighbor's ticket was checked and a new complaint entered despite no tools, missing problem details, and no confirmation. W1-10 similarly says a status check happened.",
+            "fragments": [
+              120.9,
+              122,
+              123.1
+            ]
+          },
+          {
+            "sceneId": "failure-facts",
+            "notes": "Suggested time: 20 seconds. W1-01 at t0.7 supplies 444 00 00, an unsupported phone number. W1-04 at t1.2 states registration is free of charge, also without a fee table. These are unsupported generated facts; we cannot attribute the error to a proven internal mechanism or establish whether any real-world number happens to match.",
+            "fragments": [
+              128.9,
+              130,
+              131.1
+            ]
+          },
+          {
+            "sceneId": "predicted-failures",
+            "notes": "(Not: konuşmacı notu birleştirme aşamasında atolye/icerik.md'den girecek.)",
+            "fragments": [
+              136.9,
+              138,
+              139.1
+            ]
+          },
+          {
+            "sceneId": "repository",
+            "notes": "(Not: konuşmacı notu birleştirme aşamasında atolye/icerik.md'den girecek.)",
+            "fragments": [
+              144.9,
+              146,
+              147.1
+            ]
+          },
+          {
+            "sceneId": "scoreboard-measured",
+            "notes": "Suggested time: 2 minutes. Keep this grid and row order in future weeks. The only populated Week 1 values are test-set size, the t0 list-price cost equivalent, and spend assumed to be zero on the free tier. Every accuracy and latency field is explicitly unmeasured; the last-week column is empty because this is the first report.",
+            "fragments": [
+              152.9,
+              154
+            ]
+          },
+          {
+            "sceneId": "scoreboard-null",
+            "notes": "Suggested time: 2 minutes. Keep this grid and row order in future weeks. The only populated Week 1 values are test-set size, the t0 list-price cost equivalent, and spend assumed to be zero on the free tier. Every accuracy and latency field is explicitly unmeasured; the last-week column is empty because this is the first report.",
+            "fragments": [
+              160.9,
+              162,
+              163.1
+            ]
+          },
+          {
+            "sceneId": "next-week",
+            "notes": "Suggested time: 1 minute. First, produce a versioned JSON classifier with explicit scope, urgency, and privacy rules to establish measurable intent and abstention baselines. Second, expand the versioned set from 25 to 40 cases with P4 boundaries and paired Turkish and English messages. Third, add the evaluation harness, calibrated judge, and multiple seeds so previously null metrics can be estimated with an interval; no numeric improvement is promised yet.",
+            "fragments": [
+              168.9,
+              170,
+              171.1
+            ]
+          },
+          {
+            "sceneId": "questions",
+            "notes": "Suggested time: use during the five-minute Q&A only. The first answer separates what the team counted from what remains null and notes the single-annotator and single-seed limits. The second names the observable failures and their system-level causes without claiming a proven model-internal mechanism. The third explains why Week 2 prioritizes classification and evaluation before adding action tools.",
+            "fragments": [
+              176.9
+            ],
+            "hotspots": [
+              {
+                "id": "h-measurement",
+                "label": "01 / measurement",
+                "target": "q-measurement",
+                "region": {
+                  "x": 5,
+                  "y": 77,
+                  "w": 20.3,
+                  "h": 9
+                }
+              },
+              {
+                "id": "h-failure",
+                "label": "02 / failure",
+                "target": "q-failure",
+                "region": {
+                  "x": 26.9,
+                  "y": 77,
+                  "w": 20.3,
+                  "h": 9
+                }
+              },
+              {
+                "id": "h-priority",
+                "label": "03 / priority",
+                "target": "q-priority",
+                "region": {
+                  "x": 48.8,
+                  "y": 77,
+                  "w": 20.3,
+                  "h": 9
+                }
+              }
+            ]
+          }
+        ],
+        "slideSequences": [
+          {
+            "id": "q-measurement",
+            "label": "01 / measurement",
+            "slides": [
+              {
+                "sceneId": "q-measurement",
+                "notes": "The first answer separates what the team counted from what remains null and notes the single-annotator and single-seed limits.",
+                "fragments": [
+                  184.9
+                ]
+              }
+            ]
+          },
+          {
+            "id": "q-failure",
+            "label": "02 / failure",
+            "slides": [
+              {
+                "sceneId": "q-failure",
+                "notes": "The second names the observable failures and their system-level causes without claiming a proven model-internal mechanism.",
+                "fragments": [
+                  192.9
+                ]
+              }
+            ]
+          },
+          {
+            "id": "q-priority",
+            "label": "03 / priority",
+            "slides": [
+              {
+                "sceneId": "q-priority",
+                "notes": "The third explains why Week 2 prioritizes classification and evaluation before adding action tools.",
+                "fragments": [
+                  200.9
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <div id="main" data-composition-id="main" data-start="0" data-duration="207.5" data-width="1920" data-height="1080">
+      <div id="cover" data-composition-id="cover" data-composition-src="scenes/cover.html"
+        data-label="01 / 22 Beldesk — Week 1: Problem and baseline" data-start="0" data-duration="8" data-track-index="0"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="roadmap" data-composition-id="roadmap" data-composition-src="scenes/roadmap.html"
+        data-label="02 / 22 Eight deliverables, all in one repository" data-start="8" data-duration="8" data-track-index="1"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="team-agreement" data-composition-id="team-agreement" data-composition-src="scenes/team-agreement.html"
+        data-label="03 / 22 (W1.1 — roles, meetings, decision rule, non-delivery, ownership)" data-start="16" data-duration="8" data-track-index="2"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="customer" data-composition-id="customer" data-composition-src="scenes/customer.html"
+        data-label="04 / 22 (W1.2 — first customer and the job done by hand today)" data-start="24" data-duration="8" data-track-index="3"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="stories-scope" data-composition-id="stories-scope" data-composition-src="scenes/stories-scope.html"
+        data-label="05 / 22 One desk handles questions and field problems" data-start="32" data-duration="8" data-track-index="4"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="test-set" data-composition-id="test-set" data-composition-src="scenes/test-set.html"
+        data-label="06 / 22 The 25-case set covers the full workflow" data-start="40" data-duration="8" data-track-index="5"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="data-inventory" data-composition-id="data-inventory" data-composition-src="scenes/data-inventory.html"
+        data-label="07 / 22 (W1.4 — documents, tables, action API sketch, untrusted inputs)" data-start="48" data-duration="8" data-track-index="6"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="demo-memory" data-composition-id="demo-memory" data-composition-src="scenes/demo-memory.html"
+        data-label="08 / 22 Each message travels alone, so the assistant forgets the name" data-start="56" data-duration="11" data-track-index="7"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="demo-pothole" data-composition-id="demo-pothole" data-composition-src="scenes/demo-pothole.html"
+        data-label="09 / 22 It asks the right question, then implies a power it does not have" data-start="67" data-duration="12.5" data-track-index="8"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="baseline-call" data-composition-id="baseline-call" data-composition-src="scenes/baseline-call.html"
+        data-label="10 / 22 A test call leaves a trace from input to cost" data-start="79.5" data-duration="8" data-track-index="9"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="temperature" data-composition-id="temperature" data-composition-src="scenes/temperature.html"
+        data-label="11 / 22 Temperature changed wording and decisions" data-start="87.5" data-duration="8" data-track-index="10"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="tokens" data-composition-id="tokens" data-composition-src="scenes/tokens.html"
+        data-label="12 / 22 (Tokens — how many a Turkish and an English text spend)" data-start="95.5" data-duration="8" data-track-index="11"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="cost" data-composition-id="cost" data-composition-src="scenes/cost.html"
+        data-label="13 / 22 (W1.6 — tokens per request, dollars per 1,000 requests)" data-start="103.5" data-duration="8" data-track-index="12"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="failure-injection" data-composition-id="failure-injection" data-composition-src="scenes/failure-injection.html"
+        data-label="14 / 22 One hidden instruction took over all three temperatures" data-start="111.5" data-duration="8" data-track-index="13"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="failure-tools" data-composition-id="failure-tools" data-composition-src="scenes/failure-tools.html"
+        data-label="15 / 22 Without tools, the model reported work it never did" data-start="119.5" data-duration="8" data-track-index="14"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="failure-facts" data-composition-id="failure-facts" data-composition-src="scenes/failure-facts.html"
+        data-label="16 / 22 Fluent answers invented local facts" data-start="127.5" data-duration="8" data-track-index="15"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="predicted-failures" data-composition-id="predicted-failures" data-composition-src="scenes/predicted-failures.html"
+        data-label="17 / 22 (W1.7 — five predicted failures, each tied to a Module 1 concept)" data-start="135.5" data-duration="8" data-track-index="16"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="repository" data-composition-id="repository" data-composition-src="scenes/repository.html"
+        data-label="18 / 22 (W1.8 — repository, README, week-1 tag)" data-start="143.5" data-duration="8" data-track-index="17"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="scoreboard-measured" data-composition-id="scoreboard-measured" data-composition-src="scenes/scoreboard-measured.html"
+        data-label="19 / 22 Week 1 records cost and scope, not accuracy" data-start="151.5" data-duration="8" data-track-index="18"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="scoreboard-null" data-composition-id="scoreboard-null" data-composition-src="scenes/scoreboard-null.html"
+        data-label="20 / 22 Nine metrics stay null until they are measured" data-start="159.5" data-duration="8" data-track-index="19"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="next-week" data-composition-id="next-week" data-composition-src="scenes/next-week.html"
+        data-label="21 / 22 Week 2 turns behavior into measured baselines" data-start="167.5" data-duration="8" data-track-index="20"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="questions" data-composition-id="questions" data-composition-src="scenes/questions.html"
+        data-label="22 / 22 Three questions frame the next decision" data-start="175.5" data-duration="8" data-track-index="21"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="q-measurement" data-composition-id="q-measurement" data-composition-src="scenes/q-measurement.html"
+        data-label="22 · Q1 What did you measure, and how sure are you?" data-start="183.5" data-duration="8" data-track-index="22"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="q-failure" data-composition-id="q-failure" data-composition-src="scenes/q-failure.html"
+        data-label="22 · Q2 What failed, and do you know why?" data-start="191.5" data-duration="8" data-track-index="23"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="q-priority" data-composition-id="q-priority" data-composition-src="scenes/q-priority.html"
+        data-label="22 · Q3 Is next week’s plan the change that matters most?" data-start="199.5" data-duration="8" data-track-index="24"
+        data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+    </div>
+    <script>
+      // Kök timeline yalnız toplam süreyi taşır; sahneler kendi timeline'larını kaydeder (kit.js / BK.scene).
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true }).set({}, {}, 207.5);
+    </script>
+  </body>
+</html>

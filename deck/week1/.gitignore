@@ -1,0 +1,7 @@
+# Yerel denetim çıktıları ve HyperFrames çalışma durumu.
+**/.hyperframes/
+atolye/*
+!atolye/birlestir.mjs
+!atolye/deck.json
+!atolye/icerik.md
+!atolye/KIT.md

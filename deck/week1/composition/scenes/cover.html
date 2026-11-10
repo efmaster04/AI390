@@ -1,0 +1,87 @@
+<template id="cover-template">
+  <style>
+    #root { position: absolute; inset: 0; }
+    [data-composition-id="cover"] .cover-eyebrow { position: absolute; left: var(--edge-x); top: 182px; }
+    [data-composition-id="cover"] .cover-hero-wrap { position: absolute; left: 86px; top: 236px; }
+    [data-composition-id="cover"] .cover-hero {
+      position: relative; font-family: var(--font-display); font-weight: 900; font-size: 200px; line-height: 1; letter-spacing: -.03em;
+      color: var(--ink); text-shadow: 5px 5px 0 var(--sun);
+    }
+    [data-composition-id="cover"] .cover-sub { position: absolute; left: var(--edge-x); top: 476px; font-family: var(--font-display); font-weight: 700; font-size: 60px; line-height: 1.1; }
+    [data-composition-id="cover"] .cover-sub .bk-scan { padding: 0 8px; margin: 0 -4px; }
+    [data-composition-id="cover"] .cover-team { position: absolute; left: var(--edge-x); top: 616px; width: 1080px; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 28px; }
+    [data-composition-id="cover"] .cover-member { padding: 26px 26px 22px; min-height: 226px; }
+    [data-composition-id="cover"] .cover-member .bk-tab { left: 22px; }
+    [data-composition-id="cover"] .cover-name { display: block; margin-top: 10px; font-family: var(--font-display); font-weight: 900; font-size: 40px; line-height: 1.05; }
+    [data-composition-id="cover"] .cover-role { display: block; margin-top: 12px; font-size: 38px; line-height: 1.12; color: var(--ink-2); }
+    [data-composition-id="cover"] .cover-foot { position: absolute; left: var(--edge-x); top: 900px; display: flex; align-items: center; gap: 34px; }
+    [data-composition-id="cover"] .cover-course { font-size: 32px; }
+    [data-composition-id="cover"] #cover-mascot { left: 1330px; top: 196px; --h: 560px; }
+    [data-composition-id="cover"] .cover-repo { position: absolute; left: 1196px; top: 778px; width: 628px; display: flex; align-items: center; gap: 24px; padding: 18px 24px 18px 18px; }
+    [data-composition-id="cover"] .cover-qr { width: 168px; height: 168px; border: 4px solid var(--ink); border-radius: 10px; flex: none; background: var(--cream); }
+    [data-composition-id="cover"] .cover-repo-k { display: block; font-family: var(--font-mono); font-weight: 700; font-size: 28px; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-ink); }
+    [data-composition-id="cover"] .cover-repo-url { display: block; margin-top: 6px; font-family: var(--font-mono); font-weight: 700; font-size: 36px; line-height: 1.2; }
+    [data-composition-id="cover"] .cover-tape { left: 270px; top: -22px; }
+    [data-composition-id="cover"] #cover-stamp { position: absolute; left: 1150px; top: 170px; }
+  </style>
+  <div id="root" data-composition-id="cover" data-hold data-width="1920" data-height="1080" data-window="8" data-fragments="1.4">
+    <div class="bk-stage">
+      <div class="bk-sheet"></div>
+      <header class="bk-band">
+        <span class="bk-folio">AIC390 / WEEK 01</span>
+        <span class="bk-section">Opening</span>
+        <span class="bk-no">01 / 22</span>
+      </header>
+      <div class="bk-rule"></div>
+
+      <div id="cover-eyebrow" class="cover-eyebrow bk-label">Municipal citizen assistant / TR + EN</div>
+      <div class="cover-hero-wrap">
+        <h1 id="cover-hero" class="cover-hero">Beldesk</h1>
+      </div>
+      <p id="cover-sub" class="cover-sub">Week 1 — <span id="cover-sub-hl" class="bk-scan">Problem and baseline</span></p>
+
+      <div class="cover-team">
+        <div class="bk-panel cover-member"><span class="bk-tab bk-tab--sun">Agent</span><span class="cover-name">Efe İncirci</span><span class="cover-role">Agent and tools lead</span></div>
+        <div class="bk-panel cover-member"><span class="bk-tab bk-tab--teal">Data</span><span class="cover-name">Doruk Kal</span><span class="cover-role">Data and retrieval lead</span></div>
+        <div class="bk-panel cover-member"><span class="bk-tab bk-tab--tomato">Eval</span><span class="cover-name">Tarık Edip Yenikomşu</span><span class="cover-role">Evaluation and safety lead</span></div>
+      </div>
+
+      <div class="cover-foot">
+        <span id="cover-course" class="bk-stamp bk-stamp--ink cover-course">AIC390 Prompt Engineering</span>
+      </div>
+
+      <span id="cover-stamp" class="bk-stamp">Case file / 01</span>
+
+      <div id="cover-mascot" class="bk-mascot bk-mascot--selam"><img class="bk-mascot-pose" src="assets/maskot/selam.png" alt=""></div>
+
+      <div id="cover-repo" class="bk-panel cover-repo">
+        <span class="bk-tape cover-tape"></span>
+        <img class="cover-qr" src="assets/kit/qr-repo.svg" alt="QR: github.com/efmaster04/AI390">
+        <div>
+          <span class="cover-repo-k">Repository</span>
+          <span class="cover-repo-url">github.com/<br>efmaster04/AI390</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    BK.scene("cover", function (tl, root, BK) {
+      var $ = function (s) { return root.querySelectorAll(s); };
+      BK.frame(tl, root, 0);
+      BK.rise(tl, "#cover-eyebrow", 0.1, { y: 14, duration: 0.4 });
+      // Ad kağıt gibi iner ve oturur
+      BK.slam(tl, "#cover-hero", 0.12, { y: -40, duration: 0.5 });
+      // Alt başlık fosforlu kalemle çizilir
+      BK.rise(tl, "#cover-sub", 0.35, { y: 16, duration: 0.4 });
+      BK.scan(tl, "#cover-sub-hl", 0.5, { duration: 0.45 });
+      // Ekip kartları kağıt gibi düşer
+      BK.slam(tl, $(".cover-member"), 0.42, { stagger: 0.09, duration: 0.45 });
+      BK.rise(tl, $(".cover-foot > *"), 0.6, { y: 14, duration: 0.4, stagger: 0.08 });
+      // Maskot girer ve durur (süs yok: parıltılar maskotun kendi çiziminde)
+      BK.mascotIn(tl, "#cover-mascot", 0.18, { from: "right" });
+      // Repo etiketi + QR çarpar, kapak damgası vurulur
+      BK.slam(tl, "#cover-repo", 0.55, { duration: 0.45 });
+      BK.stamp(tl, "#cover-stamp", 0.72, { rotation: -3 });
+    });
+  </script>
+</template>

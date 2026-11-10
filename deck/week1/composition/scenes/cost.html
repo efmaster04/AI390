@@ -1,0 +1,157 @@
+<template id="cost-template">
+  <style>
+    #root { position: absolute; inset: 0; }
+    /* Sol sütun: token paneli + formül paneli; sağ sütun: 1.000 istek sonucu + varsayımlar; maskot sağ üstte */
+    [data-composition-id="cost"] .co-panel { position: absolute; padding: 44px 36px 26px; }
+    [data-composition-id="cost"] #co-hl { white-space: nowrap; }
+    [data-composition-id="cost"] #co-tok { left: var(--edge-x); top: 344px; width: 904px; height: 306px; }
+    [data-composition-id="cost"] #co-fx  { left: var(--edge-x); top: 684px; width: 904px; height: 280px; padding-top: 40px; }
+    [data-composition-id="cost"] #co-res { left: 1040px; top: 344px; width: 508px; height: 306px; }
+    [data-composition-id="cost"] #co-asm { left: 1040px; top: 684px; width: 784px; height: 280px; padding-top: 42px; }
+    [data-composition-id="cost"] .co-panel .bk-tab { left: 26px; }
+
+    /* 1 · token denklemi: rakam üstte, birim altta, tek ızgara */
+    [data-composition-id="cost"] .co-eq { display: flex; align-items: flex-start; gap: 22px; }
+    [data-composition-id="cost"] .co-term { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+    [data-composition-id="cost"] .co-n { font-family: var(--font-display); font-weight: 900; font-size: 68px; line-height: 1; font-variant-numeric: tabular-nums lining-nums; }
+    [data-composition-id="cost"] .co-u { font-family: var(--font-mono); font-weight: 700; font-size: 28px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+    [data-composition-id="cost"] .co-op { font-family: var(--font-display); font-weight: 900; font-size: 60px; line-height: 1.1; }
+
+    /* Pay çubukları: input (nokta) | output (sarı); input payı sağda */
+    [data-composition-id="cost"] .co-share { margin-top: 22px; display: grid; grid-template-columns: 118px 1fr 196px; row-gap: 14px; column-gap: 18px; align-items: center; }
+    [data-composition-id="cost"] .co-share-k { font-family: var(--font-mono); font-weight: 700; font-size: 28px; text-transform: uppercase; letter-spacing: .06em; }
+    [data-composition-id="cost"] .co-track { position: relative; height: 46px; background: var(--paper); border: 3px solid var(--ink); border-radius: 10px; overflow: hidden; }
+    [data-composition-id="cost"] .co-in  { position: absolute; left: 0; top: 0; bottom: 0; background-color: var(--cream); background-image: var(--dots); background-size: 10px 10px; border-right: 3px solid var(--ink); }
+    [data-composition-id="cost"] .co-out { position: absolute; top: 0; bottom: 0; right: 0; background: var(--sun); display: flex; align-items: center; padding-left: 14px; font-family: var(--font-mono); font-weight: 700; font-size: 28px; white-space: nowrap; }
+    [data-composition-id="cost"] .co-share-v { font-family: var(--font-mono); font-weight: 700; font-size: 30px; white-space: nowrap; }
+    [data-composition-id="cost"] .co-share-v b { font-family: var(--font-display); font-weight: 900; font-size: 44px; }
+
+    /* 2 · formül: genel ifade + iki satır sütun aritmetiği + toplam */
+    [data-composition-id="cost"] .co-expr { display: inline-block; padding: 4px 14px; border: 3px solid var(--ink); border-radius: 10px; background: var(--paper); font-family: var(--font-mono); font-weight: 700; font-size: 34px; }
+    [data-composition-id="cost"] .co-grid { margin-top: 10px; display: grid; grid-template-columns: auto auto auto 1fr; column-gap: 22px; row-gap: 2px; align-items: baseline; font-family: var(--font-mono); font-weight: 700; font-size: 40px; line-height: 1.14; font-variant-numeric: tabular-nums; }
+    [data-composition-id="cost"] .co-grid .r { text-align: right; }
+    [data-composition-id="cost"] .co-grid .m { color: var(--ink-2); }
+    [data-composition-id="cost"] .co-rule { grid-column: 1 / -1; height: 0; border-top: 3px solid var(--ink); margin: 4px 0 2px; }
+    [data-composition-id="cost"] .co-per { font-family: var(--font-body); font-weight: 800; font-size: 40px; }
+
+    /* 3 · 1.000 istek */
+    [data-composition-id="cost"] .co-big { display: block; font-family: var(--font-display); font-weight: 900; font-size: 84px; line-height: 1; letter-spacing: -.01em; font-variant-numeric: tabular-nums lining-nums; }
+    [data-composition-id="cost"] .co-big-l { display: block; margin-top: 8px; font-size: 34px; font-weight: 800; }
+    [data-composition-id="cost"] .co-alt { margin-top: 16px; padding-top: 10px; border-top: 3px dashed var(--shadow); display: grid; grid-template-columns: auto auto; justify-content: start; column-gap: 22px; row-gap: 2px; font-family: var(--font-mono); font-weight: 700; font-size: 30px; line-height: 1.2; color: var(--ink-2); white-space: nowrap; }
+
+    /* 4 · varsayımlar */
+    [data-composition-id="cost"] .co-asm-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    [data-composition-id="cost"] .co-asm-list li { position: relative; padding-left: 36px; font-size: 40px; line-height: 1.16; white-space: nowrap; }
+    [data-composition-id="cost"] .co-model { font-family: var(--font-mono); font-weight: 700; font-size: 36px; }
+    [data-composition-id="cost"] .co-asm-list li::before { content: ""; position: absolute; left: 0; top: 22px; width: 18px; height: 6px; border-radius: 3px; background: var(--ink); }
+    /* damga panelin sağ üst kenarına etiket gibi basılır (krem dolgu kenar çizgisini örter; liste dört satır) */
+    [data-composition-id="cost"] #co-stamp { position: absolute; right: 28px; top: -30px; font-size: 30px; background: var(--cream); mix-blend-mode: normal; }
+
+    [data-composition-id="cost"] #cost-mascot { left: 1572px; top: 334px; }
+  </style>
+  <div id="root" data-composition-id="cost" data-hold data-width="1920" data-height="1080" data-window="8" data-fragments="1.4,2.5,3.6,4.7">
+    <div class="bk-stage">
+      <div class="bk-sheet"></div>
+      <header class="bk-band"><span class="bk-deliv"><span class="bk-deliv-id">W1.6</span>Cost estimate</span><span class="bk-section">W1.6</span><span class="bk-no">13 / 22</span></header>
+      <div class="bk-rule"></div>
+      <h2 class="bk-title">About 215 tokens per request, about <span id="co-hl" class="bk-scan">21 cents per 1,000</span></h2>
+
+      <!-- 1 · Tokens per request (t0) -->
+      <section id="co-tok" class="bk-panel co-panel">
+        <span class="bk-tab bk-tab--sun">1 · Tokens per request · t0</span>
+        <div class="co-eq">
+          <div class="co-term"><span id="co-n-in" class="co-n">93.64</span><span class="co-u">input</span></div>
+          <span class="co-op">+</span>
+          <div class="co-term"><span id="co-n-out" class="co-n">121.68</span><span class="co-u">output</span></div>
+          <span class="co-op">=</span>
+          <div class="co-term"><span id="co-n-sum" class="co-n">215.32</span><span class="co-u">tokens</span></div>
+        </div>
+        <div class="co-share">
+          <span class="co-share-k">tokens</span>
+          <div class="co-track"><div id="co-tin" class="co-in" style="width:43%"></div><div id="co-tout" class="co-out" style="width:57%">output</div></div>
+          <span id="co-tv" class="co-share-v">input <b>43%</b></span>
+          <span id="co-ck" class="co-share-k">cost</span>
+          <div id="co-ctrack" class="co-track"><div id="co-cin" class="co-in" style="width:11%"></div><div id="co-cout" class="co-out" style="width:89%">output 89%</div></div>
+          <span id="co-cv" class="co-share-v">input <b class="t-red">11%</b></span>
+        </div>
+      </section>
+
+      <!-- 2 · Formula (cost_estimate.py) -->
+      <section id="co-fx" class="bk-panel co-panel">
+        <span class="bk-tab bk-tab--sun">2 · Formula · list price</span>
+        <span id="co-expr" class="co-expr">in/1M × $0.25 + out/1M × $1.50</span>
+        <div class="co-grid">
+          <span id="co-a1" class="r">93.64/1M</span><span id="co-b1" class="m">× $0.25</span><span id="co-e1" class="m">=</span><span id="co-v1">$0.00002341</span>
+          <span id="co-a2" class="r">121.68/1M</span><span id="co-b2" class="m">× $1.50</span><span id="co-e2" class="m">=</span><span id="co-v2">$0.00018252</span>
+          <span id="co-rule" class="co-rule"></span>
+          <span id="co-p" class="co-per r">per request</span><span></span><span id="co-e3">=</span><span id="co-v3"><span id="co-v3-hl" class="bk-scan">$0.00020593</span></span>
+        </div>
+      </section>
+
+      <!-- 3 · per 1,000 requests -->
+      <section id="co-res" class="bk-panel co-panel">
+        <span class="bk-tab bk-tab--teal">3 · × 1,000 requests</span>
+        <span id="co-big" class="co-big">$0.20593</span>
+        <span class="co-big-l">per 1,000 requests at t0</span>
+        <div id="co-alt" class="co-alt"><span>t0.7</span><span>$0.20209</span><span>t1.2</span><span>$0.20977</span></div>
+      </section>
+
+      <!-- 4 · Assumptions -->
+      <section id="co-asm" class="bk-panel co-panel">
+        <span class="bk-tab bk-tab--tomato">4 · Assumptions</span>
+        <ul class="co-asm-list">
+          <li class="co-asm-i">Model <span class="co-model">gemini-3.1-flash-lite</span></li>
+          <li class="co-asm-i">List price dated 2026-11-09</li>
+          <li class="co-asm-i">Free tier: actual spend $0, assumed</li>
+          <li class="co-asm-i">Error rows excluded (0 errors)</li>
+        </ul>
+        <span id="co-stamp" class="bk-stamp bk-stamp--on-cream" data-layout-allow-overlap>not billed</span>
+      </section>
+
+      <div class="bk-repo"><span class="bk-repo-k">repo</span>scripts/cost_estimate.py</div>
+      <div id="cost-mascot" class="bk-mascot bk-mascot--aide bk-mascot--gorevli"><img class="bk-mascot-pose" src="assets/maskot/gorevli.png" alt=""></div>
+    </div>
+  </div>
+  <script>
+    BK.scene("cost", function (tl, root, BK) {
+      // ---- Giriş (0 – 1.2): çerçeve, token paneli, sayılar sayar, token payı çizilir ----
+      BK.frame(tl, root, 0);
+      BK.mascotIn(tl, "#cost-mascot", 0.25, { from: "right" });
+      BK.slam(tl, "#co-tok", 0.2, { duration: 0.45 });
+      BK.count(tl, "#co-n-in", 93.64, 0.3, { decimals: 2, duration: 0.7 });
+      BK.count(tl, "#co-n-out", 121.68, 0.38, { decimals: 2, duration: 0.7 });
+      BK.count(tl, "#co-n-sum", 215.32, 0.46, { decimals: 2, duration: 0.7 });
+      BK.draw(tl, "#co-tin", 0.55, { duration: 0.3 });
+      BK.draw(tl, "#co-tout", 0.8, { duration: 0.3 });
+      BK.fade(tl, "#co-tv", 0.95, { duration: 0.2 });
+      BK.scan(tl, "#co-hl", 0.85, { duration: 0.35 });
+      // Maliyet satırı 2. adıma kadar gizli (kaplar; içindeki dolgular ayrı oynar)
+      BK.fade(tl, ["#co-ck", "#co-ctrack", "#co-cv"], 0, { from: 0, to: 0, duration: 0.01 });
+
+      // Formül paneli girişte boş çerçeve + sekme olarak iner (içerik adım 1'de)
+      BK.slam(tl, "#co-fx", 0.4, { duration: 0.42 });
+
+      // ---- Adım 1 (1.45 → 2.3): formül; değerler sonra ----
+      BK.formula(tl, ["#co-expr", "#co-a1", "#co-b1", "#co-a2", "#co-b2"], 1.5, { stagger: 0.07 });
+      BK.mascotReact(tl, "#cost-mascot", 1.75, { kind: "hop" });
+
+      // ---- Adım 2 (2.55 → 3.6): sonuç, 1.000 istek, maliyet payı ----
+      BK.formula(tl, ["#co-e1", "#co-v1", "#co-e2", "#co-v2"], 2.55, { stagger: 0.06 });
+      BK.draw(tl, "#co-rule", 2.8, { duration: 0.22 });
+      BK.formula(tl, ["#co-p", "#co-e3", "#co-v3"], 2.9, { stagger: 0.06 });
+      BK.scan(tl, "#co-v3-hl", 3.1, { duration: 0.3 });
+      BK.slam(tl, "#co-res", 2.65, { duration: 0.42 });
+      BK.fade(tl, ["#co-ck", "#co-ctrack"], 2.75, { duration: 0.15, later: true });
+      BK.draw(tl, "#co-cin", 2.8, { duration: 0.18 });
+      BK.draw(tl, "#co-cout", 2.95, { duration: 0.3 });
+      BK.fade(tl, "#co-cv", 3.2, { duration: 0.2, later: true });
+      BK.mascotReact(tl, "#cost-mascot", 3.1, { kind: "squash" });
+
+      // ---- Adım 3 (3.65 → 4.7): varsayımlar + damga ----
+      BK.slam(tl, "#co-asm", 3.65, { duration: 0.42 });
+      BK.rise(tl, ".co-asm-i", 3.8, { stagger: 0.08, duration: 0.4 });
+      BK.stamp(tl, "#co-stamp", 4.15);
+      BK.mascotReact(tl, "#cost-mascot", 4.2, { kind: "tilt", angle: -3 });
+    });
+  </script>
+</template>

@@ -1,0 +1,138 @@
+<template id="customer-template">
+  <style>
+    #root { position: absolute; inset: 0; }
+    /* Satır A: müşteri kartı (sol) + "Today, by hand" paneli (sağ). Satır B: iki persona kartı + maskot (sağ alt, sola işaret eder). */
+    [data-composition-id="customer"] .cu-dots { left: 112px; top: 334px; width: 540px; height: 326px; }
+    [data-composition-id="customer"] #cu-desk { position: absolute; left: var(--edge-x); top: 318px; width: 540px; height: 334px; padding: 58px 34px 24px; }
+    [data-composition-id="customer"] .cu-desk-name { font-family: var(--font-display); font-weight: 900; font-size: 72px; line-height: .95; letter-spacing: -.01em; }
+    [data-composition-id="customer"] .cu-desk-sub { margin-top: 14px; font-size: 40px; line-height: 1.18; }
+    [data-composition-id="customer"] .cu-desk-sub span { display: block; color: var(--ink-2); }
+
+    [data-composition-id="customer"] #cu-hand { position: absolute; left: 676px; top: 318px; width: 1148px; height: 334px; padding: 40px 40px 22px; border-left: 16px solid var(--tomato); }
+    [data-composition-id="customer"] .cu-inbox { display: flex; align-items: center; gap: 16px; }
+    [data-composition-id="customer"] .cu-inbox .bk-label { width: 172px; margin-right: 6px; }
+    [data-composition-id="customer"] .cu-track { margin-top: 18px; }
+    [data-composition-id="customer"] .cu-slip {
+      position: relative; padding: 6px 18px; background: var(--paper); border: 3px solid var(--ink); border-radius: 8px;
+      box-shadow: 4px 4px 0 var(--shadow); font-family: var(--font-mono); font-weight: 700; font-size: 34px; white-space: nowrap;
+    }
+    [data-composition-id="customer"] .cu-chain { display: flex; align-items: center; margin-top: 18px; }
+    [data-composition-id="customer"] .cu-chain .cu-par { margin-left: 44px; }
+    [data-composition-id="customer"] .cu-chain .bk-arrow { width: 34px; margin: 0 16px 0 12px; }
+    [data-composition-id="customer"] .cu-step {
+      display: flex; flex-direction: column; padding: 8px 20px 12px; background: var(--cream); border: 3px solid var(--ink); border-radius: 14px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    [data-composition-id="customer"] .cu-step-n { font-family: var(--font-mono); font-weight: 700; font-size: 28px; color: var(--tomato-ink); }
+    [data-composition-id="customer"] .cu-step-v { font-family: var(--font-display); font-weight: 900; font-size: 46px; line-height: 1.02; white-space: nowrap; }
+
+    [data-composition-id="customer"] .cu-persona { position: absolute; top: 690px; width: 640px; height: 252px; padding: 36px 34px 26px; display: grid; grid-template-columns: 112px 1fr; column-gap: 28px; align-items: start; }
+    [data-composition-id="customer"] #cu-p1 { left: var(--edge-x); }
+    [data-composition-id="customer"] #cu-p2 { left: 776px; }
+    [data-composition-id="customer"] .cu-mono {
+      width: 112px; height: 112px; border-radius: 50%; border: 4px solid var(--ink); background: var(--paper);
+      background-image: radial-gradient(circle, var(--shadow) 1.6px, transparent 2.1px); background-size: 9px 9px;
+      display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 900; font-size: 64px; line-height: 1;
+    }
+    [data-composition-id="customer"] .cu-p-name { font-family: var(--font-display); font-weight: 900; font-size: 48px; line-height: 1.04; white-space: nowrap; }
+    [data-composition-id="customer"] .cu-p-role { display: block; margin-top: 6px; }
+    [data-composition-id="customer"] .cu-p-want { margin-top: 6px; font-size: 40px; line-height: 1.15; }
+    [data-composition-id="customer"] #cu-q { position: absolute; left: var(--edge-x); top: 724px; width: 1300px; }
+    [data-composition-id="customer"] #cu-q .bk-label { display: block; margin-bottom: 10px; color: var(--ink-2); }
+    [data-composition-id="customer"] #cu-stamp { position: absolute; left: 640px; bottom: 46px; font-size: 28px; padding: 6px 18px; }
+    [data-composition-id="customer"] #cu-foot { position: absolute; left: 1072px; bottom: 56px; }
+    [data-composition-id="customer"] #customer-mascot { left: 1528px; top: 650px; }
+  </style>
+  <div id="root" data-composition-id="customer" data-hold data-width="1920" data-height="1080" data-window="8" data-fragments="1.4,2.5,3.6">
+    <div class="bk-stage">
+      <div class="bk-sheet"></div>
+      <header class="bk-band"><span class="bk-deliv"><span class="bk-deliv-id">W1.2</span>Use case brief</span><span class="bk-section">W1.2 · Product track</span><span class="bk-no">04 / 22</span></header>
+      <div class="bk-rule"></div>
+      <h2 class="bk-title">Our first customer is a desk that triages <span id="cu-hl" class="bk-scan">by hand</span></h2>
+
+      <!-- 1. Müşteri -->
+      <div class="bk-halftone cu-dots"></div>
+      <section id="cu-desk" class="bk-panel">
+        <span class="bk-tab bk-tab--sun">First customer</span>
+        <div class="cu-desk-name">Beyaz Masa</div>
+        <p class="cu-desk-sub">Citizen relations desk<span>mid-size district municipality</span></p>
+      </section>
+
+      <!-- 2. Bugün elle yapılan iş -->
+      <section id="cu-hand" class="bk-panel">
+        <span class="bk-tab bk-tab--tomato">Today, by hand</span>
+        <div class="cu-inbox">
+          <span class="bk-label">Inbox</span>
+          <span class="cu-slip">web forms</span>
+          <span class="cu-slip">phone notes</span>
+          <span class="cu-slip">WhatsApp</span>
+        </div>
+        <div class="cu-chain">
+          <div class="cu-step"><span class="cu-step-n">01</span><span class="cu-step-v">Read</span></div>
+          <span class="bk-arrow cu-arr"></span>
+          <div class="cu-step"><span class="cu-step-n">02</span><span class="cu-step-v">Classify</span></div>
+          <span class="bk-arrow cu-arr"></span>
+          <div class="cu-step"><span class="cu-step-n">03</span><span class="cu-step-v">Route</span></div>
+          <div class="cu-step cu-par"><span class="cu-step-n">04</span><span class="cu-step-v">Repeat FAQs</span></div>
+        </div>
+        <div class="cu-inbox cu-track">
+          <span class="bk-label">Tracking</span>
+          <span class="cu-slip">follow-ups in sheets</span>
+        </div>
+      </section>
+
+      <!-- Ürün parkuru sorusu (girişte görünür, personalar gelince söner) -->
+      <div id="cu-q" class="bk-callout" data-layout-allow-overlap><span class="bk-label">Product track · W1.2</span>Who is your first customer, and what job do they do by hand today?</div>
+
+      <!-- 3. Personalar -->
+      <section id="cu-p1" class="bk-panel cu-persona" data-layout-allow-overlap>
+        <span class="bk-tab">Persona 1</span>
+        <div class="cu-mono">A</div>
+        <div>
+          <div class="cu-p-name">Ayşe K., 38</div>
+          <span class="bk-label cu-p-role">Small-business owner</span>
+          <p class="cu-p-want">Report a streetlight, track it</p>
+        </div>
+      </section>
+      <section id="cu-p2" class="bk-panel cu-persona" data-layout-allow-overlap>
+        <span class="bk-tab">Persona 2</span>
+        <div class="cu-mono">M</div>
+        <div>
+          <div class="cu-p-name">Mehmet D., 45</div>
+          <span class="bk-label cu-p-role">Beyaz Masa officer</span>
+          <p class="cu-p-want">A prioritized morning queue</p>
+        </div>
+      </section>
+      <span id="cu-stamp" class="bk-stamp bk-stamp--ink">Product hypothesis</span>
+      <span id="cu-foot" class="bk-label">not customer interviews</span>
+
+      <div class="bk-repo"><span class="bk-repo-k">repo</span>docs/use_case_brief.md</div>
+      <div id="customer-mascot" class="bk-mascot bk-mascot--aide bk-mascot--isaret"><img class="bk-mascot-pose" src="assets/maskot/isaret.png" alt=""></div>
+    </div>
+  </div>
+  <script>
+    BK.scene("customer", function (tl, root, BK) {
+      var $ = function (s) { return root.querySelectorAll(s); };
+      // Giriş (0 → 1.2): çerçeve, müşteri kartı, maskot
+      BK.frame(tl, root, 0);
+      BK.slam(tl, "#cu-desk", 0.25, { duration: 0.45 });
+      BK.fade(tl, ".cu-dots", 0.4, { duration: 0.3, to: 0.45 });
+      BK.mascotIn(tl, "#customer-mascot", 0.3, { from: "right" });
+      BK.rise(tl, "#cu-q", 0.6, { y: 16, duration: 0.4 });
+
+      // Adım 1 (1.45 → 2.35): elle yapılan iş — panel, gelen kutusu ve takip fişleri, dört iş; başlıkta "by hand"
+      BK.slam(tl, "#cu-hand", 1.45, { duration: 0.42 });
+      BK.rise(tl, $(".cu-slip"), 1.6, { y: -16, duration: 0.35, stagger: 0.07 });
+      BK.formula(tl, $(".cu-chain > *"), 1.75, { stagger: 0.05 });
+      BK.scan(tl, "#cu-hl", 1.95, { duration: 0.35 });
+      BK.mascotReact(tl, "#customer-mascot", 1.5, { kind: "tilt", angle: -3 });
+
+      // Adım 2 (2.5 → 3.45): soru söner, personalar aynı yere oturur + hipotez damgası
+      BK.fade(tl, "#cu-q", 2.5, { from: 1, to: 0, duration: 0.18, later: true });
+      BK.slam(tl, ["#cu-p1", "#cu-p2"], 2.55, { stagger: 0.12, duration: 0.42 });
+      BK.stamp(tl, "#cu-stamp", 3.0, { rotation: -3 });
+      BK.note(tl, "#cu-foot", 3.1);
+      BK.mascotReact(tl, "#customer-mascot", 2.6, { kind: "hop" });
+    });
+  </script>
+</template>
