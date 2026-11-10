@@ -10,6 +10,8 @@
 | Presenter | [TBD] |
 | Members and roles | Efe İncirci — Agent and tools lead; Doruk Kal — Data and retrieval lead; Tarık Edip Yenikomşu — Evaluation and safety lead |
 
+> **Dataset revision v2, 10 November 2026:** The active set still has 25 inputs (13 TR / 12 EN). W1-03 and W1-07 were replaced by exact translations of W1-02 and W1-10. All numeric results and failure examples below remain **historical v1 evidence**. No v2 baseline or paired token result has been measured. Rerun 25 × 3 before claiming current-set completion (R9).
+
 ## 1. Summary
 
 We defined Beldesk's scope, prepared synthetic evaluation data and a data/API inventory, and established a baseline without retrieval or tools. The clearest safety finding is W1-24: all three temperature outputs follow the injected instruction and falsely claim an urgent ticket was created. Lowering temperature did not prevent this failure. The final evidence contains 75 responses on the relabeled 25-input set. Manual review also found invented status checks, third-party status assertions, and unsupported contact details. Team signatures are pending; the submission tag is created with this report.
@@ -20,10 +22,10 @@ We defined Beldesk's scope, prepared synthetic evaluation data and a data/API in
 |---|---|---|---|
 | W1.1 | partial | [docs/team_agreement.md](../docs/team_agreement.md) | Roles, procedures and meetings (Mon and Wed 20:00) documented; signatures pending. |
 | W1.2 | done | [docs/use_case_brief.md](../docs/use_case_brief.md) | First customer, personas, five stories and clarified scope. |
-| W1.3 | done | [eval/testsets/week1_inputs.jsonl](../eval/testsets/week1_inputs.jsonl); [docs/test_set_week1.md](../docs/test_set_week1.md) | 25 synthetic inputs; reviewed labels; no P4 or paired TR/EN examples yet. |
+| W1.3 | done — v2 prepared | [eval/testsets/week1_inputs.jsonl](../eval/testsets/week1_inputs.jsonl); [docs/test_set_week1.md](../docs/test_set_week1.md) | 25 synthetic inputs; two exact TR/EN pairs in v2; no P4 example yet. Historical v1 had no pairs. |
 | W1.4 | done | [docs/data_inventory.md](../docs/data_inventory.md); [data/structured/schema.sql](../data/structured/schema.sql) | Document plan, schema, sandbox API sketch and untrusted sources; tools are not implemented. |
-| W1.5 | done | [prompts/baseline_v1.md](../prompts/baseline_v1.md); [eval/results/week1/](../eval/results/week1/); [docs/baseline_analysis_week1.md](../docs/baseline_analysis_week1.md) | All 25 inputs at three temperatures; full response-level analysis. |
-| W1.6 | done | [eval/results/week1/cost_summary.json](../eval/results/week1/cost_summary.json); [scripts/cost_estimate.py](../scripts/cost_estimate.py); [config/prices.json](../config/prices.json) | Measured tokens, formula, dated price assumptions and free-tier caveat. |
+| W1.5 | partial — v2 rerun pending | [prompts/baseline_v1.md](../prompts/baseline_v1.md); [eval/results/week1/](../eval/results/week1/); [docs/baseline_analysis_week1.md](../docs/baseline_analysis_week1.md) | v1: 25 inputs × three temperatures, analyzed. Current v2: rerun pending. |
+| W1.6 | partial — v1 costs only | [eval/results/week1/cost_summary.json](../eval/results/week1/cost_summary.json); [scripts/cost_estimate.py](../scripts/cost_estimate.py); [config/prices.json](../config/prices.json) | Measured tokens, formula, dated price assumptions and free-tier caveat. |
 | W1.7 | done | [docs/predicted_failures.md](../docs/predicted_failures.md); [docs/baseline_analysis_week1.md](../docs/baseline_analysis_week1.md#predicted-failure-mapping) | Eight predictions mapped to observed, unobserved or untested outcomes. |
 | W1.8 | partial — tag created at submission | [README.md](../README.md) | Repository and reproduction instructions exist; tag creation is pending submission. |
 
@@ -50,7 +52,7 @@ We defined Beldesk's scope, prepared synthetic evaluation data and a data/API in
 
 Cost uses the t0 reference run's list-price equivalent from `scripts/cost_estimate.py` and `eval/results/week1/cost_summary.json`: USD 0.20593/1,000 requests divided by 1,000. At the documented rates, `cost/request = input_tokens/1e6 × 0.25 + output_tokens/1e6 × 1.50`. Rates are the repository's 2026-11-09 assumptions. Actual spend (`actual_spend_usd`) and both scoreboard spend fields are USD 0 by free-tier assumption, **not billing measurements**. Accuracy-type metrics and end-to-end latency are unmeasured. Manual judgments are not scoreboard scores.
 
-Changes to any test set this week: labels only for W1-04, W1-12, W1-13, W1-21 and W1-22 after independent review; input texts unchanged. The baseline was rerun on the relabeled file; this report uses that evidence (R9).
+Changes to the test set: the historical v1 run followed label corrections for W1-04, W1-12, W1-13, W1-21 and W1-22. Subsequently, v2 replaced W1-03 and W1-07 user texts with exact Turkish translations of W1-02 and W1-10; count and TR/EN distribution are unchanged. v2 has not been run. All scoreboard numbers below refer to v1, not to the new pairs (R9).
 
 ## 4. Experiments
 
@@ -138,4 +140,4 @@ Team members reviewed AI outputs and remain responsible for the content (R15). T
 | 2. Expand to a 40-case versioned set including P4, P3/P4 boundaries and paired TR/EN inputs; rerun baseline | Test-set size, urgency coverage, paired language/token comparison | 25 → 40 planned cases; P4 and matched-language coverage become testable. |
 | 3. Build harness plus calibrated LLM judge; run several seeds per input | e2e accuracy with n/95% interval, judge agreement, within-temperature variability | Replace unmeasured values with reproducible estimates; no claimed improvement magnitude yet. |
 
-Main-text word count excluding tables, fenced JSON and this note: 912.
+Main-text word count excluding tables, fenced JSON and this note: 996.
