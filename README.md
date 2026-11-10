@@ -27,17 +27,11 @@ Instructor: Huseyin Ulusoy. Course reference: *Prompt Engineering Project Handbo
 
 ## Week 1 animated presentation
 
-The latest presentation is [deck/week1/index.html](deck/week1/index.html): 22 main slides and 3 question branches, with local artwork, fonts, and player bundles. It replaces `docs/presentation_week1.html`.
+**[Open the animated presentation](https://efmaster04.github.io/AI390/)** — no terminal or installation required. Use the arrow keys to navigate, or choose Present.
 
-Serve it from the repository root, then open <http://localhost:8000/deck/week1/>:
+The presentation is a single self-contained file: [`docs/index.html`](docs/index.html). All artwork, fonts, and player code are embedded. You can also download that file and open it in Chrome or Edge without a server or internet connection.
 
-```sh
-python3 -m http.server 8000
-```
-
-For the HyperFrames presenter, run `npx hyperframes present deck/week1/composition`. Edit the scenes in `deck/week1/composition/scenes/` and the slide order in `deck/week1/atolye/deck.json`; rebuild both entry points with `node deck/week1/atolye/birlestir.mjs` (Node.js required).
-
-This is the latest Claude-produced deck, including its remaining speaker-note placeholders. Its measured examples describe the historical baseline; the revised paired-input set still needs a fresh run, as explained below. Preview images and internal review logs stay local.
+It contains 22 main slides and 3 question branches. Some speaker notes still contain placeholders from the latest Claude version. The measured examples describe the historical baseline; the revised paired-input set still needs a fresh run, as explained below.
 
 ## Setup on macOS or Linux
 
