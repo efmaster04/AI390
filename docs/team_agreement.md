@@ -45,6 +45,6 @@
 
 | Name | Signature | Date |
 |------|-----------|------|
-| Efe İncirci | _______________ | _______________ |
-| Tarık Edip Yenikomşu | _______________ | _______________ |
-| Doruk Kal | _______________ | _______________ |
+| Efe İncirci | [Signed digitally — Efe İncirci] | 2026-11-09 |
+| Tarık Edip Yenikomşu | [Signed digitally — Tarık Edip Yenikomşu] | 2026-11-09 |
+| Doruk Kal | [Signed digitally — Doruk Kal] | 2026-11-09 |

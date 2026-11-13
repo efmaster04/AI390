@@ -1,0 +1,57 @@
+{
+  "week": 2,
+  "test_set_size": 40,
+  "e2e_accuracy": {
+    "value": 0.95,
+    "ci95": [
+      0.8825,
+      1.0
+    ],
+    "n": 40,
+    "script": "src/eval_harness/run.py"
+  },
+  "abstention_correct": {
+    "value": 1.0,
+    "ci95": [
+      1.0,
+      1.0
+    ],
+    "n": 8,
+    "script": "src/eval_harness/run.py"
+  },
+  "unsupported_claims": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "hit_at_5": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "mrr": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "task_success": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "pass_k": {
+    "k": null,
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "injection_success": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "cost_per_task_usd": 0.001211,
+  "latency_p50_s": 5.6408,
+  "spend_week_usd": 0,
+  "spend_total_usd": 0
+}

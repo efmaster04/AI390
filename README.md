@@ -15,15 +15,18 @@ Instructor: Huseyin Ulusoy. Course reference: *Prompt Engineering Project Handbo
 | Path | Purpose |
 |---|---|
 | `src/baseline/` | Provider adapters and Week 1 runner |
-| `prompts/` | Versioned system prompts |
-| `eval/testsets/` | Synthetic evaluation inputs |
+| `src/classifier/` | Week 2 JSON schema validator, retry loop, and request classifier (`T=0`) |
+| `src/eval_harness/` | Week 2 single-command evaluation harness, statistical metrics (95% CI, McNemar, Cohen's $\kappa$), and LLM judge |
+| `prompts/` | Versioned system prompts (`baseline_v1`, `classifier_v1`, `assistant_v1`..`v3`, `judge_v1`) |
+| `eval/testsets/` | Synthetic evaluation inputs (`week1_inputs.jsonl`, `week2_cases.jsonl`, `week2_human_labels.jsonl`) |
 | `eval/results/week1/` | Historical v1 baseline runs and summaries as evidence; ad-hoc runs go to `/tmp` |
-| `scripts/` | Temperature comparison and cost estimation |
+| `eval/results/week2/` | Week 2 evaluation results (`v1`, `v2`, `v3`), scoreboard, prompt comparison, judge calibration, hallucination log, and injection tests |
+| `scripts/` | Temperature comparison, cost estimation, and Week 2 experiment orchestration |
 | `config/` | Dated list price assumptions |
-| `tests/` | Offline tests |
-| `src/classifier`, `src/rag`, `src/tools`, `src/agent`, `src/mcp_server` | Planned later stages |
+| `tests/` | Offline unit and acceptance tests (Week 1 + Week 2) |
+| `src/rag`, `src/tools`, `src/agent`, `src/mcp_server` | Planned later stages |
 | `data/corpus`, `data/structured`, `sandbox/` | SQL schema for synthetic records; document corpus and sandbox API implementation are planned |
-| `docs/`, `reports/` | Plans, grading rules, and weekly reports |
+| `docs/`, `reports/` | Plans, prompt design, test-set specs, hallucination/injection logs, and weekly reports (`week-1.md`, `week-2.md`) |
 
 ## Week 1 animated presentation
 
@@ -92,6 +95,28 @@ Run local tests with `.venv/bin/python -m pytest -q`. To check the runner withou
 Dry-run token counts are synthetic. For Ollama, use `--provider ollama --model qwen3:8b` with a running local server (`OLLAMA_HOST` overrides its address). For Groq, set `GROQ_API_KEY` and use `--provider openai_compat --model openai/gpt-oss-20b`. The compatible provider supports `--base-url` and `--api-key-env`. The runner defaults to 10 requests per minute.
 
 Use the matching provider and model for temperature comparisons. The paired-token script currently reads Gemini run metadata. Run metadata includes the input and prompt hashes, command, timestamp and Git commit. Cost estimates use the dated prices in `config/prices.json`. Unavailable estimates are reported as `null`. Zero free-tier spend is an assumption, not a billing measurement.
+
+## Reproduce Week 2 (Classifier, Evaluation Harness, and Judge Calibration)
+
+Week 2 adds a schema-validated JSON classifier (`src/classifier/`), three versioned prompt templates (`prompts/assistant_v1.md`, `v2`, `v3`), a 40-case evaluation suite (`eval/testsets/week2_cases.jsonl`), a single-command evaluation harness (`src/eval_harness/run.py`), and an LLM-as-judge calibrated against 20 human labels (`src/eval_harness/judge.py`).
+
+To run the full Week 2 evaluation harness from cached results (recomputes `scoreboard.json`, `prompt_comparison.json`, and `prompt_comparison.md` without calling the network):
+
+```sh
+.venv/bin/python -m src.eval_harness.run --provider gemini --model gemini-3.1-flash-lite --inputs eval/testsets/week2_cases.jsonl --out-dir eval/results/week2 --prices config/prices.json --versions v1,v2,v3 --skip-existing
+```
+
+To execute fresh API runs across all 40 cases (`v1`, `v2`, `v3`), calibrate the LLM judge (`judge_calibration.json`), and generate the hallucination (`hallucination_log.json`) and injection (`injection_test_results.json`) artifacts:
+
+```sh
+.venv/bin/python scripts/run_week2_experiments.py
+```
+
+To run the offline test suite (Week 1 + Week 2 unit and acceptance tests):
+
+```sh
+.venv/bin/python -m pytest -v
+```
 
 ## Weekly submission
 

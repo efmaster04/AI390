@@ -4,25 +4,25 @@
 Kural: kanıtı olmayan deliverable "yapılmadı" sayılır. Durum: ☐ yok · ◐ kısmi · ☑ tamam
 
 ## Hafta 1 — Problem ve baseline (scoreboard: cost per request)
-- ☐ W1.1 Takım anlaşması (roller, toplantı, karar kuralı, teslim edilmezse ne olur, ders sonrası sahiplik)
-- ☐ W1.2 Use case brief (ilk müşteri, persona, 5 user story, kapsam içi/dışı)
-- ☐ W1.3 25 gerçekçi kullanıcı girdisi (soru, sorgu, aksiyon, cevaplanamaz, çok adımlı etiketli)
-- ☐ W1.4 Veri envanteri (dokümanlar, tablolar/kolonlar, aksiyon API taslağı, güvenilmez girdi kaynakları)
-- ☐ W1.5 Baseline: tek prompt, 25 girdi, sıcaklık 0 / 0.7 / 1.2
-- ☐ W1.6 Maliyet tahmini (request başı token, 1000 request $; formül + varsayım)
-- ☐ W1.7 ≥5 öngörülen hata (Module 1 kavramlarına bağlı)
-- ☐ W1.8 Repo + README, tag `week-1`
-- Ek: use case tercih formu (Ek C) ilk seansta
+- ☑ W1.1 Takım anlaşması (roller, toplantı, karar kuralı, teslim edilmezse ne olur, ders sonrası sahiplik) → `docs/team_agreement.md`
+- ☑ W1.2 Use case brief (ilk müşteri, persona, 5 user story, kapsam içi/dışı) → `docs/use_case_brief.md`
+- ☑ W1.3 25 gerçekçi kullanıcı girdisi (soru, sorgu, aksiyon, cevaplanamaz, çok adımlı etiketli) → `eval/testsets/week1_inputs.jsonl`, `docs/test_set_week1.md`
+- ☑ W1.4 Veri envanteri (dokümanlar, tablolar/kolonlar, aksiyon API taslağı, güvenilmez girdi kaynakları) → `docs/data_inventory.md`, `data/structured/schema.sql`
+- ☑ W1.5 Baseline: tek prompt, 25 girdi, sıcaklık 0 / 0.7 / 1.2 → `eval/results/week1/`, `docs/baseline_analysis_week1.md`
+- ☑ W1.6 Maliyet tahmini (request başı token, 1000 request $; formül + varsayım) → `eval/results/week1/cost_summary.json`, `scripts/cost_estimate.py`
+- ☑ W1.7 ≥5 öngörülen hata (Module 1 kavramlarına bağlı) → `docs/predicted_failures.md`
+- ☑ W1.8 Repo + README, tag `week-1` → `README.md`, tag `week-1`
+- ☑ Ek: use case tercih formu / özel use case onayı (Beldesk)
 
 ## Hafta 2 — Prompt ve eval harness (accuracy ± belirsizlik, abstention)
-- ☐ W2.1 Request classifier (JSON şema, T=0, doğrulama + retry)
-- ☐ W2.2 Ana prompt (6 yapı taşı, versiyonlu şablon)
-- ☐ W2.3 ≥40 vakalık test seti (≥5 cevaplanamaz, ≥5 adversarial, ≥5 edge)
-- ☐ W2.4 Eval harness (tek komut, scoreboard dosyası yazar)
-- ☐ W2.5 3 prompt versiyonu karşılaştırması (%95 aralık + McNemar)
-- ☐ W2.6 LLM judge, 20 insan etiketine karşı Cohen's κ
-- ☐ W2.7 Halüsinasyon günlüğü (≥10 örnek, tip ile)
-- ☐ W2.8 3 doğrudan injection denemesi
+- ☑ W2.1 Request classifier (JSON şema, T=0, doğrulama + retry) → `src/classifier/`, `prompts/classifier_v1.md`
+- ☑ W2.2 Ana prompt (6 yapı taşı, versiyonlu şablon) → `prompts/assistant_v3.md`, `docs/prompt_design_week2.md`
+- ☑ W2.3 ≥40 vakalık test seti (≥5 cevaplanamaz, ≥5 adversarial, ≥5 edge) → `eval/testsets/week2_cases.jsonl`, `docs/test_set_week2.md`
+- ☑ W2.4 Eval harness (tek komut, scoreboard dosyası yazar) → `src/eval_harness/run.py`, `eval/results/week2/scoreboard.json`
+- ☑ W2.5 3 prompt versiyonu karşılaştırması (%95 aralık + McNemar) → `eval/results/week2/prompt_comparison.md`, `eval/results/week2/prompt_comparison.json`
+- ☑ W2.6 LLM judge, 20 insan etiketine karşı Cohen's κ → `src/eval_harness/judge.py`, `eval/testsets/week2_human_labels.jsonl`, `eval/results/week2/judge_calibration.json`
+- ☑ W2.7 Halüsinasyon günlüğü (≥10 örnek, tip ile) → `docs/hallucination_log_week2.md`, `eval/results/week2/hallucination_log.json`
+- ☑ W2.8 3 doğrudan injection denemesi → `docs/injection_test_week2.md`, `eval/results/week2/injection_test_results.json`
 
 ## Hafta 3 — RAG (hit@k, MRR, unsupported claims)
 - ☐ W3.1 ≥30 doküman corpus, metadata (kaynak, tarih/versiyon, erişim)
