@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-013",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "895425c118339facc30c33e097ed8c043a3bf1233bfcbbef352e599ebdbec971"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhabalar, Yeşilvadi Belediyesi Beyaz Masa'ya hoş geldiniz. Bildirdiğiniz durum için teşekkür ederim. İlettiğiniz bilgileri kullanarak bir saha raporu taslağı hazırladım. Lütfen bilgileri kontrol edip onaylayın, böylece ilgili birimlerimize iletilmek üzere hazır hale getirelim.\n\nKategori: roads_sidewalks\nKonum: Yeşilova mahallesi, Ada 1245 Parsel 7 önü\nÖnerilen aciliyet: P2 — Kaldırımın tamamen çökmüş olması yayalar için ciddi bir düşme ve yaralanma riski oluşturmaktadır.\n\nBu taslağı onaylıyor musunuz? Eklemek istediğiniz başka bir detay var mı?",
+  "error": null,
+  "input_tokens": 943,
+  "output_tokens": 153,
+  "latency_s": 1.6101090000011027,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

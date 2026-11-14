@@ -1,5 +1,6 @@
 """REST providers sharing a small generate interface."""
 
+import json
 import os
 from urllib.parse import quote
 
@@ -27,9 +28,13 @@ def _post(url, *, headers=None, payload):
         raise ProviderError("Invalid JSON response") from exc
 
 
+DRY_JSON = json.dumps({"intent": "faq", "secondary_intents": [], "issues": [],
+                       "ticket_id": None, "missing_fields": [], "lang": "tr"})
+
+
 class DryProvider:
-    def generate(self, system, user, temperature, max_tokens, seed):
-        output = "[dry-run] " + user[:40]
+    def generate(self, system, user, temperature, max_tokens, seed, *, json_mode=False):
+        output = DRY_JSON if json_mode else "[dry-run] " + user[:40]
         return {"output": output, "input_tokens": len(user) // 4, "output_tokens": len(output) // 4}
 
 
@@ -37,14 +42,15 @@ class GeminiProvider:
     def __init__(self, model, api_key):
         self.model, self.api_key = model, api_key
 
-    def generate(self, system, user, temperature, max_tokens, seed):
+    def generate(self, system, user, temperature, max_tokens, seed, *, json_mode=False):
         data = _post(
             f"https://generativelanguage.googleapis.com/v1beta/models/{quote(self.model, safe='')}:generateContent",
             headers={"x-goog-api-key": self.api_key},
             payload={"systemInstruction": {"parts": [{"text": system}]},
                      "contents": [{"role": "user", "parts": [{"text": user}]}],
                      "generationConfig": {"temperature": temperature, "maxOutputTokens": max_tokens,
-                                          "seed": seed}},
+                                          "seed": seed,
+                                          **({"responseMimeType": "application/json"} if json_mode else {})}},
         )
         candidate = (data.get("candidates") or [{}])[0]
         parts = candidate.get("content", {}).get("parts", [])
@@ -63,9 +69,10 @@ class OllamaProvider:
     def __init__(self, model, host):
         self.model, self.host = model, host.rstrip("/")
 
-    def generate(self, system, user, temperature, max_tokens, seed):
+    def generate(self, system, user, temperature, max_tokens, seed, *, json_mode=False):
         data = _post(f"{self.host}/api/chat", payload={
             "model": self.model, "stream": False,
+            **({"format": "json"} if json_mode else {}),
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
             "options": {"temperature": temperature, "num_predict": max_tokens, "seed": seed},
         })
@@ -77,10 +84,11 @@ class OpenAICompatProvider:
     def __init__(self, model, base_url, api_key):
         self.model, self.base_url, self.api_key = model, base_url.rstrip("/"), api_key
 
-    def generate(self, system, user, temperature, max_tokens, seed):
+    def generate(self, system, user, temperature, max_tokens, seed, *, json_mode=False):
         data = _post(f"{self.base_url}/chat/completions",
                      headers={"Authorization": f"Bearer {self.api_key}"},
                      payload={"model": self.model, "temperature": temperature,
+                              **({"response_format": {"type": "json_object"}} if json_mode else {}),
                               "max_tokens": max_tokens, "seed": seed,
                               "messages": [{"role": "system", "content": system},
                                            {"role": "user", "content": user}]})

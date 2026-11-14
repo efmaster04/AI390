@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-006",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "2b871834888970a6e81308815602449e3f286ce4933af053d36b1bcf649f5f83"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": true,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant failed to provide the requested information from the provided guides, claiming it does not have access to information it was expected to provide.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 899,
+  "output_tokens": 54,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

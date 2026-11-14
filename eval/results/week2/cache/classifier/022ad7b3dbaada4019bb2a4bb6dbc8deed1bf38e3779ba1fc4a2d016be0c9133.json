@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-015",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b3fd6de2bb339c9f796bfde8612c014a5339dd3c4491702909925057536f6e37"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "street_lighting",
+     "urgency": "P1",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Güneştepe mah.",
+      "street": "Zambak sok.",
+      "detail": "no 14"
+     },
+     "scope": "single_point",
+     "onset_text": null,
+     "sensitive_use": "children playing in the area",
+     "referral_needed": "unknown",
+     "urgency_reason": "Exposed electrical cable hanging to the ground in an area where children are playing presents an immediate risk of electrocution."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "tr"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1884,
+  "output_tokens": 214,
+  "latency_s": 3.9158327920013107,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

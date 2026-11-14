@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-026",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5288038478522224f95843a8b102755045c1b5945a9740696deb544442614e13"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Beldesk. Bahçeli Parkı'ndaki bankın durumuyla ilgili talebinizi aldım. Bu tür bakım ve onarım çalışmaları için bir saha raporu oluşturabilirim.\n\nLütfen aşağıdaki bilgileri kontrol edip onaylayın:\n\nKategori: parks_green\nKonum: Bahçeli Parkı\nÖnerilen aciliyet: P4 — Bankın boyasının dökülmüş olması estetik bir sorun teşkil ediyor, güvenlik riski bulunmuyor.\n\nBu taslağı onaylıyorsanız kaydınızı oluşturabilirim. Park ve bahçelerle ilgili diğer detaylı bilgi veya talepleriniz için Yeşilvadi Belediyesi'nin resmi iletişim kanalları üzerinden yetkililerle görüşebilirsiniz.",
+  "error": null,
+  "input_tokens": 925,
+  "output_tokens": 156,
+  "latency_s": 7.167731709021609,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

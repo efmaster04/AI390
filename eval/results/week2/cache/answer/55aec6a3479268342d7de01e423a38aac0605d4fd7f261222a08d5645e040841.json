@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-030",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "17761f5f581d81b85c85d5797d550e2b846ba68faf9dc50f7a10b493344fec2f"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Beldesk. Yeşilvadi Belediyesi Beyaz Masa asistanıyım.\n\nNe yazık ki sistemlerimize doğrudan erişimim bulunmadığı için mevcut bir talebin durumunu sorgulayamıyor veya ekiplerimizin çalışma saatlerine dair kesin bir zaman bilgisi veremiyorum. Bu tür detaylı bilgiler için lütfen 444 00 00 numaralı çağrı merkezimizi arayarak veya belediyemizin resmi web sitesindeki \"Talep Sorgulama\" ekranını kullanarak güncel bilgi alınız.\n\nSize başka bir konuda yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 940,
+  "output_tokens": 122,
+  "latency_s": 1.382677874993533,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

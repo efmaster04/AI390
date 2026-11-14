@@ -1,0 +1,46 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-039",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "92ea33e68935d84ea5054eeb8c144ac8c3be987a0452556a0610a3bf3996339f"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "animals",
+     "urgency": "P3",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": null,
+      "street": null,
+      "detail": null
+     },
+     "scope": "unknown",
+     "onset_text": "bütün gece",
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "Noise disturbance caused by animals is a routine service complaint without immediate safety hazard."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [
+    "location"
+   ],
+   "lang": "tr"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1863,
+  "output_tokens": 193,
+  "latency_s": 1.8856463759730104,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

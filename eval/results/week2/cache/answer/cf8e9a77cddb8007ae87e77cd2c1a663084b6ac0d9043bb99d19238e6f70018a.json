@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-040",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "98e0e8c390bea75033c7bb994adefd6b604829946530aa96e9f64334ede6470e"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "If there is an immediate danger to life or property, please call 112 now.\n\nRegarding the fallen tree on Meşe Road, I have prepared a report draft below. Please confirm if the details are correct so you can submit this to the municipality. Regarding the bakery's Sunday hours, I do not have access to local business schedules; I recommend checking their social media or asking them directly.\n\nCategory: roads_sidewalks\nLocation: Bahçeli, Meşe Road\nProposed urgency: P2 — A fallen tree is blocking the entire road and forcing traffic onto the pavement, creating a significant safety risk.\n\nDoes this draft accurately describe the situation? If so, please contact the official municipal desk to finalize your report.",
+  "error": null,
+  "input_tokens": 1058,
+  "output_tokens": 151,
+  "latency_s": 6.718436791998101,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-001",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "32f983f6f6bb4c11698eee1bdcaac90e3d0f6def32e8eb5c128c2f46e3c0af3d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, Yeşilvadi Belediyesi Beyaz Masa'ya hoş geldiniz.\n\nNikah işlemleri ve gerekli belgeler hakkında güncel ve resmi bilgiye ulaşmak için lütfen belediyemizin resmi web sitesini ziyaret edin veya 444 00 00 numaralı çağrı merkezimiz üzerinden ilgili birimimizle görüşün. Ben bir sanal asistan olarak başvuru süreçleri, evrak listeleri veya randevu sistemleri konusunda işlem yapamıyor ve detaylı bilgi veremiyorum.\n\nBelediyemizle ilgili saha sorunlarını (yol, aydınlatma, temizlik vb.) bildirmek isterseniz size yardımcı olmaktan memnuniyet duyarım. Başka bir konuda size nasıl destek olabilirim?",
+  "error": null,
+  "input_tokens": 912,
+  "output_tokens": 153,
+  "latency_s": 15.061440376011888,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-032",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "97b72e14ed32f22a251edcf4823531e5f90d071400c629fc2001f817c8ce06cf"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "street_lighting",
+     "urgency": "P3",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Güneştepe",
+      "street": "Papatya Street",
+      "detail": "outside our house"
+     },
+     "scope": "single_point",
+     "onset_text": "since Monday",
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "A single failed streetlight is classified as P3; the citizen's claim of life-or-death urgency lacks evidence of a concrete hazard."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "en"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1886,
+  "output_tokens": 214,
+  "latency_s": 17.117410750011913,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

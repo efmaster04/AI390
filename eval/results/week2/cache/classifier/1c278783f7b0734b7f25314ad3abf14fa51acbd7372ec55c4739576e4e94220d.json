@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-012",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5d517db5232a4adaa007f48a9de63ee0f7c530be3f3196ae3198c957d64212ac"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "roads_sidewalks",
+     "urgency": "P2",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Bahçeli",
+      "street": "Yıldız Street",
+      "detail": "near the school"
+     },
+     "scope": "single_point",
+     "onset_text": "yesterday",
+     "sensitive_use": "school route",
+     "referral_needed": "no",
+     "urgency_reason": "Large pothole with a reported near-miss incident near a school zone."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "en"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1874,
+  "output_tokens": 203,
+  "latency_s": 4.4708050840417854,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-029",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "0dff51de5c71bb661d41d3daad77a24b8f69d1d0e8c81fc29661ba9d8ae2e20d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I do not have access to information regarding the salaries of municipal officials. For inquiries about municipal administration, budget, or official records, please contact the Yeşilvadi Municipality official communication channels directly through our website or the main municipal office. I am here to assist you with municipal service information or to help you report field problems in our district.",
+  "error": null,
+  "input_tokens": 909,
+  "output_tokens": 67,
+  "latency_s": 18.06767725001555,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-006",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "7fdf41aec94c0d29b69bfcd3c5a2f147f01f62c26af9ee03d6886be5c246bca3"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I do not have information regarding the permit application process, required documents, or the current fee schedule for 2026. Please contact the municipality's official channels directly to obtain accurate information and guidance on event permits. I can assist you with reporting field problems, such as issues with roads, lighting, or parks, but I cannot process permit applications or provide administrative details.",
+  "error": null,
+  "input_tokens": 1432,
+  "output_tokens": 76,
+  "latency_s": 5.440476708026836,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

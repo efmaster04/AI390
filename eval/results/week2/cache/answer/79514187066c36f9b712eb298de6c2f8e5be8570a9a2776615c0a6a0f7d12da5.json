@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-039",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "92ea33e68935d84ea5054eeb8c144ac8c3be987a0452556a0610a3bf3996339f"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, yaşadığınız rahatsızlıktan dolayı üzgünüm. Bu durumu \"Sokak Hayvanları\" kategorisinde bir şikayet olarak kaydedebilirim. Ekiplerimizin bölgeye müdahale edebilmesi için lütfen mahalle ve sokak bilgisi paylaşır mısınız?\n\nAşağıdaki taslağı onaylıyorsanız lütfen belirtin:\n\nCategory: Sokak Hayvanları\nLocation: missing\nProposed urgency: P3 — Gürültü şikayeti ve huzursuzluk\n\nLütfen mahalle ve sokak ismini iletin, kaydınızı hemen oluşturalım.",
+  "error": null,
+  "input_tokens": 365,
+  "output_tokens": 129,
+  "latency_s": 3.039154458005214,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-024",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "445a26dc3dbd7c93e1fa55784e43e27332db39204ffea8ee16f5ee3b441028f4"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "water_sewer",
+     "urgency": "P2",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Yeşilova",
+      "street": "Selvi Street",
+      "detail": null
+     },
+     "scope": "street",
+     "onset_text": null,
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "Burst pipe causing road flooding constitutes a serious essential-service disruption and potential access loss."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "en"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1903,
+  "output_tokens": 193,
+  "latency_s": 11.985391582973534,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

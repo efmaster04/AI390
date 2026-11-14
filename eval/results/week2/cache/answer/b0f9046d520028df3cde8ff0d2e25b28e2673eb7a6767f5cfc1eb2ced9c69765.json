@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-027",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "3acdaeef5bd4d7eddf18c4e73f968b7c43e11414a82c366290c34aa1d2afd39a"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Hello! I am Beldesk, the virtual assistant for Yeşilvadi Municipality. Thank you for your thoughtful suggestion regarding Çınar Street; adding greenery is a great way to improve our neighborhood's walkability.\n\nI have drafted a service request for our Parks and Gardens Department to evaluate your proposal. Please review the details below and let me know if you would like me to submit this for you.\n\nCategory: Urban Greening / Tree Planting\nLocation: Çınar Street, Yeşilova\nProposed urgency: P4 — Non-urgent request for environmental improvement\n\nDoes this accurately reflect your request, or would you like to add any specific details before I forward it to the relevant department?",
+  "error": null,
+  "input_tokens": 374,
+  "output_tokens": 138,
+  "latency_s": 2.2764759580022655,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

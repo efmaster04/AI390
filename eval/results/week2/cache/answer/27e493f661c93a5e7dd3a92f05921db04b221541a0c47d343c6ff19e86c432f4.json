@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-003",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "0e92d84e229d425255b0c44f67b34d91c1435c46aeb3a3091a5d4f0ced03b0fb"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Yeşilvadi'de su aboneliği işlemleri belediyemiz tarafından değil, bölgeden sorumlu su ve kanalizasyon idaresi (İSKİ/ASKİ vb.) tarafından yürütülmektedir.\n\nGenel olarak yanınızda bulunması gereken belgeler; tapu fotokopisi veya kira kontratı, DASK poliçesi, kimlik belgeniz ve varsa eski abonelik numarasıdır. Kesin liste ve başvuru süreci için lütfen ilgili kurumun web sitesini ziyaret edin veya en yakın abone merkezine danışın. Size başka bir konuda yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 367,
+  "output_tokens": 129,
+  "latency_s": 4.39914162401692,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

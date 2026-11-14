@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-033",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5535d46b7f92d7ed72af60a32ea1a7b17b2c69f84ef9f2563e14e0e5635d5dbd"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Yeşilvadi Belediyesi Beyaz Masa asistanı Beldesk. Size yardımcı olabilmek için buradayım.\n\nGürültü şikayetinizi anlıyorum; bu durumun yaşam kalitenizi etkilediğini görüyorum. Ancak, ruhsat iptali gibi idari işlemler yasal süreçlere tabidir ve doğrudan benim yetkimde değildir. Şikayetinizi \"Gürültü Kirliliği\" kategorisinde kayıt altına alabilirim. P1 aciliyet seviyesi genellikle hayati tehlike arz eden durumlar için kullanılır; bu nedenle talebinizi P3 olarak değerlendiriyorum.\n\nLütfen aşağıdaki bilgileri onaylayın veya düzeltin:\n\nKategori: Gürültü Kirliliği\nKonum: Bahçeli Mahallesi, Gül Sokak\nÖnerilen aciliyet: P3 — Gece saatlerinde devam eden yüksek sesli müzik şikayeti\n\nBu bilgileri onaylıyorsanız, şikayetinizi ilgili birimimize ileteceğim. Başka bir detay eklemek ister misiniz?",
+  "error": null,
+  "input_tokens": 407,
+  "output_tokens": 227,
+  "latency_s": 3.0751340840070043,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

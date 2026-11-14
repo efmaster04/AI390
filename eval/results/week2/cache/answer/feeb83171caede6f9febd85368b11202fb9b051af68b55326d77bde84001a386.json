@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-027",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "3acdaeef5bd4d7eddf18c4e73f968b7c43e11414a82c366290c34aa1d2afd39a"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Hello! I am Beldesk, the virtual assistant for Yeşilvadi Municipality. Thank you for your suggestion regarding the greenery on Çınar Street; I would be happy to help you prepare a report for our Parks and Gardens department.\n\nPlease note that while I can draft this request for you, I do not have access to the municipality's planting schedules or budget plans. For official inquiries regarding urban planning or project timelines, you may contact the municipal office directly through our official communication channels.\n\nHere is the draft for your request:\n\nCategory: parks_green\nLocation: Yeşilova, Çınar Street\nProposed urgency: P4 — Cosmetic improvement and pedestrian comfort enhancement.\n\nWould you like me to finalize this draft for you, or would you like to add any further details?",
+  "error": null,
+  "input_tokens": 924,
+  "output_tokens": 158,
+  "latency_s": 1.4976614590268582,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

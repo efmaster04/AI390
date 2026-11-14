@@ -1,0 +1,56 @@
+{
+  "_doc": "Shared vocabulary and case format for the Week 2 test set (eval/testsets/week2_cases.jsonl), the review page (tools/review) and the future W2.1 classifier output. Source of rules: docs/priority_policy.md (v0.3 draft) and docs/priority_policy_decisions.md. Change it here only.",
+  "contract_version": 2,
+  "policy_version": "0.3-draft",
+  "types": ["normal", "unanswerable", "adversarial", "edge"],
+  "langs": ["tr", "en", "mixed"],
+  "intents": ["faq", "field_complaint", "status_inquiry", "emergency", "out_of_scope"],
+  "categories": [
+    "roads_sidewalks", "street_lighting", "waste_collection", "water_sewer", "parks_green",
+    "traffic_signals", "permits_licensing", "social_services", "animals", "noise_environment", "other"
+  ],
+  "urgencies": ["P1", "P2", "P3", "P4"],
+  "urgency_statuses": ["classified", "needs_clarification"],
+  "scopes": ["single_point", "partial", "street", "area", "unknown"],
+  "referral_values": ["yes", "no", "unknown"],
+  "missing_field_values": ["location", "issue_details", "scope", "onset", "ticket_id", "contact_last4"],
+  "review_statuses": ["pending", "approved", "changed"],
+  "rules": [
+    "expected.issues is non-empty if and only if 'field_complaint' is the primary intent or one of secondary_intents.",
+    "Each issue is one distinct fault; a message reporting two faults has two issues (decision 7).",
+    "issue.urgency is null if and only if issue.urgency_status == 'needs_clarification' (the incident itself is ambiguous, decision 5). Missing location alone never nulls urgency; it goes to missing_fields.",
+    "Intent 'emergency' without a field_complaint has no issues and no urgency; the answer directs to 112 first (decision 4).",
+    "referral_needed is 'yes' or 'unknown' when another body (e.g. the electricity distributor) may own the fault; the municipality still records it (decision 8). The model never names the external body.",
+    "scope, onset_text and sensitive_use are extracted facts for the Week 4 queue ordering; never invent them (decision 9). Use 'unknown' / null when not stated.",
+    "For type 'unanswerable' cases answerable is false."
+  ],
+  "case_format": {
+    "id": "W2-001 ... W2-0NN, unique, sequential",
+    "source_id": "W1-xx when carried over from week1_inputs.jsonl, else null",
+    "lang": "one of langs",
+    "type": "one of types",
+    "ingredients": "list of ingredient numbers 1-8 from the brief",
+    "text": "the citizen message, verbatim",
+    "expected": {
+      "intent": "one of intents (primary intent)",
+      "secondary_intents": "list of intents, [] when single-intent",
+      "issues": [
+        {
+          "category": "one of categories",
+          "urgency": "one of urgencies, or null only when urgency_status is needs_clarification",
+          "urgency_status": "one of urgency_statuses",
+          "location": "{\"neighborhood\": str|null, \"street\": str|null, \"detail\": str|null} or null when nothing is stated",
+          "scope": "one of scopes",
+          "onset_text": "verbatim duration/onset phrase from the text (e.g. '2 haftadır', 'since Monday') or null",
+          "sensitive_use": "short phrase for an explicitly connected sensitive use (e.g. 'school route') or null",
+          "referral_needed": "one of referral_values"
+        }
+      ],
+      "ticket_id": "YV-YYYY-NNNNNN string or null (never 'correct' a malformed id)",
+      "missing_fields": "list of missing_field_values the assistant should ask for, [] when none"
+    },
+    "expected_behavior": "one or two English sentences describing the correct final answer/behaviour",
+    "answerable": "false when the honest answer is 'I can't answer / not in scope / not in the documents'",
+    "review": {"status": "pending|approved|changed", "reviewer": "str|null", "note": "str|null", "updated_at": "ISO UTC str|null"}
+  }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-005",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "05c6ee9e395641fe5950c5a9685413541a603155a6b4abd068fb1171b7f191b1"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Sosyal yardım başvuruları, gelir sınırları veya yardım türleri hakkında bilgi sahibi değilim; bu konularda işlem yapma veya başvuru alma yetkim bulunmuyor.\n\nBelediyemizin sunduğu sosyal hizmetler, başvuru şartları ve güncel destek programları hakkında en doğru bilgiyi almak için lütfen Yeşilvadi Belediyesi'nin resmi iletişim kanalları üzerinden Sosyal Yardım İşleri Müdürlüğü ile iletişime geçin. Size başka bir konuda, örneğin bir saha sorunu bildirimi konusunda yardımcı olabilirim.",
+  "error": null,
+  "input_tokens": 1417,
+  "output_tokens": 112,
+  "latency_s": 2.890123165969271,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-004",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5c92b75d0c39338be7ae4576a4e96e97b57be9adc24b0b462359ee24df7e0293"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Congratulations on your new cat! Regarding pet registration and potential fees, I do not have access to current municipal regulations or fee schedules. \n\nFor accurate information on pet registration requirements, please contact the Yeşilvadi Municipality Veterinary Affairs Department directly through our official communication channels, such as our website or the main municipal switchboard. They will be able to provide you with the correct procedures and any applicable documentation.\n\nI am here to assist you with municipal service information or to help you report field problems, such as issues with roads, waste collection, or park maintenance. Please let me know if you have any other questions I can help with!",
+  "error": null,
+  "input_tokens": 917,
+  "output_tokens": 127,
+  "latency_s": 5.765253834018949,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

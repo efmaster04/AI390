@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-007",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "1f8c7cc3d0ced1a429911e28f7ee15a596e070b9768b64157276a436cf892cc7"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, talebinizi kontrol ettim. YV-2026-011532 numaralı kaydınız şu anda ilgili birimimiz tarafından incelenmektedir ve işlemleriniz devam etmektedir. Süreç tamamlandığında tarafınıza SMS yoluyla bilgilendirme yapılacaktır. Başka bir konuda yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 387,
+  "output_tokens": 70,
+  "latency_s": 1.5411325010063592,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

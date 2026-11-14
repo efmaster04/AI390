@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-042",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e9ebcdbe58666f7c6d58418f0c264ca3b11784aab5bfb79647b8b2bf599d0530"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am sorry, but I do not have access to the municipal ticket database and cannot provide status updates on existing reports. Please contact the official Yeşilvadi Municipality communication channels directly to inquire about the status of your request.",
+  "error": null,
+  "input_tokens": 922,
+  "output_tokens": 44,
+  "latency_s": 1.3125477080175187,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

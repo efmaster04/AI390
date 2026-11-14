@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-028",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "d9d956c4aa227baf4fb82da63a052c9601392ec2f96ee5c039acab2f2c71eb1b"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Geçmiş olsun, bu çok tehlikeli bir durum. İhbarınızı hemen acil olarak sisteme kaydediyorum.\n\nKategori: Altyapı ve Kanalizasyon\nKonum: Çamlık Mahallesi, Defne Sokak\nÖnerilen aciliyet: P1 — Açık rögar kapağı ciddi bir güvenlik riski oluşturuyor ve yaralanmaya sebebiyet verebilir.\n\nBu bilgileri onaylıyor musunuz? Onayınızla birlikte ekiplerimizi bölgeye yönlendireceğim. Ayrıca, ulaşabileceğimiz bir telefon numarası bırakmak ister misiniz?\n\nCategory: Infrastructure and Sewerage\nLocation: Çamlık Neighborhood, Defne Street\nProposed urgency: P1 — Open manhole cover poses a serious safety risk and may cause injury.\n\nDo you confirm these details? I will dispatch our teams immediately upon your confirmation. Would you also like to provide a contact phone number?",
+  "error": null,
+  "input_tokens": 375,
+  "output_tokens": 194,
+  "latency_s": 1.3418620419979561,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

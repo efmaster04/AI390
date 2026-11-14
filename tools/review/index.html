@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beldesk · Test seti incelemesi</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #ffffff; --ink: #1d232b; --muted: #5f6b7a; --line: #d9dee5;
+    --accent: #2457c5; --accent-ink: #ffffff;
+    --pending: #8a94a3; --pending-bg: #eef0f3;
+    --approved: #1f8a4c; --approved-bg: #e5f5ec;
+    --changed: #b7791f; --changed-bg: #fdf3e1;
+    --error: #b42318; --error-bg: #fdecea;
+    --focus: #2457c5;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  header {
+    position: sticky; top: 0; z-index: 10; background: var(--card);
+    border-bottom: 1px solid var(--line); padding: 12px 16px;
+  }
+  .hrow { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; max-width: 980px; margin: 0 auto; }
+  .hrow + .hrow { margin-top: 10px; }
+  h1 { font-size: 18px; margin: 0; flex: 1 1 auto; }
+  .progress { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); }
+  .bar { width: 160px; height: 8px; background: var(--pending-bg); border-radius: 4px; overflow: hidden; }
+  .bar > div { height: 100%; width: 0; background: var(--approved); transition: width .2s; }
+  label.inline { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+  input[type=text], input[type=search], select, textarea {
+    font: inherit; font-size: 14px; color: var(--ink); background: #fff;
+    border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px;
+  }
+  textarea { width: 100%; resize: vertical; min-height: 64px; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--focus); outline-offset: -1px; }
+  #search { flex: 1 1 180px; min-width: 140px; }
+  #reviewer { width: 140px; }
+  main { max-width: 980px; margin: 0 auto; padding: 16px; }
+  .hint { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
+  .banner { padding: 10px 12px; border-radius: 6px; margin-bottom: 12px; background: var(--error-bg); color: var(--error); }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--pending);
+    border-radius: 8px; padding: 14px 16px; margin-bottom: 14px;
+  }
+  .card.approved { border-left-color: var(--approved); }
+  .card.changed { border-left-color: var(--changed); }
+  .card.focused { box-shadow: 0 0 0 2px var(--focus); }
+  .card.hidden { display: none; }
+  .chead { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .cid { font-weight: 700; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .badge { font-size: 12px; padding: 1px 8px; border-radius: 10px; background: var(--pending-bg); color: var(--muted); }
+  .badge.t-normal { background: #e8effc; color: #2457c5; }
+  .badge.t-unanswerable { background: #f1e8fb; color: #6b3fa0; }
+  .badge.t-adversarial { background: var(--error-bg); color: var(--error); }
+  .badge.t-edge { background: #e6f4f6; color: #1c6f7c; }
+  .status { margin-left: auto; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 10px; }
+  .status.pending { background: var(--pending-bg); color: var(--pending); }
+  .status.approved { background: var(--approved-bg); color: var(--approved); }
+  .status.changed { background: var(--changed-bg); color: var(--changed); }
+  .ctext {
+    white-space: pre-wrap; word-wrap: break-word; font-size: 17px; line-height: 1.55;
+    background: #fafbfc; border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; margin: 0 0 12px;
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px 14px; margin-bottom: 10px; }
+  .field { display: flex; flex-direction: column; gap: 3px; }
+  .field > span { font-size: 12px; color: var(--muted); }
+  .field select:disabled { background: #f1f2f4; color: #9aa3ae; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font: inherit; font-size: 13px; padding: 2px 10px; border-radius: 12px; cursor: pointer;
+    border: 1px solid var(--line); background: #fff; color: var(--ink);
+  }
+  .chip.on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .chip:disabled { opacity: .35; cursor: not-allowed; }
+  .meta { font-size: 12px; color: var(--muted); margin: 4px 0 10px; }
+  .diff {
+    font-size: 13px; background: var(--changed-bg); color: #6f4a0f; border-radius: 6px; padding: 6px 10px; margin: 8px 0;
+  }
+  .diff ul { margin: 2px 0 0; padding-left: 18px; }
+  .err { font-size: 13px; background: var(--error-bg); color: var(--error); border-radius: 6px; padding: 6px 10px; margin: 8px 0; }
+  .ok { font-size: 13px; color: var(--approved); }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+  button.btn {
+    font: inherit; font-size: 14px; padding: 6px 14px; border-radius: 6px; cursor: pointer;
+    border: 1px solid var(--line); background: #fff; color: var(--ink);
+  }
+  button.btn.primary { background: var(--approved); border-color: var(--approved); color: #fff; font-weight: 600; }
+  button.btn:disabled { opacity: .5; cursor: wait; }
+  .issues { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: 0 0 10px; background: #fbfcfd; }
+  .issues.off { opacity: .55; }
+  .issues > .ihead { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .issues > .ihead h3 { font-size: 14px; margin: 0; flex: 1 1 auto; }
+  .issue { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 6px; padding: 8px 10px; margin-bottom: 8px; }
+  .issue .ititle { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .issue .ititle button { margin-left: auto; }
+  .issue .grid { margin-bottom: 6px; }
+  .field input:disabled { background: #f1f2f4; color: #9aa3ae; }
+  button.btn.small { font-size: 13px; padding: 3px 10px; }
+  button.btn.danger { color: var(--error); border-color: #f0b6b0; }
+  .v2note { font-size: 14px; background: #e8effc; color: #17336f; border: 1px solid #b9cbf0; border-radius: 6px; padding: 8px 10px; margin: 0 0 12px; white-space: pre-wrap; }
+  .v2note b { margin-right: 4px; }
+  .checkbox { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+  kbd { font-family: ui-monospace, Menlo, monospace; font-size: 11px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: #fff; }
+  @media (max-width: 560px) {
+    header { padding: 10px 12px; }
+    main { padding: 12px; }
+    .bar { width: 100px; }
+    #reviewer { width: 100%; }
+    label.inline { flex: 1 1 45%; }
+    label.inline select { flex: 1; }
+    .ctext { font-size: 16px; }
+    .grid { grid-template-columns: 1fr 1fr; }
+    .issues { padding: 8px; }
+  }
+  @media (max-width: 380px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="hrow">
+    <h1>Beldesk · Test seti incelemesi</h1>
+    <div class="progress"><span id="progressText">onaylanan 0 / 0</span><div class="bar"><div id="progressBar"></div></div></div>
+    <label class="inline">İnceleyen <input type="text" id="reviewer" placeholder="Adınız" autocomplete="name"></label>
+  </div>
+  <div class="hrow">
+    <label class="inline">Tür <select id="fType"><option value="">hepsi</option></select></label>
+    <label class="inline">Durum <select id="fStatus"><option value="">hepsi</option></select></label>
+    <label class="inline">Dil <select id="fLang"><option value="">hepsi</option></select></label>
+    <input type="search" id="search" placeholder="Ara: metin, id, beklenen davranış…">
+    <button class="btn" id="reload" type="button" title="Dosyayı yeniden oku">Yenile</button>
+  </div>
+</header>
+<main>
+  <p class="hint"><kbd>j</kbd>/<kbd>k</kbd> sonraki / önceki kart · <kbd>a</kbd> seçili kartı onayla · Değişiklik yapıp onaylarsanız durum “değiştirildi” olur. “Kaydet” yalnızca notu kaydeder.</p>
+  <div id="banner" class="banner" hidden></div>
+  <div id="list"></div>
+  <p id="empty" class="hint" hidden>Filtrelere uyan vaka yok.</p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var STATUS_TR = { pending: "bekliyor", approved: "onaylandı", changed: "değiştirildi" };
+  var TYPE_TR = { normal: "normal", unanswerable: "cevapsız", adversarial: "saldırgan", edge: "uç durum" };
+  var FIELD_TR = {
+    intent: "niyet", secondary_intents: "ikincil niyetler", category: "kategori", urgency: "aciliyet",
+    urgency_status: "aciliyet durumu", location: "konum", scope: "kapsam", onset_text: "başlangıç",
+    sensitive_use: "hassas kullanım", referral_needed: "yönlendirme", missing_fields: "eksik bilgiler",
+    ticket_id: "başvuru no", answerable: "cevaplanabilir", expected_behavior: "beklenen davranış", type: "tür"
+  };
+  var ISSUE_KEYS = ["category", "urgency", "urgency_status", "location", "scope", "onset_text", "sensitive_use", "referral_needed"];
+  var FC = "field_complaint", NC = "needs_clarification";
+
+  var labels = null;
+  var cases = [];          // as loaded from the server
+  var drafts = {};         // id -> editable draft
+  var cardEls = {};        // id -> element
+  var focusedId = null;
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  // ---------- storage (may be unavailable)
+  function store(key, val) {
+    try { if (val === undefined) return window.localStorage.getItem(key); window.localStorage.setItem(key, val); }
+    catch (e) { return null; }
+    return null;
+  }
+
+  // ---------- helpers
+  function el(tag, attrs, children) {
+    var e = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      if (k === "class") e.className = attrs[k];
+      else if (k === "text") e.textContent = attrs[k];
+      else if (k.slice(0, 2) === "on") e.addEventListener(k.slice(2), attrs[k]);
+      else if (attrs[k] !== null && attrs[k] !== undefined && attrs[k] !== false) e.setAttribute(k, attrs[k]);
+    });
+    (children || []).forEach(function (c) { if (c) e.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return e;
+  }
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function fmt(v) {
+    if (v === null || v === undefined) return "—";
+    if (Array.isArray(v)) return v.length ? v.join(", ") : "[]";
+    if (typeof v === "boolean") return v ? "evet" : "hayır";
+    return String(v);
+  }
+  function blankIssue() {
+    return { category: null, urgency: null, urgency_status: "classified", location: null,
+             scope: "unknown", onset_text: null, sensitive_use: null, referral_needed: "unknown" };
+  }
+  function issueFrom(it) {
+    var o = blankIssue();
+    ISSUE_KEYS.forEach(function (k) { if (it && it[k] !== undefined) o[k] = clone(it[k]); });
+    return o;
+  }
+  function draftFrom(c) {
+    var ex = c.expected || {};
+    return {
+      expected: {
+        intent: ex.intent || "",
+        secondary_intents: (ex.secondary_intents || []).slice(),
+        issues: (ex.issues || []).map(issueFrom),
+        ticket_id: ex.ticket_id === undefined ? null : ex.ticket_id,
+        missing_fields: (ex.missing_fields || []).slice()
+      },
+      expected_behavior: c.expected_behavior || "",
+      answerable: !!c.answerable,
+      type: c.type,
+      note: (c.review && c.review.note) || ""
+    };
+  }
+  function hasFC(d) { return d.expected.intent === FC || d.expected.secondary_intents.indexOf(FC) !== -1; }
+  function syncIssues(d) {
+    if (!hasFC(d)) d.expected.issues = [];
+    else if (!d.expected.issues.length) d.expected.issues.push(blankIssue());
+  }
+  function norm(v) {
+    if (typeof v === "string") { v = v.trim(); return v || null; }
+    if (v && typeof v === "object" && !Array.isArray(v)) {
+      var o = {}, any = false;
+      Object.keys(v).sort().forEach(function (k) { o[k] = norm(v[k]); if (o[k] !== null) any = true; });
+      return any ? o : null;
+    }
+    return v === undefined ? null : v;
+  }
+  function same(a, b) { return JSON.stringify(norm(a)) === JSON.stringify(norm(b)); }
+  function fmtLoc(l) {
+    l = norm(l);
+    return l ? [l.neighborhood, l.street, l.detail].filter(Boolean).join(" / ") : "—";
+  }
+  function diffs(c, d) {
+    var base = draftFrom(c), out = [];
+    ["intent", "secondary_intents", "missing_fields"].forEach(function (k) {
+      if (!same(base.expected[k], d.expected[k])) out.push([FIELD_TR[k] || k, fmt(base.expected[k]), fmt(d.expected[k])]);
+    });
+    var bi = base.expected.issues, di = d.expected.issues;
+    for (var i = 0; i < Math.max(bi.length, di.length); i++) {
+      var tag = "arıza " + (i + 1);
+      if (!bi[i]) { out.push([tag + " eklendi", null, null]); continue; }
+      if (!di[i]) { out.push([tag + " silindi", null, null]); continue; }
+      ISSUE_KEYS.forEach(function (k) {
+        if (!same(bi[i][k], di[i][k])) {
+          var f = k === "location" ? fmtLoc : fmt;
+          out.push([tag + " · " + (FIELD_TR[k] || k), f(norm(bi[i][k])), f(norm(di[i][k]))]);
+        }
+      });
+    }
+    ["type", "answerable"].forEach(function (k) { if (base[k] !== d[k]) out.push([FIELD_TR[k], fmt(base[k]), fmt(d[k])]); });
+    if (base.expected_behavior.trim() !== d.expected_behavior.trim()) out.push(["beklenen davranış metni düzenlendi", null, null]);
+    return out;
+  }
+  function statusOf(c) { return (c.review && c.review.status) || "pending"; }
+  function caseById(id) { for (var i = 0; i < cases.length; i++) if (cases[i].id === id) return cases[i]; return null; }
+
+  // ---------- network
+  function api(method, url, body) {
+    var opts = { method: method, headers: {} };
+    if (body !== undefined) { opts.headers["Content-Type"] = "application/json"; opts.body = JSON.stringify(body); }
+    return fetch(url, opts).then(function (r) {
+      return r.text().then(function (t) {
+        var data = null;
+        try { data = t ? JSON.parse(t) : null; } catch (e) { data = null; }
+        if (!r.ok) throw new Error((data && data.error) || ("HTTP " + r.status));
+        return data;
+      });
+    });
+  }
+
+  function showBanner(msg) { var b = $("banner"); b.textContent = msg || ""; b.hidden = !msg; }
+
+  function load(keepDrafts) {
+    var p = labels ? Promise.resolve(labels) : api("GET", "/api/labels");
+    return p.then(function (l) {
+      labels = l;
+      return api("GET", "/api/cases");
+    }).then(function (list) {
+      var old = drafts;
+      cases = list || [];
+      drafts = {};
+      cases.forEach(function (c) {
+        drafts[c.id] = (keepDrafts && old[c.id] && diffs(c, old[c.id]).length) ? old[c.id] : draftFrom(c);
+      });
+      showBanner("");
+      initFilters();
+      renderAll();
+    }).catch(function (e) { showBanner("Yüklenemedi: " + e.message); });
+  }
+
+  // ---------- filters / progress
+  var filtersReady = false;
+  function initFilters() {
+    if (filtersReady) return;
+    filtersReady = true;
+    labels.types.forEach(function (t) { $("fType").appendChild(el("option", { value: t, text: TYPE_TR[t] || t })); });
+    labels.review_statuses.forEach(function (s) { $("fStatus").appendChild(el("option", { value: s, text: STATUS_TR[s] || s })); });
+    labels.langs.forEach(function (s) { $("fLang").appendChild(el("option", { value: s, text: s })); });
+    var saved = {};
+    try { saved = JSON.parse(store("review.filters") || "{}") || {}; } catch (e) { saved = {}; }
+    ["fType", "fStatus", "fLang"].forEach(function (id) { if (saved[id]) $(id).value = saved[id]; });
+    ["fType", "fStatus", "fLang", "search"].forEach(function (id) {
+      $(id).addEventListener("input", applyFilters);
+    });
+  }
+  function matches(c) {
+    var t = $("fType").value, s = $("fStatus").value, l = $("fLang").value;
+    var q = $("search").value.trim().toLocaleLowerCase("tr");
+    if (t && c.type !== t) return false;
+    if (s && statusOf(c) !== s) return false;
+    if (l && c.lang !== l) return false;
+    if (q) {
+      var hay = [c.id, c.text, c.expected_behavior, c.review && c.review.note, c.expected && c.expected.intent,
+                 c.expected && (c.expected.issues || []).map(function (it) { return it.category; }).join(" ")]
+        .join(" \n ").toLocaleLowerCase("tr");
+      if (hay.indexOf(q) === -1) return false;
+    }
+    return true;
+  }
+  function applyFilters() {
+    store("review.filters", JSON.stringify({ fType: $("fType").value, fStatus: $("fStatus").value, fLang: $("fLang").value }));
+    var shown = 0;
+    cases.forEach(function (c) {
+      var vis = matches(c);
+      cardEls[c.id].classList.toggle("hidden", !vis);
+      if (vis) shown++;
+    });
+    $("empty").hidden = shown > 0 || cases.length === 0;
+    if (focusedId && cardEls[focusedId] && cardEls[focusedId].classList.contains("hidden")) setFocus(null);
+  }
+  function updateProgress() {
+    var done = cases.filter(function (c) { return statusOf(c) !== "pending"; }).length;
+    $("progressText").textContent = "onaylanan " + done + " / " + cases.length;
+    $("progressBar").style.width = (cases.length ? (100 * done / cases.length) : 0) + "%";
+  }
+
+  // ---------- rendering
+  function renderAll() {
+    var list = $("list");
+    list.textContent = "";
+    cardEls = {};
+    cases.forEach(function (c) { var card = renderCard(c); cardEls[c.id] = card; list.appendChild(card); });
+    applyFilters();
+    updateProgress();
+    if (focusedId && cardEls[focusedId]) cardEls[focusedId].classList.add("focused");
+  }
+
+  function select(options, value, onchange, extra) {
+    var s = el("select", extra || {});
+    options.forEach(function (o) { s.appendChild(el("option", { value: o.v, text: o.t })); });
+    s.value = value === null || value === undefined ? "" : value;
+    s.addEventListener("change", onchange);
+    return s;
+  }
+
+  function renderCard(c) {
+    var d = drafts[c.id];
+    var st = statusOf(c);
+    var card = el("article", { class: "card " + st, "data-id": c.id, tabindex: "-1" });
+    card.addEventListener("click", function () { setFocus(c.id, false); });
+
+    function rerender() {
+      var fresh = renderCard(caseById(c.id));
+      card.replaceWith(fresh);
+      cardEls[c.id] = fresh;
+      if (focusedId === c.id) fresh.classList.add("focused");
+      fresh.classList.toggle("hidden", !matches(caseById(c.id)));
+    }
+
+    // header
+    card.appendChild(el("div", { class: "chead" }, [
+      el("span", { class: "cid", text: c.id }),
+      el("span", { class: "badge t-" + c.type, text: TYPE_TR[c.type] || c.type }),
+      el("span", { class: "badge", text: c.lang }),
+      c.source_id ? el("span", { class: "badge", text: "kaynak " + c.source_id }) : null,
+      el("span", { class: "status " + st, text: STATUS_TR[st] || st })
+    ]));
+    card.appendChild(el("p", { class: "ctext", text: c.text || "" }));
+
+    var rnote = c.review && c.review.note;
+    if (rnote && /^v2:/i.test(rnote.trim())) {
+      card.appendChild(el("div", { class: "v2note", role: "note" }, [el("b", { text: "v2 değişikliği:" }), rnote.trim().replace(/^v2:\s*/i, "")]));
+    }
+
+    // fields
+    var intentOpts = labels.intents.map(function (i) { return { v: i, t: i }; });
+    if (labels.intents.indexOf(d.expected.intent) === -1) intentOpts.unshift({ v: d.expected.intent || "", t: d.expected.intent || "— seçin —" });
+    var grid = el("div", { class: "grid" });
+    grid.appendChild(el("label", { class: "field" }, [el("span", { text: "Niyet (intent)" }),
+      select(intentOpts, d.expected.intent, function (e) {
+        d.expected.intent = e.target.value;
+        d.expected.secondary_intents = d.expected.secondary_intents.filter(function (s) { return s !== d.expected.intent; });
+        syncIssues(d);
+        rerender();
+      })]));
+    grid.appendChild(el("label", { class: "field" }, [el("span", { text: "Tür" }),
+      select(labels.types.map(function (x) { return { v: x, t: TYPE_TR[x] || x }; }), d.type,
+        function (e) { d.type = e.target.value; if (d.type === "unanswerable") d.answerable = false; rerender(); })]));
+    card.appendChild(grid);
+
+    var chips = el("div", { class: "chips" });
+    labels.intents.forEach(function (i) {
+      var on = d.expected.secondary_intents.indexOf(i) !== -1;
+      chips.appendChild(el("button", {
+        type: "button", class: "chip" + (on ? " on" : ""), text: i, "aria-pressed": on ? "true" : "false",
+        disabled: i === d.expected.intent,
+        onclick: function () {
+          var arr = d.expected.secondary_intents;
+          if (on) arr.splice(arr.indexOf(i), 1); else arr.push(i);
+          d.expected.secondary_intents = labels.intents.filter(function (x) { return arr.indexOf(x) !== -1; });
+          syncIssues(d);
+          rerender();
+        }
+      }));
+    });
+    card.appendChild(el("div", { class: "field", style: "margin-bottom:10px" }, [el("span", { text: "İkincil niyetler" }), chips]));
+
+    // issues
+    var fcOn = hasFC(d);
+    var opts = function (list, blank) {
+      return (blank ? [{ v: "", t: blank }] : []).concat(list.map(function (x) { return { v: x, t: x }; }));
+    };
+    var addBtn = el("button", { type: "button", class: "btn small", text: "+ Arıza ekle", disabled: !fcOn,
+      onclick: function () { d.expected.issues.push(blankIssue()); rerender(); } });
+    var sec = el("section", { class: "issues" + (fcOn ? "" : " off") }, [
+      el("div", { class: "ihead" }, [el("h3", { text: "Arızalar (" + d.expected.issues.length + ")" }), addBtn])
+    ]);
+    if (!fcOn) {
+      sec.appendChild(el("p", { class: "hint", style: "margin:0", text: "Arıza yalnızca niyet ya da ikincil niyet field_complaint olduğunda girilir." }));
+    }
+    d.expected.issues.forEach(function (it, idx) {
+      var box = el("div", { class: "issue" });
+      box.appendChild(el("div", { class: "ititle" }, [
+        "Arıza " + (idx + 1),
+        el("button", { type: "button", class: "btn small danger", text: "Sil", disabled: !fcOn || d.expected.issues.length === 1,
+          title: d.expected.issues.length === 1 ? "field_complaint için en az bir arıza gerekir" : null,
+          onclick: function () { d.expected.issues.splice(idx, 1); rerender(); } })
+      ]));
+      var g = el("div", { class: "grid" });
+      function sel(label, key, list, blank, extra) {
+        g.appendChild(el("label", { class: "field" }, [el("span", { text: label }),
+          select(opts(list, blank), it[key], function (e) {
+            it[key] = e.target.value || null;
+            if (key === "urgency_status" && it.urgency_status === NC) it.urgency = null;
+            rerender();
+          }, extra)]));
+      }
+      function txt(label, value, onset, ph) {
+        var inp = el("input", { type: "text", placeholder: ph || "" });
+        inp.value = value || "";
+        inp.addEventListener("input", function () { onset(inp.value.trim() ? inp.value : null); refreshDiff(); });
+        g.appendChild(el("label", { class: "field" }, [el("span", { text: label }), inp]));
+      }
+      var isNC = it.urgency_status === NC;
+      sel("Kategori", "category", labels.categories, "— seçin —");
+      sel("Aciliyet durumu", "urgency_status", labels.urgency_statuses, null);
+      sel("Aciliyet", "urgency", labels.urgencies, isNC ? "— netleşmeli —" : "— seçin —",
+        { disabled: isNC, title: isNC ? "needs_clarification iken aciliyet boş kalır" : null });
+      sel("Kapsam (scope)", "scope", labels.scopes, null);
+      sel("Yönlendirme (referral)", "referral_needed", labels.referral_values, null);
+      function setLoc(k) {
+        return function (v) {
+          var l = it.location ? clone(it.location) : { neighborhood: null, street: null, detail: null };
+          l[k] = v;
+          it.location = norm(l) ? { neighborhood: l.neighborhood || null, street: l.street || null, detail: l.detail || null } : null;
+        };
+      }
+      var loc = it.location || {};
+      txt("Mahalle", loc.neighborhood, setLoc("neighborhood"));
+      txt("Sokak", loc.street, setLoc("street"));
+      txt("Konum detayı", loc.detail, setLoc("detail"), "ör. okul önü");
+      txt("Başlangıç (onset_text)", it.onset_text, function (v) { it.onset_text = v; }, "metindeki ifade, ör. 2 haftadır");
+      txt("Hassas kullanım", it.sensitive_use, function (v) { it.sensitive_use = v; }, "ör. school route");
+      box.appendChild(g);
+      sec.appendChild(box);
+    });
+    card.appendChild(sec);
+
+    var mchips = el("div", { class: "chips" });
+    labels.missing_field_values.forEach(function (m) {
+      var on = d.expected.missing_fields.indexOf(m) !== -1;
+      mchips.appendChild(el("button", {
+        type: "button", class: "chip" + (on ? " on" : ""), text: m, "aria-pressed": on ? "true" : "false",
+        onclick: function () {
+          var arr = d.expected.missing_fields;
+          if (on) arr.splice(arr.indexOf(m), 1); else arr.push(m);
+          d.expected.missing_fields = labels.missing_field_values.filter(function (x) { return arr.indexOf(x) !== -1; });
+          rerender();
+        }
+      }));
+    });
+    card.appendChild(el("div", { class: "field", style: "margin-bottom:10px" }, [el("span", { text: "Eksik bilgiler (sorulacak)" }), mchips]));
+
+    var cb = el("input", { type: "checkbox", checked: d.answerable ? "checked" : null });
+    cb.addEventListener("change", function () { d.answerable = cb.checked; rerender(); });
+    card.appendChild(el("label", { class: "checkbox" }, [cb, "Cevaplanabilir (answerable)"]));
+
+    card.appendChild(el("div", { class: "meta", text:
+      "Başvuru no: " + fmt(d.expected.ticket_id) +
+      " · Bileşenler: " + fmt(c.ingredients) }));
+
+    var eb = el("textarea", { rows: "3" });
+    eb.value = d.expected_behavior;
+    eb.addEventListener("input", function () { d.expected_behavior = eb.value; refreshDiff(); });
+    card.appendChild(el("label", { class: "field" }, [el("span", { text: "Beklenen davranış (expected_behavior)" }), eb]));
+
+    var note = el("input", { type: "text", placeholder: "Not (isteğe bağlı)" });
+    note.value = d.note;
+    note.addEventListener("input", function () { d.note = note.value; });
+    card.appendChild(el("label", { class: "field", style: "margin-top:8px" }, [el("span", { text: "Not" }), note]));
+
+    var diffBox = el("div", { class: "diff", hidden: "hidden" });
+    card.appendChild(diffBox);
+    function refreshDiff() {
+      var ds = diffs(c, d);
+      diffBox.textContent = "";
+      diffBox.hidden = ds.length === 0;
+      if (!ds.length) return;
+      diffBox.appendChild(document.createTextNode("Değişiklikler (onaylanınca kaydedilir):"));
+      var ul = el("ul");
+      ds.forEach(function (x) {
+        ul.appendChild(el("li", { text: x[1] === null && x[2] === null ? x[0] : x[0] + ": " + x[1] + " → " + x[2] }));
+      });
+      diffBox.appendChild(ul);
+    }
+    refreshDiff();
+
+    var errBox = el("div", { class: "err", hidden: "hidden", role: "alert" });
+    card.appendChild(errBox);
+
+    var info = el("span", { class: "ok" });
+    if (c.review && c.review.updated_at) {
+      info.className = "meta";
+      info.textContent = (c.review.reviewer || "?") + " · " + new Date(c.review.updated_at).toLocaleString("tr-TR");
+    }
+    var approveBtn = el("button", { type: "button", class: "btn primary", text: "✓ Onayla", onclick: function () { approve(c.id); } });
+    var saveBtn = el("button", { type: "button", class: "btn", text: "Kaydet", title: "Notu onaylamadan kaydet", onclick: function () { saveNote(c.id); } });
+    card.appendChild(el("div", { class: "actions" }, [approveBtn, saveBtn, info]));
+    card._err = errBox; card._btns = [approveBtn, saveBtn];
+    return card;
+  }
+
+  // ---------- actions
+  function reviewer() { return $("reviewer").value.trim(); }
+
+  function send(id, body) {
+    var card = cardEls[id];
+    card._err.hidden = true;
+    card._btns.forEach(function (b) { b.disabled = true; });
+    return api("PUT", "/api/cases/" + encodeURIComponent(id), body).then(function (saved) {
+      for (var i = 0; i < cases.length; i++) if (cases[i].id === id) cases[i] = saved;
+      return saved;
+    }).catch(function (e) {
+      card._err.textContent = "Kaydedilemedi: " + e.message;
+      card._err.hidden = false;
+      card._btns.forEach(function (b) { b.disabled = false; });
+      throw e;
+    });
+  }
+
+  function approve(id) {
+    var c = caseById(id), d = drafts[id];
+    if (!reviewer()) { showCardError(id, "Önce üstteki “İnceleyen” alanına adınızı yazın."); $("reviewer").focus(); return; }
+    var changed = diffs(c, d).length > 0;
+    // A case already marked "changed" stays "changed" when re-approved without new edits.
+    var status = changed || statusOf(c) === "changed" ? "changed" : "approved";
+    send(id, {
+      expected: d.expected, expected_behavior: d.expected_behavior, answerable: d.answerable, type: d.type,
+      review: { status: status, reviewer: reviewer(), note: d.note }
+    }).then(function (saved) {
+      drafts[id] = draftFrom(saved);
+      replaceCard(id);
+      updateProgress();
+    }, function () {});
+  }
+
+  function saveNote(id) {
+    var c = caseById(id), d = drafts[id];
+    var base = draftFrom(c);
+    send(id, {
+      expected: base.expected, expected_behavior: base.expected_behavior, answerable: base.answerable, type: base.type,
+      review: { status: statusOf(c), reviewer: reviewer() || (c.review && c.review.reviewer) || null, note: d.note }
+    }).then(function (saved) {
+      var keep = drafts[id];
+      drafts[id] = keep; // field edits stay as an unsaved draft
+      replaceCard(id);
+      cardEls[id].querySelector(".actions .ok, .actions .meta").textContent += " · not kaydedildi";
+    }, function () {});
+  }
+
+  function showCardError(id, msg) {
+    var card = cardEls[id];
+    card._err.textContent = msg; card._err.hidden = false;
+  }
+
+  function replaceCard(id) {
+    var old = cardEls[id], fresh = renderCard(caseById(id));
+    old.replaceWith(fresh);
+    cardEls[id] = fresh;
+    if (focusedId === id) fresh.classList.add("focused");
+    fresh.classList.toggle("hidden", !matches(caseById(id)));
+  }
+
+  // ---------- focus / keyboard
+  function visibleIds() {
+    return cases.map(function (c) { return c.id; }).filter(function (id) { return !cardEls[id].classList.contains("hidden"); });
+  }
+  function setFocus(id, scroll) {
+    if (focusedId && cardEls[focusedId]) cardEls[focusedId].classList.remove("focused");
+    focusedId = id;
+    if (!id) return;
+    var card = cardEls[id];
+    card.classList.add("focused");
+    if (scroll !== false) card.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function move(step) {
+    var ids = visibleIds();
+    if (!ids.length) return;
+    var i = ids.indexOf(focusedId);
+    var next = i === -1 ? (step > 0 ? 0 : ids.length - 1) : Math.min(ids.length - 1, Math.max(0, i + step));
+    setFocus(ids[next]);
+  }
+  document.addEventListener("keydown", function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var t = e.target, tag = t && t.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) {
+      if (e.key === "Escape" && t.blur) t.blur();
+      return;
+    }
+    if (e.key === "j") { e.preventDefault(); move(1); }
+    else if (e.key === "k") { e.preventDefault(); move(-1); }
+    else if (e.key === "a" && focusedId) { e.preventDefault(); approve(focusedId); }
+  });
+
+  // ---------- init
+  var r = store("review.reviewer");
+  if (r) $("reviewer").value = r;
+  $("reviewer").addEventListener("input", function () { store("review.reviewer", $("reviewer").value.trim()); });
+  $("reload").addEventListener("click", function () {
+    var dirty = cases.some(function (c) { return drafts[c.id] && diffs(c, drafts[c.id]).length; });
+    load(dirty);
+  });
+  load(false);
+})();
+</script>
+</body>
+</html>

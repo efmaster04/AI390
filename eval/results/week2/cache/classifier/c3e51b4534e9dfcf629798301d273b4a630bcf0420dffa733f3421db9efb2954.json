@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-026",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5288038478522224f95843a8b102755045c1b5945a9740696deb544442614e13"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "parks_green",
+     "urgency": "P4",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": null,
+      "street": null,
+      "detail": "Bahçeli parkı"
+     },
+     "scope": "single_point",
+     "onset_text": null,
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "Cosmetic defect on a usable asset without functional or safety impact."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "tr"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1873,
+  "output_tokens": 190,
+  "latency_s": 13.224365791014861,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

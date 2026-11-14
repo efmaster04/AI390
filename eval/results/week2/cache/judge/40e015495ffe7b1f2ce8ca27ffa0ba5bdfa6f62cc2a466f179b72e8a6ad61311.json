@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-013",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "471ac67ed6002983fb2af71880a64c01035d1e46411689ef8b3f7787304d1b06"
+ },
+ "value": {
+  "status": "ok",
+  "label": "pass",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant correctly classified the issue, confirmed the location, and asked for confirmation before creating the ticket.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 995,
+  "output_tokens": 48,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

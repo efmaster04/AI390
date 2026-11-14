@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-001",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "32f983f6f6bb4c11698eee1bdcaac90e3d0f6def32e8eb5c128c2f46e3c0af3d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Nikah başvurusu için gerekli belgeler ve randevu süreci hakkında güncel ve resmi bilgiye sahip değilim. Bu tür işlemler için lütfen Yeşilvadi Belediyesi'nin resmi web sitesini ziyaret edin veya belediyenin resmi iletişim kanalları üzerinden yetkililerle görüşün.\n\nBen sadece saha sorunları (yol, park, aydınlatma vb.) ile ilgili bildirim taslakları hazırlama konusunda yardımcı olabiliyorum. Başvuru, ödeme veya randevu gibi idari işlemler belediyenin ilgili müdürlükleri tarafından yürütülmektedir.",
+  "error": null,
+  "input_tokens": 1415,
+  "output_tokens": 118,
+  "latency_s": 1.6798384159919806,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

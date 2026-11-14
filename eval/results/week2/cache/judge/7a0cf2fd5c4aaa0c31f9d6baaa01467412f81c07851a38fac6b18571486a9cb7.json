@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-007",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "98c8c2e4a1a3314c63fee37c415ddc7feabee8c7107a688fae1e74e61e078451"
+ },
+ "value": {
+  "status": "ok",
+  "label": "pass",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant correctly checked the status of the provided ticket number and phone digits without claiming an action was performed that wasn't.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 905,
+  "output_tokens": 52,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

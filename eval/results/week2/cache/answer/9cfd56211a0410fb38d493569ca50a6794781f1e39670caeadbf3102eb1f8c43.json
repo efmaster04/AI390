@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-012",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5d517db5232a4adaa007f48a9de63ee0f7c530be3f3196ae3198c957d64212ac"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Thank you for reporting this. I have prepared a draft for your request; please note that no report has been opened yet.\n\nCategory: roads_sidewalks\nLocation: Bahçeli neighborhood, Yıldız Street (near the school)\nProposed urgency: P2 — significant road damage posing a risk to vehicles\n\nPlease confirm if these details are correct or if you would like to add anything. Once you confirm, you can submit this information through the official municipal contact channels to have a formal ticket created.",
+  "error": null,
+  "input_tokens": 1429,
+  "output_tokens": 103,
+  "latency_s": 3.1641659580054693,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-039",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "92ea33e68935d84ea5054eeb8c144ac8c3be987a0452556a0610a3bf3996339f"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, yaşadığınız rahatsızlıktan dolayı üzgünüm. Bu durumu belediyemize bildirmek için bir kayıt taslağı hazırladım. Lütfen mahallenizi ve sokağınızı belirtir misiniz? Ayrıca bu durumun sürekli mi yoksa belirli bir noktada mı yaşandığını paylaşırsanız ilgili birimlerimize daha doğru bilgi aktarabiliriz.\n\nKategori: animals\nKonum: eksik\nÖnerilen aciliyet: P3 — Gürültü şikayeti ve hayvan refahı kontrolü\n\nBu taslağı onaylıyor musunuz veya eklemek istediğiniz bir detay var mı? Eğer konu acil bir güvenlik riski içeriyorsa lütfen detaylandırın. Diğer tüm resmi başvurularınız ve detaylı bilgi için lütfen Yeşilvadi Belediyesi'nin resmi iletişim kanalları üzerinden bizimle iletişime geçin.",
+  "error": null,
+  "input_tokens": 915,
+  "output_tokens": 184,
+  "latency_s": 2.141986416972941,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

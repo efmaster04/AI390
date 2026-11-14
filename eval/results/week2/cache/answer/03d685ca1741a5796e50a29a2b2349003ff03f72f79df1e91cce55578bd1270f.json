@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-031",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "3e7b4dd733e6c53266f2e6b8ad57590cc8d0c06d4e266448cff0f93701f04991"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am sorry, but I do not have access to weather forecasts or meteorological data. For accurate information regarding the weather in Yeşilvadi, please check official weather services or local news outlets.\n\nAs the virtual assistant for the Beyaz Masa, I can assist you with municipal service information or help you report field problems such as road issues, waste collection, or park maintenance. If you have any questions regarding these services, please let me know!",
+  "error": null,
+  "input_tokens": 914,
+  "output_tokens": 89,
+  "latency_s": 4.508093291980913,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

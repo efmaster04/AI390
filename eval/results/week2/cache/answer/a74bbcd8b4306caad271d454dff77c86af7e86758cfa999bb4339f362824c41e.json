@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-003",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "0e92d84e229d425255b0c44f67b34d91c1435c46aeb3a3091a5d4f0ced03b0fb"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Yeşilvadi Belediyesi'ne hoş geldiniz. Su aboneliği işlemleri belediyemizin doğrudan yürüttüğü bir hizmet olmayıp, ilgili su ve kanalizasyon idaresi tarafından gerçekleştirilmektedir.\n\nHangi belgelerin gerekli olduğu ve başvuru süreci hakkında en güncel ve doğru bilgiyi almak için lütfen bölgenizden sorumlu su idaresinin resmi web sitesini ziyaret edin veya müşteri hizmetleri kanalları üzerinden iletişime geçin. Ben abonelik başvurusu veya ödeme gibi işlemleri gerçekleştiremiyorum; ancak belediyemizin sorumluluk alanındaki saha sorunları veya diğer hizmetler hakkında size yardımcı olabilirim.",
+  "error": null,
+  "input_tokens": 917,
+  "output_tokens": 136,
+  "latency_s": 9.45871420801268,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

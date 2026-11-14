@@ -1,0 +1,48 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-021",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b465777392870bf72fbc0ca279b5dec32113a132ce70e1ede5d1f0e65f381705"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "status_inquiry",
+   "secondary_intents": [
+    "field_complaint"
+   ],
+   "issues": [
+    {
+     "category": "parks_green",
+     "urgency": "P1",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": null,
+      "street": null,
+      "detail": null
+     },
+     "scope": "single_point",
+     "onset_text": "the bench has now fully collapsed",
+     "sensitive_use": "child tripped over it",
+     "referral_needed": "no",
+     "urgency_reason": "The bench has collapsed and caused a physical injury, presenting a concrete hazard to users."
+    }
+   ],
+   "ticket_id": "YV-2026-009102",
+   "missing_fields": [
+    "location"
+   ],
+   "lang": "en"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1915,
+  "output_tokens": 225,
+  "latency_s": 5.6794417909986805,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

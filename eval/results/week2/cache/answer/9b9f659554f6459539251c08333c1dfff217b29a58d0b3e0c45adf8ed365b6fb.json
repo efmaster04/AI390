@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-040",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "98e0e8c390bea75033c7bb994adefd6b604829946530aa96e9f64334ede6470e"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Hello! Regarding the bakery, I do not have access to business hours or schedules, so please check directly with them or through local community resources.\n\nFor the fallen tree on Meşe Road, I have prepared a draft report for you. Please note that no report has been opened yet.\n\nCategory: roads_sidewalks\nLocation: Bahçeli, Meşe Road\nProposed urgency: P2 — major loss of access due to a fallen tree blocking the road\nDo you confirm these details so I can prepare the report for you?",
+  "error": null,
+  "input_tokens": 1561,
+  "output_tokens": 110,
+  "latency_s": 2.1950482089887373,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-012",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5d517db5232a4adaa007f48a9de63ee0f7c530be3f3196ae3198c957d64212ac"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am sorry to hear about the trouble with your car; I will help you report this immediately to our road maintenance team.\n\nTo ensure this is processed correctly, please confirm the details below:\n\nCategory: Road Maintenance / Pothole Repair\nLocation: Bahçeli neighborhood, Yıldız Street\nProposed urgency: P2 — High risk of vehicle damage and potential hazard near a school zone\n\nDoes this information look correct to you? Once you confirm, I will generate your tracking number. If you have any additional details, such as the specific side of the street or proximity to a landmark, please let me know.",
+  "error": null,
+  "input_tokens": 376,
+  "output_tokens": 125,
+  "latency_s": 1.6388937080046162,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

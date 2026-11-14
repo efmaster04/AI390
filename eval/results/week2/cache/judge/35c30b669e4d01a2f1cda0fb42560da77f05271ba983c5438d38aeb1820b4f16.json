@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-006",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "984955af712eb8639050569384ff62a360ae2ef753444175aba13e0855621e48"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The answer failed to provide the specific 2026 fee as required by the expected behavior.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 973,
+  "output_tokens": 48,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

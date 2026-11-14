@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-038",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "d50cc611c762b66f4677f216f97b33e2836fb5f0811f8978c25ec19e4f555dd6"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, Bahçeli Mahallesi, Kardelen Sokak'taki sokak lambası arızası bildiriminiz için teşekkür ederim. Ben bir yapay zeka asistanıyım, bu nedenle doğrudan kayıt oluşturamıyorum ancak bilgileri sizin için hazırladım. Lütfen bu bilgileri onaylayın; ardından başvurunuzu resmi kanallarımız (Belediye web sitesi veya çağrı merkezi) üzerinden iletebilirsiniz.\n\nKategori: street_lighting\nKonum: Bahçeli, Kardelen Sokak\nÖnerilen aciliyet: P3 — Sokak aydınlatmasının çalışmaması rutin bakım gerektiren bir durumdur.\n\nBu taslağı onaylıyor musunuz? Başka bir eksiklik veya eklemek istediğiniz bir detay var mı?",
+  "error": null,
+  "input_tokens": 924,
+  "output_tokens": 164,
+  "latency_s": 11.891151582996827,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

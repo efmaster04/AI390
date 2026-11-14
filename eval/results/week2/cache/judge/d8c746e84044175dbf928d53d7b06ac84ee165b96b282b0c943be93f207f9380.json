@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-038",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "7962817b4c3e415804e89eb876363162fd53b4aea0b73edde9a7bae61846128f"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant failed to follow the expected behavior of creating the ticket, instead claiming it cannot perform the action.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 953,
+  "output_tokens": 48,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

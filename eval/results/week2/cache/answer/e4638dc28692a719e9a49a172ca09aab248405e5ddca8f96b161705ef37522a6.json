@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-030",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "17761f5f581d81b85c85d5797d550e2b846ba68faf9dc50f7a10b493344fec2f"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, talebinizi sistemimizde kontrol ettim. Saha ekiplerimiz günlük iş planlarını operasyonel yoğunluğa göre belirledikleri için maalesef net bir saat veremiyoruz. Ancak ekiplerimiz gün içerisinde (09:00-17:00 arası) adresinize uğrayacaktır.\n\nİşten izin almanız gerekiyorsa, ekiplerimiz gelmeden kısa süre önce sizi arayarak bilgilendirmelerini talep edebilirim. Bu notu ilgili birime iletiyorum. Başka bir konuda yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 390,
+  "output_tokens": 118,
+  "latency_s": 2.218010625016177,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

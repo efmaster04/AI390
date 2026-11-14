@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-011",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "56e409646186ac2f0f43cee454ecadea9e19686bba1d521feef1ee7d67878649"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "waste_collection",
+     "urgency": "P3",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Güneştepe",
+      "street": "Akasya sokak",
+      "detail": null
+     },
+     "scope": "street",
+     "onset_text": "3 gündür",
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "Routine waste collection failure; odor is a standard consequence of missed collection without evidence of hazardous waste or obstruction."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "tr"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1875,
+  "output_tokens": 202,
+  "latency_s": 3.9715890839870553,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

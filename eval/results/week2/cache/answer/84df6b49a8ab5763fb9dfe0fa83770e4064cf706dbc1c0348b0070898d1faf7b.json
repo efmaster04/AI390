@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-007",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "1f8c7cc3d0ced1a429911e28f7ee15a596e070b9768b64157276a436cf892cc7"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Belediyemizin kayıt sistemine doğrudan erişimim bulunmadığı için talebinizin güncel durumunu görüntüleyemiyorum. Lütfen durum sorgulama işlemleri için belediyemizin resmi iletişim kanalları üzerinden yetkililerle iletişime geçiniz. \n\nSorgulama yapabilmeniz için kayıt numaranızı ve telefonunuzun son dört hanesini hazır bulundurmanız yeterli olacaktır. Başka bir konuda size yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 1440,
+  "output_tokens": 97,
+  "latency_s": 1.9085720000148285,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

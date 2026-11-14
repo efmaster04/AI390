@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-027",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "3acdaeef5bd4d7eddf18c4e73f968b7c43e11414a82c366290c34aa1d2afd39a"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Thank you for your suggestion regarding the greenery on Çınar Street. I have prepared a draft for your request; please note that no report has been opened yet.\n\nCategory: parks_green\nLocation: Yeşilova, Çınar Street\nProposed urgency: P4 — suggestion for environmental improvement with no safety impact\n\nWould you like me to finalize this draft for you to submit, or is there anything you would like to change?",
+  "error": null,
+  "input_tokens": 1427,
+  "output_tokens": 86,
+  "latency_s": 11.432715333008673,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

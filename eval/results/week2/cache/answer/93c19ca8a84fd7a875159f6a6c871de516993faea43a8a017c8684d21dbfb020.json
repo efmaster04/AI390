@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-008",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "0446b05bc0e7f5eedc39c284838673ed4e9df2c52f306a4f840e5d37428cf69c"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Welcome to the neighborhood! I do not have access to the specific garbage collection schedules for each street in Yeşilvadi. \n\nTo get the most accurate and up-to-date information regarding collection days and times for your specific address, please contact the municipal call center or visit the official Yeşilvadi Municipality website. They will be able to provide you with the exact schedule for your street.",
+  "error": null,
+  "input_tokens": 911,
+  "output_tokens": 79,
+  "latency_s": 1.2843138749885838,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-017",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "c582789570f838b2ddf3cbab2c4f16246bd404f1f050dc05c643f11ebca63abd"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am sorry to hear about the damage to your property. Please note that I cannot provide legal advice or assist with private disputes, as these matters fall outside the scope of municipal services. For questions regarding your legal rights and potential lawsuits, I recommend consulting with a qualified attorney.\n\nIf you believe the construction is violating municipal zoning or building codes, you may contact the Yeşilvadi Municipality’s Zoning Department (İmar Müdürlüğü) through our official channels to request an inspection. They are the authoritative body for verifying permits and construction compliance. \n\nIf you would like to report a potential safety hazard caused by this construction, such as a structural risk to the public area, please let me know the location, and I can help you draft a field report.",
+  "error": null,
+  "input_tokens": 923,
+  "output_tokens": 152,
+  "latency_s": 5.498054499999853,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

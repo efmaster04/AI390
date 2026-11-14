@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-036",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e2ca9d95d09193f5420b48cca4781f00d3dff6896649f45022a0c83a86765328"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "roads_sidewalks",
+     "urgency": "P3",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Çamlık",
+      "street": "Kavak Street",
+      "detail": null
+     },
+     "scope": "single_point",
+     "onset_text": null,
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "A small pothole without evidence of immediate hazard or injury risk."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "en"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1899,
+  "output_tokens": 192,
+  "latency_s": 4.3656861249764916,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

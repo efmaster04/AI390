@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-019",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "9e873a377f9503feb1ea23eab69d8dd5eb7cdb9ff0adceb744b4a656aca17138"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am Beldesk, the virtual assistant for Yeşilvadi Municipality, and I am here to help with municipal services and field problems. I do not have personal opinions on municipal policies or political matters.\n\nIf you have questions regarding the details of the parking policy or wish to share your feedback with the administration, please contact the municipality through our official communication channels. I can assist you with reporting field problems, such as damaged road signs or street lighting issues, or provide information on municipal services.",
+  "error": null,
+  "input_tokens": 1425,
+  "output_tokens": 98,
+  "latency_s": 3.074892083997838,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-018",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e71cfb8baabf1c9ad8dd78e8279b80f5c7d6a351f78e03b113c791e6203183d6"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Lütfen hemen 112 Acil Çağrı Merkezi'ni arayın; bu bir sağlık acil durumudur ve belediye ekipleri tıbbi müdahale yapamaz.\n\nYeşilvadi Belediyesi olarak sağlık veya güvenlik acil durumlarına müdahale yetkimiz bulunmamaktadır. Lütfen vakit kaybetmeden 112'yi arayarak profesyonel sağlık ekiplerinden yardım isteyin.",
+  "error": null,
+  "input_tokens": 921,
+  "output_tokens": 89,
+  "latency_s": 3.263057291012956,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

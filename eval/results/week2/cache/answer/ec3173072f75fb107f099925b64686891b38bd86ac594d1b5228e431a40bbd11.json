@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-010",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b9e17624570caa8205a89c835e3568416d48168b02fa8ddd5ccaa69255eb1a1d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I cannot access the municipal ticket database, so I am unable to check the status of your report. Please contact the official Yeşilvadi Municipality communication channels directly to receive an update on your request.\n\nAs a virtual assistant, I can help you identify municipal services or prepare drafts for new field problems, but I do not have access to existing records or personal data.",
+  "error": null,
+  "input_tokens": 930,
+  "output_tokens": 73,
+  "latency_s": 1.2071228759887163,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

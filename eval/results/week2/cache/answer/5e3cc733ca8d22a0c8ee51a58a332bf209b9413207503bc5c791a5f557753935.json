@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-036",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e2ca9d95d09193f5420b48cca4781f00d3dff6896649f45022a0c83a86765328"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Beldesk. Yeşilvadi Belediyesi'ne iletmek üzere bildirdiğiniz çukur sorunu için teşekkür ederim.\n\nLütfen unutmayın ki acil durumlarda (can güvenliği riski gibi) doğrudan 112 Acil Çağrı Merkezi'ni aramanız gerekmektedir. Belirttiğiniz çukur için hazırladığım taslak aşağıdadır. Kategoriyi ve aciliyet seviyesini, belediyemizin standart prosedürlerine göre yeniden düzenledim. Lütfen bu bilgileri onaylayın veya düzeltin:\n\nKategori: roads_sidewalks\nKonum: Çamlık, Kavak Caddesi\nÖnerilen aciliyet: P3 — Trafik akışını engelleyen veya araçlara zarar verebilecek rutin yol onarımı.\n\nBu bilgileri onaylıyorsanız, resmi kayıt oluşturulması için lütfen belediyemizin iletişim kanalları üzerinden başvurunuzu tamamlayın. Başka bir konuda yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 951,
+  "output_tokens": 212,
+  "latency_s": 1.445942999998806,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

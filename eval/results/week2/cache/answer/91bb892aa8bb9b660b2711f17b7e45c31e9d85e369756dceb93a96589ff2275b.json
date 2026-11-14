@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-023",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e1b36949fb4f48645b7297fed2756688fc5d6779b3ab35eb8be58e82f135abe4"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Sakin olun lütfen, talebinizi aldım. Sokak aydınlatmalarıyla ilgili sorunlar için yetkili kurum AYEDAŞ'tır, ancak belediyemiz adına durumu hemen kayıt altına alıyorum.\n\nLütfen hangi mahallede ve hangi sokakta olduğunuzu belirtir misiniz? Bu bilgiyi paylaştığınızda talebinizi ilgili birimlere ileteceğim.\n\nKategori: Aydınlatma Sorunu\nKonum: eksik\nÖnerilen aciliyet: P1 — Tüm mahallede aydınlatma kesintisi olması güvenlik riski oluşturmaktadır.\n\nBu bilgileri onaylıyor musunuz veya eklemek istediğiniz bir detay var mı?",
+  "error": null,
+  "input_tokens": 402,
+  "output_tokens": 144,
+  "latency_s": 10.882643833028851,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

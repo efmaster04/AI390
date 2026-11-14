@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-040",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "4592ca38e959536a461932b402f0af388ea6bcbe45027cc83ab7b64db5b05164"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant failed to create the ticket as instructed, instead asking the user to confirm a draft and contact the municipality themselves.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 1111,
+  "output_tokens": 51,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-005",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "05c6ee9e395641fe5950c5a9685413541a603155a6b4abd068fb1171b7f191b1"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Beldesk. Yeşilvadi Belediyesi olarak sosyal yardım başvurularını kabul ediyoruz.\n\nSosyal yardım türlerimiz arasında gıda kolisi, nakdi destek ve eğitim yardımı gibi seçenekler bulunmaktadır. Gelir sınırı ve başvuru şartları, ailenin toplam gelir durumuna ve hane halkı sayısına göre Sosyal Yardım İşleri Müdürlüğümüz tarafından değerlendirilmektedir.\n\nEn doğru ve güncel bilgiyi almak için belediyemizin ana hizmet binasındaki Sosyal Yardım İşleri birimimize şahsen başvurabilir veya 444 00 00 numaralı çağrı merkezimizi arayabilirsiniz. Başvuru için yanınızda kimlik belgeniz ve gelir durumunuzu gösteren belgelerin bulunması süreci hızlandıracaktır. Başka bir konuda yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 364,
+  "output_tokens": 173,
+  "latency_s": 1.8840766250214074,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

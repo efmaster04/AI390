@@ -1,0 +1,94 @@
+{
+  "git_commit": "bd32001fe6bd5d6f10ad553743148d1996c28a72",
+  "git_dirty": true,
+  "git_dirty_note": "measured before any output file was written",
+  "started_utc": "2026-11-13T19:11:32.981513+00:00",
+  "finished_utc": "2026-11-13T19:11:36.691054+00:00",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "dry_run": false,
+  "versions": [
+    "v1",
+    "v2",
+    "v3"
+  ],
+  "seed": 42,
+  "temperature": 0,
+  "answer_max_tokens": 1024,
+  "rpm": 9.0,
+  "limit": null,
+  "cases_path": "eval/testsets/week2_cases.jsonl",
+  "testset_sha256": "4633873c71a57af0e2ff97a4c48a0a5279ddc7c0821d944cf831404f5ada10eb",
+  "prompts": {
+    "classifier": {
+      "path": "prompts/classifier/v1.md",
+      "sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+    },
+    "judge": {
+      "path": "prompts/judge/v2.md",
+      "sha256": "9845b18c5b92708a50a0959f6fb2550f71c928f42607dfbdb7ed156a946fb8b6"
+    },
+    "v1": {
+      "path": "prompts/main/v1.md",
+      "sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+    },
+    "v2": {
+      "path": "prompts/main/v2.md",
+      "sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+    },
+    "v3": {
+      "path": "prompts/main/v3.md",
+      "sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+    }
+  },
+  "counts": {
+    "cases": 42,
+    "provider_calls_this_run": 0,
+    "cache_hits": 294,
+    "cache_misses": 0
+  },
+  "errors": {
+    "classifier": 0,
+    "answer_v1": 0,
+    "answer_v2": 0,
+    "answer_v3": 0,
+    "judge_v1": 0,
+    "judge_v2": 0,
+    "judge_v3": 0
+  },
+  "cost_inputs": {
+    "price": {
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite",
+      "price_in_per_1m_usd": 0.25,
+      "price_out_per_1m_usd": 1.5,
+      "free_tier": true,
+      "source_url": "https://aistudio.google.com/docs/pricing",
+      "checked_on": "2026-11-09"
+    },
+    "prices_path": "config/prices.json",
+    "prices_sha256": "ebfade80cafa618d8885dbee12f0918d30b6c32afc6b240936ff3aadb789619f",
+    "week1_spend_usd": 0,
+    "week1_cost_path": "eval/results/week1/cost_summary.json",
+    "week1_cost_present": true
+  },
+  "cost_inputs_note": "prices and Week 1 spend snapshotted at run start; compare_versions uses these",
+  "error_policy": "A provider error marks that case's stage as error; the run continues; an errored (or invalid-judge) case counts as incorrect.",
+  "command": [
+    "python",
+    "-m",
+    "eval.run_e2e",
+    "--provider",
+    "gemini",
+    "--model",
+    "gemini-3.1-flash-lite",
+    "--versions",
+    "v1",
+    "v2",
+    "v3",
+    "--rpm",
+    "9",
+    "--out-dir",
+    "eval/results/week2"
+  ]
+}

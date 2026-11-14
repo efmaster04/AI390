@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-017",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "c582789570f838b2ddf3cbab2c4f16246bd404f1f050dc05c643f11ebca63abd"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I cannot provide legal advice or assist with private disputes between neighbors. For questions regarding construction permits or potential building code violations, please contact the municipal zoning department through the official municipal contact channel.\n\nIf you believe the construction is causing an immediate structural hazard to your property, please consult with a legal professional or contact the relevant authorities. I am only able to assist with reporting municipal field problems, such as issues with public roads, street lighting, or waste collection.",
+  "error": null,
+  "input_tokens": 1426,
+  "output_tokens": 91,
+  "latency_s": 6.587047207984142,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

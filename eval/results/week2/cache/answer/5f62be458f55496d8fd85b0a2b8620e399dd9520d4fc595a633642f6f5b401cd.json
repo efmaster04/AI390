@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-029",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "0dff51de5c71bb661d41d3daad77a24b8f69d1d0e8c81fc29661ba9d8ae2e20d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Hello, I am Beldesk, the virtual assistant for Yeşilvadi Municipality.\n\nRegarding your question about the mayor's salary, municipal officials' salaries are determined by national legislation and are subject to public disclosure regulations. You can find the most accurate and official information regarding municipal budgets and administrative transparency on the official website of the Ministry of Interior or the Yeşilvadi Municipality’s official transparency portal under the \"Financial Reports\" section.\n\nIf you have any other questions about our municipal services or need to report a field issue, please feel free to ask.",
+  "error": null,
+  "input_tokens": 359,
+  "output_tokens": 112,
+  "latency_s": 6.023890167009085,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

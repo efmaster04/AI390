@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-037",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "ebc13698d97f1c25bd69d1f9a45bd8eee646427d9057340a11d78fae12252b86"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, Yeşilvadi Belediyesi Beyaz Masa'ya hoş geldiniz. Size yardımcı olabilmem için çöp ile ilgili yaşadığınız sorunu biraz daha detaylandırabilir misiniz? Çöp konteynerlerinin boşaltılmaması mı, çevredeki kirlilik mi yoksa başka bir durum mu söz konusu? Ayrıca, sorunun yaşandığı mahalle ve sokak bilgisini paylaşırsanız hemen bir kayıt oluşturabilirim.\n\nKategori: Temizlik İşleri\nKonum: Belirtilmemiş\nÖnerilen aciliyet: P3 — Rutin atık toplama hizmeti talebi\n\nBu bilgiler doğruysa veya eklemek istediğiniz bir detay varsa lütfen belirtin, kaydınızı hemen işleme alalım.",
+  "error": null,
+  "input_tokens": 347,
+  "output_tokens": 152,
+  "latency_s": 1.2274689989862964,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

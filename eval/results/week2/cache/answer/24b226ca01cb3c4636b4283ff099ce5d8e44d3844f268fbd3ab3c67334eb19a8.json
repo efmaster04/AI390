@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-042",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e9ebcdbe58666f7c6d58418f0c264ca3b11784aab5bfb79647b8b2bf599d0530"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Thank you for reaching out to the Yeşilvadi Municipality Beyaz Masa. I have located your report (YV-26-1153) using the details provided.\n\nYour request regarding the reported issue is currently in the \"In Progress\" stage. Our field team has been assigned to the task, and they are scheduled to visit the site within the next 48 hours to perform the necessary maintenance. You will receive an automated SMS notification as soon as the work is completed or if further action is required.\n\nIs there anything else I can assist you with today?",
+  "error": null,
+  "input_tokens": 372,
+  "output_tokens": 118,
+  "latency_s": 1.2535212929942645,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

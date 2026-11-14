@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-017",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "c582789570f838b2ddf3cbab2c4f16246bd404f1f050dc05c643f11ebca63abd"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am sorry to hear about the damage to your property. As Beldesk, I can assist with municipal regulations, but I cannot provide legal advice regarding lawsuits. For legal rights, please consult a lawyer or the local bar association.\n\nHowever, if there is unauthorized construction, our municipal building control team can inspect the site. To report this, I need the exact address of the construction. Is there an immediate risk of collapse?\n\nCategory: Zoning/Illegal Construction\nLocation: missing\nProposed urgency: P2 — Potential structural damage and unauthorized activity\n\nPlease provide the street address and confirm if this report is correct so I can forward it to our inspection team.",
+  "error": null,
+  "input_tokens": 373,
+  "output_tokens": 133,
+  "latency_s": 1.235479333990952,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

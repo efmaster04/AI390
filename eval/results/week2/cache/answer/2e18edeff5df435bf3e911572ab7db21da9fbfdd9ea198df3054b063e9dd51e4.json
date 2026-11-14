@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-002",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "57540e1cae4e3b82695835d27ccafbb11b156fabe5ca24b933b1c8560bfafcea"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "To apply for a new water subscription in Yeşilvadi, you generally need your identity card, the property deed (tapu) or a valid rental agreement, and the DASK (compulsory earthquake insurance) policy for the residence.\n\nPlease note that water services are managed by the regional water authority (ASKİ). I recommend visiting their official website or their nearest service center to confirm the specific requirements for your property type, as additional documents may be requested depending on your situation.\n\nIs there anything else I can assist you with today?",
+  "error": null,
+  "input_tokens": 361,
+  "output_tokens": 108,
+  "latency_s": 5.270444541994948,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

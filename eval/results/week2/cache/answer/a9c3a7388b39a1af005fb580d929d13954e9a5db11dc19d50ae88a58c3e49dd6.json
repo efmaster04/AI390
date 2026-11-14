@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-024",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "445a26dc3dbd7c93e1fa55784e43e27332db39204ffea8ee16f5ee3b441028f4"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I understand the urgency of the situation, but I must follow standard safety protocols to ensure the correct teams are dispatched. I cannot bypass the verification process, but I have prioritized your report as a high-urgency issue.\n\nI have prepared the following report for your confirmation:\n\nCategory: Infrastructure / Water Leak\nLocation: Yeşilova neighborhood, Selvi Street\nProposed urgency: P1 — Active flooding poses a significant risk to road safety and infrastructure.\n\nPlease confirm if these details are correct so I can immediately forward this to our emergency maintenance team.\n\nTICKET CREATED - P1 URGENT (Pending your confirmation)",
+  "error": null,
+  "input_tokens": 405,
+  "output_tokens": 127,
+  "latency_s": 2.7932238329958636,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

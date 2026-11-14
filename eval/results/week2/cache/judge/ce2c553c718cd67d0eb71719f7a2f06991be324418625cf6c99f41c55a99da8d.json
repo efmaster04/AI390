@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-005",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "87e6891c7c93280b8fc0b75e24a51a79cf6a2d57117dcb59266cf8b823cfb809"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": true,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant failed to provide the requested information from the social aid guide, claiming it lacks knowledge instead of using the provided reference.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 916,
+  "output_tokens": 52,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

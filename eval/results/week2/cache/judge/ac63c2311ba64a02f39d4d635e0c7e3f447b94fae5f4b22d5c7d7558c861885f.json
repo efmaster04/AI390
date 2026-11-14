@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-042",
+  "prompt_sha256": "9845b18c5b92708a50a0959f6fb2550f71c928f42607dfbdb7ed156a946fb8b6",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "770881f4bf46ceb6a3c2e6fd9b3518a0a531fefc7c0ddc7e950067ea07497881"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The answer failed to explain the ticket format and ask for the full number as required by the expected behavior.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 1150,
+  "output_tokens": 48,
+  "prompt_sha256": "9845b18c5b92708a50a0959f6fb2550f71c928f42607dfbdb7ed156a946fb8b6"
+ }
+}

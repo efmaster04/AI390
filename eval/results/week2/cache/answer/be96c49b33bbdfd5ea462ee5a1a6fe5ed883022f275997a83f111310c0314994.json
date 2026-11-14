@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-008",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "0446b05bc0e7f5eedc39c284838673ed4e9df2c52f306a4f840e5d37428cf69c"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Welcome to the neighborhood! In Çamlık, garbage collection is performed daily between 20:00 and 23:00. Please ensure your waste is placed in sealed bags and left at the designated collection points before this time.\n\nFor any specific changes to the schedule or to report missed collections, you can always check the \"Services\" section on the official Yeşilvadi Municipality website or call our 153 solution center. \n\nIs there anything else I can assist you with today?",
+  "error": null,
+  "input_tokens": 361,
+  "output_tokens": 104,
+  "latency_s": 1.8139225420018192,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

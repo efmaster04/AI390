@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-009",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "16a1d55c6e3eca764928ad9ad3497f11d81cdf7af260e10cab9231c8b39d36be"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, Atatürk Kültür Merkezi hafta sonları 09:00 - 18:00 saatleri arasında hizmet vermektedir. Cumartesi günü de bu saatler arasında ziyaret edebilirsiniz.\n\nDaha detaylı bilgi veya etkinlik programı için belediyemizin web sitesini ziyaret edebilir ya da 444 00 00 numaralı çağrı merkezimizi arayabilirsiniz. Başka bir konuda yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 364,
+  "output_tokens": 95,
+  "latency_s": 1.2199092500086408,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

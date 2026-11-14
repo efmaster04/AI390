@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-042",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "770881f4bf46ceb6a3c2e6fd9b3518a0a531fefc7c0ddc7e950067ea07497881"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant failed to follow the expected behavior of explaining the ticket format and asking for the full number, instead claiming it cannot access the database.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 860,
+  "output_tokens": 55,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

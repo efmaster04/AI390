@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-004",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "4e2840e41d3d17896403cf898e56bbe69baab2ef112f656a74276437eb72be02"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": true,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant failed to use the provided reference data to answer the question, claiming it lacked access to information that was expected to be provided.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 932,
+  "output_tokens": 54,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

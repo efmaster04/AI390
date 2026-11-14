@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-042",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e9ebcdbe58666f7c6d58418f0c264ca3b11784aab5bfb79647b8b2bf599d0530"
+ },
+ "value": {
+  "status": "invalid",
+  "result": null,
+  "valid": false,
+  "attempts": 3,
+  "errors": [
+   "ticket_id: expected YV-YYYY-NNNNNN or null"
+  ],
+  "provider_error": null,
+  "input_tokens": 5674,
+  "output_tokens": 192,
+  "latency_s": 5.219832874980057,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

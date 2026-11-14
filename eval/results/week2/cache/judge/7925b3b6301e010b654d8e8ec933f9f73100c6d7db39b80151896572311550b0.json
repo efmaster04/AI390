@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-040",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "f7fd7a2ba0455ac4c401df668e205495621d77dd58919dc57f47a2fff383ae12"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The expected behavior required creating the ticket, but the assistant only prepared a draft and incorrectly classified the urgency as P2 instead of P1.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 1070,
+  "output_tokens": 55,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

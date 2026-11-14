@@ -1,0 +1,47 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-037",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "ebc13698d97f1c25bd69d1f9a45bd8eee646427d9057340a11d78fae12252b86"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "waste_collection",
+     "urgency": null,
+     "urgency_status": "needs_clarification",
+     "location": {
+      "neighborhood": null,
+      "street": null,
+      "detail": null
+     },
+     "scope": "unknown",
+     "onset_text": null,
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "The report lacks specific details regarding the nature of the waste issue (e.g., missed collection, overflowing bin, illegal dumping) and the location."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [
+    "location",
+    "issue_details"
+   ],
+   "lang": "tr"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1845,
+  "output_tokens": 215,
+  "latency_s": 1.5280411670100875,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

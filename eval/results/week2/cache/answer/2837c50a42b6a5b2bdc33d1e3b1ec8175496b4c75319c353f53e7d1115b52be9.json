@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-021",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b465777392870bf72fbc0ca279b5dec32113a132ce70e1ede5d1f0e65f381705"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Thank you for reaching out to Yeşilvadi Municipality. I have checked the status of your report (YV-2026-009102). It is currently marked as \"In Progress,\" but given the new safety risk you described, I have escalated the priority.\n\nI have updated your report to reflect the collapse and the injury incident. Please confirm if the details below are correct so I can notify our parks maintenance team immediately:\n\nCategory: Park Maintenance / Safety Hazard\nLocation: (Please provide the name of the park)\nProposed urgency: P1 — Immediate safety risk due to structural collapse and reported injury.\n\nCould you please provide the name of the park where this bench is located? Once confirmed, I will expedite this to our emergency field team.",
+  "error": null,
+  "input_tokens": 417,
+  "output_tokens": 159,
+  "latency_s": 6.751844709040597,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

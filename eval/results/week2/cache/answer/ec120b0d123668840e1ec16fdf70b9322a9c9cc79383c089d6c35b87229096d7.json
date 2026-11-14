@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-014",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5b1da723073d6c071b7ca872d3a468002a6a3f690de1fe614240bf45f1a54e14"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am sorry to hear about the streetlight issue; I understand your concern for your children's safety. I have categorized this as a priority issue due to the safety risk.\n\nCategory: Street Lighting\nLocation: Çamlık, Lale Street and Gül Avenue\nProposed urgency: P2 — Safety risk due to lack of visibility for pedestrians at night.\n\nCould you please confirm if this information is correct so I can forward it to our technical team? Once confirmed, I will provide you with a tracking number.\n\nIf you have any other details, such as the specific pole number, please let me know.",
+  "error": null,
+  "input_tokens": 385,
+  "output_tokens": 124,
+  "latency_s": 7.921955833007814,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

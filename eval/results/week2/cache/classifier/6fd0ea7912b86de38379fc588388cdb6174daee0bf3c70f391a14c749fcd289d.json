@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-033",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5535d46b7f92d7ed72af60a32ea1a7b17b2c69f84ef9f2563e14e0e5635d5dbd"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "noise_environment",
+     "urgency": "P3",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": null,
+      "street": "Gül sokak",
+      "detail": "Bahçeli"
+     },
+     "scope": "single_point",
+     "onset_text": "her gece 2'ye kadar",
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "Routine noise complaint regarding commercial activity; does not meet P1/P2 hazard criteria."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "tr"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1905,
+  "output_tokens": 205,
+  "latency_s": 3.3254530410049483,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

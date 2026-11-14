@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-002",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "57540e1cae4e3b82695835d27ccafbb11b156fabe5ca24b933b1c8560bfafcea"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I do not have access to the specific document requirements for water subscriptions. Please contact the Yeşilvadi Municipality Water and Sewerage Department directly through our official communication channels or visit the municipal service desk to receive the most accurate and up-to-date information regarding your application.\n\nI am here to assist you with general municipal service information or to help you report field problems such as infrastructure issues or maintenance needs. Please let me know if you have any other questions I can help you with!",
+  "error": null,
+  "input_tokens": 911,
+  "output_tokens": 97,
+  "latency_s": 3.6118985830107704,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

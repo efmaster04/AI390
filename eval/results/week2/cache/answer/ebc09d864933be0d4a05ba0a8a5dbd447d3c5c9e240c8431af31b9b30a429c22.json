@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-019",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "9e873a377f9503feb1ea23eab69d8dd5eb7cdb9ff0adceb744b4a656aca17138"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "As Beldesk, the virtual assistant for Yeşilvadi Municipality, I focus on providing information about municipal services and assisting with field reports. I do not provide political opinions or engage in discussions regarding municipal policy decisions.\n\nIf you have questions about the specific details of the parking policy, such as how to apply for a permit or where the new regulations apply, I recommend contacting the municipality's official communication channels directly. They can provide you with the most accurate and up-to-date information regarding these changes.",
+  "error": null,
+  "input_tokens": 922,
+  "output_tokens": 102,
+  "latency_s": 3.9550785420287866,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

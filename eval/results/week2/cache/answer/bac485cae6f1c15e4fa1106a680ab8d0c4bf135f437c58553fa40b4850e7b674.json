@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-041",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "54303c25568af655e0695dad7c25a4d7e75a8525427a4c72310da3a91a02969c"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, Yeşilvadi Belediyesi Beyaz Masa'dan Beldesk. Bildirdiğiniz sorunlar için teşekkür ederim. Kanalizasyon taşması halk sağlığı açısından öncelikli bir konudur, bu nedenle ekiplerimize hemen iletiyorum.\n\nAşağıdaki rapor taslağını onaylıyorsanız lütfen belirtin, işlemleri başlatalım:\n\nKategori: Altyapı ve Aydınlatma\nKonum: Yeşilova, Nergis Sokak\nÖnerilen aciliyet: P1 — Kanalizasyon taşması çevre ve sağlık riski oluşturmaktadır.\n\nBu bilgileri onaylıyor musunuz? Ayrıca, ekiplerimizin size ulaşabilmesi için iletişim bilgilerinizi paylaşabilir misiniz?",
+  "error": null,
+  "input_tokens": 385,
+  "output_tokens": 149,
+  "latency_s": 3.434650875016814,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

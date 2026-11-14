@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-003",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "21194d325b36954df18f3a70d5dc92734fddb2af650bf4cc30c29d536a61eb46"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant failed to provide the required document list from the guide, instead incorrectly stating it is out of scope.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 930,
+  "output_tokens": 49,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

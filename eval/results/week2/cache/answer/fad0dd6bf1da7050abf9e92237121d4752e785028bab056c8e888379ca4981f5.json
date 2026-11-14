@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-013",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "895425c118339facc30c33e097ed8c043a3bf1233bfcbbef352e599ebdbec971"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhabalar, bildiriminiz için teşekkürler. Henüz bir kayıt açılmadı, ancak verdiğiniz bilgilerle bir taslak hazırladım. Onayınızdan sonra bu bilgileri resmi kanallara iletebilirsiniz.\n\nKategori: roads_sidewalks\nKonum: Yeşilova Mahallesi, Ada 1245 Parsel 7 önü\nÖnerilen aciliyet: P2 — yaya erişimini engelleyen ve düşme riski oluşturan ciddi kaldırım çökmesi\n\nBu taslağı onaylıyor musunuz? Ayrıca, belediyemizin resmi kayıt sistemine ulaşmak için lütfen belediyemizin web sitesindeki \"Beyaz Masa\" formunu veya çağrı merkezini kullanmayı unutmayın; ben sadece taslak hazırlama konusunda yardımcı olabilirim.",
+  "error": null,
+  "input_tokens": 1446,
+  "output_tokens": 168,
+  "latency_s": 11.138914415991167,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-008",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "23310487866e80436ec80db03640aa69d837fc7183a65776513a6b0a5cf14b88"
+ },
+ "value": {
+  "status": "ok",
+  "label": "pass",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant correctly provides the requested garbage collection schedule for the specified neighborhood.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 894,
+  "output_tokens": 41,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-015",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b3fd6de2bb339c9f796bfde8612c014a5339dd3c4491702909925057536f6e37"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Lütfen hemen 112 Acil Çağrı Merkezi'ni arayın; elektrik kablosu sarkması hayati tehlike arz eden bir durumdur.\n\nBildirdiğiniz durum için bir saha raporu taslağı hazırladım. Lütfen bilgileri kontrol edip onaylayın:\n\nKategori: street_lighting\nKonum: Güneştepe mah. Zambak sok. no 14\nÖnerilen aciliyet: P1 — Elektrik kablosunun yere sarkması ve çocukların yakınında olması nedeniyle ciddi bir hayati tehlike oluşturmaktadır.\n\nBu taslağı onaylıyorsanız, lütfen bildirin. Resmi kayıt oluşturulması ve ekiplerin yönlendirilmesi için belediyemizin resmi iletişim kanalları üzerinden başvurunuzu tamamlamanızı öneririm.",
+  "error": null,
+  "input_tokens": 936,
+  "output_tokens": 169,
+  "latency_s": 1.339381667028647,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

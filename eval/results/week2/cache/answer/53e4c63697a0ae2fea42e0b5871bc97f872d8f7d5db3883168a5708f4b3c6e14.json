@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-040",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "98e0e8c390bea75033c7bb994adefd6b604829946530aa96e9f64334ede6470e"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Hello! Thank you for reaching out to Yeşilvadi Municipality. Regarding the bakery, we do not have official records on private business hours, so I recommend checking their social media or calling them directly.\n\nI have prioritized your report about the fallen tree on Meşe Road, as this is a safety hazard. Please confirm the details below so I can forward this to our emergency response team immediately.\n\nCategory: Road Obstruction / Fallen Tree\nLocation: Meşe Road, Bahçeli\nProposed urgency: P1 — Road is completely blocked, causing traffic to drive on the pavement.\n\nDoes this draft look correct to you, or would you like to add any specific details, such as the nearest intersection?",
+  "error": null,
+  "input_tokens": 508,
+  "output_tokens": 143,
+  "latency_s": 3.306508041016059,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

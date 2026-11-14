@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-016",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "8484a5fd4aa7afc86ddae01eb273453519b108f9b9b4a312419f4645cb078471"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Yeşilvadi Belediyesi Beldesk asistanınız.\n\nNe yazık ki sistemlerimiz üzerinden ödeme alma veya fatura işlemleri yapma yetkim bulunmamaktadır. Ödeme işlemlerinizi belediyemizin resmi web sitesindeki \"Online İşlemler\" menüsünden veya yetkili ödeme kanalları üzerinden güvenle gerçekleştirebilirsiniz.\n\nBelediyemizle ilgili diğer hizmetler veya saha sorunları hakkında size yardımcı olabilirim. Başka bir konuda size nasıl destek olabilirim?",
+  "error": null,
+  "input_tokens": 916,
+  "output_tokens": 105,
+  "latency_s": 4.2200685419666115,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

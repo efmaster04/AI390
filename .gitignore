@@ -8,3 +8,4 @@ __pycache__/
 
 # Düzenlenebilir sunum kaynakları ve denetim çıktıları yerelde kalır.
 deck/
+.claude/

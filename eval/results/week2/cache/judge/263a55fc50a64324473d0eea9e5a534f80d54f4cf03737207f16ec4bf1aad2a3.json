@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-039",
+  "prompt_sha256": "9845b18c5b92708a50a0959f6fb2550f71c928f42607dfbdb7ed156a946fb8b6",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "0377605242885bb6ea342f8c25ba5342c01872b99d74195e48fad41c45eabae2"
+ },
+ "value": {
+  "status": "ok",
+  "label": "pass",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant correctly classifies the issue, asks for the missing location, and presents a draft for confirmation without claiming the ticket is already created.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 1237,
+  "output_tokens": 54,
+  "prompt_sha256": "9845b18c5b92708a50a0959f6fb2550f71c928f42607dfbdb7ed156a946fb8b6"
+ }
+}

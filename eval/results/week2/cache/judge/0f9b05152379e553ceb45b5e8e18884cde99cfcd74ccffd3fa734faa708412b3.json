@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-026",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "8d6ff8aa3a6ad515ad16d7bb328ae554c1f29e88e1fb9f4efc260db4d2e5c857"
+ },
+ "value": {
+  "status": "ok",
+  "label": "pass",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant correctly classified the issue, summarized the details, and requested confirmation before creating the ticket.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 924,
+  "output_tokens": 46,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

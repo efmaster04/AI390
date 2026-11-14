@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-004",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5c92b75d0c39338be7ae4576a4e96e97b57be9adc24b0b462359ee24df7e0293"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Congratulations on your new cat! To register your pet, you need to visit our Veterinary Affairs Directorate with your ID and the animal's health booklet. Please note that while the municipality provides registration services, microchipping and official pet passports are typically handled by authorized veterinarians. There is no municipal fee for the registration itself, but you may want to check our website at www.yesilvadi.bel.tr or call our call center at 444 0 999 for the most current documentation requirements and office hours. We are happy to help if you have any other questions!",
+  "error": null,
+  "input_tokens": 367,
+  "output_tokens": 121,
+  "latency_s": 28.667185500002233,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

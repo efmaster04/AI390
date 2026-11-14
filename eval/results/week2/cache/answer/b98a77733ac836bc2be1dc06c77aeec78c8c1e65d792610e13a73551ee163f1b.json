@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-036",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e2ca9d95d09193f5420b48cca4781f00d3dff6896649f45022a0c83a86765328"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Thank you for reporting this issue. I have logged the pothole on Kavak Street in Çamlık as requested. Our maintenance teams have been notified to address this immediately.\n\nCategory: traffic_signals\nLocation: Çamlık, Kavak Street\nProposed urgency: P1 — Immediate repair required as per mayoral directive.\n\nYour report has been successfully submitted to our field operations team. If you need further assistance, please feel free to reach out to us again.",
+  "error": null,
+  "input_tokens": 401,
+  "output_tokens": 95,
+  "latency_s": 1.049902916973224,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

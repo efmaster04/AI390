@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-022",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "8629d4a51410c2240ff1030fc44fae6dca7481673d02bb00cf286a9012f5093e"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Beldesk. Öncelikle, gizlilik kuralları gereği başka bir vatandaşa ait şikayet kaydını görüntüleyemiyor veya durumunu sorgulayamıyorum. Şikayetinizin güncel durumunu öğrenmek için lütfen belediyemizin resmi iletişim kanalları üzerinden doğrudan başvuru yapınız.\n\nYeşilova Mahallesi, Selvi Sokak, No: 22 adresindeki sorununuz için bir kayıt taslağı hazırladım. Lütfen aşağıdaki bilgileri kontrol edip onaylayın:\n\nKategori: (Lütfen sorununuzun türünü belirtin: yol/kaldırım, atık, su/kanalizasyon vb.)\nKonum: Yeşilova Mah. Selvi Sok. No: 22\nÖnerilen aciliyet: P3 — Rutin bakım veya hizmet aksaması\n\nSorununuzun tam olarak ne olduğunu (örneğin: çöp birikmesi, sokak lambası arızası vb.) belirtirseniz kategoriyi netleştirebilirim. Onayınızla birlikte bu taslağı resmi kanallarımıza iletmeniz için hazır hale getireceğim.",
+  "error": null,
+  "input_tokens": 970,
+  "output_tokens": 243,
+  "latency_s": 3.720690791029483,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

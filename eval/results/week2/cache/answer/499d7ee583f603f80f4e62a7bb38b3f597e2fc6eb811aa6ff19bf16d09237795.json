@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-028",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "d9d956c4aa227baf4fb82da63a052c9601392ec2f96ee5c039acab2f2c71eb1b"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Bu durum ciddi bir güvenlik riski oluşturuyor, lütfen dikkatli olun. İlettiğiniz sorunu kayıt altına almak için bir taslak hazırladım; henüz resmi bir kayıt açılmadı.\n\nKategori: water_sewer\nKonum: Çamlık Mahallesi, Defne Sokak\nÖnerilen aciliyet: P1 — açık rögar kapağı, ciddi yaralanma riski\n\nBu bilgileri onaylıyor musunuz? Onayınızdan sonra bildiriminiz ilgili birimlere iletilmek üzere işleme alınacaktır. Ayrıca, bölgedeki diğer vatandaşları uyarmak için geçici bir önlem almanız veya çevredekilere dikkat etmelerini söylemeniz faydalı olabilir.",
+  "error": null,
+  "input_tokens": 1428,
+  "output_tokens": 150,
+  "latency_s": 1.335118123999564,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

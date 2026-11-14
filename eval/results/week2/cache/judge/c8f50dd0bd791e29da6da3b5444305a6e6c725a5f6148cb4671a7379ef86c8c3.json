@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-015",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "34ed7f39d3ba796cffa54f4fddcb5d1305e2cb06916d9d9267a12ea9d419b22a"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant used the wrong category (street_lighting instead of other) and failed to follow the instruction to record the ticket.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 1019,
+  "output_tokens": 52,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

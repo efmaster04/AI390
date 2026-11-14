@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-010",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b9e17624570caa8205a89c835e3568416d48168b02fa8ddd5ccaa69255eb1a1d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Thank you for providing your details. I have checked the status of your report YV-2026-011532.\n\nYour request is currently in the \"In Progress\" stage. Our field team has been assigned to the task, and they are scheduled to visit the location within the next 48 hours to address the issue. You will receive an automated SMS notification as soon as the work is completed or if further information is required.\n\nIs there anything else I can assist you with today?",
+  "error": null,
+  "input_tokens": 380,
+  "output_tokens": 106,
+  "latency_s": 1.1338073330116458,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

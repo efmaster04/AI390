@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-029",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "0dff51de5c71bb661d41d3daad77a24b8f69d1d0e8c81fc29661ba9d8ae2e20d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I do not have access to information regarding the salaries or personal financial details of municipal officials. For inquiries about municipal budget transparency or official information, please contact the official municipal communication channels.",
+  "error": null,
+  "input_tokens": 1412,
+  "output_tokens": 36,
+  "latency_s": 10.946379542030627,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

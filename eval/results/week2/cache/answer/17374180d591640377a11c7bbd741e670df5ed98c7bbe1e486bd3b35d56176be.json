@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-026",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5288038478522224f95843a8b102755045c1b5945a9740696deb544442614e13"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Beldesk. Bahçeli Parkı'ndaki bankın durumuyla ilgili bildiriminiz için teşekkür ederim. İlgili birimlerimize iletmek üzere bir kayıt oluşturuyorum.\n\nLütfen bu bilgilerin doğruluğunu onaylar mısınız?\n\nKategori: Park ve Bahçeler / Bakım Onarım\nKonum: Bahçeli Parkı (Lütfen sokak bilgisini ekleyebilir misiniz?)\nÖnerilen aciliyet: P4 — Estetik bir sorun, güvenlik riski taşımıyor.\n\nEğer bilgiler doğruysa ve sokak bilgisini de paylaşırsanız talebinizi hemen işleme alacağım. Başka bir isteğiniz var mı?",
+  "error": null,
+  "input_tokens": 375,
+  "output_tokens": 148,
+  "latency_s": 1.4479969999811146,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

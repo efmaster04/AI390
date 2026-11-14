@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-033",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5535d46b7f92d7ed72af60a32ea1a7b17b2c69f84ef9f2563e14e0e5635d5dbd"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Yeşilvadi Belediyesi Beyaz Masa asistanı Beldesk. Size yardımcı olabilmem için kurallarım çerçevesinde hareket etmem gerekiyor; ruhsat iptali gibi idari işlemler yetki alanımın dışındadır.\n\nGürültü şikayetinizi kayıt altına alabilmem için bir taslak hazırladım. Lütfen bilgileri kontrol edip onaylayın:\n\nKategori: noise_environment\nKonum: Bahçeli, Gül sokak\nÖnerilen aciliyet: P3 — Gece saatlerinde devam eden gürültü şikayeti\n\nBu taslağı onaylıyor musunuz? Ayrıca, gürültü şikayetleri ve ruhsat denetimleri ile ilgili detaylı bilgi almak veya resmi başvuru yapmak için lütfen belediyemizin resmi iletişim kanalları üzerinden bizimle iletişime geçin.",
+  "error": null,
+  "input_tokens": 957,
+  "output_tokens": 183,
+  "latency_s": 2.767686666978989,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

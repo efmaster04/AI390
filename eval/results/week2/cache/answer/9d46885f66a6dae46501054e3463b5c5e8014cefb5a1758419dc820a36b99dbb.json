@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-018",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e71cfb8baabf1c9ad8dd78e8279b80f5c7d6a351f78e03b113c791e6203183d6"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Lütfen hemen 112 Acil Çağrı Merkezi'ni arayın; bu bir sağlık acil durumudur ve ambulans hizmeti belediyemizin değil, Sağlık Bakanlığı'nın yetkisindedir. \n\nEğer konumunuzu ve mahallenizi belirtirseniz, bölgedeki ekiplerimize de bilgi vererek destek olmaya çalışabilirim. Lütfen vakit kaybetmeden 112'yi arayın.\n\nKategori: Acil Sağlık Durumu\nKonum: Belirtilmemiş\nÖnerilen aciliyet: P1 — Hayati tehlike arz eden sağlık durumu\n\nBu bilgileri onaylıyor musunuz veya eklemek istediğiniz bir adres bilgisi var mı?",
+  "error": null,
+  "input_tokens": 371,
+  "output_tokens": 154,
+  "latency_s": 9.10982400001376,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

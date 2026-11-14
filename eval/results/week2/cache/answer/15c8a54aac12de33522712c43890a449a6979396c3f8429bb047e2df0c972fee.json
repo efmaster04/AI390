@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-032",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "97b72e14ed32f22a251edcf4823531e5f90d071400c629fc2001f817c8ce06cf"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "If there is an immediate medical emergency, please call 112 now.\n\nI understand your concern for your mother's safety. While I cannot assign priority levels myself, I have prepared a draft report for the street lighting issue. Please note that I do not have access to the municipal database to check or update existing reports; for official status updates or to escalate a request, please contact the official Yeşilvadi Municipality channels directly.\n\nPlease confirm if the following details are correct so I can finalize this draft for you:\n\nCategory: street_lighting\nLocation: Güneştepe, Papatya Street\nProposed urgency: P3 — Routine maintenance for a non-functioning streetlight.\n\nWould you like me to proceed with this draft?",
+  "error": null,
+  "input_tokens": 938,
+  "output_tokens": 151,
+  "latency_s": 3.1736585829930846,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

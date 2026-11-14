@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-015",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b3fd6de2bb339c9f796bfde8612c014a5339dd3c4491702909925057536f6e37"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Geçmiş olsun, bu çok ciddi bir durum. Güvenliğiniz için lütfen çocukları ve çevredeki vatandaşları o bölgeden uzaklaştırın. Elektrik hatlarına müdahale yetkisi elektrik dağıtım şirketindedir, ancak belediyemiz ekiplerini de derhal yönlendiriyorum.\n\nAşağıdaki raporu onaylıyorsanız hemen işleme alıyorum:\n\nKategori: Elektrik Tehlikesi / Altyapı\nKonum: Güneştepe Mah. Zambak Sok. No: 14\nÖnerilen aciliyet: P1 — Can güvenliğini tehdit eden açık elektrik kablosu.\n\nBu bilgileri onaylıyor musunuz? Ayrıca, elektrik dağıtım şirketine (AYEDAŞ/BEDAŞ) de 186 numaralı hattan acil bildirimde bulunmanızı önemle tavsiye ederim.",
+  "error": null,
+  "input_tokens": 386,
+  "output_tokens": 185,
+  "latency_s": 1.5705516250163782,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-005",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "05c6ee9e395641fe5950c5a9685413541a603155a6b4abd068fb1171b7f191b1"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Sosyal yardım başvuruları ve gelir kriterleri gibi konular belediyemizin doğrudan hizmet alanı dışındadır. Bu tür başvurular ve detaylı bilgi için lütfen Yeşilvadi Belediyesi Sosyal Hizmetler Müdürlüğü ile iletişime geçiniz veya belediyemizin resmi web sitesindeki \"Sosyal Destek\" bölümünü ziyaret ediniz.\n\nBen Beldesk olarak, belediyemizin saha hizmetleri (yol, park, atık yönetimi, sokak aydınlatması vb.) ile ilgili sorunlarınızın bildirilmesi veya genel belediyecilik hizmetleri hakkında bilgilendirme konusunda size yardımcı olabilirim. Başka bir konuda size destek olmamı ister misiniz?",
+  "error": null,
+  "input_tokens": 914,
+  "output_tokens": 140,
+  "latency_s": 1.696108916978119,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

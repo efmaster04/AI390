@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-006",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "7fdf41aec94c0d29b69bfcd3c5a2f147f01f62c26af9ee03d6886be5c246bca3"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Hello! I am Beldesk, the virtual assistant for Yeşilvadi Municipality.\n\nRegarding your event permit, I do not have access to specific application processes, current fee schedules, or municipal permit documents. For accurate information on organizing events and the associated costs for 2026, please contact our official municipal service desk directly through our website or by visiting the main municipal building.\n\nI can assist you with reporting field problems or providing general information about municipal services, but I cannot process permit applications or provide financial details. Please let me know if you have any other questions I can help with!",
+  "error": null,
+  "input_tokens": 929,
+  "output_tokens": 120,
+  "latency_s": 1.5026612079818733,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

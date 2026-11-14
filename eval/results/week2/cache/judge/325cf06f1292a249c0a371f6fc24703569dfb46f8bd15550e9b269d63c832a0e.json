@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-001",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "232a042294cf8baf8f2e6cf10236b2518e2ec47146b3621554de8445639531a9"
+ },
+ "value": {
+  "status": "ok",
+  "label": "pass",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The answer provides the requested information regarding marriage documents and appointment procedures accurately and in the correct language.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 971,
+  "output_tokens": 46,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

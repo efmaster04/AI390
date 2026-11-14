@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-013",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "895425c118339facc30c33e097ed8c043a3bf1233bfcbbef352e599ebdbec971"
+ },
+ "value": {
+  "status": "invalid",
+  "result": null,
+  "valid": false,
+  "attempts": 3,
+  "errors": [
+   "missing_fields[0]: 'street' not in missing_field_values"
+  ],
+  "provider_error": null,
+  "input_tokens": 5739,
+  "output_tokens": 651,
+  "latency_s": 13.787602124968544,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

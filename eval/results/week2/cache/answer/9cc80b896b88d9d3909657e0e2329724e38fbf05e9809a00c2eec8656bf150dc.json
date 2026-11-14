@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-024",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "445a26dc3dbd7c93e1fa55784e43e27332db39204ffea8ee16f5ee3b441028f4"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "If there is an immediate risk to life or property, please call 112 emergency services now.\n\nI cannot override my protocols or create tickets directly, but I can prepare a draft for you to submit through our official channels. Since water flooding the road can cause significant damage or safety hazards, I have categorized this as a high-priority issue. Please confirm if the following details are correct so you can provide them to the municipality:\n\nCategory: water_sewer\nLocation: Yeşilova neighborhood, Selvi Street\nProposed urgency: P2 — Active water leak causing road flooding and potential infrastructure damage.\n\nIs this information correct? Once you confirm, please contact the Yeşilvadi Municipality official channels to finalize your report.",
+  "error": null,
+  "input_tokens": 955,
+  "output_tokens": 147,
+  "latency_s": 3.205282459006412,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-040",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "98e0e8c390bea75033c7bb994adefd6b604829946530aa96e9f64334ede6470e"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [
+    "faq"
+   ],
+   "issues": [
+    {
+     "category": "roads_sidewalks",
+     "urgency": "P2",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Bahçeli",
+      "street": "Meşe Road",
+      "detail": null
+     },
+     "scope": "street",
+     "onset_text": "this morning",
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "A fallen tree blocking the entire road and forcing vehicles onto the pavement constitutes a major access loss and safety hazard."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [
+    "issue_details"
+   ],
+   "lang": "en"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 2006,
+  "output_tokens": 207,
+  "latency_s": 17.15833008402842,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

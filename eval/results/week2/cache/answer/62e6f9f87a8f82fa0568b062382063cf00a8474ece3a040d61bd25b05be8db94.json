@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-020",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b8089a8002c2a8cf227ecc398d5ebb739515ab37363bc4ddb093fcefb03b69fc"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, çöp toplama günleri ve saatleri mahalleden mahalleye değişiklik gösterebildiği için bu konuda en güncel bilgiyi Yeşilvadi Belediyesi'nin resmi web sitesinden veya 444 0 000 numaralı çağrı merkezinden öğrenebilirsiniz.\n\nÇöp toplama hizmetindeki aksaklık için bir kayıt taslağı hazırladım. Lütfen bilgileri kontrol edip onaylayın:\n\nKategori: waste_collection\nKonum: Bahçeli mahallesi, Menekşe sokak\nÖnerilen aciliyet: P3 — Düzenli atık toplama hizmetinin aksaması\n\nBu taslağı onaylıyorsanız, lütfen bildirin. Kayıt oluşturma sürecini başlatmak için belediyemizin resmi iletişim kanallarına başvurmanız gerekecektir; ben sadece talebinizi hazırlamanıza yardımcı olabilirim.",
+  "error": null,
+  "input_tokens": 934,
+  "output_tokens": 186,
+  "latency_s": 3.4587692500208504,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

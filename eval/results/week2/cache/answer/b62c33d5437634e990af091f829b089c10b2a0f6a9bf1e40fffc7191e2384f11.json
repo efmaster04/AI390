@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-007",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "1f8c7cc3d0ced1a429911e28f7ee15a596e070b9768b64157276a436cf892cc7"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Beldesk. Yeşilvadi Belediyesi'nin sistemlerine doğrudan erişimim bulunmadığı için kayıt durumunuzu görüntüleyemiyorum.\n\nLütfen kayıt durumunuzu öğrenmek için belediyemizin resmi iletişim kanalları olan 444 00 00 numaralı çağrı merkezini arayabilir veya belediyemizin web sitesindeki \"Başvuru Sorgulama\" ekranını kullanabilirsiniz. Size başka bir konuda yardımcı olabilir miyim?",
+  "error": null,
+  "input_tokens": 937,
+  "output_tokens": 100,
+  "latency_s": 2.616388166003162,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

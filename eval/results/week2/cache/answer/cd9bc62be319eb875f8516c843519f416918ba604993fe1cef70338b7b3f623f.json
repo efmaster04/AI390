@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-021",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b465777392870bf72fbc0ca279b5dec32113a132ce70e1ede5d1f0e65f381705"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am sorry to hear about the accident; please ensure the child receives any necessary medical attention. If there is an immediate safety risk, please call 112.\n\nRegarding your ticket, I do not have access to the municipal database and cannot check the status of your report. Please contact the official Yeşilvadi Municipality communication channels to receive an update on your existing ticket.\n\nSince the situation has worsened, I have prepared a new report for the collapsed bench to ensure the current hazard is documented. Please confirm if these details are correct:\n\nCategory: parks_green\nLocation: missing\nProposed urgency: P2 — Structural failure of park furniture causing a reported injury.\n\nCould you please provide the name of the park and the specific location of the bench?",
+  "error": null,
+  "input_tokens": 967,
+  "output_tokens": 154,
+  "latency_s": 4.755308874999173,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

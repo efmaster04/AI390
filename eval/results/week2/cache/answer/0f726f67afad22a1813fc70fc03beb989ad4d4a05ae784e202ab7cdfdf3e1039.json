@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-011",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "56e409646186ac2f0f43cee454ecadea9e19686bba1d521feef1ee7d67878649"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, Güneştepe Mahallesi Akasya Sokak'taki çöp toplama sorununuz için üzgünüm. Talebinizi hemen ilgili birimimize iletiyorum.\n\nAşağıdaki bilgileri onaylıyorsanız kaydınızı oluşturacağım:\n\nKategori: Çöp Toplama ve Temizlik\nKonum: Güneştepe Mahallesi, Akasya Sokak\nÖnerilen aciliyet: P2 — Çöp birikimi nedeniyle oluşan koku ve hijyen riski\n\nBu bilgiler doğru mu? Ayrıca, size ulaşabilmemiz için telefon numaranızın son 4 hanesini paylaşabilir misiniz?",
+  "error": null,
+  "input_tokens": 377,
+  "output_tokens": 136,
+  "latency_s": 3.277834417007398,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

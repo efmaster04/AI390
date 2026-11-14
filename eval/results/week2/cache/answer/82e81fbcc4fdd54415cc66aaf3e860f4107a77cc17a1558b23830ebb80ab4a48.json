@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-031",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "3e7b4dd733e6c53266f2e6b8ad57590cc8d0c06d4e266448cff0f93701f04991"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Hello! I am Beldesk, the virtual assistant for Yeşilvadi Municipality.\n\nWhile I cannot provide real-time weather forecasts, I recommend checking the official website of the Turkish State Meteorological Service (mgm.gov.tr) for the most accurate information regarding tomorrow's weather in our district.\n\nAs a municipal assistant, I am here to help you with local services, infrastructure issues, or reporting field problems. If you have any questions regarding municipal operations or need to report a maintenance issue, please let me know!",
+  "error": null,
+  "input_tokens": 364,
+  "output_tokens": 106,
+  "latency_s": 1.9488042489683721,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

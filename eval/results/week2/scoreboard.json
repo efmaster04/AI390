@@ -1,0 +1,196 @@
+{
+  "week": 2,
+  "test_set_size": 42,
+  "e2e_accuracy": {
+    "value": 0.9523809523809523,
+    "ci95": [
+      0.8879748335089992,
+      1.0
+    ],
+    "n": 42,
+    "script": "eval/run_e2e.py -> eval/compare_versions.py"
+  },
+  "abstention_correct": {
+    "value": 1.0,
+    "ci95": [
+      1.0,
+      1.0
+    ],
+    "n": 9,
+    "script": "eval/run_e2e.py -> eval/compare_versions.py"
+  },
+  "unsupported_claims": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "hit_at_5": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "mrr": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "task_success": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "pass_k": {
+    "k": null,
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "injection_success": {
+    "value": 0.0,
+    "n": 18,
+    "script": "eval/injection/run_injection.py"
+  },
+  "cost_per_task_usd": 0.0012509761904761904,
+  "latency_p50_s": 9.51719343700097,
+  "spend_week_usd": 0.0,
+  "spend_total_usd": 0.0,
+  "best_version": "v3",
+  "dry_run": false,
+  "cost_incomplete": false,
+  "stale_judgements": [],
+  "notes": {
+    "e2e_accuracy": "main prompt v3 (best of v1, v2, v3 by accuracy); ci95 = Wald; errored cases count as incorrect",
+    "cost_per_task_usd": "LIST-PRICE EQUIVALENT (config/prices.json) of classifier + answer tokens; actual billed cost on the free tier is 0",
+    "latency_p50_s": "classifier + answer latency, judge excluded, pacing waits excluded; n = 42 cases without stage errors",
+    "spend": "actual USD billed (free tier = 0); list-price equivalent under list_price"
+  },
+  "list_price": {
+    "basis": "list price from config/prices.json applied to measured token counts (thinking tokens counted as output); NOT billed: the free tier bills 0 USD",
+    "cost_inputs_source": {
+      "price": "run_meta.json",
+      "week1_spend": "run_meta.json"
+    },
+    "rows_with_unknown_tokens": 0,
+    "eval_judge_cost_per_task_list_usd": 0.0003775952380952381,
+    "week_list_price_equivalent_usd": 0.13183875,
+    "week_tokens": {
+      "input": 358557,
+      "output": 28133,
+      "note": "all stages and versions recorded in this run dir (cached calls counted once); null when any row has an unknown token count"
+    }
+  },
+  "classifier": {
+    "definitions": {
+      "intent": "primary intent exact match; n = all cases",
+      "issues_match": "multiset of (category, urgency) over issues equals expected; n = all cases",
+      "urgency/category/scope": "multiset of that field over issues equals expected; n = cases whose expected issues are non-empty",
+      "missing_fields": "set equality; n = all cases",
+      "json_valid": "schema-valid result after retries; provider errors count as invalid",
+      "errors": "errored or invalid classifier output counts as incorrect on every field",
+      "labels": "expected labels are read from the test set at compare time (never cached); labels_sha256 identifies the labels used"
+    },
+    "labels_sha256": "ee938350bc7654070659cbe6edd33c69952be6842891efde4bfe2214fa6c52a9",
+    "intent": {
+      "k": 34,
+      "n": 42,
+      "value": 0.8095238095238095,
+      "wald_ci95": [
+        0.6907647942714772,
+        0.9282828247761419
+      ],
+      "wilson_ci95": [
+        0.6669893264500356,
+        0.9001811039014357
+      ]
+    },
+    "issues_match": {
+      "k": 35,
+      "n": 42,
+      "value": 0.8333333333333334,
+      "wald_ci95": [
+        0.7206226253074155,
+        0.9460440413592512
+      ],
+      "wilson_ci95": [
+        0.693957037952257,
+        0.916841887041635
+      ]
+    },
+    "urgency": {
+      "k": 17,
+      "n": 20,
+      "value": 0.85,
+      "wald_ci95": [
+        0.6935065496578211,
+        1.0
+      ],
+      "wilson_ci95": [
+        0.6395767041130426,
+        0.9476322080405041
+      ]
+    },
+    "category": {
+      "k": 18,
+      "n": 20,
+      "value": 0.9,
+      "wald_ci95": [
+        0.7685192029230123,
+        1.0
+      ],
+      "wilson_ci95": [
+        0.6989617935882066,
+        0.9721341060158468
+      ]
+    },
+    "scope": {
+      "k": 15,
+      "n": 20,
+      "value": 0.75,
+      "wald_ci95": [
+        0.5602238160358366,
+        0.9397761839641634
+      ],
+      "wilson_ci95": [
+        0.5312949900419365,
+        0.888139947210597
+      ]
+    },
+    "missing_fields": {
+      "k": 36,
+      "n": 42,
+      "value": 0.8571428571428571,
+      "wald_ci95": [
+        0.7513128047002735,
+        0.9629729095854407
+      ],
+      "wilson_ci95": [
+        0.7215861764782122,
+        0.9328412431581007
+      ]
+    },
+    "json_valid": {
+      "k": 40,
+      "n": 42,
+      "value": 0.9523809523809523,
+      "wald_ci95": [
+        0.8879748335089992,
+        1.0
+      ],
+      "wilson_ci95": [
+        0.8420986468452026,
+        0.9868427513607937
+      ]
+    },
+    "mean_attempts": 1.0952380952380953,
+    "errors": 0
+  },
+  "errors": {
+    "classifier": 0,
+    "answer_v1": 0,
+    "answer_v2": 0,
+    "answer_v3": 0,
+    "judge_v1": 0,
+    "judge_v2": 0,
+    "judge_v3": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-023",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e1b36949fb4f48645b7297fed2756688fc5d6779b3ab35eb8be58e82f135abe4"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Can ve mal güvenliğinizi tehdit eden acil bir durum varsa lütfen hemen 112 Acil Çağrı Merkezi'ni arayın.\n\nSokak aydınlatmalarıyla ilgili sorununuzu anlıyorum. Yeşilvadi Belediyesi olarak saha sorunlarını kategorize ederek kayıt altına alıyoruz. İsteğiniz üzerine hazırladığım taslak aşağıdadır; bilgileri onaylıyorsanız veya düzeltmek istediğiniz bir yer varsa lütfen belirtin.\n\nKategori: street_lighting\nKonum: eksik\nÖnerilen aciliyet: P2 — Mahalle genelinde aydınlatma kesintisi.\n\nLütfen mahallenizi ve sokağınızı paylaşır mısınız? Ayrıca, belediyemizle ilgili diğer işlemleriniz veya detaylı bilgi talepleriniz için resmi iletişim kanallarımız üzerinden bizimle iletişime geçebilirsiniz.",
+  "error": null,
+  "input_tokens": 952,
+  "output_tokens": 181,
+  "latency_s": 34.85083116599708,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

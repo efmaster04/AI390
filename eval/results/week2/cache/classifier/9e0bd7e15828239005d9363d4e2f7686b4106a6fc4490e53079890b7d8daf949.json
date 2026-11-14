@@ -1,0 +1,48 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-017",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "c582789570f838b2ddf3cbab2c4f16246bd404f1f050dc05c643f11ebca63abd"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "faq",
+   "secondary_intents": [
+    "field_complaint"
+   ],
+   "issues": [
+    {
+     "category": "permits_licensing",
+     "urgency": "P3",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": null,
+      "street": null,
+      "detail": null
+     },
+     "scope": "unknown",
+     "onset_text": null,
+     "sensitive_use": null,
+     "referral_needed": "yes",
+     "urgency_reason": "Report of unauthorized construction and property damage requires municipal inspection for compliance."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [
+    "location"
+   ],
+   "lang": "en"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1871,
+  "output_tokens": 200,
+  "latency_s": 3.8862484579731245,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

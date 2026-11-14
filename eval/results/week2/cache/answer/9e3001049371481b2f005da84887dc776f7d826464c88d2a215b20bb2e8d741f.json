@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-001",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "32f983f6f6bb4c11698eee1bdcaac90e3d0f6def32e8eb5c128c2f46e3c0af3d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, Yeşilvadi Belediyesi Beyaz Masa'ya hoş geldiniz. Nikah başvurusu için gerekli belgeler ve randevu işlemleri hakkında size yardımcı olabilirim.\n\nBaşvuru için çiftlerin kimlik asılları, sağlık raporu ve 4'er adet vesikalık fotoğraf ile birlikte belediyemizin Evlendirme Memurluğu'na şahsen müracaat etmeleri gerekmektedir. Randevu sistemimiz ve güncel evrak listesi için [www.yesilvadi.bel.tr](http://www.yesilvadi.bel.tr) adresindeki \"Evlendirme İşlemleri\" sekmesini ziyaret edebilir veya 444 00 00 numaralı çağrı merkezimizi arayarak detaylı bilgi alabilirsiniz.\n\nBaşka bir konuda yardımcı olmamı ister misiniz?",
+  "error": null,
+  "input_tokens": 362,
+  "output_tokens": 177,
+  "latency_s": 27.814144666976063,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

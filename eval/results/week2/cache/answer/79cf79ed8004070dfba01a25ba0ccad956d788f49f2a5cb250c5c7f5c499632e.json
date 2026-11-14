@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-006",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "7fdf41aec94c0d29b69bfcd3c5a2f147f01f62c26af9ee03d6886be5c246bca3"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "To organize a neighborhood fair in Yeşilvadi, you must submit a formal petition to our Directorate of Culture and Social Affairs at least 30 days prior to the event. You will need to provide the event date, location, expected attendance, and a site plan.\n\nRegarding the 2026 fees, these are determined annually by the Municipal Council. While some community-focused events may be exempt from certain charges, others require a permit fee based on the scale of the activity. For the most accurate and current fee schedule, please visit our official website at www.yesilvadi.bel.tr or visit the Beyaz Masa desk at the municipal building. Would you like me to provide the contact details for the Culture Directorate?",
+  "error": null,
+  "input_tokens": 379,
+  "output_tokens": 150,
+  "latency_s": 6.537258417025441,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

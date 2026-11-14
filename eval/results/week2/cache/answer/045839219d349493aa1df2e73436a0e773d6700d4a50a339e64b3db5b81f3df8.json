@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-022",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "8629d4a51410c2240ff1030fc44fae6dca7481673d02bb00cf286a9012f5093e"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, ben Beldesk. İlettiğiniz YV-2026-003210 numaralı talebin durumunu kontrol ettim; ekiplerimiz bölgedeki çalışma planına dahil etmiş durumda, en kısa sürede müdahale edilecektir.\n\nAynı sorun için sizin adınıza da bir kayıt oluşturuyorum. Lütfen aşağıdaki bilgileri onaylar mısınız?\n\nKategori: Altyapı ve Onarım\nKonum: Yeşilova Mah. Selvi Sok. No: 22\nÖnerilen aciliyet: P3 — Bölgesel bir sorun olduğu için planlı bakım gerektiriyor.\n\nBu bilgiler doğruysa onayınızı rica ederim, aksi takdirde düzeltmemi istediğiniz bir kısım var mı?",
+  "error": null,
+  "input_tokens": 420,
+  "output_tokens": 159,
+  "latency_s": 43.73512029199628,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

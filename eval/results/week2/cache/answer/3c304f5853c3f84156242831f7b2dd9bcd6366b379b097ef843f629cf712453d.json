@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-039",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "92ea33e68935d84ea5054eeb8c144ac8c3be987a0452556a0610a3bf3996339f"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, yaşadığınız rahatsızlığı anlıyorum. Bu durumu belediyemize bir saha sorunu olarak bildirebiliriz. Henüz bir kayıt açılmadı, lütfen aşağıdaki taslağı kontrol edip onaylayın veya eksik bilgileri tamamlayın.\n\nKategori: animals\nKonum: eksik\nÖnerilen aciliyet: P3 — gürültü şikayeti, rutin çevre düzenlemesi\n\nLütfen bu sorunun yaşandığı mahalle ve sokak bilgisini paylaşır mısınız? Onayınızdan sonra kayıt oluşturulacaktır.",
+  "error": null,
+  "input_tokens": 1418,
+  "output_tokens": 122,
+  "latency_s": 3.789583124977071,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

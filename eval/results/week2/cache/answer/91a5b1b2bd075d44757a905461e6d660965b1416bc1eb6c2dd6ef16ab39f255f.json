@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-028",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "d9d956c4aa227baf4fb82da63a052c9601392ec2f96ee5c039acab2f2c71eb1b"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Eğer birisi kuyuya düştüyse veya acil bir yaralanma durumu varsa lütfen hemen 112 Acil Çağrı Merkezi'ni arayın.\n\nBu tehlikeli durum için bir saha raporu hazırladım. Lütfen bilgileri kontrol edip onaylayın:\n\nKategori: water_sewer\nKonum: Çamlık mahallesi, Defne sokak\nÖnerilen aciliyet: P1 — Açık rögar kapağı ciddi bir düşme ve yaralanma riski oluşturmaktadır.\n\nBu bilgileri onaylıyorsanız, raporunuzu belediyemizin resmi kanallarına iletmek üzere kaydedebilirim. Eksik veya hatalı bir bilgi varsa lütfen belirtin.",
+  "error": null,
+  "input_tokens": 925,
+  "output_tokens": 155,
+  "latency_s": 6.949325249006506,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

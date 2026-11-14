@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-027",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "3acdaeef5bd4d7eddf18c4e73f968b7c43e11414a82c366290c34aa1d2afd39a"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "parks_green",
+     "urgency": "P4",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Yeşilova",
+      "street": "Çınar Street",
+      "detail": null
+     },
+     "scope": "street",
+     "onset_text": null,
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "Request for new tree planting is a service improvement/addition."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "en"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1872,
+  "output_tokens": 187,
+  "latency_s": 37.82094095897628,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}

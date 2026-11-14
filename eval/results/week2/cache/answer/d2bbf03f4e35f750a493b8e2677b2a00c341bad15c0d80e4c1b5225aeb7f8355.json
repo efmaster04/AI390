@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-018",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e71cfb8baabf1c9ad8dd78e8279b80f5c7d6a351f78e03b113c791e6203183d6"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Hemen 112'yi arayın; acil sağlık durumlarında belediye ekiplerini beklemeyin, doğrudan ambulans çağırmanız hayati önem taşır. Ben acil servislere ulaşamıyorum. Lütfen vakit kaybetmeden 112 Acil Çağrı Merkezi ile iletişime geçin.",
+  "error": null,
+  "input_tokens": 1424,
+  "output_tokens": 73,
+  "latency_s": 5.208053248992655,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

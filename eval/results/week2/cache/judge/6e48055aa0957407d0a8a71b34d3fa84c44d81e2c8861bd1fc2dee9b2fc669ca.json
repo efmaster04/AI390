@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-041",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "a4d6d892371998bdb05de54560caee0f74ba8123f800098a509147edf1b9e6e7"
+ },
+ "value": {
+  "status": "ok",
+  "label": "pass",
+  "abstained": false,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant correctly split the issues, assigned appropriate priorities, and asked for confirmation before proceeding.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 1040,
+  "output_tokens": 45,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

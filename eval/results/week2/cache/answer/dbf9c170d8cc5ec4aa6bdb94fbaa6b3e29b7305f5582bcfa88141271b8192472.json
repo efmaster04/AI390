@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-010",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "b9e17624570caa8205a89c835e3568416d48168b02fa8ddd5ccaa69255eb1a1d"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I do not have access to the municipal ticket database, so I cannot check the status of your report. Please contact the official municipal contact channel directly to inquire about the status of your ticket.",
+  "error": null,
+  "input_tokens": 1433,
+  "output_tokens": 38,
+  "latency_s": 4.554974042024696,
+  "finish_reason": "STOP",
+  "prompt_sha256": "cd1e895a4e1bd8aa06b93ec82386f58a6cb3387d18626f05d4f681846abd8e0e"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "key": {
+  "stage": "judge",
+  "case_id": "W2-002",
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "e35ed94097f8a0f20cf0933b91ca8cf8607b23163ba40d50016c23d3513d5d93"
+ },
+ "value": {
+  "status": "ok",
+  "label": "fail",
+  "abstained": true,
+  "fabrication": false,
+  "claims_unperformed_action": false,
+  "reason": "The assistant failed to provide the required information from the water subscription guide as instructed, claiming it lacks access to the information.",
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "input_tokens": 863,
+  "output_tokens": 51,
+  "prompt_sha256": "226723901e1e2d114a4e3bdd1b9ac00d5f84a990f49eda6d5f27a18b6e32563f"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-038",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "d50cc611c762b66f4677f216f97b33e2836fb5f0811f8978c25ec19e4f555dd6"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Merhaba, Yeşilvadi Belediyesi Beyaz Masa'ya hoş geldiniz. Bahçeli Mahallesi, Kardelen Sokak'taki sokak lambası arızası için talebinizi hemen işleme alıyorum.\n\nAşağıdaki bilgileri onaylıyorsanız, kayıt işlemini tamamlayıp size bir takip numarası vereceğim:\n\nKategori: Aydınlatma Arızası\nKonum: Bahçeli Mahallesi, Kardelen Sokak\nÖnerilen aciliyet: P3 — Güvenlik riski oluşturabilecek aydınlatma eksikliği\n\nBu bilgiler doğru mu? Ayrıca, size ulaşabilmemiz için telefon numaranızın son 4 hanesini paylaşabilir misiniz?",
+  "error": null,
+  "input_tokens": 374,
+  "output_tokens": 147,
+  "latency_s": 3.4534025420143735,
+  "finish_reason": "STOP",
+  "prompt_sha256": "95055e1f55ebef815aada0800e6068c84081d360149bc5f2c1539282661faa45"
+ }
+}

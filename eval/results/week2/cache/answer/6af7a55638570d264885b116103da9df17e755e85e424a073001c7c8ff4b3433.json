@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-009",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "16a1d55c6e3eca764928ad9ad3497f11d81cdf7af260e10cab9231c8b39d36be"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "Atatürk Kültür Merkezi'nin çalışma saatleri hakkında güncel ve kesin bilgiye sahip değilim. Yanlış yönlendirmemek adına, bu bilgiyi Yeşilvadi Belediyesi'nin resmi web sitesinden veya 444 00 00 numaralı çağrı merkezimizden teyit etmenizi rica ederim.\n\nBelediyemizle ilgili diğer hizmetler veya saha sorunlarınız konusunda size yardımcı olabilirim. Başka bir konuda destek ister misiniz?",
+  "error": null,
+  "input_tokens": 914,
+  "output_tokens": 100,
+  "latency_s": 3.482716917002108,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

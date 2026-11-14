@@ -1,0 +1,19 @@
+{
+ "key": {
+  "stage": "answer",
+  "case_id": "W2-014",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "5b1da723073d6c071b7ca872d3a468002a6a3f690de1fe614240bf45f1a54e14"
+ },
+ "value": {
+  "status": "ok",
+  "answer": "I am sorry to hear about the lighting issue, as I understand your concern for your children's safety. Please confirm if the following draft accurately reflects the problem so I can prepare it for our records:\n\nCategory: street_lighting\nLocation: Çamlık, corner of Lale Street and Gül Avenue\nProposed urgency: P2 — Lack of lighting in a residential area creating a safety risk for pedestrians.\n\nPlease let me know if this is correct or if you would like to add any details. Once you confirm, you can submit this report through our official municipal website or by calling our service desk, as I do not have direct access to the municipal ticketing system to finalize it for you.",
+  "error": null,
+  "input_tokens": 935,
+  "output_tokens": 141,
+  "latency_s": 1.6418636250018608,
+  "finish_reason": "STOP",
+  "prompt_sha256": "85af4156f84c7666c49d06461f330adbfe32db23a86af06865131abcccecdf70"
+ }
+}

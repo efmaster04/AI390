@@ -1,0 +1,44 @@
+{
+ "key": {
+  "stage": "classifier",
+  "case_id": "W2-028",
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a",
+  "model": "gemini-3.1-flash-lite",
+  "text_sha256": "d9d956c4aa227baf4fb82da63a052c9601392ec2f96ee5c039acab2f2c71eb1b"
+ },
+ "value": {
+  "status": "ok",
+  "result": {
+   "intent": "field_complaint",
+   "secondary_intents": [],
+   "issues": [
+    {
+     "category": "water_sewer",
+     "urgency": "P1",
+     "urgency_status": "classified",
+     "location": {
+      "neighborhood": "Çamlık mah.",
+      "street": "Defne sokak",
+      "detail": null
+     },
+     "scope": "single_point",
+     "onset_text": null,
+     "sensitive_use": null,
+     "referral_needed": "no",
+     "urgency_reason": "An uncovered manhole represents a concrete hazard implying immediate exposure to serious harm for pedestrians."
+    }
+   ],
+   "ticket_id": null,
+   "missing_fields": [],
+   "lang": "tr"
+  },
+  "valid": true,
+  "attempts": 1,
+  "errors": [],
+  "provider_error": null,
+  "input_tokens": 1873,
+  "output_tokens": 197,
+  "latency_s": 4.076372417010134,
+  "prompt_sha256": "347f7769eeeb46d779d222a325980491b4ac9e018c22cee404ca57229ba4cc7a"
+ }
+}
