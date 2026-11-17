@@ -3,10 +3,10 @@
   "run": {
     "provider": "gemini",
     "model": "gemini-3.1-flash-lite",
-    "git_commit": "bd32001fe6bd5d6f10ad553743148d1996c28a72",
-    "git_dirty": true,
+    "git_commit": "0f6e6314b799ce69ba364115249cd552821221c4",
+    "git_dirty": false,
     "dry_run": false,
-    "started_utc": "2026-11-13T19:11:32.981513+00:00",
+    "started_utc": "2026-11-17T20:59:33.580672+00:00",
     "testset_sha256": "4633873c71a57af0e2ff97a4c48a0a5279ddc7c0821d944cf831404f5ada10eb",
     "versions": [
       "v1",

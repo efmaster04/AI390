@@ -1,6 +1,6 @@
 # Week 2 prompt version comparison (W2.5)
 
-Run: provider `gemini`, model `gemini-3.1-flash-lite`, commit `bd32001fe6bd5d6f10ad553743148d1996c28a72` (dirty: True), n = 42 cases.
+Run: provider `gemini`, model `gemini-3.1-flash-lite`, commit `0f6e6314b799ce69ba364115249cd552821221c4` (dirty: False), n = 42 cases.
 
 Correct = LLM judge label `pass` and no phone number, URL or e-mail in the answer (deterministic rule). Errored or invalid-judge cases count as incorrect. Intervals are 95%; Wald collapses at 0/n and n/n, so Wilson is shown alongside.
 

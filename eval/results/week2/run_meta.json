@@ -1,9 +1,9 @@
 {
-  "git_commit": "bd32001fe6bd5d6f10ad553743148d1996c28a72",
-  "git_dirty": true,
+  "git_commit": "0f6e6314b799ce69ba364115249cd552821221c4",
+  "git_dirty": false,
   "git_dirty_note": "measured before any output file was written",
-  "started_utc": "2026-11-13T19:11:32.981513+00:00",
-  "finished_utc": "2026-11-13T19:11:36.691054+00:00",
+  "started_utc": "2026-11-17T20:59:33.580672+00:00",
+  "finished_utc": "2026-11-17T20:59:33.639226+00:00",
   "provider": "gemini",
   "model": "gemini-3.1-flash-lite",
   "dry_run": false,
