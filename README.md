@@ -93,6 +93,31 @@ Dry-run token counts are synthetic. For Ollama, use `--provider ollama --model q
 
 Use the matching provider and model for temperature comparisons. The paired-token script currently reads Gemini run metadata. Run metadata includes the input and prompt hashes, command, timestamp and Git commit. Cost estimates use the dated prices in `config/prices.json`. Unavailable estimates are reported as `null`. Zero free-tier spend is an assumption, not a billing measurement.
 
+## Week 2: reproduce
+
+All Week 2 numbers come from `eval/results/week2/` ([report](reports/week-2.md)). Run from the repository root:
+
+```sh
+# 1. Classifier, answers (v1, v2, v3) and judge for all 42 cases; writes the run files and scoreboard.json
+.venv/bin/python -m eval.run_e2e --provider gemini --model gemini-3.1-flash-lite --versions v1 v2 v3 --rpm 9 --out-dir eval/results/week2
+
+# 2. Recompute comparison.md, comparison.json and scoreboard.json from the saved run files only
+.venv/bin/python -m eval.compare_versions --run-dir eval/results/week2
+
+# 3. W2.8 injection test (18 trials; not cached, so this calls the provider)
+.venv/bin/python -m eval.injection.run_injection --provider gemini --model gemini-3.1-flash-lite --versions v1 v3 --repeats 3 --out eval/results/week2/injection --rpm 10
+
+# 4. Offline tests
+.venv/bin/python -m pytest -q
+
+# 5. Answer-key review page (local only, http://127.0.0.1:8765)
+.venv/bin/python -m tools.review.server
+```
+
+- Every model call of step 1 is cached in the committed `eval/results/week2/cache/`, so a rerun is pure cache hits and reproduces the numbers without API calls (`run_meta.json` records `provider_calls_this_run` and `cache_hits`). The runner still checks that `GEMINI_API_KEY` is set. Step 2 never calls a model.
+- `cost_per_task_usd` is the list-price equivalent from `config/prices.json`, not actual spend; the free tier bills 0 USD.
+- W2.6 human labels: see [eval/human_labels/HOW_TO_LABEL.md](eval/human_labels/HOW_TO_LABEL.md).
+
 ## Weekly submission
 
 The full Week 1 report should use the commit that will be tagged `week-1` and the exact scripts, data, and commands from that commit (R8). No real personal data is allowed (R10); writes are sandbox only (R11), and API keys must never enter the repository (R13). Weekly reports go in `reports/week-N.md` and are due at least 24 hours before class with a `week-N` tag (R4).
