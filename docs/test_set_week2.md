@@ -28,10 +28,10 @@ Facts are never invented: `scope`, `onset_text` and `sensitive_use` stay `unknow
 | issues per case | 0 22 · 1 19 · 2 1 |
 | issue urgency | P1 3 · P2 4 · P3 11 · P4 2 · null 1 |
 | issue category | street_lighting 5 · roads_sidewalks 4 · parks_green 3 · water_sewer 3 · waste_collection 2 · other 2 · noise_environment 1 · animals 1 |
-| issue scope | single_point 13 · street 4 · unknown 2 · area 1 · partial 1 |
+| issue scope | single_point 12 · street 5 · unknown 2 · area 1 · partial 1 |
 | referral_needed | no 20 · unknown 1 |
-| missing_fields | location 3 · issue_details 2 · ticket_id 1 |
-| review status | pending 24 · approved 17 · changed 1 |
+| missing_fields | location 5 · issue_details 2 · scope 1 · ticket_id 1 |
+| review status | approved 35 · changed 6 · pending 1 (W2-028) |
 
 42 cases, 21 issues. Regenerate the table with:
 
@@ -43,7 +43,7 @@ New cases (W2-026…042) add P4 complaints, a P1 open manhole and fallen tree, n
 
 ## Migration to v2
 
-The 42 cases were human-reviewed under contract v1 (flat `category`/`urgency`/`location`). The migration moved those labels into `issues` and applied the annotation fixes decided with policy v0.3-draft (W2-014, 015, 017, 018, 023, 039, 040, 041). Cases that were fixed or received AI-drafted new content (scope, onset, sensitive use, referral, location detail, missing fields, new issues for W2-021/022) are back to `pending`, with a `v2:` prefix in the review note describing the change. Cases with only the mechanical move kept their status.
+The 42 cases were human-reviewed under contract v1 (flat `category`/`urgency`/`location`). The migration moved those labels into `issues` and applied the annotation fixes decided with policy v0.3-draft (W2-014, 015, 017, 018, 023, 039, 040, 041). Cases that were fixed or received AI-drafted new content (scope, onset, sensitive use, referral, location detail, missing fields, new issues for W2-021/022) are back to `pending`, with a `v2:` prefix in the review note describing the change. Cases with only the mechanical move kept their status. Current state: 41 of 42 cases are reviewed (35 approved, 6 changed: W2-013, 014, 021, 022, 029, 037); W2-028 is still `pending`, and the Week 2 run scored it with its AI-drafted key.
 
 ## Review rule
 
