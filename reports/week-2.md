@@ -12,7 +12,7 @@
 
 ## 1. Summary
 
-We built a JSON request classifier, three main-prompt versions (v1 → v3, adding the six building blocks step by step), a 42-case test set with a review tool and a priority policy, a one-command harness, a paired version comparison, an LLM judge and a first injection test. Prompt v3 reached e2e accuracy 0.952 (40/42, 95% CI 0.89–1.00), v2 0.857, v1 0.476; v3 vs v2 is not significant (McNemar p = 0.22), v1 is clearly worse. The most instructive finding: our first judge rewarded fabricated answers, and the fixed judge still missed an invented phone number, so we added a deterministic check; the judge is not yet validated against human labels.
+We built a JSON request classifier, three main-prompt versions (v1 → v3, adding the six building blocks step by step), a 42-case test set with a review tool and priority policy, a one-command harness, a paired version comparison, an LLM judge and a first injection test. Prompt v3 reached e2e accuracy 0.952 (40/42, 95% CI 0.89–1.00), v2 0.857, v1 0.476; v3 vs v2 is not significant (McNemar p = 0.22). Key lesson: our first judge rewarded fabricated answers, so we revised it and added a deterministic contact-detail check; the judge is not yet validated against human labels.
 
 ## 2. Deliverables
 
@@ -20,7 +20,7 @@ We built a JSON request classifier, three main-prompt versions (v1 → v3, addin
 |---|---|---|---|
 | W2.1 | done | [src/classifier/](../src/classifier/); [prompts/classifier/v1.md](../prompts/classifier/v1.md); [tests/test_classifier.py](../tests/test_classifier.py); [config/case_labels.json](../config/case_labels.json) | Temperature 0, schema validation, retry with the error message. Intent 0.81 (34/42), category+urgency 0.83 (35/42), valid JSON 0.95 (40/42), mean attempts 1.10. |
 | W2.2 | done | [prompts/main/](../prompts/main/README.md) | v1 (role, task, output format), v2 (+ context, constraints), v3 (+ examples, injection defence); each contains the previous verbatim. |
-| W2.3 | done | [eval/testsets/week2_cases.jsonl](../eval/testsets/week2_cases.jsonl); [docs/test_set_week2.md](../docs/test_set_week2.md); [tools/review/](../tools/review/); [docs/priority_policy.md](../docs/priority_policy.md); [docs/priority_policy_decisions.md](../docs/priority_policy_decisions.md) | 42 cases: 6 unanswerable, 8 adversarial, 7 edge, 21 normal. AI-drafted key, independent AI audit, human review (41/42 approved). Policy v0.3 is a draft pending Doruk's and Tarık's confirmation. |
+| W2.3 | done | [eval/testsets/week2_cases.jsonl](../eval/testsets/week2_cases.jsonl); [docs/test_set_week2.md](../docs/test_set_week2.md); [tools/review/](../tools/review/); [docs/priority_policy.md](../docs/priority_policy.md); [docs/priority_policy_decisions.md](../docs/priority_policy_decisions.md) | 42 cases: 6 unanswerable, 8 adversarial, 7 edge, 21 normal. AI-drafted key, independent AI audit, human review: 41/42 reviewed (35 approved, 6 changed). The handbook requirement is met; two points stay open: W2-028's key is still pending review (scored as drafted), and policy v0.3 is a draft not yet confirmed by Doruk and Tarık. |
 | W2.4 | done | [eval/run_e2e.py](../eval/run_e2e.py); [scoreboard.json](../eval/results/week2/scoreboard.json) | One command; on-disk cache, so the numbers reproduce without API calls. |
 | W2.5 | done | [eval/compare_versions.py](../eval/compare_versions.py); [comparison.md](../eval/results/week2/comparison.md) | Wald and Wilson intervals; exact McNemar between the best two. |
 | W2.6 | partial | [eval/judge.py](../eval/judge.py); [prompts/judge/v2.md](../prompts/judge/v2.md); [eval/human_labels/](../eval/human_labels/) | Judge built and revised; the 20 human labels are not collected yet, so κ is null. |
@@ -48,7 +48,7 @@ We built a JSON request classifier, three main-prompt versions (v1 → v3, addin
 }
 ```
 
-Values are for the best version (v3) from [scoreboard.json](../eval/results/week2/scoreboard.json); `injection_success` from [summary.json](../eval/results/week2/injection/summary.json). Accuracy = LLM-judge `pass` (judge v2) and no phone number, URL or e-mail in the answer (deterministic rule); CIs are Wald (abstention 9/9 makes Wald collapse; Wilson 0.70–1.00) (Wilson in comparison.md). Cost is the list-price equivalent of classifier + answer tokens; actual billed spend is 0 (free tier). Latency is classifier + answer, excluding rate-limit waits. Injection: 0/18 trials at temperature 0; repeats were identical, so this is weak evidence. Not measured this week: unsupported_claims, hit_at_5, mrr, task_success, pass_k.
+Values are for the best version (v3) from [scoreboard.json](../eval/results/week2/scoreboard.json); `injection_success` from [summary.json](../eval/results/week2/injection/summary.json). Accuracy = LLM-judge `pass` (judge v2) and no phone number, URL or e-mail in the answer (deterministic rule); `abstention_correct` has n = 9 because it counts every case with `answerable = false`: the 6 unanswerable cases plus W2-022 (normal) and W2-034, W2-035 (adversarial). CIs are Wald (abstention 9/9 makes Wald collapse; Wilson 0.70–1.00) (Wilson in comparison.md). Cost is the list-price equivalent of classifier + answer tokens; actual billed spend is 0 (free tier). Latency is classifier + answer, excluding rate-limit waits. Injection: 0/18 trials at temperature 0; repeats were identical, so this is weak evidence. Not measured this week: unsupported_claims, hit_at_5, mrr, task_success, pass_k.
 
 Test-set change: Week 1's 25 inputs are carried over verbatim as W2-001…025; 17 new cases (W2-026…042) give 42. Week 1 numbers are therefore not comparable with these.
 
@@ -97,9 +97,9 @@ Efe's idea, decided 2026-11-13: category-specific complaint forms for field faul
 
 | Member | Role | What they did this week | Commits or files | Hours |
 |---|---|---|---|---|
-| Efe İncirci | Agent and tools lead | Reviewed 41 of 42 answer-key cases in the review tool; took the 10 priority-policy decisions; chose the judge fix; coordinated the AI workers. | [docs/priority_policy_decisions.md](../docs/priority_policy_decisions.md); [eval/testsets/week2_cases.jsonl](../eval/testsets/week2_cases.jsonl) | {{TBD}} |
-| Doruk Kal | Data and retrieval lead | {{TBD}} | {{TBD}} | {{TBD}} |
-| Tarık Edip Yenikomşu | Evaluation and safety lead | {{TBD}} | {{TBD}} | {{TBD}} |
+| Efe İncirci | Agent and tools lead | Reviewed 41 of 42 answer-key cases in the review tool (35 approved, 6 changed; W2-028 pending); took the 12 priority-policy decisions (D1–D10, D5b, D7b) with Claude, including the category-specific forms idea (D5b, section 7); directed the AI tools (section 9) and committed the Week 2 work. | [docs/priority_policy_decisions.md](../docs/priority_policy_decisions.md); [eval/testsets/week2_cases.jsonl](../eval/testsets/week2_cases.jsonl); commit `a4cf7de` | {{TBD}} |
+| Doruk Kal | Data and retrieval lead | Role area: document corpus, synthetic data and retrieval, which start in Week 3. Done: live temperature and bilingual token demonstrations for the Week 1 presentation (2026-11-10). Pending: confirm priority policy v0.3 (draft). | commit `1838357` on `main` (`docs/index.html`) | {{TBD}} |
+| Tarık Edip Yenikomşu | Evaluation and safety lead | Role area: test set, harness, scoreboard and statistics, faithfulness checks and injection tests. Pending: confirm priority policy v0.3 (draft); the 20 blind human labels and Cohen's κ for the judge (W2.6). | Pending: [eval/human_labels/sheet.csv](../eval/human_labels/sheet.csv) | {{TBD}} |
 
 ## 9. AI tools used
 
