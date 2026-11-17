@@ -1,0 +1,24 @@
+{
+  "kappa": 0.523809523809524,
+  "po": 0.8,
+  "pe": 0.58,
+  "n": 20,
+  "labels": [
+    "pass",
+    "fail"
+  ],
+  "confusion": [
+    [
+      12,
+      2
+    ],
+    [
+      2,
+      4
+    ]
+  ],
+  "labeler": 1,
+  "skipped_empty": 0,
+  "skipped_unmatched": 0,
+  "skipped_invalid_judge": 0
+}
