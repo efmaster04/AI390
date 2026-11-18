@@ -25,11 +25,18 @@ Instructor: Huseyin Ulusoy. Course reference: *Prompt Engineering Project Handbo
 | `data/corpus`, `data/structured`, `sandbox/` | SQL schema for synthetic records; document corpus and sandbox API implementation are planned |
 | `docs/`, `reports/` | Plans, grading rules, and weekly reports |
 
-## Week 1 animated presentation
+## Animated presentations
 
-**[Open the animated presentation](https://efmaster04.github.io/AI390/)** — no terminal or installation required. Use the arrow keys to navigate, or choose Present.
+| Week | Open in the browser | File |
+|---|---|---|
+| Week 2 (current) | **[efmaster04.github.io/AI390](https://efmaster04.github.io/AI390/)** | [`docs/index.html`](docs/index.html) |
+| Week 1 | [efmaster04.github.io/AI390/week1](https://efmaster04.github.io/AI390/week1/) | [`docs/week1/index.html`](docs/week1/index.html) |
 
-The presentation is a single self-contained file: [`docs/index.html`](docs/index.html). All artwork, fonts, and player code are embedded. You can also download that file and open it in Chrome or Edge without a server or internet connection.
+No terminal or installation required. Use the arrow keys to navigate, or choose Present. The Week 2 deck has 20 slides and 3 question branches; its numbers come from `eval/results/week2/` at tag `week-2`.
+
+### Week 1 presentation
+
+Each presentation is a single self-contained file. All artwork, fonts, and player code are embedded. You can also download that file and open it in Chrome or Edge without a server or internet connection.
 
 It contains 22 main slides and 3 question branches. Some speaker notes still contain placeholders from the latest Claude version. The measured examples describe the historical baseline; the revised paired-input set still needs a fresh run, as explained below.
 
