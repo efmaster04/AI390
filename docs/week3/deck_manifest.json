@@ -1,158 +1,422 @@
 {
-  "title": "Beldesk Week 3",
+  "title": "Beldesk Week 3 — the journey of one question",
+  "build_command": "python3 scripts/build_week3_presentation.py",
   "total_speaking_seconds": 420,
+  "words_per_minute": 150,
+  "parts": [
+    {
+      "part": "demo",
+      "label": "What we built · recorded demo",
+      "target_seconds": 120,
+      "planned_seconds": 120,
+      "narration_words": 306,
+      "narration_seconds_at_wpm": 122
+    },
+    {
+      "part": "scoreboard",
+      "label": "Scoreboard",
+      "target_seconds": 120,
+      "planned_seconds": 120,
+      "narration_words": 297,
+      "narration_seconds_at_wpm": 119
+    },
+    {
+      "part": "failures",
+      "label": "Failures and root causes",
+      "target_seconds": 120,
+      "planned_seconds": 120,
+      "narration_words": 301,
+      "narration_seconds_at_wpm": 120
+    },
+    {
+      "part": "next",
+      "label": "Next week",
+      "target_seconds": 60,
+      "planned_seconds": 60,
+      "narration_words": 161,
+      "narration_seconds_at_wpm": 64
+    }
+  ],
   "speakers": {
-    "Efe": "1–6",
-    "Doruk": "7–12",
-    "Tarık": "13–18"
+    "Efe": "1–7",
+    "Doruk": "8–12",
+    "Tarık": "13–19"
   },
   "slides": [
     {
+      "no": 1,
       "id": "cover",
       "title": "Beldesk — Week 3",
       "label": "Opening",
+      "part": "demo",
+      "speaker": "Efe",
       "seconds": 10,
-      "notes": "EFE · 10 s. Beldesk helps residents report municipal problems and ask service questions in Turkish and English. This week we added retrieval and source-grounded answers.",
+      "narration_words": 26,
+      "fragments_local": [
+        1.4
+      ],
+      "window_s": 3.0,
+      "recorded_run": false,
+      "notes": "Hello, we are Beldesk, a Turkish and English assistant for the fictional Yeşilvadi Municipality. Today you follow one real citizen question through our new retrieval pipeline.",
       "repo": ""
     },
     {
+      "no": 2,
       "id": "w3-roadmap",
-      "title": "Eight deliverables, with evidence and open items",
+      "title": "Eight deliverables and where each one stands",
       "label": "Week 3 / W3.1–W3.8",
-      "seconds": 15,
-      "notes": "EFE · 15 s. Show all eight requirements. Distinguish current citizen-benchmark measurements from review of the rewritten guides. The team completed the historical human check and customer interviews.",
-      "repo": "reports/week-3.md"
+      "part": "demo",
+      "speaker": "Efe",
+      "seconds": 10,
+      "narration_words": 26,
+      "fragments_local": [
+        1.4,
+        2.5
+      ],
+      "window_s": 3.5,
+      "recorded_run": false,
+      "notes": "Eight requirements this week. 7 are done; W3.4 is partial: 36/38 valid citizen-v2 responses; actual fixed-refusal results retained. Each status comes from our data file.",
+      "repo": "reports/week-3.md · eval/results/week3/presentation_data.json"
     },
     {
-      "id": "w3-pipeline",
-      "title": "Documents become evidence before the model answers",
-      "label": "W3.1 / W3.2 / W3.3",
+      "no": 3,
+      "id": "w3-gate",
+      "title": "One question enters; staff-only text never competes",
+      "label": "W3.1 / W3.2 · access gate",
+      "part": "demo",
+      "speaker": "Efe",
       "seconds": 20,
-      "notes": "EFE · 20 s. The corpus has source, date/version and access metadata. It is divided by section. Lexical and semantic search feed RRF, then a cross-encoder reranker. Sources are evidence, never system instructions.",
-      "repo": "src/rag/ · config/retrieval.json"
+      "narration_words": 49,
+      "fragments_local": [
+        1.4,
+        2.7,
+        3.8
+      ],
+      "window_s": 4.5,
+      "recorded_run": false,
+      "notes": "Here is the question: a tenant asks what to prepare for a water subscription and does not know the old subscriber number. Before any ranking, an access gate removes the staff-only document, YV-D031. Its 2 chunks never compete, so 90 of 92 section chunks remain for a public question.",
+      "repo": "src/rag/retrieval.py · data/corpus/"
     },
     {
-      "id": "w3-demo-answer",
-      "title": "A service answer must point to its source",
-      "label": "What we built / recorded demo",
-      "seconds": 40,
-      "notes": "EFE · 40 s. This is a recorded real run, not a live API call. Read the citizen question, show the answer and its numbered citation, then identify the source sentence that supports it. The municipality and requirements are synthetic.",
-      "repo": "eval/results/week3/"
+      "no": 4,
+      "id": "w3-lanes",
+      "title": "Two searches rank the same chunks differently",
+      "label": "W3.3 · two lanes",
+      "part": "demo",
+      "speaker": "Efe",
+      "seconds": 20,
+      "narration_words": 46,
+      "fragments_local": [
+        1.4,
+        2.6,
+        3.8,
+        4.9
+      ],
+      "window_s": 5.5,
+      "recorded_run": false,
+      "notes": "The question now splits into two lanes. BM25 ranks chunks by shared words; the multilingual embedding model ranks them by meaning. Both put YV-D003#requirements first, but the rest of the lists differ. The lines connect the 3 chunks both lanes found in their top five.",
+      "repo": "src/rag/lexical.py · src/rag/retrieval.py"
     },
     {
-      "id": "w3-demo-abstain",
-      "title": "Fixed fallback when no authorized source is supplied",
-      "label": "W3.4 / software contract demonstration",
-      "seconds": 35,
-      "notes": "EFE · 35 s. This is a deterministic software check, not an LLM-generated reply. With an empty authorized-source list the answer module returns the exact fixed fallback without calling the model. The citizen-v2 model run records its unavailable-information controls and any service errors separately.",
+      "no": 5,
+      "id": "w3-fuse",
+      "title": "RRF merges the lists; the reranker reads each passage",
+      "label": "W3.3 · fuse and rerank",
+      "part": "demo",
+      "speaker": "Efe",
+      "seconds": 20,
+      "narration_words": 46,
+      "fragments_local": [
+        1.4,
+        2.7,
+        3.9
+      ],
+      "window_s": 4.5,
+      "recorded_run": false,
+      "notes": "Reciprocal rank fusion merges the two lists using only their ranks, so one constant k equal to 60 replaces score calibration. Then a cross-encoder reranker reads the question together with each passage. YV-D003#procedure jumps from 11 to 3. Only the top five reach the model.",
+      "repo": "config/retrieval.json · src/rag/retrieval.py"
+    },
+    {
+      "no": 6,
+      "id": "w3-answer",
+      "title": "The recorded answer points to the sentence it used",
+      "label": "W3.4 · recorded demo",
+      "part": "demo",
+      "speaker": "Efe",
+      "seconds": 25,
+      "narration_words": 67,
+      "fragments_local": [
+        1.4,
+        3.1,
+        4.8,
+        6.5,
+        7.4
+      ],
+      "window_s": 8.0,
+      "recorded_run": true,
+      "notes": "This is a recorded run, not a live call: Recorded citizen-v2 Gemini 3.1 response / 24 Nov 2026. The answer arrives claim by claim. Every claim carries a citation number, and each citation draws a line to the exact sentence it quotes. Our validator checks that each quote occurs in the cited source; the judge then rated 3 of 3 claims supported. The English lines are our translation.",
+      "repo": "eval/results/week3/answers_citizen_v2_complete/"
+    },
+    {
+      "no": 7,
+      "id": "w3-fallback",
+      "title": "No authorized evidence: no model call, one fixed sentence",
+      "label": "W3.4 · fixed fallback",
+      "part": "demo",
+      "speaker": "Efe",
+      "seconds": 15,
+      "narration_words": 46,
+      "fragments_local": [
+        1.4,
+        2.5,
+        4.1,
+        5.2
+      ],
+      "window_s": 6.0,
+      "recorded_run": false,
+      "notes": "When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, 5 of 6 unavailable-information controls got that fallback; W3-U004 was answered instead.",
       "repo": "src/rag/answer.py · prompts/rag/"
     },
     {
-      "id": "w3-testset",
-      "title": "32 citizen questions + 6 separate controls",
+      "no": 8,
+      "id": "w3-retrieval",
+      "title": "Evidence in the top five for 32 / 32 questions",
       "label": "Scoreboard / W3.5",
-      "seconds": 20,
-      "notes": "EFE · 20 s. The citizen benchmark has 32 answerable questions in Turkish and English plus 6 separate unavailable-information controls. 3 questions need multiple facets; 2 cross service boundaries. Alternative evidence was registered before scoring. Internal policy questions belong in separate tests.",
-      "repo": "eval/testsets/week3_retrieval.jsonl"
-    },
-    {
-      "id": "w3-retrieval-metrics",
-      "title": "Evidence in the first five results: 32 / 32",
-      "label": "Scoreboard / W3.5",
-      "seconds": 25,
-      "notes": "DORUK · 25 s. At least one registered facet appears in the first five results for 32 / 32 citizen questions. All required facets appear for 31 / 32. MRR at ten is 0.759. These are retrieval measurements, not perfect-answer claims.",
+      "part": "scoreboard",
+      "speaker": "Doruk",
+      "seconds": 32,
+      "narration_words": 84,
+      "fragments_local": [
+        1.4,
+        2.5,
+        3.6,
+        4.7,
+        5.8
+      ],
+      "window_s": 6.5,
+      "recorded_run": false,
+      "notes": "I am Doruk, with the measurements. Each dot is one of 32 answerable questions, sixteen Turkish and sixteen English, and its number is the rank of the first registered evidence. At rank one, 19 light up; by rank three, 30; by rank five, 32. The whiskers are Wilson intervals: even a perfect score only bounds hit at five above 0.89. The 6 unanswerable controls are excluded. One ring matters: all required facets reach the top five for 31 / 32. MRR at ten is 0.759.",
       "repo": "eval/results/week3/retrieval/summary.json"
     },
     {
+      "no": 9,
       "id": "w3-ablations",
-      "title": "Two ablations on the same citizen benchmark",
+      "title": "Two ablations, one switch at a time",
       "label": "Scoreboard / W3.7",
-      "seconds": 25,
-      "notes": "DORUK · 25 s. Compare dense and hybrid with the same reranker. Dense has higher MRR here. Hybrid MRR is 0.759 and dense MRR 0.761. Then change only reranking: off 0.689, on 0.759. The question and source version stay fixed.",
-      "repo": "eval/retrieval_week3.py"
+      "part": "scoreboard",
+      "speaker": "Doruk",
+      "seconds": 28,
+      "narration_words": 67,
+      "fragments_local": [
+        1.4,
+        2.8,
+        4.2
+      ],
+      "window_s": 5.0,
+      "recorded_run": false,
+      "notes": "We changed one component at a time on the same 32 questions. Switching the reranker off drops hit at five from 1.000 to 0.906 and MRR from 0.759 to 0.689: 3 questions gained evidence with the reranker and 0 lost it; the exact test gives p = 0.25. Switching candidates from hybrid to dense gives MRR 0.761 against 0.759. With 32 questions, none of these differences is significant.",
+      "repo": "eval/retrieval_week3.py · retrieval/paired_statistics.json"
     },
     {
-      "id": "scoreboard",
-      "title": "The same scoreboard; unmeasured values stay null",
-      "label": "Scoreboard / W3",
-      "seconds": 30,
-      "notes": "DORUK · 30 s. Keep the thirteen-row scoreboard used in Week two. Read only measured values. Retrieval is newly measured; task success and repeated agent reliability remain for later weeks. Different test sets and system capabilities prevent a direct Week-two accuracy comparison.",
-      "repo": "eval/results/week3/scoreboard.json"
-    },
-    {
-      "id": "w3-faithfulness",
-      "title": "Claim-by-claim source support",
+      "no": 10,
+      "id": "w3-claims",
+      "title": "89 of 91 claims match their cited source",
       "label": "Scoreboard / W3.6",
-      "seconds": 20,
-      "notes": "DORUK · 20 s. We evaluate claims against actual cited evidence. A citation existing does not mean it supports the claim. Unsupported claims have a clear denominator; missing extraction or judge errors cannot become successful answers.",
+      "part": "scoreboard",
+      "speaker": "Doruk",
+      "seconds": 18,
+      "narration_words": 41,
+      "fragments_local": [
+        1.4,
+        3.2,
+        4.3
+      ],
+      "window_s": 5.0,
+      "recorded_run": false,
+      "notes": "Faithfulness has an explicit denominator. Of 38 cases, 36 produced valid answers and 35 were judged, giving 91 claims. Each square is one claim checked against its cited evidence. 2 are unsupported, from W3-R017, W3-R032. This is a provisional automatic judge.",
       "repo": "eval/faithfulness_week3.py"
     },
     {
-      "id": "w3-retrieval-failure",
-      "title": "A closer look at retrieved evidence",
+      "no": 11,
+      "id": "scoreboard",
+      "title": "6 rows measured; the rest stay null",
+      "label": "Scoreboard / W3",
+      "part": "scoreboard",
+      "speaker": "Doruk",
+      "seconds": 42,
+      "narration_words": 105,
+      "fragments_local": [
+        1.4,
+        3.0,
+        4.4
+      ],
+      "window_s": 5.0,
+      "recorded_run": false,
+      "notes": "The same thirteen rows as Week two, in the same order, now with n and intervals. Test set size is 38. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is 0.833 on only 6 controls, so its interval is wide. Unsupported claims are 0.022 on 91 claims. Hit at five and MRR are new this week. The rows task success, pass k, injection success stay null this week. Latency is 4.7 seconds without waits. Cost and spend stay null: billing is unknown. 6 of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.",
+      "repo": "eval/results/week3/scoreboard.json"
+    },
+    {
+      "no": 12,
+      "id": "w3-r032",
+      "title": "W3-R032: same route, one facet falls below the cut",
       "label": "Failure analysis / retrieval",
-      "seconds": 25,
-      "notes": "DORUK · 25 s. Inspect W3-R032 in hybrid_rerank. A required answer facet is missing from top 5 gold_in_candidates_but_below_top5. Finding one relevant passage does not cover every requested part; all-facet@5 = 0.969. Finding one relevant passage does not establish that every requested facet is covered.",
-      "repo": "eval/results/week3/retrieval/failures.json"
+      "part": "failures",
+      "speaker": "Doruk",
+      "seconds": 34,
+      "narration_words": 87,
+      "fragments_local": [
+        1.4,
+        2.5,
+        3.8,
+        4.9
+      ],
+      "window_s": 5.5,
+      "recorded_run": true,
+      "notes": "Now the same journey with a case that fails, W3-R032. The resident asks two things: what a park fair needs for permission, and how to report a blocked entrance. After fusion, the access facet sits at 3 and the permit facet at 6. The reranker lifts YV-D021#limits from 17 to 5, and the permit facet slips to 7. The top-five cut leaves it out; without the reranker it sat at 6, still outside. Hit at five calls this a success; all facets at five does not.",
+      "repo": "eval/results/week3/retrieval/hybrid_rerank.jsonl"
     },
     {
-      "id": "w3-generation-failure",
-      "title": "Service availability in the citizen run",
+      "no": 13,
+      "id": "w3-r032-answer",
+      "title": "Five passages in, a refusal out",
+      "label": "Failure analysis / generation",
+      "part": "failures",
+      "speaker": "Tarık",
+      "seconds": 23,
+      "narration_words": 61,
+      "fragments_local": [
+        1.4,
+        3.0,
+        4.1,
+        5.2
+      ],
+      "window_s": 6.0,
+      "recorded_run": true,
+      "notes": "I am Tarık. This is the recorded answer for that case. The model received these five passages, including the accessibility details at rank 3. It still returned the fixed refusal. The judge marked that refusal unsupported, because the sources partly answer the question. So W3-R032 fails twice: retrieval cut one facet, and generation refused instead of answering the part it had.",
+      "repo": "eval/results/week3/answers_citizen_v2_complete/failures.json"
+    },
+    {
+      "no": 14,
+      "id": "w3-stages",
+      "title": "Every failure is assigned to one stage",
       "label": "Failure analysis / W3.8",
-      "seconds": 15,
-      "notes": "DORUK · 15 s. Read the citizen-v2 run’s own service record. Retired v1 source and question hashes describe a different benchmark. Separate provider errors, missing evidence and unsupported generated claims.",
-      "repo": "eval/results/week3/"
+      "part": "failures",
+      "speaker": "Tarık",
+      "seconds": 23,
+      "narration_words": 53,
+      "fragments_local": [
+        1.4,
+        2.6,
+        3.8,
+        4.9
+      ],
+      "window_s": 5.5,
+      "recorded_run": false,
+      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: 1 case missed a required facet. Generation: 4 records: unsupported claim; refused an answerable question; unsupported claim; answered a control. Provider: 2 responses still failed output validation after retries. Judge: 1 invalid judgement. Each stage points to a different fix.",
+      "repo": "eval/results/week3/answers_citizen_v2_complete/failures.json"
     },
     {
-      "id": "w3-judge-calibration",
-      "title": "The historical judge check and its scope",
+      "no": 15,
+      "id": "w3-judge",
+      "title": "Judge vs human on 20 claims: 17 agree",
       "label": "Failure analysis / evaluation",
-      "seconds": 30,
-      "notes": "TARIK · 30 s. The team completed twenty human labels using the historical claims and their embedded v1 evidence. Read kappa with the actual matched sample. This checks the judge on that set; it does not establish human accuracy for the rewritten citizen-v2 questions.",
+      "part": "failures",
+      "speaker": "Tarık",
+      "seconds": 25,
+      "narration_words": 60,
+      "fragments_local": [
+        1.4,
+        3.2,
+        4.3,
+        5.4
+      ],
+      "window_s": 6.0,
+      "recorded_run": false,
+      "notes": "Can we trust the judge? The team labelled 20 claims by hand. Each dot is one claim, placed by human label and judge label. 17 fall on the diagonal; Cohen’s kappa is 0.771. All 3 disagreements are claims a human marked insufficient. These are historical claims with the earlier evidence, so this calibrates the rubric, not accuracy on today’s answers.",
       "repo": "eval/results/week3/calibration/"
     },
     {
-      "id": "w3-evaluation-boundaries",
-      "title": "A separate judge for source-grounded answers",
+      "no": 16,
+      "id": "w3-reviews",
+      "title": "The rules and reviews behind the numbers",
       "label": "Failure analysis / evaluation",
-      "seconds": 25,
-      "notes": "TARIK · 25 s. We preserved Week-two evidence and introduced a separate source-aware evaluation. A contact detail is not automatically fabricated if it appears in an authorized source. A retrieved instruction still cannot override system rules or create a ticket.",
-      "repo": "prompts/judge/ · eval/faithfulness_week3.py"
-    },
-    {
-      "id": "w3-review-status",
-      "title": "Human reviews and customer interviews",
-      "label": "Failure analysis / remaining gaps",
-      "seconds": 25,
-      "notes": "TARIK · 25 s. The team has 2 completed customer interviews. Those records remain preserved. The citizen-v2 public guides have 30 of 30 explicit approvals; rewriting the text requires a fresh source review.",
-      "repo": "reports/week-3.md · review records"
-    },
-    {
-      "id": "w3-next",
-      "title": "Next week: reliable calls and controlled tools",
-      "label": "Next week / 3 priorities",
-      "seconds": 40,
-      "notes": "TARIK · 40 s. Our priorities are to review the rewritten citizen guides and evidence labels, measure controlled tool results, and measure multi-step task success. Each priority moves a named metric; retrieval does not itself create or update tickets.",
-      "repo": "reports/week-3.md · Week 4 plan"
-    },
-    {
-      "id": "w3-reproduce",
-      "title": "Every number should trace back to a command and files",
-      "label": "Next week / reproducibility",
+      "part": "failures",
+      "speaker": "Tarık",
       "seconds": 15,
-      "notes": "TARIK · 15 s. Commands, source versions and hashes accompany recorded outputs. The final test count comes from the actual test run. The Week-three implementation is shared on its review branch; a release tag and deployment are separate steps.",
+      "narration_words": 40,
+      "fragments_local": [
+        1.4,
+        2.5,
+        3.6
+      ],
+      "window_s": 4.5,
+      "recorded_run": false,
+      "notes": "Two boundaries behind these numbers. The judge now accepts a contact detail only if an authorized source contains it. All 30 rewritten public guides are approved, but the gold evidence labels are still drafts. Our 2 customer interviews are done.",
+      "repo": "prompts/judge/ · reports/week-3.md"
+    },
+    {
+      "no": 17,
+      "id": "w3-next",
+      "title": "Week 4 extends the route: tools and an agent loop",
+      "label": "Next week / 3 priorities",
+      "part": "next",
+      "speaker": "Tarık",
+      "seconds": 35,
+      "narration_words": 94,
+      "fragments_local": [
+        1.4,
+        2.7,
+        3.8,
+        4.9
+      ],
+      "window_s": 5.5,
+      "recorded_run": false,
+      "notes": "Next week the route gets longer. Retrieval answers questions about documents, but a resident also asks about their own ticket, and no document can answer that. First, a read-only lookup tool, so ticket status comes from data, with tool-result validity as a new measurement. Second, ticket creation in a sandbox only after the user confirms, and we re-measure injection with tools connected. Third, an agent loop with step limits and traces, which moves task success and pass at k from null to measured. Each new station gets its own measurement before we trust it.",
+      "repo": "Week 4 plan"
+    },
+    {
+      "no": 18,
+      "id": "w3-reproduce",
+      "title": "Every number traces back to a command and a hash",
+      "label": "Next week / reproducibility",
+      "part": "next",
+      "speaker": "Tarık",
+      "seconds": 15,
+      "narration_words": 40,
+      "fragments_local": [
+        1.4,
+        2.5
+      ],
+      "window_s": 3.5,
+      "recorded_run": false,
+      "notes": "Every number in this deck is read from recorded result files when the deck is built, so a corrected metric updates every slide. Retrieval runs locally without an API key, and corpus, index and question hashes travel with the results.",
       "repo": "README.md · eval/results/week3/"
     },
     {
+      "no": 19,
       "id": "w3-questions",
-      "title": "Three questions we expect",
+      "title": "Four questions we expect",
       "label": "Questions and feedback",
-      "seconds": 5,
-      "notes": "TARIK · 5 s. Thank you. We are ready for your questions.",
+      "part": "next",
+      "speaker": "Tarık",
+      "seconds": 10,
+      "narration_words": 27,
+      "fragments_local": [
+        1.4
+      ],
+      "window_s": 2.0,
+      "recorded_run": false,
+      "notes": "Thank you. We are ready for your questions. Each of these four cards opens a prepared answer with the evidence behind it, so pick any of them.",
       "repo": "Week 3 / Q&A"
     }
   ],
-  "source_data": "eval\\results\\week3\\presentation_data.json",
-  "reference": "docs/index.html",
-  "note": "Self-contained HTML. Rebuild from recorded evidence after data changes."
+  "qa_branches": [
+    "w3-q-measurement",
+    "w3-q-failure",
+    "w3-q-priority",
+    "w3-q-corpus"
+  ],
+  "source_data": "eval/results/week3/presentation_data.json",
+  "reference": "docs/index.html (read only)",
+  "note": "Generated file. Numbers are read from recorded result files at build time; missing values print as null."
 }
