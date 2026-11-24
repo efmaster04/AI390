@@ -98,3 +98,53 @@ def test_lane_ranks_recovered_from_rrf():
         if c.get('lane_bm25') or c.get('lane_dense'):
             v = (1 / (60 + c['lane_bm25']) if c['lane_bm25'] else 0) + (1 / (60 + c['lane_dense']) if c['lane_dense'] else 0)
             assert abs(v - c['rrf_score']) < 1e-12
+
+
+def _scene(comp, sid, nxt):
+    start = comp.index(f'data-composition-id="{sid}"')
+    return comp[start:comp.index(f'data-composition-id="{nxt}"', start)]
+
+
+def test_corrected_claim_rate_and_cost_notes(deck):
+    man, html, comp, show, script = deck
+    from week3_deck import data as dd
+    d = dd.load()
+    cm = d['claims']
+    assert isinstance(cm['numerator'], int) and isinstance(cm['n'], int)  # numerator found via the fallback chain
+    claims = _scene(comp, 'w3-claims', 'scoreboard')
+    assert f'{cm["numerator"]} / {cm["n"]} unsupported' in claims and 'null / ' not in claims
+    assert claims.count('cl-bad') >= 1
+    if cm['before']:
+        assert f'{cm["before"]["numerator"]} / {cm["before"]["n"]}' in claims
+    board = _scene(comp, 'scoreboard', 'w3-r032')
+    sb = DATA['scoreboard']
+    if sb.get('cost_per_task_usd') is not None:
+        assert 'list-price estimate' in board and 'billing unknown' not in board
+
+
+def test_failure_attribution_follows_recorded_stage(deck):
+    man, html, comp, show, script = deck
+    from week3_deck import data as dd
+    d = dd.load()
+    rec = {f['case_id']: f for f in d['answer_failures']}
+    for key, stage in (('retrieval', 'retrieval'), ('judge', 'evaluation')):
+        for c in d['stage_cases'][key]:
+            assert rec.get(c['id'], {}).get('stage', stage) == stage
+    fid = DATA['retrieval_failure']['case_id']
+    assert all(c['id'] != fid for c in d['stage_cases']['generation'])
+    ans = _scene(comp, 'w3-r032-answer', 'w3-stages')
+    assert f'Root cause: {rec[fid]["stage"]}' in ans
+    notes = {s['sceneId']: s['notes'] for s in show['slides']}
+    for text in (notes['w3-r032-answer'], script):
+        assert 'fails twice' not in text and 'marked that refusal unsupported' not in text
+
+
+def test_approvals_and_next_week_from_files(deck):
+    man, html, comp, show, script = deck
+    from week3_deck import data as dd
+    d = dd.load()
+    apv = d['approvals']
+    rev = _scene(comp, 'w3-reviews', 'w3-next')
+    assert f'{apv["docs"]} / {apv["docs_total"]}' in rev and f'{apv["cases"]} / {apv["cases_total"]}' in rev
+    nxt = _scene(comp, 'w3-next', 'w3-reproduce')
+    assert d['priorities'] and all(p['metric'] in nxt.replace('&#x27;', "'") for p in d['priorities'][:3])

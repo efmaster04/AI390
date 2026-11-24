@@ -172,7 +172,7 @@ def build_scenes(d, cover_html):
         body=''.join(tiles),
         js='''var t=$(".rm-tile");BK.slam(tl,[t[0],t[1],t[2],t[3]],0.3,{stagger:0.08});BK.stamp(tl,[$(".rm-chip")[0],$(".rm-chip")[1],$(".rm-chip")[2],$(".rm-chip")[3]],0.8,{stagger:0.06,rotation:0});
 BK.slam(tl,[t[4],t[5],t[6],t[7]],P.at[1],{stagger:0.08});BK.stamp(tl,[$(".rm-chip")[4],$(".rm-chip")[5],$(".rm-chip")[6],$(".rm-chip")[7]],P.at[1]+0.4,{stagger:0.06,rotation:0});''',
-        notes=(f'Eight requirements this week. {8 - len(partial)} are done' + (f'; {", ".join(partial)} is {deliv[partial[0]].get("status")}: {deliv[partial[0]].get("note")}' if partial else '') + ' Each status comes from our data file.'))
+        notes=(f'Eight requirements this week. {8 - len(partial)} are done' + (f'; {", ".join(partial)} is {deliv[partial[0]].get("status")}, as its card explains.' if partial else '.') + ' Each status comes from our data file.'))
 
     # ------------------------------------------------------------ 3 gate
     q = dj['query'] if dj else demo.get('question_tr')
@@ -275,7 +275,7 @@ BK.string(tl,$(".ln-link"),P.at[3],{stagger:.12});BK.note(tl,".ln-foot",P.at[3]+
         folio='THE JOURNEY · 3/4', repo='config/retrieval.json · src/rag/retrieval.py', steps=[1.3, 1.2], body=body,
         js=f'''W3.rail(tl,root,0.15);BK.slam(tl,".fu-fx",0.35);
 tl.fromTo($(".w3-card"),{{opacity:0,x:function(i){{return i%2?90:-90;}}}},{{opacity:1,x:0,duration:.4,stagger:.08,ease:BK.EASE.settle}},0.55);
-W3.railStep(tl,root,{rail_dx(3, 4):.0f},P.at[1]);BK.slam(tl,".fu-rr",P.at[1]);W3.reorder(tl,root,P.at[1]+0.15);
+W3.railStep(tl,root,{rail_dx(3, 4):.0f},P.at[1],3,4);BK.slam(tl,".fu-rr",P.at[1]);W3.reorder(tl,root,P.at[1]+0.15);
 $(".w3-card").forEach(function(c){{var a=c.querySelector(".rk-a"),b=c.querySelector(".rk-b");if(b){{W3.flip(tl,a,b,P.at[1]+0.5);}}var j=c.querySelector(".w3-jump");if(j)BK.stamp(tl,j,P.at[1]+0.7,{{rotation:0}});}});
 BK.draw(tl,".fu-cut",P.at[2],{{duration:.5}});BK.slam(tl,".fu-model",P.at[2]+0.15);BK.rise(tl,$(".fu-slot"),P.at[2]+0.4,{{y:8,stagger:.08}});''',
         notes=(f'Reciprocal rank fusion merges the two lists using only their ranks, so one constant k equal to {fmt(d["config"].get("rrf_constant"))} replaces score calibration. '
@@ -443,31 +443,41 @@ tl.fromTo($(".rt-ring"),{opacity:0,scale:1.6},{opacity:1,scale:1,duration:.35,ea
 
     # ------------------------------------------------------------ 10 claims
     fa_sum = d['answer_summary']
-    faith = fa_sum.get('faithfulness', {})
-    us = sb.get('unsupported_claims', {}) if isinstance(sb.get('unsupported_claims'), dict) else {}
-    nc, bad = us.get('n'), us.get('numerator')
+    cm = d['claims']
+    nc, bad = cm['n'], cm['numerator']
     bad_ids = [c['id'] for c in d['stage_cases']['generation'] if c['kind'] == 'unsupported claim']
     sq = ''
     if isinstance(nc, int):
         per = 13
         for k in range(nc):
-            x, y = 96 + (k % per) * 52, 400 + (k // per) * 52
+            x, y = 96 + (k % per) * 52, 392 + (k // per) * 52
             is_bad = isinstance(bad, int) and k >= nc - bad
             sq += f'<i class="w3-cell cl-{"bad" if is_bad else "ok"}{" bad" if is_bad else ""}" style="left:{x}px;top:{y}px;width:42px;height:42px"></i>'
-    funnel = [('cases', fa_sum.get('planned_cases')), ('valid answers', fa_sum.get('valid_generated_answers')),
+    fp = f' (first pass {fmt(cm["first_pass_valid"])})' if cm['first_pass_valid'] is not None else ''
+    funnel = [('cases', fa_sum.get('planned_cases')), (f'valid answers{fp}', fa_sum.get('valid_generated_answers')),
               ('judged answers', fa_sum.get('valid_claim_judgements')), ('claims judged', nc)]
-    fun = ''.join(f'<div class="bk-panel w3-abs cl-fun" style="left:{900 + i * 40}px;top:{390 + i * 96}px;width:{880 - i * 80}px;height:80px;padding:10px 24px;display:flex;align-items:center;gap:20px">'
+    fun = ''.join(f'<div class="bk-panel w3-abs cl-fun" style="left:{900 + i * 40}px;top:{384 + i * 92}px;width:{880 - i * 80}px;height:78px;padding:10px 24px;display:flex;align-items:center;gap:20px">'
                   f'<span class="w3-big" style="font-size:52px">{fmt(v)}</span><span class="w3-cap">{h(lbl)}</span></div>' for i, (lbl, v) in enumerate(funnel))
-    body = sq + fun + (f'<div class="bk-panel bk-panel--tomato w3-abs cl-bad-l" style="left:900px;top:790px;width:924px;padding:16px 24px"><span class="w3-mono" style="font-size:30px;font-weight:700">'
-                       f'{fmt(bad)} / {fmt(nc)} unsupported = {fmt(us.get("value"))} · {h(", ".join(bad_ids) or "null")}</span></div>'
-                       f'<p class="bk-note bk-note--plain bk-note--ink w3-abs cl-foot" style="left:96px;top:900px;font-size:28px">Provisional automatic judge · generation errors {fmt(faith.get("generation_errors"))} and judge errors {fmt(faith.get("judge_errors_or_skipped"))} are kept out of the denominator, not counted as passes.</p>')
-    add(id='w3-claims', part='scoreboard', speaker='Doruk', seconds=18, title=f'{fmt(faith.get("labels", {}).get("supported"))} of {fmt(nc)} claims match their cited source', label='Scoreboard / W3.6',
-        folio='BELDESK / SCOREBOARD', repo='eval/faithfulness_week3.py', steps=[1.8, 1.1], body=body,
-        js='''BK.slam(tl,$(".cl-fun"),0.3,{stagger:.12});
+    bf = cm['before']
+    corr = ''
+    if bf and bf.get('n') is not None:
+        corr = (f'<div class="bk-panel bk-panel--sun w3-abs cl-corr" style="left:96px;top:266px;width:1728px;padding:14px 26px 12px"><p class="w3-cap" style="color:var(--ink)">'
+                f'Corrected after audit: <s>{fmt(bf.get("numerator"))} / {fmt(bf.get("n"))}</s> → <b>{fmt(bad)} / {fmt(nc)}</b> · {h(cm["correction"] or "metric definition corrected")}</p></div>')
+    unj = len(cm['unjudged'])
+    unj_ids = sorted({u.get('case_id') for u in cm['unjudged']})
+    body = corr + sq + fun + (f'<div class="bk-panel bk-panel--tomato w3-abs cl-bad-l" style="left:900px;top:768px;width:924px;padding:14px 24px"><span class="w3-mono" style="font-size:30px;font-weight:700">'
+                       f'{fmt(bad)} / {fmt(nc)} unsupported = {fmt(cm["value"])} · {h(", ".join(bad_ids) or "null")}</span></div>'
+                       f'<p class="bk-note bk-note--plain bk-note--ink w3-abs cl-foot" style="left:96px;top:880px;width:1728px;font-size:28px;white-space:normal;line-height:1.25">Provisional automatic judge. Not in the denominator: {fmt(cm["gen_errors"])} answers with generation errors, '
+                       f'{fmt(cm["judge_errors"])} invalid judgement ({unj} claims unjudged{": " + ", ".join(unj_ids) if unj_ids else ""}); none counted as passes.</p>')
+    add(id='w3-claims', part='scoreboard', speaker='Doruk', seconds=18, title=f'{fmt(cm["supported"])} of {fmt(nc)} claims match their cited source', label='Scoreboard / W3.6',
+        folio='BELDESK / SCOREBOARD', repo='eval/results/week3/answers_citizen_v2_complete/summary.json', steps=[1.8, 1.1], body=body,
+        js='''BK.slam(tl,".cl-corr",0.3);BK.slam(tl,$(".cl-fun"),0.4,{stagger:.12});
 tl.fromTo($(".cl-ok, .cl-bad"),{opacity:0,scale:.4},{opacity:1,scale:1,duration:.2,stagger:.012,ease:BK.EASE.pop},P.at[1]);
 tl.fromTo($(".cl-bad"),{scale:1},{scale:1.25,duration:.25,ease:BK.EASE.pop,immediateRender:false},P.at[2]);BK.slam(tl,".cl-bad-l",P.at[2]+0.1);BK.note(tl,".cl-foot",P.at[2]+0.3);''',
         notes=(f'Faithfulness has an explicit denominator. Of {fmt(fa_sum.get("planned_cases"))} cases, {fmt(fa_sum.get("valid_generated_answers"))} produced valid answers and {fmt(fa_sum.get("valid_claim_judgements"))} were judged, giving {fmt(nc)} claims. '
-               f'Each square is one claim checked against its cited evidence. {fmt(bad)} are unsupported, from {", ".join(bad_ids) or "null"}. This is a provisional automatic judge.'))
+               f'{fmt(bad)} {"is" if bad == 1 else "are"} unsupported, from {", ".join(bad_ids) or "null"}. '
+               + (f'An audit corrected the definition: a validated fixed refusal contributes no claims, so {fmt(bf.get("numerator"))} of {fmt(bf.get("n"))} became {fmt(bad)} of {fmt(nc)}. ' if bf and bf.get('n') is not None else '')
+               + 'This is a provisional automatic judge.'))
 
     # ------------------------------------------------------------ 11 scoreboard (Week 2 layout)
     old = d['old']
@@ -511,12 +521,15 @@ tl.fromTo($(".cl-bad"),{scale:1},{scale:1.25,duration:.25,ease:BK.EASE.pop,immed
         sbr.append(f'<div class="sb-row sb-g{grp}"><span class="sb-name">{key}</span>{val}<span class="sb-last">{h(prev if prev is not None else "null")}</span>{mk}</div>')
     measured = sum((sb.get(k).get('value') if isinstance(sb.get(k), dict) else sb.get(k)) is not None for k in rows)
     null_rows = [k for k in rows if value_of(sb.get(k)) is None]
+    cost_v, spend_v = value_of(sb.get('cost_per_task_usd')), value_of(sb.get('spend_week_usd'))
+    cost_note = ('cost: list-price estimate, not billed' if cost_v is not None else 'cost unknown → null')
+    cost_note += (f' · spend ${spend_v:g} actual' if spend_v is not None else ' · spend unknown → null')
     body = ('<span id="sb-cap" class="bk-label">same rows · same order</span><section id="sb-table" class="bk-panel"><div class="sb-col sb-col--now" style="--k:3"></div><div class="sb-col" style="--k:4"></div><div class="sb-col" style="--k:6"></div>'
             '<div class="sb-row sb-head"><span>metric</span><span>this week</span><span>last week</span>' + ''.join(f'<span class="sb-wk">W{i}</span>' for i in range(1, 7)) + '</div>' + ''.join(sbr) + '</section>'
             f'<section id="sb-tally" class="bk-panel"><span class="bk-tab bk-tab--teal">measured</span><div class="sb-tally-n"><span id="sb-7">{measured}</span><span class="sb-of">/ 13</span></div><span class="bk-label sb-tally-l">rows with a value</span></section>'
             '<span id="sb-stamp" class="bk-stamp">null =<br>not measured</span>'
             '<p id="sb-foot" class="bk-note bk-note--plain bk-note--ink">[ ] = 95% interval (recorded, else Wilson) · n = denominator · W2 and W3 sets differ: no like-for-like claim.<br>'
-            'Latency: retrieval + generation, waits excluded · billing unknown → cost and spend null.<br>Judge-based rows are provisional.</p>')
+            f'Latency: retrieval + generation, waits excluded · {h(cost_note)}<br>Judge-based rows are provisional.</p>')
     add(id='scoreboard', part='scoreboard', speaker='Doruk', seconds=42, title=f'{measured} rows measured; the rest stay null', label='Scoreboard / W3',
         folio='BELDESK / SCOREBOARD', repo='eval/results/week3/scoreboard.json', steps=[1.6, 1.4], body=body, pose='dusunen', scoreboard=True,
         js='''BK.slam(tl,"#sb-table",0.25,{duration:.42});BK.rise(tl,".sb-head",0.35,{y:8,duration:.3});BK.fade(tl,$(".sb-col"),0.4,{duration:.3});
@@ -527,9 +540,11 @@ BK.slam(tl,"#sb-tally",P.at[2]+0.5,{duration:.4});BK.count(tl,"#sb-7",parseInt(r
 BK.stamp(tl,"#sb-stamp",P.at[2]+0.8);BK.note(tl,"#sb-foot",P.at[2]+0.7);BK.rise(tl,"#sb-cap",0.4,{y:8});''',
         notes=(f'The same thirteen rows as Week two, in the same order, now with n and intervals. '
                f'Test set size is {fmt(sb.get("test_set_size"))}. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is {fmt((sb.get("abstention_correct") or {}).get("value") if isinstance(sb.get("abstention_correct"), dict) else None)} on only {fmt(ab.get("n"))} controls, so its interval is wide. '
-               f'Unsupported claims are {fmt(us.get("value"))} on {fmt(nc)} claims. Hit at five and MRR are new this week. The rows {", ".join(k.replace("_", " ") for k in null_rows if k not in ("e2e_accuracy", "cost_per_task_usd", "spend_week_usd", "spend_total_usd")) or "No other row"} stay null this week. '
-               f'Latency is {fmt(value_of(sb.get("latency_p50_s")), 1)} seconds without waits. Cost and spend stay null: billing is unknown. '
-               f'{measured} of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.'))
+               f'Unsupported claims are {fmt(cm["value"])} on {fmt(nc)} claims. Hit at five and MRR are new this week. The rows {", ".join(k.replace("_", " ") for k in null_rows if k not in ("e2e_accuracy", "cost_per_task_usd", "spend_week_usd", "spend_total_usd")) or "No other row"} stay null this week. '
+               f'Latency is {fmt(value_of(sb.get("latency_p50_s")), 1)} seconds without waits. '
+               + (f'Cost per task is a list-price estimate of {fmt(cost_v, 5)} dollars, not a bill' if cost_v is not None else 'Cost stays null')
+               + (f'; actual spend is {spend_v:g} dollars. ' if spend_v is not None else '; spend stays null. ')
+               + f'{measured} of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.'))
 
     # ------------------------------------------------------------ 12 R032 journey
     body = rail(4, 6, bad=None, bub_bad=True)
@@ -581,26 +596,29 @@ BK.draw(tl,".rf-cut",P.at[3],{duration:.6});var below=[];$(".w3-card").forEach(f
         body += f'<div class="w3-model fr-ctx" style="left:96px;top:390px;width:560px"><h4>context sent to the model</h4>{slots}</div>'
         body += (f'<div class="bk-term w3-term fr-term" style="left:730px;top:390px;width:1094px"><div class="bk-term-bar"><i></i><i></i><i></i><b>recorded run · {h(fa["case_id"])}</b></div>'
                  f'<div class="bk-term-body"><span class="bk-term-line"><b class="bk-term-bot">beldesk&gt;</b> <span class="fr-ans">{h(fa["answer"])}</span></span></div></div>')
-        jr = (fa['judge_unlisted'][0].get('reason') if fa['judge_unlisted'] else fa.get('judge_reason')) or 'null'
-        jl = fa['judge_unlisted'][0].get('label') if fa['judge_unlisted'] else None
-        body += (f'<div class="bk-panel w3-abs fr-judge" style="left:730px;top:640px;width:1094px;padding:18px 26px"><span class="bk-tab bk-tab--tomato">judge · refusal labelled {h(jl or "null")}</span>'
-                 f'<p class="w3-cap" style="margin-top:6px">“{h(jr)}”</p></div>')
-        tags = [f['kind'] for f in d['answer_failures'] if f.get('case_id') == fa['case_id']]
-        body += ''.join(f'<span class="w3-tag w3-tag--tomato w3-abs fr-tag" style="left:96px;top:{700 + i * 58}px;font-size:28px;padding:2px 8px">{h(t)}</span>' for i, t in enumerate(tags))
+    rec = next((f for f in d['answer_failures'] if fa and f.get('case_id') == fa['case_id']), {})
+    stage = rec.get('stage') or 'null'
     covered = next((fc for fc in fj['facets'] if (fc['rank'] or 99) <= 5), None) if fj else None
     missing = next((fc for fc in fj['facets'] if (fc['rank'] or 99) > 5), None) if fj else None
-    body += (f'<div class="bk-panel w3-abs fr-root" style="left:96px;top:850px;width:1728px;padding:16px 26px;display:flex;gap:40px">'
-             f'<p class="w3-cap"><b>Retrieval:</b> permit facet at rank {fmt(missing["rank"] if missing else None)}, outside the context.</p>'
-             f'<p class="w3-cap"><b>Generation:</b> refused although the access facet was at rank {fmt(covered["rank"] if covered else None)}.</p></div>')
-    add(id='w3-r032-answer', part='failures', speaker='Tarık', seconds=23, title='Five passages in, a refusal out', label='Failure analysis / generation',
+    validated = bool(fa) and fa['case_id'] in (d['answer_summary'].get('faithfulness', {}).get('validated_fixed_refusals') or [])
+    excluded = bool(fa) and fa['case_id'] in d['claims']['excluded_refusals']
+    if fa:
+        jtxt = ('Validated fixed refusal: it adds 0 claims to the claim rate' + (' (its earlier unsupported verdict was removed after audit).' if excluded else '.')) if validated else 'Refusal not validated as the fixed fallback.'
+        body += (f'<div class="bk-panel w3-abs fr-judge" style="left:730px;top:640px;width:1094px;padding:18px 26px"><span class="bk-tab bk-tab--sun">evaluation</span>'
+                 f'<p class="w3-cap" style="margin-top:6px">{h(jtxt)}</p></div>')
+        tags = [rec.get('kind')] + ([f'facets in context: {rec["gold_facets_in_context"]}'] if rec.get('gold_facets_in_context') else [])
+        body += ''.join(f'<span class="w3-tag w3-tag--tomato w3-abs fr-tag" style="left:96px;top:{700 + i * 58}px;font-size:28px;padding:2px 8px">{h(t)}</span>' for i, t in enumerate(t for t in tags if t))
+    body += (f'<div class="bk-panel w3-abs fr-root" style="left:96px;top:850px;width:1728px;padding:16px 26px"><p class="w3-cap" style="color:var(--ink)">'
+             f'<b>Root cause: {h(stage)}.</b> Missing facet {h(", ".join(rec.get("missing_facets") or (missing["pids"] if missing else ["null"])))} ranked {fmt(missing["rank"] if missing else None)}; the model saw only the top 5.</p></div>')
+    add(id='w3-r032-answer', part='failures', speaker='Tarık', seconds=23, title='Five passages in, a fixed refusal out', label=f'Failure analysis / {stage}',
         folio='FAILURE · REPLAY', repo='eval/results/week3/answers_citizen_v2_complete/failures.json', steps=[1.6, 1.1, 1.1], body=body,
         js='''W3.rail(tl,root,0.15);BK.slam(tl,".fr-ctx",0.3);BK.rise(tl,$(".fr-slot"),0.5,{y:8,stagger:.08});BK.slam(tl,".fr-term",0.6);
 BK.words(root.querySelector(".fr-ans"));BK.stream(tl,".fr-ans",P.at[1],{wps:22});
 BK.slam(tl,".fr-judge",P.at[2]);
 BK.stamp(tl,$(".fr-tag"),P.at[2]+0.3,{rotation:0,stagger:.15});BK.slam(tl,".fr-root",P.at[3]);''',
-        notes=(f'I am Tarık. This is the recorded answer for that case. The model received these five passages, including the accessibility details at rank {fmt(covered["rank"] if covered else None)}. '
-               f'It still returned the fixed refusal. The judge marked that refusal unsupported, because the sources partly answer the question. '
-               f'So {fa["case_id"] if fa else "null"} fails twice: retrieval cut one facet, and generation refused instead of answering the part it had.'))
+        notes=(f'I am Tarık. The model received these five passages: the access facet at rank {fmt(covered["rank"] if covered else None)}, but not the permit facet. '
+               f'It returned the fixed refusal' + (', which our validator accepts as the fixed fallback, so it adds no claims to the claim rate. ' if validated else '. ')
+               + f'We record the root cause as {stage}: {fmt(rec.get("gold_facets_in_context"))} required facets reached the context, and the missing one ranked {fmt(missing["rank"] if missing else None)}.'))
 
     # ------------------------------------------------------------ 14 stage flow
     stages = [('retrieval', 'Retrieval'), ('generation', 'Generation'), ('provider', 'Provider'), ('judge', 'Judge')]
@@ -617,10 +635,10 @@ BK.stamp(tl,$(".fr-tag"),P.at[2]+0.3,{rotation:0,stagger:.15});BK.slam(tl,".fr-r
         js='''BK.draw(tl,".sf-pipe",0.3,{duration:.6});BK.slam(tl,$(".sf-box"),0.4,{stagger:.1});
 [0,1,2,3].forEach(function(i){var at=P.at[1+Math.floor(i/2)]+(i%2)*0.35;tl.fromTo(root.querySelector(".sf-b"+i),{backgroundColor:"#fff6e0"},{backgroundColor:"#f7b79a",duration:.25},at);BK.slam(tl,$(".sf-c"+i),at+0.15,{stagger:.08});});
 BK.note(tl,".sf-foot",P.at[3]);''',
-        notes=(f'We assign every failure to the first stage where it went wrong. Retrieval: {len(d["stage_cases"]["retrieval"])} case missed a required facet. '
-               f'Generation: {len(d["stage_cases"]["generation"])} records: {"; ".join(c["kind"] for c in d["stage_cases"]["generation"])}. '
-               f'Provider: {len(d["stage_cases"]["provider"])} responses still failed output validation after retries. Judge: {len(d["stage_cases"]["judge"])} invalid judgement. '
-               f'Each stage points to a different fix.'))
+        notes=('We assign every failure to the first stage where it went wrong. '
+               + ' '.join(f'{name}: ' + (', '.join(c["id"] for c in d['stage_cases'][key]) or 'none') + '.' for key, name in stages)
+               + ' The cards show what each record is.'
+               + ' Each stage points to a different fix.'))
 
     # ------------------------------------------------------------ 15 judge calibration
     labs = ['supported', 'insufficient_evidence', 'unsupported']
@@ -669,17 +687,22 @@ BK.slam(tl,".jc-scope",P.at[3]);''',
     # ------------------------------------------------------------ 16 rules and reviews
     pr = D.get('product', {})
     ev = D.get('failures', {}).get('evaluation', {})
+    apv = d['approvals']
+    apv_note = ('Recorded after the run (run records say draft)' + ('; content unchanged per eval/week3_provenance.py.' if d.get('provenance_script') else '.')) if apv['after_run'] else 'Review status as recorded in the files.'
     body = (f'<div class="bk-panel w3-abs rv-c" style="left:96px;top:390px;width:1728px;padding:26px 30px"><span class="bk-tab">judge rule</span>'
             f'<p class="w3-lead" style="margin-top:6px;font-size:44px">{h(ev.get("title", "null"))}</p><p class="w3-cap" style="font-size:34px;margin-top:8px">Week 2 marked every phone number or URL as invented. Now a detail passes only if an authorized source contains it.</p></div>'
-            f'<div class="bk-panel w3-abs rv-c" style="left:96px;top:680px;width:840px;padding:26px 30px"><span class="bk-tab bk-tab--teal">public guide review</span>'
-            f'<span class="w3-big" style="font-size:96px">{fmt(d["approved_public"])} / {fmt(d["n_public_docs"])}</span><p class="w3-cap" style="font-size:34px">citizen-v2 guides approved; gold labels still draft</p></div>'
+            f'<div class="bk-panel w3-abs rv-c" style="left:96px;top:680px;width:840px;padding:26px 30px"><span class="bk-tab bk-tab--teal">human approval</span>'
+            f'<span class="w3-big" style="font-size:64px">{fmt(apv["docs"])} / {fmt(apv["docs_total"])}</span><span class="w3-cap" style="font-size:30px"> docs</span> '
+            f'<span class="w3-big" style="font-size:64px;margin-left:16px">{fmt(apv["cases"])} / {fmt(apv["cases_total"])}</span><span class="w3-cap" style="font-size:30px"> cases</span>'
+            f'<p class="w3-cap" style="font-size:30px">{h(apv_note)}</p></div>'
             f'<div class="bk-panel w3-abs rv-c" style="left:984px;top:680px;width:840px;padding:26px 30px"><span class="bk-tab bk-tab--teal">product track</span>'
             f'<span class="w3-big" style="font-size:96px">{fmt(pr.get("interviews_completed"))} / 2</span><p class="w3-cap" style="font-size:34px">customer interviews, notes preserved</p></div>')
     add(id='w3-reviews', part='failures', speaker='Tarık', seconds=15, title='The rules and reviews behind the numbers', label='Failure analysis / evaluation',
         folio='BELDESK / REVIEW', repo='prompts/judge/ · reports/week-3.md', steps=[1.1, 1.1], body=body,
         js='''var c=$(".rv-c");BK.slam(tl,c[0],0.3);BK.slam(tl,c[1],P.at[1]);BK.slam(tl,c[2],P.at[2]);''',
         notes=(f'Two boundaries behind these numbers. The judge now accepts a contact detail only if an authorized source contains it. '
-               f'All {fmt(d["n_public_docs"])} rewritten public guides are approved, but the gold evidence labels are still drafts. Our {fmt(pr.get("interviews_completed"))} customer interviews are done.'))
+               f'The team approved {fmt(apv["docs"])} of {fmt(apv["docs_total"])} documents and {fmt(apv["cases"])} of {fmt(apv["cases_total"])} test cases' + (', recorded after the run on the same content. ' if apv['after_run'] else '. ')
+               + f'Our {fmt(pr.get("interviews_completed"))} customer interviews are done.'))
 
     # ------------------------------------------------------------ 17 next week
     xs = [14 + i * 900 / 6 for i in range(7)]
@@ -690,19 +713,24 @@ BK.slam(tl,".jc-scope",P.at[3]);''',
     body = (f'<div class="w3-rail nx-rail"><i class="w3-rail-line" style="right:auto;width:900px"></i><i class="w3-rail-done" style="width:900px"></i>{st}'
             f'<i class="nx-ext" style="position:absolute;left:914px;top:14px;width:{nx[-1] - 914}px;height:0;border-top:4px dashed var(--ink);transform-origin:0 50%"></i>'
             f'<span class="bk-label" style="position:absolute;left:0;top:44px">Week 3 route</span></div>')
-    pri = [('1 · Read-only lookup', 'Ticket status needs a tool, not a document.', 'tool results: measured'),
-           ('2 · Confirmed writes', 'Sandbox tickets, only after the user confirms.', 'injection_success: re-run'),
-           ('3 · Agent loop', 'Multi-step traces with limits, failures and cost.', 'task_success, pass_k')]
-    body += ''.join(f'<section class="bk-panel w3-prio nx-p" style="left:{96 + i * 589}px;top:420px"><h3>{h(a)}</h3><p>{h(b)}</p><span class="w3-tag w3-tag--sun">{h(c)}</span></section>' for i, (a, b, c) in enumerate(pri))
-    add(id='w3-next', part='next', speaker='Tarık', seconds=35, title='Week 4 extends the route: tools and an agent loop', label='Next week / 3 priorities',
-        folio='BELDESK / NEXT WEEK', repo='Week 4 plan', steps=[1.3, 1.1, 1.1], body=body,
+    pri = d['priorities'] or [{'priority': '1. null', 'metric': 'null', 'expected': 'null'}]
+    cards = ''
+    for i, pr_ in enumerate(pri[:3]):
+        title = re.sub(r'^\d+\.\s*', '', pr_['priority'])
+        title, _, aside = title.partition(' (')
+        cards += (f'<section class="bk-panel w3-prio nx-p" style="left:{96 + i * 589}px;top:400px;height:530px"><span class="bk-tab bk-tab--sun">priority {i + 1} · plan</span>'
+                  f'<h3 style="margin-top:6px;font-size:34px;margin-bottom:8px">{h(title)}</h3>' + (f'<p style="font-size:28px">({h(aside)}</p>' if aside else '') +
+                  f'<p class="bk-label" style="margin-top:12px">metric it should move</p><span class="w3-tag w3-tag--sun" style="position:static;display:inline-block;white-space:normal;margin-top:6px">{h(pr_["metric"])}</span>'
+                  f'<p class="bk-label" style="margin-top:12px">expected change</p><p>{h(pr_["expected"])}</p></section>')
+    body += cards
+    add(id='w3-next', part='next', speaker='Tarık', seconds=35, title='Next week: three priorities, each tied to a metric', label='Next week / plan',
+        folio='BELDESK / NEXT WEEK', repo='reports/week-3.md · Next week', steps=[1.3, 1.1, 1.1], body=body,
         js='''BK.draw(tl,".nx-rail .w3-rail-line",0.2);BK.fade(tl,$(".nx-rail .w3-st.is-done"),0.3,{stagger:.03});BK.draw(tl,".nx-rail .w3-rail-done",0.4);
 BK.draw(tl,".nx-ext",0.55,{duration:.45});tl.fromTo($(".nx-new"),{opacity:0,scale:.5},{opacity:1,scale:1,duration:.28,stagger:.08,ease:BK.EASE.pop},0.75);
 var p=$(".nx-p");BK.slam(tl,p[0],P.at[1]);BK.slam(tl,p[1],P.at[2]);BK.slam(tl,p[2],P.at[3]);''',
-        notes=('Next week the route gets longer. Retrieval answers questions about documents, but a resident also asks about their own ticket, and no document can answer that. '
-               'First, a read-only lookup tool, so ticket status comes from data, with tool-result validity as a new measurement. '
-               'Second, ticket creation in a sandbox only after the user confirms, and we re-measure injection with tools connected. '
-               'Third, an agent loop with step limits and traces, which moves task success and pass at k from null to measured. Each new station gets its own measurement before we trust it.'))
+        notes=('These are plans, not results; each names the metric it should move. '
+               + ' '.join(f'{["First", "Second", "Third"][k]}: {re.sub(r"^[0-9]+[.] *", "", p_["priority"]).split(" (")[0].lower()}, for {p_["metric"].replace("_", " ")}.' for k, p_ in enumerate(pri[:3]))
+               + ' On the route, the new stations are tools, confirmation and an agent loop, and every station gets measured before we trust it.'))
 
     # ------------------------------------------------------------ 18 reproduce
     rm = d['retrieval_meta']

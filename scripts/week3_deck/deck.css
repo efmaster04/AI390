@@ -121,7 +121,7 @@
 
 /* ---- next week ---- */
 .w3-prio{position:absolute;width:550px;height:320px;padding:34px 30px 28px}
-.w3-prio h3{font-family:var(--font-display);font-weight:900;font-size:44px;line-height:1.1;margin-bottom:16px}
-.w3-prio p{font-size:36px;line-height:1.26;color:var(--ink-2)}
+.w3-prio h3{font-family:var(--font-display);font-weight:900;font-size:40px;line-height:1.1;margin-bottom:16px}
+.w3-prio p{font-size:32px;line-height:1.24;color:var(--ink-2)}
 .w3-prio .w3-tag{position:absolute;left:30px;bottom:28px}
 .w3-prio .w3-tag{margin-top:14px}

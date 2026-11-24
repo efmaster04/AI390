@@ -77,18 +77,22 @@ def qa_slides(d):
     allf = count_of(base.get('all_gold_hit_at_5'), n)
     rf = D.get('retrieval_failure', {})
     sb = D.get('scoreboard', {})
-    us = sb.get('unsupported_claims') if isinstance(sb.get('unsupported_claims'), dict) else {}
+    cm, apv = d['claims'], d['approvals']
+    rec = next((f for f in d['answer_failures'] if f.get('case_id') == rf.get('case_id')), {})
+    counts = ', '.join(f'{name} {len(d["stage_cases"][key])}' for key, name in (('retrieval', 'retrieval'), ('generation', 'generation'), ('provider', 'provider'), ('judge', 'judge')))
+    labels = 'approved after the run' if apv['after_run'] else 'with their recorded review status'
+    pri = d['priorities']
     return [
         ('w3-q-measurement', 'What did you measure, and how sure are you?',
          f'<strong>Retrieval:</strong> {fmt(n)} answerable citizen questions; hit@5 {ratio(hit5, n)}, all facets@5 {ratio(allf, n)}, MRR@10 {fmt(base.get("mrr_at_10"))}. '
          f'{fmt(d["n_controls"])} controls have their own denominator.',
-         f'<strong>Limits:</strong> one small synthetic set with draft gold labels; Wilson intervals stay wide (n = {fmt(n)}). Unsupported claims {fmt(us.get("numerator"))} / {fmt(us.get("n"))} come from a provisional judge.'),
+         f'<strong>Limits:</strong> one small synthetic set, {fmt(apv["cases"])}/{fmt(apv["cases_total"])} cases {labels}; Wilson intervals stay wide (n = {fmt(n)}). Unsupported claims {fmt(cm["numerator"])} / {fmt(cm["n"])} come from a provisional judge.'),
         ('w3-q-failure', 'What failed, and do you know why?',
-         f'<strong>{h(rf.get("case_id", "null"))}:</strong> {h(rf.get("diagnosis", "null"))}. The event-permit facet sits below the top-5 cut; the model then refused although the access facet was in context.',
-         '<strong>Stages:</strong> retrieval, generation, provider/validation and judge failures are counted separately, so each points at its own fix.'),
+         f'<strong>{h(rf.get("case_id", "null"))} (root cause: {h(rec.get("stage") or "null")}):</strong> {h(rf.get("note") or rf.get("diagnosis") or "null")}',
+         f'<strong>Stages:</strong> {h(counts)} records, counted separately so each points at its own fix.'),
         ('w3-q-priority', 'Is next week’s plan the change that matters most?',
-         '<strong>Residents ask about their own tickets.</strong> Documents cannot answer that; a read-only lookup tool can, and its results are measurable.',
-         '<strong>Then confirmed writes and an agent loop</strong>, which move task_success and pass_k from null to measured.'),
+         (f'<strong>{h(pri[0]["priority"])}</strong> moves {h(pri[0]["metric"])}: {h(pri[0]["expected"])}.' if pri else 'null'),
+         (' '.join(f'<strong>{h(p["priority"])}</strong> → {h(p["metric"])}.' for p in pri[1:3]) if len(pri) > 1 else 'null')),
         ('w3-q-corpus', f'Why {fmt(d["n_docs"])} documents and {fmt(d["n_chunks"])} chunks?',
          f'<strong>Documents:</strong> {fmt(d["n_public_docs"])} public service guides and {len(d["staff_docs"])} staff-only fixture with source, version and access metadata. The fixture tests the access gate.',
          f'<strong>Chunks:</strong> sections stay whole; a {fmt(d["config"].get("max_words"))}-word cap with {fmt(d["config"].get("overlap_words"))}-word overlap applies only to long sections. Access filtering runs before ranking.'),

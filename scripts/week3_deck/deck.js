@@ -26,11 +26,19 @@
     }
   }
   // Move the rail bubble later in the scene (second tween on x: immediateRender false).
-  function railStep(tl, root, dx, at, sel) {
+  function railStep(tl, root, dx, at, from, to) {
     var r = root.querySelector(".w3-rail");
     var bub = r.querySelector(".w3-rail-bub");
     tl.fromTo(bub, { x: 0 }, { x: dx, duration: 0.55, ease: BK.EASE.move, immediateRender: false }, at);
-    if (sel) tl.fromTo(r.querySelectorAll(sel), { backgroundColor: "#fff6e0" }, { backgroundColor: "#fec835", duration: 0.25, immediateRender: false }, at + 0.4);
+    if (from == null || to == null) return;
+    // The station it leaves turns "done" (teal), the one it reaches turns "now" (sun); the done track grows with it.
+    var st = r.querySelectorAll(".w3-st");
+    tl.fromTo(st[from].querySelectorAll("b, i"), { backgroundColor: "#fec835" }, { backgroundColor: "#38ac9d", duration: 0.25, immediateRender: false }, at + 0.1);
+    tl.fromTo(st[to].querySelectorAll("b, i"), { backgroundColor: "#fff6e0" }, { backgroundColor: "#fec835", duration: 0.25, immediateRender: false }, at + 0.4);
+    tl.fromTo(st[from].querySelector("span"), { color: "#161310" }, { color: "#4a3f33", duration: 0.25, immediateRender: false }, at + 0.1);
+    tl.fromTo(st[to].querySelector("span"), { color: "#4a3f33" }, { color: "#161310", duration: 0.25, immediateRender: false }, at + 0.4);
+    var done = r.querySelector(".w3-rail-done");
+    if (done) { var w = done.offsetWidth; tl.fromTo(done, { width: w }, { width: w + dx, duration: 0.55, ease: BK.EASE.move, immediateRender: false }, at); }
   }
   // Curve from the right edge of a to the left edge of b (or to its right edge when b sits left of a).
   function linkPath(stage, a, b) {

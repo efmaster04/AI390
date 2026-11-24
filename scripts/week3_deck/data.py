@@ -10,6 +10,7 @@ import csv
 import itertools
 import json
 import math
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -215,22 +216,71 @@ def load(data_override=None):
         for cl in judge.get('claims') or []:
             pairs.append({'id': rec['case_id'], 'human': human.get((rec['case_id'], cl.get('claim_id'))), 'judge': cl.get('label')})
 
-    # Failure stages from the recorded answer run plus the retrieval all-facet misses.
+    # Failure stages: the recorded failures.json "stage" field decides; generation_or_provider_error goes to
+    # Provider and evaluation goes to Judge. Retrieval all-facet misses are added once per case.
     stage_cases = {'retrieval': [], 'generation': [], 'provider': [], 'judge': []}
+    fail_ranks = {}
     for c in answerable:
         if c.get('metrics', {}).get('all_gold_hit_at_5') is False:
-            stage_cases['retrieval'].append({'id': c['case_id'], 'kind': 'required facet outside top 5'})
-    kind_stage = {'unsupported_or_insufficient_claim': 'generation', 'abstained_on_answerable_question': 'generation',
-                  'answered_unavailable_information_control': 'generation',
-                  'generation_or_provider_error': 'provider', 'judge_error_or_invalid': 'judge'}
+            fail_ranks[c['case_id']] = journey(c, config)
+    stage_of = {'retrieval': 'retrieval', 'generation': 'generation', 'evaluation': 'judge', 'judge': 'judge', 'provider': 'provider'}
     kind_text = {'unsupported_or_insufficient_claim': 'unsupported claim', 'abstained_on_answerable_question': 'refused an answerable question',
-                 'answered_unavailable_information_control': 'answered a control', 'generation_or_provider_error': None,
-                 'judge_error_or_invalid': 'judge output invalid'}
+                 'answered_unavailable_information_control': 'answered a control', 'judge_error_or_invalid': 'judge output invalid'}
     for f in answer_failures:
-        stage = kind_stage.get(f.get('kind'))
-        if stage:
-            text = kind_text.get(f.get('kind')) or (f.get('error') or f.get('kind')).replace('_', ' ')
-            stage_cases[stage].append({'id': f.get('case_id'), 'kind': text})
+        kind = f.get('kind')
+        stage = 'provider' if kind == 'generation_or_provider_error' else stage_of.get(f.get('stage'), 'generation')
+        text = kind_text.get(kind) or (f.get('error') or kind or 'null').replace('_', ' ')
+        if f.get('missing_facets'):
+            j = fail_ranks.get(f.get('case_id'))
+            rank = next((c.get('rerank') for c in (j or {}).get('cards', []) if c['pid'] in f['missing_facets']), None)
+            text = f'facet {", ".join(f["missing_facets"])} at rank {rank if rank is not None else "null"}; {text}'
+        if f.get('unjudged_claims'):
+            text += f' · {f["unjudged_claims"]} claims unjudged'
+        stage_cases[stage].append({'id': f.get('case_id'), 'kind': text, 'stage_raw': f.get('stage'), 'raw': f})
+    for cid, j in fail_ranks.items():
+        if not any(c['id'] == cid for c in stage_cases['retrieval']):
+            stage_cases['retrieval'].append({'id': cid, 'kind': 'required facet outside top 5', 'stage_raw': 'retrieval', 'raw': {}})
+
+    # Unsupported-claim rate: numerator from the scoreboard, else the run summary, else the judge label counts.
+    sb_us = (data.get('scoreboard') or {}).get('unsupported_claims')
+    sb_us = sb_us if isinstance(sb_us, dict) else {}
+    faith = answer_summary.get('faithfulness', {}) or {}
+    sum_us = answer_summary.get('unsupported_claims') if isinstance(answer_summary.get('unsupported_claims'), dict) else {}
+    labels = faith.get('labels') or {}
+    numerator = next((v for v in (sb_us.get('numerator'), sum_us.get('numerator'),
+                                  (labels.get('unsupported', 0) + labels.get('insufficient_evidence', 0)) if labels else None) if isinstance(v, int)), None)
+    claim_n = next((v for v in (sb_us.get('n'), sum_us.get('n'), faith.get('valid_judged_claims')) if isinstance(v, int)), None)
+    before = faith.get('unsupported_claims_before_audit_correction') or {}
+    claims = {'numerator': numerator, 'n': claim_n, 'value': value(sb_us) if sb_us else sum_us.get('value'),
+              'ci95': sb_us.get('ci95'), 'supported': labels.get('supported'),
+              'before': {'numerator': before.get('numerator'), 'n': before.get('n'), 'value': before.get('value')} if before else None,
+              'correction': faith.get('metric_definition_corrected_after_audit'),
+              'excluded_refusals': [x.get('case_id') for x in faith.get('fixed_refusal_verdicts_excluded') or []],
+              'unjudged': faith.get('unjudged_claims') or [],
+              'gen_errors': answer_summary.get('judgements_skipped_generation_error'),
+              'judge_errors': answer_summary.get('judgements_failed_or_invalid'),
+              'first_pass_valid': (answer_summary.get('answer_provenance') or {}).get('first_pass_valid')}
+
+    # Human approvals: current review fields plus the run-time status of the evaluated cases.
+    testset = read_jsonl(ROOT / 'eval/testsets/week3_retrieval.jsonl')
+    review_events = [e for e in read_jsonl(ROOT / 'data/corpus/review_log.jsonl') if e.get('event') == 'team_review_approved']
+    run_status = {c.get('review_status') for c in base.values()}
+    approvals = {'docs': sum(dd.get('review_status') == 'approved' for dd in docs) if docs else None, 'docs_total': len(docs) or None,
+                 'cases': sum(c.get('review_status') == 'approved' for c in testset) if testset else None, 'cases_total': len(testset) or None,
+                 'reviewers': review_events[-1].get('reviewers') if review_events else None,
+                 'after_run': bool(testset) and run_status == {'draft'} and all(c.get('review_status') == 'approved' for c in testset)}
+
+    # Next-week priorities from the team report (section "Next week" table).
+    priorities = []
+    report = ROOT / 'reports/week-3.md'
+    if report.exists():
+        txt = report.read_text(encoding='utf-8')
+        m = re.search(r'^##\s*\d*\.?\s*Next week\s*$(.*?)(?=^##\s|\Z)', txt, re.M | re.S)
+        if m:
+            for line in m.group(1).splitlines():
+                cells = [x.strip() for x in line.strip().strip('|').split('|')]
+                if len(cells) >= 3 and re.match(r'\d+\.', cells[0]):
+                    priorities.append({'priority': cells[0], 'metric': cells[1].replace('`', ''), 'expected': cells[2]})
 
     return {
         'data': data, 'old': old, 'summaries': summaries, 'config': config, 'paired': paired,
@@ -244,5 +294,6 @@ def load(data_override=None):
         'fail_journey': journey(base.get(fail_id), config), 'fail_answer': answer_view(fail_id) if fail_id else None,
         'fail_no_rerank': journey(runs['hybrid_no_rerank'].get(fail_id), config) if fail_id else None,
         'answer_summary': answer_summary, 'answer_failures': answer_failures, 'stage_cases': stage_cases,
-        'calib': calib, 'pairs': pairs,
+        'calib': calib, 'pairs': pairs, 'claims': claims, 'approvals': approvals, 'priorities': priorities,
+        'provenance_script': (ROOT / 'eval/week3_provenance.py').exists(),
     }

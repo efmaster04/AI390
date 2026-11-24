@@ -9,32 +9,32 @@
       "label": "What we built · recorded demo",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 306,
-      "narration_seconds_at_wpm": 122
+      "narration_words": 301,
+      "narration_seconds_at_wpm": 120
     },
     {
       "part": "scoreboard",
       "label": "Scoreboard",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 297,
-      "narration_seconds_at_wpm": 119
+      "narration_words": 316,
+      "narration_seconds_at_wpm": 126
     },
     {
       "part": "failures",
       "label": "Failures and root causes",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 301,
-      "narration_seconds_at_wpm": 120
+      "narration_words": 291,
+      "narration_seconds_at_wpm": 116
     },
     {
       "part": "next",
       "label": "Next week",
       "target_seconds": 60,
       "planned_seconds": 60,
-      "narration_words": 161,
-      "narration_seconds_at_wpm": 64
+      "narration_words": 146,
+      "narration_seconds_at_wpm": 58
     }
   ],
   "speakers": {
@@ -68,14 +68,14 @@
       "part": "demo",
       "speaker": "Efe",
       "seconds": 10,
-      "narration_words": 26,
+      "narration_words": 21,
       "fragments_local": [
         1.4,
         2.5
       ],
       "window_s": 3.5,
       "recorded_run": false,
-      "notes": "Eight requirements this week. 7 are done; W3.4 is partial: 36/38 valid citizen-v2 responses; actual fixed-refusal results retained. Each status comes from our data file.",
+      "notes": "Eight requirements this week. 7 are done; W3.4 is partial, as its card explains. Each status comes from our data file.",
       "repo": "reports/week-3.md · eval/results/week3/presentation_data.json"
     },
     {
@@ -174,7 +174,7 @@
       ],
       "window_s": 6.0,
       "recorded_run": false,
-      "notes": "When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, 5 of 6 unavailable-information controls got that fallback; W3-U004 was answered instead.",
+      "notes": "When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, null of 6 unavailable-information controls got that fallback; W3-U004 was answered instead.",
       "repo": "src/rag/answer.py · prompts/rag/"
     },
     {
@@ -220,12 +220,12 @@
     {
       "no": 10,
       "id": "w3-claims",
-      "title": "89 of 91 claims match their cited source",
+      "title": "89 of 90 claims match their cited source",
       "label": "Scoreboard / W3.6",
       "part": "scoreboard",
       "speaker": "Doruk",
       "seconds": 18,
-      "narration_words": 41,
+      "narration_words": 50,
       "fragments_local": [
         1.4,
         3.2,
@@ -233,18 +233,18 @@
       ],
       "window_s": 5.0,
       "recorded_run": false,
-      "notes": "Faithfulness has an explicit denominator. Of 38 cases, 36 produced valid answers and 35 were judged, giving 91 claims. Each square is one claim checked against its cited evidence. 2 are unsupported, from W3-R017, W3-R032. This is a provisional automatic judge.",
-      "repo": "eval/faithfulness_week3.py"
+      "notes": "Faithfulness has an explicit denominator. Of 38 cases, 36 produced valid answers and 35 were judged, giving 90 claims. 1 is unsupported, from W3-R017. An audit corrected the definition: a validated fixed refusal contributes no claims, so 2 of 91 became 1 of 90. This is a provisional automatic judge.",
+      "repo": "eval/results/week3/answers_citizen_v2_complete/summary.json"
     },
     {
       "no": 11,
       "id": "scoreboard",
-      "title": "6 rows measured; the rest stay null",
+      "title": "9 rows measured; the rest stay null",
       "label": "Scoreboard / W3",
       "part": "scoreboard",
       "speaker": "Doruk",
       "seconds": 42,
-      "narration_words": 105,
+      "narration_words": 115,
       "fragments_local": [
         1.4,
         3.0,
@@ -252,7 +252,7 @@
       ],
       "window_s": 5.0,
       "recorded_run": false,
-      "notes": "The same thirteen rows as Week two, in the same order, now with n and intervals. Test set size is 38. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is 0.833 on only 6 controls, so its interval is wide. Unsupported claims are 0.022 on 91 claims. Hit at five and MRR are new this week. The rows task success, pass k, injection success stay null this week. Latency is 4.7 seconds without waits. Cost and spend stay null: billing is unknown. 6 of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.",
+      "notes": "The same thirteen rows as Week two, in the same order, now with n and intervals. Test set size is 38. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is 0.833 on only 6 controls, so its interval is wide. Unsupported claims are 0.011 on 90 claims. Hit at five and MRR are new this week. The rows task success, pass k, injection success stay null this week. Latency is 4.7 seconds without waits. Cost per task is a list-price estimate of 0.00104 dollars, not a bill; actual spend is 0 dollars. 9 of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.",
       "repo": "eval/results/week3/scoreboard.json"
     },
     {
@@ -278,12 +278,12 @@
     {
       "no": 13,
       "id": "w3-r032-answer",
-      "title": "Five passages in, a refusal out",
-      "label": "Failure analysis / generation",
+      "title": "Five passages in, a fixed refusal out",
+      "label": "Failure analysis / retrieval",
       "part": "failures",
       "speaker": "Tarık",
       "seconds": 23,
-      "narration_words": 61,
+      "narration_words": 62,
       "fragments_local": [
         1.4,
         3.0,
@@ -292,7 +292,7 @@
       ],
       "window_s": 6.0,
       "recorded_run": true,
-      "notes": "I am Tarık. This is the recorded answer for that case. The model received these five passages, including the accessibility details at rank 3. It still returned the fixed refusal. The judge marked that refusal unsupported, because the sources partly answer the question. So W3-R032 fails twice: retrieval cut one facet, and generation refused instead of answering the part it had.",
+      "notes": "I am Tarık. The model received these five passages: the access facet at rank 3, but not the permit facet. It returned the fixed refusal, which our validator accepts as the fixed fallback, so it adds no claims to the claim rate. We record the root cause as retrieval: 1/2 required facets reached the context, and the missing one ranked 7.",
       "repo": "eval/results/week3/answers_citizen_v2_complete/failures.json"
     },
     {
@@ -303,7 +303,7 @@
       "part": "failures",
       "speaker": "Tarık",
       "seconds": 23,
-      "narration_words": 53,
+      "narration_words": 36,
       "fragments_local": [
         1.4,
         2.6,
@@ -312,7 +312,7 @@
       ],
       "window_s": 5.5,
       "recorded_run": false,
-      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: 1 case missed a required facet. Generation: 4 records: unsupported claim; refused an answerable question; unsupported claim; answered a control. Provider: 2 responses still failed output validation after retries. Judge: 1 invalid judgement. Each stage points to a different fix.",
+      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: W3-R032. Generation: W3-R017, W3-U004. Provider: W3-R019, W3-R027. Judge: W3-R020. The cards show what each record is. Each stage points to a different fix.",
       "repo": "eval/results/week3/answers_citizen_v2_complete/failures.json"
     },
     {
@@ -343,7 +343,7 @@
       "part": "failures",
       "speaker": "Tarık",
       "seconds": 15,
-      "narration_words": 40,
+      "narration_words": 46,
       "fragments_local": [
         1.4,
         2.5,
@@ -351,18 +351,18 @@
       ],
       "window_s": 4.5,
       "recorded_run": false,
-      "notes": "Two boundaries behind these numbers. The judge now accepts a contact detail only if an authorized source contains it. All 30 rewritten public guides are approved, but the gold evidence labels are still drafts. Our 2 customer interviews are done.",
+      "notes": "Two boundaries behind these numbers. The judge now accepts a contact detail only if an authorized source contains it. The team approved 31 of 31 documents and 38 of 38 test cases, recorded after the run on the same content. Our 2 customer interviews are done.",
       "repo": "prompts/judge/ · reports/week-3.md"
     },
     {
       "no": 17,
       "id": "w3-next",
-      "title": "Week 4 extends the route: tools and an agent loop",
-      "label": "Next week / 3 priorities",
+      "title": "Next week: three priorities, each tied to a metric",
+      "label": "Next week / plan",
       "part": "next",
       "speaker": "Tarık",
       "seconds": 35,
-      "narration_words": 94,
+      "narration_words": 79,
       "fragments_local": [
         1.4,
         2.7,
@@ -371,8 +371,8 @@
       ],
       "window_s": 5.5,
       "recorded_run": false,
-      "notes": "Next week the route gets longer. Retrieval answers questions about documents, but a resident also asks about their own ticket, and no document can answer that. First, a read-only lookup tool, so ticket status comes from data, with tool-result validity as a new measurement. Second, ticket creation in a sandbox only after the user confirms, and we re-measure injection with tools connected. Third, an agent loop with step limits and traces, which moves task success and pass at k from null to measured. Each new station gets its own measurement before we trust it.",
-      "repo": "Week 4 plan"
+      "notes": "These are plans, not results; each names the metric it should move. First: clean rerun of retrieval and answers on the approved files at the tagged commit, for hit at 5, mrr, unsupported claims. Second: controlled lookup tool and sandbox writes with confirmation, for validated tool-result rate. Third: multi-step tasks with traces and limits, for task success. On the route, the new stations are tools, confirmation and an agent loop, and every station gets measured before we trust it.",
+      "repo": "reports/week-3.md · Next week"
     },
     {
       "no": 18,
