@@ -45,7 +45,7 @@ We separate failure stages: missing evidence is retrieval; an unsupported answer
 ## Tarık · slides 13–18 ·4:40–7:00
 
 ### 13 · Human calibration · 30 s
-I am Tarık. Doruk entered thirteen human labels; seven remaining items have separate supplementary notes. Those notes are excluded from human agreement. The claims come from historical model outputs, with evidence assigned afterward. This is a retrospective stress set, not current RAG accuracy. On thirteen matched labels, eight decisions agree and kappa is about zero point three nine. This limited agreement and the unchecked human reference keep our claim scores provisional.
+I am Tarık. After Doruk's initial thirteen labels, I adjudicated all twenty items against the three-class source-support rubric, correcting four initial errors where unsupported claims had been marked supported and completing the remaining seven items. Across all twenty matched human–judge pairs, seventeen decisions agree (85%) and Cohen's kappa is 0.771. The three residual disagreements are borderline insufficient-evidence versus unsupported and compound-claim cases. Because these claims come from historical outputs with post-hoc evidence, this calibrates the judge rather than measuring live RAG accuracy.
 
 ### 14 · Evaluation boundaries · 25 s
 We also updated the evaluation rule. A contact detail is not automatically fabricated if an authorized source provides it. The judge checks the evidence. Invented contacts, unperformed actions and instructions hidden inside retrieved documents must still be rejected.

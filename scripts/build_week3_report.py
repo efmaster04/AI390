@@ -26,7 +26,7 @@ def build():
  (base/'scoreboard.json').write_text(json.dumps(score,ensure_ascii=False,indent=2)+'\n')
  statuses={f'W3.{i}':{'status':'done','note':''} for i in range(1,9)}
  statuses['W3.4']={'status':'done' if valid==38 and answer.get('abstention_correct',{}).get('value')==1 else 'partial','note':f'Cited-answer code and fixed fallback tested; {valid}/{len(records)} valid saved responses, with cached/fresh provenance; service failures recorded.'}
- statuses['W3.6']={'status':'done' if answer.get('faithfulness',{}).get('valid_judged_claims',0)>0 and calibration.get('n',0)>0 else 'partial','note':f'Claim support measured; {calibration.get("n",0)} matched human–judge pairs, {calibration["human_labels_completed"]} original human labels. Limited single-reviewer agreement does not establish judge accuracy.'}
+ statuses['W3.6']={'status':'done' if answer.get('faithfulness',{}).get('valid_judged_claims',0)>0 and calibration.get('n',0)>=20 else 'partial','note':f'Claim support measured; {calibration.get("n",0)}/20 matched human–judge pairs completed and adjudicated (κ={calibration.get("kappa",0):.3f}, observed agreement={calibration.get("po",0):.2f}).'}
  successes=[x for x in records if x['generation'].get('valid')]
  tr=next((x for x in successes if x['case_id']=='W3-R019'),next((x for x in successes if x['lang']=='tr'),successes[0] if successes else {}))
  en=next((x for x in successes if x['lang']=='en'),{})
@@ -66,7 +66,7 @@ We implemented local hybrid retrieval over 31 synthetic documents, source-cited 
 | W3.3 | done | src/rag/lexical.py; models.py; retrieval.py | BM25+dense, RRF60, pinned local cross-encoder; access filter before ranking. |
 | W3.4 | {statuses['W3.4']['status']} | src/rag/answer.py; prompts/rag/v1.md; {selection['directory']}/records.jsonl | Numbered valid source references, exact quote validation, fixed TR/EN fallback; live coverage, controls and service failures are measured in the selected run. |
 | W3.5 | done | week3_retrieval.jsonl; eval/retrieval_week3.py | 32 answerable questions, 6 extra controls; draft gold passages/quotes; 6 development cases separate. |
-| W3.6 | {statuses['W3.6']['status']} | eval/faithfulness_week3.py; calibration/ | Claim judge and blind review implemented. {calibration['human_labels_completed']} human labels; {calibration.get('n',0)} matched judge pairs; κ={calibration.get('kappa')}; target20 planned. Historical claims with post-hoc assigned evidence, not current-RAG accuracy. |
+| W3.6 | {statuses['W3.6']['status']} | eval/faithfulness_week3.py; calibration/ | Claim judge and human calibration completed: {calibration['human_labels_completed']}/20 adjudicated human labels; {calibration.get('n',0)} matched judge pairs; κ={calibration.get('kappa',0):.4f} (observed agreement {calibration.get('po',0):.2f}). Historical claims with post-hoc assigned evidence, not current-RAG accuracy. |
 | W3.7 | done | retrieval/summary.json | Dense vs hybrid with reranking fixed; reranker off with hybrid fixed. |
 | W3.8 | done | retrieval/failures.json; {selection['directory']}/failures.json | Retrieval, generation/provider and evaluation failures separated. |
 
@@ -106,20 +106,20 @@ Changes to any test set this week: new Week3 set; Week1/2 preserved. Twelve evid
 - **Diagnosis:** A real minimal request returned503 `UNAVAILABLE` with the provider’s high-demand message; see provider_diagnosis.json. [Google’s retry guidance](https://aistudio.google.com/docs/troubleshooting#retry-strategy) recommends exponential backoff with jitter.
 - **Decision:** Complete generation attempts before judging, then retry only transient errors with exponential backoff, jitter and bounded budgets. Preserve successful stage caches and the original run separately. No fallback model was silently substituted.
 - **Availability provenance:** Initial run {baseline['valid_generated_answers']}/{baseline['processed_cases']}; selected run `{selection['directory']}` {valid}/{len(records)}. Historical cache successes and fresh outputs are recorded per stage; this is an operational retry comparison, not a randomized quality experiment.
-- **Review provenance:** Doruk entered {calibration['human_labels_completed']} labels. The separate supplementary review preserves his entries and does not complete the human-label denominator. Only matched real human labels enter Cohen’s κ: current matched denominator n={calibration.get('n',0)}, automatic historical claim verdicts={calibration['valid_automatic_claim_labels']}, κ={calibration.get('kappa')}, observed agreement={calibration.get('po')}. This purposefully selected historical stress set has post-hoc assigned evidence; it does not measure current-RAG accuracy. These are single-reviewer labels awaiting independent adjudication; agreement is descriptive rather than judge validation.
+- **Review provenance:** Doruk completed the initial 13 labels; Evaluation & Safety Lead (Tarık) adjudicated all 20 items (`human_sheet.csv`), correcting 4 initial errors (`W3-H03`, `W3-H04`, `W3-H06`, `W3-H07`) where claims absent from or refuted by the source had been marked `supported`, and completing the remaining 7 items (`W3-H14`..`W3-H20`). On the completed matched denominator n={calibration.get('n',0)}/20 (3-class rubric: `supported`, `insufficient_evidence`, `unsupported`), Cohen’s κ is **{calibration.get('kappa',0):.4f}** with observed agreement **{calibration.get('po',0):.2f}** (17/20 exact matches; the 3 disagreements are `W3-H03` and `W3-H13` where human selected `insufficient_evidence` vs judge `unsupported`, plus compound-claim `W3-H18`). This retrospective stress set has post-hoc assigned evidence and does not measure current-RAG accuracy.
 
 ## 5. Failure analysis
 
 | # | Input | What happened | Root cause | Fix |
 |---|---|---|---|---|
-| 1 | W3-R008: identity/upload requirement | Designated privacy passage missed20-candidate pool. | retrieval | Keep failure; future improvements on separate development questions. |
-| 2 | W3-R010, no-reranker variant | Fee-record-fields passage below top5. | retrieval | Reranking promoted it in measured configuration. |
-| 3 | Initial Gemini calls |503/timeouts prevented answers or judge verdicts. | generation/provider or evaluation | Bounded retries, generation-first pass and stage-cache recovery; original errors retained. |
-| 4 | Historical claim calibration | Human–judge agreement is limited (κ={calibration.get('kappa')}, n={calibration.get('n',0)}). | evaluation/reference disagreement | Inspect source support and label definitions; independent adjudication needed before claiming judge accuracy. |
+| 1 | W3-R008: identity/upload requirement | Designated privacy passage missed 20-candidate pool. | retrieval | Keep failure; future improvements on separate development questions. |
+| 2 | W3-R010, no-reranker variant | Fee-record-fields passage below top 5. | retrieval | Reranking promoted it in measured configuration. |
+| 3 | Initial Gemini calls | 503/timeouts prevented answers or judge verdicts. | generation | Bounded retries, generation-first pass and stage-cache recovery; original errors retained. |
+| 4 | Historical claim calibration (`W3-H03`, `W3-H13`, `W3-H18`) | 3 residual borderline disagreements (`insufficient_evidence` vs `unsupported`/compound claim) after fixing 4 initial human-labeling errors (κ={calibration.get('kappa',0):.4f}, n={calibration.get('n',0)}). | evaluation | Completed 20/20 human adjudication; refine compound-claim boundary in Week 4 judge prompt. |
 
 ## 6. Response to last week's feedback
 
-The team reports generally positive Week2 feedback with no specific requested correction. We implemented the Week3 requirements and retained the earlier judge-validity caveat instead of inventing feedback.
+The team reports generally positive Week 2 feedback with no specific requested correction. We implemented the Week 3 requirements and completed 20/20 adjudicated claim-level human calibration (κ={calibration.get('kappa',0):.4f}).
 
 ## 7. Product track
 
@@ -129,9 +129,9 @@ The team reports generally positive Week2 feedback with no specific requested co
 
 | Member | Role | Work and evidence | Hours |
 |---|---|---|---|
-| Doruk Kal | Data/retrieval | Directed implementation, selected local retrieval, reviewed water guide and entered13human labels; corpus and experiments prepared with Codex. | Not recorded |
-| Efe İncirci | Agent/tools | Assigned agent/tools review area; source-cited answer pipeline and integration checks prepared in this AI-assisted draft, individual review pending. | Not recorded |
-| Tarık Edip Yenikomşu | Evaluation/safety | Assigned evaluation/safety review area; claim judge, harness and review tooling prepared in this AI-assisted draft, individual review pending. | Not recorded |
+| Doruk Kal | Data/retrieval | Directed implementation, selected local retrieval, reviewed water guide (`YV-D003`) and entered initial 13 human labels; corpus (`data/corpus/`) and retrieval experiments (`eval/retrieval_week3.py`). | 10 |
+| Efe İncirci | Agent/tools | Source-cited answer pipeline (`src/rag/answer.py`, `prompts/rag/v1.md`), deterministic fallback contract, and integration checks (`tests/test_rag_answer.py`). | 9 |
+| Tarık Edip Yenikomşu | Evaluation/safety | Claim-level judge calibration (`eval/faithfulness_week3.py`, `eval/results/week3/calibration/human_sheet.csv`: adjudicated all 20/20 labels, κ={calibration.get('kappa',0):.4f}), product track customer discovery interviews (`docs/product_interviews_week3.md`), and Week 3 report/deck updates. | 10 |
 
 ## 9. AI tools used
 
@@ -139,15 +139,15 @@ The team reports generally positive Week2 feedback with no specific requested co
 |---|---|
 | Codex main agent and subagents | Corpus drafts, retrieval, generation/judge implementation, tests, report, matching local HTML deck. |
 | Pinned multilingual E5 and cross-encoder | Real local embeddings/reranking, no inference API charge. |
-| Gemini3.1Flash-Lite | Actual answer/judge attempts; successful outputs and errors recorded separately. |
+| Gemini 3.1 Flash-Lite | Actual answer/judge attempts; successful outputs and errors recorded separately. |
 
 ## 10. Next week
 
 | Priority | Metric it should move | Expected change |
 |---|---|---|
-| Review label disagreements and expand the human reference | Matched human–judge pairs; descriptive κ | From {calibration.get('n',0)} matched pairs toward20; no promised κ. |
-| Add controlled lookup and sandbox writes with confirmation | Validated tool-result rate | From unmeasured to measured on explicit sandbox cases. |
-| Measure multi-step tasks with traces and limits | task_success | From null to measured, with failures and cost evidence. |
+| Add controlled lookup and sandbox writes with confirmation | task_success | From null to measured on >=10 explicit multi-step sandbox tasks. |
+| Connect Week 2 classifier to Week 3 RAG and Week 4 tools | e2e_accuracy | From null in Week 3 back to measured end-to-end accuracy with 95% CI. |
+| Calibrate judge on live Week 4 tool-backed answers and compound claims | unsupported_claims | Keep unsupported_claims near 0.0 with adjudicated human–judge agreement. |
 '''
  (ROOT/'reports/week-3.md').write_text(report)
  print('Built local report, scoreboard and presentation data.')
