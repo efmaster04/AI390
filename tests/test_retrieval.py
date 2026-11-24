@@ -218,8 +218,12 @@ def test_active_citizen_dataset_is_frozen_for_its_actual_source_version():
     frozen = json.loads((ROOT/'eval/testsets/week3_citizen_v2_manifest.json').read_text())
     cases_path = ROOT/'eval/testsets/week3_retrieval.jsonl'
     cases = [json.loads(x) for x in cases_path.read_text().splitlines()]
-    assert frozen['cases_sha256'] == digest(cases_path.read_bytes())
-    assert frozen['corpus_sha256'] == corpus_hash(load_corpus())
+    # Current files are the post-approval bytes; the measured content is unchanged.
+    assert frozen['current_files']['cases_sha256'] == digest(cases_path.read_bytes())
+    assert frozen['current_files']['corpus_sha256'] == corpus_hash(load_corpus())
+    from eval.week3_provenance import cases_content_hash, corpus_content_hash
+    assert frozen['measured_content']['cases_content_sha256'] == cases_content_hash(cases)
+    assert frozen['measured_content']['corpus_content_sha256'] == corpus_content_hash(load_corpus())
     assert len(cases) == 38 and sum(c['answerable'] for c in cases) == 32
     assert sum(c['lang']=='tr' for c in cases) == sum(c['lang']=='en' for c in cases) == 19
     assert all(c['audience']=='citizen' and c['dataset_version']=='citizen-v2' for c in cases)
