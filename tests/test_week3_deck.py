@@ -148,3 +148,12 @@ def test_approvals_and_next_week_from_files(deck):
     assert f'{apv["docs"]} / {apv["docs_total"]}' in rev and f'{apv["cases"]} / {apv["cases_total"]}' in rev
     nxt = _scene(comp, 'w3-next', 'w3-reproduce')
     assert d['priorities'] and all(p['metric'] in nxt.replace('&#x27;', "'") for p in d['priorities'][:3])
+
+
+def test_no_null_counts_in_speaking_script():
+    """A renamed data field must not surface as 'null of N' or 'null /' in narration."""
+    import re
+    from pathlib import Path
+    script = (Path(__file__).resolve().parents[1] / 'docs' / 'week3_speaking_script.md').read_text(encoding='utf-8')
+    assert not re.search(r'\bnull (of|/) ?\d', script)
+    assert '5 of 6 unavailable-information controls' in script

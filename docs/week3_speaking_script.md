@@ -27,7 +27,7 @@ Reciprocal rank fusion merges the two lists using only their ranks, so one const
 This is a recorded run, not a live call: Recorded citizen-v2 Gemini 3.1 response / 24 Nov 2026. The answer arrives claim by claim. Every claim carries a citation number, and each citation draws a line to the exact sentence it quotes. Our validator checks that each quote occurs in the cited source; the judge then rated 3 of 3 claims supported. The English lines are our translation.
 
 ### 7 · No authorized evidence: no model call, one fixed sentence · Efe · 15 s · 1:45
-When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, null of 6 unavailable-information controls got that fallback; W3-U004 was answered instead.
+When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, 5 of 6 unavailable-information controls got that fallback; W3-U004 was answered instead.
 
 ## Scoreboard
 

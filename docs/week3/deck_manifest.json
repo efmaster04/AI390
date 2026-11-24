@@ -174,7 +174,7 @@
       ],
       "window_s": 6.0,
       "recorded_run": false,
-      "notes": "When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, null of 6 unavailable-information controls got that fallback; W3-U004 was answered instead.",
+      "notes": "When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, 5 of 6 unavailable-information controls got that fallback; W3-U004 was answered instead.",
       "repo": "src/rag/answer.py · prompts/rag/"
     },
     {

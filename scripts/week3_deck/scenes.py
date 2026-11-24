@@ -340,6 +340,8 @@ BK.draw(tl,".fu-cut",P.at[2],{{duration:.5}});BK.slam(tl,".fu-model",P.at[2]+0.1
              f'<span class="bk-stamp bk-stamp--teal w3-abs fb-fixed" style="left:1540px;top:690px;font-size:30px">fixed text</span>')
     dots = ''
     num, den = ab.get('numerator'), ab.get('n')
+    if not isinstance(num, int):  # the scoreboard dropped 'numerator'; the run summary still records it
+        num = (d['answer_summary'].get('abstention_correct') or {}).get('numerator')
     ctl_answered = [c['id'] for c in d['stage_cases']['generation'] if c['kind'] == 'answered a control']
     if isinstance(num, int) and isinstance(den, int):
         for k in range(den):
