@@ -111,8 +111,8 @@
     "kappa": 0.3867924528301887
   },
   "product": {
-    "interviews_completed": 0,
-    "summary": "Two real customer interviews not yet conducted. Fictional personas are rehearsal assumptions only."
+    "interviews_completed": 2,
+    "summary": "2/2 interviews completed (Beyaz Masa supervisor & municipal IT coordinator): need cited FAQ checklists, local ACL-filtered RAG, and confirmation-gated writes."
   },
   "demo": {
     "question_tr": "Tekerlekli sandalye ile kaldırımdan geçemiyorum. Bildirimde sağlık raporum gerekir mi, hangi bilgiler gerekli?",

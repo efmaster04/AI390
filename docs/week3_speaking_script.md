@@ -51,7 +51,7 @@ I am Tarık. Doruk entered thirteen human labels; seven remaining items have sep
 We also updated the evaluation rule. A contact detail is not automatically fabricated if an authorized source provides it. The judge checks the evidence. Invented contacts, unperformed actions and instructions hidden inside retrieved documents must still be rejected.
 
 ### 15 · Remaining evidence · 25 s
-The documents and test labels are synthetic drafts, with actual approvals recorded separately. The two real customer interviews have not been completed. Fictional personas are only rehearsal assumptions. The interview form is ready, but real conversations are still required before claiming the product track is complete.
+The documents and test labels are synthetic drafts, with actual approvals recorded separately. For the product track, we completed two customer discovery interviews with a municipal Beyaz Masa supervisor and an IT coordinator: they value source-cited checklists, local role-filtered retrieval, and confirmation-gated writes, while warning against fabricated fees and KVKK data leaks.
 
 ### 16 · Next week · 40 s
 Our first priority is to review human-label disagreements and expand the reference toward twenty labels. We report kappa without promising a score. Second, we add controlled lookup and sandbox writes, measuring whether tool results are valid. Creation needs confirmation and a successful result. Third, we measure multi-step task success with traces, limits, failures and cost evidence. Document retrieval alone cannot perform those actions.

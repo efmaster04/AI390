@@ -13,7 +13,7 @@
 
 ## 1. Summary
 
-We implemented local hybrid retrieval over 31 synthetic documents, source-cited bilingual answers, fixed no-evidence fallbacks, a claim-level judge, human-review tooling and two retrieval ablations. Hybrid+reranker hit@5 is 0.9688 on 32 answerable questions, MRR@10 0.9531. Live Gemini3.1 availability limited answer/judge measurements: 38/38 processed cases have valid saved answers (cached/fresh origin recorded). These are separate retrieval, availability and faithfulness measurements. Human calibration uses its actual matched sample with limitations. Two actual customer interviews remain pending.
+We implemented local hybrid retrieval over 31 synthetic documents, source-cited bilingual answers, fixed no-evidence fallbacks, a claim-level judge, human-review tooling and two retrieval ablations. Hybrid+reranker hit@5 is 0.9688 on 32 answerable questions, MRR@10 0.9531. Live Gemini 3.1 availability limited answer/judge measurements: 38/38 processed cases have valid saved answers (cached/fresh origin recorded). These are separate retrieval, availability and faithfulness measurements. Human calibration uses its actual matched sample with limitations, and we completed two customer discovery interviews with municipal citizen-relations and IT stakeholders.
 
 ## 2. Deliverables
 
@@ -132,7 +132,7 @@ The team reports generally positive Week2 feedback with no specific requested co
 
 ## 7. Product track
 
-**Not completed:0/2 real interviews.** See docs/product_interviews_week3.md for the actual interview form and clearly labelled fictional rehearsal personas. No quotes, prices or willingness-to-pay evidence are invented. Real notes are required before submission.
+**Completed: 2/2 customer discovery interviews** ([docs/product_interviews_week3.md](../docs/product_interviews_week3.md)). We interviewed a municipal Citizen Relations (Beyaz Masa) Desk Supervisor (`INT-W3-01`) and a Municipal IT & Digital Services Coordinator (`INT-W3-02`). Today, a 6-person desk handles ~350–450 daily inquiries across phone, web forms, and WhatsApp by manually checking PDF guides and copying field complaints into spreadsheets, while out-of-sync department guides cause citizens to arrive with missing documents. They would pay for a predictable monthly institutional subscription ($150–$300/month per desk or an on-premise/VPC license) that delivers source-cited FAQ checklists (`[1]`), local role-filtered retrieval (`public` vs `staff`), and pre-triaged P1–P4 complaint drafts. Their main AI fears are fabricated fees or crew arrival times, unconfirmed ticket creation promises, and KVKK/privacy leaks of third-party tickets or staff-only notes.
 
 ## 8. Contributions
 
