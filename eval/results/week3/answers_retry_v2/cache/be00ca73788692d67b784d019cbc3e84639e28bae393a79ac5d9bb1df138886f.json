@@ -1,0 +1,51 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "There is a pothole and a driver nearly crashed avoiding it. What facts should the report preserve?",
+    "language": "en",
+    "sources_sha256": "0c0d0a54f416135b569017bf45b32f8d780a607339a58433dc962b03d807aa82",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "d623866a7b96fa496db0efd518accb2ac90c1758bb5a1d8ddb26f1023af826d8",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly lists neighborhood, street/avenue, location description, and current impact as required information for a pothole report."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source states that evasive maneuvers or near-miss situations should be recorded as described."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source confirms that photographs are helpful but personal identification is not required for classification."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the requirements for reporting a pothole as specified in the provided source document.",
+    "attempts": 1,
+    "input_tokens": 2118,
+    "output_tokens": 208,
+    "latency_s": 1.9429346250835806,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "cff10b7ef2dd2e0549b4378abc44b6762cca46469233bc681f67c515dc4e545c",
+    "wall_latency_including_pacing_s": 1.9429346250835806
+  }
+}

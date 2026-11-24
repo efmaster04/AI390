@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Güneştepe mahallesindeki parkın saatini soracağım. Mahalle adı tek başına parkı belirler mi?",
+    "language": "tr",
+    "sources_sha256": "91b35908cb19cfdf2c85fd00fd8132ba69134c832572ac04df60ca26898c6d6b",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Aynı mahallede birden fazla park bulunabileceğinden, mahalle adı tek başına belirli bir tesisin saatini doğrulamaz. [1]\nPark hakkında bilgi almak için mahalle isminin yanı sıra parkın adının da belirtilmesi gerekir. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Aynı mahallede birden fazla park bulunabileceğinden, mahalle adı tek başına belirli bir tesisin saatini doğrulamaz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Aynı mahallede birden fazla park bulunabileceğinden mahalle adı tek başına belirli bir tesisin saatini doğrulamaz."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Park hakkında bilgi almak için mahalle isminin yanı sıra parkın adının da belirtilmesi gerekir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Park hakkında bilgi için mahalle ve parkın adı öğrenilir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D015",
+        "passage_id": "YV-D015#details",
+        "chunk_id": "YV-D015#details:0-360:7e95697f9e",
+        "title": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi",
+        "heading": "Parkı belirleme",
+        "source": "beldesk://synthetic/YV-D015",
+        "version": "0.1-draft",
+        "text": "Park hakkında bilgi için mahalle ve parkın adı öğrenilir. Aynı mahallede birden fazla park bulunabileceğinden mahalle adı tek başına belirli bir tesisin saatini doğrulamaz. Yeşilvadi test rehberi parkların yirmi dört saat açık olduğunu varsaymaz. Kullanıcı açılış saati soruyorsa bu bir hizmet bilgisi isteğidir; parkta arıza bildirmesiyle aynı işlem değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D015",
+        "passage_id": "YV-D015#limits",
+        "chunk_id": "YV-D015#limits:0-365:639b89b968",
+        "title": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi",
+        "heading": "Saat ve rezervasyon sınırı",
+        "source": "beldesk://synthetic/YV-D015",
+        "version": "0.1-draft",
+        "text": "Bu belge Güneştepe parklarının güncel açılış veya kapanış saatini içermez. Saat açıklamak için tesis adına ve geçerli tarihe bağlı ayrı kaynak gerekir. Beldesk park rezervasyonu yapmaz, alanın belirli bir etkinliğe uygun olduğunu onaylamaz ve güvenlik görevlisine ulaştığını söylemez. Bank, aydınlatma veya oyun alanı arızası varsa sorun ve konum ayrıca kaydedilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D015",
+        "passage_id": "YV-D015#scope",
+        "chunk_id": "YV-D015#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D015",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#details",
+        "chunk_id": "YV-D016#details:0-341:3af2590e90",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+        "heading": "Arıza bilgileri",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "0.1-draft",
+        "text": "Oyun alanı bildirimi için park adı veya mahalle ve sokak, arızalı ekipmanın türü ve görülen hasar belirtilir. Ekipmanın kullanım dışı olup olmadığı vatandaşın bildirdiği haliyle kaydedilir; bildirilmemiş bir yaralanma veya kullanım durumu uydurulmaz. Bir mesajda hem salıncak hem aydınlatma sorunu bulunursa bunlar ayrı arıza olarak korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#details",
+        "chunk_id": "YV-D006#details:0-373:626ffc7b07",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+        "heading": "Ön bilgi listesi",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "0.1-draft",
+        "text": "Test senaryosunda etkinlik veya geçici stant hakkında yönlendirme için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı aralığı belirtilir. Bu bilgiler başvuruya hazırlık içindir, izin verilmesi anlamına gelmez. Asistan bir parkın seçilen tarihte boş olduğunu veya etkinliğin onaylanacağını söylemez. Alan uygunluğu yetkili birim tarafından değerlendirilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2164,
+    "output_tokens": 206,
+    "latency_s": 7.457685126108117,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "a40186b0687c5de53268a2820945c01010ceb0eaf7dc120cd5312648e445bd61",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Aynı mahallede birden fazla park bulunabileceğinden, mahalle adı tek başına belirli bir tesisin saatini doğrulamaz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Aynı mahallede birden fazla park bulunabileceğinden mahalle adı tek başına belirli bir tesisin saatini doğrulamaz.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Park hakkında bilgi almak için mahalle isminin yanı sıra parkın adının da belirtilmesi gerekir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Park hakkında bilgi için mahalle ve parkın adı öğrenilir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:19:41.349206+00:00",
+    "wall_latency_including_pacing_s": 9.320567334070802
+  }
+}

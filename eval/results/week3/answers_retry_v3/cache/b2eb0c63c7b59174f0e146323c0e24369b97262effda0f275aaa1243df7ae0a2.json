@@ -1,0 +1,46 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Su aboneliği için kiracı hangi belgeyi hazırlar ve Beldesk bu başvuruyu benim adıma gönderebilir mi?",
+    "language": "tr",
+    "sources_sha256": "0d8dee9def76175bdb2f6910eaeca63a0db3178826130660da814c378f92465d",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "0106838a3c3f923e46d9ee7c1aa61b2d1f4f877a37622c2c30f1135abf74fdde",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "Source 3 explicitly states that a rental agreement is required for tenants applying for a new water subscription."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "Sources 1 and 2 confirm that Beldesk does not have a submission tool and cannot send applications on behalf of the user."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately addresses both parts of the user's question using the provided sources.",
+    "attempts": 1,
+    "input_tokens": 2115,
+    "output_tokens": 161,
+    "latency_s": 31.964489905396476,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "66804123ece6d21a3633105b9bd734cb2629987e2d8d137fdc4339421814b37c",
+    "wall_latency_including_pacing_s": 43.447097833035514
+  }
+}

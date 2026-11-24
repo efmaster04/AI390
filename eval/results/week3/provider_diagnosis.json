@@ -1,0 +1,13 @@
+{
+  "recorded_utc": "2026-11-24T19:05:18.332469+00:00",
+  "model": "gemini-3.1-flash-lite",
+  "diagnostic_request": "Return only OK.",
+  "http_status": 503,
+  "provider_status": "UNAVAILABLE",
+  "provider_message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+  "duration_s": 1.07,
+  "retry_after": null,
+  "source": "Observed real REST response in this session; API key not retained.",
+  "guidance_url": "https://aistudio.google.com/docs/troubleshooting#retry-strategy",
+  "chosen_remedy": "Bounded exponential backoff with jitter; preserve model, questions and original run."
+}

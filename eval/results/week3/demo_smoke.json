@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-11-24T19:36:47.329005+00:00",
+  "model": "gemini-3.1-flash-lite",
+  "mode": "actual live terminal demo smoke check; separate from 38-case benchmark",
+  "question": "What is the exact 2026 fee for a water subscription in Yeşilvadi?",
+  "exit_code": 0,
+  "stdout": "LIVE RAG · Gemini 3.1 Flash-Lite · temperature 0 · public sources only\nTurkish or English. Each question is independent. Empty line or Ctrl+C exits.\n\ncitizen> \nbeldesk> The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer.\n[tokens in=2231 out=17 · valid=True]\n\ncitizen> ",
+  "contains_valid_response": true,
+  "contains_fixed_fallback": true
+}

@@ -1,0 +1,35 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "What is the current car parking tariff at the municipal underground garage?",
+    "language": "en",
+    "sources_sha256": "7b2e1dcec30f82f6f05e77c61e9c51acde0eed4d91d8d3eb26770d32298e198b",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "1acf7a8761e6b6bac9a0f2e9b2bd53518e64de7fb66732a2cb1b278a0c88d790",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The model correctly abstained because the provided sources do not contain information regarding municipal parking tariffs.",
+    "attempts": 1,
+    "input_tokens": 1800,
+    "output_tokens": 51,
+    "latency_s": 1.7032016239827499,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "b1afc2ddf2ada2f50ccab64b546ccdb65e454502424c05d4ab5ab91725662985",
+    "wall_latency_including_pacing_s": 7.567827207967639
+  }
+}

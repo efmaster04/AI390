@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": "W3-R002",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:DiagnosticProviderError"
+  },
+  {
+    "case_id": "W3-R005",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:DiagnosticProviderError"
+  },
+  {
+    "case_id": "W3-R008",
+    "stage": "retrieval",
+    "kind": "designated_gold_missing_from_context",
+    "note": "Alternative valid evidence may exist; draft gold needs human review"
+  }
+]

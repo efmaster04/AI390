@@ -1,0 +1,127 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Aynı mesajda hem kanalizasyon hem sokak lambası arızası var. Tek taslak mı hazırlanmalı?",
+    "language": "tr",
+    "sources_sha256": "ba8320029a00c00ab03605f3b2f9658f2dc64022c8be8d40304c2917a3181e45",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Aynı mesajda hem kanalizasyon hem de sokak lambası arızası bulunması durumunda, bu arızalar kendi kategorileriyle ayrı taslaklarda hazırlanmalıdır. [1][2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Aynı mesajda hem kanalizasyon hem de sokak lambası arızası bulunması durumunda, bu arızalar kendi kategorileriyle ayrı taslaklarda hazırlanmalıdır.",
+        "citations": [
+          1,
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur."
+          },
+          {
+            "citation": 2,
+            "quote": "Aynı mesajda ayrı arızalar varsa her arıza ayrı taslak olarak gösterilir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#details",
+        "chunk_id": "YV-D024#details:0-351:15f3baae0e",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+        "heading": "Sorunu ayırma",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "0.1-draft",
+        "text": "Su kaçağı bildirimi ile kanalizasyon taşması ayrılır; vatandaş hangisini bildiğini açıklayabilir. Mahalle, sokak, akışın yeri ve yol veya yaya geçişine bildirilen etki kaydedilir. Kaynağı bilinmeyen sıvının türü model tarafından kesinleştirilmez. Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#details",
+        "chunk_id": "YV-D007#details:0-366:a5fcde06b2",
+        "title": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci",
+        "heading": "Taslak ile kayıt farkı",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "0.1-draft",
+        "text": "Vatandaş bir saha sorunu anlattığında Beldesk sorun türünü, konumu ve bildirilen etkiyi toparlayarak bir taslak sunabilir. Taslak hazırlanması belediye sisteminde kayıt oluşturulduğu anlamına gelmez. Aynı mesajda ayrı arızalar varsa her arıza ayrı taslak olarak gösterilir. Örneğin kanalizasyon taşması ile lamba arızası tek bir ortak öncelik altında birleştirilmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#details",
+        "chunk_id": "YV-D016#details:0-341:3af2590e90",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+        "heading": "Arıza bilgileri",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "0.1-draft",
+        "text": "Oyun alanı bildirimi için park adı veya mahalle ve sokak, arızalı ekipmanın türü ve görülen hasar belirtilir. Ekipmanın kullanım dışı olup olmadığı vatandaşın bildirdiği haliyle kaydedilir; bildirilmemiş bir yaralanma veya kullanım durumu uydurulmaz. Bir mesajda hem salıncak hem aydınlatma sorunu bulunursa bunlar ayrı arıza olarak korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#scope",
+        "chunk_id": "YV-D022#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#details",
+        "chunk_id": "YV-D022#details:0-361:8aa4a4cd18",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+        "heading": "Kapsamı ayırma",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "0.1-draft",
+        "text": "Bir lamba mı, sokağın bir bölümü mü yoksa bütün aydınlatma mı etkileniyor öğrenilir. Lambaların yanmaması ile evlere ve işyerlerine elektrik gelmemesi farklı olaylardır. Kullanıcının verdiği süre, sorunun başlangıcına ilişkin bildirilen bilgi olarak saklanır; başvurunun uygulamada bekleme süresiyle karıştırılmaz. Mahalle ve sokak eksikse konum ayrıca sorulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2165,
+    "output_tokens": 174,
+    "latency_s": 31.940104558016174,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "926241dc3eace8059bd9e51ffdfe59650e2ce9be636620605de6ea16f791ab2e",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Aynı mesajda hem kanalizasyon hem de sokak lambası arızası bulunması durumunda, bu arızalar kendi kategorileriyle ayrı taslaklarda hazırlanmalıdır.\",\n      \"citations\": [1, 2],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur.\"\n        },\n        {\n          \"citation\": 2,\n          \"quote\": \"Aynı mesajda ayrı arızalar varsa her arıza ayrı taslak olarak gösterilir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:17:58.637646+00:00",
+    "wall_latency_including_pacing_s": 52.03749224997591
+  }
+}

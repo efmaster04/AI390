@@ -1,0 +1,141 @@
+{
+  "stage": "retrieval_only",
+  "provisional": true,
+  "started_utc": "2026-11-24T18:21:13.445994+00:00",
+  "finished_utc": "2026-11-24T18:21:40.827603+00:00",
+  "git": {
+    "commit": "396b0845d96f88d9c55d08c1228a7adb175e5cdf",
+    "dirty": true
+  },
+  "api_calls": 0,
+  "config": {
+    "version": "w3-retrieval-v1",
+    "embedding_model": "intfloat/multilingual-e5-small",
+    "embedding_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "reranker_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "reranker_revision": "1427fd652930e4ba29e8149678df786c240d8825",
+    "device": "cpu",
+    "threads": 4,
+    "batch_size": 8,
+    "max_words": 140,
+    "overlap_words": 20,
+    "candidate_k": 20,
+    "rrf_constant": 60,
+    "max_model_tokens": 512,
+    "note": "Local retrieval only. No private records, answer generation or API calls. Never silently truncate source text."
+  },
+  "config_sha256": "d1325843654bd03f363f834385f2bf82f13badd7f556a1691f967973bcdced32",
+  "corpus_sha256": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+  "index_sha256": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+  "cases_sha256": "b6027151e8759067383417417361ebf50b124a6ae219a51d9cba4f9e796b1d9b",
+  "code_sha256": {
+    "src/rag/__init__.py": "9c081774233f0fd760f39447d3cef0f9c44dddc19fa7b91b2243347ba24f02ad",
+    "src/rag/answer.py": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "src/rag/chunking.py": "0232dfdd21f07cfc003a28b1610ed5a307f3e344c0eccdcf5b9b92c8438eb194",
+    "src/rag/cli.py": "9a837c7a3995c820e6a31cc6aef7901d00a689d38efd428a6f84c13853274071",
+    "src/rag/corpus.py": "1f6b8068891dc78f674d5c0d396cac04ad8968ca6752bd5710a7ca71e6532028",
+    "src/rag/lexical.py": "08c0dac7aa022d211c7c2a16d39949e770c804beaf638645bf44456affa655d0",
+    "src/rag/models.py": "983c0c49402d0ff61aee4f17cd1ab412b8eed5fc9b517582b702dd2f3a337766",
+    "src/rag/retrieval.py": "9a5fe7a1d2f5a5513f2e6f2bee683915cf4d47ee708aa5d6b97b80eb277bd261",
+    "eval/retrieval_week3.py": "5c3fb2fa619535be128ef7f9da6da93cd5b4f53a4fce2cc8cc6c307c51c7631f"
+  },
+  "python": "3.13.5",
+  "packages": {
+    "sentence-transformers": "5.1.2",
+    "transformers": "4.57.3",
+    "torch": "2.9.1",
+    "numpy": "2.3.5",
+    "huggingface-hub": "0.36.0"
+  },
+  "latency_note": "CPU warm inference; query and reranker score caches disabled; index embeddings cached; single run",
+  "metric_note": "Hit@k = at least one gold quote found; MRR truncated at 10; controls excluded; not answer accuracy",
+  "summaries": {
+    "hybrid_rerank": {
+      "n_answerable": 32,
+      "n_unanswerable_controls": 6,
+      "hit_at_k": {
+        "1": 0.9375,
+        "3": 0.96875,
+        "5": 0.96875,
+        "10": 0.96875
+      },
+      "mrr_at_10": 0.953125,
+      "all_gold_hit_at_5": 0.96875,
+      "by_language": {
+        "en": {
+          "n": 16,
+          "hit_at_5": 0.9375,
+          "mrr_at_10": 0.9375
+        },
+        "tr": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.96875
+        }
+      },
+      "query_latency_p50_s": 0.2632230829913169
+    },
+    "dense_rerank": {
+      "n_answerable": 32,
+      "n_unanswerable_controls": 6,
+      "hit_at_k": {
+        "1": 0.9375,
+        "3": 0.96875,
+        "5": 0.96875,
+        "10": 0.96875
+      },
+      "mrr_at_10": 0.953125,
+      "all_gold_hit_at_5": 0.96875,
+      "by_language": {
+        "en": {
+          "n": 16,
+          "hit_at_5": 0.9375,
+          "mrr_at_10": 0.9375
+        },
+        "tr": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.96875
+        }
+      },
+      "query_latency_p50_s": 0.2797273119795136
+    },
+    "hybrid_no_rerank": {
+      "n_answerable": 32,
+      "n_unanswerable_controls": 6,
+      "hit_at_k": {
+        "1": 0.71875,
+        "3": 0.90625,
+        "5": 0.9375,
+        "10": 0.96875
+      },
+      "mrr_at_10": 0.8046875,
+      "all_gold_hit_at_5": 0.90625,
+      "by_language": {
+        "en": {
+          "n": 16,
+          "hit_at_5": 0.875,
+          "mrr_at_10": 0.6979166666666666
+        },
+        "tr": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.9114583333333334
+        }
+      },
+      "query_latency_p50_s": 0.01531945850001648
+    }
+  },
+  "ablations": {
+    "dense_vs_hybrid": {
+      "base": "hybrid_rerank",
+      "changed": "dense_rerank",
+      "only_change": "candidate retrieval method"
+    },
+    "reranker_off": {
+      "base": "hybrid_rerank",
+      "changed": "hybrid_no_rerank",
+      "only_change": "reranking"
+    }
+  }
+}

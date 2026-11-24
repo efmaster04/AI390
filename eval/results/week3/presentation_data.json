@@ -1,0 +1,145 @@
+{
+  "status_date": "2026-11-24",
+  "tests_passed": 279,
+  "deliverables": {
+    "W3.1": {
+      "status": "done",
+      "note": ""
+    },
+    "W3.2": {
+      "status": "done",
+      "note": ""
+    },
+    "W3.3": {
+      "status": "done",
+      "note": ""
+    },
+    "W3.4": {
+      "status": "done",
+      "note": "Cited-answer code and fixed fallback tested; 38/38 valid saved responses, with cached/fresh provenance; service failures recorded."
+    },
+    "W3.5": {
+      "status": "done",
+      "note": ""
+    },
+    "W3.6": {
+      "status": "done",
+      "note": "Claim support measured; 13 matched human–judge pairs, 13 original human labels. Limited single-reviewer agreement does not establish judge accuracy."
+    },
+    "W3.7": {
+      "status": "done",
+      "note": ""
+    },
+    "W3.8": {
+      "status": "done",
+      "note": ""
+    }
+  },
+  "scoreboard": {
+    "week": 3,
+    "test_set_size": 38,
+    "e2e_accuracy": {
+      "value": null,
+      "n": null,
+      "script": null
+    },
+    "abstention_correct": {
+      "value": 1.0,
+      "n": 6,
+      "numerator": 6,
+      "definition": "valid fixed-fallback response on unavailable-information controls"
+    },
+    "unsupported_claims": {
+      "value": 0.0,
+      "n": 61,
+      "numerator": 0,
+      "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+    },
+    "hit_at_5": {
+      "value": 0.96875,
+      "n": 32,
+      "script": "eval/retrieval_week3.py"
+    },
+    "mrr": {
+      "value": 0.953125,
+      "n": 32,
+      "script": "eval/retrieval_week3.py",
+      "cutoff": 10
+    },
+    "task_success": {
+      "value": null,
+      "n": null,
+      "script": null
+    },
+    "pass_k": {
+      "k": null,
+      "value": null,
+      "n": null,
+      "script": null
+    },
+    "injection_success": {
+      "value": null,
+      "n": null,
+      "script": null
+    },
+    "cost_per_task_usd": null,
+    "latency_p50_s": 2.521084417006932,
+    "spend_week_usd": null,
+    "spend_total_usd": null
+  },
+  "availability": {
+    "selected_directory": "answers_retry_v3",
+    "initial_valid": 2,
+    "initial_processed": 38,
+    "retry_valid": 38,
+    "retry_processed": 38,
+    "cache_hits": 36,
+    "fresh_valid": 2,
+    "model": "gemini-3.1-flash-lite"
+  },
+  "human_review": {
+    "supplementary_review_completed": 7,
+    "approved_documents": 1,
+    "total_documents": 31,
+    "claim_labels_completed": 13,
+    "claim_labels_target": 20,
+    "observed_agreement": 0.6153846153846154,
+    "matched_human_judge_pairs": 13,
+    "automatic_claim_labels": 20,
+    "calibration_status": "partial_human_calibration",
+    "calibration_origin": "Historical model claims; current evidence assigned post hoc; not current-RAG accuracy.",
+    "kappa": 0.3867924528301887
+  },
+  "product": {
+    "interviews_completed": 0,
+    "summary": "Two real customer interviews not yet conducted. Fictional personas are rehearsal assumptions only."
+  },
+  "demo": {
+    "question_tr": "Tekerlekli sandalye ile kaldırımdan geçemiyorum. Bildirimde sağlık raporum gerekir mi, hangi bilgiler gerekli?",
+    "question_en": "Are a building permit and an occupancy permit the same process in the project guide?",
+    "answer": "Erişilebilirlik bildiriminde sağlık raporu, tanı veya engellilik belgesi istenmemektedir. [1]\nBildirimde etkilenen giriş, kaldırım veya geçiş noktası ile engelin ne olduğu belirtilmelidir. [1]\nKaldırım sorunu bildirilirken mahalle, sokak, hasarın türü ve geçişin tamamen mi yoksa kısmen mi engellendiği bilgileri gereklidir. [3]",
+    "source_excerpt": "sağlık raporu, tanı veya engellilik belgesi istenmez.",
+    "source_label": "YV-D019#details",
+    "abstain_question": "No authorized source was supplied (software contract check).",
+    "abstain_answer": "The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer.",
+    "run_label": "Recorded Gemini 3.1 response / 24 Nov 2026"
+  },
+  "generation": {
+    "summary": "38/38 valid saved answers; cached and fresh calls distinguished.",
+    "unsupported_claims": 0.0,
+    "claims_total": 61,
+    "kappa": 0.3867924528301887,
+    "errors": 0
+  },
+  "failures": {
+    "generation": {
+      "question": "Gemini3.1 live availability",
+      "answer": "Initial run: 2/38. Selected recovery: 38/38 valid saved responses (36 cached, 2 fresh in that pass). Earlier errors remain recorded.",
+      "diagnosis": "Provider/validation failures; distinct from retrieval misses and unsupported-claim estimates."
+    },
+    "evaluation": {
+      "title": "Check what the cited source actually supports.",
+      "detail": "A contact detail may be valid if its authorized source provides it. Invented contacts, unperformed actions and instructions embedded in documents still fail the evidence check."
+    }
+  }
+}

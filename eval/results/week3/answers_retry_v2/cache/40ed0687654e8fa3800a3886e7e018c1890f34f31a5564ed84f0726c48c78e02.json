@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Do I have to give my identity number or upload documents just to ask a general municipal service question?",
+    "language": "en",
+    "sources_sha256": "5f0ef8940073d6a986eceaab84074574e91ecaacfb0618ec48e10274260187c9",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "You are not required to upload documents such as title deed copies, identity numbers, or architectural drawings to the chat. [2]\nTo receive guidance, providing your location within the district, the type of application, and a reference number if applicable is sufficient. [2]\nYou do not need to provide income documents or health records to obtain general information about municipal services. [4]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "You are not required to upload documents such as title deed copies, identity numbers, or architectural drawings to the chat.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Tapu kopyası, kimlik numarası ve mimari çizimlerin tamamı sohbete yüklenmek zorunda değildir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "To receive guidance, providing your location within the district, the type of application, and a reference number if applicable is sufficient.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Yönlendirme için ilçe içinde olup olmadığı, başvuru türü ve varsa başvuru referansı yeterlidir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "You do not need to provide income documents or health records to obtain general information about municipal services.",
+        "citations": [
+          4
+        ],
+        "evidence": [
+          {
+            "citation": 4,
+            "quote": "Başvuru hakkında genel bilgi almak için kişinin gelir belgelerini veya sağlık kayıtlarını sohbete yazması gerekmez."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#limits",
+        "chunk_id": "YV-D030#limits:0-367:035aaade71",
+        "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+        "heading": "Kaynaklı cevap sınırı",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "0.1-draft",
+        "text": "Cevaptaki her doğrulanabilir iddia, gerçekten verilen kaynak parçasıyla desteklenmelidir. Bir cümlenin sonuna kaynak numarası eklemek tek başına doğruluk sağlamaz. Kaynağın sessiz kaldığı bölüm açıkça belirtilir; desteklenen genel süreç varsa bu ayrı açıklanabilir. Kayıtlı bir arama sonucu, belgeyi değiştirme, başvuru gönderme veya ekip yönlendirme işlemi değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#limits",
+        "chunk_id": "YV-D002#limits:0-374:d2675b6491",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+        "heading": "Bilgi hazırlığı ve sınırlar",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "0.1-draft",
+        "text": "Yönlendirme için ilçe içinde olup olmadığı, başvuru türü ve varsa başvuru referansı yeterlidir. Tapu kopyası, kimlik numarası ve mimari çizimlerin tamamı sohbete yüklenmek zorunda değildir. Gerekli belge listesi bu genel rehberde ayrıntılandırılmamıştır. Asistan belge adı veya ücret tahmin etmek yerine İmar ve Ruhsat biriminden başvuru türüne özgü liste alınmasını önerir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#details",
+        "chunk_id": "YV-D029#details:0-375:5108dd7032",
+        "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+        "heading": "Konuya göre yönlendirme",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "0.1-draft",
+        "text": "Beldesk belediye hizmetleri hakkında doküman temelli açıklama yapar ve saha arızaları için taslak hazırlayabilir. Bir arızanın başka bir kuruluşla ilişkili olabileceği, sorunun önceliğinden ayrı değerlendirilir. Elektrik kesintisi örneğinde dağıtım şirketinin adı model tarafından tahmin edilmez. Kurumun kimliği uygulamanın doğrulanmış yönlendirme verisiyle belirlenmelidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D004",
+        "passage_id": "YV-D004#limits",
+        "chunk_id": "YV-D004#limits:0-382:7e329d1487",
+        "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+        "heading": "Gizlilik ve eksik bilgi",
+        "source": "beldesk://synthetic/YV-D004",
+        "version": "0.1-draft",
+        "text": "Başvuru hakkında genel bilgi almak için kişinin gelir belgelerini veya sağlık kayıtlarını sohbete yazması gerekmez. Beldesk başvuru formunu vatandaş adına göndermez. Yardım tutarı, ödeme günü ve kontenjan bilgisi kaynaklarda yoksa bunlar açıklanamaz. Kullanıcı yardım türünü belirtmediyse bir kısa soru ile ihtiyacı netleştirmek, kişi hakkında uygunluk tahmini yapmaktan önce gelir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#limits",
+        "chunk_id": "YV-D029#limits:0-349:2fe1e67c22",
+        "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+        "heading": "Kapsam dışı işlemler",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "0.1-draft",
+        "text": "Ödeme yapma, hukuki karar verme, siyasi görüş bildirme, vatandaş adına resmî başvuru gönderme ve gerçek ekip sevki bu sürümün kapsamı dışındadır. Kullanıcı böyle bir işlem isterse Beldesk neyi açıklayabildiğini ve hangi işlemi gerçekleştiremediğini belirtir. Bir sorunun kapsam dışı olması, özel veri veya kurum içi belge paylaşılmasına izin vermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2188,
+    "output_tokens": 311,
+    "latency_s": 1.6691537919687107,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "2a4fdf137780f8b27973ccdb58482ac5c757cbb3fd6f751695499a3e7021dae7",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"You are not required to upload documents such as title deed copies, identity numbers, or architectural drawings to the chat.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Tapu kopyası, kimlik numarası ve mimari çizimlerin tamamı sohbete yüklenmek zorunda değildir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"To receive guidance, providing your location within the district, the type of application, and a reference number if applicable is sufficient.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Yönlendirme için ilçe içinde olup olmadığı, başvuru türü ve varsa başvuru referansı yeterlidir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You do not need to provide income documents or health records to obtain general information about municipal services.\",\n      \"citations\": [4],\n      \"evidence\": [\n        {\n          \"citation\": 4,\n          \"quote\": \"Başvuru hakkında genel bilgi almak için kişinin gelir belgelerini veya sağlık kayıtlarını sohbete yazması gerekmez.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:18:50.687304+00:00",
+    "wall_latency_including_pacing_s": 1.6691537919687107
+  }
+}

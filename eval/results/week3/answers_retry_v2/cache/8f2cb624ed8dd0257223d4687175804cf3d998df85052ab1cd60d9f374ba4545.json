@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "How should an unidentified waste report describe the situation without guessing the substance?",
+    "language": "en",
+    "sources_sha256": "df3eda1202e51b95483c8ab24915bbd1e9e7d03737d43b84737009dd1d5986df",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "When reporting unidentified waste, you should describe the location, the visible condition of the waste, and any effects you have already observed. [1]\nIf a label is readable on the waste, you may include your own observations in the report. [1]\nYou should not attempt to open, move, or take samples of the unidentified substance. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "When reporting unidentified waste, you should describe the location, the visible condition of the waste, and any effects you have already observed.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bildirim taslağı için konum, görünen durum ve vatandaşın zaten gözlemlediği etki sorulur."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "If a label is readable on the waste, you may include your own observations in the report.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Etiket okunabiliyorsa kullanıcı kendi gözlemini yazabilir"
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "You should not attempt to open, move, or take samples of the unidentified substance.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "kişiden maddeyi açması, taşıması veya numune alması istenmez."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#details",
+        "chunk_id": "YV-D014#details:0-371:2c95c6d4b2",
+        "title": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi",
+        "heading": "Bildirimi tanımlama",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "0.1-draft",
+        "text": "Vatandaş ne olduğunu bilmediği bir atığı tarif ettiğinde asistan maddeyi kimyasal olarak teşhis etmez. Bildirim taslağı için konum, görünen durum ve vatandaşın zaten gözlemlediği etki sorulur. Etiket okunabiliyorsa kullanıcı kendi gözlemini yazabilir; kişiden maddeyi açması, taşıması veya numune alması istenmez. Beldesk bu bilgiyle işlem veya saha müdahalesi başlatmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#limits",
+        "chunk_id": "YV-D014#limits:0-353:99eb64aaba",
+        "title": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi",
+        "heading": "Hizmet ve bilgi sınırı",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "0.1-draft",
+        "text": "Bu sentetik rehber evsel çöp ile tehlikeli atığın aynı toplama aracıyla alınacağını söylemez. Bertaraf yöntemi, teslim yeri ve ücret için ilgili hizmet kaynağı gerekir. Kaynakta olmayan kimyasal işlem talimatı üretilmez. Acil bir durum anlatılması halinde belediye taslağı acil hizmet yönlendirmesinin yerine kullanılmaz; ilgili proje sınırları korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#reporting",
+        "chunk_id": "YV-D011#reporting:0-448:c760fe3c2d",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Bildirim için gereken bilgiler",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur. Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir; etkilenen kişi sayısı uydurulmaz. Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz. Hazırlanan taslak, kullanıcıdan onay istenerek gösterilir; bu aşamada kayıt açılmış olmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#scope",
+        "chunk_id": "YV-D014#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#scope",
+        "chunk_id": "YV-D011#scope:0-376:78adc70ac9",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Bu sentetik rehber Beldesk ders projesinde alınmayan evsel atık bildirimini açıklamak için hazırlanmıştır. Resmî bir belediye hizmet standardı değildir ve ekip incelemesi bekler. Soru yalnızca toplama gününü öğrenmek için sorulmuşsa bilgi isteği olarak ele alınır; çöpün alınmadığını bildiren mesaj ise saha sorunu taslağına konu olabilir. İkisi birbirine karıştırılmamalıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2208,
+    "output_tokens": 286,
+    "latency_s": 5.6265572080155835,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "1a2ad0fc7bd9e64c97e2dd632138575cc23f771d9c6531fe261245b7c8f24538",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"When reporting unidentified waste, you should describe the location, the visible condition of the waste, and any effects you have already observed.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bildirim taslağı için konum, görünen durum ve vatandaşın zaten gözlemlediği etki sorulur.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"If a label is readable on the waste, you may include your own observations in the report.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Etiket okunabiliyorsa kullanıcı kendi gözlemini yazabilir\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You should not attempt to open, move, or take samples of the unidentified substance.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"kişiden maddeyi açması, taşıması veya numune alması istenmez.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:19:33.501484+00:00",
+    "wall_latency_including_pacing_s": 7.833595582982525
+  }
+}

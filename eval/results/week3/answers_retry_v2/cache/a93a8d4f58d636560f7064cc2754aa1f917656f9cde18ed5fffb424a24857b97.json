@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Yeşilvadi belediye başkanının aylık maaşı tam kaç lira?",
+    "language": "tr",
+    "sources_sha256": "2dbec2531f29b5d33956ceedf7aeb9adc59e961054cf13df88825addda5827be",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Bu sorunun yanıtı erişebildiğim belgelerde bulunmuyor. Güvenilir bir yanıt vermek için yeterli kaynak yok.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#scope",
+        "chunk_id": "YV-D029#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#details",
+        "chunk_id": "YV-D030#details:0-324:66ddb13f4f",
+        "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+        "heading": "Bilgi yokluğu",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "0.1-draft",
+        "text": "Bir rehberin konu bakımından ilgili olması, sorunun cevabını mutlaka içerdiği anlamına gelmez. Ekip yarın kaçta gelir, başkanın maaşı nedir veya gelecekte hangi ihale kazanılır gibi sorular bu corpus sürümünde yanıtlanamaz. Asistan benzer bir paragraf bulduğunu gerekçe göstererek sayı, saat veya kesin sonuç uydurmamalıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#scope",
+        "chunk_id": "YV-D010#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#details",
+        "chunk_id": "YV-D029#details:0-375:5108dd7032",
+        "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+        "heading": "Konuya göre yönlendirme",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "0.1-draft",
+        "text": "Beldesk belediye hizmetleri hakkında doküman temelli açıklama yapar ve saha arızaları için taslak hazırlayabilir. Bir arızanın başka bir kuruluşla ilişkili olabileceği, sorunun önceliğinden ayrı değerlendirilir. Elektrik kesintisi örneğinde dağıtım şirketinin adı model tarafından tahmin edilmez. Kurumun kimliği uygulamanın doğrulanmış yönlendirme verisiyle belirlenmelidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D004",
+        "passage_id": "YV-D004#scope",
+        "chunk_id": "YV-D004#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D004",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2122,
+    "output_tokens": 17,
+    "latency_s": 2.118356000049971,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "2765d26cb187fe802a6cc7f94239b56d4f3b5c8d4278e57d3bc4861db3d3c853",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:22:11.009312+00:00",
+    "wall_latency_including_pacing_s": 8.227499708067626
+  }
+}

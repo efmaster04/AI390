@@ -1,0 +1,127 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Are reporting a stray animal, looking for a lost pet, and registering a pet treated as the same request?",
+    "language": "en",
+    "sources_sha256": "56aa63c2a94258a2717043e9cb1e472886b77da92184118a072c945d14ca3ba4",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Reporting a stray animal, searching for a lost pet, and registering a pet are considered distinct types of requests. [1][4]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Reporting a stray animal, searching for a lost pet, and registering a pet are considered distinct types of requests.",
+        "citations": [
+          1,
+          4
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Sokak hayvanı bildirimi, kayıp evcil hayvan araması ve evcil hayvan kaydı farklı taleplerdir."
+          },
+          {
+            "citation": 4,
+            "quote": "Kayıp hayvan, evcil hayvan kaydı ve saldırgan hayvan bildirimi farklı konulardır"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D026",
+        "passage_id": "YV-D026#details",
+        "chunk_id": "YV-D026#details:0-345:40bba7f14a",
+        "title": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı",
+        "heading": "Talebin türünü ayırma",
+        "source": "beldesk://synthetic/YV-D026",
+        "version": "0.1-draft",
+        "text": "Sokak hayvanı bildirimi, kayıp evcil hayvan araması ve evcil hayvan kaydı farklı taleplerdir. Saha bildirimi için konum ve kullanıcının gözlemlediği davranış sorulur. Hayvanın türü belirtilmediyse kesinleştirilmez. Saldırganlık veya yaralanma bildirimi varsa kullanıcı anlatımı korunur; model fotoğraftan kesin teşhis veya niyet çıkarımı yapmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D026",
+        "passage_id": "YV-D026#limits",
+        "chunk_id": "YV-D026#limits:0-346:ef919ef50b",
+        "title": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı",
+        "heading": "Operasyon sınırı",
+        "source": "beldesk://synthetic/YV-D026",
+        "version": "0.1-draft",
+        "text": "Beldesk hayvan toplama ekibini yönlendiremez, barınakta yer ayıramaz veya bir hayvanın alındığını doğrulayamaz. Bu rehber veteriner tedavisi, yakalama veya müdahale talimatı vermez. İlgili birime bildirim için taslak hazırlanabilir; ancak taslak kayıt değildir. Hizmetin kesin geliş saati, barınak adresi ve mevcut kapasite bu kaynakta yer almaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D026",
+        "passage_id": "YV-D026#scope",
+        "chunk_id": "YV-D026#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D026",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#limits",
+        "chunk_id": "YV-D005#limits:0-372:2392e7bf7d",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+        "heading": "Ücret ve belge sınırı",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "0.1-draft",
+        "text": "Bu rehber hayvan kaydının ücretsiz olduğunu veya belirli bir ücret alındığını söylemez. Ücret sorusunda ayrı tarife kaynağı aranmalıdır. Hayvanın sağlık durumu hakkında teşhis veya tedavi önerisi verilmez. Kayıp hayvan, evcil hayvan kaydı ve saldırgan hayvan bildirimi farklı konulardır; kullanıcı bunlardan hangisini kastettiğini belirtmediyse önce talebin amacı sorulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#details",
+        "chunk_id": "YV-D005#details:0-357:505f3e92bf",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+        "heading": "İlk bilgi ve başvuru yolu",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "0.1-draft",
+        "text": "Kurgusal Yeşilvadi rehberinde evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. Başvuru hazırlığı için hayvanın türü, varsa kimliklendirme referansı ve kayıt talebinin yeni kayıt mı bilgi güncelleme mi olduğu belirlenir. Beldesk hayvanın kaydını oluşturmaz ve kayıt tamamlandı demeden önce gerçek bir işlem sonucu gerektiğini kabul eder.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2166,
+    "output_tokens": 161,
+    "latency_s": 24.34312995884102,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "dd86b188c37a57a368bf1ff609ecc8f9629f09902afb70adab6b0c792ea83ce5",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Reporting a stray animal, searching for a lost pet, and registering a pet are considered distinct types of requests.\",\n      \"citations\": [1, 4],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sokak hayvanı bildirimi, kayıp evcil hayvan araması ve evcil hayvan kaydı farklı taleplerdir.\"\n        },\n        {\n          \"citation\": 4,\n          \"quote\": \"Kayıp hayvan, evcil hayvan kaydı ve saldırgan hayvan bildirimi farklı konulardır\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:21:02.091160+00:00",
+    "wall_latency_including_pacing_s": 29.988151124911383
+  }
+}

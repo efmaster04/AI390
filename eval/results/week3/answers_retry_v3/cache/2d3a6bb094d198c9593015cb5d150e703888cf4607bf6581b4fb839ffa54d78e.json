@@ -1,0 +1,35 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Yarın bizim sokaktaki boru için ekip saat kaçta gelecek?",
+    "language": "tr",
+    "sources_sha256": "fa6ad984229015cde65148c6db9883caa3ff114a423a379217436fd92cd6268a",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "7d924ed9c4ecfb5ea9809b0cde360372c11e3bfdc8ffeb29240f50750f875c01",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The model correctly abstained from answering the question because the provided sources explicitly state that they do not contain information regarding specific service times or schedules.",
+    "attempts": 1,
+    "input_tokens": 1835,
+    "output_tokens": 61,
+    "latency_s": 2.6042408330831677,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "bbd6b8423cb6acbd90b2d4da84c542dc6ee026535e2062f3c9c4b240be53aeb0",
+    "wall_latency_including_pacing_s": 9.029326457995921
+  }
+}

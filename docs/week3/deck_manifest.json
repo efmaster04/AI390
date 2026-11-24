@@ -1,0 +1,158 @@
+{
+  "title": "Beldesk Week 3",
+  "total_speaking_seconds": 420,
+  "speakers": {
+    "Efe": "1–6",
+    "Doruk": "7–12",
+    "Tarık": "13–18"
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "title": "Beldesk — Week 3",
+      "label": "Opening",
+      "seconds": 10,
+      "notes": "EFE · 10 s. Beldesk helps residents report municipal problems and ask service questions in Turkish and English. This week we added retrieval and source-grounded answers.",
+      "repo": ""
+    },
+    {
+      "id": "w3-roadmap",
+      "title": "Eight deliverables, with evidence and open items",
+      "label": "Week 3 / W3.1–W3.8",
+      "seconds": 15,
+      "notes": "EFE · 15 s. Show all eight requirements. Distinguish implemented code and measured experiments from human labels, document approvals and customer interviews still awaiting actual evidence.",
+      "repo": "reports/week-3.md"
+    },
+    {
+      "id": "w3-pipeline",
+      "title": "Documents become evidence before the model answers",
+      "label": "W3.1 / W3.2 / W3.3",
+      "seconds": 20,
+      "notes": "EFE · 20 s. The corpus has source, date/version and access metadata. It is divided by section. Lexical and semantic search feed RRF, then a cross-encoder reranker. Sources are evidence, never system instructions.",
+      "repo": "src/rag/ · config/retrieval.json"
+    },
+    {
+      "id": "w3-demo-answer",
+      "title": "A service answer must point to its source",
+      "label": "What we built / recorded demo",
+      "seconds": 40,
+      "notes": "EFE · 40 s. This is a recorded real run, not a live API call. Read the citizen question, show the answer and its numbered citation, then identify the source sentence that supports it. The municipality and requirements are synthetic.",
+      "repo": "eval/results/week3/"
+    },
+    {
+      "id": "w3-demo-abstain",
+      "title": "Fixed fallback when no authorized source is supplied",
+      "label": "W3.4 / software contract demonstration",
+      "seconds": 35,
+      "notes": "EFE · 35 s. This is a deterministic software check, not an LLM-generated reply. With an empty authorized-source list the answer module returns the exact fixed fallback without calling the model. Live unavailable-information cases remain affected by the recorded service errors.",
+      "repo": "src/rag/answer.py · prompts/rag/"
+    },
+    {
+      "id": "w3-testset",
+      "title": "The denominator is 32, not all 38 questions",
+      "label": "Scoreboard / W3.5",
+      "seconds": 20,
+      "notes": "EFE · 20 s. Retrieval metrics use the 32 answerable cases, balanced across Turkish and English. Six unavailable-information controls are tracked separately, not counted as retrieval misses. Gold labels point to source evidence and still need human review.",
+      "repo": "eval/testsets/week3_retrieval.jsonl"
+    },
+    {
+      "id": "w3-retrieval-metrics",
+      "title": "31 of 32 gold passages appear in the first five results",
+      "label": "Scoreboard / W3.5",
+      "seconds": 25,
+      "notes": "DORUK · 25 s. I will explain retrieval quality. Hit at five is 31 of 32, about 0.969. MRR at ten is 0.953. These measure finding sources, not whether a generated answer is correct or faithful.",
+      "repo": "eval/results/week3/retrieval/summary.json"
+    },
+    {
+      "id": "w3-ablations",
+      "title": "Two ablations: keep the other settings fixed",
+      "label": "Scoreboard / W3.7",
+      "seconds": 25,
+      "notes": "DORUK · 25 s. First compare dense and hybrid with the same reranker: the measured quality is equal. Then switch only the reranker off: MRR falls from 0.953 to 0.805. We report both the gain and the absence of a hybrid gain.",
+      "repo": "eval/retrieval_week3.py"
+    },
+    {
+      "id": "scoreboard",
+      "title": "The same scoreboard; unmeasured values stay null",
+      "label": "Scoreboard / W3",
+      "seconds": 30,
+      "notes": "DORUK · 30 s. Keep the thirteen-row scoreboard used in Week two. Read only measured values. Retrieval is newly measured; task success and repeated agent reliability remain for later weeks. Different test sets and system capabilities prevent a direct Week-two accuracy comparison.",
+      "repo": "eval/results/week3/scoreboard.json"
+    },
+    {
+      "id": "w3-faithfulness",
+      "title": "Claim-by-claim source support",
+      "label": "Scoreboard / W3.6",
+      "seconds": 20,
+      "notes": "DORUK · 20 s. We evaluate claims against actual cited evidence. A citation existing does not mean it supports the claim. Unsupported claims have a clear denominator; missing extraction or judge errors cannot become successful answers.",
+      "repo": "eval/faithfulness_week3.py"
+    },
+    {
+      "id": "w3-retrieval-failure",
+      "title": "Privacy evidence missed the candidate pool",
+      "label": "Failure analysis / retrieval",
+      "seconds": 25,
+      "notes": "DORUK · 25 s. The English privacy question is the retrieval miss. Its gold passage is outside the twenty-candidate pool, so the reranker cannot recover it. This is a retrieval problem, distinct from a hallucination after finding the right evidence.",
+      "repo": "eval/results/week3/retrieval/failures.json"
+    },
+    {
+      "id": "w3-generation-failure",
+      "title": "Retrieval, generation and provider failures",
+      "label": "Failure analysis / W3.8",
+      "seconds": 15,
+      "notes": "DORUK · 15 s. Show an actual recorded case and identify its stage. A missing source is retrieval; an unsupported answer despite available evidence is generation. Do not combine them into one vague error count.",
+      "repo": "eval/results/week3/"
+    },
+    {
+      "id": "w3-judge-calibration",
+      "title": "The new judge needs its own human check",
+      "label": "Failure analysis / evaluation",
+      "seconds": 30,
+      "notes": "TARIK · 30 s. The Week-three judge checks source support claim by claim and needs calibration against real human labels. We do not reuse Week-two kappa as validation. If labels are missing, we show null rather than invented agreement.",
+      "repo": "eval/results/week3/ · human labels"
+    },
+    {
+      "id": "w3-evaluation-boundaries",
+      "title": "A separate judge for source-grounded answers",
+      "label": "Failure analysis / evaluation",
+      "seconds": 25,
+      "notes": "TARIK · 25 s. We preserved Week-two evidence and introduced a separate source-aware evaluation. A contact detail is not automatically fabricated if it appears in an authorized source. A retrieved instruction still cannot override system rules or create a ticket.",
+      "repo": "prompts/judge/ · eval/faithfulness_week3.py"
+    },
+    {
+      "id": "w3-review-status",
+      "title": "Human reviews and customer interviews",
+      "label": "Failure analysis / remaining gaps",
+      "seconds": 25,
+      "notes": "TARIK · 25 s. Show actual document approvals, human labels and customer conversations. Any missing work is stated openly. Customer discovery must involve real potential customers; a script or simulated interview is not a completed conversation.",
+      "repo": "reports/week-3.md · review records"
+    },
+    {
+      "id": "w3-next",
+      "title": "Next week: reliable calls and controlled tools",
+      "label": "Next week / 3 priorities",
+      "seconds": 40,
+      "notes": "TARIK · 40 s. Our priorities are to review human-label disagreements and expand the matched sample, measure controlled tool results, and measure multi-step task success. Each priority moves a named metric; retrieval does not itself create or update tickets.",
+      "repo": "reports/week-3.md · Week 4 plan"
+    },
+    {
+      "id": "w3-reproduce",
+      "title": "Every number should trace back to a command and files",
+      "label": "Next week / reproducibility",
+      "seconds": 15,
+      "notes": "TARIK · 15 s. Commands, source versions and hashes accompany recorded outputs. The final test count comes from the actual test run. The Week-three implementation is shared on its review branch; a release tag and deployment are separate steps.",
+      "repo": "README.md · eval/results/week3/"
+    },
+    {
+      "id": "w3-questions",
+      "title": "Three questions we expect",
+      "label": "Questions and feedback",
+      "seconds": 5,
+      "notes": "TARIK · 5 s. Thank you. We are ready for your questions.",
+      "repo": "Week 3 / Q&A"
+    }
+  ],
+  "source_data": "eval/results/week3/presentation_data.json",
+  "reference": "docs/index.html",
+  "note": "Self-contained HTML. Rebuild from recorded evidence after data changes."
+}

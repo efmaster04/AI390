@@ -1,0 +1,46 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "How does the guide distinguish failed street lamps from a power outage affecting homes and businesses?",
+    "language": "en",
+    "sources_sha256": "79772b6021cf101278eef1306648d46569918ffa8193291a9f86143e3e3c2375",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "8b874bf58c7a0ebd7e6eddb5394dc0d228a852fa9a2365c2debaadccfed89012",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that street lamp failures and power outages in homes/businesses are different events."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source confirms the system asks whether a single lamp, a section of the street, or the entire lighting system is affected."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the provided source material regarding the distinction between street lamp issues and power outages, and the reporting process for lamp failures.",
+    "attempts": 1,
+    "input_tokens": 2034,
+    "output_tokens": 169,
+    "latency_s": 2.5557342510437593,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "f672f1952b421736f0a8c714c2015cbf3593909180eaeec18112b44d1466508f",
+    "wall_latency_including_pacing_s": 7.644047042005695
+  }
+}

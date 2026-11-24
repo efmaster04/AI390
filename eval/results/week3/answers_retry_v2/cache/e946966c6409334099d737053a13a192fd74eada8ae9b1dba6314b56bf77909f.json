@@ -1,0 +1,122 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Kütüphane üyeliği hakkında bilgi isterken ilk üyelik ile bilgi güncelleme ayrılıyor mu?",
+    "language": "tr",
+    "sources_sha256": "7bdd277b5c9075af2447f1e231d0cf07f8845238e0340b1e6c4fbd7aa5d51af2",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Kütüphane üyeliği hakkında yönlendirme yapılırken, vatandaşın ilk üyelik mi yoksa üyelik güncellemesi mi istediği öğrenilmektedir. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Kütüphane üyeliği hakkında yönlendirme yapılırken, vatandaşın ilk üyelik mi yoksa üyelik güncellemesi mi istediği öğrenilmektedir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Yeşilvadi test senaryosunda kütüphane üyeliği hakkında yönlendirme için hangi kütüphanenin sorulduğu ve ilk üyelik mi üyelik güncellemesi mi istendiği öğrenilir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D017",
+        "passage_id": "YV-D017#details",
+        "chunk_id": "YV-D017#details:0-377:840d0b4dbf",
+        "title": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi",
+        "heading": "Üyelik hakkında bilgi",
+        "source": "beldesk://synthetic/YV-D017",
+        "version": "0.1-draft",
+        "text": "Yeşilvadi test senaryosunda kütüphane üyeliği hakkında yönlendirme için hangi kütüphanenin sorulduğu ve ilk üyelik mi üyelik güncellemesi mi istendiği öğrenilir. Asistan üyelik kaydı oluşturmaz. Vatandaşın kimlik numarası veya belge fotoğrafı sohbetten istenmez. Kütüphane kuralları veya ödünç alma şartları kaynakta açıkça yer almadıkça başka kurumlardan alınarak uygulanamaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D017",
+        "passage_id": "YV-D017#limits",
+        "chunk_id": "YV-D017#limits:0-387:877e624bc7",
+        "title": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi",
+        "heading": "Canlı bilgi sınırı",
+        "source": "beldesk://synthetic/YV-D017",
+        "version": "0.1-draft",
+        "text": "Bu rehber bir kitabın rafta olduğunu, rezervasyon durumunu veya mevcut ödünç listesini içermez. Belirli bir kitabın bulunup bulunmadığını söylemek için katalog erişimi gerekir. Çalışma saatleri ve üyelik ücreti de bu metinde verilmemiştir. Beldesk kayıt açıldığı, kitap ayrıldığı veya bir gecikme borcunun silindiği iddiasında bulunamaz; yalnızca mevcut kaynaklara dayalı açıklama yapar.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D017",
+        "passage_id": "YV-D017#scope",
+        "chunk_id": "YV-D017#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D017",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#details",
+        "chunk_id": "YV-D005#details:0-357:505f3e92bf",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+        "heading": "İlk bilgi ve başvuru yolu",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "0.1-draft",
+        "text": "Kurgusal Yeşilvadi rehberinde evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. Başvuru hazırlığı için hayvanın türü, varsa kimliklendirme referansı ve kayıt talebinin yeni kayıt mı bilgi güncelleme mi olduğu belirlenir. Beldesk hayvanın kaydını oluşturmaz ve kayıt tamamlandı demeden önce gerçek bir işlem sonucu gerektiğini kabul eder.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#details",
+        "chunk_id": "YV-D027#details:0-350:c758f0be76",
+        "title": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri",
+        "heading": "Tekrar ile yeni olay ayrımı",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "0.1-draft",
+        "text": "Aynı olaya ilişkin yeni mesaj, başka bir arıza olduğu varsayımıyla otomatik yeni kayıt sayılmaz. Varsa önceki referans ve olayın konumu öğrenilir. Bildirimlerin aynı olay olduğuna karar vermek için veritabanı ve uygulama kuralları gerekir; bu sürüm bunlara sahip değildir. Tek kişinin tekrar yazması daha fazla kişinin etkilendiğinin kanıtı değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2185,
+    "output_tokens": 151,
+    "latency_s": 1.3469035410089418,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "209545539b36878c328b62f4ed190069d9e265d795b2dff7b4a2c5bddae21854",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Kütüphane üyeliği hakkında yönlendirme yapılırken, vatandaşın ilk üyelik mi yoksa üyelik güncellemesi mi istediği öğrenilmektedir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Yeşilvadi test senaryosunda kütüphane üyeliği hakkında yönlendirme için hangi kütüphanenin sorulduğu ve ilk üyelik mi üyelik güncellemesi mi istendiği öğrenilir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:19:53.278253+00:00",
+    "wall_latency_including_pacing_s": 6.2902921659406275
+  }
+}

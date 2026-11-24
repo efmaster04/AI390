@@ -1,0 +1,114 @@
+{
+  "n": 32,
+  "paired_tests": {
+    "hybrid_rerank_vs_dense_rerank_hit1": {
+      "n": 32,
+      "both_correct": 30,
+      "a_only": 0,
+      "b_only": 0,
+      "both_wrong": 2,
+      "p_exact": 1.0,
+      "p_chi2_cc": null,
+      "method": "exact"
+    },
+    "hybrid_rerank_vs_dense_rerank_hit5": {
+      "n": 32,
+      "both_correct": 31,
+      "a_only": 0,
+      "b_only": 0,
+      "both_wrong": 1,
+      "p_exact": 1.0,
+      "p_chi2_cc": null,
+      "method": "exact"
+    },
+    "hybrid_rerank_vs_hybrid_no_rerank_hit1": {
+      "n": 32,
+      "both_correct": 22,
+      "a_only": 8,
+      "b_only": 1,
+      "both_wrong": 1,
+      "p_exact": 0.0390625,
+      "p_chi2_cc": 0.045500263896358396,
+      "method": "exact"
+    },
+    "hybrid_rerank_vs_hybrid_no_rerank_hit5": {
+      "n": 32,
+      "both_correct": 30,
+      "a_only": 1,
+      "b_only": 0,
+      "both_wrong": 1,
+      "p_exact": 1.0,
+      "p_chi2_cc": 1.0,
+      "method": "exact"
+    }
+  },
+  "wilson_95": {
+    "hybrid_rerank": {
+      "1": [
+        0.9375,
+        0.7985253275199642,
+        0.9826897968048427
+      ],
+      "3": [
+        0.96875,
+        0.8425539219962727,
+        0.9944622826374491
+      ],
+      "5": [
+        0.96875,
+        0.8425539219962727,
+        0.9944622826374491
+      ],
+      "10": [
+        0.96875,
+        0.8425539219962727,
+        0.9944622826374491
+      ]
+    },
+    "dense_rerank": {
+      "1": [
+        0.9375,
+        0.7985253275199642,
+        0.9826897968048427
+      ],
+      "3": [
+        0.96875,
+        0.8425539219962727,
+        0.9944622826374491
+      ],
+      "5": [
+        0.96875,
+        0.8425539219962727,
+        0.9944622826374491
+      ],
+      "10": [
+        0.96875,
+        0.8425539219962727,
+        0.9944622826374491
+      ]
+    },
+    "hybrid_no_rerank": {
+      "1": [
+        0.71875,
+        0.546251630618882,
+        0.8443559315435214
+      ],
+      "3": [
+        0.90625,
+        0.7578150066422116,
+        0.9675990373736805
+      ],
+      "5": [
+        0.9375,
+        0.7985253275199642,
+        0.9826897968048427
+      ],
+      "10": [
+        0.96875,
+        0.8425539219962727,
+        0.9944622826374491
+      ]
+    }
+  },
+  "note": "Exploratory paired tests on one small AI-authored draft set; not independent evidence of real-world performance."
+}

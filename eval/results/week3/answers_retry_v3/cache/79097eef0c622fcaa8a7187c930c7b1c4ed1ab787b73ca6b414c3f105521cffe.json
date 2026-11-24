@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "A swing is broken in a playground. What location and equipment details belong in the report?",
+    "language": "en",
+    "sources_sha256": "7be3c434984c94356e4a77f6352f7a34e1e12533740460768f5c5d1e3cd855bd",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "To report a playground issue, you must provide the park name or the neighborhood and street. [1]\nYou must also specify the type of faulty equipment and the observed damage. [1]\nYou should state whether the equipment is currently out of use based on your observation. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "To report a playground issue, you must provide the park name or the neighborhood and street.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Oyun alanı bildirimi için park adı veya mahalle ve sokak"
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "You must also specify the type of faulty equipment and the observed damage.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "arızalı ekipmanın türü ve görülen hasar belirtilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "You should state whether the equipment is currently out of use based on your observation.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Ekipmanın kullanım dışı olup olmadığı vatandaşın bildirdiği haliyle kaydedilir"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#details",
+        "chunk_id": "YV-D016#details:0-341:3af2590e90",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+        "heading": "Arıza bilgileri",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "0.1-draft",
+        "text": "Oyun alanı bildirimi için park adı veya mahalle ve sokak, arızalı ekipmanın türü ve görülen hasar belirtilir. Ekipmanın kullanım dışı olup olmadığı vatandaşın bildirdiği haliyle kaydedilir; bildirilmemiş bir yaralanma veya kullanım durumu uydurulmaz. Bir mesajda hem salıncak hem aydınlatma sorunu bulunursa bunlar ayrı arıza olarak korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#limits",
+        "chunk_id": "YV-D016#limits:0-380:74ebf8bfca",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+        "heading": "Taslak ve öncelik sınırı",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "0.1-draft",
+        "text": "Asistan parktaki ekipmanı denetlediğini veya güvenli hale getirdiğini söylemez. Öncelik, kabul edilen proje politikasındaki somut tehlike ve işlev kaybı ölçütleriyle belirlenir; sırf oyun alanında olduğu için her olay aynı sınıfa konulmaz. Bu rehber onarım tarihi, yedek parça stoğu veya ekip ataması içermez. Böyle bilgiler gerektiğinde mevcut olmadıkları açıkça belirtilmelidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#scope",
+        "chunk_id": "YV-D016#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#details",
+        "chunk_id": "YV-D024#details:0-351:15f3baae0e",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+        "heading": "Sorunu ayırma",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "0.1-draft",
+        "text": "Su kaçağı bildirimi ile kanalizasyon taşması ayrılır; vatandaş hangisini bildiğini açıklayabilir. Mahalle, sokak, akışın yeri ve yol veya yaya geçişine bildirilen etki kaydedilir. Kaynağı bilinmeyen sıvının türü model tarafından kesinleştirilmez. Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#scope",
+        "chunk_id": "YV-D024#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2149,
+    "output_tokens": 262,
+    "latency_s": 2.5463106249226257,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "c407834cba647cae770e561d030394079a51a6bd001767aef614351e3d7ba1ff",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"To report a playground issue, you must provide the park name or the neighborhood and street.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Oyun alanı bildirimi için park adı veya mahalle ve sokak\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You must also specify the type of faulty equipment and the observed damage.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"arızalı ekipmanın türü ve görülen hasar belirtilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You should state whether the equipment is currently out of use based on your observation.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Ekipmanın kullanım dışı olup olmadığı vatandaşın bildirdiği haliyle kaydedilir\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:19:50.684246+00:00",
+    "wall_latency_including_pacing_s": 2.578769374988042
+  }
+}

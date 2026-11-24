@@ -1,0 +1,8 @@
+[
+  {
+    "case_id": "W3-R008",
+    "stage": "retrieval",
+    "kind": "designated_gold_missing_from_context",
+    "note": "Alternative valid evidence may exist; draft gold needs human review"
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Kaldırım hasarı bildirirken geçişin tamamen mi kısmen mi kapandığını belirtmeli miyim?",
+    "language": "tr",
+    "sources_sha256": "b59e5dfc41e32d75f8773c65eebc438d621f4c3b5b61d8a9d3163d04ac259139",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Kaldırım hasarı bildirimi yaparken geçişin tamamen mi yoksa kısmen mi engellendiğini belirtmeniz gerekmektedir. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Kaldırım hasarı bildirimi yaparken geçişin tamamen mi yoksa kısmen mi engellendiğini belirtmeniz gerekmektedir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Kaldırım sorunu anlatılırken mahalle ve sokak, hasarın türü ve geçişin tamamen mi kısmen mi engellendiği öğrenilir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#details",
+        "chunk_id": "YV-D021#details:0-347:6d20925516",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+        "heading": "Hasar ve geçiş bilgileri",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "0.1-draft",
+        "text": "Kaldırım sorunu anlatılırken mahalle ve sokak, hasarın türü ve geçişin tamamen mi kısmen mi engellendiği öğrenilir. Küçük yüzey çatlağı ile çökmüş kaldırım tek bir genel etiketle geçiştirilmez. Bebek arabası veya yaya geçişi üzerindeki etki vatandaşın bildirdiği biçimde kaydedilir; olay yerindeki bütün insanların durumu hakkında tahmin yapılmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#limits",
+        "chunk_id": "YV-D021#limits:0-359:5108c84840",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+        "heading": "Taslak ve sınırlar",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "0.1-draft",
+        "text": "Ayrı bir tehlike anlatılıyorsa bu bilgi öncelik değerlendirmesinde korunur. Kullanıcı yalnızca estetik bir düzenleme istiyorsa mevcut hasar veya erişim kaybı varmış gibi yazılmaz. Beldesk yolu kapatamaz, güvenlik bariyeri koyamaz ve tazminat onaylayamaz. Bu kaynak onarım tarihi ve sorumluluk hakkında hukuki karar içermez; yalnızca bildirim hazırlığı sağlar.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#reporting",
+        "chunk_id": "YV-D011#reporting:0-448:c760fe3c2d",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Bildirim için gereken bilgiler",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur. Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir; etkilenen kişi sayısı uydurulmaz. Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz. Hazırlanan taslak, kullanıcıdan onay istenerek gösterilir; bu aşamada kayıt açılmış olmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D019",
+        "passage_id": "YV-D019#details",
+        "chunk_id": "YV-D019#details:0-355:eb0722801d",
+        "title": "Yeşilvadi Erişilebilirlik ve Engelli Erişimi Bildirimi",
+        "heading": "Erişim engelini açıklama",
+        "source": "beldesk://synthetic/YV-D019",
+        "version": "0.1-draft",
+        "text": "Erişilebilirlik bildiriminde etkilenen giriş, kaldırım veya geçiş noktası ve engelin ne olduğu sorulur. Rampa eksikliği, bozuk yüzey ve geçişi kapatan bir nesne aynı sorun değildir. Kullanıcı bir araçla geçemediğini anlatıyorsa bu etki kaydedilir; sağlık raporu, tanı veya engellilik belgesi istenmez. Olayın konumu kişinin ikamet adresinden ayrı tutulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#scope",
+        "chunk_id": "YV-D021#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2216,
+    "output_tokens": 132,
+    "latency_s": 16.96847479196731,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "b3dfce33777541724b77cef528206d3c35c7a4b7ffa282be9a7a3c84b5f98918",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Kaldırım hasarı bildirimi yaparken geçişin tamamen mi yoksa kısmen mi engellendiğini belirtmeniz gerekmektedir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Kaldırım sorunu anlatılırken mahalle ve sokak, hasarın türü ve geçişin tamamen mi kısmen mi engellendiği öğrenilir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:20:15.499260+00:00",
+    "wall_latency_including_pacing_s": 22.206359916948713
+  }
+}

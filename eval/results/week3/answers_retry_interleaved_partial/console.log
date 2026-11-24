@@ -1,0 +1,42 @@
+[1/38] W3-R001 answer=ok judge=error/skipped calls=5 http_statuses=[503, 503, 503]
+[2/38] W3-R002 answer=error judge=error/skipped calls=8 http_statuses=[503, 503]
+[3/38] W3-R003 answer=ok judge=error/skipped calls=14 http_statuses=[503, 503, 503, 503]
+[4/38] W3-R004 answer=ok judge=error/skipped calls=17 http_statuses=[503, 503]
+[5/38] W3-R005 answer=error judge=error/skipped calls=20 http_statuses=[503, 503, 503]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/answer_week3.py", line 481, in <module>
+    main()
+    ~~~~^^
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/answer_week3.py", line 472, in main
+    value = run(provider_name=args.provider, model=args.model, cases_path=args.cases,
+                out_dir=args.out_dir, max_cases=args.max_cases, max_calls=args.max_calls,
+                rpm=args.rpm, timeout_s=args.timeout_s, deadline_s=args.deadline_s,
+                transport_retries=args.transport_retries, validation_retries=args.validation_retries,
+                backoff_s=args.backoff_s)
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/answer_week3.py", line 424, in run
+    judgement, hit = _stage_cache(out/"cache", judge_key, lambda: _without_pacing(bounded, lambda: judge_claims(
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        generation, sources, bounded, question=case["text"], language=case["lang"], max_retries=validation_retries)))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/answer_week3.py", line 239, in _stage_cache
+    value = function()
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/answer_week3.py", line 424, in <lambda>
+    judgement, hit = _stage_cache(out/"cache", judge_key, lambda: _without_pacing(bounded, lambda: judge_claims(
+                                                                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        generation, sources, bounded, question=case["text"], language=case["lang"], max_retries=validation_retries)))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/answer_week3.py", line 252, in _without_pacing
+    result = function()
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/answer_week3.py", line 424, in <lambda>
+    judgement, hit = _stage_cache(out/"cache", judge_key, lambda: _without_pacing(bounded, lambda: judge_claims(
+                                                                                                   ~~~~~~~~~~~~^
+        generation, sources, bounded, question=case["text"], language=case["lang"], max_retries=validation_retries)))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/faithfulness_week3.py", line 90, in judge_claims
+    response = provider.generate(system, user+feedback, 0, 1600, seed, json_mode=True)
+  File "/Users/doruk/Documents/Codex/2026-11-09/bur/work/AI390-week3-review/eval/answer_week3.py", line 165, in generate
+    self.sleep(chunk)
+    ~~~~~~~~~~^^^^^^^
+KeyboardInterrupt

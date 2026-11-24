@@ -1,0 +1,215 @@
+{
+  "stage": "retrieval_demo_not_generation",
+  "corpus_sha256": "9cfa439ca9733f90a28e3152e748380462e295ab9df77b5b6f692ff5e483a23e",
+  "api_calls": 0,
+  "examples": [
+    {
+      "lang": "tr",
+      "query": "Kiracıyım, su aboneliği için hangi belgeler gerekiyor?",
+      "role": "public",
+      "mode": "hybrid",
+      "rerank": true,
+      "corpus_sha256": "9cfa439ca9733f90a28e3152e748380462e295ab9df77b5b6f692ff5e483a23e",
+      "index_sha256": "f286ad55ba303a755f85d9b9ca8bbf773d6d278d7159f8f1b165b7367f013ccb",
+      "candidate_passage_ids": [
+        "YV-D003#requirements",
+        "YV-D003#procedure",
+        "YV-D003#scope",
+        "YV-D024#details",
+        "YV-D024#scope",
+        "YV-D024#limits",
+        "YV-D029#limits",
+        "YV-D017#scope",
+        "YV-D004#limits",
+        "YV-D010#details",
+        "YV-D002#limits",
+        "YV-D001#requirements",
+        "YV-D029#scope",
+        "YV-D009#limits",
+        "YV-D018#details",
+        "YV-D017#details",
+        "YV-D002#details",
+        "YV-D004#scope",
+        "YV-D020#limits",
+        "YV-D028#scope"
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "YV-D003#requirements:0-470:50d30dc01d",
+          "doc_id": "YV-D003",
+          "passage_id": "YV-D003#requirements",
+          "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+          "title_en": "Water Subscription Application Guide",
+          "heading": "Başvuruda istenen belgeler",
+          "text": "Yeşilvadi test senaryosunda yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir. Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz. Asistan belgelerin görüntüsünü, kimlik numarasını veya kira sözleşmesinin tamamını sohbet içinde istemez. Belgeler yalnızca başvuru kanalına sunulur.",
+          "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nBaşvuruda istenen belgeler\nsu aboneliği water subscription application required documents kiracı tenant\nYeşilvadi test senaryosunda yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir. Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz. Asistan belgelerin görüntüsünü, kimlik numarasını veya kira sözleşmesinin tamamını sohbet içinde istemez. Belgeler yalnızca başvuru kanalına sunulur.",
+          "start": 0,
+          "end": 470,
+          "source": "beldesk://synthetic/YV-D003",
+          "version": "0.1-draft",
+          "access": [
+            "public"
+          ],
+          "bm25_score": 13.850459025995823,
+          "dense_score": 0.9125191569328308,
+          "rrf_score": 0.03278688524590164,
+          "reranker_score": 3.78033185005188
+        },
+        {
+          "rank": 2,
+          "chunk_id": "YV-D003#procedure:0-474:6f1b25382b",
+          "doc_id": "YV-D003",
+          "passage_id": "YV-D003#procedure",
+          "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+          "title_en": "Water Subscription Application Guide",
+          "heading": "Başvuru adımları ve sınırlar",
+          "text": "Kullanıcı önce mülk sahibi mi kiracı mı olduğunu belirler ve buna uygun belgeleri hazırlar. Sonra proje senaryosundaki Su ve Kanalizasyon başvuru birimine başvurur. Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur. Bu belge ücret tutarı, randevu adresi, telefon numarası, çalışma saati veya hizmetin açılacağı tarih içermez. Böyle bir bilgi sorulduğunda asistan tahmin üretmez ve ilgili bilginin kaynaklarda bulunmadığını belirtir.",
+          "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nBaşvuru adımları ve sınırlar\nsu aboneliği water subscription application required documents kiracı tenant\nKullanıcı önce mülk sahibi mi kiracı mı olduğunu belirler ve buna uygun belgeleri hazırlar. Sonra proje senaryosundaki Su ve Kanalizasyon başvuru birimine başvurur. Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur. Bu belge ücret tutarı, randevu adresi, telefon numarası, çalışma saati veya hizmetin açılacağı tarih içermez. Böyle bir bilgi sorulduğunda asistan tahmin üretmez ve ilgili bilginin kaynaklarda bulunmadığını belirtir.",
+          "start": 0,
+          "end": 474,
+          "source": "beldesk://synthetic/YV-D003",
+          "version": "0.1-draft",
+          "access": [
+            "public"
+          ],
+          "bm25_score": 7.734850087949754,
+          "dense_score": 0.8964756727218628,
+          "rrf_score": 0.03200204813108039,
+          "reranker_score": 2.18966007232666
+        },
+        {
+          "rank": 3,
+          "chunk_id": "YV-D003#scope:0-431:7b1c74b911",
+          "doc_id": "YV-D003",
+          "passage_id": "YV-D003#scope",
+          "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+          "title_en": "Water Subscription Application Guide",
+          "heading": "Kapsam ve veri niteliği",
+          "text": "Bu belge, AIC390 Beldesk projesindeki kurgusal Yeşilvadi Belediyesi için hazırlanmış sentetik bir test rehberidir. Gerçek bir belediyenin başvuru koşullarını veya yürürlükteki mevzuatı açıklamaz. Aşağıdaki koşullar yalnızca proje senaryosunda geçerlidir; ekip incelemesi bekleyen taslaktır. Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez, ödeme alamaz veya aboneliğin açıldığını doğrulayamaz.",
+          "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nKapsam ve veri niteliği\nsu aboneliği water subscription application required documents kiracı tenant\nBu belge, AIC390 Beldesk projesindeki kurgusal Yeşilvadi Belediyesi için hazırlanmış sentetik bir test rehberidir. Gerçek bir belediyenin başvuru koşullarını veya yürürlükteki mevzuatı açıklamaz. Aşağıdaki koşullar yalnızca proje senaryosunda geçerlidir; ekip incelemesi bekleyen taslaktır. Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez, ödeme alamaz veya aboneliğin açıldığını doğrulayamaz.",
+          "start": 0,
+          "end": 431,
+          "source": "beldesk://synthetic/YV-D003",
+          "version": "0.1-draft",
+          "access": [
+            "public"
+          ],
+          "bm25_score": 7.944578630697058,
+          "dense_score": 0.8776237964630127,
+          "rrf_score": 0.03200204813108039,
+          "reranker_score": 1.8343231678009033
+        }
+      ],
+      "timings_s": {
+        "retrieval": 0.035978166037239134,
+        "reranking": 0.7551338750636205,
+        "total": 0.7911122910445556
+      }
+    },
+    {
+      "lang": "en",
+      "query": "What documents do I need for a water subscription as a tenant?",
+      "role": "public",
+      "mode": "hybrid",
+      "rerank": true,
+      "corpus_sha256": "9cfa439ca9733f90a28e3152e748380462e295ab9df77b5b6f692ff5e483a23e",
+      "index_sha256": "f286ad55ba303a755f85d9b9ca8bbf773d6d278d7159f8f1b165b7367f013ccb",
+      "candidate_passage_ids": [
+        "YV-D003#procedure",
+        "YV-D003#scope",
+        "YV-D003#requirements",
+        "YV-D024#scope",
+        "YV-D010#scope",
+        "YV-D024#details",
+        "YV-D002#scope",
+        "YV-D024#limits",
+        "YV-D017#scope",
+        "YV-D027#scope",
+        "YV-D010#limits",
+        "YV-D008#scope",
+        "YV-D028#scope",
+        "YV-D029#scope",
+        "YV-D004#scope",
+        "YV-D005#scope",
+        "YV-D020#scope",
+        "YV-D009#scope",
+        "YV-D002#limits",
+        "YV-D006#scope"
+      ],
+      "results": [
+        {
+          "rank": 1,
+          "chunk_id": "YV-D003#requirements:0-470:50d30dc01d",
+          "doc_id": "YV-D003",
+          "passage_id": "YV-D003#requirements",
+          "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+          "title_en": "Water Subscription Application Guide",
+          "heading": "Başvuruda istenen belgeler",
+          "text": "Yeşilvadi test senaryosunda yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir. Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz. Asistan belgelerin görüntüsünü, kimlik numarasını veya kira sözleşmesinin tamamını sohbet içinde istemez. Belgeler yalnızca başvuru kanalına sunulur.",
+          "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nBaşvuruda istenen belgeler\nsu aboneliği water subscription application required documents kiracı tenant\nYeşilvadi test senaryosunda yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir. Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz. Asistan belgelerin görüntüsünü, kimlik numarasını veya kira sözleşmesinin tamamını sohbet içinde istemez. Belgeler yalnızca başvuru kanalına sunulur.",
+          "start": 0,
+          "end": 470,
+          "source": "beldesk://synthetic/YV-D003",
+          "version": "0.1-draft",
+          "access": [
+            "public"
+          ],
+          "bm25_score": 13.58920267154138,
+          "dense_score": 0.8490868210792542,
+          "rrf_score": 0.03225806451612903,
+          "reranker_score": 5.996413707733154
+        },
+        {
+          "rank": 2,
+          "chunk_id": "YV-D003#procedure:0-474:6f1b25382b",
+          "doc_id": "YV-D003",
+          "passage_id": "YV-D003#procedure",
+          "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+          "title_en": "Water Subscription Application Guide",
+          "heading": "Başvuru adımları ve sınırlar",
+          "text": "Kullanıcı önce mülk sahibi mi kiracı mı olduğunu belirler ve buna uygun belgeleri hazırlar. Sonra proje senaryosundaki Su ve Kanalizasyon başvuru birimine başvurur. Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur. Bu belge ücret tutarı, randevu adresi, telefon numarası, çalışma saati veya hizmetin açılacağı tarih içermez. Böyle bir bilgi sorulduğunda asistan tahmin üretmez ve ilgili bilginin kaynaklarda bulunmadığını belirtir.",
+          "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nBaşvuru adımları ve sınırlar\nsu aboneliği water subscription application required documents kiracı tenant\nKullanıcı önce mülk sahibi mi kiracı mı olduğunu belirler ve buna uygun belgeleri hazırlar. Sonra proje senaryosundaki Su ve Kanalizasyon başvuru birimine başvurur. Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur. Bu belge ücret tutarı, randevu adresi, telefon numarası, çalışma saati veya hizmetin açılacağı tarih içermez. Böyle bir bilgi sorulduğunda asistan tahmin üretmez ve ilgili bilginin kaynaklarda bulunmadığını belirtir.",
+          "start": 0,
+          "end": 474,
+          "source": "beldesk://synthetic/YV-D003",
+          "version": "0.1-draft",
+          "access": [
+            "public"
+          ],
+          "bm25_score": 13.30893231191862,
+          "dense_score": 0.8531646728515625,
+          "rrf_score": 0.032266458495966696,
+          "reranker_score": 4.949575424194336
+        },
+        {
+          "rank": 3,
+          "chunk_id": "YV-D003#scope:0-431:7b1c74b911",
+          "doc_id": "YV-D003",
+          "passage_id": "YV-D003#scope",
+          "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+          "title_en": "Water Subscription Application Guide",
+          "heading": "Kapsam ve veri niteliği",
+          "text": "Bu belge, AIC390 Beldesk projesindeki kurgusal Yeşilvadi Belediyesi için hazırlanmış sentetik bir test rehberidir. Gerçek bir belediyenin başvuru koşullarını veya yürürlükteki mevzuatı açıklamaz. Aşağıdaki koşullar yalnızca proje senaryosunda geçerlidir; ekip incelemesi bekleyen taslaktır. Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez, ödeme alamaz veya aboneliğin açıldığını doğrulayamaz.",
+          "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nKapsam ve veri niteliği\nsu aboneliği water subscription application required documents kiracı tenant\nBu belge, AIC390 Beldesk projesindeki kurgusal Yeşilvadi Belediyesi için hazırlanmış sentetik bir test rehberidir. Gerçek bir belediyenin başvuru koşullarını veya yürürlükteki mevzuatı açıklamaz. Aşağıdaki koşullar yalnızca proje senaryosunda geçerlidir; ekip incelemesi bekleyen taslaktır. Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez, ödeme alamaz veya aboneliğin açıldığını doğrulayamaz.",
+          "start": 0,
+          "end": 431,
+          "source": "beldesk://synthetic/YV-D003",
+          "version": "0.1-draft",
+          "access": [
+            "public"
+          ],
+          "bm25_score": 14.426272055901748,
+          "dense_score": 0.8470683693885803,
+          "rrf_score": 0.032266458495966696,
+          "reranker_score": 3.202000379562378
+        }
+      ],
+      "timings_s": {
+        "retrieval": 0.01325095898937434,
+        "reranking": 0.23933949996717274,
+        "total": 0.2525905839866027
+      }
+    }
+  ]
+}

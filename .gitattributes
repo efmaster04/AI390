@@ -1,0 +1,3 @@
+# Preserve review CSV bytes and their recorded hashes across platforms.
+# Quoted source excerpts and human notes may contain intentional spaces.
+eval/results/week3/**/*.csv -text -whitespace

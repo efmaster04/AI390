@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Nikâh başvurusunun ilk incelemesi için ne hazırlamalıyız, randevu hangi aşamada planlanıyor?",
+    "language": "tr",
+    "sources_sha256": "8bf3d052ca223f1fb6254190b89858472f1215eec37d5624073d30e512c1721b",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Nikâh başvurusu için çiftin kimlik belgeleri ve birlikte doldurulan başvuru formu ilk inceleme için gereklidir. [1]\nRandevu, belge listesi teyit edildikten sonra Evlendirme Birimi ile planlanmaktadır. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Nikâh başvurusu için çiftin kimlik belgeleri ve birlikte doldurulan başvuru formu ilk inceleme için gereklidir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Yeşilvadi test senaryosunda çiftin kimlik belgeleri ve birlikte doldurulan başvuru formu ilk inceleme için istenir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Randevu, belge listesi teyit edildikten sonra Evlendirme Birimi ile planlanmaktadır.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Belge listesi teyit edildikten sonra Evlendirme Birimi ile randevu planlanır."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D001",
+        "passage_id": "YV-D001#requirements",
+        "chunk_id": "YV-D001#requirements:0-440:2d66ea7a7e",
+        "title": "Yeşilvadi Nikâh Başvurusu Rehberi",
+        "heading": "Belgeler ve randevu",
+        "source": "beldesk://synthetic/YV-D001",
+        "version": "0.1-draft",
+        "text": "Yeşilvadi test senaryosunda çiftin kimlik belgeleri ve birlikte doldurulan başvuru formu ilk inceleme için istenir. Belge listesi teyit edildikten sonra Evlendirme Birimi ile randevu planlanır. Asistan kimlik numaralarını veya belge fotoğraflarını sohbet içinde toplamaz. Kullanıcıya başvuru formunu hazırlaması gerektiğini açıklayabilir; ancak başvurunun kabul edildiğini söyleyemez. Randevunun tarihi ve uygun günler bu rehberde bulunmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D001",
+        "passage_id": "YV-D001#scope",
+        "chunk_id": "YV-D001#scope:0-348:4519df7ba5",
+        "title": "Yeşilvadi Nikâh Başvurusu Rehberi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D001",
+        "version": "0.1-draft",
+        "text": "Bu rehber yalnızca kurgusal Yeşilvadi belediyesinin Beldesk test senaryosu için yazılmıştır. Gerçek bir evlilik başvurusunun koşullarını veya hukuki uygunluğunu belirlemez. Ekip incelemesi bekleyen sentetik içeriktir. Beldesk açıklama ve yönlendirme yapar; çift adına başvuru göndermez, randevu oluşturmaz, nikâh günü ayırmaz ve ücret tahsil etmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D001",
+        "passage_id": "YV-D001#limits",
+        "chunk_id": "YV-D001#limits:0-439:02c04e4c5f",
+        "title": "Yeşilvadi Nikâh Başvurusu Rehberi",
+        "heading": "Özel durumlar ve kaynak sınırı",
+        "source": "beldesk://synthetic/YV-D001",
+        "version": "0.1-draft",
+        "text": "Yabancı uyruk, yaş, önceki evlilik veya hukuki engel gibi özel durumlarda bu test rehberi yeterli değildir. Asistan gerekli belgeleri veya hukuki sonucu tahmin etmez; yetkili başvuru biriminden doğrulama gerektiğini belirtir. Burada ücret tutarı, sağlık belgesi koşulu, fotoğraf sayısı, telefon veya internet adresi verilmemiştir. Belgenin sustuğu bir konuda başka belediyelerin kurallarını Yeşilvadi kuralı olarak aktarmak doğru değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D004",
+        "passage_id": "YV-D004#details",
+        "chunk_id": "YV-D004#details:0-395:b1fe9bf94c",
+        "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+        "heading": "Başvuru ve değerlendirme",
+        "source": "beldesk://synthetic/YV-D004",
+        "version": "0.1-draft",
+        "text": "Yeşilvadi test senaryosunda sosyal yardım için önce ihtiyaç türü belirtilir: gıda desteği, temel ihtiyaç desteği veya erişim desteği. Başvuru birimi inceleme sırasında hane durumunu ve başvuruya ilişkin bilgileri değerlendirir. Asistan yardımın kesin verileceğini, kullanıcının uygun bulunduğunu veya belirli bir ödeme yapılacağını söylemez. Bu rehberde sayısal bir gelir eşiği tanımlanmamıştır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#details",
+        "chunk_id": "YV-D005#details:0-357:505f3e92bf",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+        "heading": "İlk bilgi ve başvuru yolu",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "0.1-draft",
+        "text": "Kurgusal Yeşilvadi rehberinde evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. Başvuru hazırlığı için hayvanın türü, varsa kimliklendirme referansı ve kayıt talebinin yeni kayıt mı bilgi güncelleme mi olduğu belirlenir. Beldesk hayvanın kaydını oluşturmaz ve kayıt tamamlandı demeden önce gerçek bir işlem sonucu gerektiğini kabul eder.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2229,
+    "output_tokens": 222,
+    "latency_s": 5.415399332996458,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "64ad7e2b05c444bfd010d4983f065bdce811a388a11214cf44eacf2fd343020b",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Nikâh başvurusu için çiftin kimlik belgeleri ve birlikte doldurulan başvuru formu ilk inceleme için gereklidir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Yeşilvadi test senaryosunda çiftin kimlik belgeleri ve birlikte doldurulan başvuru formu ilk inceleme için istenir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Randevu, belge listesi teyit edildikten sonra Evlendirme Birimi ile planlanmaktadır.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Belge listesi teyit edildikten sonra Evlendirme Birimi ile randevu planlanır.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:08:53.149694+00:00",
+    "wall_latency_including_pacing_s": 11.31205733306706
+  }
+}

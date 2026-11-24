@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Yarın bizim sokaktaki boru için ekip saat kaçta gelecek?",
+    "language": "tr",
+    "sources_sha256": "fa6ad984229015cde65148c6db9883caa3ff114a423a379217436fd92cd6268a",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Bu sorunun yanıtı erişebildiğim belgelerde bulunmuyor. Güvenilir bir yanıt vermek için yeterli kaynak yok.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#details",
+        "chunk_id": "YV-D030#details:0-324:66ddb13f4f",
+        "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+        "heading": "Bilgi yokluğu",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "0.1-draft",
+        "text": "Bir rehberin konu bakımından ilgili olması, sorunun cevabını mutlaka içerdiği anlamına gelmez. Ekip yarın kaçta gelir, başkanın maaşı nedir veya gelecekte hangi ihale kazanılır gibi sorular bu corpus sürümünde yanıtlanamaz. Asistan benzer bir paragraf bulduğunu gerekçe göstererek sayı, saat veya kesin sonuç uydurmamalıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#scope",
+        "chunk_id": "YV-D030#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#schedule",
+        "chunk_id": "YV-D011#schedule:0-417:bd75f6a5e0",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Toplama günü ve işlem sınırı",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Bu belge Çamlık veya başka bir mahallenin güncel çöp toplama günü ve saatini içermez. Toplama takvimi sorusu için ayrıca yayımlanmış bir takvim kaynağı gerekir. Asistan gün veya saat tahmin etmez, ekip gönderildiğini söylemez ve bir temizlik işleminin tamamlandığını doğrulamaz. Risk sınıflandırması gerekiyorsa yürürlükte kabul edilen proje öncelik belgesi esas alınır; burada yeni bir P1–P4 kuralı tanımlanmamıştır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#limits",
+        "chunk_id": "YV-D020#limits:0-340:0457a2a009",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+        "heading": "İşlem ve zaman sınırı",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "0.1-draft",
+        "text": "Asistan yolu gördüğünü, çukuru ölçtüğünü veya asfalt ekibi gönderdiğini söylemez. Sıradan çukur ile somut tehlike bildiren olayın önceliği aynı olmak zorunda değildir; proje öncelik belgesi kullanılır. Bu rehber onarımın hangi gün biteceğini içermez. Bir bildirimin öncelik alması, onarımın başlamış veya tamamlanmış olduğu anlamına gelmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D026",
+        "passage_id": "YV-D026#limits",
+        "chunk_id": "YV-D026#limits:0-346:ef919ef50b",
+        "title": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı",
+        "heading": "Operasyon sınırı",
+        "source": "beldesk://synthetic/YV-D026",
+        "version": "0.1-draft",
+        "text": "Beldesk hayvan toplama ekibini yönlendiremez, barınakta yer ayıramaz veya bir hayvanın alındığını doğrulayamaz. Bu rehber veteriner tedavisi, yakalama veya müdahale talimatı vermez. İlgili birime bildirim için taslak hazırlanabilir; ancak taslak kayıt değildir. Hizmetin kesin geliş saati, barınak adresi ve mevcut kapasite bu kaynakta yer almaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2183,
+    "output_tokens": 17,
+    "latency_s": 1.145786916022189,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "599de4d7c9565250889e70ebd9705ec8df1e5b59a5fa5dc253dbf6c4d55db52c",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:22:31.184482+00:00",
+    "wall_latency_including_pacing_s": 2.089941915939562
+  }
+}

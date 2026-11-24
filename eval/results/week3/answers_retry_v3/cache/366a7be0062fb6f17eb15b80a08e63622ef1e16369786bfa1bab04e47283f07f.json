@@ -1,0 +1,41 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Kedimin kaydıyla ilgili bilgi almak istiyorum. İlk olarak hangi bilgileri hazırlamalıyım?",
+    "language": "tr",
+    "sources_sha256": "6ca447e612ebdbe2a898a71306ee0232b5dfcb586353aaa45b7f8cc270b13f20",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "3533132e569ec3943a400097e62e43904e10adcb1d8302ef3ab02cf09ca35e50",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The claim accurately reflects the requirements for pet registration preparation as stated in source 1."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer correctly identifies the information required for pet registration based on the provided source.",
+    "attempts": 1,
+    "input_tokens": 1938,
+    "output_tokens": 100,
+    "latency_s": 7.284445500001311,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "47702ad146c55cd522751585f91cee016ac9f99cf1a40e0c652bb05d10582da8",
+    "wall_latency_including_pacing_s": 7.284445500001311
+  }
+}

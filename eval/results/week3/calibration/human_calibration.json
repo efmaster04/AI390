@@ -1,0 +1,38 @@
+{
+  "kappa": 0.3867924528301887,
+  "po": 0.6153846153846154,
+  "pe": 0.3727810650887574,
+  "n": 13,
+  "labels": [
+    "supported",
+    "unsupported",
+    "insufficient_evidence"
+  ],
+  "confusion": [
+    [
+      3,
+      2,
+      2
+    ],
+    [
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "status": "partial_human_calibration",
+  "skipped_empty": 7,
+  "skipped_unmatched": 0,
+  "note": "Real human labels only. Kappa may be undefined if labels lack variation; no threshold alone validates a judge.",
+  "human_labels_completed": 13,
+  "target": 20,
+  "valid_automatic_claim_labels": 20,
+  "human_reference_quality_note": "Reviewer reported uncertainty; original entries preserved, supplementary audit separate, no independent adjudication. Agreement is descriptive, not proof of judge accuracy.",
+  "target_note": "20 is the planned review sample; Week 3 requires checking the judge against human labels, without specifying 20.",
+  "method": "Purposeful retrospective stress set, not random current-RAG accuracy; evidence assigned post hoc."
+}

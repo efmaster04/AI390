@@ -1,0 +1,122 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Kedimin kaydıyla ilgili bilgi almak istiyorum. İlk olarak hangi bilgileri hazırlamalıyım?",
+    "language": "tr",
+    "sources_sha256": "6ca447e612ebdbe2a898a71306ee0232b5dfcb586353aaa45b7f8cc270b13f20",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Evcil hayvan kaydı başvurusu için hayvanın türünü, varsa kimliklendirme referansını ve talebin yeni kayıt mı yoksa bilgi güncelleme mi olduğunu hazırlamalısınız. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Evcil hayvan kaydı başvurusu için hayvanın türünü, varsa kimliklendirme referansını ve talebin yeni kayıt mı yoksa bilgi güncelleme mi olduğunu hazırlamalısınız.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Başvuru hazırlığı için hayvanın türü, varsa kimliklendirme referansı ve kayıt talebinin yeni kayıt mı bilgi güncelleme mi olduğu belirlenir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#details",
+        "chunk_id": "YV-D005#details:0-357:505f3e92bf",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+        "heading": "İlk bilgi ve başvuru yolu",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "0.1-draft",
+        "text": "Kurgusal Yeşilvadi rehberinde evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. Başvuru hazırlığı için hayvanın türü, varsa kimliklendirme referansı ve kayıt talebinin yeni kayıt mı bilgi güncelleme mi olduğu belirlenir. Beldesk hayvanın kaydını oluşturmaz ve kayıt tamamlandı demeden önce gerçek bir işlem sonucu gerektiğini kabul eder.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#scope",
+        "chunk_id": "YV-D005#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#limits",
+        "chunk_id": "YV-D005#limits:0-372:2392e7bf7d",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+        "heading": "Ücret ve belge sınırı",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "0.1-draft",
+        "text": "Bu rehber hayvan kaydının ücretsiz olduğunu veya belirli bir ücret alındığını söylemez. Ücret sorusunda ayrı tarife kaynağı aranmalıdır. Hayvanın sağlık durumu hakkında teşhis veya tedavi önerisi verilmez. Kayıp hayvan, evcil hayvan kaydı ve saldırgan hayvan bildirimi farklı konulardır; kullanıcı bunlardan hangisini kastettiğini belirtmediyse önce talebin amacı sorulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#details",
+        "chunk_id": "YV-D012#details:0-363:ab5e3d123c",
+        "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+        "heading": "Hacimli atık bilgileri",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "0.1-draft",
+        "text": "Test senaryosunda eski mobilya ve benzeri hacimli atık için eşyanın türü, yaklaşık adedi, bulunduğu mahalle ve alınabileceği konum açıklanır. Evsel çöp konteynerinin alınmaması ayrı bir hizmet problemidir. Asistan belirtilmeyen eşya ağırlığını veya toplama aracının uygunluğunu tahmin etmez. Vatandaşın kimlik veya ödeme bilgileri genel yönlendirme için gerekmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#scope",
+        "chunk_id": "YV-D011#scope:0-376:78adc70ac9",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Bu sentetik rehber Beldesk ders projesinde alınmayan evsel atık bildirimini açıklamak için hazırlanmıştır. Resmî bir belediye hizmet standardı değildir ve ekip incelemesi bekler. Soru yalnızca toplama gününü öğrenmek için sorulmuşsa bilgi isteği olarak ele alınır; çöpün alınmadığını bildiren mesaj ise saha sorunu taslağına konu olabilir. İkisi birbirine karıştırılmamalıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2166,
+    "output_tokens": 142,
+    "latency_s": 1.0890522500267252,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "2980761ea59b0c258caf94f98a13fe012638213976a835260d06f2c80fc2a263",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Evcil hayvan kaydı başvurusu için hayvanın türünü, varsa kimliklendirme referansını ve talebin yeni kayıt mı yoksa bilgi güncelleme mi olduğunu hazırlamalısınız.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Başvuru hazırlığı için hayvanın türü, varsa kimliklendirme referansı ve kayıt talebinin yeni kayıt mı bilgi güncelleme mi olduğu belirlenir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:31:08.400739+00:00",
+    "wall_latency_including_pacing_s": 1.0890522500267252
+  }
+}

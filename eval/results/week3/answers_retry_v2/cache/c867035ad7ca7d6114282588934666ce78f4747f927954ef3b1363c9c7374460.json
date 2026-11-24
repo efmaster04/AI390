@@ -1,0 +1,41 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "A message reports both a sewer overflow and a broken street light. How should those faults be represented?",
+    "language": "en",
+    "sources_sha256": "9dd98c061a4ad3b4588911b13e13b8a9f8d2b56466023d755e56fca4d24b8f1e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "ce93e63a7918534f218381e60f6255af39db99298fbc5c1f7ba37d791d3272ab",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that if a message contains both an overflow and a lamp fault, they are stored in separate drafts according to their categories."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the provided source material regarding the handling of multiple fault types in a single message.",
+    "attempts": 1,
+    "input_tokens": 1924,
+    "output_tokens": 115,
+    "latency_s": 15.558645749930292,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "ad729bfd317ee3dd0fc7750457ab5d0e81b5d7e13f81a7ae00acf9da08ce9f1e",
+    "wall_latency_including_pacing_s": 19.654141666949727
+  }
+}

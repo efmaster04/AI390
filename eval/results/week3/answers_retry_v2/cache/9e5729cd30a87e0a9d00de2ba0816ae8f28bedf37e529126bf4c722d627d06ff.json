@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "There is a pothole and a driver nearly crashed avoiding it. What facts should the report preserve?",
+    "language": "en",
+    "sources_sha256": "0c0d0a54f416135b569017bf45b32f8d780a607339a58433dc962b03d807aa82",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "A pothole report should include the neighborhood, street or avenue, a nearby location description, and the current impact. [1]\nIf vehicles have performed evasive maneuvers or a near-miss incident has occurred, this should be recorded as described. [1]\nPhotographs can be helpful for the report, but personal identification information is not required for classification. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "A pothole report should include the neighborhood, street or avenue, a nearby location description, and the current impact.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Çukur bildirimi için mahalle, sokak veya cadde, yakın konum tarifi ve mevcut etki alınır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "If vehicles have performed evasive maneuvers or a near-miss incident has occurred, this should be recorded as described.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Araçların kaçınma hareketi veya bildirilen bir ramak kala durumu varsa anlatıldığı gibi kaydedilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Photographs can be helpful for the report, but personal identification information is not required for classification.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Fotoğraf bulunması yardımcı olabilir ancak sınıflandırma için kişisel kimlik bilgisi gerekmez."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#details",
+        "chunk_id": "YV-D020#details:0-352:0711912893",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+        "heading": "Gerekli konum ve etki",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "0.1-draft",
+        "text": "Çukur bildirimi için mahalle, sokak veya cadde, yakın konum tarifi ve mevcut etki alınır. Kullanıcı ölçü vermediyse derinlik santimetre cinsinden uydurulmaz. Araçların kaçınma hareketi veya bildirilen bir ramak kala durumu varsa anlatıldığı gibi kaydedilir. Fotoğraf bulunması yardımcı olabilir ancak sınıflandırma için kişisel kimlik bilgisi gerekmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#limits",
+        "chunk_id": "YV-D020#limits:0-340:0457a2a009",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+        "heading": "İşlem ve zaman sınırı",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "0.1-draft",
+        "text": "Asistan yolu gördüğünü, çukuru ölçtüğünü veya asfalt ekibi gönderdiğini söylemez. Sıradan çukur ile somut tehlike bildiren olayın önceliği aynı olmak zorunda değildir; proje öncelik belgesi kullanılır. Bu rehber onarımın hangi gün biteceğini içermez. Bir bildirimin öncelik alması, onarımın başlamış veya tamamlanmış olduğu anlamına gelmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#scope",
+        "chunk_id": "YV-D020#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#details",
+        "chunk_id": "YV-D023#details:0-339:1ec4657a0e",
+        "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+        "heading": "Sinyal konumu ve davranışı",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "0.1-draft",
+        "text": "Trafik sinyali için kavşak veya yaya geçidi, etkilenen yön ve vatandaşın gözlemlediği ışık davranışı sorulur. Bir ışığın sönük olması ile araç ve yaya fazlarının çakışması aynı durum olarak yazılmaz. Asistan gözlem yapılmayan yönler için çalışıyor ya da çalışmıyor diyemez. Birden fazla ayrı sinyal arızası varsa her olayın konumu korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#limits",
+        "chunk_id": "YV-D016#limits:0-380:74ebf8bfca",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+        "heading": "Taslak ve öncelik sınırı",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "0.1-draft",
+        "text": "Asistan parktaki ekipmanı denetlediğini veya güvenli hale getirdiğini söylemez. Öncelik, kabul edilen proje politikasındaki somut tehlike ve işlev kaybı ölçütleriyle belirlenir; sırf oyun alanında olduğu için her olay aynı sınıfa konulmaz. Bu rehber onarım tarihi, yedek parça stoğu veya ekip ataması içermez. Böyle bilgiler gerektiğinde mevcut olmadıkları açıkça belirtilmelidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2185,
+    "output_tokens": 300,
+    "latency_s": 2.2538090409943834,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "63e91f79844b1c84c555842ce949986c1cddb63c10d71c1971be6a6b9733c313",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"A pothole report should include the neighborhood, street or avenue, a nearby location description, and the current impact.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Çukur bildirimi için mahalle, sokak veya cadde, yakın konum tarifi ve mevcut etki alınır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"If vehicles have performed evasive maneuvers or a near-miss incident has occurred, this should be recorded as described.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Araçların kaçınma hareketi veya bildirilen bir ramak kala durumu varsa anlatıldığı gibi kaydedilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Photographs can be helpful for the report, but personal identification information is not required for classification.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Fotoğraf bulunması yardımcı olabilir ancak sınıflandırma için kişisel kimlik bilgisi gerekmez.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:20:08.242207+00:00",
+    "wall_latency_including_pacing_s": 7.243626290932298
+  }
+}

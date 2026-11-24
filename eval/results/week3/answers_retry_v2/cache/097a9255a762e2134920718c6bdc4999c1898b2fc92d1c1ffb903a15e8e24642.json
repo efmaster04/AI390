@@ -1,0 +1,51 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Çöplerimiz alınmadı. Bildirim hazırlamak için benden hangi konum ve etki bilgileri istenecek?",
+    "language": "tr",
+    "sources_sha256": "1e3bd4d9a1a1c2369fcca27cf1191f2b4d1c1f3fc62276d47fa39ac130e8a2b8",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "955ee17e2f49558c923c0d182cb20a684f0816ca739789ce4b6f409624dd46f4",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly lists mahalle, street, container location, duration of the issue, and the scope of the affected area as required information."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source states that overflow, blocked sidewalk access, or other negative effects are recorded as described by the citizen."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source confirms that the assistant does not require the citizen's home address or phone number for the notification."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the information required for reporting uncollected waste as described in the provided source.",
+    "attempts": 1,
+    "input_tokens": 2237,
+    "output_tokens": 220,
+    "latency_s": 2.7685084169497713,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "38d8461c89a0061a1eb6b6dfabe7cb4d738ef28ba1516c114065dad710c715fb",
+    "wall_latency_including_pacing_s": 2.7685084169497713
+  }
+}

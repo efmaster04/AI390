@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Kiracıyım; yeni su aboneliği başvurusunda hangi belgeler isteniyor? Eski abone numarasını bilmiyorum.",
+    "language": "tr",
+    "sources_sha256": "01263c87fc401ecc23545337ac64283a4fded5cc8542260ca71d1ae8a96fa77e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Yeni su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kiracı olduğunuz için kira sözleşmesi gereklidir. [1]\nEski abone numarasını bilmiyorsanız, bu durum su aboneliği başvurusu yapmanıza engel değildir. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Yeni su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kiracı olduğunuz için kira sözleşmesi gereklidir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Eski abone numarasını bilmiyorsanız, bu durum su aboneliği başvurusu yapmanıza engel değildir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#requirements",
+        "chunk_id": "YV-D003#requirements:0-470:50d30dc01d",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Başvuruda istenen belgeler",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "0.1-draft",
+        "text": "Yeşilvadi test senaryosunda yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir. Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz. Asistan belgelerin görüntüsünü, kimlik numarasını veya kira sözleşmesinin tamamını sohbet içinde istemez. Belgeler yalnızca başvuru kanalına sunulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#procedure",
+        "chunk_id": "YV-D003#procedure:0-474:6f1b25382b",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Başvuru adımları ve sınırlar",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "0.1-draft",
+        "text": "Kullanıcı önce mülk sahibi mi kiracı mı olduğunu belirler ve buna uygun belgeleri hazırlar. Sonra proje senaryosundaki Su ve Kanalizasyon başvuru birimine başvurur. Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur. Bu belge ücret tutarı, randevu adresi, telefon numarası, çalışma saati veya hizmetin açılacağı tarih içermez. Böyle bir bilgi sorulduğunda asistan tahmin üretmez ve ilgili bilginin kaynaklarda bulunmadığını belirtir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#scope",
+        "chunk_id": "YV-D003#scope:0-431:7b1c74b911",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "0.1-draft",
+        "text": "Bu belge, AIC390 Beldesk projesindeki kurgusal Yeşilvadi Belediyesi için hazırlanmış sentetik bir test rehberidir. Gerçek bir belediyenin başvuru koşullarını veya yürürlükteki mevzuatı açıklamaz. Aşağıdaki koşullar yalnızca proje senaryosunda geçerlidir; ekip incelemesi bekleyen taslaktır. Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez, ödeme alamaz veya aboneliğin açıldığını doğrulayamaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D028",
+        "passage_id": "YV-D028#details",
+        "chunk_id": "YV-D028#details:0-355:da9f4a3df7",
+        "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+        "heading": "Referans ve sahiplik",
+        "source": "beldesk://synthetic/YV-D028",
+        "version": "0.1-draft",
+        "text": "Kurgusal kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir. Yanlış biçimli bir numara model tarafından tahminle düzeltilmez. İleride durum sorgusunda kayıt referansı ile telefonun son dört hanesi istenebilir; bunlar tek başına güçlü sahiplik kanıtı değildir. Başkasına ait olduğunu söyleyen kullanıcıya eşleşen bilgiler verse bile kayıt detayı açıklanmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#limits",
+        "chunk_id": "YV-D002#limits:0-374:d2675b6491",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+        "heading": "Bilgi hazırlığı ve sınırlar",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "0.1-draft",
+        "text": "Yönlendirme için ilçe içinde olup olmadığı, başvuru türü ve varsa başvuru referansı yeterlidir. Tapu kopyası, kimlik numarası ve mimari çizimlerin tamamı sohbete yüklenmek zorunda değildir. Gerekli belge listesi bu genel rehberde ayrıntılandırılmamıştır. Asistan belge adı veya ücret tahmin etmek yerine İmar ve Ruhsat biriminden başvuru türüne özgü liste alınmasını önerir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2296,
+    "output_tokens": 252,
+    "latency_s": 17.381678612087853,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "9023a4e434626516d5c87e909f7cd0b1e5c50bcac71f136b44c13ed8fb0f03f3",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Yeni su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kiracı olduğunuz için kira sözleşmesi gereklidir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Eski abone numarasını bilmiyorsanız, bu durum su aboneliği başvurusu yapmanıza engel değildir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:10:51.344526+00:00",
+    "wall_latency_including_pacing_s": 36.567190541070886
+  }
+}

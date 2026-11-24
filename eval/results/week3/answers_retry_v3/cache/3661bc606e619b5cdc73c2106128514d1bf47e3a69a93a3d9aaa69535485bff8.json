@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Çöplerimiz alınmadı. Bildirim hazırlamak için benden hangi konum ve etki bilgileri istenecek?",
+    "language": "tr",
+    "sources_sha256": "1e3bd4d9a1a1c2369fcca27cf1191f2b4d1c1f3fc62276d47fa39ac130e8a2b8",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Alınmayan evsel atık bildirimi için mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve etkilenen alanın kapsamı sorulur. [1]\nTaşma veya kaldırım geçişinin kapanması gibi olumsuz etkiler vatandaşın anlattığı şekilde kaydedilir. [1]\nBildirim hazırlığı sırasında vatandaşın ev adresi veya telefon numarası gibi kişisel bilgiler zorunlu tutulmaz. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Alınmayan evsel atık bildirimi için mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve etkilenen alanın kapsamı sorulur.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Taşma veya kaldırım geçişinin kapanması gibi olumsuz etkiler vatandaşın anlattığı şekilde kaydedilir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir"
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Bildirim hazırlığı sırasında vatandaşın ev adresi veya telefon numarası gibi kişisel bilgiler zorunlu tutulmaz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#reporting",
+        "chunk_id": "YV-D011#reporting:0-448:c760fe3c2d",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Bildirim için gereken bilgiler",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur. Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir; etkilenen kişi sayısı uydurulmaz. Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz. Hazırlanan taslak, kullanıcıdan onay istenerek gösterilir; bu aşamada kayıt açılmış olmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#details",
+        "chunk_id": "YV-D020#details:0-352:0711912893",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+        "heading": "Gerekli konum ve etki",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "0.1-draft",
+        "text": "Çukur bildirimi için mahalle, sokak veya cadde, yakın konum tarifi ve mevcut etki alınır. Kullanıcı ölçü vermediyse derinlik santimetre cinsinden uydurulmaz. Araçların kaçınma hareketi veya bildirilen bir ramak kala durumu varsa anlatıldığı gibi kaydedilir. Fotoğraf bulunması yardımcı olabilir ancak sınıflandırma için kişisel kimlik bilgisi gerekmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#scope",
+        "chunk_id": "YV-D011#scope:0-376:78adc70ac9",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Bu sentetik rehber Beldesk ders projesinde alınmayan evsel atık bildirimini açıklamak için hazırlanmıştır. Resmî bir belediye hizmet standardı değildir ve ekip incelemesi bekler. Soru yalnızca toplama gününü öğrenmek için sorulmuşsa bilgi isteği olarak ele alınır; çöpün alınmadığını bildiren mesaj ise saha sorunu taslağına konu olabilir. İkisi birbirine karıştırılmamalıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#details",
+        "chunk_id": "YV-D012#details:0-363:ab5e3d123c",
+        "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+        "heading": "Hacimli atık bilgileri",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "0.1-draft",
+        "text": "Test senaryosunda eski mobilya ve benzeri hacimli atık için eşyanın türü, yaklaşık adedi, bulunduğu mahalle ve alınabileceği konum açıklanır. Evsel çöp konteynerinin alınmaması ayrı bir hizmet problemidir. Asistan belirtilmeyen eşya ağırlığını veya toplama aracının uygunluğunu tahmin etmez. Vatandaşın kimlik veya ödeme bilgileri genel yönlendirme için gerekmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#limits",
+        "chunk_id": "YV-D013#limits:0-380:64f5485f57",
+        "title": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi",
+        "heading": "Kaynakta olmayan noktalar",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "0.1-draft",
+        "text": "En yakın geri dönüşüm kutusunu söylemek için doğrulanmış konum verisi gerekir. Asistan nokta adresi, uzaklık, açık olduğu saat veya o anda dolu olup olmadığını tahmin etmez. Kullanıcı geri dönüşüm kutusunun hasarlı veya taşmış olduğunu bildirirse konum ve mevcut etki sorularak bir saha taslağı hazırlanabilir. Bu taslağın hazırlanması bir toplama işleminin başladığını göstermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2227,
+    "output_tokens": 350,
+    "latency_s": 2.4175250000553206,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "21ccaac08a80b6a0a7d39c554b84d4befd6abc55a4fbb2f281f019981f006bae",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Alınmayan evsel atık bildirimi için mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve etkilenen alanın kapsamı sorulur.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Taşma veya kaldırım geçişinin kapanması gibi olumsuz etkiler vatandaşın anlattığı şekilde kaydedilir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Bildirim hazırlığı sırasında vatandaşın ev adresi veya telefon numarası gibi kişisel bilgiler zorunlu tutulmaz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:19:07.082614+00:00",
+    "wall_latency_including_pacing_s": 8.530887708067894
+  }
+}

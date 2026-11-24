@@ -1,0 +1,51 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Do I have to give my identity number or upload documents just to ask a general municipal service question?",
+    "language": "en",
+    "sources_sha256": "5f0ef8940073d6a986eceaab84074574e91ecaacfb0618ec48e10274260187c9",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "fc4ceec32640c0cc7f5e2de8cfe2229fbe761cbacb9d389d6b93bdbe0e19d382",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "Source 2 explicitly states that title deed copies, identity numbers, and architectural drawings do not need to be uploaded to the chat."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "Source 2 confirms that location, application type, and reference number are sufficient for guidance."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "Source 4 explicitly states that income documents or health records are not required to obtain general information."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the provided sources regarding document requirements and necessary information for municipal service inquiries.",
+    "attempts": 1,
+    "input_tokens": 2133,
+    "output_tokens": 210,
+    "latency_s": 4.679744124994613,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "41be0cc8f201b584b213fd2050100d83d7a75570af66c2f3e1bc10d648b10c11",
+    "wall_latency_including_pacing_s": 4.679744124994613
+  }
+}

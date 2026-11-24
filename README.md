@@ -21,8 +21,11 @@ Instructor: Huseyin Ulusoy. Course reference: *Prompt Engineering Project Handbo
 | `scripts/` | Temperature comparison and cost estimation |
 | `config/` | Dated list price assumptions |
 | `tests/` | Offline tests |
-| `src/classifier`, `src/rag`, `src/tools`, `src/agent`, `src/mcp_server` | Planned later stages |
-| `data/corpus`, `data/structured`, `sandbox/` | SQL schema for synthetic records; document corpus and sandbox API implementation are planned |
+| `src/classifier/` | Week 2 schema-validated request classifier |
+| `src/rag/` | Week 3 local retrieval draft: chunking, BM25, embeddings, RRF and reranking |
+| `src/tools`, `src/agent`, `src/mcp_server` | Planned later stages |
+| `data/corpus/` | 30 public synthetic guide drafts and one staff-only access-control fixture |
+| `data/structured`, `sandbox/` | SQL schema; structured seed data and sandbox implementation remain future work |
 | `docs/`, `reports/` | Plans, grading rules, and weekly reports |
 
 ## Animated presentations
@@ -125,6 +128,56 @@ All Week 2 numbers come from `eval/results/week2/` ([report](reports/week-2.md))
 - `cost_per_task_usd` is the list-price equivalent from `config/prices.json`, not actual spend; the free tier bills 0 USD.
 - W2.6 human labels: see [eval/human_labels/HOW_TO_LABEL.md](eval/human_labels/HOW_TO_LABEL.md).
 
+## Week 3: local retrieval
+
+This Week 3 branch adds hybrid retrieval, source-cited answer generation and a claim-level judge; the integrated commands and measurement limits appear below. The 31 synthetic documents and the gold labels are drafts requiring human review. See [the step-by-step explanation, results and handoff](docs/retrieval_week3.md).
+
+Use Python 3.13 and an isolated environment. These optional packages do not replace the Week 1/2 requirements. The first model download is about 1 GB, in addition to dependencies. After downloading, search and retrieval evaluation run locally without a Gemini key or inference API charge.
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-retrieval.lock.txt
+.venv/bin/python -m src.rag.cli download
+.venv/bin/python -m src.rag.cli search "Kiracıyım, su aboneliği için hangi belgeler gerekiyor?" --k 3
+.venv/bin/python -m eval.retrieval_week3 --out-dir /tmp/beldesk-week3-retrieval
+```
+
+The benchmark measures hit@1/3/5/10 and MRR@10 on 32 answerable questions, with 6 separate unanswerable controls and two one-change ablations. Results in `eval/results/week3/retrieval/` are provisional, not generated-answer accuracy. Never expose the CLI's staff-role switch as citizen-controlled authorization. Do not commit model downloads, `.venv` or `.cache`.
+
 ## Weekly submission
 
 The full Week 1 report should use the commit that will be tagged `week-1` and the exact scripts, data, and commands from that commit (R8). No real personal data is allowed (R10); writes are sandbox only (R11), and API keys must never enter the repository (R13). Weekly reports go in `reports/week-N.md` and are due at least 24 hours before class with a `week-N` tag (R4).
+
+## Week 3: integrated review branch
+
+The local presentation is `docs/week3/index.html` (open the HTML file in a browser; no hosting change). The full draft report is `reports/week-3.md`. Generation uses the original Gemini3.1Flash-Lite at the user's direction; actual service failures are retained.
+
+```sh
+.venv/bin/python -m eval.answer_week3 --provider gemini --model gemini-3.1-flash-lite --out-dir /tmp/beldesk-w3-answers --transport-retries 2 --backoff-s 5 --stage-retries 0 --defer-judge --max-calls 150 --rpm 8 --timeout-s 30 --deadline-s 1500
+.venv/bin/python -m eval.answer_week3 --out-dir eval/results/week3/answers --recompute-only
+.venv/bin/python -m tools.week3_review.server --sheet eval/results/week3/calibration/human_sheet.csv --port 8767
+.venv/bin/python -m scripts.run_week3_calibration --recompute-only
+.venv/bin/python -m scripts.build_week3_report
+.venv/bin/python scripts/build_week3_presentation.py
+```
+
+No push/deployment is part of these commands. Human labels must be entered by the real reviewer, never auto-filled from model verdicts. The historical calibration stress set is separate from current RAG quality. Two genuine customer interviews remain pending; see `docs/product_interviews_week3.md`. Speaking draft: `docs/week3_speaking_script.md`; Doruk's learning guide: `docs/week3_doruk_study.md`.
+
+
+The original answer run stays in `eval/results/week3/answers/`; the recovery run is separate in `answers_retry_v2/`. Successful stages may be historical cache hits, recorded explicitly per row and in the summary. `active_answer_run.json` identifies the report input. Retry uses bounded exponential backoff, jitter and server `Retry-After`; it keeps Gemini 3.1 Flash-Lite and does not change quota or billing settings.
+
+Doruk's 13 actual human labels are preserved. The remaining seven suggestions and an audit of the first thirteen are in [Tamamlayıcı inceleme](eval/results/week3/calibration/supplementary_review.md). The local read-only route is `http://127.0.0.1:8767/supplementary`. Supplementary suggestions are excluded from human–judge agreement. To retry the real calibration judge in small checkpointed batches, run `.venv/bin/python -m scripts.retry_week3_calibration` **after** any answer run, so the two processes do not independently use the same request budget.
+
+
+### Week 3 classroom demo
+
+Start the bounded interactive source-cited assistant from the repository root:
+
+```sh
+.venv/bin/python -m scripts.try_rag
+```
+
+For a live local-search demonstration without any API call, use `--search-only`. For a saved example, use `--replay W3-R019`; the terminal explicitly labels it as recorded. Replay is a backup, not a live model response. Each live question is independent, and only public sources are searched. This Week 3 entry point uses bounded 30-second transport attempts and one transient-error retry.
+
+
+Week 3 review branch: [`week3`](https://github.com/efmaster04/AI390/tree/week3). The complete self-contained deck is [`docs/week3/index.html`](docs/week3/index.html): download the HTML and open it in a browser. The current GitHub Pages home remains the Week 2 presentation; this branch publication does not claim a Week 3 deployment or release tag.

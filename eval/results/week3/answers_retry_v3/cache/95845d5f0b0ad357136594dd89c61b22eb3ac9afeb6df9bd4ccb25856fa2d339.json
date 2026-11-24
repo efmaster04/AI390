@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Does attaching a source number to a sentence automatically prove that the sentence is supported?",
+    "language": "en",
+    "sources_sha256": "137227b284c04ede72ec732d10cf73d1425fecc72afc06d465f1653a00523c81",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Attaching a source number to the end of a sentence does not by itself ensure that the statement is accurate or supported. [1]\nEvery verifiable claim in a response must be supported by the provided source passage. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Attaching a source number to the end of a sentence does not by itself ensure that the statement is accurate or supported.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bir cümlenin sonuna kaynak numarası eklemek tek başına doğruluk sağlamaz."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Every verifiable claim in a response must be supported by the provided source passage.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Cevaptaki her doğrulanabilir iddia, gerçekten verilen kaynak parçasıyla desteklenmelidir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#limits",
+        "chunk_id": "YV-D030#limits:0-367:035aaade71",
+        "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+        "heading": "Kaynaklı cevap sınırı",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "0.1-draft",
+        "text": "Cevaptaki her doğrulanabilir iddia, gerçekten verilen kaynak parçasıyla desteklenmelidir. Bir cümlenin sonuna kaynak numarası eklemek tek başına doğruluk sağlamaz. Kaynağın sessiz kaldığı bölüm açıkça belirtilir; desteklenen genel süreç varsa bu ayrı açıklanabilir. Kayıtlı bir arama sonucu, belgeyi değiştirme, başvuru gönderme veya ekip yönlendirme işlemi değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D028",
+        "passage_id": "YV-D028#details",
+        "chunk_id": "YV-D028#details:0-355:da9f4a3df7",
+        "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+        "heading": "Referans ve sahiplik",
+        "source": "beldesk://synthetic/YV-D028",
+        "version": "0.1-draft",
+        "text": "Kurgusal kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir. Yanlış biçimli bir numara model tarafından tahminle düzeltilmez. İleride durum sorgusunda kayıt referansı ile telefonun son dört hanesi istenebilir; bunlar tek başına güçlü sahiplik kanıtı değildir. Başkasına ait olduğunu söyleyen kullanıcıya eşleşen bilgiler verse bile kayıt detayı açıklanmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D008",
+        "passage_id": "YV-D008#limits",
+        "chunk_id": "YV-D008#limits:0-364:e80db9353a",
+        "title": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması",
+        "heading": "Kayıt ve üçüncü kişiler",
+        "source": "beldesk://synthetic/YV-D008",
+        "version": "0.1-draft",
+        "text": "Başkasının şikâyetinin durumunu öğrenmek isteyen kişiye vatandaş bilgileri açıklanmaz. Bir kayıt numarası veya telefonun son dört hanesini bilmek tek başına güçlü kimlik doğrulama sayılmaz. Bu sürümde gerçek bir kayıt veritabanı da yoktur. Personel erişimi sohbette yetkili olduğunu söylemekle kazanılmaz; erişim denetimi uygulamanın doğruladığı role dayanmalıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D008",
+        "passage_id": "YV-D008#details",
+        "chunk_id": "YV-D008#details:0-352:8dd7197898",
+        "title": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması",
+        "heading": "Veri minimizasyonu",
+        "source": "beldesk://synthetic/YV-D008",
+        "version": "0.1-draft",
+        "text": "Ders projesindeki vatandaşlar, örnek konumlar ve kayıtlar sentetiktir. Saha arızası için olayın yeri sorulur; bu yer vatandaşın ikamet adresi olmak zorunda değildir. Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez. Bu metin gerçek bir kurumun aydınlatma yükümlülüğünü yerine getiren hukuki belge olarak kullanılamaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D028",
+        "passage_id": "YV-D028#limits",
+        "chunk_id": "YV-D028#limits:0-345:8a3e45c96d",
+        "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+        "heading": "Canlı sorgu sınırı",
+        "source": "beldesk://synthetic/YV-D028",
+        "version": "0.1-draft",
+        "text": "Week 3 sürümünde kayıt veritabanı bağlantısı yoktur. Bu nedenle herhangi bir kaydın açık, kapalı veya incelemede olduğu söylenemez. Asistan kaydı kontrol ettim diyemez; bir referansın biçimini açıklamak o kaydın gerçekten var olduğunu doğrulamaz. Ekip geliş zamanı ve kişisel kayıt geçmişi doküman aramasıyla elde edilmiş gibi gösterilmemelidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2191,
+    "output_tokens": 197,
+    "latency_s": 1.497004291974008,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "77eaca33986544bcc2f51c8adb3f9fdcb2e78db83ddcb9659287529d64e5023a",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Attaching a source number to the end of a sentence does not by itself ensure that the statement is accurate or supported.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bir cümlenin sonuna kaynak numarası eklemek tek başına doğruluk sağlamaz.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Every verifiable claim in a response must be supported by the provided source passage.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Cevaptaki her doğrulanabilir iddia, gerçekten verilen kaynak parçasıyla desteklenmelidir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:21:48.520453+00:00",
+    "wall_latency_including_pacing_s": 7.579501917003654
+  }
+}

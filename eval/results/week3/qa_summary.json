@@ -1,0 +1,18 @@
+{
+  "tests_passed": 279,
+  "command": ".venv/bin/python -m pytest -q",
+  "date": "2026-11-24",
+  "demo_checks": [
+    "recorded replay passed",
+    "local search passed without GEMINI_API_KEY",
+    "actual live Gemini terminal question returned fixed fallback"
+  ],
+  "deck_scenes": 22,
+  "deck_javascript_errors": [],
+  "deck_actual_overflows": [],
+  "font_metric_warning_note": "5px title glyph-metric overflow; visible text is not clipped.",
+  "report_words": 1417,
+  "spoken_words": 800,
+  "summary_recompute_code_sha256": "c90ba4181d736a2f8e6a5a6dbe107b328ecda2a9db2523c68a02c73f6eac1184",
+  "publication_branch": "week3"
+}

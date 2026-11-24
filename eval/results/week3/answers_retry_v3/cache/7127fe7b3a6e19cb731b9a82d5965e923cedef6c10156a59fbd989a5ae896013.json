@@ -1,0 +1,140 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Su aboneliği için kiracı hangi belgeyi hazırlar ve Beldesk bu başvuruyu benim adıma gönderebilir mi?",
+    "language": "tr",
+    "sources_sha256": "0d8dee9def76175bdb2f6910eaeca63a0db3178826130660da814c378f92465d",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Kiracıların su aboneliği başvurusu için kira sözleşmesi hazırlaması gerekmektedir. [3]\nBeldesk'in başvuru gönderme aracı bulunmamaktadır ve kullanıcı adına abonelik başvurusu yapamaz. [1][2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Kiracıların su aboneliği başvurusu için kira sözleşmesi hazırlaması gerekmektedir.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "kiracı için kira sözleşmesi istenir"
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Beldesk'in başvuru gönderme aracı bulunmamaktadır ve kullanıcı adına abonelik başvurusu yapamaz.",
+        "citations": [
+          1,
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur."
+          },
+          {
+            "citation": 2,
+            "quote": "Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#procedure",
+        "chunk_id": "YV-D003#procedure:0-474:6f1b25382b",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Başvuru adımları ve sınırlar",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "0.1-draft",
+        "text": "Kullanıcı önce mülk sahibi mi kiracı mı olduğunu belirler ve buna uygun belgeleri hazırlar. Sonra proje senaryosundaki Su ve Kanalizasyon başvuru birimine başvurur. Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur. Bu belge ücret tutarı, randevu adresi, telefon numarası, çalışma saati veya hizmetin açılacağı tarih içermez. Böyle bir bilgi sorulduğunda asistan tahmin üretmez ve ilgili bilginin kaynaklarda bulunmadığını belirtir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#scope",
+        "chunk_id": "YV-D003#scope:0-431:7b1c74b911",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "0.1-draft",
+        "text": "Bu belge, AIC390 Beldesk projesindeki kurgusal Yeşilvadi Belediyesi için hazırlanmış sentetik bir test rehberidir. Gerçek bir belediyenin başvuru koşullarını veya yürürlükteki mevzuatı açıklamaz. Aşağıdaki koşullar yalnızca proje senaryosunda geçerlidir; ekip incelemesi bekleyen taslaktır. Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez, ödeme alamaz veya aboneliğin açıldığını doğrulayamaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#requirements",
+        "chunk_id": "YV-D003#requirements:0-470:50d30dc01d",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Başvuruda istenen belgeler",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "0.1-draft",
+        "text": "Yeşilvadi test senaryosunda yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir. Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz. Asistan belgelerin görüntüsünü, kimlik numarasını veya kira sözleşmesinin tamamını sohbet içinde istemez. Belgeler yalnızca başvuru kanalına sunulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#scope",
+        "chunk_id": "YV-D024#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D004",
+        "passage_id": "YV-D004#limits",
+        "chunk_id": "YV-D004#limits:0-382:7e329d1487",
+        "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+        "heading": "Gizlilik ve eksik bilgi",
+        "source": "beldesk://synthetic/YV-D004",
+        "version": "0.1-draft",
+        "text": "Başvuru hakkında genel bilgi almak için kişinin gelir belgelerini veya sağlık kayıtlarını sohbete yazması gerekmez. Beldesk başvuru formunu vatandaş adına göndermez. Yardım tutarı, ödeme günü ve kontenjan bilgisi kaynaklarda yoksa bunlar açıklanamaz. Kullanıcı yardım türünü belirtmediyse bir kısa soru ile ihtiyacı netleştirmek, kişi hakkında uygunluk tahmini yapmaktan önce gelir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2257,
+    "output_tokens": 241,
+    "latency_s": 2.3343136260518804,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "3e7385973600907fded72de426d6c49ae4ba62b36393ebd6989d284b6bb4dcdb",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Kiracıların su aboneliği başvurusu için kira sözleşmesi hazırlaması gerekmektedir.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"kiracı için kira sözleşmesi istenir\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Beldesk'in başvuru gönderme aracı bulunmamaktadır ve kullanıcı adına abonelik başvurusu yapamaz.\",\n      \"citations\": [1, 2],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur.\"\n        },\n        {\n          \"citation\": 2,\n          \"quote\": \"Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:21:56.106319+00:00",
+    "wall_latency_including_pacing_s": 8.336284709046595
+  }
+}

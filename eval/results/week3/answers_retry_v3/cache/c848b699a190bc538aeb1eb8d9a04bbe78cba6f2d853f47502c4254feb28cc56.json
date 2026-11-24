@@ -1,0 +1,46 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Beldesk acil servise ulaştığını ya da ekip gönderdiğini doğrulayabilir mi?",
+    "language": "tr",
+    "sources_sha256": "ed1bcfef21fab71db31402f51bb857e354e000e10a479e233bdeac5eeba09854",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "2b0bc753ec2e25dafd82b9e223eab7acf1dd126549b0aceaaeffc51376453f3a",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "Source 1 explicitly states that Beldesk does not claim to have reached emergency services, sent a team, or confirmed a person's safety."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "Source 3 explicitly lists 'gerçek ekip sevki' (real team dispatch) as being outside the scope of the current version."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the limitations of Beldesk regarding emergency services and team dispatch as defined in the provided sources.",
+    "attempts": 1,
+    "input_tokens": 1988,
+    "output_tokens": 176,
+    "latency_s": 3.419220000039786,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "9829f3c4faf391271713d29d4cf27fd8b80ed9d113aec7d407145b91b3bc283f",
+    "wall_latency_including_pacing_s": 6.2268993749748915
+  }
+}

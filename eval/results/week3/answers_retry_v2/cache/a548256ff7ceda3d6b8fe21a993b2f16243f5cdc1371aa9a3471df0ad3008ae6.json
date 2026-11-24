@@ -1,0 +1,122 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "A message reports both a sewer overflow and a broken street light. How should those faults be represented?",
+    "language": "en",
+    "sources_sha256": "9dd98c061a4ad3b4588911b13e13b8a9f8d2b56466023d755e56fca4d24b8f1e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "If a single message contains both a sewer overflow and a street light fault, they are stored in separate drafts according to their respective categories. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "If a single message contains both a sewer overflow and a street light fault, they are stored in separate drafts according to their respective categories.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#details",
+        "chunk_id": "YV-D024#details:0-351:15f3baae0e",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+        "heading": "Sorunu ayırma",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "0.1-draft",
+        "text": "Su kaçağı bildirimi ile kanalizasyon taşması ayrılır; vatandaş hangisini bildiğini açıklayabilir. Mahalle, sokak, akışın yeri ve yol veya yaya geçişine bildirilen etki kaydedilir. Kaynağı bilinmeyen sıvının türü model tarafından kesinleştirilmez. Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#scope",
+        "chunk_id": "YV-D024#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#limits",
+        "chunk_id": "YV-D024#limits:0-353:4e0bb2db56",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+        "heading": "Gözlem ve müdahale sınırı",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "0.1-draft",
+        "text": "Beldesk vanayı kapattığını, numune aldığını veya ekip yönlendirdiğini söylemez. Kesintinin ne zaman biteceği ya da suyun kullanılabilirliği hakkında bu rehberde veri yoktur. Kullanıcı kesin bir servis saati sorarsa tahmin yapılmaz. Açık bir tehlike anlatılıyorsa ilgili proje yönlendirmesi korunur; kayıt veya sevk işleminin gerçekleştiği iddia edilmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#details",
+        "chunk_id": "YV-D023#details:0-339:1ec4657a0e",
+        "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+        "heading": "Sinyal konumu ve davranışı",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "0.1-draft",
+        "text": "Trafik sinyali için kavşak veya yaya geçidi, etkilenen yön ve vatandaşın gözlemlediği ışık davranışı sorulur. Bir ışığın sönük olması ile araç ve yaya fazlarının çakışması aynı durum olarak yazılmaz. Asistan gözlem yapılmayan yönler için çalışıyor ya da çalışmıyor diyemez. Birden fazla ayrı sinyal arızası varsa her olayın konumu korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#details",
+        "chunk_id": "YV-D021#details:0-347:6d20925516",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+        "heading": "Hasar ve geçiş bilgileri",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "0.1-draft",
+        "text": "Kaldırım sorunu anlatılırken mahalle ve sokak, hasarın türü ve geçişin tamamen mi kısmen mi engellendiği öğrenilir. Küçük yüzey çatlağı ile çökmüş kaldırım tek bir genel etiketle geçiştirilmez. Bebek arabası veya yaya geçişi üzerindeki etki vatandaşın bildirdiği biçimde kaydedilir; olay yerindeki bütün insanların durumu hakkında tahmin yapılmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2183,
+    "output_tokens": 122,
+    "latency_s": 2.5784609579714015,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "bf2f5b692adfb31e745cbfb9d572cd035d8e8a3a655abc942fc0036febb45fcf",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"If a single message contains both a sewer overflow and a street light fault, they are stored in separate drafts according to their respective categories.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:20:49.087387+00:00",
+    "wall_latency_including_pacing_s": 6.217186499969102
+  }
+}

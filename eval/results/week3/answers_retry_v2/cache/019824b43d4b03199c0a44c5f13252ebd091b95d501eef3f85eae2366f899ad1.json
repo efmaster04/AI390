@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Geri dönüşüm için nereye başvuracağımı sorarken neyi netleştirmeliyim?",
+    "language": "tr",
+    "sources_sha256": "7f117e5a5e9644ea56b97a2458a593094c2133e3ca4c437ab9d5a3cf7d2d5e64",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Geri dönüşüm başvurusu yaparken atığın türünü belirtmelisiniz. [1]\nBaşvurunuzda toplama günü hakkında mı yoksa bırakma noktası hakkında mı bilgi istediğinizi netleştirmelisiniz. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Geri dönüşüm başvurusu yaparken atığın türünü belirtmelisiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Kurgusal rehberde geri dönüşüm sorusunda atığın türü ve kullanıcının toplama günü mü bırakma noktası mı sorduğu ayrılır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Başvurunuzda toplama günü hakkında mı yoksa bırakma noktası hakkında mı bilgi istediğinizi netleştirmelisiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Kurgusal rehberde geri dönüşüm sorusunda atığın türü ve kullanıcının toplama günü mü bırakma noktası mı sorduğu ayrılır."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#details",
+        "chunk_id": "YV-D013#details:0-355:9e790b8c5b",
+        "title": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi",
+        "heading": "Bilgi talebini netleştirme",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "0.1-draft",
+        "text": "Kurgusal rehberde geri dönüşüm sorusunda atığın türü ve kullanıcının toplama günü mü bırakma noktası mı sorduğu ayrılır. Kağıt, plastik ve cam için ayrı kap bulunduğu varsayımı yapılmaz; belirli noktada kabul edilen türler ilgili nokta kaynağıyla doğrulanmalıdır. Bu rehber, herhangi bir adresi veya mahallenin bütün toplama noktalarını listelememektedir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#limits",
+        "chunk_id": "YV-D013#limits:0-380:64f5485f57",
+        "title": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi",
+        "heading": "Kaynakta olmayan noktalar",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "0.1-draft",
+        "text": "En yakın geri dönüşüm kutusunu söylemek için doğrulanmış konum verisi gerekir. Asistan nokta adresi, uzaklık, açık olduğu saat veya o anda dolu olup olmadığını tahmin etmez. Kullanıcı geri dönüşüm kutusunun hasarlı veya taşmış olduğunu bildirirse konum ve mevcut etki sorularak bir saha taslağı hazırlanabilir. Bu taslağın hazırlanması bir toplama işleminin başladığını göstermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#scope",
+        "chunk_id": "YV-D013#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#details",
+        "chunk_id": "YV-D029#details:0-375:5108dd7032",
+        "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+        "heading": "Konuya göre yönlendirme",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "0.1-draft",
+        "text": "Beldesk belediye hizmetleri hakkında doküman temelli açıklama yapar ve saha arızaları için taslak hazırlayabilir. Bir arızanın başka bir kuruluşla ilişkili olabileceği, sorunun önceliğinden ayrı değerlendirilir. Elektrik kesintisi örneğinde dağıtım şirketinin adı model tarafından tahmin edilmez. Kurumun kimliği uygulamanın doğrulanmış yönlendirme verisiyle belirlenmelidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D004",
+        "passage_id": "YV-D004#scope",
+        "chunk_id": "YV-D004#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D004",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2157,
+    "output_tokens": 230,
+    "latency_s": 5.285183208063245,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "83bea397495da2f08868409aecf59df9234a28790facc05279b90352f6a41761",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Geri dönüşüm başvurusu yaparken atığın türünü belirtmelisiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Kurgusal rehberde geri dönüşüm sorusunda atığın türü ve kullanıcının toplama günü mü bırakma noktası mı sorduğu ayrılır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Başvurunuzda toplama günü hakkında mı yoksa bırakma noktası hakkında mı bilgi istediğinizi netleştirmelisiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Kurgusal rehberde geri dönüşüm sorusunda atığın türü ve kullanıcının toplama günü mü bırakma noktası mı sorduğu ayrılır.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:19:22.291091+00:00",
+    "wall_latency_including_pacing_s": 11.19730395800434
+  }
+}

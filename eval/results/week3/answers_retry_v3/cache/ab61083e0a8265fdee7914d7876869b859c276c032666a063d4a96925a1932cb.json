@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Beldesk acil servise ulaştığını ya da ekip gönderdiğini doğrulayabilir mi?",
+    "language": "tr",
+    "sources_sha256": "ed1bcfef21fab71db31402f51bb857e354e000e10a479e233bdeac5eeba09854",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Beldesk, acil servise ulaştığını veya ekip gönderdiğini doğrulamaz. [1]\nGerçek ekip sevki, Beldesk'in hizmet kapsamı dışındadır. [3]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Beldesk, acil servise ulaştığını veya ekip gönderdiğini doğrulamaz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Beldesk gerektiğinde 112 yönlendirmesi yapabilir; ancak acil servise ulaştığını, ekip gönderdiğini veya bir kişinin güvenliğini doğruladığını söylemez."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Gerçek ekip sevki, Beldesk'in hizmet kapsamı dışındadır.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Ödeme yapma, hukuki karar verme, siyasi görüş bildirme, vatandaş adına resmî başvuru gönderme ve gerçek ekip sevki bu sürümün kapsamı dışındadır."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D009",
+        "passage_id": "YV-D009#details",
+        "chunk_id": "YV-D009#details:0-351:18297861f2",
+        "title": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı",
+        "heading": "Acil yönlendirme sınırı",
+        "source": "beldesk://synthetic/YV-D009",
+        "version": "0.1-draft",
+        "text": "Proje senaryosunda açık bir acil durum anlatıldığında belediye bildirim taslağı, acil yardımın yerine geçmez. Beldesk gerektiğinde 112 yönlendirmesi yapabilir; ancak acil servise ulaştığını, ekip gönderdiğini veya bir kişinin güvenliğini doğruladığını söylemez. Bu rehber olay yerinde uzman değerlendirmesi veya kişiye özgü tıbbi yönlendirme sağlamaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D009",
+        "passage_id": "YV-D009#scope",
+        "chunk_id": "YV-D009#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D009",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#limits",
+        "chunk_id": "YV-D029#limits:0-349:2fe1e67c22",
+        "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+        "heading": "Kapsam dışı işlemler",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "0.1-draft",
+        "text": "Ödeme yapma, hukuki karar verme, siyasi görüş bildirme, vatandaş adına resmî başvuru gönderme ve gerçek ekip sevki bu sürümün kapsamı dışındadır. Kullanıcı böyle bir işlem isterse Beldesk neyi açıklayabildiğini ve hangi işlemi gerçekleştiremediğini belirtir. Bir sorunun kapsam dışı olması, özel veri veya kurum içi belge paylaşılmasına izin vermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#scope",
+        "chunk_id": "YV-D030#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D008",
+        "passage_id": "YV-D008#scope",
+        "chunk_id": "YV-D008#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D008",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2140,
+    "output_tokens": 233,
+    "latency_s": 1.8388042920269072,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "90126dcb33c3a724da59e4c5a58be6464b049f7fc0e5fd24f20dae2bef910f03",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Beldesk, acil servise ulaştığını veya ekip gönderdiğini doğrulamaz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Beldesk gerektiğinde 112 yönlendirmesi yapabilir; ancak acil servise ulaştığını, ekip gönderdiğini veya bir kişinin güvenliğini doğruladığını söylemez.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Gerçek ekip sevki, Beldesk'in hizmet kapsamı dışındadır.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Ödeme yapma, hukuki karar verme, siyasi görüş bildirme, vatandaş adına resmî başvuru gönderme ve gerçek ekip sevki bu sürümün kapsamı dışındadır.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:18:52.370115+00:00",
+    "wall_latency_including_pacing_s": 7.654912292025983
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "What is the current car parking tariff at the municipal underground garage?",
+    "language": "en",
+    "sources_sha256": "7b2e1dcec30f82f6f05e77c61e9c51acde0eed4d91d8d3eb26770d32298e198b",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#scope",
+        "chunk_id": "YV-D021#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#details",
+        "chunk_id": "YV-D020#details:0-352:0711912893",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+        "heading": "Gerekli konum ve etki",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "0.1-draft",
+        "text": "Çukur bildirimi için mahalle, sokak veya cadde, yakın konum tarifi ve mevcut etki alınır. Kullanıcı ölçü vermediyse derinlik santimetre cinsinden uydurulmaz. Araçların kaçınma hareketi veya bildirilen bir ramak kala durumu varsa anlatıldığı gibi kaydedilir. Fotoğraf bulunması yardımcı olabilir ancak sınıflandırma için kişisel kimlik bilgisi gerekmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#limits",
+        "chunk_id": "YV-D006#limits:0-350:1b1d7e6af6",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+        "heading": "Başvuru sınırı",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "0.1-draft",
+        "text": "Beldesk izin başvurusunu göndermez, alan rezervasyonu yapmaz ve ücret tahsil etmez. Eksik tarih veya yer varsa bunlar sorulur; özel güvenlik, hukuki yükümlülükler ve izin koşulları tahmin edilmez. Bu rehberde bir 2026 etkinlik bedeli bulunmadığından ücret sorusu için tarife belgesi gerekir. Tarifede ilgili kalem de yoksa sabit bir tutar üretilemez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D028",
+        "passage_id": "YV-D028#scope",
+        "chunk_id": "YV-D028#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D028",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#limits",
+        "chunk_id": "YV-D021#limits:0-359:5108c84840",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+        "heading": "Taslak ve sınırlar",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "0.1-draft",
+        "text": "Ayrı bir tehlike anlatılıyorsa bu bilgi öncelik değerlendirmesinde korunur. Kullanıcı yalnızca estetik bir düzenleme istiyorsa mevcut hasar veya erişim kaybı varmış gibi yazılmaz. Beldesk yolu kapatamaz, güvenlik bariyeri koyamaz ve tazminat onaylayamaz. Bu kaynak onarım tarihi ve sorumluluk hakkında hukuki karar içermez; yalnızca bildirim hazırlığı sağlar.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2150,
+    "output_tokens": 17,
+    "latency_s": 1.147971416125074,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "a25f88801c12df86f6cc137b209c8ffe6f14597b7d89cb9a39861617b0ff218c",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:22:49.546785+00:00",
+    "wall_latency_including_pacing_s": 6.24514595803339
+  }
+}

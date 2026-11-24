@@ -1,0 +1,51 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "A swing is broken in a playground. What location and equipment details belong in the report?",
+    "language": "en",
+    "sources_sha256": "7be3c434984c94356e4a77f6352f7a34e1e12533740460768f5c5d1e3cd855bd",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "b21280ac3ea38904e17051f9a21e845558764d6af63ee9364893f51e7743c057",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that the park name or neighborhood and street must be provided for playground notifications."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source confirms that the type of faulty equipment and observed damage must be specified."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source states that whether the equipment is out of use is recorded as reported by the citizen."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the requirements for reporting playground issues as described in the provided source.",
+    "attempts": 1,
+    "input_tokens": 2025,
+    "output_tokens": 200,
+    "latency_s": 7.709057167056017,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "636a1a078ad07af8b970b4e608beb3a8dde1f121de1e64adef7d22f2f9ee1747",
+    "wall_latency_including_pacing_s": 8.69373950001318
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Trafik lambasının arızasını anlatırken hangi yön ve ışık davranışı bilgilerini vermeliyim?",
+    "language": "tr",
+    "sources_sha256": "9d40deda8acdeca6093a0be3ae52c64cb2a21903440e332b252c8dafbe82ee84",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Trafik sinyali arızası bildirirken kavşak veya yaya geçidi bilgisi, etkilenen yön ve gözlemlediğiniz ışık davranışı belirtilmelidir. [1]\nIşığın sönük olması ile araç ve yaya fazlarının çakışması gibi durumlar birbirinden ayrı olarak ifade edilmelidir. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Trafik sinyali arızası bildirirken kavşak veya yaya geçidi bilgisi, etkilenen yön ve gözlemlediğiniz ışık davranışı belirtilmelidir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Trafik sinyali için kavşak veya yaya geçidi, etkilenen yön ve vatandaşın gözlemlediği ışık davranışı sorulur."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Işığın sönük olması ile araç ve yaya fazlarının çakışması gibi durumlar birbirinden ayrı olarak ifade edilmelidir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bir ışığın sönük olması ile araç ve yaya fazlarının çakışması aynı durum olarak yazılmaz."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#details",
+        "chunk_id": "YV-D023#details:0-339:1ec4657a0e",
+        "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+        "heading": "Sinyal konumu ve davranışı",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "0.1-draft",
+        "text": "Trafik sinyali için kavşak veya yaya geçidi, etkilenen yön ve vatandaşın gözlemlediği ışık davranışı sorulur. Bir ışığın sönük olması ile araç ve yaya fazlarının çakışması aynı durum olarak yazılmaz. Asistan gözlem yapılmayan yönler için çalışıyor ya da çalışmıyor diyemez. Birden fazla ayrı sinyal arızası varsa her olayın konumu korunur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#limits",
+        "chunk_id": "YV-D023#limits:0-362:144fc6bf0d",
+        "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+        "heading": "Güvenlik ve araç sınırı",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "0.1-draft",
+        "text": "Bu rehber trafiği yönetme veya sinyal programını değiştirme yetkisi vermez. Asistan bir sinyalin düzeltildiğini veya ulaşım ekibinin yola çıktığını söylemez. Somut tehlike bilgisi sınıflandırmada kaybedilmemeli; bilinmeyen bilgiler sorulmalıdır. Onarım zamanı bu kaynakta yoktur. Bildirim metni ve bulunan kaynak bir operasyonel müdahale sonucu olarak sunulamaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#details",
+        "chunk_id": "YV-D022#details:0-361:8aa4a4cd18",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+        "heading": "Kapsamı ayırma",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "0.1-draft",
+        "text": "Bir lamba mı, sokağın bir bölümü mü yoksa bütün aydınlatma mı etkileniyor öğrenilir. Lambaların yanmaması ile evlere ve işyerlerine elektrik gelmemesi farklı olaylardır. Kullanıcının verdiği süre, sorunun başlangıcına ilişkin bildirilen bilgi olarak saklanır; başvurunun uygulamada bekleme süresiyle karıştırılmaz. Mahalle ve sokak eksikse konum ayrıca sorulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#scope",
+        "chunk_id": "YV-D023#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#scope",
+        "chunk_id": "YV-D022#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2164,
+    "output_tokens": 244,
+    "latency_s": 3.850743541959673,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "a07047e753f68494a6d9800fd95fef55a69792d6252bdc4542e44da212b19a59",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Trafik sinyali arızası bildirirken kavşak veya yaya geçidi bilgisi, etkilenen yön ve gözlemlediğiniz ışık davranışı belirtilmelidir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Trafik sinyali için kavşak veya yaya geçidi, etkilenen yön ve vatandaşın gözlemlediği ışık davranışı sorulur.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Işığın sönük olması ile araç ve yaya fazlarının çakışması gibi durumlar birbirinden ayrı olarak ifade edilmelidir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bir ışığın sönük olması ile araç ve yaya fazlarının çakışması aynı durum olarak yazılmaz.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:20:42.028867+00:00",
+    "wall_latency_including_pacing_s": 7.042917917016894
+  }
+}

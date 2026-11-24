@@ -1,0 +1,19 @@
+{
+  "version": "rag-answer-v1",
+  "prompt_path": "prompts/rag/v1.md",
+  "temperature": 0,
+  "seed": 42,
+  "max_output_tokens": 2048,
+  "max_retries": 1,
+  "max_claims": 6,
+  "max_words_per_claim": 55,
+  "max_evidence_characters": 650,
+  "fallback": {
+    "tr": "Bu sorunun yanıtı erişebildiğim belgelerde bulunmuyor. Güvenilir bir yanıt vermek için yeterli kaynak yok.",
+    "en": "The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer."
+  },
+  "error_message": {
+    "tr": "Şu anda güvenilir bir yanıt oluşturamadım. Lütfen tekrar deneyin.",
+    "en": "I could not produce a reliable answer right now. Please try again."
+  }
+}

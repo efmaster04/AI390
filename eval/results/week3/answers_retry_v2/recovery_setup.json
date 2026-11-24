@@ -1,0 +1,50 @@
+{
+  "recorded_utc": "2026-11-24T19:17:18.451376+00:00",
+  "purpose": "Generation-first operational retry with the same Gemini model and generation prompt; not a new independent quality sample.",
+  "preserved_initial_run": "answers",
+  "preserved_partial_attempts": [
+    "answers_retry_transport_probe",
+    "answers_retry_interleaved_partial"
+  ],
+  "reused_successful_cache_entries": [
+    {
+      "cache_file": "890eb9c9e06f697c1cb48e42410cb6dc6f514e2f8d5bdb29a13cde2ac2f6213f.json",
+      "stage": "answer",
+      "question": "Kiracıyım; yeni su aboneliği başvurusunda hangi belgeler isteniyor? Eski abone numarasını bilmiyorum.",
+      "origin": "interrupted interleaved recovery pass"
+    },
+    {
+      "cache_file": "686fa171b775db46fcc5d90b0c5089d9cadb46a582380e2b1f553ed0e08ad6f3.json",
+      "stage": "answer",
+      "question": "Which types of social assistance can I ask about in this fictional service guide?",
+      "origin": "initial run"
+    },
+    {
+      "cache_file": "878e0741493689884c898b46d9993e5bba912827adb2b16c1026a0bb0487c7e4.json",
+      "stage": "answer",
+      "question": "Nikâh başvurusunun ilk incelemesi için ne hazırlamalıyız, randevu hangi aşamada planlanıyor?",
+      "origin": "interrupted interleaved recovery pass"
+    },
+    {
+      "cache_file": "3ddd429810ba9094b7ff0c74887ce4c8581f0a7d6d48b83ac50306b921e9e0d0.json",
+      "stage": "answer",
+      "question": "Tekerlekli sandalye ile kaldırımdan geçemiyorum. Bildirimde sağlık raporum gerekir mi, hangi bilgiler gerekli?",
+      "origin": "initial run"
+    },
+    {
+      "cache_file": "c4be50a0b7f10bea18bed2704d75d14493c278e7ebc14bbfafb35050fa5ba081.json",
+      "stage": "answer",
+      "question": "We are organising a neighbourhood fair. What information should we prepare for event-permit guidance?",
+      "origin": "interrupted interleaved recovery pass"
+    }
+  ],
+  "policy": {
+    "transport_retries": 2,
+    "max_attempts_per_stage": 3,
+    "rpm": 8,
+    "timeout_s": 30,
+    "deadline_s": 1500,
+    "generation_before_judging": true
+  },
+  "note": "Interrupted requests may not have transport-event checkpoints. All saved valid stages retain their original prompt/config/source hashes and timing."
+}

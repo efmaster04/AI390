@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "What information is needed for an event-permit request, and which fields would a future fictional fee record contain?",
+    "language": "en",
+    "sources_sha256": "cd89017bd70d0cab403e11bda238090899f143e1dc8ed87df8d56b0c006fc9d2",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "To request an event or temporary stand permit, you must provide the event type, planned location, date range, and estimated participant range. [1]\nA future fictional fee record would contain the service code, amount, currency, validity date, and synthetic source version. [3]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "To request an event or temporary stand permit, you must provide the event type, planned location, date range, and estimated participant range.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı aralığı belirtilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "A future fictional fee record would contain the service code, amount, currency, validity date, and synthetic source version.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#details",
+        "chunk_id": "YV-D006#details:0-373:626ffc7b07",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+        "heading": "Ön bilgi listesi",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "0.1-draft",
+        "text": "Test senaryosunda etkinlik veya geçici stant hakkında yönlendirme için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı aralığı belirtilir. Bu bilgiler başvuruya hazırlık içindir, izin verilmesi anlamına gelmez. Asistan bir parkın seçilen tarihte boş olduğunu veya etkinliğin onaylanacağını söylemez. Alan uygunluğu yetkili birim tarafından değerlendirilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#limits",
+        "chunk_id": "YV-D006#limits:0-350:1b1d7e6af6",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+        "heading": "Başvuru sınırı",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "0.1-draft",
+        "text": "Beldesk izin başvurusunu göndermez, alan rezervasyonu yapmaz ve ücret tahsil etmez. Eksik tarih veya yer varsa bunlar sorulur; özel güvenlik, hukuki yükümlülükler ve izin koşulları tahmin edilmez. Bu rehberde bir 2026 etkinlik bedeli bulunmadığından ücret sorusu için tarife belgesi gerekir. Tarifede ilgili kalem de yoksa sabit bir tutar üretilemez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#limits",
+        "chunk_id": "YV-D010#limits:0-398:1d16615c2c",
+        "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+        "heading": "Gelecekte tarife ekleme",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "0.1-draft",
+        "text": "Ekip ileride kurgusal ücret kalemi eklerse hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir. Ücretin kaynakta bulunması ödeme yapılabileceği anlamına gelmez; Beldesk ödeme almaz. Eski sürüm ile yeni tarife çelişirse sessizce birini seçmek yerine sürüm ve geçerlilik denetimi gerekir. Bu doküman fiyatları uydurarak cevap üretmeyi önlemek için vardır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#scope",
+        "chunk_id": "YV-D006#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#details",
+        "chunk_id": "YV-D010#details:0-343:d8ed0d0af3",
+        "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+        "heading": "Yayımlanmış ücret sınırı",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "0.1-draft",
+        "text": "Bu taslak veri sürümünde nikâh, evcil hayvan kaydı, su aboneliği ve etkinlik izni için onaylanmış sayısal ücret kalemleri yayımlanmamıştır. Bu nedenle asistan bu hizmetlerin ücretsiz olduğunu da belirli bir tutar gerektirdiğini de söyleyemez. Bir ücret sorusu cevaplanırken hizmet adı ve geçerlilik yılı eşleşen açık bir tarife kalemi gerekir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2199,
+    "output_tokens": 219,
+    "latency_s": 1.3829831659095362,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "4d5726c3ee8a60caa8911b4a23af8c0aa2432d03cb567f02f207045fefd51d8f",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"To request an event or temporary stand permit, you must provide the event type, planned location, date range, and estimated participant range.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı aralığı belirtilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"A future fictional fee record would contain the service code, amount, currency, validity date, and synthetic source version.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:22:04.458693+00:00",
+    "wall_latency_including_pacing_s": 6.537534000002779
+  }
+}

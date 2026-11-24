@@ -1,0 +1,46 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Elektrik sorunu için dağıtım şirketinin adını model kendisi tahmin edebilir mi?",
+    "language": "tr",
+    "sources_sha256": "b11241237622d3ce6b1f2fcfb86dadf74ea46f9b91176f42502868fbb271815e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "7e909b5c5c3bb120d58b73bdb250fa51df49f484713b714ed06aa8c90b581030",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that in the case of a power outage, the name of the distribution company is not estimated by the model."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source explicitly states that the institution's identity must be determined using the application's verified routing data."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the provided source material regarding the model's limitations in identifying distribution companies and the requirement to use verified routing data for institutional identification.",
+    "attempts": 1,
+    "input_tokens": 2005,
+    "output_tokens": 176,
+    "latency_s": 3.667505291989073,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "f37340a52f798caa87710a166ddb23034b64b6edf73b271c24b10a2ff3d09f9e",
+    "wall_latency_including_pacing_s": 6.845689999987371
+  }
+}

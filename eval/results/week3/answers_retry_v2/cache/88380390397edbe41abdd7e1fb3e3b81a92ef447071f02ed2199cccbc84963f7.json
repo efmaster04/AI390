@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "What is the fictional ticket reference format, and may the assistant guess a correction for a malformed reference?",
+    "language": "en",
+    "sources_sha256": "ba17150f85c458455f6cca39e23a62ddf895a1e7ac17343bf9a3d17d32cd5227",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "The fictional ticket reference format is YV-YYYY-NNNNNN. [1]\nThe assistant cannot guess or correct a malformed reference number. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "The fictional ticket reference format is YV-YYYY-NNNNNN.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Kurgusal kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "The assistant cannot guess or correct a malformed reference number.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Yanlış biçimli bir numara model tarafından tahminle düzeltilmez."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D028",
+        "passage_id": "YV-D028#details",
+        "chunk_id": "YV-D028#details:0-355:da9f4a3df7",
+        "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+        "heading": "Referans ve sahiplik",
+        "source": "beldesk://synthetic/YV-D028",
+        "version": "0.1-draft",
+        "text": "Kurgusal kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir. Yanlış biçimli bir numara model tarafından tahminle düzeltilmez. İleride durum sorgusunda kayıt referansı ile telefonun son dört hanesi istenebilir; bunlar tek başına güçlü sahiplik kanıtı değildir. Başkasına ait olduğunu söyleyen kullanıcıya eşleşen bilgiler verse bile kayıt detayı açıklanmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D028",
+        "passage_id": "YV-D028#limits",
+        "chunk_id": "YV-D028#limits:0-345:8a3e45c96d",
+        "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+        "heading": "Canlı sorgu sınırı",
+        "source": "beldesk://synthetic/YV-D028",
+        "version": "0.1-draft",
+        "text": "Week 3 sürümünde kayıt veritabanı bağlantısı yoktur. Bu nedenle herhangi bir kaydın açık, kapalı veya incelemede olduğu söylenemez. Asistan kaydı kontrol ettim diyemez; bir referansın biçimini açıklamak o kaydın gerçekten var olduğunu doğrulamaz. Ekip geliş zamanı ve kişisel kayıt geçmişi doküman aramasıyla elde edilmiş gibi gösterilmemelidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D028",
+        "passage_id": "YV-D028#scope",
+        "chunk_id": "YV-D028#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D028",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#scope",
+        "chunk_id": "YV-D027#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#scope",
+        "chunk_id": "YV-D007#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2153,
+    "output_tokens": 183,
+    "latency_s": 2.726661582943052,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "fed80673eed89b5a3a6cf15b3e4608b8ce35d2fb257130af8dc5ae2d452fd97f",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"The fictional ticket reference format is YV-YYYY-NNNNNN.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Kurgusal kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"The assistant cannot guess or correct a malformed reference number.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Yanlış biçimli bir numara model tarafından tahminle düzeltilmez.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:21:35.900370+00:00",
+    "wall_latency_including_pacing_s": 6.419120415928774
+  }
+}

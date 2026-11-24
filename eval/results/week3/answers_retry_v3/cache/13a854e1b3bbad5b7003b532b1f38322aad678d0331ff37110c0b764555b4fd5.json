@@ -1,0 +1,46 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Kiracıyım; yeni su aboneliği başvurusunda hangi belgeler isteniyor? Eski abone numarasını bilmiyorum.",
+    "language": "tr",
+    "sources_sha256": "01263c87fc401ecc23545337ac64283a4fded5cc8542260ca71d1ae8a96fa77e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "4ca921dc2a780db3d37c6ce218c21cf618686748df664f6f238202e87a9d3b51",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly lists identity document, address proof, and rental contract for tenants as required documents."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source states that if the old subscriber number is unknown, the application guidance is not stopped."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the requirements for new water subscriptions for tenants and clarifies that missing an old subscriber number does not prevent the application process.",
+    "attempts": 1,
+    "input_tokens": 2185,
+    "output_tokens": 163,
+    "latency_s": 1.8578055831603706,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "441c170382832b11fab6c22f9e0ebeb5cd266c929f714668fce6fc0d5a505aa4",
+    "wall_latency_including_pacing_s": 7.573586333077401
+  }
+}

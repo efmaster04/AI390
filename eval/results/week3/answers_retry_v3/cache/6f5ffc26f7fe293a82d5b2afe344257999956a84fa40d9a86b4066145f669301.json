@@ -1,0 +1,41 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Aynı mesajda hem kanalizasyon hem sokak lambası arızası var. Tek taslak mı hazırlanmalı?",
+    "language": "tr",
+    "sources_sha256": "ba8320029a00c00ab03605f3b2f9658f2dc64022c8be8d40304c2917a3181e45",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "4cf1cde86080aec60306842a8a0e6d68e0dfea6ead07405bf7d7c12dc2907f36",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "Source 1 explicitly states that if a message contains both overflow and lamp failure, they are kept in separate drafts. Source 2 confirms that separate faults in the same message are shown as separate drafts."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the provided sources, which mandate that multiple distinct faults within a single message must be processed as separate drafts.",
+    "attempts": 1,
+    "input_tokens": 1960,
+    "output_tokens": 132,
+    "latency_s": 15.608208458987065,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "9e846c865081d65de2c46c08d1a691f7ae71415a87e32d56df9a2d4e92d466bd",
+    "wall_latency_including_pacing_s": 21.841704749967903
+  }
+}

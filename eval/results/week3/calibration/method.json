@@ -1,0 +1,9 @@
+{
+  "n": 20,
+  "purpose": "retrospective claim-judge calibration stress set",
+  "origin": "genuine historical Week2-v1/v3 model outputs; atomic extractions preserve exact source spans",
+  "evidence": "assigned post hoc from current Week3 sources, not original baseline citations",
+  "human_labels": "blank until real reviewer enters them",
+  "selection": "purposeful mix of factual requirements, unavailable figures and system boundaries; not representative random RAG sample",
+  "code_sha256": "6bcd2cfe1abf88eacda27a1c2178dc5f94061184a5d06c1f3ac123a9620a850a"
+}

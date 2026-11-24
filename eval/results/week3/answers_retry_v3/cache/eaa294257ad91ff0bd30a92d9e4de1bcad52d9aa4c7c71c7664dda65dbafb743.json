@@ -1,0 +1,41 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "What fields must the team record if it later adds a fictional municipal fee item?",
+    "language": "en",
+    "sources_sha256": "018a68c0c660cbc220a2b4b9cbe83abe83120b68f6b6e6565e25c55829741f12",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "6b94eb2ec934a36def8b0969696193fd16a1adb24e3dac1329bae7cdec64dc37",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly lists service code, amount, currency, validity date, and synthetic source version as the required fields to be recorded when adding a fictional fee item."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the requirements stated in the source document regarding the recording of fictional fee items.",
+    "attempts": 1,
+    "input_tokens": 1935,
+    "output_tokens": 118,
+    "latency_s": 19.74744965438731,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "97d76a08d6f2e00279a19a69528cb1b5c4eba33e632eff11c81b0a85e2cc06ed",
+    "wall_latency_including_pacing_s": 28.847215124987997
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "purpose": "One bounded completion pass for the two earliest failed generations; preserve v2 and reuse valid cached stages. Operational recovery, not a new independent 38-response experiment.",
+  "cache_origin": "answers_retry_v2/cache",
+  "model": "gemini-3.1-flash-lite"
+}

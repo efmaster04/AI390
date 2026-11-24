@@ -1,0 +1,161 @@
+[1/38] W3-R001 answer=ok judge=error/skipped calls=0 http_statuses=[]
+[2/38] W3-R002 answer=ok judge=error/skipped calls=1 http_statuses=[]
+[3/38] W3-R003 answer=ok judge=error/skipped calls=1 http_statuses=[]
+[4/38] W3-R004 answer=ok judge=error/skipped calls=1 http_statuses=[]
+[5/38] W3-R005 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[6/38] W3-R006 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[7/38] W3-R007 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[8/38] W3-R008 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[9/38] W3-R009 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[10/38] W3-R010 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[11/38] W3-R011 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[12/38] W3-R012 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[13/38] W3-R013 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[14/38] W3-R014 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[15/38] W3-R015 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[16/38] W3-R016 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[17/38] W3-R017 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[18/38] W3-R018 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[19/38] W3-R019 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[20/38] W3-R020 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[21/38] W3-R021 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[22/38] W3-R022 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[23/38] W3-R023 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[24/38] W3-R024 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[25/38] W3-R025 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[26/38] W3-R026 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[27/38] W3-R027 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[28/38] W3-R028 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[29/38] W3-R029 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[30/38] W3-R030 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[31/38] W3-R031 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[32/38] W3-R032 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[33/38] W3-U001 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[34/38] W3-U002 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[35/38] W3-U003 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[36/38] W3-U004 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[37/38] W3-U005 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[38/38] W3-U006 answer=ok judge=error/skipped calls=2 http_statuses=[]
+[judge 1/38] W3-R001 judge=ok calls=2
+[judge 2/38] W3-R002 judge=ok calls=3
+[judge 3/38] W3-R003 judge=ok calls=3
+[judge 4/38] W3-R004 judge=ok calls=3
+[judge 5/38] W3-R005 judge=ok calls=4
+[judge 6/38] W3-R006 judge=ok calls=4
+[judge 7/38] W3-R007 judge=ok calls=4
+[judge 8/38] W3-R008 judge=ok calls=4
+[judge 9/38] W3-R009 judge=ok calls=4
+[judge 10/38] W3-R010 judge=ok calls=4
+[judge 11/38] W3-R011 judge=ok calls=4
+[judge 12/38] W3-R012 judge=ok calls=4
+[judge 13/38] W3-R013 judge=ok calls=4
+[judge 14/38] W3-R014 judge=ok calls=4
+[judge 15/38] W3-R015 judge=ok calls=4
+[judge 16/38] W3-R016 judge=ok calls=4
+[judge 17/38] W3-R017 judge=ok calls=4
+[judge 18/38] W3-R018 judge=ok calls=4
+[judge 19/38] W3-R019 judge=ok calls=4
+[judge 20/38] W3-R020 judge=ok calls=4
+[judge 21/38] W3-R021 judge=ok calls=4
+[judge 22/38] W3-R022 judge=ok calls=4
+[judge 23/38] W3-R023 judge=ok calls=4
+[judge 24/38] W3-R024 judge=ok calls=4
+[judge 25/38] W3-R025 judge=ok calls=4
+[judge 26/38] W3-R026 judge=ok calls=4
+[judge 27/38] W3-R027 judge=ok calls=4
+[judge 28/38] W3-R028 judge=ok calls=4
+[judge 29/38] W3-R029 judge=ok calls=4
+[judge 30/38] W3-R030 judge=ok calls=4
+[judge 31/38] W3-R031 judge=ok calls=4
+[judge 32/38] W3-R032 judge=ok calls=4
+[judge 33/38] W3-U001 judge=ok calls=4
+[judge 34/38] W3-U002 judge=ok calls=4
+[judge 35/38] W3-U003 judge=ok calls=4
+[judge 36/38] W3-U004 judge=ok calls=4
+[judge 37/38] W3-U005 judge=ok calls=4
+[judge 38/38] W3-U006 judge=ok calls=4
+{
+  "week": 3,
+  "stage": "rag_answer_and_claim_judge",
+  "planned_cases": 38,
+  "processed_cases": 38,
+  "run_complete": true,
+  "generation_pass_complete": true,
+  "judging_pass_complete": true,
+  "valid_generated_answers": 38,
+  "valid_claim_judgements": 38,
+  "judgements_deferred_or_not_attempted": 0,
+  "judgements_skipped_generation_error": 0,
+  "judgements_failed_or_invalid": 0,
+  "answerability_accuracy": {
+    "value": 1.0,
+    "n": 38,
+    "definition": "valid answer abstains iff fixed test flag says unanswerable; not semantic answer accuracy"
+  },
+  "abstention_correct": {
+    "value": 1.0,
+    "n": 6,
+    "numerator": 6,
+    "definition": "valid fixed-fallback response on unavailable-information controls"
+  },
+  "unsupported_claims": {
+    "value": 0.0,
+    "n": 61,
+    "numerator": 0,
+    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+  },
+  "faithfulness": {
+    "valid_judged_claims": 61,
+    "labels": {
+      "insufficient_evidence": 0,
+      "supported": 61,
+      "unsupported": 0
+    },
+    "unsupported_claims": {
+      "value": 0.0,
+      "n": 61,
+      "numerator": 0,
+      "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+    },
+    "claim_coverage": {
+      "unlisted_factual_claims": 0,
+      "answers_with_complete_claim_coverage": 38,
+      "n_valid_judgements": 38
+    },
+    "generation_errors": 0,
+    "judge_errors_or_skipped": 0,
+    "note": "An automatic provisional faithfulness estimate, not answer accuracy; human calibration required."
+  },
+  "generation_latency_p50_s": 2.51842039602343,
+  "latency_p50_s": 2.521084417006932,
+  "latency_note": "retrieval plus generation, judge excluded, shared pacing waits excluded; cached rows retain historical generation timings",
+  "e2e_accuracy": {
+    "value": null,
+    "n": null,
+    "reason": "No independent answer-adequacy rubric measured; claim faithfulness is not question completion"
+  },
+  "tokens": {
+    "generation": {
+      "input_tokens": 83006,
+      "output_tokens": 6911
+    },
+    "judgement": {
+      "input_tokens": 75768,
+      "output_tokens": 5400
+    }
+  },
+  "list_price_equivalent_usd": {
+    "generation": 0.031118,
+    "judgement": 0.027042
+  },
+  "cost_incomplete": false,
+  "actual_spend_usd": null,
+  "billing_note": "No billing evidence collected; list prices are dated assumptions, not actual spend",
+  "provider_calls_this_invocation": 4,
+  "valid_answers_from_cache": 36,
+  "valid_answers_fresh": 2,
+  "valid_judgements_from_cache": 36,
+  "valid_judgements_fresh": 2,
+  "provisional": true,
+  "provisional_reason": "Synthetic draft corpus/test labels and human judge calibration pending or limited"
+}

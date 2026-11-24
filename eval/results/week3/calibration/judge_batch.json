@@ -1,0 +1,46 @@
+{
+  "judgement": {
+    "valid": false,
+    "error": "Claim judgement unavailable after bounded attempts",
+    "errors": [
+      "ProviderError: invalid judgement or provider failure",
+      "ProviderError: invalid judgement or provider failure"
+    ],
+    "claims": [],
+    "unlisted_claims": [],
+    "coverage_complete": null,
+    "reason": null,
+    "attempts": 2,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_s": 36.76977762498427,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "062a9a6ca881af9257e40e46771a6c3e2112a3b565a976992f56a72ec85e7571"
+  },
+  "provider_events": [
+    {
+      "call_number": 1,
+      "timestamp_utc": "2026-11-24T18:28:08.427036+00:00",
+      "case_id": null,
+      "stage": null,
+      "transport_attempt": 1,
+      "status": "provider_error",
+      "http_status": 503,
+      "exception_type": "ProviderError",
+      "retryable": true
+    },
+    {
+      "call_number": 2,
+      "timestamp_utc": "2026-11-24T18:28:15.094934+00:00",
+      "case_id": null,
+      "stage": null,
+      "transport_attempt": 1,
+      "status": "provider_error",
+      "http_status": null,
+      "exception_type": "ProviderError",
+      "retryable": true
+    }
+  ],
+  "model": "gemini-3.1-flash-lite",
+  "calls": 2
+}

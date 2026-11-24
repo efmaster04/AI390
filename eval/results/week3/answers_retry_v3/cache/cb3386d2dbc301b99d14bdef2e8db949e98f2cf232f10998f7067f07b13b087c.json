@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "How does the guide distinguish failed street lamps from a power outage affecting homes and businesses?",
+    "language": "en",
+    "sources_sha256": "79772b6021cf101278eef1306648d46569918ffa8193291a9f86143e3e3c2375",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "The guide distinguishes between street lamp failures and power outages by noting that they are different events. [1]\nWhen reporting a street lamp issue, the system determines whether a single lamp, a section of the street, or the entire lighting system is affected. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "The guide distinguishes between street lamp failures and power outages by noting that they are different events.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Lambaların yanmaması ile evlere ve işyerlerine elektrik gelmemesi farklı olaylardır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "When reporting a street lamp issue, the system determines whether a single lamp, a section of the street, or the entire lighting system is affected.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bir lamba mı, sokağın bir bölümü mü yoksa bütün aydınlatma mı etkileniyor öğrenilir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#details",
+        "chunk_id": "YV-D022#details:0-361:8aa4a4cd18",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+        "heading": "Kapsamı ayırma",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "0.1-draft",
+        "text": "Bir lamba mı, sokağın bir bölümü mü yoksa bütün aydınlatma mı etkileniyor öğrenilir. Lambaların yanmaması ile evlere ve işyerlerine elektrik gelmemesi farklı olaylardır. Kullanıcının verdiği süre, sorunun başlangıcına ilişkin bildirilen bilgi olarak saklanır; başvurunun uygulamada bekleme süresiyle karıştırılmaz. Mahalle ve sokak eksikse konum ayrıca sorulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#limits",
+        "chunk_id": "YV-D022#limits:0-353:5e8707acc1",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+        "heading": "Sıralama ve işlem sınırı",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "0.1-draft",
+        "text": "Ek tehlike bulunmayan aydınlatma örneklerinin önceliği ve sınıf içi sırası kabul edilen proje politikasından gelir. Sadece talepte acil yazması veya sürenin uzaması otomatik sınıf yükseltme kuralı değildir. Model harici kuruluşun adını tahmin etmez, onarım süresi vermez ve elektrik ekibine ulaştığını söylemez. Bu rehber fiziksel arıza kontrolü yapmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#scope",
+        "chunk_id": "YV-D022#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#reporting",
+        "chunk_id": "YV-D011#reporting:0-448:c760fe3c2d",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Bildirim için gereken bilgiler",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur. Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir; etkilenen kişi sayısı uydurulmaz. Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz. Hazırlanan taslak, kullanıcıdan onay istenerek gösterilir; bu aşamada kayıt açılmış olmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#details",
+        "chunk_id": "YV-D007#details:0-366:a5fcde06b2",
+        "title": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci",
+        "heading": "Taslak ile kayıt farkı",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "0.1-draft",
+        "text": "Vatandaş bir saha sorunu anlattığında Beldesk sorun türünü, konumu ve bildirilen etkiyi toparlayarak bir taslak sunabilir. Taslak hazırlanması belediye sisteminde kayıt oluşturulduğu anlamına gelmez. Aynı mesajda ayrı arızalar varsa her arıza ayrı taslak olarak gösterilir. Örneğin kanalizasyon taşması ile lamba arızası tek bir ortak öncelik altında birleştirilmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2197,
+    "output_tokens": 210,
+    "latency_s": 4.293832832947373,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "7a312f03aeef4e90156a1ba68224961fee71f65056b47ade1ac3c7f286609b13",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"The guide distinguishes between street lamp failures and power outages by noting that they are different events.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Lambaların yanmaması ile evlere ve işyerlerine elektrik gelmemesi farklı olaylardır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"When reporting a street lamp issue, the system determines whether a single lamp, a section of the street, or the entire lighting system is affected.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bir lamba mı, sokağın bir bölümü mü yoksa bütün aydınlatma mı etkileniyor öğrenilir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:20:37.720962+00:00",
+    "wall_latency_including_pacing_s": 4.293832832947373
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "What information is needed for an event-permit request, and which fields would a future fictional fee record contain?",
+    "language": "en",
+    "sources_sha256": "cd89017bd70d0cab403e11bda238090899f143e1dc8ed87df8d56b0c006fc9d2",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "71f97a83b3a950fcfe2adb7c3281cb5bda80ee839e6552ee0c940014df39bf91",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly lists event type, planned location, date range, and estimated participant range as required information for event or temporary stand permit preparation."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source confirms that if a fictional fee record is added, it will include the service code, amount, currency, validity date, and synthetic source version."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the information provided in the cited sources regarding permit requirements and future fee record structures.",
+    "attempts": 1,
+    "input_tokens": 2047,
+    "output_tokens": 177,
+    "latency_s": 1.6527202919824049,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "c9a11667c14d74b65870c2dc5394de8955e451b98b44b464abf72a861f99827a",
+    "wall_latency_including_pacing_s": 7.3312788750045
+  }
+}

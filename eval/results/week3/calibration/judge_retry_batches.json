@@ -1,0 +1,277 @@
+{
+  "invocations": [
+    {
+      "started_utc": "2026-11-24T19:31:46.313087+00:00",
+      "model": "gemini-3.1-flash-lite",
+      "batch_size": 5,
+      "batch_results": [
+        {
+          "case_ids": [
+            "W3-H01",
+            "W3-H02",
+            "W3-H03",
+            "W3-H04",
+            "W3-H05"
+          ],
+          "judgement": {
+            "valid": true,
+            "error": null,
+            "errors": [],
+            "claims": [
+              {
+                "claim_id": "C1",
+                "label": "supported",
+                "reason": "Source 1 explicitly lists an identity document as a requirement for a new water subscription."
+              },
+              {
+                "claim_id": "C2",
+                "label": "supported",
+                "reason": "Source 2 confirms that a property deed for owners or a rental agreement for tenants is required."
+              },
+              {
+                "claim_id": "C3",
+                "label": "unsupported",
+                "reason": "Source 3 does not mention a DASK policy as a requirement for a water subscription."
+              },
+              {
+                "claim_id": "C4",
+                "label": "insufficient_evidence",
+                "reason": "Source 4 discusses municipal service guidelines but does not state that ASKİ manages water services in Yeşilvadi."
+              },
+              {
+                "claim_id": "C5",
+                "label": "supported",
+                "reason": "Source 5 states that information regarding pet registration is obtained from the Veterinary Affairs unit."
+              }
+            ],
+            "unlisted_claims": [],
+            "coverage_complete": true,
+            "reason": "The answer correctly identifies requirements for water subscriptions and pet registration based on the provided sources, but incorrectly claims a DASK policy is required and fails to verify the service provider for water.",
+            "attempts": 1,
+            "input_tokens": 1789,
+            "output_tokens": 275,
+            "latency_s": 1.4544976669130847,
+            "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+            "judge_input_sha256": "c7be57923769687de5d541ac25cb560c96d98499ff5604d9093814b91ec54483"
+          }
+        },
+        {
+          "case_ids": [
+            "W3-H06",
+            "W3-H07",
+            "W3-H08",
+            "W3-H09",
+            "W3-H10"
+          ],
+          "judgement": {
+            "valid": true,
+            "error": null,
+            "errors": [],
+            "claims": [
+              {
+                "claim_id": "C1",
+                "label": "unsupported",
+                "reason": "Source 1 explicitly states it does not mention whether registration is free or requires a fee."
+              },
+              {
+                "claim_id": "C2",
+                "label": "insufficient_evidence",
+                "reason": "Source 2 lists required information (type, ID reference, purpose) but does not mention a health booklet."
+              },
+              {
+                "claim_id": "C3",
+                "label": "unsupported",
+                "reason": "Source 3 explicitly states it does not contain the current garbage collection schedule for Çamlık."
+              },
+              {
+                "claim_id": "C4",
+                "label": "unsupported",
+                "reason": "Source 4 explicitly states it does not publish the center's closing hours or event calendar."
+              },
+              {
+                "claim_id": "C5",
+                "label": "unsupported",
+                "reason": "Source 5 states there is no database connection and the assistant cannot claim to have checked a record."
+              }
+            ],
+            "unlisted_claims": [],
+            "coverage_complete": true,
+            "reason": "All claims are unsupported or lack evidence because the cited sources explicitly state they do not contain the information provided in the claims.",
+            "attempts": 1,
+            "input_tokens": 1789,
+            "output_tokens": 321,
+            "latency_s": 8.23280550003983,
+            "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+            "judge_input_sha256": "1db60d6c580ac922a3c959937f31d49ae621aa4c81621ec9cf1bff59b72b7e2d"
+          }
+        },
+        {
+          "case_ids": [
+            "W3-H11",
+            "W3-H12",
+            "W3-H13",
+            "W3-H14",
+            "W3-H15"
+          ],
+          "judgement": {
+            "valid": true,
+            "error": null,
+            "errors": [],
+            "claims": [
+              {
+                "claim_id": "C1",
+                "label": "unsupported",
+                "reason": "Source 1 explicitly states that the database connection is unavailable and that the assistant cannot confirm registration status or provide information about record updates."
+              },
+              {
+                "claim_id": "C2",
+                "label": "unsupported",
+                "reason": "Source 2 explicitly states that the assistant cannot answer questions about when teams will arrive and warns against inventing times or results."
+              },
+              {
+                "claim_id": "C3",
+                "label": "unsupported",
+                "reason": "Source 3 explicitly states that the document does not provide information regarding health certificate requirements or the number of photos required."
+              },
+              {
+                "claim_id": "C4",
+                "label": "insufficient_evidence",
+                "reason": "Source 4 mentions requirements for event preparation but does not specify a 30-day submission deadline."
+              },
+              {
+                "claim_id": "C5",
+                "label": "supported",
+                "reason": "Source 5 confirms that the event guidance requires the event type, planned location, date range, and estimated attendance."
+              }
+            ],
+            "unlisted_claims": [],
+            "coverage_complete": true,
+            "reason": "The answer contains multiple unsupported claims that contradict the provided source documents, which explicitly state that such information is unavailable or not provided.",
+            "attempts": 1,
+            "input_tokens": 1793,
+            "output_tokens": 339,
+            "latency_s": 7.880061583011411,
+            "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+            "judge_input_sha256": "3d8e52361c7f9131c0d32aeae7ab76acbaced23d0f22588744dd9266bac9cb3d"
+          }
+        },
+        {
+          "case_ids": [
+            "W3-H16",
+            "W3-H17",
+            "W3-H18",
+            "W3-H19",
+            "W3-H20"
+          ],
+          "judgement": {
+            "valid": true,
+            "error": null,
+            "errors": [],
+            "claims": [
+              {
+                "claim_id": "C1",
+                "label": "supported",
+                "reason": "Source 1 explicitly states that submitting official applications and making payments are outside the scope of this version."
+              },
+              {
+                "claim_id": "C2",
+                "label": "supported",
+                "reason": "Source 1 states that making legal decisions is outside the scope of this version."
+              },
+              {
+                "claim_id": "C3",
+                "label": "supported",
+                "reason": "Source 3 confirms there is no database connection, so the assistant cannot look up or check the status of tickets."
+              },
+              {
+                "claim_id": "C4",
+                "label": "supported",
+                "reason": "Source 4 explicitly defines the reference format as YV-YYYY-NNNNNN."
+              },
+              {
+                "claim_id": "C5",
+                "label": "supported",
+                "reason": "Source 5 states Beldesk provides document-based explanations for municipal services and can prepare drafts for field faults."
+              }
+            ],
+            "unlisted_claims": [],
+            "coverage_complete": true,
+            "reason": "All claims are accurately supported by the provided source documents.",
+            "attempts": 1,
+            "input_tokens": 1734,
+            "output_tokens": 301,
+            "latency_s": 48.22589954198338,
+            "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+            "judge_input_sha256": "01630c8ff0b770d0517bb18fd28598d1d6a5b4d7a5c25b599442f6398f14ebea"
+          }
+        }
+      ],
+      "provider_events": [
+        {
+          "call_number": 1,
+          "timestamp_utc": "2026-11-24T19:31:46.313415+00:00",
+          "case_id": "W3-H01,W3-H02,W3-H03,W3-H04,W3-H05",
+          "stage": "retrospective_calibration_judge",
+          "transport_attempt": 1,
+          "status": "ok",
+          "http_status": null,
+          "diagnostic_code": null,
+          "wait_before_call_s": 0.0
+        },
+        {
+          "call_number": 2,
+          "timestamp_utc": "2026-11-24T19:31:53.818564+00:00",
+          "case_id": "W3-H06,W3-H07,W3-H08,W3-H09,W3-H10",
+          "stage": "retrospective_calibration_judge",
+          "transport_attempt": 1,
+          "status": "ok",
+          "http_status": null,
+          "diagnostic_code": null,
+          "wait_before_call_s": 6.033413000055589
+        },
+        {
+          "call_number": 3,
+          "timestamp_utc": "2026-11-24T19:32:01.323698+00:00",
+          "case_id": "W3-H11,W3-H12,W3-H13,W3-H14,W3-H15",
+          "stage": "retrospective_calibration_judge",
+          "transport_attempt": 1,
+          "status": "ok",
+          "http_status": null,
+          "diagnostic_code": null,
+          "wait_before_call_s": 5.301359000033699
+        },
+        {
+          "call_number": 4,
+          "timestamp_utc": "2026-11-24T19:32:08.828822+00:00",
+          "case_id": "W3-H16,W3-H17,W3-H18,W3-H19,W3-H20",
+          "stage": "retrospective_calibration_judge",
+          "transport_attempt": 1,
+          "status": "provider_error",
+          "http_status": null,
+          "diagnostic_code": "NETWORK_TIMEOUT",
+          "wait_before_call_s": 4.921665083966218,
+          "exception_type": "DiagnosticProviderError",
+          "retryable": true,
+          "retry_after_s": null,
+          "backoff_s": 5.0,
+          "jitter_s": 0.6394267984578837,
+          "required_wait_s": 5.639426798457884
+        },
+        {
+          "call_number": 5,
+          "timestamp_utc": "2026-11-24T19:32:44.571226+00:00",
+          "case_id": "W3-H16,W3-H17,W3-H18,W3-H19,W3-H20",
+          "stage": "retrospective_calibration_judge",
+          "transport_attempt": 2,
+          "status": "ok",
+          "http_status": null,
+          "diagnostic_code": null,
+          "wait_before_call_s": 5.639418589533307
+        }
+      ],
+      "method": "Independent retrospective claims; current assigned sources; no supplementary labels supplied to judge.",
+      "finished_utc": "2026-11-24T19:32:52.133381+00:00",
+      "provider_calls": 5
+    }
+  ]
+}

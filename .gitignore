@@ -5,6 +5,7 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+.cache/
 
 # Düzenlenebilir sunum kaynakları ve denetim çıktıları yerelde kalır.
 deck/

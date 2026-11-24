@@ -1,0 +1,76 @@
+{
+  "week": 3,
+  "stage": "rag_answer_and_claim_judge",
+  "planned_cases": 38,
+  "processed_cases": 38,
+  "run_complete": true,
+  "valid_generated_answers": 2,
+  "valid_claim_judgements": 0,
+  "answerability_accuracy": {
+    "value": 0.05263157894736842,
+    "n": 38,
+    "definition": "valid answer abstains iff fixed test flag says unanswerable; not semantic answer accuracy"
+  },
+  "abstention_correct": {
+    "value": 0.0,
+    "n": 6,
+    "numerator": 0,
+    "definition": "valid fixed-fallback response on unavailable-information controls"
+  },
+  "unsupported_claims": {
+    "value": null,
+    "n": 0,
+    "numerator": 0,
+    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+  },
+  "faithfulness": {
+    "valid_judged_claims": 0,
+    "labels": {
+      "insufficient_evidence": 0,
+      "supported": 0,
+      "unsupported": 0
+    },
+    "unsupported_claims": {
+      "value": null,
+      "n": 0,
+      "numerator": 0,
+      "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+    },
+    "claim_coverage": {
+      "unlisted_factual_claims": 0,
+      "answers_with_complete_claim_coverage": 0,
+      "n_valid_judgements": 0
+    },
+    "generation_errors": 36,
+    "judge_errors_or_skipped": 38,
+    "note": "An automatic provisional faithfulness estimate, not answer accuracy; human calibration required."
+  },
+  "generation_latency_p50_s": 7.790943958233884,
+  "latency_p50_s": 8.088702312748255,
+  "latency_note": "retrieval plus generation, judge excluded, shared pacing waits excluded; cached rows retain historical generation timings",
+  "e2e_accuracy": {
+    "value": null,
+    "n": null,
+    "reason": "No independent answer-adequacy rubric measured; claim faithfulness is not question completion"
+  },
+  "tokens": {
+    "generation": {
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    "judgement": {
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  },
+  "list_price_equivalent_usd": {
+    "generation": null,
+    "judgement": null
+  },
+  "cost_incomplete": true,
+  "actual_spend_usd": null,
+  "billing_note": "No billing evidence collected; list prices are dated assumptions, not actual spend",
+  "provider_calls_this_invocation": 40,
+  "provisional": true,
+  "provisional_reason": "Synthetic draft corpus/test labels and human judge calibration pending or limited"
+}

@@ -1,0 +1,122 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Are a building permit and an occupancy permit the same process in the project guide?",
+    "language": "en",
+    "sources_sha256": "bb2d66fa31d1cab262a7e70fb99fffefc0b4aaa5ec6bcef8f21dbc3df27b9013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "A building permit is the process for construction authorization, while an occupancy permit is a separate evaluation regarding the use of a completed structure. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "A building permit is the process for construction authorization, while an occupancy permit is a separate evaluation regarding the use of a completed structure.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Yapı ruhsatı, proje senaryosunda inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#details",
+        "chunk_id": "YV-D002#details:0-405:eb74b1c000",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+        "heading": "Başvuru türünü ayırma",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "0.1-draft",
+        "text": "Yapı ruhsatı, proje senaryosunda inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir. Kullanıcıdan hangisini sorduğu ve başvurunun hangi aşamada olduğu öğrenilir. Asistan bir parsel için izin verilip verilemeyeceğini, yapının hukuka uygunluğunu veya başvurunun kesin sonucunu söylemez. Bunlar belge incelemesi ve yetkili birim değerlendirmesi gerektirir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#scope",
+        "chunk_id": "YV-D002#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#limits",
+        "chunk_id": "YV-D002#limits:0-374:d2675b6491",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+        "heading": "Bilgi hazırlığı ve sınırlar",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "0.1-draft",
+        "text": "Yönlendirme için ilçe içinde olup olmadığı, başvuru türü ve varsa başvuru referansı yeterlidir. Tapu kopyası, kimlik numarası ve mimari çizimlerin tamamı sohbete yüklenmek zorunda değildir. Gerekli belge listesi bu genel rehberde ayrıntılandırılmamıştır. Asistan belge adı veya ücret tahmin etmek yerine İmar ve Ruhsat biriminden başvuru türüne özgü liste alınmasını önerir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#scope",
+        "chunk_id": "YV-D006#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#details",
+        "chunk_id": "YV-D006#details:0-373:626ffc7b07",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+        "heading": "Ön bilgi listesi",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "0.1-draft",
+        "text": "Test senaryosunda etkinlik veya geçici stant hakkında yönlendirme için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı aralığı belirtilir. Bu bilgiler başvuruya hazırlık içindir, izin verilmesi anlamına gelmez. Asistan bir parkın seçilen tarihte boş olduğunu veya etkinliğin onaylanacağını söylemez. Alan uygunluğu yetkili birim tarafından değerlendirilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2185,
+    "output_tokens": 128,
+    "latency_s": 7.615791624994017,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "de043216584edaffeab5bbc82751065b91a5f94098b5155fd5f2cdab126566ff",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"A building permit is the process for construction authorization, while an occupancy permit is a separate evaluation regarding the use of a completed structure.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Yapı ruhsatı, proje senaryosunda inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:31:00.762947+00:00",
+    "wall_latency_including_pacing_s": 7.615791624994017
+  }
+}

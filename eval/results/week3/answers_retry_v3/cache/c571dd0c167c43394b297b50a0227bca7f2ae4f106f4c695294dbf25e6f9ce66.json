@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "I want to report an old sofa for bulky waste collection. What details should I provide?",
+    "language": "en",
+    "sources_sha256": "a295b2c3c65c0b8bcd183fcddbbd3d027e7b8028c293d34b63a22b9ddb3ee28d",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "To report bulky waste such as an old sofa, you should provide the type of item, the approximate quantity, the neighborhood, and the specific location where it can be collected. [1]\nYou do not need to provide personal identification or payment information for this report. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "To report bulky waste such as an old sofa, you should provide the type of item, the approximate quantity, the neighborhood, and the specific location where it can be collected.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Test senaryosunda eski mobilya ve benzeri hacimli atık için eşyanın türü, yaklaşık adedi, bulunduğu mahalle ve alınabileceği konum açıklanır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "You do not need to provide personal identification or payment information for this report.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Vatandaşın kimlik veya ödeme bilgileri genel yönlendirme için gerekmez."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#details",
+        "chunk_id": "YV-D012#details:0-363:ab5e3d123c",
+        "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+        "heading": "Hacimli atık bilgileri",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "0.1-draft",
+        "text": "Test senaryosunda eski mobilya ve benzeri hacimli atık için eşyanın türü, yaklaşık adedi, bulunduğu mahalle ve alınabileceği konum açıklanır. Evsel çöp konteynerinin alınmaması ayrı bir hizmet problemidir. Asistan belirtilmeyen eşya ağırlığını veya toplama aracının uygunluğunu tahmin etmez. Vatandaşın kimlik veya ödeme bilgileri genel yönlendirme için gerekmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#reporting",
+        "chunk_id": "YV-D011#reporting:0-448:c760fe3c2d",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Bildirim için gereken bilgiler",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur. Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir; etkilenen kişi sayısı uydurulmaz. Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz. Hazırlanan taslak, kullanıcıdan onay istenerek gösterilir; bu aşamada kayıt açılmış olmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#scope",
+        "chunk_id": "YV-D012#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#limits",
+        "chunk_id": "YV-D012#limits:0-377:5d50a94ede",
+        "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+        "heading": "Randevu ve işlem sınırı",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "0.1-draft",
+        "text": "Beldesk toplama randevusu oluşturmaz; gün, saat veya ücretsiz toplama sözü vermez. İlgili kaynakta bulunmayan toplama takvimi açıklanamaz. Kullanıcı bir randevunun durumunu soruyorsa konu yeni saha şikâyeti gibi sınıflandırılmamalıdır. Yol güvenliğini etkileyen bir durum anlatılırsa etki ayrıca kaydedilir; yalnızca eşyanın büyük olması otomatik bir öncelik sınıfı belirlemez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#scope",
+        "chunk_id": "YV-D011#scope:0-376:78adc70ac9",
+        "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "0.1-draft",
+        "text": "Bu sentetik rehber Beldesk ders projesinde alınmayan evsel atık bildirimini açıklamak için hazırlanmıştır. Resmî bir belediye hizmet standardı değildir ve ekip incelemesi bekler. Soru yalnızca toplama gününü öğrenmek için sorulmuşsa bilgi isteği olarak ele alınır; çöpün alınmadığını bildiren mesaj ise saha sorunu taslağına konu olabilir. İkisi birbirine karıştırılmamalıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2208,
+    "output_tokens": 225,
+    "latency_s": 1.5797825829358771,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "39e6c15befa186f9fbed44e832cee0299fe4d296092a547be823b3bacd48301f",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"To report bulky waste such as an old sofa, you should provide the type of item, the approximate quantity, the neighborhood, and the specific location where it can be collected.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Test senaryosunda eski mobilya ve benzeri hacimli atık için eşyanın türü, yaklaşık adedi, bulunduğu mahalle ve alınabileceği konum açıklanır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You do not need to provide personal identification or payment information for this report.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Vatandaşın kimlik veya ödeme bilgileri genel yönlendirme için gerekmez.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:19:15.626374+00:00",
+    "wall_latency_including_pacing_s": 6.6538131249835715
+  }
+}

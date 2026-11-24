@@ -1,0 +1,52 @@
+{
+  "week": 3,
+  "test_set_size": 38,
+  "e2e_accuracy": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "abstention_correct": {
+    "value": 1.0,
+    "n": 6,
+    "numerator": 6,
+    "definition": "valid fixed-fallback response on unavailable-information controls"
+  },
+  "unsupported_claims": {
+    "value": 0.0,
+    "n": 61,
+    "numerator": 0,
+    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+  },
+  "hit_at_5": {
+    "value": 0.96875,
+    "n": 32,
+    "script": "eval/retrieval_week3.py"
+  },
+  "mrr": {
+    "value": 0.953125,
+    "n": 32,
+    "script": "eval/retrieval_week3.py",
+    "cutoff": 10
+  },
+  "task_success": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "pass_k": {
+    "k": null,
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "injection_success": {
+    "value": null,
+    "n": null,
+    "script": null
+  },
+  "cost_per_task_usd": null,
+  "latency_p50_s": 2.521084417006932,
+  "spend_week_usd": null,
+  "spend_total_usd": null
+}

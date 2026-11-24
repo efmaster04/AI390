@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "What is the exact 2026 fee for registering my cat?",
+    "language": "en",
+    "sources_sha256": "54ab97cdcd39f17eec3fef2d7a5cbe59745823432ca520fd516836ce603112ac",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#details",
+        "chunk_id": "YV-D010#details:0-343:d8ed0d0af3",
+        "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+        "heading": "Yayımlanmış ücret sınırı",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "0.1-draft",
+        "text": "Bu taslak veri sürümünde nikâh, evcil hayvan kaydı, su aboneliği ve etkinlik izni için onaylanmış sayısal ücret kalemleri yayımlanmamıştır. Bu nedenle asistan bu hizmetlerin ücretsiz olduğunu da belirli bir tutar gerektirdiğini de söyleyemez. Bir ücret sorusu cevaplanırken hizmet adı ve geçerlilik yılı eşleşen açık bir tarife kalemi gerekir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#limits",
+        "chunk_id": "YV-D006#limits:0-350:1b1d7e6af6",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+        "heading": "Başvuru sınırı",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "0.1-draft",
+        "text": "Beldesk izin başvurusunu göndermez, alan rezervasyonu yapmaz ve ücret tahsil etmez. Eksik tarih veya yer varsa bunlar sorulur; özel güvenlik, hukuki yükümlülükler ve izin koşulları tahmin edilmez. Bu rehberde bir 2026 etkinlik bedeli bulunmadığından ücret sorusu için tarife belgesi gerekir. Tarifede ilgili kalem de yoksa sabit bir tutar üretilemez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#limits",
+        "chunk_id": "YV-D010#limits:0-398:1d16615c2c",
+        "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+        "heading": "Gelecekte tarife ekleme",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "0.1-draft",
+        "text": "Ekip ileride kurgusal ücret kalemi eklerse hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir. Ücretin kaynakta bulunması ödeme yapılabileceği anlamına gelmez; Beldesk ödeme almaz. Eski sürüm ile yeni tarife çelişirse sessizce birini seçmek yerine sürüm ve geçerlilik denetimi gerekir. Bu doküman fiyatları uydurarak cevap üretmeyi önlemek için vardır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#scope",
+        "chunk_id": "YV-D010#scope:0-278:9d611cf5ae",
+        "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+        "heading": "Kapsam ve veri niteliği",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "0.1-draft",
+        "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#limits",
+        "chunk_id": "YV-D005#limits:0-372:2392e7bf7d",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+        "heading": "Ücret ve belge sınırı",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "0.1-draft",
+        "text": "Bu rehber hayvan kaydının ücretsiz olduğunu veya belirli bir ücret alındığını söylemez. Ücret sorusunda ayrı tarife kaynağı aranmalıdır. Hayvanın sağlık durumu hakkında teşhis veya tedavi önerisi verilmez. Kayıp hayvan, evcil hayvan kaydı ve saldırgan hayvan bildirimi farklı konulardır; kullanıcı bunlardan hangisini kastettiğini belirtmediyse önce talebin amacı sorulur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2188,
+    "output_tokens": 17,
+    "latency_s": 6.54246000002604,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "b332430679d1d0259284f8c46ecccbfa92a4b620acf0584e126e3b268e8277dd",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T19:22:19.254563+00:00",
+    "wall_latency_including_pacing_s": 11.91139700007625
+  }
+}

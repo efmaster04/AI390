@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "W3-R001",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R002",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  }
+]

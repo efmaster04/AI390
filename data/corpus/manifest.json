@@ -1,0 +1,772 @@
+{
+  "review_status": "draft_pending_human_review",
+  "corpus_sha256": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+  "documents": [
+    {
+      "doc_id": "YV-D001",
+      "title": "Yeşilvadi Nikâh Başvurusu Rehberi",
+      "title_en": "Marriage Application Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D001",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "nikâh",
+        "nikah",
+        "evlilik",
+        "marriage",
+        "appointment",
+        "randevu"
+      ],
+      "sha256": "f9d9db733a19cf7aeeb9e200fbfee58441a6d3b061f8d7d16476e42014ed448c",
+      "path": "YV-D001-marriage.md",
+      "passage_count": 3,
+      "words": 152
+    },
+    {
+      "doc_id": "YV-D002",
+      "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+      "title_en": "Building and Occupancy Permit Overview",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D002",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "building permit",
+        "occupancy",
+        "ruhsat",
+        "iskân"
+      ],
+      "sha256": "0df2104ad166168b02da673cfe24898faa4c462c229748bedd0d3356464a16be",
+      "path": "YV-D002-guide.md",
+      "passage_count": 3,
+      "words": 133
+    },
+    {
+      "doc_id": "YV-D003",
+      "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+      "title_en": "Water Subscription Application Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D003",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "approved",
+      "keywords": [
+        "su aboneliği",
+        "water subscription",
+        "application",
+        "required documents",
+        "kiracı",
+        "tenant"
+      ],
+      "sha256": "e37aa83bb4f329af6b3691dc330ed9cb89e055e531a571128fed09fa63aa91ae",
+      "path": "YV-D003-water-subscription.md",
+      "passage_count": 3,
+      "words": 174
+    },
+    {
+      "doc_id": "YV-D004",
+      "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+      "title_en": "Social Assistance Application Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D004",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "social aid",
+        "assistance",
+        "gelir",
+        "yardım"
+      ],
+      "sha256": "07398367d6f2e5068bebf44ab0e0460b10f197936a6addcbe422b54a90914922",
+      "path": "YV-D004-guide.md",
+      "passage_count": 3,
+      "words": 133
+    },
+    {
+      "doc_id": "YV-D005",
+      "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+      "title_en": "Pet Registration Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D005",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "pet registration",
+        "cat",
+        "dog",
+        "kedi",
+        "köpek",
+        "kayıt"
+      ],
+      "sha256": "0615e8915fceab6ef8bdd946e39acc243074fb68ffbc6a05ed02d6e7ad3847f5",
+      "path": "YV-D005-guide.md",
+      "passage_count": 3,
+      "words": 129
+    },
+    {
+      "doc_id": "YV-D006",
+      "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+      "title_en": "Event and Temporary Stand Permit Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D006",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "event permit",
+        "fair",
+        "stand",
+        "etkinlik",
+        "stant",
+        "panayır"
+      ],
+      "sha256": "60088bba4fb4f036aada43a3e9ca97b7428b3eed7664f5a515dbfe895b562443",
+      "path": "YV-D006-guide.md",
+      "passage_count": 3,
+      "words": 130
+    },
+    {
+      "doc_id": "YV-D007",
+      "title": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci",
+      "title_en": "Field Complaint Draft and Confirmation Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D007",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "complaint",
+        "draft",
+        "confirmation",
+        "şikâyet",
+        "onay"
+      ],
+      "sha256": "7b65e86d0c994f713a97e43a397b24f3f9ebd1e2f86e2710429649a367c89003",
+      "path": "YV-D007-guide.md",
+      "passage_count": 3,
+      "words": 129
+    },
+    {
+      "doc_id": "YV-D008",
+      "title": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması",
+      "title_en": "Synthetic Data and Privacy Notice",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D008",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "privacy",
+        "personal data",
+        "gizlilik",
+        "kişisel veri"
+      ],
+      "sha256": "5b7813ca543a337eba2aa540ae508c2f82f929f08fe861ae39f78fb733efe9bd",
+      "path": "YV-D008-guide.md",
+      "passage_count": 3,
+      "words": 126
+    },
+    {
+      "doc_id": "YV-D009",
+      "title": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı",
+      "title_en": "Emergency Redirection and Service Boundary",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D009",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "emergency",
+        "112",
+        "acil",
+        "dispatch"
+      ],
+      "sha256": "1db6e6c58c595da16bebc3ca51e3d61b2733370667b4e3b7e07b6eb87b4de703",
+      "path": "YV-D009-guide.md",
+      "passage_count": 3,
+      "words": 130
+    },
+    {
+      "doc_id": "YV-D010",
+      "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+      "title_en": "2026 Synthetic Fee Information Scope",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D010",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "fees",
+        "tariff",
+        "price",
+        "ücret",
+        "tarife"
+      ],
+      "sha256": "354cc218680cd2667b9744545adad40c006c8e5e49045e79a1702cb39d4131be",
+      "path": "YV-D010-guide.md",
+      "passage_count": 3,
+      "words": 136
+    },
+    {
+      "doc_id": "YV-D011",
+      "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+      "title_en": "Missed Household Waste Collection Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D011",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "çöp",
+        "atık",
+        "temizlik",
+        "missed waste collection",
+        "rubbish",
+        "garbage",
+        "container"
+      ],
+      "sha256": "5cc0e9763189c21ab3dd8457492211d8927be5fcd749aaa54cd7c5c402257f04",
+      "path": "YV-D011-missed-waste.md",
+      "passage_count": 3,
+      "words": 162
+    },
+    {
+      "doc_id": "YV-D012",
+      "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+      "title_en": "Bulky Waste Collection Request Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D012",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "bulky waste",
+        "furniture",
+        "hacimli atık",
+        "mobilya"
+      ],
+      "sha256": "2f9139abadf6a09a5b1d6d64998d18ba958c14a9204fea8339cfdd3df2676ee9",
+      "path": "YV-D012-guide.md",
+      "passage_count": 3,
+      "words": 127
+    },
+    {
+      "doc_id": "YV-D013",
+      "title": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi",
+      "title_en": "Recycling Separation and Drop-off Information",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D013",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "recycling",
+        "paper",
+        "plastic",
+        "geri dönüşüm",
+        "ambalaj"
+      ],
+      "sha256": "dcb6d4e349e9fc370d041723b236eafd269c8f4195e0e1ab801d0f4be178a90a",
+      "path": "YV-D013-guide.md",
+      "passage_count": 3,
+      "words": 134
+    },
+    {
+      "doc_id": "YV-D014",
+      "title": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi",
+      "title_en": "Hazardous or Unidentified Waste Reporting",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D014",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "hazardous waste",
+        "chemical",
+        "pil",
+        "kimyasal",
+        "bilinmeyen atık"
+      ],
+      "sha256": "74dfb93d3fe913b72bf6d63a80a030e4ed53772a5781583d1c2c9ee516dafc83",
+      "path": "YV-D014-guide.md",
+      "passage_count": 3,
+      "words": 129
+    },
+    {
+      "doc_id": "YV-D015",
+      "title": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi",
+      "title_en": "Park Use and Opening Hours Information",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D015",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "park",
+        "opening hours",
+        "Güneştepe",
+        "açılış",
+        "kapanış"
+      ],
+      "sha256": "0f8d84e1f5a2221e561ee68daf2164caaa6218d27078b3fe6a72096da630c5d4",
+      "path": "YV-D015-guide.md",
+      "passage_count": 3,
+      "words": 134
+    },
+    {
+      "doc_id": "YV-D016",
+      "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+      "title_en": "Playground Equipment Fault Report Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D016",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "playground",
+        "swing",
+        "seesaw",
+        "salıncak",
+        "tahterevalli"
+      ],
+      "sha256": "3422ba54f60404dddb72fffcc2f904e38cb63e1ef405cba8592b2b7f45454b24",
+      "path": "YV-D016-guide.md",
+      "passage_count": 3,
+      "words": 130
+    },
+    {
+      "doc_id": "YV-D017",
+      "title": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi",
+      "title_en": "Library Membership Information",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D017",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "library membership",
+        "borrow",
+        "kütüphane",
+        "üyelik",
+        "kitap"
+      ],
+      "sha256": "bed134471468adbcf227a886a181032ad2979f7ccb6debd0066d0efea0a0c820",
+      "path": "YV-D017-guide.md",
+      "passage_count": 3,
+      "words": 131
+    },
+    {
+      "doc_id": "YV-D018",
+      "title": "Yeşilvadi Kültür Merkezi Etkinlik Bilgisi",
+      "title_en": "Cultural Centre Event Information",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D018",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "cultural centre",
+        "Atatürk",
+        "Saturday",
+        "kültür merkezi",
+        "cumartesi"
+      ],
+      "sha256": "2e1c90a632aedaf0b846686e13a340fbb4344983752ae32199b30ebb2d4e7c29",
+      "path": "YV-D018-guide.md",
+      "passage_count": 3,
+      "words": 124
+    },
+    {
+      "doc_id": "YV-D019",
+      "title": "Yeşilvadi Erişilebilirlik ve Engelli Erişimi Bildirimi",
+      "title_en": "Accessibility and Disabled Access Report Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D019",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "accessibility",
+        "wheelchair",
+        "ramp",
+        "erişilebilirlik",
+        "rampa"
+      ],
+      "sha256": "09233ca2948922d4f4f657ef54b2ca84f66057f5fbdee96c5a705941484f478b",
+      "path": "YV-D019-guide.md",
+      "passage_count": 3,
+      "words": 127
+    },
+    {
+      "doc_id": "YV-D020",
+      "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+      "title_en": "Pothole and Road Surface Fault Reporting",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D020",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "pothole",
+        "road surface",
+        "çukur",
+        "asfalt"
+      ],
+      "sha256": "31e5ecf677ce0867d3426bfe1687a9ad3e88f413ffbc49c343c5245e43c6feb8",
+      "path": "YV-D020-guide.md",
+      "passage_count": 3,
+      "words": 124
+    },
+    {
+      "doc_id": "YV-D021",
+      "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+      "title_en": "Sidewalk Damage and Blocked Passage Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D021",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "sidewalk",
+        "pavement",
+        "kaldırım",
+        "geçiş"
+      ],
+      "sha256": "75a8d0c967af9763255422ac95d539ac67247c9da7eadfdd0da68c3bd3729e61",
+      "path": "YV-D021-guide.md",
+      "passage_count": 3,
+      "words": 127
+    },
+    {
+      "doc_id": "YV-D022",
+      "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+      "title_en": "Street Lighting Outage Report Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D022",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "street lighting",
+        "lamp",
+        "dark street",
+        "aydınlatma",
+        "lamba"
+      ],
+      "sha256": "56794b60adcb92f8653b4f25e9cc485cd3791fe5cb594b562fb9c91897c8454a",
+      "path": "YV-D022-guide.md",
+      "passage_count": 3,
+      "words": 127
+    },
+    {
+      "doc_id": "YV-D023",
+      "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+      "title_en": "Traffic Signal Fault Report Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D023",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "traffic signal",
+        "crossing",
+        "trafik lambası",
+        "sinyal"
+      ],
+      "sha256": "12f5b8fee4716f82a1d9b3b02842cd92be443754a8c674410413cabdf90f08a6",
+      "path": "YV-D023-guide.md",
+      "passage_count": 3,
+      "words": 128
+    },
+    {
+      "doc_id": "YV-D024",
+      "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+      "title_en": "Water Leak and Sewer Overflow Report Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D024",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "sewer overflow",
+        "water leak",
+        "kanalizasyon",
+        "su kaçağı"
+      ],
+      "sha256": "39fa49775a32faf1623f46c2baeddfe9e1d8d2298bff71b30e2f9d97348d38b2",
+      "path": "YV-D024-guide.md",
+      "passage_count": 3,
+      "words": 124
+    },
+    {
+      "doc_id": "YV-D025",
+      "title": "Yeşilvadi Gürültü ve Çevresel Rahatsızlık Bildirimi",
+      "title_en": "Noise and Environmental Nuisance Report Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D025",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "noise",
+        "construction",
+        "gürültü",
+        "inşaat"
+      ],
+      "sha256": "89956aa4c88e516ef7535d9335d7e969e0a45454face81c924dcf9654642c12c",
+      "path": "YV-D025-guide.md",
+      "passage_count": 3,
+      "words": 129
+    },
+    {
+      "doc_id": "YV-D026",
+      "title": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı",
+      "title_en": "Stray Animal Report and Request Types",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D026",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "stray animal",
+        "lost pet",
+        "sokak hayvanı",
+        "saldırgan"
+      ],
+      "sha256": "43bba7e6cdfb360eefa487743004bb3f1c9b4b65275b047b6137dde702c5c792",
+      "path": "YV-D026-guide.md",
+      "passage_count": 3,
+      "words": 122
+    },
+    {
+      "doc_id": "YV-D027",
+      "title": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri",
+      "title_en": "Duplicate Reports and Updates Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D027",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "duplicate",
+        "update",
+        "tekrar bildirim",
+        "güncelleme"
+      ],
+      "sha256": "e389ffb24f87e42feb3e192b274734f963e5ab98005b6e7d2b99a8668eb734cc",
+      "path": "YV-D027-guide.md",
+      "passage_count": 3,
+      "words": 128
+    },
+    {
+      "doc_id": "YV-D028",
+      "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+      "title_en": "Ticket Status and Ownership Boundary",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D028",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "ticket status",
+        "ownership",
+        "şikâyet durumu",
+        "kayıt sorgulama"
+      ],
+      "sha256": "8f420c6e9f68940ff9b5a4d0db3e407f26d708084565805bb5398c0eb4f820c3",
+      "path": "YV-D028-guide.md",
+      "passage_count": 3,
+      "words": 125
+    },
+    {
+      "doc_id": "YV-D029",
+      "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+      "title_en": "Municipal Service Scope and Referral Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D029",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "jurisdiction",
+        "referral",
+        "yetki alanı",
+        "kurum"
+      ],
+      "sha256": "29806a5e3a55a6d2c5465f7b941f92c8c02573400a8afe341d79d8356cb8c276",
+      "path": "YV-D029-guide.md",
+      "passage_count": 3,
+      "words": 125
+    },
+    {
+      "doc_id": "YV-D030",
+      "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+      "title_en": "Unavailable Information and Future Dates Guide",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D030",
+      "access": [
+        "public"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "unknown answer",
+        "crew arrival",
+        "bilinmeyen bilgi",
+        "ekip geliş"
+      ],
+      "sha256": "636a595a4f0377fb533df87ec29a407647040745c94927ffdf1d3bed7f4fe9fa",
+      "path": "YV-D030-guide.md",
+      "passage_count": 3,
+      "words": 123
+    },
+    {
+      "doc_id": "YV-D031",
+      "title": "Personel İçin Test Kuyruğu İnceleme Notu",
+      "title_en": "Staff-only Synthetic Queue Review Note",
+      "language": "tr",
+      "version": "0.1-draft",
+      "updated_at": "2026-11-24",
+      "source": "beldesk://synthetic/YV-D031",
+      "access": [
+        "staff"
+      ],
+      "synthetic": true,
+      "review_status": "draft",
+      "keywords": [
+        "kuyruk",
+        "personel",
+        "internal queue",
+        "staff review",
+        "STAFF-ONLY-QUEUE-DEMO"
+      ],
+      "sha256": "8620585f1ff450b2ccd99f680958778bf98a0fcdf651c26b7246cd28a2cb94b3",
+      "path": "YV-D031-staff-queue.md",
+      "passage_count": 2,
+      "words": 112
+    }
+  ]
+}

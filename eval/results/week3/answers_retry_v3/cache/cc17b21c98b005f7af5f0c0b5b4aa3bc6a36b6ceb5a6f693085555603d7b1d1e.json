@@ -1,0 +1,41 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
+    "index": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
+    "question": "Kaldırım hasarı bildirirken geçişin tamamen mi kısmen mi kapandığını belirtmeli miyim?",
+    "language": "tr",
+    "sources_sha256": "b59e5dfc41e32d75f8773c65eebc438d621f4c3b5b61d8a9d3163d04ac259139",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "21979c378a1b5f8a382dba0a422d1bda4fe95263605c0f19c202b8f38d7206aa",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that when describing a sidewalk issue, information about whether the passage is completely or partially blocked is collected."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the source material regarding the requirement to specify the extent of the passage blockage.",
+    "attempts": 1,
+    "input_tokens": 1969,
+    "output_tokens": 110,
+    "latency_s": 2.4008991670561954,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "290195e583b9f7a939ccf167f4d88981153f4718ceb6aac09be44bfde565cabb",
+    "wall_latency_including_pacing_s": 7.946719917003065
+  }
+}

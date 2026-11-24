@@ -1,0 +1,228 @@
+[
+  {
+    "case_id": "W3-R001",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R002",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R003",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R004",
+    "stage": "evaluation",
+    "kind": "judge_error_or_invalid"
+  },
+  {
+    "case_id": "W3-R005",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R006",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R007",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R008",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R009",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R010",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R011",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R012",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R013",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R014",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R015",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R016",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R017",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R018",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R019",
+    "stage": "evaluation",
+    "kind": "judge_error_or_invalid"
+  },
+  {
+    "case_id": "W3-R020",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R021",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R022",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R023",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R024",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R025",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R026",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R027",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R028",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R029",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R030",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R031",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-R032",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-U001",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-U002",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-U003",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-U004",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-U005",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  },
+  {
+    "case_id": "W3-U006",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "provider_error:ProviderError"
+  }
+]
