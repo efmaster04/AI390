@@ -1,0 +1,23 @@
+{
+  "basis": "Dated list price (config/prices.json snapshot in run_meta.json) applied to recorded token counts; not billed. Gemini free tier: actual spend 0 USD (same convention as Weeks 1 and 2).",
+  "price": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "price_in_per_1m_usd": 0.25,
+    "price_out_per_1m_usd": 1.5,
+    "free_tier": true,
+    "source_url": "https://aistudio.google.com/docs/pricing",
+    "checked_on": "2026-11-09"
+  },
+  "cost_per_task_list_usd": 0.0010428355263157895,
+  "cost_per_task_definition": "mean over all planned cases of the final record's answer-generation tokens at the dated list price; judge, classifier and local retrieval excluded; usage of failed transport attempts is unknown and not included; not billed spend",
+  "recorded_calls_list_price_equivalent": {
+    "input_tokens": 176539,
+    "output_tokens": 20681,
+    "list_price_usd": 0.07515625
+  },
+  "recorded_calls_note": "All recorded generation and judge calls of the first pass and the repair pass; usage of 3 failed transport attempts is unknown, so this is a lower bound.",
+  "actual_spend_week_usd": 0.0,
+  "actual_spend_total_usd": 0.0,
+  "actual_spend_note": "Weeks 1 and 2 reported 0 USD actual spend on the same free tier."
+}

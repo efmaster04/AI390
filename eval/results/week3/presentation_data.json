@@ -1,7 +1,7 @@
 {
-  "status_date": "2026-11-24",
+  "status_date": "2026-11-25",
   "dataset_version": "citizen-v2",
-  "tests_passed": 283,
+  "tests_passed": 305,
   "deliverables": {
     "W3.1": {
       "status": "done",
@@ -17,7 +17,7 @@
     },
     "W3.4": {
       "status": "partial",
-      "note": "36/38 valid citizen-v2 responses; actual fixed-refusal results retained."
+      "note": "36/38 valid citizen-v2 responses (first pass 35/38); 5/6 unavailable-information controls returned the fixed refusal."
     },
     "W3.5": {
       "status": "done",
@@ -41,31 +41,41 @@
     "test_set_size": 38,
     "e2e_accuracy": {
       "value": null,
+      "ci95": null,
       "n": null,
       "script": null
     },
     "abstention_correct": {
-      "value": 0.8333333333333334,
+      "value": 0.8333,
+      "ci95": [
+        0.4365,
+        0.9699
+      ],
       "n": 6,
-      "numerator": 5,
-      "definition": "valid fixed-fallback response on unavailable-information controls"
+      "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete"
     },
     "unsupported_claims": {
-      "value": 0.02197802197802198,
-      "n": 91,
-      "numerator": 2,
-      "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+      "value": 0.0111,
+      "ci95": [
+        0.002,
+        0.0603
+      ],
+      "n": 90,
+      "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete (eval/faithfulness_week3.py)"
     },
     "hit_at_5": {
       "value": 1.0,
+      "ci95": [
+        0.8928,
+        1.0
+      ],
       "n": 32,
-      "script": "eval/retrieval_week3.py"
+      "script": "eval/retrieval_week3.py (rankings) -> eval/rescore_retrieval_week3.py"
     },
     "mrr": {
-      "value": 0.7588541666666667,
+      "value": 0.7589,
       "n": 32,
-      "cutoff": 10,
-      "script": "eval/retrieval_week3.py"
+      "script": "eval/retrieval_week3.py (rankings) -> eval/rescore_retrieval_week3.py"
     },
     "task_success": {
       "value": null,
@@ -83,18 +93,18 @@
       "n": null,
       "script": null
     },
-    "cost_per_task_usd": null,
-    "latency_p50_s": 4.72438522905577,
-    "spend_week_usd": null,
-    "spend_total_usd": null
+    "cost_per_task_usd": 0.001043,
+    "latency_p50_s": 4.72,
+    "spend_week_usd": 0.0,
+    "spend_total_usd": 0.0
   },
   "availability": {
     "selected_directory": "answers_citizen_v2_complete",
     "dataset_version": "citizen-v2",
     "retry_valid": 36,
     "retry_processed": 38,
-    "cache_hits": 35,
-    "fresh_valid": 1,
+    "cache_hits": 0,
+    "fresh_valid": 36,
     "model": "gemini-3.1-flash-lite",
     "comparable_to_retired_v1": false
   },
@@ -106,7 +116,7 @@
     "variant": "hybrid_rerank",
     "diagnosis": "A required answer facet is missing from top 5",
     "evidence_label": "YV-D006#details",
-    "note": "gold_in_candidates_but_below_top5. Finding one relevant passage does not cover every requested part; all-facet@5 = 0.969."
+    "note": "Missing facet ranked 7 of 10; the model saw only the top 5 and returned the fixed refusal (retrieval failure). All-facet@5 = 0.969."
   },
   "human_review": {
     "approved_documents": 31,
@@ -135,15 +145,15 @@
   },
   "generation": {
     "summary": "36/38 valid citizen-v2 responses; 35 judged; v1 excluded.",
-    "unsupported_claims": 0.02197802197802198,
-    "claims_total": 91,
+    "unsupported_claims": 0.011111111111111112,
+    "claims_total": 90,
     "kappa": 0.7709923664122137,
     "errors": 2
   },
   "failures": {
     "generation": {
-      "question": "Fresh model run on citizen-v2 sources and questions",
-      "answer": "36/38 valid responses; 1 fresh and 35 reused within this version. Retired v1 answers do not count.",
+      "question": "Model run on citizen-v2 sources and questions",
+      "answer": "35/38 valid on the first pass; the 3 invalid cases were retried once and 1 recovered: 36/38. No cache hits; retired v1 answers do not count.",
       "diagnosis": "Retrieval coverage, provider availability and claim support are distinct measurements."
     },
     "evaluation": {

@@ -3,31 +3,41 @@
   "test_set_size": 38,
   "e2e_accuracy": {
     "value": null,
+    "ci95": null,
     "n": null,
     "script": null
   },
   "abstention_correct": {
-    "value": 0.8333333333333334,
+    "value": 0.8333,
+    "ci95": [
+      0.4365,
+      0.9699
+    ],
     "n": 6,
-    "numerator": 5,
-    "definition": "valid fixed-fallback response on unavailable-information controls"
+    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete"
   },
   "unsupported_claims": {
-    "value": 0.02197802197802198,
-    "n": 91,
-    "numerator": 2,
-    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+    "value": 0.0111,
+    "ci95": [
+      0.002,
+      0.0603
+    ],
+    "n": 90,
+    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete (eval/faithfulness_week3.py)"
   },
   "hit_at_5": {
     "value": 1.0,
+    "ci95": [
+      0.8928,
+      1.0
+    ],
     "n": 32,
-    "script": "eval/retrieval_week3.py"
+    "script": "eval/retrieval_week3.py (rankings) -> eval/rescore_retrieval_week3.py"
   },
   "mrr": {
-    "value": 0.7588541666666667,
+    "value": 0.7589,
     "n": 32,
-    "cutoff": 10,
-    "script": "eval/retrieval_week3.py"
+    "script": "eval/retrieval_week3.py (rankings) -> eval/rescore_retrieval_week3.py"
   },
   "task_success": {
     "value": null,
@@ -45,8 +55,8 @@
     "n": null,
     "script": null
   },
-  "cost_per_task_usd": null,
-  "latency_p50_s": 4.72438522905577,
-  "spend_week_usd": null,
-  "spend_total_usd": null
+  "cost_per_task_usd": 0.001043,
+  "latency_p50_s": 4.72,
+  "spend_week_usd": 0.0,
+  "spend_total_usd": 0.0
 }
