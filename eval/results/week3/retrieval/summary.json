@@ -1,10 +1,10 @@
 {
   "stage": "retrieval_only",
   "provisional": true,
-  "started_utc": "2026-11-24T18:21:13.445994+00:00",
-  "finished_utc": "2026-11-24T18:21:40.827603+00:00",
+  "started_utc": "2026-11-24T20:40:31.671257+00:00",
+  "finished_utc": "2026-11-24T20:41:07.448637+00:00",
   "git": {
-    "commit": "396b0845d96f88d9c55d08c1228a7adb175e5cdf",
+    "commit": "22577a65e4851eef633a32961e09fa5debcdcf8e",
     "dirty": true
   },
   "api_calls": 0,
@@ -25,9 +25,9 @@
     "note": "Local retrieval only. No private records, answer generation or API calls. Never silently truncate source text."
   },
   "config_sha256": "d1325843654bd03f363f834385f2bf82f13badd7f556a1691f967973bcdced32",
-  "corpus_sha256": "c168dac751714e9eb5bd7590069330f5d06c3eefc45554cd28147f32f66449c0",
-  "index_sha256": "cabfb9763d267006808d05564d6570c392ac0f87a86c54dd655e9841065cdf70",
-  "cases_sha256": "b6027151e8759067383417417361ebf50b124a6ae219a51d9cba4f9e796b1d9b",
+  "corpus_sha256": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+  "index_sha256": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+  "cases_sha256": "a767cb5c7bbd3aa6b063e12d41f4783de85a2d16390a4ab161502b55cb112d18",
   "code_sha256": {
     "src/rag/__init__.py": "9c081774233f0fd760f39447d3cef0f9c44dddc19fa7b91b2243347ba24f02ad",
     "src/rag/answer.py": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
@@ -37,7 +37,7 @@
     "src/rag/lexical.py": "08c0dac7aa022d211c7c2a16d39949e770c804beaf638645bf44456affa655d0",
     "src/rag/models.py": "983c0c49402d0ff61aee4f17cd1ab412b8eed5fc9b517582b702dd2f3a337766",
     "src/rag/retrieval.py": "9a5fe7a1d2f5a5513f2e6f2bee683915cf4d47ee708aa5d6b97b80eb277bd261",
-    "eval/retrieval_week3.py": "5c3fb2fa619535be128ef7f9da6da93cd5b4f53a4fce2cc8cc6c307c51c7631f"
+    "eval/retrieval_week3.py": "bf59323f1a866b3658c9cc1e4cd78e402465de242a5c7b8b4a0b66e4f5594891"
   },
   "python": "3.13.5",
   "packages": {
@@ -48,82 +48,82 @@
     "huggingface-hub": "0.36.0"
   },
   "latency_note": "CPU warm inference; query and reranker score caches disabled; index embeddings cached; single run",
-  "metric_note": "Hit@k = at least one gold quote found; MRR truncated at 10; controls excluded; not answer accuracy",
+  "metric_note": "Hit@k = at least one required answer facet found using pre-registered canonical or alternative evidence; all_gold_hit_at_5 requires every facet; MRR truncated at10; controls excluded; not answer accuracy",
   "summaries": {
     "hybrid_rerank": {
       "n_answerable": 32,
       "n_unanswerable_controls": 6,
       "hit_at_k": {
-        "1": 0.9375,
-        "3": 0.96875,
-        "5": 0.96875,
-        "10": 0.96875
+        "1": 0.59375,
+        "3": 0.9375,
+        "5": 1.0,
+        "10": 1.0
       },
-      "mrr_at_10": 0.953125,
+      "mrr_at_10": 0.7588541666666667,
       "all_gold_hit_at_5": 0.96875,
       "by_language": {
         "en": {
           "n": 16,
-          "hit_at_5": 0.9375,
-          "mrr_at_10": 0.9375
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.6895833333333333
         },
         "tr": {
           "n": 16,
           "hit_at_5": 1.0,
-          "mrr_at_10": 0.96875
+          "mrr_at_10": 0.828125
         }
       },
-      "query_latency_p50_s": 0.2632230829913169
+      "query_latency_p50_s": 0.41659829195123166
     },
     "dense_rerank": {
       "n_answerable": 32,
       "n_unanswerable_controls": 6,
       "hit_at_k": {
-        "1": 0.9375,
+        "1": 0.59375,
         "3": 0.96875,
-        "5": 0.96875,
-        "10": 0.96875
+        "5": 1.0,
+        "10": 1.0
       },
-      "mrr_at_10": 0.953125,
+      "mrr_at_10": 0.7614583333333333,
       "all_gold_hit_at_5": 0.96875,
       "by_language": {
         "en": {
           "n": 16,
-          "hit_at_5": 0.9375,
-          "mrr_at_10": 0.9375
-        },
-        "tr": {
-          "n": 16,
           "hit_at_5": 1.0,
-          "mrr_at_10": 0.96875
-        }
-      },
-      "query_latency_p50_s": 0.2797273119795136
-    },
-    "hybrid_no_rerank": {
-      "n_answerable": 32,
-      "n_unanswerable_controls": 6,
-      "hit_at_k": {
-        "1": 0.71875,
-        "3": 0.90625,
-        "5": 0.9375,
-        "10": 0.96875
-      },
-      "mrr_at_10": 0.8046875,
-      "all_gold_hit_at_5": 0.90625,
-      "by_language": {
-        "en": {
-          "n": 16,
-          "hit_at_5": 0.875,
           "mrr_at_10": 0.6979166666666666
         },
         "tr": {
           "n": 16,
           "hit_at_5": 1.0,
-          "mrr_at_10": 0.9114583333333334
+          "mrr_at_10": 0.825
         }
       },
-      "query_latency_p50_s": 0.01531945850001648
+      "query_latency_p50_s": 0.4146280829445459
+    },
+    "hybrid_no_rerank": {
+      "n_answerable": 32,
+      "n_unanswerable_controls": 6,
+      "hit_at_k": {
+        "1": 0.53125,
+        "3": 0.84375,
+        "5": 0.90625,
+        "10": 0.96875
+      },
+      "mrr_at_10": 0.6893229166666667,
+      "all_gold_hit_at_5": 0.875,
+      "by_language": {
+        "en": {
+          "n": 16,
+          "hit_at_5": 0.8125,
+          "mrr_at_10": 0.5609375
+        },
+        "tr": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.8177083333333334
+        }
+      },
+      "query_latency_p50_s": 0.01629522949224338
     }
   },
   "ablations": {

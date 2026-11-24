@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "What is the exact 2026 fee for registering my cat?",
+    "language": "en",
+    "sources_sha256": "bb8c58babd63783f5c6194a5c37211183900fa5281bdff34bd868bd01f86039e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D028",
+        "passage_id": "YV-D028#details",
+        "chunk_id": "YV-D028#details:0-436:308255a243",
+        "title": "Yeşilvadi Başvuru Numarası ve Durum Sorgusu",
+        "heading": "Referansı kullanma ve bulamama durumu",
+        "source": "beldesk://synthetic/YV-D028",
+        "version": "citizen-v2",
+        "text": "Yeşilvadi başvuru referansı örneği YV-2026-000123 biçimindedir. Durum sorarken referansı alındı belgesindeki şekliyle yazın ve hangi işlem hakkında bilgi istediğinizi belirtin. Numaranız eksik ya da okunamıyorsa belgeyi kontrol edin; bulamıyorsanız başvuru noktasına ilk başvurunun tarihi, konusu ve yerini açıklayın. Başka bir kişiye ait referansı bilmeniz, o kişinin başvuru ve iletişim bilgilerinin size açıklanacağı anlamına gelmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#limits",
+        "chunk_id": "YV-D005#limits:0-367:2053181b57",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi",
+        "heading": "İşlem öncesi kontrol",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "citizen-v2",
+        "text": "Talebinize uygun belge listesini ve varsa güncel ücret bilgisini birimden teyit edin. Genel bilgilendirme görüşmesi sırasında hayvanın sağlık durumuna ilişkin belge veya kişisel belge görüntüsü paylaşmanız gerekmez. Başvuru oluşturulduğunda verilen referansı saklayın; sonraki bilgi güncellemelerini bu referansla ilişkilendirmeniz dosyanın bulunmasını kolaylaştırır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#summary",
+        "chunk_id": "YV-D005#summary:0-279:56607db6cc",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi",
+        "heading": "Kayıt ve bilgi güncelleme",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "citizen-v2",
+        "text": "Evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. İlk kayıt, mevcut kayda bilgi ekleme ve iletişim bilgisi güncelleme ayrı taleplerdir. Kayıp bir hayvanı arama veya sokak hayvanı bildirimi için kullanılan süreç, sahipli hayvanın kayıt işlemiyle aynı değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#details",
+        "chunk_id": "YV-D027#details:0-559:6136882651",
+        "title": "Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip",
+        "heading": "Ek bilgi gönderirken gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "citizen-v2",
+        "text": "Önceki başvuru numaranızı, sorunun konumunu ve ilk bildiriminizi ne zaman yaptığınızı biliyorsanız ekleyin. Sorun aynı şekilde devam ediyorsa bunu belirtin; büyüme, başka bir noktaya yayılma veya geçişin daha fazla etkilenmesi varsa değişikliği açıklayın. Önceki başvuru numarasını bulamıyorsanız ilk bildirimin tarihi, konusu ve yeri başvuru noktasına durumu anlatmanıza yardımcı olur. Aynı bilgiyi tekrar yazmak yerine yeni gözlem veya değişiklik varsa onu ekleyin. Yeni bir fotoğrafınız varsa mevcut durumu göstermek için önceki referansla iletebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D019",
+        "passage_id": "YV-D019#limits",
+        "chunk_id": "YV-D019#limits:0-409:14862e1fde",
+        "title": "Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi",
+        "heading": "Mevcut sorun ve yeni düzenleme isteği",
+        "source": "beldesk://synthetic/YV-D019",
+        "version": "citizen-v2",
+        "text": "Daha önce kullanılabilen bir geçişin kapanması durumunda ne zamandan beri kapalı olduğunu ekleyin. Yeni bir rampa ya da giriş düzenlemesi öneriyorsanız mevcut güzergâhı ve hangi noktada alternatif gerektiğini açıklayın. Fotoğraf veya konum işareti başvuruya ek bilgi sağlayabilir. Aynı yer için önceki başvurunuz varsa referansını kullanarak sorunun sürüp sürmediğini veya değişen koşulları bildirebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2239,
+    "output_tokens": 17,
+    "latency_s": 3.5158726249355823,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "5367d5b6735643ba573bbf05b368b3090fe85a774eb58040841283b98239c87d",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:44:11.017203+00:00",
+    "wall_latency_including_pacing_s": 7.082691624993458
+  }
+}

@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D015","title":"Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi","title_en":"Park Use and Opening Hours Information","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D015","access":["public"],"synthetic":true,"review_status":"draft","keywords":["park","opening hours","Güneştepe","açılış","kapanış"]}
+{"doc_id":"YV-D015","title":"Yeşilvadi Park Ziyareti ve Tesis Bilgisi","title_en":"Park Visits and Facilities","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D015","access":["public"],"synthetic":true,"review_status":"draft","keywords":["park","opening hours","facilities","entrance","park adı","ziyaret","tesis"]}
 ---
 
-# Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi
+# Yeşilvadi Park Ziyareti ve Tesis Bilgisi
 
-## Kapsam ve veri niteliği {#scope}
+## Park hakkında hangi bilgiler alınabilir? {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Parkın konumu, girişleri, yürüyüş alanı, oturma yeri, oyun alanı ve erişilebilir geçişleri hakkında bilgi istenebilir. Bir parkın içindeki spor alanı ya da işletmenin kullanım koşulları parkın genel kullanımından farklı olabilir. İstediğiniz bilginin bütün parka mı, belirli bir tesise mi yoksa o gün yapılacak etkinliğe mi ait olduğunu belirtin.
 
-## Parkı belirleme {#details}
+## Doğru parkı belirleme {#details}
 
-Park hakkında bilgi için mahalle ve parkın adı öğrenilir. Aynı mahallede birden fazla park bulunabileceğinden mahalle adı tek başına belirli bir tesisin saatini doğrulamaz. Yeşilvadi test rehberi parkların yirmi dört saat açık olduğunu varsaymaz. Kullanıcı açılış saati soruyorsa bu bir hizmet bilgisi isteğidir; parkta arıza bildirmesiyle aynı işlem değildir.
+Park bilgisini bulabilmek için parkın adını ve bulunduğu mahalleyi yazın. Adını bilmiyorsanız girişin bulunduğu sokak, yakındaki okul veya başka bir belirgin yer yardımcı olur. Aynı mahallede birden fazla park bulunabildiği için yalnız mahalle adı her zaman yeterli değildir. Çocuk oyun alanı, otopark, erişilebilir giriş veya belirli bir tesis arıyorsanız bunu da ekleyin. Ziyaret gününüzü belirtmek, tarihli etkinlik bilgisiyle genel tesis bilgisini ayırmayı kolaylaştırır.
 
-## Saat ve rezervasyon sınırı {#limits}
+## Saat bilgisi ve bakım bildirimi {#limits}
 
-Bu belge Güneştepe parklarının güncel açılış veya kapanış saatini içermez. Saat açıklamak için tesis adına ve geçerli tarihe bağlı ayrı kaynak gerekir. Beldesk park rezervasyonu yapmaz, alanın belirli bir etkinliğe uygun olduğunu onaylamaz ve güvenlik görevlisine ulaştığını söylemez. Bank, aydınlatma veya oyun alanı arızası varsa sorun ve konum ayrıca kaydedilir.
+Açılış ya da kapanış saati sorarken parkın veya tesisin adını ve gitmek istediğiniz günü belirtin. Etkinlik programındaki saat, parkın bütün gün açık kaldığı saatlerle aynı bilgi değildir. Ziyaret sırasında kırık donatı veya kapalı geçiş görürseniz park adı, bulunduğu bölüm ve sorunun fotoğrafıyla bakım bildirimi yapabilirsiniz. Yeni bir tesis isteği için mevcut arızadan farklı olarak önerinizi ve kullanım ihtiyacını açıklayın.

@@ -1,0 +1,104 @@
+{
+  "started_utc": "2026-11-24T20:39:44.460377+00:00",
+  "finished_utc": "2026-11-24T20:51:50.221624+00:00",
+  "planned_cases": 38,
+  "processed_cases": 38,
+  "phase": "finished",
+  "identity": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "temperature": 0,
+    "seed": 42,
+    "hashes": {
+      "generation_prompt": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+      "judge_prompt": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+      "answer_config": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+      "cases": "a767cb5c7bbd3aa6b063e12d41f4783de85a2d16390a4ab161502b55cb112d18"
+    },
+    "code": {
+      "src/rag/answer.py": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+      "eval/faithfulness_week3.py": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b",
+      "eval/answer_week3.py": "897e405b9e553c9e40ea3f7fc713df4eba2c6c5d00956856ba4fd33d5e3a3f78"
+    },
+    "corpus_sha256": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index_sha256": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049"
+  },
+  "composition_method": "Original successes retained; only originally invalid generations may be replaced by one bounded validity-repair pass. Not 38 independent new calls.",
+  "composition_code_sha256": "5defb2b63f4a86d3704a09391b91b1a3f8ec3f4dbcb2afdac77a8ecb9ca57932",
+  "components": [
+    {
+      "directory": "answers_citizen_v2",
+      "identity": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "temperature": 0,
+        "seed": 42,
+        "hashes": {
+          "generation_prompt": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+          "judge_prompt": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+          "answer_config": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+          "cases": "a767cb5c7bbd3aa6b063e12d41f4783de85a2d16390a4ab161502b55cb112d18"
+        },
+        "code": {
+          "src/rag/answer.py": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+          "eval/faithfulness_week3.py": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b",
+          "eval/answer_week3.py": "897e405b9e553c9e40ea3f7fc713df4eba2c6c5d00956856ba4fd33d5e3a3f78"
+        },
+        "corpus_sha256": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+        "index_sha256": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049"
+      },
+      "records_sha256": "d9d8fb86f68117896c7d537e32e7e1f1c262e5daf1ce70dd835db00df8cbf7bb",
+      "run_meta_sha256": "deaf76000e582f8ddef36ac512338756ca4a8b552be99350e4dc8ff84b472e05",
+      "provider_calls": 76,
+      "transport_errors": 3
+    },
+    {
+      "directory": "answers_citizen_v2_repair",
+      "identity": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite",
+        "temperature": 0,
+        "seed": 42,
+        "hashes": {
+          "generation_prompt": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+          "judge_prompt": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+          "answer_config": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+          "cases": "c0c9ecd444152a49d39ec1f9887790c07709eaf8150b9a5e6eb27bb9d4c171d8"
+        },
+        "code": {
+          "src/rag/answer.py": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+          "eval/faithfulness_week3.py": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b",
+          "eval/answer_week3.py": "897e405b9e553c9e40ea3f7fc713df4eba2c6c5d00956856ba4fd33d5e3a3f78"
+        },
+        "corpus_sha256": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+        "index_sha256": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049"
+      },
+      "records_sha256": "04418b10aad5075eeb4c1bfeed0b48b7ff4fafe0dd5fd90fa6bd161a639cf73f",
+      "run_meta_sha256": "86249c4b54d8b5fc068b59c674f3f898da39c7be9c2a9e0e6325d3cb6f304407",
+      "provider_calls": 7,
+      "transport_errors": 0
+    }
+  ],
+  "replaced_case_ids": [
+    "W3-R004"
+  ],
+  "repair_validation_retries": 1,
+  "original_validation_retries": 0,
+  "provider_calls_this_invocation": 0,
+  "provider_events": [],
+  "transport_errors": 0,
+  "component_provider_calls_total": 83,
+  "cache_hits": 69,
+  "cached_results_are_historical_model_calls": true,
+  "actual_spend_usd": null,
+  "cached_consumption_unknown": true,
+  "prices_snapshot": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "price_in_per_1m_usd": 0.25,
+    "price_out_per_1m_usd": 1.5,
+    "free_tier": true,
+    "source_url": "https://aistudio.google.com/docs/pricing",
+    "checked_on": "2026-11-09"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "I found a dog wandering alone and I am not its owner. Is this a stray-animal report or a pet-registration request?",
+    "language": "en",
+    "sources_sha256": "158f4b20bdb4470ef251d8c5852dd5fa8b7b4ebc1effb6bfd4740e63d9162f94",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Reporting a stray animal and registering a pet are distinct service categories. [3][5]\nA report regarding an animal seen on the street should include the neighborhood, street, observation time, and the animal's condition. [1]\nPet registration is a separate process used for owned animals, requiring details such as the animal's species and identification reference. [1][5]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Reporting a stray animal and registering a pet are distinct service categories.",
+        "citations": [
+          3,
+          5
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Sokakta görülen bir hayvanla ilgili bildirim, kayıp evcil hayvan arayışı ve sahipli hayvanın kayıt işlemi farklı hizmet konularıdır."
+          },
+          {
+            "citation": 5,
+            "quote": "Kayıp bir hayvanı arama veya sokak hayvanı bildirimi için kullanılan süreç, sahipli hayvanın kayıt işlemiyle aynı değildir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "A report regarding an animal seen on the street should include the neighborhood, street, observation time, and the animal's condition.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Sokak hayvanı bildirimi için hayvanın görüldüğü mahalleyi, sokağı, gözlem zamanını ve dışarıdan görülen durumunu yazın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Pet registration is a separate process used for owned animals, requiring details such as the animal's species and identification reference.",
+        "citations": [
+          1,
+          5
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Sahipli hayvanın kayıt işlemi için ise kayıt mı bilgi güncellemesi mi istediğinizi belirterek hayvanın türünü ve varsa kimliklendirme referansını hazırlayın."
+          },
+          {
+            "citation": 5,
+            "quote": "İlk kayıt, mevcut kayda bilgi ekleme ve iletişim bilgisi güncelleme ayrı taleplerdir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D026",
+        "passage_id": "YV-D026#details",
+        "chunk_id": "YV-D026#details:0-497:61c9e9ed61",
+        "title": "Yeşilvadi Sokak Hayvanı ve Kayıp Evcil Hayvan Başvuruları",
+        "heading": "Konum ve ayırt edici özellikler",
+        "source": "beldesk://synthetic/YV-D026",
+        "version": "citizen-v2",
+        "text": "Sokak hayvanı bildirimi için hayvanın görüldüğü mahalleyi, sokağı, gözlem zamanını ve dışarıdan görülen durumunu yazın. Kayıp evcil hayvan arayışında tür, renk, ayırt edici özellik, son görüldüğü yer ve zaman yardımcı olur. Fotoğrafınız varsa hayvanı ayırt etmeyi kolaylaştırabilir. Sahipli hayvanın kayıt işlemi için ise kayıt mı bilgi güncellemesi mi istediğinizi belirterek hayvanın türünü ve varsa kimliklendirme referansını hazırlayın. Gözlem ile bildiğiniz sahiplik bilgisini ayrı açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D026",
+        "passage_id": "YV-D026#limits",
+        "chunk_id": "YV-D026#limits:0-408:b32e383209",
+        "title": "Yeşilvadi Sokak Hayvanı ve Kayıp Evcil Hayvan Başvuruları",
+        "heading": "Yeni gözlem ve başvuru takibi",
+        "source": "beldesk://synthetic/YV-D026",
+        "version": "citizen-v2",
+        "text": "Daha önce bildirdiğiniz hayvanı başka bir noktada görürseniz önceki başvuru numarasıyla yeni yeri ve zamanı iletin. Kayıp hayvan bulunmuşsa arayışın sona erdiğini bildirebilirsiniz. Başvuru sonucunu öğrenmek için ilgili başvuru noktasından verilen referansı kullanın. Başka bir kişinin iletişim ya da başvuru bilgisi yerine, kendi başvurunuzun veya doğrudan gözleminizin ayrıntılarını paylaşmanız yeterlidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D026",
+        "passage_id": "YV-D026#scope",
+        "chunk_id": "YV-D026#scope:0-334:94d45f0e6f",
+        "title": "Yeşilvadi Sokak Hayvanı ve Kayıp Evcil Hayvan Başvuruları",
+        "heading": "Hangi hizmete ihtiyacınız var?",
+        "source": "beldesk://synthetic/YV-D026",
+        "version": "citizen-v2",
+        "text": "Sokakta görülen bir hayvanla ilgili bildirim, kayıp evcil hayvan arayışı ve sahipli hayvanın kayıt işlemi farklı hizmet konularıdır. Başvurunun başında hangi ihtiyacı ilettiğinizi belirtin. Kayıp bir hayvanı gördüğünüzü düşünüyorsanız, kendi hayvanınızı arıyormuş gibi başvuru yapmak yerine bulunduğunuz yeri ve gözleminizi açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#details",
+        "chunk_id": "YV-D027#details:0-559:6136882651",
+        "title": "Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip",
+        "heading": "Ek bilgi gönderirken gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "citizen-v2",
+        "text": "Önceki başvuru numaranızı, sorunun konumunu ve ilk bildiriminizi ne zaman yaptığınızı biliyorsanız ekleyin. Sorun aynı şekilde devam ediyorsa bunu belirtin; büyüme, başka bir noktaya yayılma veya geçişin daha fazla etkilenmesi varsa değişikliği açıklayın. Önceki başvuru numarasını bulamıyorsanız ilk bildirimin tarihi, konusu ve yeri başvuru noktasına durumu anlatmanıza yardımcı olur. Aynı bilgiyi tekrar yazmak yerine yeni gözlem veya değişiklik varsa onu ekleyin. Yeni bir fotoğrafınız varsa mevcut durumu göstermek için önceki referansla iletebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#summary",
+        "chunk_id": "YV-D005#summary:0-279:56607db6cc",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi",
+        "heading": "Kayıt ve bilgi güncelleme",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "citizen-v2",
+        "text": "Evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. İlk kayıt, mevcut kayda bilgi ekleme ve iletişim bilgisi güncelleme ayrı taleplerdir. Kayıp bir hayvanı arama veya sokak hayvanı bildirimi için kullanılan süreç, sahipli hayvanın kayıt işlemiyle aynı değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2273,
+    "output_tokens": 430,
+    "latency_s": 5.130776165984571,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "5750d079be4b84b1616593a2b5d9b15152d28a1a980a47b7c08d01b45930a3c8",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Reporting a stray animal and registering a pet are distinct service categories.\",\n      \"citations\": [3, 5],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Sokakta görülen bir hayvanla ilgili bildirim, kayıp evcil hayvan arayışı ve sahipli hayvanın kayıt işlemi farklı hizmet konularıdır.\"\n        },\n        {\n          \"citation\": 5,\n          \"quote\": \"Kayıp bir hayvanı arama veya sokak hayvanı bildirimi için kullanılan süreç, sahipli hayvanın kayıt işlemiyle aynı değildir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"A report regarding an animal seen on the street should include the neighborhood, street, observation time, and the animal's condition.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sokak hayvanı bildirimi için hayvanın görüldüğü mahalleyi, sokağı, gözlem zamanını ve dışarıdan görülen durumunu yazın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Pet registration is a separate process used for owned animals, requiring details such as the animal's species and identification reference.\",\n      \"citations\": [1, 5],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sahipli hayvanın kayıt işlemi için ise kayıt mı bilgi güncellemesi mi istediğinizi belirterek hayvanın türünü ve varsa kimliklendirme referansını hazırlayın.\"\n        },\n        {\n          \"citation\": 5,\n          \"quote\": \"İlk kayıt, mevcut kayda bilgi ekleme ve iletişim bilgisi güncelleme ayrı taleplerdir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:42:59.540207+00:00",
+    "wall_latency_including_pacing_s": 11.626143125002272
+  }
+}

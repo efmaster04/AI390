@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D006","title":"Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi","title_en":"Event and Temporary Stand Permit Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D006","access":["public"],"synthetic":true,"review_status":"draft","keywords":["event permit","fair","stand","etkinlik","stant","panayır"]}
+{"doc_id":"YV-D006","title":"Yeşilvadi Etkinlik ve Geçici Stant Başvurusu","title_en":"Event and Temporary Stand Application Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D006","access":["public"],"synthetic":true,"review_status":"draft","keywords":["event permit","fair","stand","etkinlik","stant","panayır"]}
 ---
 
-# Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi
+# Yeşilvadi Etkinlik ve Geçici Stant Başvurusu
 
-## Kapsam ve veri niteliği {#scope}
+## Başvuru konusu {#summary}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Mahalle şenliği, park etkinliği veya geçici stant için alan kullanım talebi ilgili etkinlik birimine iletilir. Kamuya açık bir alanı kullanmak ile yalnızca bir etkinliğe katılmak farklı taleplerdir. Alan kullanımında etkinliğin kapsamı ve alandaki ihtiyaçlar birlikte değerlendirilir.
 
-## Ön bilgi listesi {#details}
+## Etkinlik dosyası {#details}
 
-Test senaryosunda etkinlik veya geçici stant hakkında yönlendirme için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı aralığı belirtilir. Bu bilgiler başvuruya hazırlık içindir, izin verilmesi anlamına gelmez. Asistan bir parkın seçilen tarihte boş olduğunu veya etkinliğin onaylanacağını söylemez. Alan uygunluğu yetkili birim tarafından değerlendirilir.
+Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır. Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir. Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz. Bu bilgiler alan ve hizmet ihtiyacının değerlendirilmesine yardımcı olur.
 
-## Başvuru sınırı {#limits}
+## Değerlendirme ve değişiklik {#limits}
 
-Beldesk izin başvurusunu göndermez, alan rezervasyonu yapmaz ve ücret tahsil etmez. Eksik tarih veya yer varsa bunlar sorulur; özel güvenlik, hukuki yükümlülükler ve izin koşulları tahmin edilmez. Bu rehberde bir 2026 etkinlik bedeli bulunmadığından ücret sorusu için tarife belgesi gerekir. Tarifede ilgili kalem de yoksa sabit bir tutar üretilemez.
+Alan uygunluğu ve izin sonucu ilgili birimin incelemesinden sonra kesinleşir. Yer, tarih veya katılımcı sayısında değişiklik olduğunda mevcut başvuru referansını kullanarak değişikliği bildirin. Etkinlik sonrasında atık toplama veya eşya alımı gerekiyorsa ilgili hizmet için ayrıca talep iletin. Erişimi engelleyen mevcut bir kaldırım veya giriş sorunu, erişilebilirlik bildirimi olarak da iletilebilir.

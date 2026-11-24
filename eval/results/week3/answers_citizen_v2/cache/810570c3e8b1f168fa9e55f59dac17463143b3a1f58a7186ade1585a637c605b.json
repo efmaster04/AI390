@@ -1,0 +1,150 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Electricity works in our homes, but every lamp on the street is dark. Should I report a street-lighting fault or a power cut?",
+    "language": "en",
+    "sources_sha256": "9f407f600e2d823ba1e83cd833cec54af53cda246f3c9e65ab62897398b96f0c",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "If electricity is available in homes and workplaces but street lamps are not working, you should report a street-lighting fault. [1][3]\nA power cut affecting homes and workplaces is a separate issue that requires contacting the electricity distribution company. [2][3][5]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "If electricity is available in homes and workplaces but street lamps are not working, you should report a street-lighting fault.",
+        "citations": [
+          1,
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Evlerde ve işyerlerinde elektrik olduğu hâlde sokak lambalarının yanmaması, konutları da etkileyen elektrik kesintisinden farklıdır."
+          },
+          {
+            "citation": 3,
+            "quote": "Ev ve işyerlerinde elektrik olduğu hâlde yalnız sokak lambaları sönükse sokak aydınlatması bildirimi yapılır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "A power cut affecting homes and workplaces is a separate issue that requires contacting the electricity distribution company.",
+        "citations": [
+          2,
+          3,
+          5
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Ev ve işyerlerine de elektrik gelmiyorsa konut kesintisi için ilgili dağıtım hizmetinden bilgi alınması gerekir."
+          },
+          {
+            "citation": 3,
+            "quote": "Bir binanın veya birden fazla konut ve işyerinin elektrik kesintisi için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetinden bilgi alınır."
+          },
+          {
+            "citation": 5,
+            "quote": "Konut veya işyerlerine elektrik gelmemesi, sokak aydınlatmasının çalışmamasından farklı bir hizmet konusudur."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#details",
+        "chunk_id": "YV-D022#details:0-469:13827ed904",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Lambayı ve etkilenen alanı belirleme",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve arızalı lambanın bulunduğu noktayı yazın. Direk numarası okunuyorsa ekleyin; numara yoksa bina, durak veya kavşak gibi yakındaki bir işaret yeterli bir tarif sağlayabilir. Tek lamba mı, birkaç lamba mı yoksa bütün sokak mı etkileniyor belirtin. Evlerde ve işyerlerinde elektrik olduğu hâlde sokak lambalarının yanmaması, konutları da etkileyen elektrik kesintisinden farklıdır. Sorunun ne zamandır sürdüğünü ve sürekli mi aralıklı mı olduğunu ekleyin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#limits",
+        "chunk_id": "YV-D022#limits:0-428:dce3b9735c",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Yeni bilgi ve takip",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Daha önce başvurduysanız eski başvuru numarasını kullanarak lambanın hâlâ yanmadığını veya yeni bir bölümün de etkilendiğini iletin. Gündüz görülen bir direk hasarıyla gece görülen aydınlatma sorununu ayrı açıklayabilirsiniz. Ev ve işyerlerine de elektrik gelmiyorsa konut kesintisi için ilgili dağıtım hizmetinden bilgi alınması gerekir. Aydınlatma bildiriminin sonucunu öğrenirken ilk başvurudaki konumu ve referansı kullanın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#details",
+        "chunk_id": "YV-D029#details:0-502:3006dfda24",
+        "title": "Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme",
+        "heading": "Doğru hizmete başvurma",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "citizen-v2",
+        "text": "Bir binanın veya birden fazla konut ve işyerinin elektrik kesintisi için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetinden bilgi alınır. Ev ve işyerlerinde elektrik olduğu hâlde yalnız sokak lambaları sönükse sokak aydınlatması bildirimi yapılır. Dağıtım şirketine başvururken hizmet adresi, kesintinin başlangıç zamanı ve bildiğiniz etki alanını hazırlayın. Şirketin adını bilmiyorsanız faturanızdaki dağıtım bilgisine veya adresiniz için yayımlanmış hizmet sağlayıcı bilgisine bakın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#scope",
+        "chunk_id": "YV-D022#scope:0-385:8adf3ca427",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Sokak aydınlatması bildirimi",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Sokak, yaya yolu veya meydandaki aydınlatmanın sönmesi, kesintili yanması ya da belirli bir bölümün karanlık kalması için aydınlatma arıza bildirimi yapılabilir. Yeni bir aydınlatma noktası talep etmek, mevcut lambanın arızalanmasından farklı bir başvurudur. Bildiriminizde mevcut bir direğin mi arızalı olduğunu yoksa aydınlatma ihtiyacı bulunan yeni bir yer mi önerdiğinizi belirtin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#scope",
+        "chunk_id": "YV-D029#scope:0-353:4fc0fef6c7",
+        "title": "Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme",
+        "heading": "Kesintinin hangi alanı etkilediği",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "citizen-v2",
+        "text": "Konut veya işyerlerine elektrik gelmemesi, sokak aydınlatmasının çalışmamasından farklı bir hizmet konusudur. Yalnız daire içindeki sorun, binanın tamamını etkileyen durum ve birden fazla binada görülen kesinti aynı kapsamda anlatılmamalıdır. İlk olarak nerelerin etkilendiğini ve elektriğin hangi saatten beri olmadığını bildiğiniz kadarıyla açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2280,
+    "output_tokens": 378,
+    "latency_s": 3.5834957499755546,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "ddc825604c50923bc4857f9fda1eabdfa6971d0cd4e4620f3297f30a5f7042e0",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"If electricity is available in homes and workplaces but street lamps are not working, you should report a street-lighting fault.\",\n      \"citations\": [1, 3],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Evlerde ve işyerlerinde elektrik olduğu hâlde sokak lambalarının yanmaması, konutları da etkileyen elektrik kesintisinden farklıdır.\"\n        },\n        {\n          \"citation\": 3,\n          \"quote\": \"Ev ve işyerlerinde elektrik olduğu hâlde yalnız sokak lambaları sönükse sokak aydınlatması bildirimi yapılır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"A power cut affecting homes and workplaces is a separate issue that requires contacting the electricity distribution company.\",\n      \"citations\": [2, 3, 5],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Ev ve işyerlerine de elektrik gelmiyorsa konut kesintisi için ilgili dağıtım hizmetinden bilgi alınması gerekir.\"\n        },\n        {\n          \"citation\": 3,\n          \"quote\": \"Bir binanın veya birden fazla konut ve işyerinin elektrik kesintisi için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetinden bilgi alınır.\"\n        },\n        {\n          \"citation\": 5,\n          \"quote\": \"Konut veya işyerlerine elektrik gelmemesi, sokak aydınlatmasının çalışmamasından farklı bir hizmet konusudur.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:42:22.129785+00:00",
+    "wall_latency_including_pacing_s": 5.953991541988216
+  }
+}

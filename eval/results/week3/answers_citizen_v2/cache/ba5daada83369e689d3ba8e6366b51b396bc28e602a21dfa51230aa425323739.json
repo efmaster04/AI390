@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Atatürk Kültür Merkezi bu cumartesi saat kaçta kapanacak?",
+    "language": "tr",
+    "sources_sha256": "44a96544973aeb8cfcc73d38fb3ebb45a2f1486999a2067300a48352f0578633",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Bu sorunun yanıtı erişebildiğim belgelerde bulunmuyor. Güvenilir bir yanıt vermek için yeterli kaynak yok.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D018",
+        "passage_id": "YV-D018#limits",
+        "chunk_id": "YV-D018#limits:0-461:07941bda71",
+        "title": "Yeşilvadi Kültür Merkezi ve Etkinlik Katılımı",
+        "heading": "Değişiklik ve ziyaret saatleri",
+        "source": "beldesk://synthetic/YV-D018",
+        "version": "citizen-v2",
+        "text": "Belirli bir cumartesi veya pazar günü ziyaret edecekseniz kültür merkezinin adını ve tarihi açıkça belirtin. Hafta sonu saatleri ile tek bir etkinliğin bitiş saatini birbirinin yerine kullanmayın. Etkinliğin ertelenip ertelenmediği ve boş yer bulunup bulunmadığı için tarihli program duyurusu veya kayıt durumunu kontrol edin. Daha önce kayıt yaptırdıysanız değişiklik sorusunda kayıt referansınızı paylaşabilirsiniz; başkasının katılımcı bilgilerini istemeyin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D018",
+        "passage_id": "YV-D018#details",
+        "chunk_id": "YV-D018#details:0-450:ab61275536",
+        "title": "Yeşilvadi Kültür Merkezi ve Etkinlik Katılımı",
+        "heading": "Katılım için hangi bilgileri aramalısınız?",
+        "source": "beldesk://synthetic/YV-D018",
+        "version": "citizen-v2",
+        "text": "Etkinlik katılımı için etkinlik adı, düzenleneceği kültür merkezi, tarih, başlangıç saati ve kayıt gerekip gerekmediği kontrol edilir. Programda belirtilen etkinlik saati, binanın genel açılış ve kapanış saatleriyle aynı değildir. Atölye başvurularında program adı ve katılmak istediğiniz grup veya oturum belirtilir. Erişilebilir giriş, refakatçi düzeni ya da oturma alanıyla ilgili ihtiyacınız varsa bunu katılım bilgisiyle birlikte sorabilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D018",
+        "passage_id": "YV-D018#scope",
+        "chunk_id": "YV-D018#scope:0-347:996c2c6825",
+        "title": "Yeşilvadi Kültür Merkezi ve Etkinlik Katılımı",
+        "heading": "Mekân ve etkinlik bilgisini ayırma",
+        "source": "beldesk://synthetic/YV-D018",
+        "version": "citizen-v2",
+        "text": "Kültür merkezinde yapılacak bir etkinliğe katılmak, bir atölyeye kaydolmak ve binanın ziyaret koşullarını öğrenmek farklı bilgi talepleridir. Aynı binada birden fazla salon veya program bulunabilir. Sorunuzu etkinliğin adı ya da kullanmak istediğiniz salonla birlikte iletmeniz, genel bina bilgisi yerine doğru programın bulunmasına yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#limits",
+        "chunk_id": "YV-D006#limits:0-403:59babf41e0",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant Başvurusu",
+        "heading": "Değerlendirme ve değişiklik",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "citizen-v2",
+        "text": "Alan uygunluğu ve izin sonucu ilgili birimin incelemesinden sonra kesinleşir. Yer, tarih veya katılımcı sayısında değişiklik olduğunda mevcut başvuru referansını kullanarak değişikliği bildirin. Etkinlik sonrasında atık toplama veya eşya alımı gerekiyorsa ilgili hizmet için ayrıca talep iletin. Erişimi engelleyen mevcut bir kaldırım veya giriş sorunu, erişilebilirlik bildirimi olarak da iletilebilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D015",
+        "passage_id": "YV-D015#limits",
+        "chunk_id": "YV-D015#limits:0-431:d5930bc5f7",
+        "title": "Yeşilvadi Park Ziyareti ve Tesis Bilgisi",
+        "heading": "Saat bilgisi ve bakım bildirimi",
+        "source": "beldesk://synthetic/YV-D015",
+        "version": "citizen-v2",
+        "text": "Açılış ya da kapanış saati sorarken parkın veya tesisin adını ve gitmek istediğiniz günü belirtin. Etkinlik programındaki saat, parkın bütün gün açık kaldığı saatlerle aynı bilgi değildir. Ziyaret sırasında kırık donatı veya kapalı geçiş görürseniz park adı, bulunduğu bölüm ve sorunun fotoğrafıyla bakım bildirimi yapabilirsiniz. Yeni bir tesis isteği için mevcut arızadan farklı olarak önerinizi ve kullanım ihtiyacını açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2225,
+    "output_tokens": 17,
+    "latency_s": 34.35063605662435,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "0ee6a49e8dbdf9d2e973101a398c5e1471706f965c3e2cb6965249bc26c049bd",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:44:33.019529+00:00",
+    "wall_latency_including_pacing_s": 43.70540445798542
+  }
+}

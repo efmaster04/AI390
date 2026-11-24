@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D023","title":"Yeşilvadi Trafik Sinyali Arızası Bildirimi","title_en":"Traffic Signal Fault Report Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D023","access":["public"],"synthetic":true,"review_status":"draft","keywords":["traffic signal","crossing","trafik lambası","sinyal"]}
+{"doc_id":"YV-D023","title":"Yeşilvadi Trafik Sinyali Arıza Bildirimi","title_en":"Traffic Signal Fault Reports","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D023","access":["public"],"synthetic":true,"review_status":"draft","keywords":["traffic light","signal","intersection","direction","trafik lambası","kavşak","yaya sinyali"]}
 ---
 
-# Yeşilvadi Trafik Sinyali Arızası Bildirimi
+# Yeşilvadi Trafik Sinyali Arıza Bildirimi
 
-## Kapsam ve veri niteliği {#scope}
+## Sinyal sorununun konusu {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Kavşak ve yaya geçitlerindeki trafik sinyallerinin sönmesi, kesintili yanması, görülememesi veya alışılmadık biçimde çalışması trafik hizmetleri için bildirilebilir. Sinyal arızası ile yeni bir yaya geçidi ya da yeni sinyal yerleştirilmesi talebi farklı başvurulardır. Sorunun araçlara yönelik ışıkta mı yoksa yaya ışığında mı olduğunu belirtmeniz önemlidir.
 
-## Sinyal konumu ve davranışı {#details}
+## Kavşağı ve ışığı tarif etme {#details}
 
-Trafik sinyali için kavşak veya yaya geçidi, etkilenen yön ve vatandaşın gözlemlediği ışık davranışı sorulur. Bir ışığın sönük olması ile araç ve yaya fazlarının çakışması aynı durum olarak yazılmaz. Asistan gözlem yapılmayan yönler için çalışıyor ya da çalışmıyor diyemez. Birden fazla ayrı sinyal arızası varsa her olayın konumu korunur.
+Kavşağın veya yaya geçidinin yerini, kesişen yolları ve etkilenen yönü bildirin. Örneğin hangi sokaktan kavşağa yaklaşırken sorunu gördüğünüzü açıklayabilirsiniz. Işığın tamamen sönük, sürekli aynı renkte veya kesintili yanar durumda olduğunu gözleminize göre belirtin. Yaya ve araç ışıklarında birlikte bir sorun gördüyseniz her birini ayrı tarif edin. Gözlem zamanını ve sorunun devamlı mı aralıklı mı olduğunu ekleyin; fotoğraf varsa konumu anlamaya yardımcı olabilir.
 
-## Güvenlik ve araç sınırı {#limits}
+## Konumu tamamlama ve başvuru takibi {#limits}
 
-Bu rehber trafiği yönetme veya sinyal programını değiştirme yetkisi vermez. Asistan bir sinyalin düzeltildiğini veya ulaşım ekibinin yola çıktığını söylemez. Somut tehlike bilgisi sınıflandırmada kaybedilmemeli; bilinmeyen bilgiler sorulmalıdır. Onarım zamanı bu kaynakta yoktur. Bildirim metni ve bulunan kaynak bir operasyonel müdahale sonucu olarak sunulamaz.
+Kavşağın adını bilmiyorsanız yakın bir durak, bina veya konum işaretiyle yeri açıklayın. Yalnız mahalle adını vermek birden fazla kavşağın bulunduğu bölgelerde yeterli olmayabilir. Önceki bildiriminize yeni bilgi eklerken başvuru numarasını ve etkilenen yönü tekrar belirtin. Başka bir yönde yeni bir arıza oluşmuşsa bunu önceki gözleminizden ayrı anlatın; bir yöndeki arıza diğer yönlerin durumunu göstermez.

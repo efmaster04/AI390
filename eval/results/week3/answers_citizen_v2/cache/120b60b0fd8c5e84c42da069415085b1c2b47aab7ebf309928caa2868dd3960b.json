@@ -1,0 +1,61 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Üç gündür apartmanımızın önündeki çöp konteyneri boşaltılmadı. Bunu nasıl bildirebilirim?",
+    "language": "tr",
+    "sources_sha256": "027d909cd24128dff912182cafce55f4da0f5207c12b35011fe4d4b0a4c926b5",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "eb9bdf7e2ecc5c9e0d382b2b1c649463730658163c923382d7084eb5d83f9210",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that a cleaning notification can be made for uncollected household waste and overflowing containers."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source lists neighborhood, street, container location, and duration of non-collection as required information for the notification."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source advises specifying if the issue is at a single point or the whole street and describing effects like blocked sidewalks."
+      },
+      {
+        "claim_id": "C4",
+        "label": "supported",
+        "reason": "The source confirms that the container number should be provided if readable, or a nearby landmark if not."
+      },
+      {
+        "claim_id": "C5",
+        "label": "supported",
+        "reason": "The source states that adding a photo can make it easier to understand the location and the accumulation."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately addresses the user's question by summarizing the necessary steps and information required for a cleaning notification based on the provided sources.",
+    "attempts": 1,
+    "input_tokens": 2523,
+    "output_tokens": 274,
+    "latency_s": 5.4053860830608755,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "ec231f4eeaf448e57656dc831d3d00ad4540ea8b94f61f70aa994d60e1e00cb2",
+    "wall_latency_including_pacing_s": 8.7947530830279
+  }
+}

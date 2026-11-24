@@ -1,0 +1,89 @@
+{
+  "week": 3,
+  "stage": "rag_answer_and_claim_judge",
+  "planned_cases": 3,
+  "processed_cases": 3,
+  "run_complete": true,
+  "generation_pass_complete": true,
+  "judging_pass_complete": true,
+  "valid_generated_answers": 1,
+  "valid_claim_judgements": 1,
+  "judgements_deferred_or_not_attempted": 0,
+  "judgements_skipped_generation_error": 2,
+  "judgements_failed_or_invalid": 0,
+  "answerability_accuracy": {
+    "value": 0.3333333333333333,
+    "n": 3,
+    "definition": "valid answer abstains iff fixed test flag says unanswerable; not semantic answer accuracy"
+  },
+  "abstention_correct": {
+    "value": null,
+    "n": 0,
+    "numerator": 0,
+    "definition": "valid fixed-fallback response on unavailable-information controls"
+  },
+  "unsupported_claims": {
+    "value": 0.0,
+    "n": 4,
+    "numerator": 0,
+    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+  },
+  "faithfulness": {
+    "valid_judged_claims": 4,
+    "labels": {
+      "insufficient_evidence": 0,
+      "supported": 4,
+      "unsupported": 0
+    },
+    "unsupported_claims": {
+      "value": 0.0,
+      "n": 4,
+      "numerator": 0,
+      "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+    },
+    "claim_coverage": {
+      "unlisted_factual_claims": 0,
+      "answers_with_complete_claim_coverage": 1,
+      "n_valid_judgements": 1
+    },
+    "generation_errors": 2,
+    "judge_errors_or_skipped": 2,
+    "note": "An automatic provisional faithfulness estimate, not answer accuracy; human calibration required."
+  },
+  "generation_latency_p50_s": 11.024434708990157,
+  "latency_p50_s": 11.026997209060937,
+  "latency_note": "retrieval plus generation service time; judge and scheduler/backoff waits excluded, not end-user wall time; cached rows retain historical generation timings",
+  "e2e_accuracy": {
+    "value": null,
+    "n": null,
+    "reason": "No independent answer-adequacy rubric measured; claim faithfulness is not question completion"
+  },
+  "tokens": {
+    "generation": {
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    "judgement": {
+      "input_tokens": 2183,
+      "output_tokens": 261
+    }
+  },
+  "tokens_scope": "Known usage in saved stage results, including historical cache hits; failed transport-attempt usage may be unavailable",
+  "list_price_equivalent_usd": {
+    "generation": null,
+    "judgement": 0.00093725
+  },
+  "list_price_scope": "Equivalent price of known saved-stage tokens, not current-invocation API consumption or actual billed spend",
+  "transport_attempt_usage_complete": true,
+  "historical_cache_attempt_usage_unknown": false,
+  "cost_incomplete": true,
+  "actual_spend_usd": null,
+  "billing_note": "No billing evidence collected; list prices are dated assumptions, not actual spend",
+  "provider_calls_this_invocation": 7,
+  "valid_answers_from_cache": 0,
+  "valid_answers_fresh": 1,
+  "valid_judgements_from_cache": 0,
+  "valid_judgements_fresh": 1,
+  "provisional": true,
+  "provisional_reason": "Synthetic draft corpus/test labels and human judge calibration pending or limited"
+}

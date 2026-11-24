@@ -38,7 +38,7 @@ def refresh(out=None,rows=None):
  else:result['status']='complete'
  result['human_reference_quality_note']='20/20 items completed and adjudicated by Evaluation & Safety Lead (Tarık Edip Yenikomşu) against the Week 3 source-support rubric, correcting 4 initial labeling errors (W3-H03, W3-H04, W3-H06, W3-H07) and completing items W3-H14..W3-H20.'
  result['target_note']='20 is the planned review sample; Week 3 requires checking the judge against human labels, without specifying 20.'
- result['method']='Purposeful retrospective stress set, not random current-RAG accuracy; evidence assigned post hoc.'
+ result['method']='Purposeful retrospective stress set using preserved v1 source snapshots, not current citizen-v2 accuracy; evidence assigned post hoc.'
  atomic_json(out/'human_calibration.json',result);print(json.dumps(result,ensure_ascii=False,indent=2));return result
 if __name__=='__main__':
  import sys

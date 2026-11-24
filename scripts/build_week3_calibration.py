@@ -3,7 +3,7 @@ Claims are AI-assisted atomic extractions, with exact original spans preserved.
 Evidence is assigned post hoc from the Week3 corpus; it is NOT an original model citation.
 This mixed-origin stress set is separate from current RAG answer-quality metrics.
 """
-import csv,json
+import csv,json,subprocess,tempfile
 from pathlib import Path
 from src.rag.corpus import ROOT,load_corpus,digest
 from eval.faithfulness_week3 import HUMAN_FIELDS
@@ -29,10 +29,20 @@ SELECTIONS=[
 ('v3','W2-020','YV-YYYY-NNNNNN','Projedeki kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir.','YV-D028#details'),
 ('v3','W2-019','I am here to help with municipal services and field problems.','Beldesk helps with municipal service information and field problem reports.','YV-D029#details')]
 
+SOURCE_REF='be14fc0dbfb402b144eba5b6c5e055c1bd66758c'
+
+def historical_documents(ref=SOURCE_REF):
+ paths=subprocess.check_output(['git','ls-tree','-r','--name-only',ref,'--','data/corpus/documents'],cwd=ROOT,text=True).splitlines()
+ with tempfile.TemporaryDirectory(prefix='beldesk-v1-source-') as tmp:
+  for name in paths:
+   if name.endswith('.md'):
+    Path(tmp,Path(name).name).write_bytes(subprocess.check_output(['git','show',ref+':'+name],cwd=ROOT))
+  return load_corpus(tmp)
+
 def build(out=ROOT/'eval/results/week3/calibration'):
  out=Path(out);out.mkdir(parents=True,exist_ok=True)
  if (out/'human_sheet.csv').exists():raise ValueError('Existing human sheet preserved; do not overwrite real annotations')
- docs=load_corpus();sources={p.passage_id:(d,p) for d in docs for p in d.passages}
+ docs=historical_documents();sources={p.passage_id:(d,p) for d in docs for p in d.passages}
  cases={c['id']:c for c in map(json.loads,(ROOT/'eval/testsets/week2_cases.jsonl').read_text().splitlines())}
  old={v:{r['case_id']:r for r in map(json.loads,(ROOT/f'eval/results/week2/answers_{v}.jsonl').read_text().splitlines())} for v in ['v1','v3']}
  records=[];human=[]
@@ -49,6 +59,6 @@ def build(out=ROOT/'eval/results/week3/calibration'):
  (out/'records.jsonl').write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in records))
  with (out/'human_sheet.csv').open('w',encoding='utf-8',newline='') as f:
   w=csv.DictWriter(f,fieldnames=HUMAN_FIELDS);w.writeheader();w.writerows(human)
- (out/'method.json').write_text(json.dumps({'n':20,'purpose':'retrospective claim-judge calibration stress set','origin':'genuine historical Week2-v1/v3 model outputs; atomic extractions preserve exact source spans','evidence':'assigned post hoc from current Week3 sources, not original baseline citations','human_labels':'blank until real reviewer enters them','selection':'purposeful mix of factual requirements, unavailable figures and system boundaries; not representative random RAG sample','code_sha256':digest(Path(__file__).read_bytes())},ensure_ascii=False,indent=2)+'\n')
+ (out/'method.json').write_text(json.dumps({'n':20,'purpose':'retrospective claim-judge calibration stress set','origin':'genuine historical Week2-v1/v3 model outputs; atomic extractions preserve exact source spans','evidence':'assigned post hoc from preserved Week3-v1 sources, not original baseline citations','source_snapshot_git_commit':SOURCE_REF,'human_labels':'blank until real reviewer enters them','selection':'purposeful mix of factual requirements, unavailable figures and system boundaries; not representative random RAG sample','code_sha256':digest(Path(__file__).read_bytes())},ensure_ascii=False,indent=2)+'\n')
  print(out)
 if __name__=='__main__':build()

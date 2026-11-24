@@ -1,0 +1,61 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Çocuğumla mahallemizdeki parka gitmek istiyorum. Oyun alanı ve giriş bilgilerini sorarken hangi park olduğunu nasıl belirtmeliyim?",
+    "language": "tr",
+    "sources_sha256": "b95a81cebc85054178da172b927ca939f2b0cca3a33d32ff25da4664d05a2a7e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "c31c7ccfbdfd6530688fe99477e57e07fbe55ce6a323cacd0ec463e36632026c",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that to find park information, one should write the name of the park and the neighborhood it is located in."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source confirms that if the name is unknown, the street of the entrance, nearby school, or other landmarks are helpful."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source states that since there can be more than one park in the same neighborhood, the neighborhood name alone is not always sufficient."
+      },
+      {
+        "claim_id": "C4",
+        "label": "supported",
+        "reason": "The source advises adding specific requests like playgrounds or accessible entrances to the inquiry."
+      },
+      {
+        "claim_id": "C5",
+        "label": "supported",
+        "reason": "The source confirms that specifying the visit day makes it easier to distinguish between general facility information and dated event information."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the provided source material regarding how to identify a park and provide necessary details for inquiries.",
+    "attempts": 1,
+    "input_tokens": 2408,
+    "output_tokens": 277,
+    "latency_s": 4.319668250042014,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "21a5b3d0c4afa905e209bdeeaae23767e11e91620aafc5a201f3b523dc11e9fc",
+    "wall_latency_including_pacing_s": 6.954490500036627
+  }
+}

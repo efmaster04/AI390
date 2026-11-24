@@ -1,74 +1,121 @@
-"""Build the local report and presentation data from measured files, not invented results."""
-import csv,json
+"""Build the citizen-v2 report/deck data only from matching measured artifacts."""
+import json
 from pathlib import Path
-from src.rag.corpus import ROOT,load_corpus
+from src.rag.corpus import ROOT, load_corpus, digest
 from scripts.run_week3_calibration import refresh
 
+
+def read(path):
+    return json.loads(path.read_text())
+
+
 def build():
- base=ROOT/'eval/results/week3';retr=json.loads((base/'retrieval/summary.json').read_text())
- selection=json.loads((base/'active_answer_run.json').read_text()) if (base/'active_answer_run.json').exists() else {'directory':'answers'}
- answer_dir=base/selection['directory']
- answer=json.loads((answer_dir/'summary.json').read_text()) if (answer_dir/'summary.json').exists() else {}
- records=[json.loads(x) for x in (answer_dir/'records.jsonl').read_text().splitlines()]
- baseline=json.loads((base/'answers/summary.json').read_text())
- supplementary=json.loads((base/'calibration/supplementary_review.json').read_text()) if (base/'calibration/supplementary_review.json').exists() else {}
- availability={'selected_directory':selection['directory'],'initial_valid':baseline.get('valid_generated_answers',0),'initial_processed':baseline.get('processed_cases',38),'retry_valid':answer.get('valid_generated_answers',0),'retry_processed':answer.get('processed_cases',0),'cache_hits':answer.get('valid_answers_from_cache',0),'fresh_valid':answer.get('valid_answers_fresh',0),'model':'gemini-3.1-flash-lite'}
- calibration=refresh();docs=load_corpus();approved=sum(d.review_status=='approved' for d in docs)
- r=retr['summaries']['hybrid_rerank'];n=r['n_answerable'];valid=answer.get('valid_generated_answers',sum(x['generation'].get('valid',False) for x in records))
- unknown={'value':None,'n':None,'script':None}
- score={'week':3,'test_set_size':38,'e2e_accuracy':dict(unknown),
-        'abstention_correct':answer.get('abstention_correct',dict(unknown)),
-        'unsupported_claims':answer.get('unsupported_claims',dict(unknown)),
-        'hit_at_5':{'value':r['hit_at_k']['5'],'n':n,'script':'eval/retrieval_week3.py'},
-        'mrr':{'value':r['mrr_at_10'],'n':n,'script':'eval/retrieval_week3.py','cutoff':10},
-        'task_success':dict(unknown),'pass_k':{'k':None,'value':None,'n':None,'script':None},'injection_success':dict(unknown),
-        'cost_per_task_usd':None,'latency_p50_s':answer.get('latency_p50_s'),'spend_week_usd':None,'spend_total_usd':None}
- (base/'scoreboard.json').write_text(json.dumps(score,ensure_ascii=False,indent=2)+'\n')
- statuses={f'W3.{i}':{'status':'done','note':''} for i in range(1,9)}
- statuses['W3.4']={'status':'done' if valid==38 and answer.get('abstention_correct',{}).get('value')==1 else 'partial','note':f'Cited-answer code and fixed fallback tested; {valid}/{len(records)} valid saved responses, with cached/fresh provenance; service failures recorded.'}
- statuses['W3.6']={'status':'done' if answer.get('faithfulness',{}).get('valid_judged_claims',0)>0 and calibration.get('n',0)>=20 else 'partial','note':f'Claim support measured; {calibration.get("n",0)}/20 matched human–judge pairs completed and adjudicated (κ={calibration.get("kappa",0):.3f}, observed agreement={calibration.get("po",0):.2f}).'}
- successes=[x for x in records if x['generation'].get('valid')]
- tr=next((x for x in successes if x['case_id']=='W3-R019'),next((x for x in successes if x['lang']=='tr'),successes[0] if successes else {}))
- en=next((x for x in successes if x['lang']=='en'),{})
- first_evidence=((tr.get('generation') or {}).get('claims') or [{}])[0].get('evidence',[{}])[0]
- evidence_source=next((x for x in tr.get('sources',[]) if x['citation']==first_evidence.get('citation')), {})
- demo={'question_tr':tr.get('question','Kiracıyım, su aboneliği için hangi belgeler gerekiyor?'),'question_en':en.get('question','What documents do I need for a water subscription as a tenant?'),
-       'answer':(tr.get('generation') or {}).get('answer','Generation unavailable: HTTP503; no fabricated reply.'),
-       'source_excerpt':((tr.get('generation') or {}).get('claims') or [{}])[0].get('evidence',[{}])[0].get('quote',''), 'source_label':evidence_source.get('passage_id',''),
-       'abstain_question':'No authorized source was supplied (software contract check).','abstain_answer':json.loads((ROOT/'config/rag_answer.json').read_text())['fallback']['en'],
-       'run_label':'Recorded Gemini 3.1 response / 24 Nov 2026'}
- failures={'generation':{'question':'Gemini3.1 live availability','answer':f'Initial run: {baseline["valid_generated_answers"]}/{baseline["processed_cases"]}. Selected recovery: {valid}/{len(records)} valid saved responses ({availability["cache_hits"]} cached, {availability["fresh_valid"]} fresh in that pass). Earlier errors remain recorded.', 'diagnosis':'Provider/validation failures; distinct from retrieval misses and unsupported-claim estimates.'},'evaluation':{'title':'Check what the cited source actually supports.','detail':'A contact detail may be valid if its authorized source provides it. Invented contacts, unperformed actions and instructions embedded in documents still fail the evidence check.'}}
- data={'status_date':'2026-11-24','tests_passed':json.loads((base/'qa_summary.json').read_text())['tests_passed'],'deliverables':statuses,'scoreboard':score,'availability':availability,'human_review':{'supplementary_review_completed':supplementary.get('assistant_completed',0), 'approved_documents':approved,'total_documents':len(docs),'claim_labels_completed':calibration['human_labels_completed'],'claim_labels_target':20,'observed_agreement':calibration.get('po'),'matched_human_judge_pairs':calibration.get('n',0),'automatic_claim_labels':calibration.get('valid_automatic_claim_labels',0),'calibration_status':calibration.get('status'),'calibration_origin':'Historical model claims; current evidence assigned post hoc; not current-RAG accuracy.','kappa':calibration.get('kappa')},'product':{'interviews_completed':2,'summary':'2/2 interviews completed (Beyaz Masa supervisor & municipal IT coordinator): need cited FAQ checklists, local ACL-filtered RAG, and confirmation-gated writes.'},'demo':demo,'generation':{'summary':f'{valid}/{len(records)} valid saved answers; cached and fresh calls distinguished.','unsupported_claims':score['unsupported_claims']['value'],'claims_total':answer.get('faithfulness',{}).get('valid_judged_claims',0),'kappa':calibration.get('kappa'),'errors':len(records)-valid},'failures':failures}
- (base/'presentation_data.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
- report=f'''# Weekly report
+    base = ROOT/'eval/results/week3'
+    frozen = read(ROOT/'eval/testsets/week3_citizen_v2_manifest.json')
+    retrieval = read(base/'retrieval/summary.json')
+    selection = read(base/'active_answer_run.json')
+    answer_dir = base/selection['directory']
+    answer = read(answer_dir/'summary.json')
+    meta = read(answer_dir/'run_meta.json')
+    for field in ('corpus_sha256', 'cases_sha256'):
+        if retrieval[field] != frozen[field]:
+            raise ValueError('Retrieval results do not match the frozen citizen-v2 sources/questions')
+    if meta['identity']['corpus_sha256'] != frozen['corpus_sha256'] or meta['identity']['hashes']['cases'] != frozen['cases_sha256']:
+        raise ValueError('Answer results do not match citizen-v2; do not reuse v1 metrics')
+    records = [json.loads(x) for x in (answer_dir/'records.jsonl').read_text().splitlines()]
+    questions = {c['id']:c for c in map(json.loads,(ROOT/'eval/testsets/week3_retrieval.jsonl').read_text().splitlines())}
+    calibration = refresh()  # Human CSV and embedded v1 evidence are never rewritten.
+    docs = load_corpus(); approved = sum(d.review_status=='approved' for d in docs)
+    stats = read(base/'retrieval/paired_statistics.json')
+    chunks = read(base/'retrieval/chunks.json')
+    summaries = retrieval['summaries']; hybrid = summaries['hybrid_rerank']; dense = summaries['dense_rerank']; off = summaries['hybrid_no_rerank']
+    n = hybrid['n_answerable']; valid = answer['valid_generated_answers']
+    unknown = {'value':None,'n':None,'script':None}
+    score = {'week':3,'test_set_size':len(questions),'e2e_accuracy':dict(unknown),
+             'abstention_correct':answer['abstention_correct'],'unsupported_claims':answer['unsupported_claims'],
+             'hit_at_5':{'value':hybrid['hit_at_k']['5'],'n':n,'script':'eval/retrieval_week3.py'},
+             'mrr':{'value':hybrid['mrr_at_10'],'n':n,'cutoff':10,'script':'eval/retrieval_week3.py'},
+             'task_success':dict(unknown),'pass_k':{'k':None,**unknown},'injection_success':dict(unknown),
+             'cost_per_task_usd':None,'latency_p50_s':answer['latency_p50_s'],'spend_week_usd':None,'spend_total_usd':None}
+    (base/'scoreboard.json').write_text(json.dumps(score,ensure_ascii=False,indent=2)+'\n')
+    failures = read(base/'retrieval/failures.json')
+    observed = next((f for f in failures if f['variant']=='hybrid_rerank'), failures[0] if failures else None)
+    if observed:
+        partial = observed.get('failure_kind')=='missing_required_facet'
+        retrieval_failure = {'case_id':observed['case_id'],'question':questions[observed['case_id']]['text'],
+            'variant':observed['variant'], 'diagnosis':'A required answer facet is missing from top 5' if partial else 'Required evidence is outside top 5',
+            'evidence_label':', '.join(g[0]['passage_id'] for g in observed.get('missing_facets',[])),
+            'note':f"{observed['root_cause']}. Finding one relevant passage does not cover every requested part; all-facet@5 = {hybrid['all_gold_hit_at_5']:.3f}."}
+    else:
+        retrieval_failure = {'case_id':'none','question':'No top-5 evidence miss was observed on this frozen draft set.',
+            'variant':'hybrid_rerank','diagnosis':'No observed miss is not a guarantee on unseen questions','evidence_label':'none','note':'Small synthetic test; no failure example is invented.'}
+    statuses={f'W3.{i}':{'status':'done','note':''} for i in range(1,9)}
+    statuses['W3.4']={'status':'done' if valid==len(questions) and answer['abstention_correct']['value']==1 else 'partial',
+                     'note':f'{valid}/{len(questions)} valid citizen-v2 responses; actual fixed-refusal results retained.'}
+    statuses['W3.6']={'status':'done' if answer['faithfulness']['valid_judged_claims']>0 and calibration['n']>=20 else 'partial',
+                     'note':f"Current claim support measured; {calibration['n']} historical human–judge pairs using preserved v1 sources. Not direct human grading of v2 answers."}
+    successes=[r for r in records if r['generation']['valid']]
+    tr=next((r for r in successes if r['case_id']=='W3-R003'),next((r for r in successes if r['lang']=='tr'),{}))
+    claim=((tr.get('generation') or {}).get('claims') or [{}])[0]
+    evidence=(claim.get('evidence') or [{}])[0]
+    source=next((s for s in tr.get('sources',[]) if s['citation']==evidence.get('citation')), {})
+    en=next((r for r in successes if r['lang']=='en'),{})
+    demo={'question_tr':tr.get('question','No successful Turkish example recorded.'),'question_en':en.get('question',''),
+          'answer':tr.get('generation',{}).get('answer','Model unavailable; no replacement invented.'),
+          'source_excerpt':evidence.get('quote',''),'source_label':source.get('passage_id',''),
+          'abstain_question':'No authorized sources supplied (software contract check).',
+          'abstain_answer':read(ROOT/'config/rag_answer.json')['fallback']['en'],
+          'run_label':'Recorded citizen-v2 Gemini 3.1 response / 24 Nov 2026'}
+    availability={'selected_directory':selection['directory'],'dataset_version':'citizen-v2','retry_valid':valid,
+                  'retry_processed':len(records),'cache_hits':answer['valid_answers_from_cache'],'fresh_valid':answer['valid_answers_fresh'],
+                  'model':'gemini-3.1-flash-lite','comparable_to_retired_v1':False}
+    fail_data={'generation':{'question':'Fresh model run on citizen-v2 sources and questions',
+        'answer':f"{valid}/{len(records)} valid responses; {availability['fresh_valid']} fresh and {availability['cache_hits']} reused within this version. Retired v1 answers do not count.",
+        'diagnosis':'Retrieval coverage, provider availability and claim support are distinct measurements.'},
+        'evaluation':{'title':'Check what the cited service guide actually supports.',
+        'detail':'Public guides explain citizen services. Output schemas, authority limits and citation-validation rules belong in prompts and code, outside the public knowledge corpus.'}}
+    data={'status_date':'2026-11-24','dataset_version':'citizen-v2','tests_passed':read(base/'qa_summary.json')['tests_passed'],
+          'deliverables':statuses,'scoreboard':score,'availability':availability,
+          'multi_facet_count':len(frozen['multi_facet_cases']),'cross_service_count':2,'retrieval_failure':retrieval_failure,
+          'human_review':{'approved_documents':approved,'total_documents':len(docs),'claim_labels_completed':calibration['human_labels_completed'],
+            'claim_labels_target':20,'matched_human_judge_pairs':calibration['n'],'observed_agreement':calibration['po'],
+            'kappa':calibration['kappa'],'calibration_status':calibration['status'],
+            'calibration_origin':'Historical claims with embedded v1 evidence; not current citizen-v2 answer accuracy.'},
+          'product':{'interviews_completed':2,'summary':'Two team-recorded interviews: citizen-relations desk supervisor and municipal IT coordinator; original notes preserved.'},
+          'demo':demo,'generation':{'summary':f'{valid}/{len(records)} valid citizen-v2 responses; {answer["valid_claim_judgements"]} judged; v1 excluded.',
+            'unsupported_claims':score['unsupported_claims']['value'],'claims_total':answer['faithfulness']['valid_judged_claims'],
+            'kappa':calibration['kappa'],'errors':len(records)-valid},'failures':fail_data}
+    (base/'presentation_data.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+    def val(v):return 'null' if v is None else f'{v:.3f}'
+    rows='\n'.join(f"| {label} | {v['hit_at_k']['1']:.3f} | {v['hit_at_k']['5']:.3f} | {v['all_gold_hit_at_5']:.3f} | {v['mrr_at_10']:.3f} |" for label,v in [('Hybrid + reranker',hybrid),('Dense + reranker',dense),('Hybrid, no reranker',off)])
+    ci=stats['wilson_95']['hybrid_rerank']['5']
+    report=f'''# Weekly report
 
 | Field | Value |
 |---|---|
-| Team | Beldesk |
-| Use case | Instructor-approved fictional Yeşilvadi bilingual municipal assistant |
-| Week | 3 |
-| Repository | https://github.com/efmaster04/AI390 |
-| Working branch | week3 |
-| Commit tag | week-3 planned; not created |
-| Presenter | Efe İncirci, Doruk Kal, Tarık Edip Yenikomşu; contiguous three-speaker split |
-| Members and roles | Efe: agent/tools; Doruk: data/retrieval; Tarık: evaluation/safety |
+| Team / week | Beldesk / 3 |
+| Use case | Fictional Yeşilvadi bilingual municipal assistant |
+| Repository / branch | https://github.com/efmaster04/AI390 / week3 |
+| Source and benchmark version | citizen-v2 |
+| Release tag | week-3 not created |
+| Members | Efe İncirci: agent/tools; Doruk Kal: data/retrieval; Tarık Edip Yenikomşu: evaluation/safety |
 
 ## 1. Summary
 
-We implemented local hybrid retrieval over 31 synthetic documents, source-cited bilingual answers, fixed no-evidence fallbacks, a claim-level judge, human-review tooling and two retrieval ablations. Hybrid+reranker hit@5 is {r['hit_at_k']['5']:.4f} on 32 answerable questions, MRR@10 {r['mrr_at_10']:.4f}. Live Gemini 3.1 availability limited answer/judge measurements: {valid}/{len(records)} processed cases have valid saved answers (cached/fresh origin recorded). These are separate retrieval, availability and faithfulness measurements. Human calibration uses its actual matched sample with limitations, and we completed two customer discovery interviews with municipal citizen-relations and IT stakeholders.
+We corrected a benchmark-design problem: v1 mixed developer-policy questions and internal instructions with citizen service knowledge. The active corpus now has 30 citizen-facing synthetic service guides and one staff-only ACL fixture. All32answerable questions describe resident situations; six unavailable-information/privacy controls remain separate. Corpus bodies and questions were reviewed for scope before freezing; no retrieval results were consulted during that rewrite. Earlier v1 scores and responses are archived, not relabelled as new results.
 
 ## 2. Deliverables
 
-| ID | Status | Evidence | Note |
-|---|---|---|---|
-| W3.1 | done | data/corpus/documents/; manifest.json | 30 public guides +1 staff-only fixture; metadata/source/version/access; {approved}/31 human-reviewed, other authored drafts disclosed. |
-| W3.2 | done | src/rag/chunking.py; retrieval/chunks.json | 92 section-aware chunks. 140-word cap/20 overlap only for long sections; actual current overlap zero. |
-| W3.3 | done | src/rag/lexical.py; models.py; retrieval.py | BM25+dense, RRF60, pinned local cross-encoder; access filter before ranking. |
-| W3.4 | {statuses['W3.4']['status']} | src/rag/answer.py; prompts/rag/v1.md; {selection['directory']}/records.jsonl | Numbered valid source references, exact quote validation, fixed TR/EN fallback; live coverage, controls and service failures are measured in the selected run. |
-| W3.5 | done | week3_retrieval.jsonl; eval/retrieval_week3.py | 32 answerable questions, 6 extra controls; draft gold passages/quotes; 6 development cases separate. |
-| W3.6 | {statuses['W3.6']['status']} | eval/faithfulness_week3.py; calibration/ | Claim judge and human calibration completed: {calibration['human_labels_completed']}/20 adjudicated human labels; {calibration.get('n',0)} matched judge pairs; κ={calibration.get('kappa',0):.4f} (observed agreement {calibration.get('po',0):.2f}). Historical claims with post-hoc assigned evidence, not current-RAG accuracy. |
-| W3.7 | done | retrieval/summary.json | Dense vs hybrid with reranking fixed; reranker off with hybrid fixed. |
-| W3.8 | done | retrieval/failures.json; {selection['directory']}/failures.json | Retrieval, generation/provider and evaluation failures separated. |
+| ID | Status | Evidence |
+|---|---|---|
+| W3.1 | done | 31 cleaned documents, source/date/version/access metadata; {approved}/31 current explicit human approvals. Rewritten guides reset to draft. |
+| W3.2 | done | {chunks['count']} section-aware chunks;140-word cap,20-word overlap only for long sections; actual overlap zero. |
+| W3.3 | done | BM25+dense, RRF60, pinned local E5 and cross-encoder; public/staff filtering before ranking. |
+| W3.4 | {statuses['W3.4']['status']} | {valid}/{len(records)} valid current responses; numbered references, quote validation and fixed TR/EN no-evidence response. |
+| W3.5 | done | 32answerable questions(16TR/16EN),6controls(3TR/3EN), exact evidence;6separate dev cases. |
+| W3.6 | {statuses['W3.6']['status']} | Claim support measured on current answers;20human labels against preserved v1 source snapshots; κ={calibration['kappa']:.3f}. |
+| W3.7 | done | Two one-change retrieval ablations on the frozen citizen-v2 set. |
+| W3.8 | done | Full misses and missing facets labelled retrieval; unsupported outputs/provider failures separated as generation/provider; judge failures separate. |
 
 ## 3. Scoreboard
 
@@ -76,79 +123,62 @@ We implemented local hybrid retrieval over 31 synthetic documents, source-cited 
 {json.dumps(score,ensure_ascii=False,indent=2)}
 ```
 
-Retrieval denominator is32; unavailable-information controls excluded. Answer records have their own denominator. Missing model judgements are not zero unsupported claims. Actual billing is unknown; existing dated list-price assumptions are separate. E2E answer adequacy was not measured and remains null. Reported latency is retrieval plus generation service time, excluding scheduling/backoff waits; it is not end-user wall time. Previous Week2 accuracy is not directly comparable to Week3 hit@5. Draft source/gold status limits generalization.
-
-Changes to any test set this week: new Week3 set; Week1/2 preserved. Twelve evidence quote anchors were clarified during draft development; question texts and passage IDs stayed unchanged and every retrieval variant was rerun. No test-driven model-setting change is hidden.
+Retrieval denominator:32. Hit@k finds at least one required answer facet; all-facet@5 requires every requested facet. Alternatives within a facet were registered before scoring, not added after misses. Three questions need multiple passages; two span services. Answer availability is not semantic correctness; E2E adequacy remains unmeasured. Model claim judgements are provisional. Latency excludes scheduling/backoff waits; actual billing is unknown. v1 and v2 are different benchmarks, so their percentages are not a like-for-like improvement claim.
 
 ## 4. Experiments
 
-### Experiment 1: Dense versus hybrid retrieval
+| Configuration | hit@1 | hit@5 | all-facet@5 | MRR@10 |
+|---|---:|---:|---:|---:|
+{rows}
 
-- **Hypothesis:** BM25 adds exact-term matches to dense retrieval.
-- **Change:** Dense candidates versus BM25+dense RRF; same corpus, queries,20-candidate pool and reranker.
-- **Result:** Both hit@5 31/32 (0.96875), MRR@10 0.953125; no observed quality advantage on this draft set.
-- **Uncertainty:** Wilson95% interval for31/32 is approximately0.843–0.994. The paired hit@5 comparison with dense has no discordant cases (p=1). See retrieval/paired_statistics.json.
-- **Decision:** Retain required hybrid implementation; do not claim superiority. This is one small synthetic paired set, not established statistical superiority.
+**Ablation1 — dense versus hybrid.** Hypothesis: lexical matching adds useful candidates. Change only candidate retrieval; keep corpus, questions,20-candidate budget and reranker fixed. Hybrid MRR={hybrid['mrr_at_10']:.4f}; dense={dense['mrr_at_10']:.4f}. Report the observed result without asserting hybrid superiority. Exact paired tests and Wilson intervals: `retrieval/paired_statistics.json`. Hybrid hit@5 Wilson95% interval: approximately{ci[1]:.3f}–{ci[2]:.3f}.
 
-### Experiment 2: Reranker off
+**Ablation2 — reranker off.** Hypothesis: reranking promotes useful evidence. Change only reranking with hybrid fixed. MRR={off['mrr_at_10']:.4f} without versus{hybrid['mrr_at_10']:.4f} with; hit@5={off['hit_at_k']['5']:.3f} versus{hybrid['hit_at_k']['5']:.3f}. This small, synthetic draft set does not establish universal superiority.
 
-- **Hypothesis:** Pairwise reranking promotes relevant evidence.
-- **Change:** Only reranker off, same hybrid retrieval and pool.
-- **Result:** hit@1 23/32 without versus30/32 with; hit@5 30/32 versus31/32; MRR@10 0.8046875 versus0.953125. Warm local retrieval time is reported in summary.json, excluding model load and generation.
-- **Uncertainty:** Exact paired McNemar tests and Wilson intervals are saved in retrieval/paired_statistics.json. These are exploratory tests on draft synthetic labels.
-- **Decision:** Keep reranker for this configuration; report its additional compute. No universal claim follows from this small draft experiment.
+**Current answering and faithfulness.** Gemini3.1Flash-Lite remains unchanged,T=0. The run contains {valid}/{len(records)} valid responses, with {availability['fresh_valid']} fresh successes and {availability['cache_hits']} cache hits within citizen-v2. No v1 stage cache was copied. A bounded repair pass may replace only originally invalid generations; successful citizen-v2 stages remain recorded and are not selected by semantic score. Judge-labelled unsupported/insufficient claims: {score['unsupported_claims']['numerator']}/{score['unsupported_claims']['n']}. Valid answer-level judgements: {answer['valid_claim_judgements']}/{valid}; missing judgements do not count as supported claims. This is source-support estimation, not complete-answer accuracy. Current source/question hashes must match the frozen manifest before report generation.
 
-### Experiment 3: Live source-grounded answering and claim judging
-
-- **Hypothesis:** Structured claims and citation validation permit grounded answers and measured faithfulness.
-- **Change:** New Week3 prompt/validator and independent source-support judge; Gemini3.1 retained at the user's direction despite503 errors.
-- **Result:** {valid}/{len(records)} valid saved answers; {availability['cache_hits']} historical cached and {availability['fresh_valid']} fresh successes. The provisional judge flagged {answer.get('unsupported_claims',{}).get('numerator')}/{answer.get('unsupported_claims',{}).get('n')} claims as unsupported or insufficient. Missing verdicts remain unavailable; full transport events are checkpointed.
-- **Diagnosis:** A real minimal request returned503 `UNAVAILABLE` with the provider’s high-demand message; see provider_diagnosis.json. [Google’s retry guidance](https://aistudio.google.com/docs/troubleshooting#retry-strategy) recommends exponential backoff with jitter.
-- **Decision:** Complete generation attempts before judging, then retry only transient errors with exponential backoff, jitter and bounded budgets. Preserve successful stage caches and the original run separately. No fallback model was silently substituted.
-- **Availability provenance:** Initial run {baseline['valid_generated_answers']}/{baseline['processed_cases']}; selected run `{selection['directory']}` {valid}/{len(records)}. Historical cache successes and fresh outputs are recorded per stage; this is an operational retry comparison, not a randomized quality experiment.
-- **Review provenance:** Doruk completed the initial 13 labels; Evaluation & Safety Lead (Tarık) adjudicated all 20 items (`human_sheet.csv`), correcting 4 initial errors (`W3-H03`, `W3-H04`, `W3-H06`, `W3-H07`) where claims absent from or refuted by the source had been marked `supported`, and completing the remaining 7 items (`W3-H14`..`W3-H20`). On the completed matched denominator n={calibration.get('n',0)}/20 (3-class rubric: `supported`, `insufficient_evidence`, `unsupported`), Cohen’s κ is **{calibration.get('kappa',0):.4f}** with observed agreement **{calibration.get('po',0):.2f}** (17/20 exact matches; the 3 disagreements are `W3-H03` and `W3-H13` where human selected `insufficient_evidence` vs judge `unsupported`, plus compound-claim `W3-H18`). This retrospective stress set has post-hoc assigned evidence and does not measure current-RAG accuracy.
+**Historical judge check.** Preserve the team's20adjudicated human labels and real judge verdicts. Agreement={calibration['po']:.3f}, κ={calibration['kappa']:.3f},n={calibration['n']}. These are purposefully selected historical model claims with v1 evidence assigned afterward. They check the source-support rubric, not manual accuracy of new citizen-v2 answers. A small retrospective calibration does not by itself validate the current claim-rate estimate.
 
 ## 5. Failure analysis
 
-| # | Input | What happened | Root cause | Fix |
-|---|---|---|---|---|
-| 1 | W3-R008: identity/upload requirement | Designated privacy passage missed 20-candidate pool. | retrieval | Keep failure; future improvements on separate development questions. |
-| 2 | W3-R010, no-reranker variant | Fee-record-fields passage below top 5. | retrieval | Reranking promoted it in measured configuration. |
-| 3 | Initial Gemini calls | 503/timeouts prevented answers or judge verdicts. | generation | Bounded retries, generation-first pass and stage-cache recovery; original errors retained. |
-| 4 | Historical claim calibration (`W3-H03`, `W3-H13`, `W3-H18`) | 3 residual borderline disagreements (`insufficient_evidence` vs `unsupported`/compound claim) after fixing 4 initial human-labeling errors (κ={calibration.get('kappa',0):.4f}, n={calibration.get('n',0)}). | evaluation | Completed 20/20 human adjudication; refine compound-claim boundary in Week 4 judge prompt. |
+Observed retrieval case: **{retrieval_failure['case_id']}**, variant `{retrieval_failure['variant']}`. {retrieval_failure['diagnosis']}. Missing evidence: `{retrieval_failure['evidence_label']}`. {retrieval_failure['note']}
 
-## 6. Response to last week's feedback
+In particular, a source answering one half of a multi-service request can produce hit@5 while the other half is missing. We retain that as an incomplete-evidence failure. W3-R017 also contains a judge-flagged unsupported claim about library membership requirements, recorded as a generation issue. Provider and exact-quote validation errors remain failed stages; they are not counted as honest refusals. W3-U004 returns a source-supported privacy-policy denial rather than the exact fixed sentence: no phone number is disclosed, but this fails the strict fixed-fallback contract. Semantic source support does not prove that every part of a citizen's request was answered.
 
-The team reports generally positive Week 2 feedback with no specific requested correction. We implemented the Week 3 requirements and completed 20/20 adjudicated claim-level human calibration (κ={calibration.get('kappa',0):.4f}).
+## 6. Response to feedback and benchmark revision
+
+Week2 feedback was generally positive. The subsequent review correctly identified meta-questions and developer instructions in v1. We rewrote all30public guides and all32answerable prompts, kept19TR/19EN overall, moved internal examples outside citizen scoring and archived v1 results. Labels, alternative evidence and source hashes were frozen before rerunning all variants. No post-score source or gold editing was used to raise a metric. See `docs/week3_benchmark_revision.md`.
 
 ## 7. Product track
 
-**Completed: 2/2 customer discovery interviews** ([docs/product_interviews_week3.md](../docs/product_interviews_week3.md)). We interviewed a municipal Citizen Relations (Beyaz Masa) Desk Supervisor (`INT-W3-01`) and a Municipal IT & Digital Services Coordinator (`INT-W3-02`). Today, a 6-person desk handles ~350–450 daily inquiries across phone, web forms, and WhatsApp by manually checking PDF guides and copying field complaints into spreadsheets, while out-of-sync department guides cause citizens to arrive with missing documents. They would pay for a predictable monthly institutional subscription ($150–$300/month per desk or an on-premise/VPC license) that delivers source-cited FAQ checklists (`[1]`), local role-filtered retrieval (`public` vs `staff`), and pre-triaged P1–P4 complaint drafts. Their main AI fears are fabricated fees or crew arrival times, unconfirmed ticket creation promises, and KVKK/privacy leaks of third-party tickets or staff-only notes.
+Two team-recorded discovery interviews are preserved in `docs/product_interviews_week3.md`: a citizen-relations desk supervisor and an IT coordinator. Their recorded needs are cited FAQ checklists, controlled intake drafts, local access-filtered retrieval and confirmation before writes. Concerns include invented fees/arrival promises, privacy leakage and uncontrolled actions. These are the team's supplied interview notes; this revision adds no invented interviews or pricing evidence.
 
 ## 8. Contributions
 
-| Member | Role | Work and evidence | Hours |
-|---|---|---|---|
-| Doruk Kal | Data/retrieval | Directed implementation, selected local retrieval, reviewed water guide (`YV-D003`) and entered initial 13 human labels; corpus (`data/corpus/`) and retrieval experiments (`eval/retrieval_week3.py`). | 10 |
-| Efe İncirci | Agent/tools | Source-cited answer pipeline (`src/rag/answer.py`, `prompts/rag/v1.md`), deterministic fallback contract, and integration checks (`tests/test_rag_answer.py`). | 9 |
-| Tarık Edip Yenikomşu | Evaluation/safety | Claim-level judge calibration (`eval/faithfulness_week3.py`, `eval/results/week3/calibration/human_sheet.csv`: adjudicated all 20/20 labels, κ={calibration.get('kappa',0):.4f}), product track customer discovery interviews (`docs/product_interviews_week3.md`), and Week 3 report/deck updates. | 10 |
+| Member | Evidence and review area |
+|---|---|
+| Doruk Kal | Directed the correction; data/retrieval work and bilingual citizen benchmark prepared with Codex; earlier source approval kept version-specific. |
+| Efe İncirci | Assigned agent/tools integration and review area. |
+| Tarık Edip Yenikomşu | Team-recorded20-item adjudication preserved; assigned evaluation/safety area. |
+
+Hours were not recorded. This revision does not reconstruct individual contribution hours.
 
 ## 9. AI tools used
 
-| Tool | Used for |
-|---|---|
-| Codex main agent and subagents | Corpus drafts, retrieval, generation/judge implementation, tests, report, matching local HTML deck. |
-| Pinned multilingual E5 and cross-encoder | Real local embeddings/reranking, no inference API charge. |
-| Gemini 3.1 Flash-Lite | Actual answer/judge attempts; successful outputs and errors recorded separately. |
+Codex and subagents prepared citizen-guide drafts, independent question drafts, source-coverage review, code checks and report/deck updates. Human source/gold approval is not inferred from that work. Pinned multilingual E5 and cross-encoder run locally. Actual Gemini generation/judge records and provider errors are retained separately.
 
 ## 10. Next week
 
-| Priority | Metric it should move | Expected change |
-|---|---|---|
-| Add controlled lookup and sandbox writes with confirmation | task_success | From null to measured on >=10 explicit multi-step sandbox tasks. |
-| Connect Week 2 classifier to Week 3 RAG and Week 4 tools | e2e_accuracy | From null in Week 3 back to measured end-to-end accuracy with 95% CI. |
-| Calibrate judge on live Week 4 tool-backed answers and compound claims | unsupported_claims | Keep unsupported_claims near 0.0 with adjudicated human–judge agreement. |
+| Priority | Metric to move |
+|---|---|
+| Editorial review of citizen-v2 guides and expected answers | Current public-guide approvals:0/30 toward30/30; independently check draft gold labels. |
+| Add controlled lookup and sandbox writes | Validated tool-result rate: unmeasured to measured; confirmation before any write. |
+| Measure multi-step tasks with traces and limits | task_success: null to measured, with failure and cost evidence. |
 '''
- (ROOT/'reports/week-3.md').write_text(report)
- print('Built local report, scoreboard and presentation data.')
-if __name__=='__main__':build()
+    (ROOT/'reports/week-3.md').write_text(report)
+    print('Built citizen-v2 report, scoreboard and presentation data from matching artifacts.')
+    return data
+
+
+if __name__=='__main__':
+    build()

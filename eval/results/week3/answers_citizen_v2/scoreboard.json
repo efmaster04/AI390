@@ -1,0 +1,89 @@
+{
+  "week": 3,
+  "stage": "rag_answer_and_claim_judge",
+  "planned_cases": 38,
+  "processed_cases": 38,
+  "run_complete": true,
+  "generation_pass_complete": true,
+  "judging_pass_complete": true,
+  "valid_generated_answers": 35,
+  "valid_claim_judgements": 34,
+  "judgements_deferred_or_not_attempted": 0,
+  "judgements_skipped_generation_error": 3,
+  "judgements_failed_or_invalid": 1,
+  "answerability_accuracy": {
+    "value": 0.868421052631579,
+    "n": 38,
+    "definition": "valid answer abstains iff fixed test flag says unanswerable; not semantic answer accuracy"
+  },
+  "abstention_correct": {
+    "value": 0.8333333333333334,
+    "n": 6,
+    "numerator": 5,
+    "definition": "valid fixed-fallback response on unavailable-information controls"
+  },
+  "unsupported_claims": {
+    "value": 0.022988505747126436,
+    "n": 87,
+    "numerator": 2,
+    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+  },
+  "faithfulness": {
+    "valid_judged_claims": 87,
+    "labels": {
+      "insufficient_evidence": 0,
+      "supported": 85,
+      "unsupported": 2
+    },
+    "unsupported_claims": {
+      "value": 0.022988505747126436,
+      "n": 87,
+      "numerator": 2,
+      "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+    },
+    "claim_coverage": {
+      "unlisted_factual_claims": 1,
+      "answers_with_complete_claim_coverage": 33,
+      "n_valid_judgements": 34
+    },
+    "generation_errors": 3,
+    "judge_errors_or_skipped": 4,
+    "note": "An automatic provisional faithfulness estimate, not answer accuracy; human calibration required."
+  },
+  "generation_latency_p50_s": 4.121618541888893,
+  "latency_p50_s": 4.469771334086545,
+  "latency_note": "retrieval plus generation service time; judge and scheduler/backoff waits excluded, not end-user wall time; cached rows retain historical generation timings",
+  "e2e_accuracy": {
+    "value": null,
+    "n": null,
+    "reason": "No independent answer-adequacy rubric measured; claim faithfulness is not question completion"
+  },
+  "tokens": {
+    "generation": {
+      "input_tokens": null,
+      "output_tokens": null
+    },
+    "judgement": {
+      "input_tokens": null,
+      "output_tokens": null
+    }
+  },
+  "tokens_scope": "Known usage in saved stage results, including historical cache hits; failed transport-attempt usage may be unavailable",
+  "list_price_equivalent_usd": {
+    "generation": null,
+    "judgement": null
+  },
+  "list_price_scope": "Equivalent price of known saved-stage tokens, not current-invocation API consumption or actual billed spend",
+  "transport_attempt_usage_complete": false,
+  "historical_cache_attempt_usage_unknown": false,
+  "cost_incomplete": true,
+  "actual_spend_usd": null,
+  "billing_note": "No billing evidence collected; list prices are dated assumptions, not actual spend",
+  "provider_calls_this_invocation": 76,
+  "valid_answers_from_cache": 0,
+  "valid_answers_fresh": 35,
+  "valid_judgements_from_cache": 0,
+  "valid_judgements_fresh": 34,
+  "provisional": true,
+  "provisional_reason": "Synthetic draft corpus/test labels and human judge calibration pending or limited"
+}

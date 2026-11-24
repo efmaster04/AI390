@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D026","title":"Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı","title_en":"Stray Animal Report and Request Types","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D026","access":["public"],"synthetic":true,"review_status":"draft","keywords":["stray animal","lost pet","sokak hayvanı","saldırgan"]}
+{"doc_id":"YV-D026","title":"Yeşilvadi Sokak Hayvanı ve Kayıp Evcil Hayvan Başvuruları","title_en":"Stray Animal and Lost Pet Enquiries","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D026","access":["public"],"synthetic":true,"review_status":"draft","keywords":["stray animal","lost pet","veterinary","sokak hayvanı","kayıp kedi","kayıp köpek"]}
 ---
 
-# Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı
+# Yeşilvadi Sokak Hayvanı ve Kayıp Evcil Hayvan Başvuruları
 
-## Kapsam ve veri niteliği {#scope}
+## Hangi hizmete ihtiyacınız var? {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Sokakta görülen bir hayvanla ilgili bildirim, kayıp evcil hayvan arayışı ve sahipli hayvanın kayıt işlemi farklı hizmet konularıdır. Başvurunun başında hangi ihtiyacı ilettiğinizi belirtin. Kayıp bir hayvanı gördüğünüzü düşünüyorsanız, kendi hayvanınızı arıyormuş gibi başvuru yapmak yerine bulunduğunuz yeri ve gözleminizi açıklayın.
 
-## Talebin türünü ayırma {#details}
+## Konum ve ayırt edici özellikler {#details}
 
-Sokak hayvanı bildirimi, kayıp evcil hayvan araması ve evcil hayvan kaydı farklı taleplerdir. Saha bildirimi için konum ve kullanıcının gözlemlediği davranış sorulur. Hayvanın türü belirtilmediyse kesinleştirilmez. Saldırganlık veya yaralanma bildirimi varsa kullanıcı anlatımı korunur; model fotoğraftan kesin teşhis veya niyet çıkarımı yapmaz.
+Sokak hayvanı bildirimi için hayvanın görüldüğü mahalleyi, sokağı, gözlem zamanını ve dışarıdan görülen durumunu yazın. Kayıp evcil hayvan arayışında tür, renk, ayırt edici özellik, son görüldüğü yer ve zaman yardımcı olur. Fotoğrafınız varsa hayvanı ayırt etmeyi kolaylaştırabilir. Sahipli hayvanın kayıt işlemi için ise kayıt mı bilgi güncellemesi mi istediğinizi belirterek hayvanın türünü ve varsa kimliklendirme referansını hazırlayın. Gözlem ile bildiğiniz sahiplik bilgisini ayrı açıklayın.
 
-## Operasyon sınırı {#limits}
+## Yeni gözlem ve başvuru takibi {#limits}
 
-Beldesk hayvan toplama ekibini yönlendiremez, barınakta yer ayıramaz veya bir hayvanın alındığını doğrulayamaz. Bu rehber veteriner tedavisi, yakalama veya müdahale talimatı vermez. İlgili birime bildirim için taslak hazırlanabilir; ancak taslak kayıt değildir. Hizmetin kesin geliş saati, barınak adresi ve mevcut kapasite bu kaynakta yer almaz.
+Daha önce bildirdiğiniz hayvanı başka bir noktada görürseniz önceki başvuru numarasıyla yeni yeri ve zamanı iletin. Kayıp hayvan bulunmuşsa arayışın sona erdiğini bildirebilirsiniz. Başvuru sonucunu öğrenmek için ilgili başvuru noktasından verilen referansı kullanın. Başka bir kişinin iletişim ya da başvuru bilgisi yerine, kendi başvurunuzun veya doğrudan gözleminizin ayrıntılarını paylaşmanız yeterlidir.

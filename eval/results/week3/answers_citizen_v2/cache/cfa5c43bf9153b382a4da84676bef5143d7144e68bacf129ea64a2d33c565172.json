@@ -1,0 +1,51 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Yeni taşındığım evde kiracıyım. Su aboneliğini üzerime almak için ne hazırlamalıyım? Önceki abone numarasını bilmiyorum.",
+    "language": "tr",
+    "sources_sha256": "6b3b271c8c5e899c6f91bf879cb462fb0ff3b1d329c092fe34a1bb342da1fbb0",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "43931a77728d88e547b4518ccd57197757b5d520c9eadead00a2f92e6b04867d",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly lists identity document, address document, and rental agreement for tenants as required documents."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source confirms that if the old subscriber number is unknown, one can proceed with the application using the usage address and other documents."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source states that the application for a new water subscription is made to the Water and Sewerage application unit."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the requirements and procedures for a new water subscription as described in the provided source documents.",
+    "attempts": 1,
+    "input_tokens": 2217,
+    "output_tokens": 217,
+    "latency_s": 3.78016100008972,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "e66b559138ae15ed194baa1d461f1e7cd0ce0d26a1ffdefd3e8468729c1e97db",
+    "wall_latency_including_pacing_s": 7.137789542088285
+  }
+}

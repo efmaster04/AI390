@@ -1,0 +1,131 @@
+{
+  "started_utc": "2026-11-24T20:50:58.641570+00:00",
+  "planned_cases": 3,
+  "identity": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "temperature": 0,
+    "seed": 42,
+    "hashes": {
+      "generation_prompt": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+      "judge_prompt": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+      "answer_config": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+      "cases": "c0c9ecd444152a49d39ec1f9887790c07709eaf8150b9a5e6eb27bb9d4c171d8"
+    },
+    "code": {
+      "src/rag/answer.py": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+      "eval/faithfulness_week3.py": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b",
+      "eval/answer_week3.py": "897e405b9e553c9e40ea3f7fc713df4eba2c6c5d00956856ba4fd33d5e3a3f78"
+    },
+    "corpus_sha256": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index_sha256": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049"
+  },
+  "max_calls": 12,
+  "rpm": 8,
+  "timeout_s": 30,
+  "transport_retries": 0,
+  "validation_retries": 1,
+  "transport_backoff_s": 5.0,
+  "transport_jitter_ratio": 0.2,
+  "transport_jitter_seed": 42,
+  "retry_after_respected": true,
+  "deadline_s": 150,
+  "prices_snapshot": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "price_in_per_1m_usd": 0.25,
+    "price_out_per_1m_usd": 1.5,
+    "free_tier": true,
+    "source_url": "https://aistudio.google.com/docs/pricing",
+    "checked_on": "2026-11-09"
+  },
+  "actual_spend_usd": null,
+  "provider_calls_this_invocation": 7,
+  "defer_judge": true,
+  "phase": "finished",
+  "cache_hits": 0,
+  "provider_events": [
+    {
+      "call_number": 1,
+      "timestamp_utc": "2026-11-24T20:50:58.644526+00:00",
+      "case_id": "W3-R004",
+      "stage": "answer",
+      "transport_attempt": 1,
+      "status": "ok",
+      "http_status": null,
+      "diagnostic_code": null,
+      "wait_before_call_s": 0.0
+    },
+    {
+      "call_number": 2,
+      "timestamp_utc": "2026-11-24T20:51:06.148241+00:00",
+      "case_id": "W3-R004",
+      "stage": "answer",
+      "transport_attempt": 1,
+      "status": "ok",
+      "http_status": null,
+      "diagnostic_code": null,
+      "wait_before_call_s": 3.1838543750345707
+    },
+    {
+      "call_number": 3,
+      "timestamp_utc": "2026-11-24T20:51:13.653321+00:00",
+      "case_id": "W3-R019",
+      "stage": "answer",
+      "transport_attempt": 1,
+      "status": "ok",
+      "http_status": null,
+      "diagnostic_code": null,
+      "wait_before_call_s": 0.7873035840457305
+    },
+    {
+      "call_number": 4,
+      "timestamp_utc": "2026-11-24T20:51:21.158416+00:00",
+      "case_id": "W3-R019",
+      "stage": "answer",
+      "transport_attempt": 1,
+      "status": "ok",
+      "http_status": null,
+      "diagnostic_code": null,
+      "wait_before_call_s": 2.344810915994458
+    },
+    {
+      "call_number": 5,
+      "timestamp_utc": "2026-11-24T20:51:28.663551+00:00",
+      "case_id": "W3-R027",
+      "stage": "answer",
+      "transport_attempt": 1,
+      "status": "ok",
+      "http_status": null,
+      "diagnostic_code": null,
+      "wait_before_call_s": 3.7437554999487475
+    },
+    {
+      "call_number": 6,
+      "timestamp_utc": "2026-11-24T20:51:36.168648+00:00",
+      "case_id": "W3-R027",
+      "stage": "answer",
+      "transport_attempt": 1,
+      "status": "ok",
+      "http_status": null,
+      "diagnostic_code": null,
+      "wait_before_call_s": 3.2719205409521237
+    },
+    {
+      "call_number": 7,
+      "timestamp_utc": "2026-11-24T20:51:43.673727+00:00",
+      "case_id": "W3-R004",
+      "stage": "judge",
+      "transport_attempt": 1,
+      "status": "ok",
+      "http_status": null,
+      "diagnostic_code": null,
+      "wait_before_call_s": 3.396788082900457
+    }
+  ],
+  "cached_results_are_historical_model_calls": true,
+  "transport_errors": 0,
+  "pacing_wait_s": 16.728432998876087,
+  "processed_cases": 3,
+  "finished_utc": "2026-11-24T20:51:50.200609+00:00"
+}

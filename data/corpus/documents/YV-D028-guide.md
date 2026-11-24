@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D028","title":"Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı","title_en":"Ticket Status and Ownership Boundary","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D028","access":["public"],"synthetic":true,"review_status":"draft","keywords":["ticket status","ownership","şikâyet durumu","kayıt sorgulama"]}
+{"doc_id":"YV-D028","title":"Yeşilvadi Başvuru Numarası ve Durum Sorgusu","title_en":"Report References and Status Enquiries","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D028","access":["public"],"synthetic":true,"review_status":"draft","keywords":["ticket reference","report number","status","receipt","başvuru numarası","durum sorgusu","alındı"]}
 ---
 
-# Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı
+# Yeşilvadi Başvuru Numarası ve Durum Sorgusu
 
-## Kapsam ve veri niteliği {#scope}
+## Başvuru numarasını nerede bulabilirsiniz? {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Bir hizmet talebini izlemek için başvuru noktasından verilen alındı belgesini veya başvuru onayını saklayın. Referans numarası, aynı konuyla ilgili sonraki yazışmalarda hangi başvurunun sorulduğunu belirtmeye yarar. Yalnız olayın sokak adını vermek, aynı yerde birden fazla talep bulunabileceği için her zaman yeterli olmayabilir.
 
-## Referans ve sahiplik {#details}
+## Referansı kullanma ve bulamama durumu {#details}
 
-Kurgusal kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir. Yanlış biçimli bir numara model tarafından tahminle düzeltilmez. İleride durum sorgusunda kayıt referansı ile telefonun son dört hanesi istenebilir; bunlar tek başına güçlü sahiplik kanıtı değildir. Başkasına ait olduğunu söyleyen kullanıcıya eşleşen bilgiler verse bile kayıt detayı açıklanmaz.
+Yeşilvadi başvuru referansı örneği YV-2026-000123 biçimindedir. Durum sorarken referansı alındı belgesindeki şekliyle yazın ve hangi işlem hakkında bilgi istediğinizi belirtin. Numaranız eksik ya da okunamıyorsa belgeyi kontrol edin; bulamıyorsanız başvuru noktasına ilk başvurunun tarihi, konusu ve yerini açıklayın. Başka bir kişiye ait referansı bilmeniz, o kişinin başvuru ve iletişim bilgilerinin size açıklanacağı anlamına gelmez.
 
-## Canlı sorgu sınırı {#limits}
+## Durum bilgisi ve ek açıklama {#limits}
 
-Week 3 sürümünde kayıt veritabanı bağlantısı yoktur. Bu nedenle herhangi bir kaydın açık, kapalı veya incelemede olduğu söylenemez. Asistan kaydı kontrol ettim diyemez; bir referansın biçimini açıklamak o kaydın gerçekten var olduğunu doğrulamaz. Ekip geliş zamanı ve kişisel kayıt geçmişi doküman aramasıyla elde edilmiş gibi gösterilmemelidir.
+Başvuru durumu, ilgili başvuruya ait güncel inceleme veya sonuç bilgisidir. Bir arızayı yeniden görmek, kaydın hangi aşamada olduğuna tek başına cevap vermez; takip sorunuzda gözleminizi ve durum öğrenme isteğinizi ayırın. Başvuruya ek bilgi göndermek isterseniz aynı referansı kullanıp değişen noktayı açıklayın. Bu genel rehber tek tek kişilerin başvuru geçmişini, iletişim bilgisini veya belirli bir talebin güncel sonucunu yayımlamaz.

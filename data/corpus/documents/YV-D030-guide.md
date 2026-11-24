@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D030","title":"Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları","title_en":"Unavailable Information and Future Dates Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D030","access":["public"],"synthetic":true,"review_status":"draft","keywords":["unknown answer","crew arrival","bilinmeyen bilgi","ekip geliş"]}
+{"doc_id":"YV-D030","title":"Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi","title_en":"Blocked Storm Drains and Rainwater Pooling","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D030","access":["public"],"synthetic":true,"review_status":"draft","keywords":["storm drain","rainwater","blocked grate","flooding","yağmur suyu","ızgara","su birikmesi"]}
 ---
 
-# Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları
+# Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi
 
-## Kapsam ve veri niteliği {#scope}
+## Yağmur suyu sorununun konusu {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Yağmur sırasında suyun yol veya kaldırım üzerinde birikmesi, yağmur suyu ızgarasının tıkanması ve ızgara çevresinde yaprak ya da atık birikmesi drenaj bildiriminin konusudur. Yağışla birlikte oluşan yüzey suyu, sürekli akan bir su kaçağı veya rögar taşmasıyla aynı sorun olmayabilir. Bildiriminizde hangisini gözlemlediğinizi açıklayın.
 
-## Bilgi yokluğu {#details}
+## Izgara ve birikimi tarif etme {#details}
 
-Bir rehberin konu bakımından ilgili olması, sorunun cevabını mutlaka içerdiği anlamına gelmez. Ekip yarın kaçta gelir, başkanın maaşı nedir veya gelecekte hangi ihale kazanılır gibi sorular bu corpus sürümünde yanıtlanamaz. Asistan benzer bir paragraf bulduğunu gerekçe göstererek sayı, saat veya kesin sonuç uydurmamalıdır.
+Mahalle, sokak ve suyun biriktiği veya ızgaranın bulunduğu noktayı yazın. Sorunun yağmur sırasında mı yoksa yağmur bittikten sonra da mı sürdüğünü belirtin. Izgara üzerinde yaprak, çöp veya başka bir kapanma görünüyorsa bunu ekleyin. Birikimin yolu, kaldırım geçişini veya bina girişini etkileyip etkilemediğini açıklayın. Yakındaki kavşak, durak veya bina gibi bir işaret ve varsa fotoğraf, aynı sokaktaki farklı ızgaraları ayırmaya yardımcı olur.
 
-## Kaynaklı cevap sınırı {#limits}
+## Tekrarlanan birikim ve takip {#limits}
 
-Cevaptaki her doğrulanabilir iddia, gerçekten verilen kaynak parçasıyla desteklenmelidir. Bir cümlenin sonuna kaynak numarası eklemek tek başına doğruluk sağlamaz. Kaynağın sessiz kaldığı bölüm açıkça belirtilir; desteklenen genel süreç varsa bu ayrı açıklanabilir. Kayıtlı bir arama sonucu, belgeyi değiştirme, başvuru gönderme veya ekip yönlendirme işlemi değildir.
+Aynı yerde her yağışta sorun oluşuyorsa hangi günlerde gördüğünüzü ve önceki başvuru referansınızı paylaşabilirsiniz. Temizlik yapılmış ancak su hâlâ birikiyorsa mevcut durumu açıklayın. Başka bir noktadaki yeni birikimin yerini ayrı belirtin. Yağmur bittikten sonra yalnız suyun kalmasıyla yeni bir akışın sürmesi farklı gözlemlerdir; takip mesajında neyin devam ettiğini açıkça yazmanız incelemenin doğru konum üzerinden yürütülmesine yardımcı olur.

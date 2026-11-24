@@ -40,7 +40,14 @@ def read_cases(path, documents):
         permitted(("public",), case["role"])
         if bool(case["gold"]) != case["answerable"]:
             raise ValueError("Answerable cases need gold evidence; unanswerable cases must have none")
-        for gold in case["gold"]:
+        if case.get("audience", "citizen") != "citizen":
+            raise ValueError("Internal policy cases are excluded from the citizen retrieval benchmark")
+        groups = case.get("gold_groups", [[g] for g in case["gold"]])
+        if bool(groups) != case["answerable"] or any(not isinstance(g, list) or not g for g in groups):
+            raise ValueError("Answerable cases need nonempty evidence groups")
+        if len(groups) != len(case["gold"]) or any(group[0] != canonical for group, canonical in zip(groups, case["gold"])):
+            raise ValueError("Each evidence group must start with its canonical gold passage")
+        for gold in [item for group in groups for item in group]:
             if gold["passage_id"] not in passages or not gold["quote"].strip():
                 raise ValueError("Missing gold passage or quote")
             if gold["quote"] not in passages[gold["passage_id"]].text:
@@ -50,14 +57,16 @@ def read_cases(path, documents):
     return rows
 
 
-def score_retrieval(results, gold):
+def score_retrieval(results, gold, *, gold_groups=None):
     def matches(chunk, item):
         return chunk["passage_id"] == item["passage_id"] and item["quote"] in chunk["text"]
-    ranks = [r["rank"] for r in results if any(matches(r, g) for g in gold)]
+    groups = gold_groups if gold_groups is not None else [[g] for g in gold]
+    evidence = [g for group in groups for g in group]
+    ranks = [r["rank"] for r in results if any(matches(r, g) for g in evidence)]
     first = min(ranks) if ranks else None
     return {"first_relevant_rank": first, "reciprocal_rank": 1/first if first else 0,
             "hit": {str(k): first is not None and first <= k for k in (1, 3, 5, 10)},
-            "all_gold_hit_at_5": all(any(r["rank"] <= 5 and matches(r, g) for r in results) for g in gold)}
+            "all_gold_hit_at_5": all(any(r["rank"] <= 5 and any(matches(r, g) for g in group) for r in results) for group in groups)}
 
 
 def summarize(rows):
@@ -104,19 +113,25 @@ def run(cases_path, out_dir):
         for i, case in enumerate(cases, 1):
             result = retriever.search(case["text"], role=case["role"], k=10,
                                       mode=mode, rerank=rerank, cache_scores=False)
-            metrics = score_retrieval(result["results"], case["gold"]) if case["answerable"] else None
+            metrics = score_retrieval(result["results"], case["gold"], gold_groups=case.get("gold_groups")) if case["answerable"] else None
             row = {"case_id": case["id"], "lang": case["lang"], "answerable": case["answerable"],
-                   "review_status": case["review_status"], "gold": case["gold"],
+                   "review_status": case["review_status"], "gold": case["gold"], "gold_groups": case.get("gold_groups", [[g] for g in case["gold"]]),
                    "metrics": metrics, **result}
             rows.append(row)
-            if metrics and not metrics["hit"]["5"]:
+            groups = case.get("gold_groups", [[g] for g in case["gold"]])
+            missing = [group for group in groups if not any(
+                r["rank"] <= 5 and any(r["passage_id"] == g["passage_id"] and g["quote"] in r["text"] for g in group)
+                for r in result["results"])]
+            if metrics and missing:
+                missing_in_candidates = all(any(g["passage_id"] in result["candidate_passage_ids"] for g in group)
+                                            for group in missing)
                 failures.append({"case_id": case["id"], "variant": name, "failure_stage": "retrieval",
-                                 "gold": case["gold"], "top5": [r["passage_id"] for r in result["results"][:5]],
-                                 "gold_in_candidates": any(g["passage_id"] in result["candidate_passage_ids"] for g in case["gold"]),
-                                 "root_cause": "gold_outside_candidate_pool" if not any(
-                                     g["passage_id"] in result["candidate_passage_ids"] for g in case["gold"])
-                                     else "gold_in_candidates_but_below_top5",
-                                 "interpretation": "Ranking observation only; question/gold labels still need independent human review."})
+                                 "failure_kind": "missing_required_facet" if metrics["hit"]["5"] else "no_relevant_evidence_in_top5",
+                                 "gold": case["gold"], "missing_facets": missing,
+                                 "top5": [r["passage_id"] for r in result["results"][:5]],
+                                 "gold_in_candidates": missing_in_candidates,
+                                 "root_cause": "gold_in_candidates_but_below_top5" if missing_in_candidates else "gold_outside_candidate_pool",
+                                 "interpretation": "At least one requested answer facet is missing from top5; a hit on another facet is not complete evidence."})
             print(f"[{name}] {i}/{len(cases)} {case['id']}", flush=True)
         (out/f"{name}.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False)+"\n" for r in rows), encoding="utf-8")
         summaries[name] = summarize(rows)
@@ -135,7 +150,7 @@ def run(cases_path, out_dir):
              "packages": {n: importlib.metadata.version(n) for n in
                           ["sentence-transformers", "transformers", "torch", "numpy", "huggingface-hub"]},
              "latency_note": "CPU warm inference; query and reranker score caches disabled; index embeddings cached; single run",
-             "metric_note": "Hit@k = at least one gold quote found; MRR truncated at 10; controls excluded; not answer accuracy",
+             "metric_note": "Hit@k = at least one required answer facet found using pre-registered canonical or alternative evidence; all_gold_hit_at_5 requires every facet; MRR truncated at10; controls excluded; not answer accuracy",
              "summaries": summaries, "ablations": {
                  "dense_vs_hybrid": {"base": "hybrid_rerank", "changed": "dense_rerank", "only_change": "candidate retrieval method"},
                  "reranker_off": {"base": "hybrid_rerank", "changed": "hybrid_no_rerank", "only_change": "reranking"}}}

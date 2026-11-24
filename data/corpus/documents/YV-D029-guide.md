@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D029","title":"Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi","title_en":"Municipal Service Scope and Referral Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D029","access":["public"],"synthetic":true,"review_status":"draft","keywords":["jurisdiction","referral","yetki alanı","kurum"]}
+{"doc_id":"YV-D029","title":"Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme","title_en":"Household and Business Power Outage Enquiries","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D029","access":["public"],"synthetic":true,"review_status":"draft","keywords":["power outage","electricity distribution","household","building","elektrik kesintisi","dağıtım şirketi","konut"]}
 ---
 
-# Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi
+# Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme
 
-## Kapsam ve veri niteliği {#scope}
+## Kesintinin hangi alanı etkilediği {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Konut veya işyerlerine elektrik gelmemesi, sokak aydınlatmasının çalışmamasından farklı bir hizmet konusudur. Yalnız daire içindeki sorun, binanın tamamını etkileyen durum ve birden fazla binada görülen kesinti aynı kapsamda anlatılmamalıdır. İlk olarak nerelerin etkilendiğini ve elektriğin hangi saatten beri olmadığını bildiğiniz kadarıyla açıklayın.
 
-## Konuya göre yönlendirme {#details}
+## Doğru hizmete başvurma {#details}
 
-Beldesk belediye hizmetleri hakkında doküman temelli açıklama yapar ve saha arızaları için taslak hazırlayabilir. Bir arızanın başka bir kuruluşla ilişkili olabileceği, sorunun önceliğinden ayrı değerlendirilir. Elektrik kesintisi örneğinde dağıtım şirketinin adı model tarafından tahmin edilmez. Kurumun kimliği uygulamanın doğrulanmış yönlendirme verisiyle belirlenmelidir.
+Bir binanın veya birden fazla konut ve işyerinin elektrik kesintisi için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetinden bilgi alınır. Ev ve işyerlerinde elektrik olduğu hâlde yalnız sokak lambaları sönükse sokak aydınlatması bildirimi yapılır. Dağıtım şirketine başvururken hizmet adresi, kesintinin başlangıç zamanı ve bildiğiniz etki alanını hazırlayın. Şirketin adını bilmiyorsanız faturanızdaki dağıtım bilgisine veya adresiniz için yayımlanmış hizmet sağlayıcı bilgisine bakın.
 
-## Kapsam dışı işlemler {#limits}
+## Devam eden kesintiyi izleme {#limits}
 
-Ödeme yapma, hukuki karar verme, siyasi görüş bildirme, vatandaş adına resmî başvuru gönderme ve gerçek ekip sevki bu sürümün kapsamı dışındadır. Kullanıcı böyle bir işlem isterse Beldesk neyi açıklayabildiğini ve hangi işlemi gerçekleştiremediğini belirtir. Bir sorunun kapsam dışı olması, özel veri veya kurum içi belge paylaşılmasına izin vermez.
+Başvuru yaptıysanız verilen referansı saklayın ve yeni bilgi isterken bu referansı kullanın. Elektrik bir bölüme gelmiş ancak başka bir bölümde kesinti sürüyorsa hangi yerin etkilendiğini açıklayın. Başka kişilerin tahmini yerine kendi gözleminizi ve doğruladığınız bilgiyi paylaşın. Belirli bir kesintinin nedeni veya elektriğin geleceği saat, o olay için yayımlanan güncel arıza bilgisiyle öğrenilir; genel hizmet rehberi tarihli kesinti duyurusunun yerine geçmez.

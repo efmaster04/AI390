@@ -20,7 +20,7 @@
       "title": "Eight deliverables, with evidence and open items",
       "label": "Week 3 / W3.1–W3.8",
       "seconds": 15,
-      "notes": "EFE · 15 s. Show all eight requirements. Distinguish implemented code and measured experiments from human labels, document approvals and customer interviews still awaiting actual evidence.",
+      "notes": "EFE · 15 s. Show all eight requirements. Distinguish current citizen-benchmark measurements from review of the rewritten guides. The team completed the historical human check and customer interviews.",
       "repo": "reports/week-3.md"
     },
     {
@@ -44,31 +44,31 @@
       "title": "Fixed fallback when no authorized source is supplied",
       "label": "W3.4 / software contract demonstration",
       "seconds": 35,
-      "notes": "EFE · 35 s. This is a deterministic software check, not an LLM-generated reply. With an empty authorized-source list the answer module returns the exact fixed fallback without calling the model. Live unavailable-information cases remain affected by the recorded service errors.",
+      "notes": "EFE · 35 s. This is a deterministic software check, not an LLM-generated reply. With an empty authorized-source list the answer module returns the exact fixed fallback without calling the model. The citizen-v2 model run records its unavailable-information controls and any service errors separately.",
       "repo": "src/rag/answer.py · prompts/rag/"
     },
     {
       "id": "w3-testset",
-      "title": "The denominator is 32, not all 38 questions",
+      "title": "32 citizen questions + 6 separate controls",
       "label": "Scoreboard / W3.5",
       "seconds": 20,
-      "notes": "EFE · 20 s. Retrieval metrics use the 32 answerable cases, balanced across Turkish and English. Six unavailable-information controls are tracked separately, not counted as retrieval misses. Gold labels point to source evidence and still need human review.",
+      "notes": "EFE · 20 s. The citizen benchmark has 32 answerable questions in Turkish and English plus 6 separate unavailable-information controls. 3 questions need multiple facets; 2 cross service boundaries. Alternative evidence was registered before scoring. Internal policy questions belong in separate tests.",
       "repo": "eval/testsets/week3_retrieval.jsonl"
     },
     {
       "id": "w3-retrieval-metrics",
-      "title": "31 of 32 gold passages appear in the first five results",
+      "title": "Evidence in the first five results: 32 / 32",
       "label": "Scoreboard / W3.5",
       "seconds": 25,
-      "notes": "DORUK · 25 s. I will explain retrieval quality. Hit at five is 31 of 32, about 0.969. MRR at ten is 0.953. These measure finding sources, not whether a generated answer is correct or faithful.",
+      "notes": "DORUK · 25 s. At least one registered facet appears in the first five results for 32 / 32 citizen questions. All required facets appear for 31 / 32. MRR at ten is 0.759. These are retrieval measurements, not perfect-answer claims.",
       "repo": "eval/results/week3/retrieval/summary.json"
     },
     {
       "id": "w3-ablations",
-      "title": "Two ablations: keep the other settings fixed",
+      "title": "Two ablations on the same citizen benchmark",
       "label": "Scoreboard / W3.7",
       "seconds": 25,
-      "notes": "DORUK · 25 s. First compare dense and hybrid with the same reranker: the measured quality is equal. Then switch only the reranker off: MRR falls from 0.953 to 0.805. We report both the gain and the absence of a hybrid gain.",
+      "notes": "DORUK · 25 s. Compare dense and hybrid with the same reranker. Dense has higher MRR here. Hybrid MRR is 0.759 and dense MRR 0.761. Then change only reranking: off 0.689, on 0.759. The question and source version stay fixed.",
       "repo": "eval/retrieval_week3.py"
     },
     {
@@ -89,27 +89,27 @@
     },
     {
       "id": "w3-retrieval-failure",
-      "title": "Privacy evidence missed the candidate pool",
+      "title": "A closer look at retrieved evidence",
       "label": "Failure analysis / retrieval",
       "seconds": 25,
-      "notes": "DORUK · 25 s. The English privacy question is the retrieval miss. Its gold passage is outside the twenty-candidate pool, so the reranker cannot recover it. This is a retrieval problem, distinct from a hallucination after finding the right evidence.",
+      "notes": "DORUK · 25 s. Inspect W3-R032 in hybrid_rerank. A required answer facet is missing from top 5 gold_in_candidates_but_below_top5. Finding one relevant passage does not cover every requested part; all-facet@5 = 0.969. Finding one relevant passage does not establish that every requested facet is covered.",
       "repo": "eval/results/week3/retrieval/failures.json"
     },
     {
       "id": "w3-generation-failure",
-      "title": "Retrieval, generation and provider failures",
+      "title": "Service availability in the citizen run",
       "label": "Failure analysis / W3.8",
       "seconds": 15,
-      "notes": "DORUK · 15 s. Show an actual recorded case and identify its stage. A missing source is retrieval; an unsupported answer despite available evidence is generation. Do not combine them into one vague error count.",
+      "notes": "DORUK · 15 s. Read the citizen-v2 run’s own service record. Retired v1 source and question hashes describe a different benchmark. Separate provider errors, missing evidence and unsupported generated claims.",
       "repo": "eval/results/week3/"
     },
     {
       "id": "w3-judge-calibration",
-      "title": "The new judge needs its own human check",
+      "title": "The historical judge check and its scope",
       "label": "Failure analysis / evaluation",
       "seconds": 30,
-      "notes": "TARIK · 30 s. The Week-three judge checks source support claim by claim and needs calibration against real human labels. We do not reuse Week-two kappa as validation. If labels are missing, we show null rather than invented agreement.",
-      "repo": "eval/results/week3/ · human labels"
+      "notes": "TARIK · 30 s. The team completed twenty human labels using the historical claims and their embedded v1 evidence. Read kappa with the actual matched sample. This checks the judge on that set; it does not establish human accuracy for the rewritten citizen-v2 questions.",
+      "repo": "eval/results/week3/calibration/"
     },
     {
       "id": "w3-evaluation-boundaries",
@@ -124,7 +124,7 @@
       "title": "Human reviews and customer interviews",
       "label": "Failure analysis / remaining gaps",
       "seconds": 25,
-      "notes": "TARIK · 25 s. Show actual document approvals, human labels and customer conversations. Any missing work is stated openly. Customer discovery must involve real potential customers; a script or simulated interview is not a completed conversation.",
+      "notes": "TARIK · 25 s. The team has 2 completed customer interviews. Those records remain preserved. The citizen-v2 public guides have 0 of 30 explicit approvals; rewriting the text requires a fresh source review.",
       "repo": "reports/week-3.md · review records"
     },
     {
@@ -132,7 +132,7 @@
       "title": "Next week: reliable calls and controlled tools",
       "label": "Next week / 3 priorities",
       "seconds": 40,
-      "notes": "TARIK · 40 s. Our priorities are to review human-label disagreements and expand the matched sample, measure controlled tool results, and measure multi-step task success. Each priority moves a named metric; retrieval does not itself create or update tickets.",
+      "notes": "TARIK · 40 s. Our priorities are to review the rewritten citizen guides and evidence labels, measure controlled tool results, and measure multi-step task success. Each priority moves a named metric; retrieval does not itself create or update tickets.",
       "repo": "reports/week-3.md · Week 4 plan"
     },
     {
@@ -152,7 +152,7 @@
       "repo": "Week 3 / Q&A"
     }
   ],
-  "source_data": "eval\\results\\week3\\presentation_data.json",
+  "source_data": "eval/results/week3/presentation_data.json",
   "reference": "docs/index.html",
   "note": "Self-contained HTML. Rebuild from recorded evidence after data changes."
 }

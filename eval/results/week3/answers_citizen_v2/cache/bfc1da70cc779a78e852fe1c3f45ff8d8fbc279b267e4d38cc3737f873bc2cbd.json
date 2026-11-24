@@ -1,0 +1,174 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "I need to get rid of an old sofa. How do I request bulky waste collection, and what should I tell you about it?",
+    "language": "en",
+    "sources_sha256": "05e6d3144a8998dcaad35cc2c42702cf2f33b6dfd3d580598c0fc420c1dabfcc",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "To request bulky waste collection, you must specify the type of item, its approximate quantity, the neighborhood, and the exact location for pickup. [1]\nYou must clarify if the item is inside the building, including details about the floor, stairs, or elevator, or if it is outside at a building entrance or collection point. [1]\nYou should provide the date from which the item will be available for collection. [1]\nWhen initiating the request, clearly state what the item is and that you are requesting bulky waste collection service. [2]\nIf you are able to provide a photograph, it is sufficient to show only the items to be collected. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "To request bulky waste collection, you must specify the type of item, its approximate quantity, the neighborhood, and the exact location for pickup.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Hacimli atık için eşyanın türünü, yaklaşık adedini, bulunduğu mahalleyi ve alınacağı açık noktayı bildirin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "You must clarify if the item is inside the building, including details about the floor, stairs, or elevator, or if it is outside at a building entrance or collection point.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Eşya bina içindeyse kat, merdiven veya asansör gibi erişim koşullarını; dışarıdaysa bina önü ya da ortak toplama noktası olduğunu açıklayın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "You should provide the date from which the item will be available for collection.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Eşyayı hangi tarihten itibaren teslim edebileceğinizi de ekleyin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "When initiating the request, clearly state what the item is and that you are requesting bulky waste collection service.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Başvurunun başında eşyanın ne olduğunu ve hangi hizmeti istediğinizi belirtin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C5",
+        "text": "If you are able to provide a photograph, it is sufficient to show only the items to be collected.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Fotoğraf paylaşabiliyorsanız yalnız alınacak eşyaları göstermeniz yeterlidir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#details",
+        "chunk_id": "YV-D012#details:0-437:b7a84b3452",
+        "title": "Yeşilvadi Hacimli Atık ve Eski Mobilya Toplama",
+        "heading": "Toplama talebinde gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "citizen-v2",
+        "text": "Hacimli atık için eşyanın türünü, yaklaşık adedini, bulunduğu mahalleyi ve alınacağı açık noktayı bildirin. Eşya bina içindeyse kat, merdiven veya asansör gibi erişim koşullarını; dışarıdaysa bina önü ya da ortak toplama noktası olduğunu açıklayın. Birden fazla eşya varsa her türü ayrı sayın. Fotoğraf paylaşabiliyorsanız yalnız alınacak eşyaları göstermeniz yeterlidir. Eşyayı hangi tarihten itibaren teslim edebileceğinizi de ekleyin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#scope",
+        "chunk_id": "YV-D012#scope:0-379:dc368c6827",
+        "title": "Yeşilvadi Hacimli Atık ve Eski Mobilya Toplama",
+        "heading": "Hangi eşyalar için başvurulur?",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "citizen-v2",
+        "text": "Koltuk, masa, dolap ve yatak gibi normal evsel çöp kutusuna sığmayan eşyalar için hacimli atık toplama talebi hazırlanabilir. Eşyanın yeniden kullanıma verilecek durumda olması ile atık olarak alınmasının istenmesi farklı ihtiyaçlardır. Başvurunun başında eşyanın ne olduğunu ve hangi hizmeti istediğinizi belirtin. Ev taşıma hizmeti ile atık toplama hizmeti aynı işlem değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#limits",
+        "chunk_id": "YV-D012#limits:0-398:12bdcbad35",
+        "title": "Yeşilvadi Hacimli Atık ve Eski Mobilya Toplama",
+        "heading": "Yer ve zamanın netleştirilmesi",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "citizen-v2",
+        "text": "Teslim yeri ile toplama düzeni başvurunun değerlendirilmesi sırasında netleştirilir. Bir eşyanın dışarı bırakılmış olması, toplama planına alındığını göstermez. Yer değiştirirseniz veya alınacak eşya sayısı artarsa başvuru numaranızla güncelleme iletin. Toplama günü ve varsa hizmet bedeli hakkında bilgi isterken eşya türünü ve bulunduğu bölgeyi belirtin; belirli bir tarih için ayrıca teyit alın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#details",
+        "chunk_id": "YV-D013#details:0-448:481f890e17",
+        "title": "Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama",
+        "heading": "Malzeme ve konum bilgisi",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "citizen-v2",
+        "text": "Önce ayırmak istediğiniz malzemeyi belirtin: kağıt veya karton, plastik ambalaj, cam ya da başka bir atık türü. Ardından mahallenizi ve toplama takvimi mi yoksa bırakma noktası mı aradığınızı yazın. Belirli bir kutuyu soruyorsanız kutunun konumunu ekleyin. Bir toplama noktasının her malzemeyi kabul ettiğini varsaymak yerine, o noktada kabul edilen türleri kontrol edin. Karışık bir torbanız varsa içindeki farklı malzemeleri ayrı ayrı tarif edin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#limits",
+        "chunk_id": "YV-D013#limits:0-391:997ccaeb55",
+        "title": "Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama",
+        "heading": "Toplama noktasıyla ilgili sorunlar",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "citizen-v2",
+        "text": "Kutunun dolu, hasarlı veya erişilemez olması durumunda konumuyla birlikte sorun bildirimi yapabilirsiniz. Kutunun yanına bırakılan başka atıkları da görünür durumuyla açıklayın. Yeni bir geri dönüşüm noktası önerisi için bölgeyi, kullanım ihtiyacını ve en yakın mevcut noktayı biliyorsanız onu belirtin. Toplama noktası önerisi ile var olan kutudaki arıza bildirimi ayrı başvuru konularıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2264,
+    "output_tokens": 510,
+    "latency_s": 6.110422083060257,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "831aa5c77f4454a8940940739f35f6297915f9969e11438305f18f43641026e6",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"To request bulky waste collection, you must specify the type of item, its approximate quantity, the neighborhood, and the exact location for pickup.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Hacimli atık için eşyanın türünü, yaklaşık adedini, bulunduğu mahalleyi ve alınacağı açık noktayı bildirin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You must clarify if the item is inside the building, including details about the floor, stairs, or elevator, or if it is outside at a building entrance or collection point.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Eşya bina içindeyse kat, merdiven veya asansör gibi erişim koşullarını; dışarıdaysa bina önü ya da ortak toplama noktası olduğunu açıklayın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You should provide the date from which the item will be available for collection.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Eşyayı hangi tarihten itibaren teslim edebileceğinizi de ekleyin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"When initiating the request, clearly state what the item is and that you are requesting bulky waste collection service.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Başvurunun başında eşyanın ne olduğunu ve hangi hizmeti istediğinizi belirtin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"If you are able to provide a photograph, it is sufficient to show only the items to be collected.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Fotoğraf paylaşabiliyorsanız yalnız alınacak eşyaları göstermeniz yeterlidir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:41:09.454554+00:00",
+    "wall_latency_including_pacing_s": 6.110422083060257
+  }
+}

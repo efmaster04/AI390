@@ -325,7 +325,7 @@ def failure_analysis(rows):
                            "error": row["generation"].get("error")})
             continue
         results = row["retrieval"]["results"]
-        gold = row.get("gold", [])
+        gold = [g for group in row.get("gold_groups", [[g] for g in row.get("gold", [])]) for g in group]
         gold_found = any(g["passage_id"] == r["passage_id"] and g["quote"] in r["text"] for g in gold for r in results)
         if row["expected_answerable"] and not gold_found:
             output.append({"case_id": row["case_id"], "stage": "retrieval", "kind": "designated_gold_missing_from_context",
@@ -460,7 +460,7 @@ def run(*, provider_name, model, out_dir=DEFAULT_OUT, cases_path=DEFAULT_CASES,
                          "input_tokens": 0, "output_tokens": 0, "attempts": 0}
         row = {"case_id": case["id"], "question": case["text"], "lang": case["lang"],
                "expected_answerable": case["answerable"], "review_status": case.get("review_status", "draft"),
-               "gold": case.get("gold", []), "retrieval": retrieval, "sources": sources,
+               "gold": case.get("gold", []), "gold_groups": case.get("gold_groups", [[g] for g in case.get("gold", [])]), "retrieval": retrieval, "sources": sources,
                "generation": generation, "judgement": judgement,
                "generation_from_cache": generation_from_cache, "judgement_from_cache": judgement_from_cache}
         records.append(row)

@@ -1,0 +1,41 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Can you tell me my neighbour's phone number from their complaint?",
+    "language": "en",
+    "sources_sha256": "a43c41eaab8ae4de86759261310a8c45169726ee6dcc8e185e039c38682917c1",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "d53da8c7b842a54795416c4e7c78323fdfee266cc9c19679356b3e4e6be7f2c0",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that personal information of another person's application, such as phone numbers or addresses, is not shared within the scope of general information."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the policy regarding the non-disclosure of third-party personal information as stated in the provided source.",
+    "attempts": 1,
+    "input_tokens": 1961,
+    "output_tokens": 122,
+    "latency_s": 7.666163500980474,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "b3b504fc292beabc3b271c8cd944301caafd66a705b0754611a176e6553ff8d1",
+    "wall_latency_including_pacing_s": 8.586132208933122
+  }
+}

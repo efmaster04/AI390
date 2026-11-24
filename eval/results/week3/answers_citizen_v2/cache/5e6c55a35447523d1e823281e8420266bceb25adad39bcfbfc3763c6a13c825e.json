@@ -1,0 +1,122 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "I saved my complaint reference, but one digit is unreadable. Where can I find the original number before checking progress?",
+    "language": "en",
+    "sources_sha256": "565eef1f32b48780b2a97018ea5a8ac9ea49d9338873495739f4ae524a5050e6",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "If you cannot find your previous reference number, you can explain the situation to the application point by providing the date, subject, and location of your initial report. [4]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "If you cannot find your previous reference number, you can explain the situation to the application point by providing the date, subject, and location of your initial report.",
+        "citations": [
+          4
+        ],
+        "evidence": [
+          {
+            "citation": 4,
+            "quote": "Önceki başvuru numarasını bulamıyorsanız ilk bildirimin tarihi, konusu ve yeri başvuru noktasına durumu anlatmanıza yardımcı olur."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#limits",
+        "chunk_id": "YV-D007#limits:0-331:bd319c399c",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Gönderim ve takip",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Başvuru formunda hizmet konusu, mahalle, sokak ve sorunun kısa açıklaması yer alır. Başvuru gönderiminden sonra verilen referansı saklayın. Daha sonra fotoğraf veya yeni gözlem eklemek isterseniz aynı referansla ilerleyin. Başvurunun alınması, incelemenin tamamlanması veya bir ekibin belirli saatte gelmesiyle aynı aşama değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D025",
+        "passage_id": "YV-D025#details",
+        "chunk_id": "YV-D025#details:0-459:2bbf0358db",
+        "title": "Yeşilvadi Gürültü Bildirimi",
+        "heading": "Ölçüm olmadan bildirim hazırlama",
+        "source": "beldesk://synthetic/YV-D025",
+        "version": "citizen-v2",
+        "text": "Bildiriminize konumu, sesin bilinen kaynağını, duyulduğu gün veya saat aralığını ve tekrar edip etmediğini ekleyin. Desibel ölçümü yapmamış olmanız gözleminizi iletmenize engel değildir. Kaynağı tam bilmiyorsanız yakın olduğunu düşündüğünüz yeri ve duyduğunuz sesin türünü tarif edin. Birden fazla farklı kaynak varsa her birini ayrı açıklayın. Sorunun uyku, çalışma veya ortak alan kullanımı üzerindeki etkisini kendi yaşadığınız biçimiyle belirtebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D025",
+        "passage_id": "YV-D025#limits",
+        "chunk_id": "YV-D025#limits:0-421:0ebf23c1c9",
+        "title": "Yeşilvadi Gürültü Bildirimi",
+        "heading": "Tekrarlanan olay ve inceleme",
+        "source": "beldesk://synthetic/YV-D025",
+        "version": "citizen-v2",
+        "text": "Aynı konu için önceki başvurunuz varsa referans numarasıyla yeni gözlem tarihini ve neyin değiştiğini bildirin. Gürültünün sona ermesi veya başka saatlerde yeniden başlaması da başvuruyu güncellemek için yararlı bilgidir. Ölçüm gereksinimi ve ilgili değerlendirme başvurunun incelenmesi sırasında belirlenir. Başka kişilerin adına durum anlatıyorsanız doğrudan gözlemlediğiniz bilgiyi, size aktarılan bilgiden ayrı tutun.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#details",
+        "chunk_id": "YV-D027#details:0-559:6136882651",
+        "title": "Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip",
+        "heading": "Ek bilgi gönderirken gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "citizen-v2",
+        "text": "Önceki başvuru numaranızı, sorunun konumunu ve ilk bildiriminizi ne zaman yaptığınızı biliyorsanız ekleyin. Sorun aynı şekilde devam ediyorsa bunu belirtin; büyüme, başka bir noktaya yayılma veya geçişin daha fazla etkilenmesi varsa değişikliği açıklayın. Önceki başvuru numarasını bulamıyorsanız ilk bildirimin tarihi, konusu ve yeri başvuru noktasına durumu anlatmanıza yardımcı olur. Aynı bilgiyi tekrar yazmak yerine yeni gözlem veya değişiklik varsa onu ekleyin. Yeni bir fotoğrafınız varsa mevcut durumu göstermek için önceki referansla iletebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#limits",
+        "chunk_id": "YV-D027#limits:0-427:addae43051",
+        "title": "Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip",
+        "heading": "Yeni arıza ve ayrı başvuru",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "citizen-v2",
+        "text": "Aynı sokakta farklı bir noktada yeni arıza oluşmuşsa konumunu ayrı tarif edin. Önceki sorunun giderildiğini ancak başka bir sorunun sürdüğünü görüyorsanız iki durumu birbirinden ayırın. Başvuru takibi için alındı belgesi veya başvuru noktasından verilen referansı saklayın. Yeni bilgi göndermek, bir müdahale tarihinin kesinleştiği anlamına gelmez; işlem aşamasını ilgili başvuruya ait güncel durum bilgisiyle öğrenebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2268,
+    "output_tokens": 134,
+    "latency_s": 4.948321416042745,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "acd369022a030d2ec6f17353e6a01fe968312e575dfcc6f2ed2b96080c8cb14f",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"If you cannot find your previous reference number, you can explain the situation to the application point by providing the date, subject, and location of your initial report.\",\n      \"citations\": [4],\n      \"evidence\": [\n        {\n          \"citation\": 4,\n          \"quote\": \"Önceki başvuru numarasını bulamıyorsanız ilk bildirimin tarihi, konusu ve yeri başvuru noktasına durumu anlatmanıza yardımcı olur.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:43:20.397538+00:00",
+    "wall_latency_including_pacing_s": 6.6012028330005705
+  }
+}

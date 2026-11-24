@@ -1,0 +1,86 @@
+[
+  {
+    "case_id": "W3-R008",
+    "variant": "hybrid_rerank",
+    "failure_stage": "retrieval",
+    "gold": [
+      {
+        "passage_id": "YV-D008#details",
+        "quote": "Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez."
+      }
+    ],
+    "top5": [
+      "YV-D030#limits",
+      "YV-D002#limits",
+      "YV-D029#details",
+      "YV-D004#limits",
+      "YV-D029#limits"
+    ],
+    "gold_in_candidates": false,
+    "root_cause": "gold_outside_candidate_pool",
+    "interpretation": "Ranking observation only; question/gold labels still need independent human review."
+  },
+  {
+    "case_id": "W3-R008",
+    "variant": "dense_rerank",
+    "failure_stage": "retrieval",
+    "gold": [
+      {
+        "passage_id": "YV-D008#details",
+        "quote": "Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez."
+      }
+    ],
+    "top5": [
+      "YV-D030#limits",
+      "YV-D002#limits",
+      "YV-D029#details",
+      "YV-D004#limits",
+      "YV-D029#limits"
+    ],
+    "gold_in_candidates": false,
+    "root_cause": "gold_outside_candidate_pool",
+    "interpretation": "Ranking observation only; question/gold labels still need independent human review."
+  },
+  {
+    "case_id": "W3-R008",
+    "variant": "hybrid_no_rerank",
+    "failure_stage": "retrieval",
+    "gold": [
+      {
+        "passage_id": "YV-D008#details",
+        "quote": "Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez."
+      }
+    ],
+    "top5": [
+      "YV-D029#limits",
+      "YV-D029#scope",
+      "YV-D029#details",
+      "YV-D003#scope",
+      "YV-D009#scope"
+    ],
+    "gold_in_candidates": false,
+    "root_cause": "gold_outside_candidate_pool",
+    "interpretation": "Ranking observation only; question/gold labels still need independent human review."
+  },
+  {
+    "case_id": "W3-R010",
+    "variant": "hybrid_no_rerank",
+    "failure_stage": "retrieval",
+    "gold": [
+      {
+        "passage_id": "YV-D010#limits",
+        "quote": "Ekip ileride kurgusal ücret kalemi eklerse hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir."
+      }
+    ],
+    "top5": [
+      "YV-D029#limits",
+      "YV-D029#details",
+      "YV-D029#scope",
+      "YV-D010#details",
+      "YV-D010#scope"
+    ],
+    "gold_in_candidates": true,
+    "root_cause": "gold_in_candidates_but_below_top5",
+    "interpretation": "Ranking observation only; question/gold labels still need independent human review."
+  }
+]

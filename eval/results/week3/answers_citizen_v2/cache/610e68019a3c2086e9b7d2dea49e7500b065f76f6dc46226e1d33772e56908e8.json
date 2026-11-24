@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "What is the current parking tariff at the municipal underground garage?",
+    "language": "en",
+    "sources_sha256": "5e0f418511215d41067b4702bb5e5f5f40ef47839eefc37adc4951ce8b250085",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#details",
+        "chunk_id": "YV-D007#details:0-401:771256ab0f",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Birden fazla sorun",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır. Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın. Bir sorunun bilgilerini diğerinin yerine kullanmak, ilgili birimin olayları ayırmasını güçleştirir. İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#limits",
+        "chunk_id": "YV-D010#limits:0-369:aa49c2cdea",
+        "title": "Yeşilvadi Ödeme Belgesi ve Ücret Bilgisi Rehberi",
+        "heading": "Güncel ücret ve itiraz",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "citizen-v2",
+        "text": "Yeni bir başvuru için ücret soruyorsanız hizmetin adını ve başvuru türünü belirtin. Güncel tarife, daha önceki bir ödemenin tutarıyla aynı olmak zorunda değildir. Yanlış hizmete ödeme yaptığınızı düşünüyorsanız dekontla tahsilat biriminden işlem incelemesi isteyin. İnceleme talebinin alınması tek başına iade yapıldığı veya başvuru ücretinin değiştiği anlamına gelmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#schedule",
+        "chunk_id": "YV-D011#schedule:0-416:b5941b335b",
+        "title": "Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi",
+        "heading": "Toplama takvimi ve başvuruyu izleme",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "citizen-v2",
+        "text": "Belirli bir sokağın toplama gününü öğrenmek için o bölgeye ait güncel temizlik takvimini isteyin. Mahalle adıyla birlikte sokak bilgisini vermek, aynı mahalledeki farklı güzergâhların karıştırılmasını önler. Daha önce aynı nokta için başvurduysanız önceki başvuru numarasını ekleyerek birikimin devam ettiğini bildirebilirsiniz. Toplama yapıldığında yalnızca bir kısmı alınmışsa kalan atığın yerini ayrıca açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#limits",
+        "chunk_id": "YV-D014#limits:0-405:086f51951f",
+        "title": "Yeşilvadi Tanımlanamayan Atık Bildirimi",
+        "heading": "Eksik konumu tamamlama ve takip",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "citizen-v2",
+        "text": "Açık alanın posta adresi bulunmuyorsa konum işareti, kavşak, parsel çevresi veya bilinen bir yapıya göre tarif ekleyebilirsiniz. Atığın sonradan başka yere taşındığını görürseniz önceki başvuru numarasıyla yeni yeri bildirin. Miktarda ya da görünür durumda değişiklik olduysa neyin değiştiğini açıklayın. Atığın içeriğini belirlemek ve hangi işlemden geçeceğine karar vermek, ilgili incelemenin konusudur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#limits",
+        "chunk_id": "YV-D027#limits:0-427:addae43051",
+        "title": "Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip",
+        "heading": "Yeni arıza ve ayrı başvuru",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "citizen-v2",
+        "text": "Aynı sokakta farklı bir noktada yeni arıza oluşmuşsa konumunu ayrı tarif edin. Önceki sorunun giderildiğini ancak başka bir sorunun sürdüğünü görüyorsanız iki durumu birbirinden ayırın. Başvuru takibi için alındı belgesi veya başvuru noktasından verilen referansı saklayın. Yeni bilgi göndermek, bir müdahale tarihinin kesinleştiği anlamına gelmez; işlem aşamasını ilgili başvuruya ait güncel durum bilgisiyle öğrenebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2238,
+    "output_tokens": 17,
+    "latency_s": 6.219407832948491,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "ff3a7f55fd0aa31444f0ac4304eb638890f5277f3de943197f851c817c020e05",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:45:17.017340+00:00",
+    "wall_latency_including_pacing_s": 9.176692832959816
+  }
+}

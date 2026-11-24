@@ -7,27 +7,27 @@
     "script": null
   },
   "abstention_correct": {
-    "value": 1.0,
+    "value": 0.8333333333333334,
     "n": 6,
-    "numerator": 6,
+    "numerator": 5,
     "definition": "valid fixed-fallback response on unavailable-information controls"
   },
   "unsupported_claims": {
-    "value": 0.0,
-    "n": 61,
-    "numerator": 0,
+    "value": 0.02197802197802198,
+    "n": 91,
+    "numerator": 2,
     "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
   },
   "hit_at_5": {
-    "value": 0.96875,
+    "value": 1.0,
     "n": 32,
     "script": "eval/retrieval_week3.py"
   },
   "mrr": {
-    "value": 0.953125,
+    "value": 0.7588541666666667,
     "n": 32,
-    "script": "eval/retrieval_week3.py",
-    "cutoff": 10
+    "cutoff": 10,
+    "script": "eval/retrieval_week3.py"
   },
   "task_success": {
     "value": null,
@@ -46,7 +46,7 @@
     "script": null
   },
   "cost_per_task_usd": null,
-  "latency_p50_s": 2.521084417006932,
+  "latency_p50_s": 4.72438522905577,
   "spend_week_usd": null,
   "spend_total_usd": null
 }

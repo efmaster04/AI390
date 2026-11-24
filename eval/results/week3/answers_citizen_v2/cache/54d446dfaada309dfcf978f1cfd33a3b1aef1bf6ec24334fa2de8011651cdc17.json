@@ -1,0 +1,174 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Evde biriken cam şişeleri ve plastik ambalajları geri dönüşüme vermek istiyorum. Toplama hizmetiyle bırakma noktası seçeneklerini nasıl öğrenebilirim?",
+    "language": "tr",
+    "sources_sha256": "df26188e91ce1092fe0312c039352166e1990c7be48714db2a14e3e3235f5b7b",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Geri dönüştürülebilir atıklar için toplama günü, bırakma noktası ve kabul edilen malzeme türleri hakkında bilgi alabilirsiniz. [1]\nBaşvurunuzda atıklarınızın evsel kullanım mı yoksa işyeri faaliyeti mi olduğunu ve yaklaşık miktarını belirtmeniz uygun hizmet bilgisinin bulunmasını kolaylaştırır. [1]\nBilgi almak için ayırmak istediğiniz malzemeyi, mahallenizi ve toplama takvimi mi yoksa bırakma noktası mı aradığınızı belirtmeniz gerekmektedir. [2]\nBelirli bir geri dönüşüm kutusu hakkında soru soruyorsanız, kutunun konumunu da paylaşmalısınız. [2]\nBir toplama noktasının her malzemeyi kabul ettiğini varsaymak yerine, o noktada kabul edilen türleri ayrıca kontrol etmelisiniz. [2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Geri dönüştürülebilir atıklar için toplama günü, bırakma noktası ve kabul edilen malzeme türleri hakkında bilgi alabilirsiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Geri dönüştürülebilir atıklar için toplama günü, bırakma noktası ve kabul edilen malzeme türü hakkında bilgi alınabilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Başvurunuzda atıklarınızın evsel kullanım mı yoksa işyeri faaliyeti mi olduğunu ve yaklaşık miktarını belirtmeniz uygun hizmet bilgisinin bulunmasını kolaylaştırır.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Başvurunuzda evsel kullanım mı işyeri faaliyeti mi olduğunu ve yaklaşık miktarı açıklamanız, uygun hizmet bilgisinin bulunmasını kolaylaştırır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Bilgi almak için ayırmak istediğiniz malzemeyi, mahallenizi ve toplama takvimi mi yoksa bırakma noktası mı aradığınızı belirtmeniz gerekmektedir.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Önce ayırmak istediğiniz malzemeyi belirtin: kağıt veya karton, plastik ambalaj, cam ya da başka bir atık türü. Ardından mahallenizi ve toplama takvimi mi yoksa bırakma noktası mı aradığınızı yazın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Belirli bir geri dönüşüm kutusu hakkında soru soruyorsanız, kutunun konumunu da paylaşmalısınız.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Belirli bir kutuyu soruyorsanız kutunun konumunu ekleyin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C5",
+        "text": "Bir toplama noktasının her malzemeyi kabul ettiğini varsaymak yerine, o noktada kabul edilen türleri ayrıca kontrol etmelisiniz.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Bir toplama noktasının her malzemeyi kabul ettiğini varsaymak yerine, o noktada kabul edilen türleri kontrol edin."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#scope",
+        "chunk_id": "YV-D013#scope:0-370:d8884cf39c",
+        "title": "Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama",
+        "heading": "Geri dönüşüm bilgisini seçme",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "citizen-v2",
+        "text": "Geri dönüştürülebilir atıklar için toplama günü, bırakma noktası ve kabul edilen malzeme türü hakkında bilgi alınabilir. Evde biriktirilen ambalaj atığı ile büyük miktardaki işyeri atığı aynı toplama düzenine tabi olmayabilir. Başvurunuzda evsel kullanım mı işyeri faaliyeti mi olduğunu ve yaklaşık miktarı açıklamanız, uygun hizmet bilgisinin bulunmasını kolaylaştırır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#details",
+        "chunk_id": "YV-D013#details:0-448:481f890e17",
+        "title": "Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama",
+        "heading": "Malzeme ve konum bilgisi",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "citizen-v2",
+        "text": "Önce ayırmak istediğiniz malzemeyi belirtin: kağıt veya karton, plastik ambalaj, cam ya da başka bir atık türü. Ardından mahallenizi ve toplama takvimi mi yoksa bırakma noktası mı aradığınızı yazın. Belirli bir kutuyu soruyorsanız kutunun konumunu ekleyin. Bir toplama noktasının her malzemeyi kabul ettiğini varsaymak yerine, o noktada kabul edilen türleri kontrol edin. Karışık bir torbanız varsa içindeki farklı malzemeleri ayrı ayrı tarif edin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#limits",
+        "chunk_id": "YV-D013#limits:0-391:997ccaeb55",
+        "title": "Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama",
+        "heading": "Toplama noktasıyla ilgili sorunlar",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "citizen-v2",
+        "text": "Kutunun dolu, hasarlı veya erişilemez olması durumunda konumuyla birlikte sorun bildirimi yapabilirsiniz. Kutunun yanına bırakılan başka atıkları da görünür durumuyla açıklayın. Yeni bir geri dönüşüm noktası önerisi için bölgeyi, kullanım ihtiyacını ve en yakın mevcut noktayı biliyorsanız onu belirtin. Toplama noktası önerisi ile var olan kutudaki arıza bildirimi ayrı başvuru konularıdır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#scope",
+        "chunk_id": "YV-D011#scope:0-394:57fdba4942",
+        "title": "Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi",
+        "heading": "Alınmayan çöp ve taşan konteyner",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "citizen-v2",
+        "text": "Evsel çöplerin alınmaması, konteynerin taşması, konteyner çevresinde atık birikmesi ve toplama noktasına erişilememesi için temizlik bildirimi yapılabilir. Toplama gününü öğrenmek isteyenler ile planlanan toplamanın yapılmadığını bildirenler farklı bilgiye ihtiyaç duyar. Bildiriminizde sorunun hangisi olduğunu açıklamanız, temizlik biriminin doğru yeri ve hizmeti belirlemesine yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D012",
+        "passage_id": "YV-D012#limits",
+        "chunk_id": "YV-D012#limits:0-398:12bdcbad35",
+        "title": "Yeşilvadi Hacimli Atık ve Eski Mobilya Toplama",
+        "heading": "Yer ve zamanın netleştirilmesi",
+        "source": "beldesk://synthetic/YV-D012",
+        "version": "citizen-v2",
+        "text": "Teslim yeri ile toplama düzeni başvurunun değerlendirilmesi sırasında netleştirilir. Bir eşyanın dışarı bırakılmış olması, toplama planına alındığını göstermez. Yer değiştirirseniz veya alınacak eşya sayısı artarsa başvuru numaranızla güncelleme iletin. Toplama günü ve varsa hizmet bedeli hakkında bilgi isterken eşya türünü ve bulunduğu bölgeyi belirtin; belirli bir tarih için ayrıca teyit alın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2254,
+    "output_tokens": 589,
+    "latency_s": 6.565506957820617,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "b741013813e561658fe83f3239aab8956b23662871f741398f27732fee8b8e02",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Geri dönüştürülebilir atıklar için toplama günü, bırakma noktası ve kabul edilen malzeme türleri hakkında bilgi alabilirsiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Geri dönüştürülebilir atıklar için toplama günü, bırakma noktası ve kabul edilen malzeme türü hakkında bilgi alınabilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Başvurunuzda atıklarınızın evsel kullanım mı yoksa işyeri faaliyeti mi olduğunu ve yaklaşık miktarını belirtmeniz uygun hizmet bilgisinin bulunmasını kolaylaştırır.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Başvurunuzda evsel kullanım mı işyeri faaliyeti mi olduğunu ve yaklaşık miktarı açıklamanız, uygun hizmet bilgisinin bulunmasını kolaylaştırır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Bilgi almak için ayırmak istediğiniz malzemeyi, mahallenizi ve toplama takvimi mi yoksa bırakma noktası mı aradığınızı belirtmeniz gerekmektedir.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Önce ayırmak istediğiniz malzemeyi belirtin: kağıt veya karton, plastik ambalaj, cam ya da başka bir atık türü. Ardından mahallenizi ve toplama takvimi mi yoksa bırakma noktası mı aradığınızı yazın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Belirli bir geri dönüşüm kutusu hakkında soru soruyorsanız, kutunun konumunu da paylaşmalısınız.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Belirli bir kutuyu soruyorsanız kutunun konumunu ekleyin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Bir toplama noktasının her malzemeyi kabul ettiğini varsaymak yerine, o noktada kabul edilen türleri ayrıca kontrol etmelisiniz.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Bir toplama noktasının her malzemeyi kabul ettiğini varsaymak yerine, o noktada kabul edilen türleri kontrol edin.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:41:15.888957+00:00",
+    "wall_latency_including_pacing_s": 7.631123957922682
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Yeşilvadi belediye başkanının aylık maaşı tam kaç lira?",
+    "language": "tr",
+    "sources_sha256": "b49c1567ccc5954b6b40a7f977508173ac6c1ee7d3da30dbd483837c12e9141c",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Bu sorunun yanıtı erişebildiğim belgelerde bulunmuyor. Güvenilir bir yanıt vermek için yeterli kaynak yok.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#summary",
+        "chunk_id": "YV-D010#summary:0-278:9f8a472f28",
+        "title": "Yeşilvadi Ödeme Belgesi ve Ücret Bilgisi Rehberi",
+        "heading": "Ödeme belgenizi kontrol edin",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "citizen-v2",
+        "text": "Belediye hizmetiyle ilgili ödemenizi araştırırken ödeme belgesini veya dekontu saklayın. Bir ücretin hangi hizmete ait olduğunu anlamak için yalnız toplam tutara bakmak yeterli olmayabilir. Aynı gün farklı hizmetler için yapılmış ödemeler ayrı işlem referanslarıyla izlenebilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#limits",
+        "chunk_id": "YV-D010#limits:0-369:aa49c2cdea",
+        "title": "Yeşilvadi Ödeme Belgesi ve Ücret Bilgisi Rehberi",
+        "heading": "Güncel ücret ve itiraz",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "citizen-v2",
+        "text": "Yeni bir başvuru için ücret soruyorsanız hizmetin adını ve başvuru türünü belirtin. Güncel tarife, daha önceki bir ödemenin tutarıyla aynı olmak zorunda değildir. Yanlış hizmete ödeme yaptığınızı düşünüyorsanız dekontla tahsilat biriminden işlem incelemesi isteyin. İnceleme talebinin alınması tek başına iade yapıldığı veya başvuru ücretinin değiştiği anlamına gelmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D010",
+        "passage_id": "YV-D010#details",
+        "chunk_id": "YV-D010#details:0-379:115da3aba9",
+        "title": "Yeşilvadi Ödeme Belgesi ve Ücret Bilgisi Rehberi",
+        "heading": "İşlemi tanımlayan bilgiler",
+        "source": "beldesk://synthetic/YV-D010",
+        "version": "citizen-v2",
+        "text": "Dekontta hizmetin veya işlemin adı, ödeme tarihi, tutar ve işlem referansı kontrol edilir. Ödemenin hangi hizmete ait olduğunu belirleyemiyorsanız bu bilgileri tahsilat birimine iletin. Başvuru referansı ile ödeme işlem referansı aynı bilgi olmayabilir; belgenizdeki iki referansı birbirine karıştırmayın. Banka kartınızın bütün numarasını genel bilgi mesajına yazmanız gerekmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#limits",
+        "chunk_id": "YV-D007#limits:0-331:bd319c399c",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Gönderim ve takip",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Başvuru formunda hizmet konusu, mahalle, sokak ve sorunun kısa açıklaması yer alır. Başvuru gönderiminden sonra verilen referansı saklayın. Daha sonra fotoğraf veya yeni gözlem eklemek isterseniz aynı referansla ilerleyin. Başvurunun alınması, incelemenin tamamlanması veya bir ekibin belirli saatte gelmesiyle aynı aşama değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D004",
+        "passage_id": "YV-D004#details",
+        "chunk_id": "YV-D004#details:0-349:f1439024a8",
+        "title": "Yeşilvadi Sosyal Yardım Başvuru Rehberi",
+        "heading": "İlk başvuru",
+        "source": "beldesk://synthetic/YV-D004",
+        "version": "citizen-v2",
+        "text": "Gıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. Başvuru birimi değerlendirme sırasında hane durumu ve başvuruyla ilgili belgeleri inceler. Genel hizmet bilgisi almak için banka hesap numarası veya belgelerin tamamı gerekli değildir. Başvurunuza uygun belge listesi ilgili destek türüne göre verilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2139,
+    "output_tokens": 17,
+    "latency_s": 3.6466711660614237,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "4d50e06bf9f1fdba3687fa12ab856169265cec9c101c941580bd2c60c163b7bb",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:44:03.965972+00:00",
+    "wall_latency_including_pacing_s": 6.759642000077292
+  }
+}

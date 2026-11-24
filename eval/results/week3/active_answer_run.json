@@ -1,8 +1,6 @@
 {
-  "directory": "answers_retry_v3",
-  "initial_directory": "answers",
-  "recovery_directory": "answers_retry_v2",
-  "reason": "Scheduled bounded completion pass for the two earliest provider failures; selected by completion order, not by semantic quality score.",
-  "comparison": "Operational availability recovery; cached outputs retain historical origin. No model or prompt change.",
-  "unique_additional_valid_cases_vs_initial": 36
+  "directory": "answers_citizen_v2_complete",
+  "dataset_version": "citizen-v2",
+  "reason": "Original successes retained; only originally invalid generations may be replaced by one bounded validity-repair pass. Not 38 independent new calls.",
+  "comparable_to_v1_metrics": false
 }

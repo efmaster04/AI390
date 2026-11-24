@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Sokağımızda hem su taşması hem de yanmayan lambalar var. İkisini tek başvuruda mı bildireyim, ayrı ayrı mı göndereyim?",
+    "language": "tr",
+    "sources_sha256": "c1892fa703019617a2aa14a1c8b97c3f12c4e8269d1586c2d9ae5bd8f12ac8e8",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında değerlendirildiği için her sorun için ayrı başvuru yapılması gerekmektedir. [2]\nAynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı ayrı açıklamanız gerekmektedir. [2]\nİki başvuru birbiriyle ilişkiliyse, açıklama kısmına bu durumu belirten bir not ekleyebilirsiniz. [2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında değerlendirildiği için her sorun için ayrı başvuru yapılması gerekmektedir.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı ayrı açıklamanız gerekmektedir.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "İki başvuru birbiriyle ilişkiliyse, açıklama kısmına bu durumu belirten bir not ekleyebilirsiniz.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#limits",
+        "chunk_id": "YV-D022#limits:0-428:dce3b9735c",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Yeni bilgi ve takip",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Daha önce başvurduysanız eski başvuru numarasını kullanarak lambanın hâlâ yanmadığını veya yeni bir bölümün de etkilendiğini iletin. Gündüz görülen bir direk hasarıyla gece görülen aydınlatma sorununu ayrı açıklayabilirsiniz. Ev ve işyerlerine de elektrik gelmiyorsa konut kesintisi için ilgili dağıtım hizmetinden bilgi alınması gerekir. Aydınlatma bildiriminin sonucunu öğrenirken ilk başvurudaki konumu ve referansı kullanın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#details",
+        "chunk_id": "YV-D007#details:0-401:771256ab0f",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Birden fazla sorun",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır. Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın. Bir sorunun bilgilerini diğerinin yerine kullanmak, ilgili birimin olayları ayırmasını güçleştirir. İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#details",
+        "chunk_id": "YV-D022#details:0-469:13827ed904",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Lambayı ve etkilenen alanı belirleme",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve arızalı lambanın bulunduğu noktayı yazın. Direk numarası okunuyorsa ekleyin; numara yoksa bina, durak veya kavşak gibi yakındaki bir işaret yeterli bir tarif sağlayabilir. Tek lamba mı, birkaç lamba mı yoksa bütün sokak mı etkileniyor belirtin. Evlerde ve işyerlerinde elektrik olduğu hâlde sokak lambalarının yanmaması, konutları da etkileyen elektrik kesintisinden farklıdır. Sorunun ne zamandır sürdüğünü ve sürekli mi aralıklı mı olduğunu ekleyin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#scope",
+        "chunk_id": "YV-D022#scope:0-385:8adf3ca427",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Sokak aydınlatması bildirimi",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Sokak, yaya yolu veya meydandaki aydınlatmanın sönmesi, kesintili yanması ya da belirli bir bölümün karanlık kalması için aydınlatma arıza bildirimi yapılabilir. Yeni bir aydınlatma noktası talep etmek, mevcut lambanın arızalanmasından farklı bir başvurudur. Bildiriminizde mevcut bir direğin mi arızalı olduğunu yoksa aydınlatma ihtiyacı bulunan yeni bir yer mi önerdiğinizi belirtin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#scope",
+        "chunk_id": "YV-D024#scope:0-346:5fa52cebd4",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması",
+        "heading": "Su kaçağı ve taşma başvurusu",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "citizen-v2",
+        "text": "Yoldaki su kaçağı, görünen boru arızası, rögar taşması ve kanalizasyon kaynaklı akış için altyapı bildirimi hazırlanabilir. İçme suyu hattına ilişkin kaçak ile kanalizasyon taşması farklı konulardır. Aynı yerde başka bir belediye hizmetinde de sorun bulunuyorsa, örneğin sokak aydınlatması çalışmıyorsa, bu ikinci sorunun türünü ayrıca açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2259,
+    "output_tokens": 339,
+    "latency_s": 4.0418124590069056,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "7918973972a3d6a80ba3a2ff08cd116b34c2ffdc51bfabc7a25a97bf7fbe7509",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında değerlendirildiği için her sorun için ayrı başvuru yapılması gerekmektedir.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı ayrı açıklamanız gerekmektedir.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"İki başvuru birbiriyle ilişkiliyse, açıklama kısmına bu durumu belirten bir not ekleyebilirsiniz.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:40:27.134458+00:00",
+    "wall_latency_including_pacing_s": 7.077560542034917
+  }
+}

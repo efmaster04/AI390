@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "We are organising a small fair in a park, but wheelchair users cannot get through the entrance. What do we need for permission, and how can we report the access problem?",
+    "language": "en",
+    "sources_sha256": "8164fec23457b6b288139e01d602bb3561cc13fd9642116f05b6d19c3650e538",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D019",
+        "passage_id": "YV-D019#scope",
+        "chunk_id": "YV-D019#scope:0-349:982aee0ee2",
+        "title": "Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi",
+        "heading": "Erişim sorununu bildirme",
+        "source": "beldesk://synthetic/YV-D019",
+        "version": "citizen-v2",
+        "text": "Bir girişe, kaldırıma, rampaya veya ortak geçiş noktasına ulaşamama durumu erişilebilirlik bildirimiyle iletilebilir. Bozuk bir rampanın onarımı, geçişi kapatan bir nesnenin bildirilmesi ve yeni rampa isteği aynı ihtiyaç değildir. Hangi güzergâhı kullanmak istediğinizi ve nerede ilerleyemediğinizi açıklamanız, sorunun yerinin anlaşılmasını sağlar.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D019",
+        "passage_id": "YV-D019#limits",
+        "chunk_id": "YV-D019#limits:0-409:14862e1fde",
+        "title": "Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi",
+        "heading": "Mevcut sorun ve yeni düzenleme isteği",
+        "source": "beldesk://synthetic/YV-D019",
+        "version": "citizen-v2",
+        "text": "Daha önce kullanılabilen bir geçişin kapanması durumunda ne zamandan beri kapalı olduğunu ekleyin. Yeni bir rampa ya da giriş düzenlemesi öneriyorsanız mevcut güzergâhı ve hangi noktada alternatif gerektiğini açıklayın. Fotoğraf veya konum işareti başvuruya ek bilgi sağlayabilir. Aynı yer için önceki başvurunuz varsa referansını kullanarak sorunun sürüp sürmediğini veya değişen koşulları bildirebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D019",
+        "passage_id": "YV-D019#details",
+        "chunk_id": "YV-D019#details:0-460:d41fa7a839",
+        "title": "Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi",
+        "heading": "Konum ve engeli açıklama",
+        "source": "beldesk://synthetic/YV-D019",
+        "version": "citizen-v2",
+        "text": "Etkilenen girişin, kaldırımın veya geçişin konumunu ve engelin ne olduğunu belirtin. Rampa eksikliği, bozuk yüzey, basamak ya da geçişi kapatan nesneyi görüldüğü biçimiyle tarif edin. Tekerlekli sandalye, bebek arabası veya başka bir araçla geçemiyorsanız bu etkiyi açıklayın. Erişilebilirlik bildirimi için sağlık raporu, tanı veya engellilik belgesi gerekmez. Sorunun bulunduğu yer, ev adresinizden farklı olabilir; bildirimde asıl gereken engelin konumudur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#limits",
+        "chunk_id": "YV-D006#limits:0-403:59babf41e0",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant Başvurusu",
+        "heading": "Değerlendirme ve değişiklik",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "citizen-v2",
+        "text": "Alan uygunluğu ve izin sonucu ilgili birimin incelemesinden sonra kesinleşir. Yer, tarih veya katılımcı sayısında değişiklik olduğunda mevcut başvuru referansını kullanarak değişikliği bildirin. Etkinlik sonrasında atık toplama veya eşya alımı gerekiyorsa ilgili hizmet için ayrıca talep iletin. Erişimi engelleyen mevcut bir kaldırım veya giriş sorunu, erişilebilirlik bildirimi olarak da iletilebilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#limits",
+        "chunk_id": "YV-D021#limits:0-429:13f1b37e1f",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi",
+        "heading": "Takip ve bağlantılı talepler",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "citizen-v2",
+        "text": "Daha önce aynı noktaya ilişkin başvurunuz varsa numarasını ekleyerek yeni durumu bildirin. Sorun bir rampada veya bina girişindeyse erişilebilirlik ihtiyacınızı da açıklayın. Yol yüzeyindeki çukur ile kaldırım üzerindeki hasar aynı noktada bulunsa bile iki farklı bakım konusu olabilir. Başvuru takibinde hangi kısmın onarıldığını ve hangi kısmın hâlâ geçişi etkilediğini belirtmeniz, kalan ihtiyacın anlaşılmasına yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2271,
+    "output_tokens": 17,
+    "latency_s": 4.121618541888893,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "4d55c8decade5ed6a715ffd32bacaf07e6ddb58629a3cd68293c79f922ea81ad",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:43:57.137462+00:00",
+    "wall_latency_including_pacing_s": 6.558030999964103
+  }
+}

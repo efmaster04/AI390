@@ -1,0 +1,164 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "My family is struggling with food and other basic needs. What kinds of municipal support can we ask about, and how do we start?",
+    "language": "en",
+    "sources_sha256": "ec6974453d0680ead270e95d18a3bf5c700ff36ba89c05f48411debfdcca04f5",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 1,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "The social assistance unit provides information on food support, basic needs support, and access to services support. [1]\nTo start, you can explain the specific support you need and the difficulties your household is facing in your own words. [1]\nWhen applying, you should specify which type of support you are requesting, and the unit will review your household situation and relevant documents. [2]\nRequesting information and the evaluation of an assistance application are separate stages. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "The social assistance unit provides information on food support, basic needs support, and access to services support.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Sosyal yardım birimi gıda desteği, temel ihtiyaç desteği ve hizmetlere erişim desteği başlıklarında başvuruya hazırlık bilgisi verir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "To start, you can explain the specific support you need and the difficulties your household is facing in your own words.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Hangi desteğe ihtiyaç duyduğunuzu ve hanenizdeki temel güçlüğü kendi sözlerinizle açıklayabilirsiniz."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "When applying, you should specify which type of support you are requesting, and the unit will review your household situation and relevant documents.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Gıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. Başvuru birimi değerlendirme sırasında hane durumu ve başvuruyla ilgili belgeleri inceler."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Requesting information and the evaluation of an assistance application are separate stages.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bilgi istemek ile yardım başvurusunun değerlendirilmesi ayrı aşamalardır."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D004",
+        "passage_id": "YV-D004#summary",
+        "chunk_id": "YV-D004#summary:0-309:dd6b6f7d68",
+        "title": "Yeşilvadi Sosyal Yardım Başvuru Rehberi",
+        "heading": "Destek başlıkları",
+        "source": "beldesk://synthetic/YV-D004",
+        "version": "citizen-v2",
+        "text": "Sosyal yardım birimi gıda desteği, temel ihtiyaç desteği ve hizmetlere erişim desteği başlıklarında başvuruya hazırlık bilgisi verir. Hangi desteğe ihtiyaç duyduğunuzu ve hanenizdeki temel güçlüğü kendi sözlerinizle açıklayabilirsiniz. Bilgi istemek ile yardım başvurusunun değerlendirilmesi ayrı aşamalardır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D004",
+        "passage_id": "YV-D004#details",
+        "chunk_id": "YV-D004#details:0-349:f1439024a8",
+        "title": "Yeşilvadi Sosyal Yardım Başvuru Rehberi",
+        "heading": "İlk başvuru",
+        "source": "beldesk://synthetic/YV-D004",
+        "version": "citizen-v2",
+        "text": "Gıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. Başvuru birimi değerlendirme sırasında hane durumu ve başvuruyla ilgili belgeleri inceler. Genel hizmet bilgisi almak için banka hesap numarası veya belgelerin tamamı gerekli değildir. Başvurunuza uygun belge listesi ilgili destek türüne göre verilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#details",
+        "chunk_id": "YV-D007#details:0-401:771256ab0f",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Birden fazla sorun",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır. Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın. Bir sorunun bilgilerini diğerinin yerine kullanmak, ilgili birimin olayları ayırmasını güçleştirir. İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#limits",
+        "chunk_id": "YV-D007#limits:0-331:bd319c399c",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Gönderim ve takip",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Başvuru formunda hizmet konusu, mahalle, sokak ve sorunun kısa açıklaması yer alır. Başvuru gönderiminden sonra verilen referansı saklayın. Daha sonra fotoğraf veya yeni gözlem eklemek isterseniz aynı referansla ilerleyin. Başvurunun alınması, incelemenin tamamlanması veya bir ekibin belirli saatte gelmesiyle aynı aşama değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#summary",
+        "chunk_id": "YV-D007#summary:0-295:9cbce4cbb6",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Doğru başvuru konusu",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Belediye hizmeti hakkında bilgi istemek, bir saha sorununu bildirmek ve mevcut başvuruyu takip etmek farklı ihtiyaçlardır. Saha sorunu bildiriminde olayın yerini ve ne gördüğünüzü kısa, anlaşılır cümlelerle açıklayın. Önceki bir bildirime yeni bilgi ekliyorsanız başvuru referansını da paylaşın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [
+      "Claim 3: quote is not an exact substring of source 2"
+    ],
+    "attempts": 2,
+    "input_tokens": 4272,
+    "output_tokens": 839,
+    "latency_s": 11.024434708990157,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "bf536be173d360f94b60b6a1e10fb60a23fc7fc23194c6ab171e170463573650",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"The social assistance unit provides information on food support, basic needs support, and access to services support.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sosyal yardım birimi gıda desteği, temel ihtiyaç desteği ve hizmetlere erişim desteği başlıklarında başvuruya hazırlık bilgisi verir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"To start, you can explain the specific support you need and the difficulties your household is facing in your own words.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Hangi desteğe ihtiyaç duyduğunuzu ve hanenizdeki temel güçlüğü kendi sözlerinizle açıklayabilirsiniz.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"When applying, you should specify which type of support you are requesting, and the unit will provide a list of required documents based on that type.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Gıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. . . Başvurunuza uygun belge listesi ilgili destek türüne göre verilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Requesting information and submitting a formal application for evaluation are separate stages.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bilgi istemek ile yardım başvurusunun değerlendirilmesi ayrı aşamalardır.\"\n        }\n      ]\n    }\n  ]\n}",
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"The social assistance unit provides information on food support, basic needs support, and access to services support.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sosyal yardım birimi gıda desteği, temel ihtiyaç desteği ve hizmetlere erişim desteği başlıklarında başvuruya hazırlık bilgisi verir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"To start, you can explain the specific support you need and the difficulties your household is facing in your own words.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Hangi desteğe ihtiyaç duyduğunuzu ve hanenizdeki temel güçlüğü kendi sözlerinizle açıklayabilirsiniz.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"When applying, you should specify which type of support you are requesting, and the unit will review your household situation and relevant documents.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Gıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. Başvuru birimi değerlendirme sırasında hane durumu ve başvuruyla ilgili belgeleri inceler.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Requesting information and the evaluation of an assistance application are separate stages.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bilgi istemek ile yardım başvurusunun değerlendirilmesi ayrı aşamalardır.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:50:58.644409+00:00",
+    "wall_latency_including_pacing_s": 14.208289084024727
+  }
+}

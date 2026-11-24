@@ -1,0 +1,174 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "There is an unlabelled drum among dumped rubbish near our street. Can I report it even though I do not know what is inside?",
+    "language": "en",
+    "sources_sha256": "02b60c1f6fd10e0cb674a3df3dce07682319d88e091f7325b67a9e669f8602ca",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "You can report unidentified containers or barrels found in open areas for environmental cleaning. [3]\nKnowing the name or contents of the waste is not a prerequisite for making a report. [3]\nIf you do not know the contents, you should state that they are unknown in your report. [2]\nWhen reporting, you should describe the location, the approximate number of containers, their visible size, packaging, and any visible labels. [2]\nDetermining the contents of the waste and the necessary procedures is the responsibility of the relevant inspection. [4]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "You can report unidentified containers or barrels found in open areas for environmental cleaning.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Boş alana bırakılmış paketler, içeriği bilinmeyen kaplar, variller veya karışık atık yığınları çevre temizliği için bildirilebilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Knowing the name or contents of the waste is not a prerequisite for making a report.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Maddenin adını bilmeniz bildirim için ön koşul değildir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "If you do not know the contents, you should state that they are unknown in your report.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "İçeriği bilmiyorsanız bilinmediğini söyleyin; kabın görünüşü maddenin türünü tek başına belirlemez."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "When reporting, you should describe the location, the approximate number of containers, their visible size, packaging, and any visible labels.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Atığın bulunduğu mahalleyi, sokağı veya açık alanı ve yakındaki bir işareti belirtin. Kapların yaklaşık sayısını, görünen boyutunu, ambalajını ve okunabilen etiketini yazabilirsiniz."
+          }
+        ]
+      },
+      {
+        "claim_id": "C5",
+        "text": "Determining the contents of the waste and the necessary procedures is the responsibility of the relevant inspection.",
+        "citations": [
+          4
+        ],
+        "evidence": [
+          {
+            "citation": 4,
+            "quote": "Atığın içeriğini belirlemek ve hangi işlemden geçeceğine karar vermek, ilgili incelemenin konusudur."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#reporting",
+        "chunk_id": "YV-D011#reporting:0-483:466c290c3e",
+        "title": "Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi",
+        "heading": "Bildiriminizde bulunması gerekenler",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "citizen-v2",
+        "text": "Bildiriminize mahalle, sokak, konteynerin bulunduğu nokta ve çöpün ne zamandır alınmadığını ekleyin. Sorunun tek konteynerde mi, birden fazla noktada mı yoksa bütün sokakta mı görüldüğünü belirtin. Taşma nedeniyle kaldırımın kapanması veya konuta girişin zorlaşması gibi mevcut etkileri açıklayın. Konteynerin üzerindeki numara okunuyorsa yazabilir, numara yoksa yakındaki bina ya da köşe gibi bir tarif kullanabilirsiniz. Fotoğraf yerin ve birikimin anlaşılmasını kolaylaştırabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#details",
+        "chunk_id": "YV-D014#details:0-441:94edb6bfbd",
+        "title": "Yeşilvadi Tanımlanamayan Atık Bildirimi",
+        "heading": "Gözlemlerinizi nasıl yazabilirsiniz?",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "citizen-v2",
+        "text": "Atığın bulunduğu mahalleyi, sokağı veya açık alanı ve yakındaki bir işareti belirtin. Kapların yaklaşık sayısını, görünen boyutunu, ambalajını ve okunabilen etiketini yazabilirsiniz. İçeriği bilmiyorsanız bilinmediğini söyleyin; kabın görünüşü maddenin türünü tek başına belirlemez. Sızıntı, çevreye yayılma veya geçişi kapatma görülüyorsa bunu gözlemlediğiniz şekliyle ekleyin. Fotoğraf varsa konumu ve görünür durumu göstermesi yeterlidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#scope",
+        "chunk_id": "YV-D014#scope:0-401:15ab1a426a",
+        "title": "Yeşilvadi Tanımlanamayan Atık Bildirimi",
+        "heading": "Ne tür bir bildirim yapılabilir?",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "citizen-v2",
+        "text": "Boş alana bırakılmış paketler, içeriği bilinmeyen kaplar, variller veya karışık atık yığınları çevre temizliği için bildirilebilir. Maddenin adını bilmeniz bildirim için ön koşul değildir. Bulunduğu yerin ve dışarıdan görülebilen özelliklerin açıklanması, inceleme gereksiniminin anlaşılmasına yardımcı olur. Atık yığını ile normal toplama noktasındaki dolu konteyneri başvurunuzda birbirinden ayırın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#limits",
+        "chunk_id": "YV-D014#limits:0-405:086f51951f",
+        "title": "Yeşilvadi Tanımlanamayan Atık Bildirimi",
+        "heading": "Eksik konumu tamamlama ve takip",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "citizen-v2",
+        "text": "Açık alanın posta adresi bulunmuyorsa konum işareti, kavşak, parsel çevresi veya bilinen bir yapıya göre tarif ekleyebilirsiniz. Atığın sonradan başka yere taşındığını görürseniz önceki başvuru numarasıyla yeni yeri bildirin. Miktarda ya da görünür durumda değişiklik olduysa neyin değiştiğini açıklayın. Atığın içeriğini belirlemek ve hangi işlemden geçeceğine karar vermek, ilgili incelemenin konusudur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#scope",
+        "chunk_id": "YV-D011#scope:0-394:57fdba4942",
+        "title": "Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi",
+        "heading": "Alınmayan çöp ve taşan konteyner",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "citizen-v2",
+        "text": "Evsel çöplerin alınmaması, konteynerin taşması, konteyner çevresinde atık birikmesi ve toplama noktasına erişilememesi için temizlik bildirimi yapılabilir. Toplama gününü öğrenmek isteyenler ile planlanan toplamanın yapılmadığını bildirenler farklı bilgiye ihtiyaç duyar. Bildiriminizde sorunun hangisi olduğunu açıklamanız, temizlik biriminin doğru yeri ve hizmeti belirlemesine yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2285,
+    "output_tokens": 506,
+    "latency_s": 5.701639749924652,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "d43d2d38beb8c667e1d9c408374334c541c68371c900a7577fc9e4effc63dc7c",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"You can report unidentified containers or barrels found in open areas for environmental cleaning.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Boş alana bırakılmış paketler, içeriği bilinmeyen kaplar, variller veya karışık atık yığınları çevre temizliği için bildirilebilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Knowing the name or contents of the waste is not a prerequisite for making a report.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Maddenin adını bilmeniz bildirim için ön koşul değildir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"If you do not know the contents, you should state that they are unknown in your report.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"İçeriği bilmiyorsanız bilinmediğini söyleyin; kabın görünüşü maddenin türünü tek başına belirlemez.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"When reporting, you should describe the location, the approximate number of containers, their visible size, packaging, and any visible labels.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Atığın bulunduğu mahalleyi, sokağı veya açık alanı ve yakındaki bir işareti belirtin. Kapların yaklaşık sayısını, görünen boyutunu, ambalajını ve okunabilen etiketini yazabilirsiniz.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Determining the contents of the waste and the necessary procedures is the responsibility of the relevant inspection.\",\n      \"citations\": [4],\n      \"evidence\": [\n        {\n          \"citation\": 4,\n          \"quote\": \"Atığın içeriğini belirlemek ve hangi işlemden geçeceğine karar vermek, ilgili incelemenin konusudur.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:41:23.845205+00:00",
+    "wall_latency_including_pacing_s": 6.31611662497744
+  }
+}

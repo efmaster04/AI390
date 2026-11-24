@@ -1,0 +1,61 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Evde biriken cam şişeleri ve plastik ambalajları geri dönüşüme vermek istiyorum. Toplama hizmetiyle bırakma noktası seçeneklerini nasıl öğrenebilirim?",
+    "language": "tr",
+    "sources_sha256": "df26188e91ce1092fe0312c039352166e1990c7be48714db2a14e3e3235f5b7b",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "ae72e1f7bd0ae48608267c79c4f3b12490cf4760094c4f5b2d3a983ff8de5b52",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The claim accurately reflects the information provided in source 1 regarding the availability of information for recyclable waste."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The claim is a faithful paraphrase of the guidance provided in source 1 regarding application details."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The claim correctly summarizes the requirements for requesting information as stated in source 2."
+      },
+      {
+        "claim_id": "C4",
+        "label": "supported",
+        "reason": "The claim accurately reflects the instruction in source 2 to include the location when asking about a specific bin."
+      },
+      {
+        "claim_id": "C5",
+        "label": "supported",
+        "reason": "The claim correctly captures the advice in source 2 to verify accepted materials at specific collection points."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately addresses the user's question by synthesizing the relevant instructions from the provided sources, and all claims are supported by the cited evidence.",
+    "attempts": 1,
+    "input_tokens": 2547,
+    "output_tokens": 265,
+    "latency_s": 4.04039554100018,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "9ce2c1671b369cf16c117456d9d254de3fdbe87af14bc9a80f6a1a32e9d9cafc",
+    "wall_latency_including_pacing_s": 4.04039554100018
+  }
+}

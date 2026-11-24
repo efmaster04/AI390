@@ -1,86 +1,194 @@
 [
   {
-    "case_id": "W3-R008",
+    "case_id": "W3-R032",
     "variant": "hybrid_rerank",
     "failure_stage": "retrieval",
+    "failure_kind": "missing_required_facet",
     "gold": [
       {
-        "passage_id": "YV-D008#details",
-        "quote": "Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez."
-      }
-    ],
-    "top5": [
-      "YV-D030#limits",
-      "YV-D002#limits",
-      "YV-D029#details",
-      "YV-D004#limits",
-      "YV-D029#limits"
-    ],
-    "gold_in_candidates": false,
-    "root_cause": "gold_outside_candidate_pool",
-    "interpretation": "Ranking observation only; question/gold labels still need independent human review."
-  },
-  {
-    "case_id": "W3-R008",
-    "variant": "dense_rerank",
-    "failure_stage": "retrieval",
-    "gold": [
+        "passage_id": "YV-D006#details",
+        "quote": "Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır. Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir. Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz. Bu bilgiler alan ve hizmet ihtiyacının değerlendirilmesine yardımcı olur."
+      },
       {
-        "passage_id": "YV-D008#details",
-        "quote": "Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez."
+        "passage_id": "YV-D019#details",
+        "quote": "Etkilenen girişin, kaldırımın veya geçişin konumunu ve engelin ne olduğunu belirtin. Rampa eksikliği, bozuk yüzey, basamak ya da geçişi kapatan nesneyi görüldüğü biçimiyle tarif edin. Tekerlekli sandalye, bebek arabası veya başka bir araçla geçemiyorsanız bu etkiyi açıklayın. Erişilebilirlik bildirimi için sağlık raporu, tanı veya engellilik belgesi gerekmez. Sorunun bulunduğu yer, ev adresinizden farklı olabilir; bildirimde asıl gereken engelin konumudur."
       }
     ],
-    "top5": [
-      "YV-D030#limits",
-      "YV-D002#limits",
-      "YV-D029#details",
-      "YV-D004#limits",
-      "YV-D029#limits"
-    ],
-    "gold_in_candidates": false,
-    "root_cause": "gold_outside_candidate_pool",
-    "interpretation": "Ranking observation only; question/gold labels still need independent human review."
-  },
-  {
-    "case_id": "W3-R008",
-    "variant": "hybrid_no_rerank",
-    "failure_stage": "retrieval",
-    "gold": [
-      {
-        "passage_id": "YV-D008#details",
-        "quote": "Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez."
-      }
+    "missing_facets": [
+      [
+        {
+          "passage_id": "YV-D006#details",
+          "quote": "Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır. Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir. Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz. Bu bilgiler alan ve hizmet ihtiyacının değerlendirilmesine yardımcı olur."
+        }
+      ]
     ],
     "top5": [
-      "YV-D029#limits",
-      "YV-D029#scope",
-      "YV-D029#details",
-      "YV-D003#scope",
-      "YV-D009#scope"
-    ],
-    "gold_in_candidates": false,
-    "root_cause": "gold_outside_candidate_pool",
-    "interpretation": "Ranking observation only; question/gold labels still need independent human review."
-  },
-  {
-    "case_id": "W3-R010",
-    "variant": "hybrid_no_rerank",
-    "failure_stage": "retrieval",
-    "gold": [
-      {
-        "passage_id": "YV-D010#limits",
-        "quote": "Ekip ileride kurgusal ücret kalemi eklerse hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir."
-      }
-    ],
-    "top5": [
-      "YV-D029#limits",
-      "YV-D029#details",
-      "YV-D029#scope",
-      "YV-D010#details",
-      "YV-D010#scope"
+      "YV-D019#scope",
+      "YV-D019#limits",
+      "YV-D019#details",
+      "YV-D006#limits",
+      "YV-D021#limits"
     ],
     "gold_in_candidates": true,
     "root_cause": "gold_in_candidates_but_below_top5",
-    "interpretation": "Ranking observation only; question/gold labels still need independent human review."
+    "interpretation": "At least one requested answer facet is missing from top5; a hit on another facet is not complete evidence."
+  },
+  {
+    "case_id": "W3-R032",
+    "variant": "dense_rerank",
+    "failure_stage": "retrieval",
+    "failure_kind": "missing_required_facet",
+    "gold": [
+      {
+        "passage_id": "YV-D006#details",
+        "quote": "Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır. Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir. Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz. Bu bilgiler alan ve hizmet ihtiyacının değerlendirilmesine yardımcı olur."
+      },
+      {
+        "passage_id": "YV-D019#details",
+        "quote": "Etkilenen girişin, kaldırımın veya geçişin konumunu ve engelin ne olduğunu belirtin. Rampa eksikliği, bozuk yüzey, basamak ya da geçişi kapatan nesneyi görüldüğü biçimiyle tarif edin. Tekerlekli sandalye, bebek arabası veya başka bir araçla geçemiyorsanız bu etkiyi açıklayın. Erişilebilirlik bildirimi için sağlık raporu, tanı veya engellilik belgesi gerekmez. Sorunun bulunduğu yer, ev adresinizden farklı olabilir; bildirimde asıl gereken engelin konumudur."
+      }
+    ],
+    "missing_facets": [
+      [
+        {
+          "passage_id": "YV-D006#details",
+          "quote": "Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır. Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir. Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz. Bu bilgiler alan ve hizmet ihtiyacının değerlendirilmesine yardımcı olur."
+        }
+      ]
+    ],
+    "top5": [
+      "YV-D019#scope",
+      "YV-D019#limits",
+      "YV-D019#details",
+      "YV-D006#limits",
+      "YV-D021#details"
+    ],
+    "gold_in_candidates": true,
+    "root_cause": "gold_in_candidates_but_below_top5",
+    "interpretation": "At least one requested answer facet is missing from top5; a hit on another facet is not complete evidence."
+  },
+  {
+    "case_id": "W3-R004",
+    "variant": "hybrid_no_rerank",
+    "failure_stage": "retrieval",
+    "failure_kind": "no_relevant_evidence_in_top5",
+    "gold": [
+      {
+        "passage_id": "YV-D004#details",
+        "quote": "Gıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. Başvuru birimi değerlendirme sırasında hane durumu ve başvuruyla ilgili belgeleri inceler. Genel hizmet bilgisi almak için banka hesap numarası veya belgelerin tamamı gerekli değildir. Başvurunuza uygun belge listesi ilgili destek türüne göre verilir."
+      }
+    ],
+    "missing_facets": [
+      [
+        {
+          "passage_id": "YV-D004#details",
+          "quote": "Gıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. Başvuru birimi değerlendirme sırasında hane durumu ve başvuruyla ilgili belgeleri inceler. Genel hizmet bilgisi almak için banka hesap numarası veya belgelerin tamamı gerekli değildir. Başvurunuza uygun belge listesi ilgili destek türüne göre verilir."
+        }
+      ]
+    ],
+    "top5": [
+      "YV-D007#summary",
+      "YV-D007#limits",
+      "YV-D007#details",
+      "YV-D008#limits",
+      "YV-D008#summary"
+    ],
+    "gold_in_candidates": true,
+    "root_cause": "gold_in_candidates_but_below_top5",
+    "interpretation": "At least one requested answer facet is missing from top5; a hit on another facet is not complete evidence."
+  },
+  {
+    "case_id": "W3-R008",
+    "variant": "hybrid_no_rerank",
+    "failure_stage": "retrieval",
+    "failure_kind": "no_relevant_evidence_in_top5",
+    "gold": [
+      {
+        "passage_id": "YV-D008#details",
+        "quote": "Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez. Kimlik ya da kira sözleşmesi gibi belgeler gerekiyorsa ilgili başvurunun yetkili kanalına sunulur. Başkasına ait başvurunun telefonu, adresi veya kişisel bilgileri genel bilgilendirme kapsamında paylaşılmaz. Kendi dosyanız için istenen doğrulama adımları başvuru takip kanalında tamamlanır."
+      }
+    ],
+    "missing_facets": [
+      [
+        {
+          "passage_id": "YV-D008#details",
+          "quote": "Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez. Kimlik ya da kira sözleşmesi gibi belgeler gerekiyorsa ilgili başvurunun yetkili kanalına sunulur. Başkasına ait başvurunun telefonu, adresi veya kişisel bilgileri genel bilgilendirme kapsamında paylaşılmaz. Kendi dosyanız için istenen doğrulama adımları başvuru takip kanalında tamamlanır."
+        }
+      ]
+    ],
+    "top5": [
+      "YV-D007#limits",
+      "YV-D007#summary",
+      "YV-D009#summary",
+      "YV-D009#details",
+      "YV-D007#details"
+    ],
+    "gold_in_candidates": true,
+    "root_cause": "gold_in_candidates_but_below_top5",
+    "interpretation": "At least one requested answer facet is missing from top5; a hit on another facet is not complete evidence."
+  },
+  {
+    "case_id": "W3-R014",
+    "variant": "hybrid_no_rerank",
+    "failure_stage": "retrieval",
+    "failure_kind": "no_relevant_evidence_in_top5",
+    "gold": [
+      {
+        "passage_id": "YV-D014#scope",
+        "quote": "Boş alana bırakılmış paketler, içeriği bilinmeyen kaplar, variller veya karışık atık yığınları çevre temizliği için bildirilebilir. Maddenin adını bilmeniz bildirim için ön koşul değildir. Bulunduğu yerin ve dışarıdan görülebilen özelliklerin açıklanması, inceleme gereksiniminin anlaşılmasına yardımcı olur. Atık yığını ile normal toplama noktasındaki dolu konteyneri başvurunuzda birbirinden ayırın."
+      }
+    ],
+    "missing_facets": [
+      [
+        {
+          "passage_id": "YV-D014#scope",
+          "quote": "Boş alana bırakılmış paketler, içeriği bilinmeyen kaplar, variller veya karışık atık yığınları çevre temizliği için bildirilebilir. Maddenin adını bilmeniz bildirim için ön koşul değildir. Bulunduğu yerin ve dışarıdan görülebilen özelliklerin açıklanması, inceleme gereksiniminin anlaşılmasına yardımcı olur. Atık yığını ile normal toplama noktasındaki dolu konteyneri başvurunuzda birbirinden ayırın."
+        }
+      ]
+    ],
+    "top5": [
+      "YV-D011#schedule",
+      "YV-D011#scope",
+      "YV-D011#reporting",
+      "YV-D022#scope",
+      "YV-D027#limits"
+    ],
+    "gold_in_candidates": true,
+    "root_cause": "gold_in_candidates_but_below_top5",
+    "interpretation": "At least one requested answer facet is missing from top5; a hit on another facet is not complete evidence."
+  },
+  {
+    "case_id": "W3-R032",
+    "variant": "hybrid_no_rerank",
+    "failure_stage": "retrieval",
+    "failure_kind": "missing_required_facet",
+    "gold": [
+      {
+        "passage_id": "YV-D006#details",
+        "quote": "Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır. Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir. Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz. Bu bilgiler alan ve hizmet ihtiyacının değerlendirilmesine yardımcı olur."
+      },
+      {
+        "passage_id": "YV-D019#details",
+        "quote": "Etkilenen girişin, kaldırımın veya geçişin konumunu ve engelin ne olduğunu belirtin. Rampa eksikliği, bozuk yüzey, basamak ya da geçişi kapatan nesneyi görüldüğü biçimiyle tarif edin. Tekerlekli sandalye, bebek arabası veya başka bir araçla geçemiyorsanız bu etkiyi açıklayın. Erişilebilirlik bildirimi için sağlık raporu, tanı veya engellilik belgesi gerekmez. Sorunun bulunduğu yer, ev adresinizden farklı olabilir; bildirimde asıl gereken engelin konumudur."
+      }
+    ],
+    "missing_facets": [
+      [
+        {
+          "passage_id": "YV-D006#details",
+          "quote": "Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır. Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir. Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz. Bu bilgiler alan ve hizmet ihtiyacının değerlendirilmesine yardımcı olur."
+        }
+      ]
+    ],
+    "top5": [
+      "YV-D019#scope",
+      "YV-D019#limits",
+      "YV-D019#details",
+      "YV-D015#scope",
+      "YV-D006#limits"
+    ],
+    "gold_in_candidates": true,
+    "root_cause": "gold_in_candidates_but_below_top5",
+    "interpretation": "At least one requested answer facet is missing from top5; a hit on another facet is not complete evidence."
   }
 ]

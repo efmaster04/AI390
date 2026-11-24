@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "A swing is broken in the playground near our building. Who handles this, and do I need the name of the park to report it?",
+    "language": "en",
+    "sources_sha256": "b5f949ababb02d8e606f9f2d021433f8dad2b022498610cb3f247ef1af56c6fb",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Damage to playground equipment such as swings is handled by the Parks and Gardens unit. [2]\nYou must report the name of the park or the street and neighborhood where the equipment is located. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Damage to playground equipment such as swings is handled by the Parks and Gardens unit.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Çocuk oyun alanındaki salıncak, kaydırak, tırmanma elemanı, zemin ve çevre donatılarındaki hasarlar Park ve Bahçeler birimine bakım bildirimiyle iletilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "You must report the name of the park or the street and neighborhood where the equipment is located.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Parkın adını veya mahallesiyle birlikte bulunduğu sokağı, arızalı ekipmanın türünü ve görünen hasarı bildirin."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#details",
+        "chunk_id": "YV-D016#details:0-446:a6c1de0f08",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızaları",
+        "heading": "Arızalı ekipmanı tarif etme",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "citizen-v2",
+        "text": "Parkın adını veya mahallesiyle birlikte bulunduğu sokağı, arızalı ekipmanın türünü ve görünen hasarı bildirin. Birden fazla salıncak ya da kaydırak varsa hangisi olduğunu renk, konum veya yanındaki donatıyla ayırt edin. Gevşek parça, kırık yüzey veya zemin çukuru gibi gözleminizi açıklayın. Aynı sorun başka bir ekipmanda da görülüyorsa onu ayrıca belirtin. Fotoğrafınız varsa ekipmanın bütünüyle hasarlı bölümün anlaşılmasına yardımcı olabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#scope",
+        "chunk_id": "YV-D016#scope:0-381:2b480adb87",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızaları",
+        "heading": "Hangi sorunlar bildirilir?",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "citizen-v2",
+        "text": "Çocuk oyun alanındaki salıncak, kaydırak, tırmanma elemanı, zemin ve çevre donatılarındaki hasarlar Park ve Bahçeler birimine bakım bildirimiyle iletilir. Bozuk bir ekipmanın onarılmasını istemek ile alana yeni bir oyun elemanı eklenmesini önermek farklı başvurulardır. Bildiriminizde mevcut donatıda ne gördüğünüzü veya yeni donatı için hangi ihtiyacı belirttiğinizi açıkça yazın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#limits",
+        "chunk_id": "YV-D016#limits:0-421:dbe282a4a3",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızaları",
+        "heading": "Bildirimden sonra yeni bilgi ekleme",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "citizen-v2",
+        "text": "Önceki bildiriminiz varsa başvuru numarasını kullanarak durum değişikliğini iletebilirsiniz. Onarım yapılmış ancak bir parça hâlâ kullanılamıyorsa kalan sorunu tarif edin. Parkın farklı bir bölümünde yeni bir arıza görmeniz durumunda yeni yer bilgisini ayrıca verin. İnceleme ve bakımın hangi aşamada olduğu, ilgili başvurunun durum bilgisi üzerinden öğrenilir; ilk gönderilen fotoğraf tek başına güncel durumu göstermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#limits",
+        "chunk_id": "YV-D021#limits:0-429:13f1b37e1f",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi",
+        "heading": "Takip ve bağlantılı talepler",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "citizen-v2",
+        "text": "Daha önce aynı noktaya ilişkin başvurunuz varsa numarasını ekleyerek yeni durumu bildirin. Sorun bir rampada veya bina girişindeyse erişilebilirlik ihtiyacınızı da açıklayın. Yol yüzeyindeki çukur ile kaldırım üzerindeki hasar aynı noktada bulunsa bile iki farklı bakım konusu olabilir. Başvuru takibinde hangi kısmın onarıldığını ve hangi kısmın hâlâ geçişi etkilediğini belirtmeniz, kalan ihtiyacın anlaşılmasına yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#limits",
+        "chunk_id": "YV-D020#limits:0-408:08e51bbcfd",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı",
+        "heading": "Önceki bildirim ve yeni hasar",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "citizen-v2",
+        "text": "Aynı noktayı daha önce bildirdiyseniz başvuru numarasını kullanarak hasarın devam ettiğini iletin. Çukur büyümüşse veya yeni bir yüzey çökmesi oluşmuşsa neyin değiştiğini belirtin. Aynı caddedeki başka bir çukurun yerini ayrı tarif edin; yalnız cadde adının aynı olması bütün hasarların aynı noktada olduğu anlamına gelmez. Bakım programı ya da işlem durumu için ilgili başvuruya ait güncel bilgiye başvurun.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2259,
+    "output_tokens": 227,
+    "latency_s": 5.387231792090461,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "efd68e36422f44d1771bc694d1c7e6cdbf4f6843da301563f37ab291a6a2a357",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Damage to playground equipment such as swings is handled by the Parks and Gardens unit.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Çocuk oyun alanındaki salıncak, kaydırak, tırmanma elemanı, zemin ve çevre donatılarındaki hasarlar Park ve Bahçeler birimine bakım bildirimiyle iletilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You must report the name of the park or the street and neighborhood where the equipment is located.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Parkın adını veya mahallesiyle birlikte bulunduğu sokağı, arızalı ekipmanın türünü ve görünen hasarı bildirin.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:41:36.941546+00:00",
+    "wall_latency_including_pacing_s": 7.91549758403562
+  }
+}

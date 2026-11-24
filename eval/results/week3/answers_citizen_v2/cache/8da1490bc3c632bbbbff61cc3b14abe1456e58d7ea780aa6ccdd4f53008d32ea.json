@@ -1,0 +1,174 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Üç gündür apartmanımızın önündeki çöp konteyneri boşaltılmadı. Bunu nasıl bildirebilirim?",
+    "language": "tr",
+    "sources_sha256": "027d909cd24128dff912182cafce55f4da0f5207c12b35011fe4d4b0a4c926b5",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Alınmayan çöp ve taşan konteynerler için temizlik bildirimi yapabilirsiniz. [2]\nBildiriminizde mahalle, sokak, konteynerin bulunduğu nokta ve çöpün ne zamandır alınmadığı bilgilerini belirtmelisiniz. [1]\nSorunun tek bir konteynerde mi yoksa tüm sokakta mı olduğunu ve varsa kaldırımın kapanması gibi etkileri açıklamalısınız. [1]\nKonteyner üzerindeki numarayı yazabilir veya numara yoksa yakındaki bina ya da köşe gibi bir tarif kullanabilirsiniz. [1]\nDurumu daha iyi anlatabilmek için fotoğraf ekleyebilirsiniz. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Alınmayan çöp ve taşan konteynerler için temizlik bildirimi yapabilirsiniz.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Evsel çöplerin alınmaması, konteynerin taşması, konteyner çevresinde atık birikmesi ve toplama noktasına erişilememesi için temizlik bildirimi yapılabilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Bildiriminizde mahalle, sokak, konteynerin bulunduğu nokta ve çöpün ne zamandır alınmadığı bilgilerini belirtmelisiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bildiriminize mahalle, sokak, konteynerin bulunduğu nokta ve çöpün ne zamandır alınmadığını ekleyin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Sorunun tek bir konteynerde mi yoksa tüm sokakta mı olduğunu ve varsa kaldırımın kapanması gibi etkileri açıklamalısınız.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Sorunun tek konteynerde mi, birden fazla noktada mı yoksa bütün sokakta mı görüldüğünü belirtin. Taşma nedeniyle kaldırımın kapanması veya konuta girişin zorlaşması gibi mevcut etkileri açıklayın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Konteyner üzerindeki numarayı yazabilir veya numara yoksa yakındaki bina ya da köşe gibi bir tarif kullanabilirsiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Konteynerin üzerindeki numara okunuyorsa yazabilir, numara yoksa yakındaki bina ya da köşe gibi bir tarif kullanabilirsiniz."
+          }
+        ]
+      },
+      {
+        "claim_id": "C5",
+        "text": "Durumu daha iyi anlatabilmek için fotoğraf ekleyebilirsiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Fotoğraf yerin ve birikimin anlaşılmasını kolaylaştırabilir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#reporting",
+        "chunk_id": "YV-D011#reporting:0-483:466c290c3e",
+        "title": "Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi",
+        "heading": "Bildiriminizde bulunması gerekenler",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "citizen-v2",
+        "text": "Bildiriminize mahalle, sokak, konteynerin bulunduğu nokta ve çöpün ne zamandır alınmadığını ekleyin. Sorunun tek konteynerde mi, birden fazla noktada mı yoksa bütün sokakta mı görüldüğünü belirtin. Taşma nedeniyle kaldırımın kapanması veya konuta girişin zorlaşması gibi mevcut etkileri açıklayın. Konteynerin üzerindeki numara okunuyorsa yazabilir, numara yoksa yakındaki bina ya da köşe gibi bir tarif kullanabilirsiniz. Fotoğraf yerin ve birikimin anlaşılmasını kolaylaştırabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#scope",
+        "chunk_id": "YV-D011#scope:0-394:57fdba4942",
+        "title": "Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi",
+        "heading": "Alınmayan çöp ve taşan konteyner",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "citizen-v2",
+        "text": "Evsel çöplerin alınmaması, konteynerin taşması, konteyner çevresinde atık birikmesi ve toplama noktasına erişilememesi için temizlik bildirimi yapılabilir. Toplama gününü öğrenmek isteyenler ile planlanan toplamanın yapılmadığını bildirenler farklı bilgiye ihtiyaç duyar. Bildiriminizde sorunun hangisi olduğunu açıklamanız, temizlik biriminin doğru yeri ve hizmeti belirlemesine yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#schedule",
+        "chunk_id": "YV-D011#schedule:0-416:b5941b335b",
+        "title": "Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi",
+        "heading": "Toplama takvimi ve başvuruyu izleme",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "citizen-v2",
+        "text": "Belirli bir sokağın toplama gününü öğrenmek için o bölgeye ait güncel temizlik takvimini isteyin. Mahalle adıyla birlikte sokak bilgisini vermek, aynı mahalledeki farklı güzergâhların karıştırılmasını önler. Daha önce aynı nokta için başvurduysanız önceki başvuru numarasını ekleyerek birikimin devam ettiğini bildirebilirsiniz. Toplama yapıldığında yalnızca bir kısmı alınmışsa kalan atığın yerini ayrıca açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#details",
+        "chunk_id": "YV-D014#details:0-441:94edb6bfbd",
+        "title": "Yeşilvadi Tanımlanamayan Atık Bildirimi",
+        "heading": "Gözlemlerinizi nasıl yazabilirsiniz?",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "citizen-v2",
+        "text": "Atığın bulunduğu mahalleyi, sokağı veya açık alanı ve yakındaki bir işareti belirtin. Kapların yaklaşık sayısını, görünen boyutunu, ambalajını ve okunabilen etiketini yazabilirsiniz. İçeriği bilmiyorsanız bilinmediğini söyleyin; kabın görünüşü maddenin türünü tek başına belirlemez. Sızıntı, çevreye yayılma veya geçişi kapatma görülüyorsa bunu gözlemlediğiniz şekliyle ekleyin. Fotoğraf varsa konumu ve görünür durumu göstermesi yeterlidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D014",
+        "passage_id": "YV-D014#limits",
+        "chunk_id": "YV-D014#limits:0-405:086f51951f",
+        "title": "Yeşilvadi Tanımlanamayan Atık Bildirimi",
+        "heading": "Eksik konumu tamamlama ve takip",
+        "source": "beldesk://synthetic/YV-D014",
+        "version": "citizen-v2",
+        "text": "Açık alanın posta adresi bulunmuyorsa konum işareti, kavşak, parsel çevresi veya bilinen bir yapıya göre tarif ekleyebilirsiniz. Atığın sonradan başka yere taşındığını görürseniz önceki başvuru numarasıyla yeni yeri bildirin. Miktarda ya da görünür durumda değişiklik olduysa neyin değiştiğini açıklayın. Atığın içeriğini belirlemek ve hangi işlemden geçeceğine karar vermek, ilgili incelemenin konusudur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2298,
+    "output_tokens": 558,
+    "latency_s": 8.932427167892456,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "7608857050846404d3712819a620b5654e9642a1ed23a1551077837a2a825682",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Alınmayan çöp ve taşan konteynerler için temizlik bildirimi yapabilirsiniz.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Evsel çöplerin alınmaması, konteynerin taşması, konteyner çevresinde atık birikmesi ve toplama noktasına erişilememesi için temizlik bildirimi yapılabilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Bildiriminizde mahalle, sokak, konteynerin bulunduğu nokta ve çöpün ne zamandır alınmadığı bilgilerini belirtmelisiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bildiriminize mahalle, sokak, konteynerin bulunduğu nokta ve çöpün ne zamandır alınmadığını ekleyin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Sorunun tek bir konteynerde mi yoksa tüm sokakta mı olduğunu ve varsa kaldırımın kapanması gibi etkileri açıklamalısınız.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sorunun tek konteynerde mi, birden fazla noktada mı yoksa bütün sokakta mı görüldüğünü belirtin. Taşma nedeniyle kaldırımın kapanması veya konuta girişin zorlaşması gibi mevcut etkileri açıklayın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Konteyner üzerindeki numarayı yazabilir veya numara yoksa yakındaki bina ya da köşe gibi bir tarif kullanabilirsiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Konteynerin üzerindeki numara okunuyorsa yazabilir, numara yoksa yakındaki bina ya da köşe gibi bir tarif kullanabilirsiniz.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Durumu daha iyi anlatabilmek için fotoğraf ekleyebilirsiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Fotoğraf yerin ve birikimin anlaşılmasını kolaylaştırabilir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:40:56.800716+00:00",
+    "wall_latency_including_pacing_s": 12.327064958983101
+  }
+}

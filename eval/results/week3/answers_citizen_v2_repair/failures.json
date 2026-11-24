@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "W3-R019",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "validation_retries_exhausted"
+  },
+  {
+    "case_id": "W3-R027",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "validation_retries_exhausted"
+  }
+]

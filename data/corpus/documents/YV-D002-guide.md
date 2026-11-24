@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D002","title":"Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış","title_en":"Building and Occupancy Permit Overview","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D002","access":["public"],"synthetic":true,"review_status":"draft","keywords":["building permit","occupancy","ruhsat","iskân"]}
+{"doc_id":"YV-D002","title":"Yeşilvadi Yapı Ruhsatı ve İskân Başvuru Rehberi","title_en":"Building and Occupancy Permit Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D002","access":["public"],"synthetic":true,"review_status":"draft","keywords":["building permit","occupancy","ruhsat","iskân"]}
 ---
 
-# Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış
+# Yeşilvadi Yapı Ruhsatı ve İskân Başvuru Rehberi
 
-## Kapsam ve veri niteliği {#scope}
+## İki farklı işlem {#summary}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Yapı ruhsatı, inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir. Bu nedenle bir yapı için ruhsat bulunması, iskân işleminin de tamamlandığını göstermez. Hangi aşamada olduğunuzu belirlemek, doğru başvuru dosyasını hazırlamanızı sağlar.
 
-## Başvuru türünü ayırma {#details}
+## Hangi başvuru yapılmalı? {#details}
 
-Yapı ruhsatı, proje senaryosunda inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir. Kullanıcıdan hangisini sorduğu ve başvurunun hangi aşamada olduğu öğrenilir. Asistan bir parsel için izin verilip verilemeyeceğini, yapının hukuka uygunluğunu veya başvurunun kesin sonucunu söylemez. Bunlar belge incelemesi ve yetkili birim değerlendirmesi gerektirir.
+İnşaata başlamaya yönelik izin için yapı ruhsatı, tamamlanan yapının kullanımına ilişkin işlem için iskân başvurusu yapılır. İlk görüşmede yapının adresi, parsel bilgisi biliniyorsa bu bilgi ve başvuru türü belirtilir. Daha önce açılmış dosya varsa dosya referansını hazırlayın. Teknik çizimler ve ek belgeler, ilgili başvuru türünün belge listesine göre tamamlanır.
 
-## Bilgi hazırlığı ve sınırlar {#limits}
+## Dosyanın izlenmesi {#limits}
 
-Yönlendirme için ilçe içinde olup olmadığı, başvuru türü ve varsa başvuru referansı yeterlidir. Tapu kopyası, kimlik numarası ve mimari çizimlerin tamamı sohbete yüklenmek zorunda değildir. Gerekli belge listesi bu genel rehberde ayrıntılandırılmamıştır. Asistan belge adı veya ücret tahmin etmek yerine İmar ve Ruhsat biriminden başvuru türüne özgü liste alınmasını önerir.
+Başvuru sonrası eksik evrak bildirimi ile nihai değerlendirme sonucu ayrı aşamalardır. Başvurunuza belge ekleyeceğinizde dosya referansını kullanın. Yapının özellikleri veya kullanım amacı değişiyorsa bunu İmar ve Ruhsat birimine bildirin; farklı dosyaların belge listeleri birbirinin yerine kullanılmaz. Dosyanın güncel durumu başvuru takip kanalından öğrenilir.

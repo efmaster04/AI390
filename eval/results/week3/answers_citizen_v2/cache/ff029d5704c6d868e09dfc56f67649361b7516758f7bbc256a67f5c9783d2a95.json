@@ -1,0 +1,51 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "İlk kez belediye kütüphanesine üye olacağım. Başvuruya nereden başlamalıyım?",
+    "language": "tr",
+    "sources_sha256": "9bd8edcd56e35ada05837c89ca53c7e6703f8d5bfc5588405185436d06b47999",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "ba011b236af40cd9ed16bd593b29fcde0b1e21f24f28140ffd0105989c781036",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that membership applications are made to the library's membership desk."
+      },
+      {
+        "claim_id": "C2",
+        "label": "unsupported",
+        "reason": "The source requires presenting a form and ID, not just stating the library name and membership status."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source confirms that an ID document and membership form must be presented at the application point for first-time membership."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer correctly identifies the application location and required documents, but incorrectly implies that only verbal statements are sufficient for the process.",
+    "attempts": 1,
+    "input_tokens": 2219,
+    "output_tokens": 213,
+    "latency_s": 4.543359459028579,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "bbe29ea07fd5bbe2368b387c016c345b29b3513d26171ca306f1a646481eec6f",
+    "wall_latency_including_pacing_s": 8.420831250026822
+  }
+}

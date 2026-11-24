@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D004","title":"Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi","title_en":"Social Assistance Application Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D004","access":["public"],"synthetic":true,"review_status":"draft","keywords":["social aid","assistance","gelir","yardım"]}
+{"doc_id":"YV-D004","title":"Yeşilvadi Sosyal Yardım Başvuru Rehberi","title_en":"Social Assistance Application Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D004","access":["public"],"synthetic":true,"review_status":"draft","keywords":["social aid","assistance","gelir","yardım"]}
 ---
 
-# Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi
+# Yeşilvadi Sosyal Yardım Başvuru Rehberi
 
-## Kapsam ve veri niteliği {#scope}
+## Destek başlıkları {#summary}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Sosyal yardım birimi gıda desteği, temel ihtiyaç desteği ve hizmetlere erişim desteği başlıklarında başvuruya hazırlık bilgisi verir. Hangi desteğe ihtiyaç duyduğunuzu ve hanenizdeki temel güçlüğü kendi sözlerinizle açıklayabilirsiniz. Bilgi istemek ile yardım başvurusunun değerlendirilmesi ayrı aşamalardır.
 
-## Başvuru ve değerlendirme {#details}
+## İlk başvuru {#details}
 
-Yeşilvadi test senaryosunda sosyal yardım için önce ihtiyaç türü belirtilir: gıda desteği, temel ihtiyaç desteği veya erişim desteği. Başvuru birimi inceleme sırasında hane durumunu ve başvuruya ilişkin bilgileri değerlendirir. Asistan yardımın kesin verileceğini, kullanıcının uygun bulunduğunu veya belirli bir ödeme yapılacağını söylemez. Bu rehberde sayısal bir gelir eşiği tanımlanmamıştır.
+Gıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. Başvuru birimi değerlendirme sırasında hane durumu ve başvuruyla ilgili belgeleri inceler. Genel hizmet bilgisi almak için banka hesap numarası veya belgelerin tamamı gerekli değildir. Başvurunuza uygun belge listesi ilgili destek türüne göre verilir.
 
-## Gizlilik ve eksik bilgi {#limits}
+## Başvurunun izlenmesi {#limits}
 
-Başvuru hakkında genel bilgi almak için kişinin gelir belgelerini veya sağlık kayıtlarını sohbete yazması gerekmez. Beldesk başvuru formunu vatandaş adına göndermez. Yardım tutarı, ödeme günü ve kontenjan bilgisi kaynaklarda yoksa bunlar açıklanamaz. Kullanıcı yardım türünü belirtmediyse bir kısa soru ile ihtiyacı netleştirmek, kişi hakkında uygunluk tahmini yapmaktan önce gelir.
+Yardımın türü ve kapsamı inceleme sonucuna göre belirlenir. Daha önce başvuru yaptıysanız referansınızı ve iletişim bilgilerinizde değişiklik olup olmadığını hazırlayın. Eksik belge tamamlama ile yeni yardım başvurusu farklı işlemlerdir. Sonucu öğrenmek için başvuru takip kanalını kullanın; başvuruya alınmış olmak tek başına yardım onayı anlamına gelmez.

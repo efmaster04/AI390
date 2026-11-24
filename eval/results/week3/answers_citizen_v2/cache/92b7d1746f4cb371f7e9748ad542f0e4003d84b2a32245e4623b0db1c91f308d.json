@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Apartmanın tamamında elektrik yok. Belediyeye mi, elektrik dağıtım şirketine mi bildirmeliyim?",
+    "language": "tr",
+    "sources_sha256": "d8c668213f0df8ee82aedfeef68a8114b6c6e4294f0a51e250f505903ada1755",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Bir binanın tamamını etkileyen elektrik kesintileri için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetine başvurulmalıdır. [1]\nElektrik dağıtım şirketine başvururken hizmet adresi, kesintinin başlangıç zamanı ve etkilenen alan bilgileri paylaşılmalıdır. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Bir binanın tamamını etkileyen elektrik kesintileri için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetine başvurulmalıdır.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bir binanın veya birden fazla konut ve işyerinin elektrik kesintisi için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetinden bilgi alınır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Elektrik dağıtım şirketine başvururken hizmet adresi, kesintinin başlangıç zamanı ve etkilenen alan bilgileri paylaşılmalıdır.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Dağıtım şirketine başvururken hizmet adresi, kesintinin başlangıç zamanı ve bildiğiniz etki alanını hazırlayın."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#details",
+        "chunk_id": "YV-D029#details:0-502:3006dfda24",
+        "title": "Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme",
+        "heading": "Doğru hizmete başvurma",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "citizen-v2",
+        "text": "Bir binanın veya birden fazla konut ve işyerinin elektrik kesintisi için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetinden bilgi alınır. Ev ve işyerlerinde elektrik olduğu hâlde yalnız sokak lambaları sönükse sokak aydınlatması bildirimi yapılır. Dağıtım şirketine başvururken hizmet adresi, kesintinin başlangıç zamanı ve bildiğiniz etki alanını hazırlayın. Şirketin adını bilmiyorsanız faturanızdaki dağıtım bilgisine veya adresiniz için yayımlanmış hizmet sağlayıcı bilgisine bakın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#scope",
+        "chunk_id": "YV-D029#scope:0-353:4fc0fef6c7",
+        "title": "Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme",
+        "heading": "Kesintinin hangi alanı etkilediği",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "citizen-v2",
+        "text": "Konut veya işyerlerine elektrik gelmemesi, sokak aydınlatmasının çalışmamasından farklı bir hizmet konusudur. Yalnız daire içindeki sorun, binanın tamamını etkileyen durum ve birden fazla binada görülen kesinti aynı kapsamda anlatılmamalıdır. İlk olarak nerelerin etkilendiğini ve elektriğin hangi saatten beri olmadığını bildiğiniz kadarıyla açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D029",
+        "passage_id": "YV-D029#limits",
+        "chunk_id": "YV-D029#limits:0-466:a03a4dddf9",
+        "title": "Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme",
+        "heading": "Devam eden kesintiyi izleme",
+        "source": "beldesk://synthetic/YV-D029",
+        "version": "citizen-v2",
+        "text": "Başvuru yaptıysanız verilen referansı saklayın ve yeni bilgi isterken bu referansı kullanın. Elektrik bir bölüme gelmiş ancak başka bir bölümde kesinti sürüyorsa hangi yerin etkilendiğini açıklayın. Başka kişilerin tahmini yerine kendi gözleminizi ve doğruladığınız bilgiyi paylaşın. Belirli bir kesintinin nedeni veya elektriğin geleceği saat, o olay için yayımlanan güncel arıza bilgisiyle öğrenilir; genel hizmet rehberi tarihli kesinti duyurusunun yerine geçmez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#limits",
+        "chunk_id": "YV-D022#limits:0-428:dce3b9735c",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Yeni bilgi ve takip",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Daha önce başvurduysanız eski başvuru numarasını kullanarak lambanın hâlâ yanmadığını veya yeni bir bölümün de etkilendiğini iletin. Gündüz görülen bir direk hasarıyla gece görülen aydınlatma sorununu ayrı açıklayabilirsiniz. Ev ve işyerlerine de elektrik gelmiyorsa konut kesintisi için ilgili dağıtım hizmetinden bilgi alınması gerekir. Aydınlatma bildiriminin sonucunu öğrenirken ilk başvurudaki konumu ve referansı kullanın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#details",
+        "chunk_id": "YV-D022#details:0-469:13827ed904",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Lambayı ve etkilenen alanı belirleme",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve arızalı lambanın bulunduğu noktayı yazın. Direk numarası okunuyorsa ekleyin; numara yoksa bina, durak veya kavşak gibi yakındaki bir işaret yeterli bir tarif sağlayabilir. Tek lamba mı, birkaç lamba mı yoksa bütün sokak mı etkileniyor belirtin. Evlerde ve işyerlerinde elektrik olduğu hâlde sokak lambalarının yanmaması, konutları da etkileyen elektrik kesintisinden farklıdır. Sorunun ne zamandır sürdüğünü ve sürekli mi aralıklı mı olduğunu ekleyin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2295,
+    "output_tokens": 244,
+    "latency_s": 4.994859874132089,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "e759d48dc50cc354db2137110e4949798b50b82ed85fed07634263733f71ca26",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Bir binanın tamamını etkileyen elektrik kesintileri için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetine başvurulmalıdır.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bir binanın veya birden fazla konut ve işyerinin elektrik kesintisi için bölgeye hizmet veren elektrik dağıtım şirketinin arıza hizmetinden bilgi alınır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Elektrik dağıtım şirketine başvururken hizmet adresi, kesintinin başlangıç zamanı ve etkilenen alan bilgileri paylaşılmalıdır.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Dağıtım şirketine başvururken hizmet adresi, kesintinin başlangıç zamanı ve bildiğiniz etki alanını hazırlayın.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:43:27.308712+00:00",
+    "wall_latency_including_pacing_s": 7.241656291065738
+  }
+}

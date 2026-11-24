@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D017","title":"Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi","title_en":"Library Membership Information","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D017","access":["public"],"synthetic":true,"review_status":"draft","keywords":["library membership","borrow","kütüphane","üyelik","kitap"]}
+{"doc_id":"YV-D017","title":"Yeşilvadi Kütüphane Üyeliği","title_en":"Library Membership and Member Updates","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D017","access":["public"],"synthetic":true,"review_status":"draft","keywords":["library membership","register","renew","kütüphane","üyelik","iletişim güncelleme"]}
 ---
 
-# Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi
+# Yeşilvadi Kütüphane Üyeliği
 
-## Kapsam ve veri niteliği {#scope}
+## Üyelik ve kütüphane hizmetleri {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Kütüphane üyeliği, ödünç alma hizmetleri ve mevcut üye bilgilerinin güncellenmesi için ilgili kütüphanenin üyelik danışmasına başvurulur. İlk kez üye olmak isteyen bir kişi ile mevcut üyeliğindeki iletişim bilgisini değiştirmek isteyen kişi farklı işlem için başvurur. Çalışma alanı kullanımı veya belirli bir etkinliğe katılım sorusu soruyorsanız, üyelik başvurusu yerine o hizmetin adını belirtin.
 
-## Üyelik hakkında bilgi {#details}
+## Üyelik başvurusuna hazırlık {#details}
 
-Yeşilvadi test senaryosunda kütüphane üyeliği hakkında yönlendirme için hangi kütüphanenin sorulduğu ve ilk üyelik mi üyelik güncellemesi mi istendiği öğrenilir. Asistan üyelik kaydı oluşturmaz. Vatandaşın kimlik numarası veya belge fotoğrafı sohbetten istenmez. Kütüphane kuralları veya ödünç alma şartları kaynakta açıkça yer almadıkça başka kurumlardan alınarak uygulanamaz.
+Başvuracağınız kütüphanenin adını ve ilk üyelik mi yoksa mevcut üyelikte bilgi güncellemesi mi istediğinizi belirtin. İlk üyelikte kimlik belgesi ve üyelik formu başvuru noktasına sunulur. Mevcut üyeler, üye numarası biliniyorsa bu referansı kullanarak değişecek iletişim bilgisini bildirebilir. Üye numaranızı bilmiyorsanız kaydolduğunuz kütüphaneyi ve yapmak istediğiniz işlemi danışmaya açıklayın. Belge görüntüleri genel bilgi sorusu sırasında paylaşılmak zorunda değildir.
 
-## Canlı bilgi sınırı {#limits}
+## Ödünç alma ve tarihli bilgiler {#limits}
 
-Bu rehber bir kitabın rafta olduğunu, rezervasyon durumunu veya mevcut ödünç listesini içermez. Belirli bir kitabın bulunup bulunmadığını söylemek için katalog erişimi gerekir. Çalışma saatleri ve üyelik ücreti de bu metinde verilmemiştir. Beldesk kayıt açıldığı, kitap ayrıldığı veya bir gecikme borcunun silindiği iddiasında bulunamaz; yalnızca mevcut kaynaklara dayalı açıklama yapar.
+Ödünç verme süresi, iade tarihi ve uzatma koşulları için ilgili kütüphanenin güncel ödünç alma bilgisine başvurun. Belirli bir kitabın şu anda rafta olup olmadığı, üyelik koşullarından ayrı bir katalog sorusudur. Açılış saatini öğrenmek için hangi şubeyi ve hangi günü sorduğunuzu ekleyin. Bir rezervasyon veya üyelik işleminin tamamlandığını öğrenmek için başvuru noktasından verilen sonuç ya da alındı bilgisini kontrol edin.

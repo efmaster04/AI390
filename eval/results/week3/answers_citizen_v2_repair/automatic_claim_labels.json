@@ -1,0 +1,54 @@
+[
+  {
+    "sample_id": "HC-184e0149252b8b25",
+    "case_id": "W3-R004",
+    "claim_id": "C1",
+    "question": "My family is struggling with food and other basic needs. What kinds of municipal support can we ask about, and how do we start?",
+    "answer": "The social assistance unit provides information on food support, basic needs support, and access to services support. [1]\nTo start, you can explain the specific support you need and the difficulties your household is facing in your own words. [1]\nWhen applying, you should specify which type of support you are requesting, and the unit will review your household situation and relevant documents. [2]\nRequesting information and the evaluation of an assistance application are separate stages. [1]",
+    "claim_text": "The social assistance unit provides information on food support, basic needs support, and access to services support.",
+    "citations": "[1]",
+    "source_text": "[1] YV-D004#summary\nSosyal yardım birimi gıda desteği, temel ihtiyaç desteği ve hizmetlere erişim desteği başlıklarında başvuruya hazırlık bilgisi verir. Hangi desteğe ihtiyaç duyduğunuzu ve hanenizdeki temel güçlüğü kendi sözlerinizle açıklayabilirsiniz. Bilgi istemek ile yardım başvurusunun değerlendirilmesi ayrı aşamalardır.",
+    "judge_label": "supported",
+    "judge_reason": "The source explicitly states the social assistance unit provides information on these three specific support categories.",
+    "unlisted": false
+  },
+  {
+    "sample_id": "HC-e5a974edb1ca6259",
+    "case_id": "W3-R004",
+    "claim_id": "C2",
+    "question": "My family is struggling with food and other basic needs. What kinds of municipal support can we ask about, and how do we start?",
+    "answer": "The social assistance unit provides information on food support, basic needs support, and access to services support. [1]\nTo start, you can explain the specific support you need and the difficulties your household is facing in your own words. [1]\nWhen applying, you should specify which type of support you are requesting, and the unit will review your household situation and relevant documents. [2]\nRequesting information and the evaluation of an assistance application are separate stages. [1]",
+    "claim_text": "To start, you can explain the specific support you need and the difficulties your household is facing in your own words.",
+    "citations": "[1]",
+    "source_text": "[1] YV-D004#summary\nSosyal yardım birimi gıda desteği, temel ihtiyaç desteği ve hizmetlere erişim desteği başlıklarında başvuruya hazırlık bilgisi verir. Hangi desteğe ihtiyaç duyduğunuzu ve hanenizdeki temel güçlüğü kendi sözlerinizle açıklayabilirsiniz. Bilgi istemek ile yardım başvurusunun değerlendirilmesi ayrı aşamalardır.",
+    "judge_label": "supported",
+    "judge_reason": "The source confirms that applicants can explain their household difficulties and the support they need in their own words.",
+    "unlisted": false
+  },
+  {
+    "sample_id": "HC-8a43ffddceeed1df",
+    "case_id": "W3-R004",
+    "claim_id": "C3",
+    "question": "My family is struggling with food and other basic needs. What kinds of municipal support can we ask about, and how do we start?",
+    "answer": "The social assistance unit provides information on food support, basic needs support, and access to services support. [1]\nTo start, you can explain the specific support you need and the difficulties your household is facing in your own words. [1]\nWhen applying, you should specify which type of support you are requesting, and the unit will review your household situation and relevant documents. [2]\nRequesting information and the evaluation of an assistance application are separate stages. [1]",
+    "claim_text": "When applying, you should specify which type of support you are requesting, and the unit will review your household situation and relevant documents.",
+    "citations": "[2]",
+    "source_text": "[2] YV-D004#details\nGıda, temel ihtiyaç veya hizmetlere erişim desteğinden hangisine başvurmak istediğinizi belirtin. Başvuru birimi değerlendirme sırasında hane durumu ve başvuruyla ilgili belgeleri inceler. Genel hizmet bilgisi almak için banka hesap numarası veya belgelerin tamamı gerekli değildir. Başvurunuza uygun belge listesi ilgili destek türüne göre verilir.",
+    "judge_label": "supported",
+    "judge_reason": "The source states that applicants must specify the support type and that the unit reviews household status and documents during evaluation.",
+    "unlisted": false
+  },
+  {
+    "sample_id": "HC-c2670e656c353d6a",
+    "case_id": "W3-R004",
+    "claim_id": "C4",
+    "question": "My family is struggling with food and other basic needs. What kinds of municipal support can we ask about, and how do we start?",
+    "answer": "The social assistance unit provides information on food support, basic needs support, and access to services support. [1]\nTo start, you can explain the specific support you need and the difficulties your household is facing in your own words. [1]\nWhen applying, you should specify which type of support you are requesting, and the unit will review your household situation and relevant documents. [2]\nRequesting information and the evaluation of an assistance application are separate stages. [1]",
+    "claim_text": "Requesting information and the evaluation of an assistance application are separate stages.",
+    "citations": "[1]",
+    "source_text": "[1] YV-D004#summary\nSosyal yardım birimi gıda desteği, temel ihtiyaç desteği ve hizmetlere erişim desteği başlıklarında başvuruya hazırlık bilgisi verir. Hangi desteğe ihtiyaç duyduğunuzu ve hanenizdeki temel güçlüğü kendi sözlerinizle açıklayabilirsiniz. Bilgi istemek ile yardım başvurusunun değerlendirilmesi ayrı aşamalardır.",
+    "judge_label": "supported",
+    "judge_reason": "The source explicitly states that requesting information and evaluating an application are separate stages.",
+    "unlisted": false
+  }
+]

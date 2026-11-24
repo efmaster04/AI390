@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D014","title":"Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi","title_en":"Hazardous or Unidentified Waste Reporting","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D014","access":["public"],"synthetic":true,"review_status":"draft","keywords":["hazardous waste","chemical","pil","kimyasal","bilinmeyen atık"]}
+{"doc_id":"YV-D014","title":"Yeşilvadi Tanımlanamayan Atık Bildirimi","title_en":"Reporting Unidentified Waste","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D014","access":["public"],"synthetic":true,"review_status":"draft","keywords":["unidentified waste","dumping","container","etiket","bilinmeyen atık","varil"]}
 ---
 
-# Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi
+# Yeşilvadi Tanımlanamayan Atık Bildirimi
 
-## Kapsam ve veri niteliği {#scope}
+## Ne tür bir bildirim yapılabilir? {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Boş alana bırakılmış paketler, içeriği bilinmeyen kaplar, variller veya karışık atık yığınları çevre temizliği için bildirilebilir. Maddenin adını bilmeniz bildirim için ön koşul değildir. Bulunduğu yerin ve dışarıdan görülebilen özelliklerin açıklanması, inceleme gereksiniminin anlaşılmasına yardımcı olur. Atık yığını ile normal toplama noktasındaki dolu konteyneri başvurunuzda birbirinden ayırın.
 
-## Bildirimi tanımlama {#details}
+## Gözlemlerinizi nasıl yazabilirsiniz? {#details}
 
-Vatandaş ne olduğunu bilmediği bir atığı tarif ettiğinde asistan maddeyi kimyasal olarak teşhis etmez. Bildirim taslağı için konum, görünen durum ve vatandaşın zaten gözlemlediği etki sorulur. Etiket okunabiliyorsa kullanıcı kendi gözlemini yazabilir; kişiden maddeyi açması, taşıması veya numune alması istenmez. Beldesk bu bilgiyle işlem veya saha müdahalesi başlatmaz.
+Atığın bulunduğu mahalleyi, sokağı veya açık alanı ve yakındaki bir işareti belirtin. Kapların yaklaşık sayısını, görünen boyutunu, ambalajını ve okunabilen etiketini yazabilirsiniz. İçeriği bilmiyorsanız bilinmediğini söyleyin; kabın görünüşü maddenin türünü tek başına belirlemez. Sızıntı, çevreye yayılma veya geçişi kapatma görülüyorsa bunu gözlemlediğiniz şekliyle ekleyin. Fotoğraf varsa konumu ve görünür durumu göstermesi yeterlidir.
 
-## Hizmet ve bilgi sınırı {#limits}
+## Eksik konumu tamamlama ve takip {#limits}
 
-Bu sentetik rehber evsel çöp ile tehlikeli atığın aynı toplama aracıyla alınacağını söylemez. Bertaraf yöntemi, teslim yeri ve ücret için ilgili hizmet kaynağı gerekir. Kaynakta olmayan kimyasal işlem talimatı üretilmez. Acil bir durum anlatılması halinde belediye taslağı acil hizmet yönlendirmesinin yerine kullanılmaz; ilgili proje sınırları korunur.
+Açık alanın posta adresi bulunmuyorsa konum işareti, kavşak, parsel çevresi veya bilinen bir yapıya göre tarif ekleyebilirsiniz. Atığın sonradan başka yere taşındığını görürseniz önceki başvuru numarasıyla yeni yeri bildirin. Miktarda ya da görünür durumda değişiklik olduysa neyin değiştiğini açıklayın. Atığın içeriğini belirlemek ve hangi işlemden geçeceğine karar vermek, ilgili incelemenin konusudur.

@@ -1,0 +1,12 @@
+{
+  "kappa": null,
+  "po": null,
+  "pe": null,
+  "n": 0,
+  "labels": [],
+  "confusion": [],
+  "note": "Real human labels only. Kappa may be undefined if labels lack variation; no threshold alone validates a judge.",
+  "status": "pending_human_labels",
+  "skipped_empty": 4,
+  "skipped_unmatched": 0
+}

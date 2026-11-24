@@ -360,3 +360,14 @@ def test_known_saved_token_prices_do_not_imply_complete_retry_or_cache_cost():
     summary = summarize_answers([r], meta)
     assert summary["cost_incomplete"] and summary["historical_cache_attempt_usage_unknown"]
     assert "not current-invocation" in summary["list_price_scope"]
+
+
+def test_historical_calibration_keeps_v1_sources_after_citizen_corpus_revision():
+    from scripts.build_week3_calibration import historical_documents
+    from src.rag.corpus import load_corpus
+    old = {d.doc_id:d for d in historical_documents()}
+    new = {d.doc_id:d for d in load_corpus()}
+    assert old['YV-D030'].sha256 != new['YV-D030'].sha256
+    assert any('kaynak numarası' in p.text for p in old['YV-D030'].passages)
+    assert new['YV-D030'].version == 'citizen-v2'
+    assert any('ızgara' in p.text for p in new['YV-D030'].passages)

@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D013","title":"Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi","title_en":"Recycling Separation and Drop-off Information","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D013","access":["public"],"synthetic":true,"review_status":"draft","keywords":["recycling","paper","plastic","geri dönüşüm","ambalaj"]}
+{"doc_id":"YV-D013","title":"Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama","title_en":"Recycling and Separate Waste Collection","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D013","access":["public"],"synthetic":true,"review_status":"draft","keywords":["recycling","paper","plastic","glass","drop-off","geri dönüşüm","kağıt","plastik","cam"]}
 ---
 
-# Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi
+# Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama
 
-## Kapsam ve veri niteliği {#scope}
+## Geri dönüşüm bilgisini seçme {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Geri dönüştürülebilir atıklar için toplama günü, bırakma noktası ve kabul edilen malzeme türü hakkında bilgi alınabilir. Evde biriktirilen ambalaj atığı ile büyük miktardaki işyeri atığı aynı toplama düzenine tabi olmayabilir. Başvurunuzda evsel kullanım mı işyeri faaliyeti mi olduğunu ve yaklaşık miktarı açıklamanız, uygun hizmet bilgisinin bulunmasını kolaylaştırır.
 
-## Bilgi talebini netleştirme {#details}
+## Malzeme ve konum bilgisi {#details}
 
-Kurgusal rehberde geri dönüşüm sorusunda atığın türü ve kullanıcının toplama günü mü bırakma noktası mı sorduğu ayrılır. Kağıt, plastik ve cam için ayrı kap bulunduğu varsayımı yapılmaz; belirli noktada kabul edilen türler ilgili nokta kaynağıyla doğrulanmalıdır. Bu rehber, herhangi bir adresi veya mahallenin bütün toplama noktalarını listelememektedir.
+Önce ayırmak istediğiniz malzemeyi belirtin: kağıt veya karton, plastik ambalaj, cam ya da başka bir atık türü. Ardından mahallenizi ve toplama takvimi mi yoksa bırakma noktası mı aradığınızı yazın. Belirli bir kutuyu soruyorsanız kutunun konumunu ekleyin. Bir toplama noktasının her malzemeyi kabul ettiğini varsaymak yerine, o noktada kabul edilen türleri kontrol edin. Karışık bir torbanız varsa içindeki farklı malzemeleri ayrı ayrı tarif edin.
 
-## Kaynakta olmayan noktalar {#limits}
+## Toplama noktasıyla ilgili sorunlar {#limits}
 
-En yakın geri dönüşüm kutusunu söylemek için doğrulanmış konum verisi gerekir. Asistan nokta adresi, uzaklık, açık olduğu saat veya o anda dolu olup olmadığını tahmin etmez. Kullanıcı geri dönüşüm kutusunun hasarlı veya taşmış olduğunu bildirirse konum ve mevcut etki sorularak bir saha taslağı hazırlanabilir. Bu taslağın hazırlanması bir toplama işleminin başladığını göstermez.
+Kutunun dolu, hasarlı veya erişilemez olması durumunda konumuyla birlikte sorun bildirimi yapabilirsiniz. Kutunun yanına bırakılan başka atıkları da görünür durumuyla açıklayın. Yeni bir geri dönüşüm noktası önerisi için bölgeyi, kullanım ihtiyacını ve en yakın mevcut noktayı biliyorsanız onu belirtin. Toplama noktası önerisi ile var olan kutudaki arıza bildirimi ayrı başvuru konularıdır.

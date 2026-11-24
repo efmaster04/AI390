@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D008","title":"Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması","title_en":"Synthetic Data and Privacy Notice","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D008","access":["public"],"synthetic":true,"review_status":"draft","keywords":["privacy","personal data","gizlilik","kişisel veri"]}
+{"doc_id":"YV-D008","title":"Yeşilvadi Genel Bilgi ve Kişisel Veri Rehberi","title_en":"General Enquiries and Personal Data Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D008","access":["public"],"synthetic":true,"review_status":"draft","keywords":["privacy","personal data","gizlilik","kişisel veri"]}
 ---
 
-# Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması
+# Yeşilvadi Genel Bilgi ve Kişisel Veri Rehberi
 
-## Kapsam ve veri niteliği {#scope}
+## Genel hizmet soruları {#summary}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Belge listesi, başvuru süreci veya bir hizmetin hangi birimle ilgili olduğu hakkında genel bilgi isteyebilirsiniz. Sorunuzda hangi hizmeti ve hangi aşamayı merak ettiğinizi belirtmeniz yeterlidir. Size özel bir başvuru dosyasının durumunu öğrenmek ise yetkili takip kanalında yapılır.
 
-## Veri minimizasyonu {#details}
+## Belge paylaşımı gerekli mi? {#details}
 
-Ders projesindeki vatandaşlar, örnek konumlar ve kayıtlar sentetiktir. Saha arızası için olayın yeri sorulur; bu yer vatandaşın ikamet adresi olmak zorunda değildir. Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez. Bu metin gerçek bir kurumun aydınlatma yükümlülüğünü yerine getiren hukuki belge olarak kullanılamaz.
+Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez. Kimlik ya da kira sözleşmesi gibi belgeler gerekiyorsa ilgili başvurunun yetkili kanalına sunulur. Başkasına ait başvurunun telefonu, adresi veya kişisel bilgileri genel bilgilendirme kapsamında paylaşılmaz. Kendi dosyanız için istenen doğrulama adımları başvuru takip kanalında tamamlanır.
 
-## Kayıt ve üçüncü kişiler {#limits}
+## Kişisel bilgiyle ilgili talepler {#limits}
 
-Başkasının şikâyetinin durumunu öğrenmek isteyen kişiye vatandaş bilgileri açıklanmaz. Bir kayıt numarası veya telefonun son dört hanesini bilmek tek başına güçlü kimlik doğrulama sayılmaz. Bu sürümde gerçek bir kayıt veritabanı da yoktur. Personel erişimi sohbette yetkili olduğunu söylemekle kazanılmaz; erişim denetimi uygulamanın doğruladığı role dayanmalıdır.
+Kendi iletişim bilgilerinizde düzeltme yapmak istediğinizde hangi bilginin değiştiğini ve başvuru referansınızı hazırlayın. Kişisel belgeyi yeniden göndermeniz istenirse önce hangi yetkili kanala teslim edileceğini netleştirin. Genel bir soruya yanıt almak için aile bireylerinizin veya komşunuzun başvuru dosyasını paylaşmanıza ihtiyaç yoktur.

@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D022","title":"Yeşilvadi Sokak Aydınlatması Arızası Bildirimi","title_en":"Street Lighting Outage Report Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D022","access":["public"],"synthetic":true,"review_status":"draft","keywords":["street lighting","lamp","dark street","aydınlatma","lamba"]}
+{"doc_id":"YV-D022","title":"Yeşilvadi Sokak Aydınlatması Arızaları","title_en":"Street Lighting Faults","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D022","access":["public"],"synthetic":true,"review_status":"draft","keywords":["street lighting","lamp","dark street","aydınlatma","sokak lambası","direk"]}
 ---
 
-# Yeşilvadi Sokak Aydınlatması Arızası Bildirimi
+# Yeşilvadi Sokak Aydınlatması Arızaları
 
-## Kapsam ve veri niteliği {#scope}
+## Sokak aydınlatması bildirimi {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Sokak, yaya yolu veya meydandaki aydınlatmanın sönmesi, kesintili yanması ya da belirli bir bölümün karanlık kalması için aydınlatma arıza bildirimi yapılabilir. Yeni bir aydınlatma noktası talep etmek, mevcut lambanın arızalanmasından farklı bir başvurudur. Bildiriminizde mevcut bir direğin mi arızalı olduğunu yoksa aydınlatma ihtiyacı bulunan yeni bir yer mi önerdiğinizi belirtin.
 
-## Kapsamı ayırma {#details}
+## Lambayı ve etkilenen alanı belirleme {#details}
 
-Bir lamba mı, sokağın bir bölümü mü yoksa bütün aydınlatma mı etkileniyor öğrenilir. Lambaların yanmaması ile evlere ve işyerlerine elektrik gelmemesi farklı olaylardır. Kullanıcının verdiği süre, sorunun başlangıcına ilişkin bildirilen bilgi olarak saklanır; başvurunun uygulamada bekleme süresiyle karıştırılmaz. Mahalle ve sokak eksikse konum ayrıca sorulur.
+Mahalle, sokak ve arızalı lambanın bulunduğu noktayı yazın. Direk numarası okunuyorsa ekleyin; numara yoksa bina, durak veya kavşak gibi yakındaki bir işaret yeterli bir tarif sağlayabilir. Tek lamba mı, birkaç lamba mı yoksa bütün sokak mı etkileniyor belirtin. Evlerde ve işyerlerinde elektrik olduğu hâlde sokak lambalarının yanmaması, konutları da etkileyen elektrik kesintisinden farklıdır. Sorunun ne zamandır sürdüğünü ve sürekli mi aralıklı mı olduğunu ekleyin.
 
-## Sıralama ve işlem sınırı {#limits}
+## Yeni bilgi ve takip {#limits}
 
-Ek tehlike bulunmayan aydınlatma örneklerinin önceliği ve sınıf içi sırası kabul edilen proje politikasından gelir. Sadece talepte acil yazması veya sürenin uzaması otomatik sınıf yükseltme kuralı değildir. Model harici kuruluşun adını tahmin etmez, onarım süresi vermez ve elektrik ekibine ulaştığını söylemez. Bu rehber fiziksel arıza kontrolü yapmaz.
+Daha önce başvurduysanız eski başvuru numarasını kullanarak lambanın hâlâ yanmadığını veya yeni bir bölümün de etkilendiğini iletin. Gündüz görülen bir direk hasarıyla gece görülen aydınlatma sorununu ayrı açıklayabilirsiniz. Ev ve işyerlerine de elektrik gelmiyorsa konut kesintisi için ilgili dağıtım hizmetinden bilgi alınması gerekir. Aydınlatma bildiriminin sonucunu öğrenirken ilk başvurudaki konumu ve referansı kullanın.

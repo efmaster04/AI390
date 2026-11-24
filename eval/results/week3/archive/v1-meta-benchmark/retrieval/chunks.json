@@ -1,0 +1,1573 @@
+{
+  "count": 92,
+  "documents": 31,
+  "passages": 92,
+  "max_words_observed": 64,
+  "mean_words": 44.17391304347826,
+  "chunks": [
+    {
+      "chunk_id": "YV-D001#scope:0-348:4519df7ba5",
+      "doc_id": "YV-D001",
+      "passage_id": "YV-D001#scope",
+      "title": "Yeşilvadi Nikâh Başvurusu Rehberi",
+      "title_en": "Marriage Application Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu rehber yalnızca kurgusal Yeşilvadi belediyesinin Beldesk test senaryosu için yazılmıştır. Gerçek bir evlilik başvurusunun koşullarını veya hukuki uygunluğunu belirlemez. Ekip incelemesi bekleyen sentetik içeriktir. Beldesk açıklama ve yönlendirme yapar; çift adına başvuru göndermez, randevu oluşturmaz, nikâh günü ayırmaz ve ücret tahsil etmez.",
+      "search_text": "Yeşilvadi Nikâh Başvurusu Rehberi\nMarriage Application Guide\nKapsam ve veri niteliği\nnikâh nikah evlilik marriage appointment randevu\nBu rehber yalnızca kurgusal Yeşilvadi belediyesinin Beldesk test senaryosu için yazılmıştır. Gerçek bir evlilik başvurusunun koşullarını veya hukuki uygunluğunu belirlemez. Ekip incelemesi bekleyen sentetik içeriktir. Beldesk açıklama ve yönlendirme yapar; çift adına başvuru göndermez, randevu oluşturmaz, nikâh günü ayırmaz ve ücret tahsil etmez.",
+      "start": 0,
+      "end": 348,
+      "source": "beldesk://synthetic/YV-D001",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D001#requirements:0-440:2d66ea7a7e",
+      "doc_id": "YV-D001",
+      "passage_id": "YV-D001#requirements",
+      "title": "Yeşilvadi Nikâh Başvurusu Rehberi",
+      "title_en": "Marriage Application Guide",
+      "heading": "Belgeler ve randevu",
+      "text": "Yeşilvadi test senaryosunda çiftin kimlik belgeleri ve birlikte doldurulan başvuru formu ilk inceleme için istenir. Belge listesi teyit edildikten sonra Evlendirme Birimi ile randevu planlanır. Asistan kimlik numaralarını veya belge fotoğraflarını sohbet içinde toplamaz. Kullanıcıya başvuru formunu hazırlaması gerektiğini açıklayabilir; ancak başvurunun kabul edildiğini söyleyemez. Randevunun tarihi ve uygun günler bu rehberde bulunmaz.",
+      "search_text": "Yeşilvadi Nikâh Başvurusu Rehberi\nMarriage Application Guide\nBelgeler ve randevu\nnikâh nikah evlilik marriage appointment randevu\nYeşilvadi test senaryosunda çiftin kimlik belgeleri ve birlikte doldurulan başvuru formu ilk inceleme için istenir. Belge listesi teyit edildikten sonra Evlendirme Birimi ile randevu planlanır. Asistan kimlik numaralarını veya belge fotoğraflarını sohbet içinde toplamaz. Kullanıcıya başvuru formunu hazırlaması gerektiğini açıklayabilir; ancak başvurunun kabul edildiğini söyleyemez. Randevunun tarihi ve uygun günler bu rehberde bulunmaz.",
+      "start": 0,
+      "end": 440,
+      "source": "beldesk://synthetic/YV-D001",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D001#limits:0-439:02c04e4c5f",
+      "doc_id": "YV-D001",
+      "passage_id": "YV-D001#limits",
+      "title": "Yeşilvadi Nikâh Başvurusu Rehberi",
+      "title_en": "Marriage Application Guide",
+      "heading": "Özel durumlar ve kaynak sınırı",
+      "text": "Yabancı uyruk, yaş, önceki evlilik veya hukuki engel gibi özel durumlarda bu test rehberi yeterli değildir. Asistan gerekli belgeleri veya hukuki sonucu tahmin etmez; yetkili başvuru biriminden doğrulama gerektiğini belirtir. Burada ücret tutarı, sağlık belgesi koşulu, fotoğraf sayısı, telefon veya internet adresi verilmemiştir. Belgenin sustuğu bir konuda başka belediyelerin kurallarını Yeşilvadi kuralı olarak aktarmak doğru değildir.",
+      "search_text": "Yeşilvadi Nikâh Başvurusu Rehberi\nMarriage Application Guide\nÖzel durumlar ve kaynak sınırı\nnikâh nikah evlilik marriage appointment randevu\nYabancı uyruk, yaş, önceki evlilik veya hukuki engel gibi özel durumlarda bu test rehberi yeterli değildir. Asistan gerekli belgeleri veya hukuki sonucu tahmin etmez; yetkili başvuru biriminden doğrulama gerektiğini belirtir. Burada ücret tutarı, sağlık belgesi koşulu, fotoğraf sayısı, telefon veya internet adresi verilmemiştir. Belgenin sustuğu bir konuda başka belediyelerin kurallarını Yeşilvadi kuralı olarak aktarmak doğru değildir.",
+      "start": 0,
+      "end": 439,
+      "source": "beldesk://synthetic/YV-D001",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D002#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D002",
+      "passage_id": "YV-D002#scope",
+      "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+      "title_en": "Building and Occupancy Permit Overview",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış\nBuilding and Occupancy Permit Overview\nKapsam ve veri niteliği\nbuilding permit occupancy ruhsat iskân\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D002",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D002#details:0-405:eb74b1c000",
+      "doc_id": "YV-D002",
+      "passage_id": "YV-D002#details",
+      "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+      "title_en": "Building and Occupancy Permit Overview",
+      "heading": "Başvuru türünü ayırma",
+      "text": "Yapı ruhsatı, proje senaryosunda inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir. Kullanıcıdan hangisini sorduğu ve başvurunun hangi aşamada olduğu öğrenilir. Asistan bir parsel için izin verilip verilemeyeceğini, yapının hukuka uygunluğunu veya başvurunun kesin sonucunu söylemez. Bunlar belge incelemesi ve yetkili birim değerlendirmesi gerektirir.",
+      "search_text": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış\nBuilding and Occupancy Permit Overview\nBaşvuru türünü ayırma\nbuilding permit occupancy ruhsat iskân\nYapı ruhsatı, proje senaryosunda inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir. Kullanıcıdan hangisini sorduğu ve başvurunun hangi aşamada olduğu öğrenilir. Asistan bir parsel için izin verilip verilemeyeceğini, yapının hukuka uygunluğunu veya başvurunun kesin sonucunu söylemez. Bunlar belge incelemesi ve yetkili birim değerlendirmesi gerektirir.",
+      "start": 0,
+      "end": 405,
+      "source": "beldesk://synthetic/YV-D002",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D002#limits:0-374:d2675b6491",
+      "doc_id": "YV-D002",
+      "passage_id": "YV-D002#limits",
+      "title": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış",
+      "title_en": "Building and Occupancy Permit Overview",
+      "heading": "Bilgi hazırlığı ve sınırlar",
+      "text": "Yönlendirme için ilçe içinde olup olmadığı, başvuru türü ve varsa başvuru referansı yeterlidir. Tapu kopyası, kimlik numarası ve mimari çizimlerin tamamı sohbete yüklenmek zorunda değildir. Gerekli belge listesi bu genel rehberde ayrıntılandırılmamıştır. Asistan belge adı veya ücret tahmin etmek yerine İmar ve Ruhsat biriminden başvuru türüne özgü liste alınmasını önerir.",
+      "search_text": "Yeşilvadi Yapı Ruhsatı ve İskân Sürecine Genel Bakış\nBuilding and Occupancy Permit Overview\nBilgi hazırlığı ve sınırlar\nbuilding permit occupancy ruhsat iskân\nYönlendirme için ilçe içinde olup olmadığı, başvuru türü ve varsa başvuru referansı yeterlidir. Tapu kopyası, kimlik numarası ve mimari çizimlerin tamamı sohbete yüklenmek zorunda değildir. Gerekli belge listesi bu genel rehberde ayrıntılandırılmamıştır. Asistan belge adı veya ücret tahmin etmek yerine İmar ve Ruhsat biriminden başvuru türüne özgü liste alınmasını önerir.",
+      "start": 0,
+      "end": 374,
+      "source": "beldesk://synthetic/YV-D002",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D003#scope:0-431:7b1c74b911",
+      "doc_id": "YV-D003",
+      "passage_id": "YV-D003#scope",
+      "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+      "title_en": "Water Subscription Application Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu belge, AIC390 Beldesk projesindeki kurgusal Yeşilvadi Belediyesi için hazırlanmış sentetik bir test rehberidir. Gerçek bir belediyenin başvuru koşullarını veya yürürlükteki mevzuatı açıklamaz. Aşağıdaki koşullar yalnızca proje senaryosunda geçerlidir; ekip incelemesi bekleyen taslaktır. Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez, ödeme alamaz veya aboneliğin açıldığını doğrulayamaz.",
+      "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nKapsam ve veri niteliği\nsu aboneliği water subscription application required documents kiracı tenant\nBu belge, AIC390 Beldesk projesindeki kurgusal Yeşilvadi Belediyesi için hazırlanmış sentetik bir test rehberidir. Gerçek bir belediyenin başvuru koşullarını veya yürürlükteki mevzuatı açıklamaz. Aşağıdaki koşullar yalnızca proje senaryosunda geçerlidir; ekip incelemesi bekleyen taslaktır. Beldesk bu rehberi açıklayabilir, ancak kullanıcı adına abonelik başvurusu gönderemez, ödeme alamaz veya aboneliğin açıldığını doğrulayamaz.",
+      "start": 0,
+      "end": 431,
+      "source": "beldesk://synthetic/YV-D003",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D003#requirements:0-470:50d30dc01d",
+      "doc_id": "YV-D003",
+      "passage_id": "YV-D003#requirements",
+      "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+      "title_en": "Water Subscription Application Guide",
+      "heading": "Başvuruda istenen belgeler",
+      "text": "Yeşilvadi test senaryosunda yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir. Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz. Asistan belgelerin görüntüsünü, kimlik numarasını veya kira sözleşmesinin tamamını sohbet içinde istemez. Belgeler yalnızca başvuru kanalına sunulur.",
+      "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nBaşvuruda istenen belgeler\nsu aboneliği water subscription application required documents kiracı tenant\nYeşilvadi test senaryosunda yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi istenir. Aynı kullanım yerinde daha önce abonelik varsa eski abone numarası da paylaşılabilir; eski numara bilinmiyorsa başvuru rehberliği durdurulmaz. Asistan belgelerin görüntüsünü, kimlik numarasını veya kira sözleşmesinin tamamını sohbet içinde istemez. Belgeler yalnızca başvuru kanalına sunulur.",
+      "start": 0,
+      "end": 470,
+      "source": "beldesk://synthetic/YV-D003",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D003#procedure:0-474:6f1b25382b",
+      "doc_id": "YV-D003",
+      "passage_id": "YV-D003#procedure",
+      "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+      "title_en": "Water Subscription Application Guide",
+      "heading": "Başvuru adımları ve sınırlar",
+      "text": "Kullanıcı önce mülk sahibi mi kiracı mı olduğunu belirler ve buna uygun belgeleri hazırlar. Sonra proje senaryosundaki Su ve Kanalizasyon başvuru birimine başvurur. Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur. Bu belge ücret tutarı, randevu adresi, telefon numarası, çalışma saati veya hizmetin açılacağı tarih içermez. Böyle bir bilgi sorulduğunda asistan tahmin üretmez ve ilgili bilginin kaynaklarda bulunmadığını belirtir.",
+      "search_text": "Yeşilvadi Su Aboneliği Başvuru Rehberi\nWater Subscription Application Guide\nBaşvuru adımları ve sınırlar\nsu aboneliği water subscription application required documents kiracı tenant\nKullanıcı önce mülk sahibi mi kiracı mı olduğunu belirler ve buna uygun belgeleri hazırlar. Sonra proje senaryosundaki Su ve Kanalizasyon başvuru birimine başvurur. Beldesk yalnızca süreci ve belge listesini açıklar; bu akışta başvuru gönderme aracı yoktur. Bu belge ücret tutarı, randevu adresi, telefon numarası, çalışma saati veya hizmetin açılacağı tarih içermez. Böyle bir bilgi sorulduğunda asistan tahmin üretmez ve ilgili bilginin kaynaklarda bulunmadığını belirtir.",
+      "start": 0,
+      "end": 474,
+      "source": "beldesk://synthetic/YV-D003",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D004#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D004",
+      "passage_id": "YV-D004#scope",
+      "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+      "title_en": "Social Assistance Application Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi\nSocial Assistance Application Guide\nKapsam ve veri niteliği\nsocial aid assistance gelir yardım\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D004",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D004#details:0-395:b1fe9bf94c",
+      "doc_id": "YV-D004",
+      "passage_id": "YV-D004#details",
+      "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+      "title_en": "Social Assistance Application Guide",
+      "heading": "Başvuru ve değerlendirme",
+      "text": "Yeşilvadi test senaryosunda sosyal yardım için önce ihtiyaç türü belirtilir: gıda desteği, temel ihtiyaç desteği veya erişim desteği. Başvuru birimi inceleme sırasında hane durumunu ve başvuruya ilişkin bilgileri değerlendirir. Asistan yardımın kesin verileceğini, kullanıcının uygun bulunduğunu veya belirli bir ödeme yapılacağını söylemez. Bu rehberde sayısal bir gelir eşiği tanımlanmamıştır.",
+      "search_text": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi\nSocial Assistance Application Guide\nBaşvuru ve değerlendirme\nsocial aid assistance gelir yardım\nYeşilvadi test senaryosunda sosyal yardım için önce ihtiyaç türü belirtilir: gıda desteği, temel ihtiyaç desteği veya erişim desteği. Başvuru birimi inceleme sırasında hane durumunu ve başvuruya ilişkin bilgileri değerlendirir. Asistan yardımın kesin verileceğini, kullanıcının uygun bulunduğunu veya belirli bir ödeme yapılacağını söylemez. Bu rehberde sayısal bir gelir eşiği tanımlanmamıştır.",
+      "start": 0,
+      "end": 395,
+      "source": "beldesk://synthetic/YV-D004",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D004#limits:0-382:7e329d1487",
+      "doc_id": "YV-D004",
+      "passage_id": "YV-D004#limits",
+      "title": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi",
+      "title_en": "Social Assistance Application Guide",
+      "heading": "Gizlilik ve eksik bilgi",
+      "text": "Başvuru hakkında genel bilgi almak için kişinin gelir belgelerini veya sağlık kayıtlarını sohbete yazması gerekmez. Beldesk başvuru formunu vatandaş adına göndermez. Yardım tutarı, ödeme günü ve kontenjan bilgisi kaynaklarda yoksa bunlar açıklanamaz. Kullanıcı yardım türünü belirtmediyse bir kısa soru ile ihtiyacı netleştirmek, kişi hakkında uygunluk tahmini yapmaktan önce gelir.",
+      "search_text": "Yeşilvadi Sosyal Yardım Başvurusu Bilgilendirmesi\nSocial Assistance Application Guide\nGizlilik ve eksik bilgi\nsocial aid assistance gelir yardım\nBaşvuru hakkında genel bilgi almak için kişinin gelir belgelerini veya sağlık kayıtlarını sohbete yazması gerekmez. Beldesk başvuru formunu vatandaş adına göndermez. Yardım tutarı, ödeme günü ve kontenjan bilgisi kaynaklarda yoksa bunlar açıklanamaz. Kullanıcı yardım türünü belirtmediyse bir kısa soru ile ihtiyacı netleştirmek, kişi hakkında uygunluk tahmini yapmaktan önce gelir.",
+      "start": 0,
+      "end": 382,
+      "source": "beldesk://synthetic/YV-D004",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D005#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D005",
+      "passage_id": "YV-D005#scope",
+      "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+      "title_en": "Pet Registration Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi\nPet Registration Guide\nKapsam ve veri niteliği\npet registration cat dog kedi köpek kayıt\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D005",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D005#details:0-357:505f3e92bf",
+      "doc_id": "YV-D005",
+      "passage_id": "YV-D005#details",
+      "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+      "title_en": "Pet Registration Guide",
+      "heading": "İlk bilgi ve başvuru yolu",
+      "text": "Kurgusal Yeşilvadi rehberinde evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. Başvuru hazırlığı için hayvanın türü, varsa kimliklendirme referansı ve kayıt talebinin yeni kayıt mı bilgi güncelleme mi olduğu belirlenir. Beldesk hayvanın kaydını oluşturmaz ve kayıt tamamlandı demeden önce gerçek bir işlem sonucu gerektiğini kabul eder.",
+      "search_text": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi\nPet Registration Guide\nİlk bilgi ve başvuru yolu\npet registration cat dog kedi köpek kayıt\nKurgusal Yeşilvadi rehberinde evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. Başvuru hazırlığı için hayvanın türü, varsa kimliklendirme referansı ve kayıt talebinin yeni kayıt mı bilgi güncelleme mi olduğu belirlenir. Beldesk hayvanın kaydını oluşturmaz ve kayıt tamamlandı demeden önce gerçek bir işlem sonucu gerektiğini kabul eder.",
+      "start": 0,
+      "end": 357,
+      "source": "beldesk://synthetic/YV-D005",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D005#limits:0-372:2392e7bf7d",
+      "doc_id": "YV-D005",
+      "passage_id": "YV-D005#limits",
+      "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi",
+      "title_en": "Pet Registration Guide",
+      "heading": "Ücret ve belge sınırı",
+      "text": "Bu rehber hayvan kaydının ücretsiz olduğunu veya belirli bir ücret alındığını söylemez. Ücret sorusunda ayrı tarife kaynağı aranmalıdır. Hayvanın sağlık durumu hakkında teşhis veya tedavi önerisi verilmez. Kayıp hayvan, evcil hayvan kaydı ve saldırgan hayvan bildirimi farklı konulardır; kullanıcı bunlardan hangisini kastettiğini belirtmediyse önce talebin amacı sorulur.",
+      "search_text": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirmesi\nPet Registration Guide\nÜcret ve belge sınırı\npet registration cat dog kedi köpek kayıt\nBu rehber hayvan kaydının ücretsiz olduğunu veya belirli bir ücret alındığını söylemez. Ücret sorusunda ayrı tarife kaynağı aranmalıdır. Hayvanın sağlık durumu hakkında teşhis veya tedavi önerisi verilmez. Kayıp hayvan, evcil hayvan kaydı ve saldırgan hayvan bildirimi farklı konulardır; kullanıcı bunlardan hangisini kastettiğini belirtmediyse önce talebin amacı sorulur.",
+      "start": 0,
+      "end": 372,
+      "source": "beldesk://synthetic/YV-D005",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D006#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D006",
+      "passage_id": "YV-D006#scope",
+      "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+      "title_en": "Event and Temporary Stand Permit Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi\nEvent and Temporary Stand Permit Guide\nKapsam ve veri niteliği\nevent permit fair stand etkinlik stant panayır\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D006",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D006#details:0-373:626ffc7b07",
+      "doc_id": "YV-D006",
+      "passage_id": "YV-D006#details",
+      "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+      "title_en": "Event and Temporary Stand Permit Guide",
+      "heading": "Ön bilgi listesi",
+      "text": "Test senaryosunda etkinlik veya geçici stant hakkında yönlendirme için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı aralığı belirtilir. Bu bilgiler başvuruya hazırlık içindir, izin verilmesi anlamına gelmez. Asistan bir parkın seçilen tarihte boş olduğunu veya etkinliğin onaylanacağını söylemez. Alan uygunluğu yetkili birim tarafından değerlendirilir.",
+      "search_text": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi\nEvent and Temporary Stand Permit Guide\nÖn bilgi listesi\nevent permit fair stand etkinlik stant panayır\nTest senaryosunda etkinlik veya geçici stant hakkında yönlendirme için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı aralığı belirtilir. Bu bilgiler başvuruya hazırlık içindir, izin verilmesi anlamına gelmez. Asistan bir parkın seçilen tarihte boş olduğunu veya etkinliğin onaylanacağını söylemez. Alan uygunluğu yetkili birim tarafından değerlendirilir.",
+      "start": 0,
+      "end": 373,
+      "source": "beldesk://synthetic/YV-D006",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D006#limits:0-350:1b1d7e6af6",
+      "doc_id": "YV-D006",
+      "passage_id": "YV-D006#limits",
+      "title": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi",
+      "title_en": "Event and Temporary Stand Permit Guide",
+      "heading": "Başvuru sınırı",
+      "text": "Beldesk izin başvurusunu göndermez, alan rezervasyonu yapmaz ve ücret tahsil etmez. Eksik tarih veya yer varsa bunlar sorulur; özel güvenlik, hukuki yükümlülükler ve izin koşulları tahmin edilmez. Bu rehberde bir 2026 etkinlik bedeli bulunmadığından ücret sorusu için tarife belgesi gerekir. Tarifede ilgili kalem de yoksa sabit bir tutar üretilemez.",
+      "search_text": "Yeşilvadi Etkinlik ve Geçici Stant İzni Rehberi\nEvent and Temporary Stand Permit Guide\nBaşvuru sınırı\nevent permit fair stand etkinlik stant panayır\nBeldesk izin başvurusunu göndermez, alan rezervasyonu yapmaz ve ücret tahsil etmez. Eksik tarih veya yer varsa bunlar sorulur; özel güvenlik, hukuki yükümlülükler ve izin koşulları tahmin edilmez. Bu rehberde bir 2026 etkinlik bedeli bulunmadığından ücret sorusu için tarife belgesi gerekir. Tarifede ilgili kalem de yoksa sabit bir tutar üretilemez.",
+      "start": 0,
+      "end": 350,
+      "source": "beldesk://synthetic/YV-D006",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D007#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D007",
+      "passage_id": "YV-D007#scope",
+      "title": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci",
+      "title_en": "Field Complaint Draft and Confirmation Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci\nField Complaint Draft and Confirmation Guide\nKapsam ve veri niteliği\ncomplaint draft confirmation şikâyet onay\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D007",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D007#details:0-366:a5fcde06b2",
+      "doc_id": "YV-D007",
+      "passage_id": "YV-D007#details",
+      "title": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci",
+      "title_en": "Field Complaint Draft and Confirmation Guide",
+      "heading": "Taslak ile kayıt farkı",
+      "text": "Vatandaş bir saha sorunu anlattığında Beldesk sorun türünü, konumu ve bildirilen etkiyi toparlayarak bir taslak sunabilir. Taslak hazırlanması belediye sisteminde kayıt oluşturulduğu anlamına gelmez. Aynı mesajda ayrı arızalar varsa her arıza ayrı taslak olarak gösterilir. Örneğin kanalizasyon taşması ile lamba arızası tek bir ortak öncelik altında birleştirilmez.",
+      "search_text": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci\nField Complaint Draft and Confirmation Guide\nTaslak ile kayıt farkı\ncomplaint draft confirmation şikâyet onay\nVatandaş bir saha sorunu anlattığında Beldesk sorun türünü, konumu ve bildirilen etkiyi toparlayarak bir taslak sunabilir. Taslak hazırlanması belediye sisteminde kayıt oluşturulduğu anlamına gelmez. Aynı mesajda ayrı arızalar varsa her arıza ayrı taslak olarak gösterilir. Örneğin kanalizasyon taşması ile lamba arızası tek bir ortak öncelik altında birleştirilmez.",
+      "start": 0,
+      "end": 366,
+      "source": "beldesk://synthetic/YV-D007",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D007#limits:0-357:d60eecf266",
+      "doc_id": "YV-D007",
+      "passage_id": "YV-D007#limits",
+      "title": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci",
+      "title_en": "Field Complaint Draft and Confirmation Guide",
+      "heading": "Onay ve araç sınırı",
+      "text": "Kullanıcı taslağı kontrol edip düzeltebilir. Onay alınsa bile Week 3 sürümünde yazma aracı bulunmadığı için kayıt numarası üretilemez ve kayıt açıldığı söylenemez. Kayıt oluşturma yalnızca ilerideki sandbox araç aşamasında doğrulanmış işlem sonucuyla mümkün olacaktır. Ekip gönderme, kişiye mesaj atma ve arızayı giderme de bu rehberi okumakla gerçekleşmez.",
+      "search_text": "Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci\nField Complaint Draft and Confirmation Guide\nOnay ve araç sınırı\ncomplaint draft confirmation şikâyet onay\nKullanıcı taslağı kontrol edip düzeltebilir. Onay alınsa bile Week 3 sürümünde yazma aracı bulunmadığı için kayıt numarası üretilemez ve kayıt açıldığı söylenemez. Kayıt oluşturma yalnızca ilerideki sandbox araç aşamasında doğrulanmış işlem sonucuyla mümkün olacaktır. Ekip gönderme, kişiye mesaj atma ve arızayı giderme de bu rehberi okumakla gerçekleşmez.",
+      "start": 0,
+      "end": 357,
+      "source": "beldesk://synthetic/YV-D007",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D008#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D008",
+      "passage_id": "YV-D008#scope",
+      "title": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması",
+      "title_en": "Synthetic Data and Privacy Notice",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması\nSynthetic Data and Privacy Notice\nKapsam ve veri niteliği\nprivacy personal data gizlilik kişisel veri\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D008",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D008#details:0-352:8dd7197898",
+      "doc_id": "YV-D008",
+      "passage_id": "YV-D008#details",
+      "title": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması",
+      "title_en": "Synthetic Data and Privacy Notice",
+      "heading": "Veri minimizasyonu",
+      "text": "Ders projesindeki vatandaşlar, örnek konumlar ve kayıtlar sentetiktir. Saha arızası için olayın yeri sorulur; bu yer vatandaşın ikamet adresi olmak zorunda değildir. Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez. Bu metin gerçek bir kurumun aydınlatma yükümlülüğünü yerine getiren hukuki belge olarak kullanılamaz.",
+      "search_text": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması\nSynthetic Data and Privacy Notice\nVeri minimizasyonu\nprivacy personal data gizlilik kişisel veri\nDers projesindeki vatandaşlar, örnek konumlar ve kayıtlar sentetiktir. Saha arızası için olayın yeri sorulur; bu yer vatandaşın ikamet adresi olmak zorunda değildir. Genel hizmet sorularında kimlik numarası, banka bilgisi ve belge görüntüsü istenmez. Bu metin gerçek bir kurumun aydınlatma yükümlülüğünü yerine getiren hukuki belge olarak kullanılamaz.",
+      "start": 0,
+      "end": 352,
+      "source": "beldesk://synthetic/YV-D008",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D008#limits:0-364:e80db9353a",
+      "doc_id": "YV-D008",
+      "passage_id": "YV-D008#limits",
+      "title": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması",
+      "title_en": "Synthetic Data and Privacy Notice",
+      "heading": "Kayıt ve üçüncü kişiler",
+      "text": "Başkasının şikâyetinin durumunu öğrenmek isteyen kişiye vatandaş bilgileri açıklanmaz. Bir kayıt numarası veya telefonun son dört hanesini bilmek tek başına güçlü kimlik doğrulama sayılmaz. Bu sürümde gerçek bir kayıt veritabanı da yoktur. Personel erişimi sohbette yetkili olduğunu söylemekle kazanılmaz; erişim denetimi uygulamanın doğruladığı role dayanmalıdır.",
+      "search_text": "Yeşilvadi Beldesk Sentetik Veri ve Gizlilik Açıklaması\nSynthetic Data and Privacy Notice\nKayıt ve üçüncü kişiler\nprivacy personal data gizlilik kişisel veri\nBaşkasının şikâyetinin durumunu öğrenmek isteyen kişiye vatandaş bilgileri açıklanmaz. Bir kayıt numarası veya telefonun son dört hanesini bilmek tek başına güçlü kimlik doğrulama sayılmaz. Bu sürümde gerçek bir kayıt veritabanı da yoktur. Personel erişimi sohbette yetkili olduğunu söylemekle kazanılmaz; erişim denetimi uygulamanın doğruladığı role dayanmalıdır.",
+      "start": 0,
+      "end": 364,
+      "source": "beldesk://synthetic/YV-D008",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D009#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D009",
+      "passage_id": "YV-D009#scope",
+      "title": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı",
+      "title_en": "Emergency Redirection and Service Boundary",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı\nEmergency Redirection and Service Boundary\nKapsam ve veri niteliği\nemergency 112 acil dispatch\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D009",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D009#details:0-351:18297861f2",
+      "doc_id": "YV-D009",
+      "passage_id": "YV-D009#details",
+      "title": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı",
+      "title_en": "Emergency Redirection and Service Boundary",
+      "heading": "Acil yönlendirme sınırı",
+      "text": "Proje senaryosunda açık bir acil durum anlatıldığında belediye bildirim taslağı, acil yardımın yerine geçmez. Beldesk gerektiğinde 112 yönlendirmesi yapabilir; ancak acil servise ulaştığını, ekip gönderdiğini veya bir kişinin güvenliğini doğruladığını söylemez. Bu rehber olay yerinde uzman değerlendirmesi veya kişiye özgü tıbbi yönlendirme sağlamaz.",
+      "search_text": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı\nEmergency Redirection and Service Boundary\nAcil yönlendirme sınırı\nemergency 112 acil dispatch\nProje senaryosunda açık bir acil durum anlatıldığında belediye bildirim taslağı, acil yardımın yerine geçmez. Beldesk gerektiğinde 112 yönlendirmesi yapabilir; ancak acil servise ulaştığını, ekip gönderdiğini veya bir kişinin güvenliğini doğruladığını söylemez. Bu rehber olay yerinde uzman değerlendirmesi veya kişiye özgü tıbbi yönlendirme sağlamaz.",
+      "start": 0,
+      "end": 351,
+      "source": "beldesk://synthetic/YV-D009",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D009#limits:0-385:c95505d9c9",
+      "doc_id": "YV-D009",
+      "passage_id": "YV-D009#limits",
+      "title": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı",
+      "title_en": "Emergency Redirection and Service Boundary",
+      "heading": "Öncelik politikasına bağlantı",
+      "text": "P1–P4 sınıfları ve sınıf içi sıralama için ekip tarafından kabul edilen öncelik politikası kullanılmalıdır. Depodaki v0.3 belgesi halen taslak olarak işaretlidir; bu rehber ona sessizce yeni kurallar veya süre taahhütleri eklemez. Belediye dışı acil durum ile belediye saha arızası farklı taleplerdir. Arama sonucunda bu metnin bulunması bir kayıt veya operasyonel müdahale oluşturmaz.",
+      "search_text": "Yeşilvadi Acil Durum ve Belediye İşlem Sınırı\nEmergency Redirection and Service Boundary\nÖncelik politikasına bağlantı\nemergency 112 acil dispatch\nP1–P4 sınıfları ve sınıf içi sıralama için ekip tarafından kabul edilen öncelik politikası kullanılmalıdır. Depodaki v0.3 belgesi halen taslak olarak işaretlidir; bu rehber ona sessizce yeni kurallar veya süre taahhütleri eklemez. Belediye dışı acil durum ile belediye saha arızası farklı taleplerdir. Arama sonucunda bu metnin bulunması bir kayıt veya operasyonel müdahale oluşturmaz.",
+      "start": 0,
+      "end": 385,
+      "source": "beldesk://synthetic/YV-D009",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D010#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D010",
+      "passage_id": "YV-D010#scope",
+      "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+      "title_en": "2026 Synthetic Fee Information Scope",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı\n2026 Synthetic Fee Information Scope\nKapsam ve veri niteliği\nfees tariff price ücret tarife\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D010",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D010#details:0-343:d8ed0d0af3",
+      "doc_id": "YV-D010",
+      "passage_id": "YV-D010#details",
+      "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+      "title_en": "2026 Synthetic Fee Information Scope",
+      "heading": "Yayımlanmış ücret sınırı",
+      "text": "Bu taslak veri sürümünde nikâh, evcil hayvan kaydı, su aboneliği ve etkinlik izni için onaylanmış sayısal ücret kalemleri yayımlanmamıştır. Bu nedenle asistan bu hizmetlerin ücretsiz olduğunu da belirli bir tutar gerektirdiğini de söyleyemez. Bir ücret sorusu cevaplanırken hizmet adı ve geçerlilik yılı eşleşen açık bir tarife kalemi gerekir.",
+      "search_text": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı\n2026 Synthetic Fee Information Scope\nYayımlanmış ücret sınırı\nfees tariff price ücret tarife\nBu taslak veri sürümünde nikâh, evcil hayvan kaydı, su aboneliği ve etkinlik izni için onaylanmış sayısal ücret kalemleri yayımlanmamıştır. Bu nedenle asistan bu hizmetlerin ücretsiz olduğunu da belirli bir tutar gerektirdiğini de söyleyemez. Bir ücret sorusu cevaplanırken hizmet adı ve geçerlilik yılı eşleşen açık bir tarife kalemi gerekir.",
+      "start": 0,
+      "end": 343,
+      "source": "beldesk://synthetic/YV-D010",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D010#limits:0-398:1d16615c2c",
+      "doc_id": "YV-D010",
+      "passage_id": "YV-D010#limits",
+      "title": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı",
+      "title_en": "2026 Synthetic Fee Information Scope",
+      "heading": "Gelecekte tarife ekleme",
+      "text": "Ekip ileride kurgusal ücret kalemi eklerse hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir. Ücretin kaynakta bulunması ödeme yapılabileceği anlamına gelmez; Beldesk ödeme almaz. Eski sürüm ile yeni tarife çelişirse sessizce birini seçmek yerine sürüm ve geçerlilik denetimi gerekir. Bu doküman fiyatları uydurarak cevap üretmeyi önlemek için vardır.",
+      "search_text": "Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı\n2026 Synthetic Fee Information Scope\nGelecekte tarife ekleme\nfees tariff price ücret tarife\nEkip ileride kurgusal ücret kalemi eklerse hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir. Ücretin kaynakta bulunması ödeme yapılabileceği anlamına gelmez; Beldesk ödeme almaz. Eski sürüm ile yeni tarife çelişirse sessizce birini seçmek yerine sürüm ve geçerlilik denetimi gerekir. Bu doküman fiyatları uydurarak cevap üretmeyi önlemek için vardır.",
+      "start": 0,
+      "end": 398,
+      "source": "beldesk://synthetic/YV-D010",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D011#scope:0-376:78adc70ac9",
+      "doc_id": "YV-D011",
+      "passage_id": "YV-D011#scope",
+      "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+      "title_en": "Missed Household Waste Collection Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu sentetik rehber Beldesk ders projesinde alınmayan evsel atık bildirimini açıklamak için hazırlanmıştır. Resmî bir belediye hizmet standardı değildir ve ekip incelemesi bekler. Soru yalnızca toplama gününü öğrenmek için sorulmuşsa bilgi isteği olarak ele alınır; çöpün alınmadığını bildiren mesaj ise saha sorunu taslağına konu olabilir. İkisi birbirine karıştırılmamalıdır.",
+      "search_text": "Yeşilvadi Alınmayan Evsel Atık Bildirimi\nMissed Household Waste Collection Guide\nKapsam ve veri niteliği\nçöp atık temizlik missed waste collection rubbish garbage container\nBu sentetik rehber Beldesk ders projesinde alınmayan evsel atık bildirimini açıklamak için hazırlanmıştır. Resmî bir belediye hizmet standardı değildir ve ekip incelemesi bekler. Soru yalnızca toplama gününü öğrenmek için sorulmuşsa bilgi isteği olarak ele alınır; çöpün alınmadığını bildiren mesaj ise saha sorunu taslağına konu olabilir. İkisi birbirine karıştırılmamalıdır.",
+      "start": 0,
+      "end": 376,
+      "source": "beldesk://synthetic/YV-D011",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D011#reporting:0-448:c760fe3c2d",
+      "doc_id": "YV-D011",
+      "passage_id": "YV-D011#reporting",
+      "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+      "title_en": "Missed Household Waste Collection Guide",
+      "heading": "Bildirim için gereken bilgiler",
+      "text": "Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur. Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir; etkilenen kişi sayısı uydurulmaz. Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz. Hazırlanan taslak, kullanıcıdan onay istenerek gösterilir; bu aşamada kayıt açılmış olmaz.",
+      "search_text": "Yeşilvadi Alınmayan Evsel Atık Bildirimi\nMissed Household Waste Collection Guide\nBildirim için gereken bilgiler\nçöp atık temizlik missed waste collection rubbish garbage container\nMahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur. Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir; etkilenen kişi sayısı uydurulmaz. Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz. Hazırlanan taslak, kullanıcıdan onay istenerek gösterilir; bu aşamada kayıt açılmış olmaz.",
+      "start": 0,
+      "end": 448,
+      "source": "beldesk://synthetic/YV-D011",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D011#schedule:0-417:bd75f6a5e0",
+      "doc_id": "YV-D011",
+      "passage_id": "YV-D011#schedule",
+      "title": "Yeşilvadi Alınmayan Evsel Atık Bildirimi",
+      "title_en": "Missed Household Waste Collection Guide",
+      "heading": "Toplama günü ve işlem sınırı",
+      "text": "Bu belge Çamlık veya başka bir mahallenin güncel çöp toplama günü ve saatini içermez. Toplama takvimi sorusu için ayrıca yayımlanmış bir takvim kaynağı gerekir. Asistan gün veya saat tahmin etmez, ekip gönderildiğini söylemez ve bir temizlik işleminin tamamlandığını doğrulamaz. Risk sınıflandırması gerekiyorsa yürürlükte kabul edilen proje öncelik belgesi esas alınır; burada yeni bir P1–P4 kuralı tanımlanmamıştır.",
+      "search_text": "Yeşilvadi Alınmayan Evsel Atık Bildirimi\nMissed Household Waste Collection Guide\nToplama günü ve işlem sınırı\nçöp atık temizlik missed waste collection rubbish garbage container\nBu belge Çamlık veya başka bir mahallenin güncel çöp toplama günü ve saatini içermez. Toplama takvimi sorusu için ayrıca yayımlanmış bir takvim kaynağı gerekir. Asistan gün veya saat tahmin etmez, ekip gönderildiğini söylemez ve bir temizlik işleminin tamamlandığını doğrulamaz. Risk sınıflandırması gerekiyorsa yürürlükte kabul edilen proje öncelik belgesi esas alınır; burada yeni bir P1–P4 kuralı tanımlanmamıştır.",
+      "start": 0,
+      "end": 417,
+      "source": "beldesk://synthetic/YV-D011",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D012#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D012",
+      "passage_id": "YV-D012#scope",
+      "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+      "title_en": "Bulky Waste Collection Request Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Hacimli Atık Bildirimi Rehberi\nBulky Waste Collection Request Guide\nKapsam ve veri niteliği\nbulky waste furniture hacimli atık mobilya\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D012",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D012#details:0-363:ab5e3d123c",
+      "doc_id": "YV-D012",
+      "passage_id": "YV-D012#details",
+      "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+      "title_en": "Bulky Waste Collection Request Guide",
+      "heading": "Hacimli atık bilgileri",
+      "text": "Test senaryosunda eski mobilya ve benzeri hacimli atık için eşyanın türü, yaklaşık adedi, bulunduğu mahalle ve alınabileceği konum açıklanır. Evsel çöp konteynerinin alınmaması ayrı bir hizmet problemidir. Asistan belirtilmeyen eşya ağırlığını veya toplama aracının uygunluğunu tahmin etmez. Vatandaşın kimlik veya ödeme bilgileri genel yönlendirme için gerekmez.",
+      "search_text": "Yeşilvadi Hacimli Atık Bildirimi Rehberi\nBulky Waste Collection Request Guide\nHacimli atık bilgileri\nbulky waste furniture hacimli atık mobilya\nTest senaryosunda eski mobilya ve benzeri hacimli atık için eşyanın türü, yaklaşık adedi, bulunduğu mahalle ve alınabileceği konum açıklanır. Evsel çöp konteynerinin alınmaması ayrı bir hizmet problemidir. Asistan belirtilmeyen eşya ağırlığını veya toplama aracının uygunluğunu tahmin etmez. Vatandaşın kimlik veya ödeme bilgileri genel yönlendirme için gerekmez.",
+      "start": 0,
+      "end": 363,
+      "source": "beldesk://synthetic/YV-D012",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D012#limits:0-377:5d50a94ede",
+      "doc_id": "YV-D012",
+      "passage_id": "YV-D012#limits",
+      "title": "Yeşilvadi Hacimli Atık Bildirimi Rehberi",
+      "title_en": "Bulky Waste Collection Request Guide",
+      "heading": "Randevu ve işlem sınırı",
+      "text": "Beldesk toplama randevusu oluşturmaz; gün, saat veya ücretsiz toplama sözü vermez. İlgili kaynakta bulunmayan toplama takvimi açıklanamaz. Kullanıcı bir randevunun durumunu soruyorsa konu yeni saha şikâyeti gibi sınıflandırılmamalıdır. Yol güvenliğini etkileyen bir durum anlatılırsa etki ayrıca kaydedilir; yalnızca eşyanın büyük olması otomatik bir öncelik sınıfı belirlemez.",
+      "search_text": "Yeşilvadi Hacimli Atık Bildirimi Rehberi\nBulky Waste Collection Request Guide\nRandevu ve işlem sınırı\nbulky waste furniture hacimli atık mobilya\nBeldesk toplama randevusu oluşturmaz; gün, saat veya ücretsiz toplama sözü vermez. İlgili kaynakta bulunmayan toplama takvimi açıklanamaz. Kullanıcı bir randevunun durumunu soruyorsa konu yeni saha şikâyeti gibi sınıflandırılmamalıdır. Yol güvenliğini etkileyen bir durum anlatılırsa etki ayrıca kaydedilir; yalnızca eşyanın büyük olması otomatik bir öncelik sınıfı belirlemez.",
+      "start": 0,
+      "end": 377,
+      "source": "beldesk://synthetic/YV-D012",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D013#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D013",
+      "passage_id": "YV-D013#scope",
+      "title": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi",
+      "title_en": "Recycling Separation and Drop-off Information",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi\nRecycling Separation and Drop-off Information\nKapsam ve veri niteliği\nrecycling paper plastic geri dönüşüm ambalaj\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D013",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D013#details:0-355:9e790b8c5b",
+      "doc_id": "YV-D013",
+      "passage_id": "YV-D013#details",
+      "title": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi",
+      "title_en": "Recycling Separation and Drop-off Information",
+      "heading": "Bilgi talebini netleştirme",
+      "text": "Kurgusal rehberde geri dönüşüm sorusunda atığın türü ve kullanıcının toplama günü mü bırakma noktası mı sorduğu ayrılır. Kağıt, plastik ve cam için ayrı kap bulunduğu varsayımı yapılmaz; belirli noktada kabul edilen türler ilgili nokta kaynağıyla doğrulanmalıdır. Bu rehber, herhangi bir adresi veya mahallenin bütün toplama noktalarını listelememektedir.",
+      "search_text": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi\nRecycling Separation and Drop-off Information\nBilgi talebini netleştirme\nrecycling paper plastic geri dönüşüm ambalaj\nKurgusal rehberde geri dönüşüm sorusunda atığın türü ve kullanıcının toplama günü mü bırakma noktası mı sorduğu ayrılır. Kağıt, plastik ve cam için ayrı kap bulunduğu varsayımı yapılmaz; belirli noktada kabul edilen türler ilgili nokta kaynağıyla doğrulanmalıdır. Bu rehber, herhangi bir adresi veya mahallenin bütün toplama noktalarını listelememektedir.",
+      "start": 0,
+      "end": 355,
+      "source": "beldesk://synthetic/YV-D013",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D013#limits:0-380:64f5485f57",
+      "doc_id": "YV-D013",
+      "passage_id": "YV-D013#limits",
+      "title": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi",
+      "title_en": "Recycling Separation and Drop-off Information",
+      "heading": "Kaynakta olmayan noktalar",
+      "text": "En yakın geri dönüşüm kutusunu söylemek için doğrulanmış konum verisi gerekir. Asistan nokta adresi, uzaklık, açık olduğu saat veya o anda dolu olup olmadığını tahmin etmez. Kullanıcı geri dönüşüm kutusunun hasarlı veya taşmış olduğunu bildirirse konum ve mevcut etki sorularak bir saha taslağı hazırlanabilir. Bu taslağın hazırlanması bir toplama işleminin başladığını göstermez.",
+      "search_text": "Yeşilvadi Geri Dönüşüm Ayrıştırma ve Nokta Bilgisi\nRecycling Separation and Drop-off Information\nKaynakta olmayan noktalar\nrecycling paper plastic geri dönüşüm ambalaj\nEn yakın geri dönüşüm kutusunu söylemek için doğrulanmış konum verisi gerekir. Asistan nokta adresi, uzaklık, açık olduğu saat veya o anda dolu olup olmadığını tahmin etmez. Kullanıcı geri dönüşüm kutusunun hasarlı veya taşmış olduğunu bildirirse konum ve mevcut etki sorularak bir saha taslağı hazırlanabilir. Bu taslağın hazırlanması bir toplama işleminin başladığını göstermez.",
+      "start": 0,
+      "end": 380,
+      "source": "beldesk://synthetic/YV-D013",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D014#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D014",
+      "passage_id": "YV-D014#scope",
+      "title": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi",
+      "title_en": "Hazardous or Unidentified Waste Reporting",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi\nHazardous or Unidentified Waste Reporting\nKapsam ve veri niteliği\nhazardous waste chemical pil kimyasal bilinmeyen atık\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D014",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D014#details:0-371:2c95c6d4b2",
+      "doc_id": "YV-D014",
+      "passage_id": "YV-D014#details",
+      "title": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi",
+      "title_en": "Hazardous or Unidentified Waste Reporting",
+      "heading": "Bildirimi tanımlama",
+      "text": "Vatandaş ne olduğunu bilmediği bir atığı tarif ettiğinde asistan maddeyi kimyasal olarak teşhis etmez. Bildirim taslağı için konum, görünen durum ve vatandaşın zaten gözlemlediği etki sorulur. Etiket okunabiliyorsa kullanıcı kendi gözlemini yazabilir; kişiden maddeyi açması, taşıması veya numune alması istenmez. Beldesk bu bilgiyle işlem veya saha müdahalesi başlatmaz.",
+      "search_text": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi\nHazardous or Unidentified Waste Reporting\nBildirimi tanımlama\nhazardous waste chemical pil kimyasal bilinmeyen atık\nVatandaş ne olduğunu bilmediği bir atığı tarif ettiğinde asistan maddeyi kimyasal olarak teşhis etmez. Bildirim taslağı için konum, görünen durum ve vatandaşın zaten gözlemlediği etki sorulur. Etiket okunabiliyorsa kullanıcı kendi gözlemini yazabilir; kişiden maddeyi açması, taşıması veya numune alması istenmez. Beldesk bu bilgiyle işlem veya saha müdahalesi başlatmaz.",
+      "start": 0,
+      "end": 371,
+      "source": "beldesk://synthetic/YV-D014",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D014#limits:0-353:99eb64aaba",
+      "doc_id": "YV-D014",
+      "passage_id": "YV-D014#limits",
+      "title": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi",
+      "title_en": "Hazardous or Unidentified Waste Reporting",
+      "heading": "Hizmet ve bilgi sınırı",
+      "text": "Bu sentetik rehber evsel çöp ile tehlikeli atığın aynı toplama aracıyla alınacağını söylemez. Bertaraf yöntemi, teslim yeri ve ücret için ilgili hizmet kaynağı gerekir. Kaynakta olmayan kimyasal işlem talimatı üretilmez. Acil bir durum anlatılması halinde belediye taslağı acil hizmet yönlendirmesinin yerine kullanılmaz; ilgili proje sınırları korunur.",
+      "search_text": "Yeşilvadi Tehlikeli veya Türü Belirsiz Atık Bildirimi\nHazardous or Unidentified Waste Reporting\nHizmet ve bilgi sınırı\nhazardous waste chemical pil kimyasal bilinmeyen atık\nBu sentetik rehber evsel çöp ile tehlikeli atığın aynı toplama aracıyla alınacağını söylemez. Bertaraf yöntemi, teslim yeri ve ücret için ilgili hizmet kaynağı gerekir. Kaynakta olmayan kimyasal işlem talimatı üretilmez. Acil bir durum anlatılması halinde belediye taslağı acil hizmet yönlendirmesinin yerine kullanılmaz; ilgili proje sınırları korunur.",
+      "start": 0,
+      "end": 353,
+      "source": "beldesk://synthetic/YV-D014",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D015#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D015",
+      "passage_id": "YV-D015#scope",
+      "title": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi",
+      "title_en": "Park Use and Opening Hours Information",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi\nPark Use and Opening Hours Information\nKapsam ve veri niteliği\npark opening hours Güneştepe açılış kapanış\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D015",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D015#details:0-360:7e95697f9e",
+      "doc_id": "YV-D015",
+      "passage_id": "YV-D015#details",
+      "title": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi",
+      "title_en": "Park Use and Opening Hours Information",
+      "heading": "Parkı belirleme",
+      "text": "Park hakkında bilgi için mahalle ve parkın adı öğrenilir. Aynı mahallede birden fazla park bulunabileceğinden mahalle adı tek başına belirli bir tesisin saatini doğrulamaz. Yeşilvadi test rehberi parkların yirmi dört saat açık olduğunu varsaymaz. Kullanıcı açılış saati soruyorsa bu bir hizmet bilgisi isteğidir; parkta arıza bildirmesiyle aynı işlem değildir.",
+      "search_text": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi\nPark Use and Opening Hours Information\nParkı belirleme\npark opening hours Güneştepe açılış kapanış\nPark hakkında bilgi için mahalle ve parkın adı öğrenilir. Aynı mahallede birden fazla park bulunabileceğinden mahalle adı tek başına belirli bir tesisin saatini doğrulamaz. Yeşilvadi test rehberi parkların yirmi dört saat açık olduğunu varsaymaz. Kullanıcı açılış saati soruyorsa bu bir hizmet bilgisi isteğidir; parkta arıza bildirmesiyle aynı işlem değildir.",
+      "start": 0,
+      "end": 360,
+      "source": "beldesk://synthetic/YV-D015",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D015#limits:0-365:639b89b968",
+      "doc_id": "YV-D015",
+      "passage_id": "YV-D015#limits",
+      "title": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi",
+      "title_en": "Park Use and Opening Hours Information",
+      "heading": "Saat ve rezervasyon sınırı",
+      "text": "Bu belge Güneştepe parklarının güncel açılış veya kapanış saatini içermez. Saat açıklamak için tesis adına ve geçerli tarihe bağlı ayrı kaynak gerekir. Beldesk park rezervasyonu yapmaz, alanın belirli bir etkinliğe uygun olduğunu onaylamaz ve güvenlik görevlisine ulaştığını söylemez. Bank, aydınlatma veya oyun alanı arızası varsa sorun ve konum ayrıca kaydedilir.",
+      "search_text": "Yeşilvadi Park Kullanımı ve Açılış Saati Bilgisi\nPark Use and Opening Hours Information\nSaat ve rezervasyon sınırı\npark opening hours Güneştepe açılış kapanış\nBu belge Güneştepe parklarının güncel açılış veya kapanış saatini içermez. Saat açıklamak için tesis adına ve geçerli tarihe bağlı ayrı kaynak gerekir. Beldesk park rezervasyonu yapmaz, alanın belirli bir etkinliğe uygun olduğunu onaylamaz ve güvenlik görevlisine ulaştığını söylemez. Bank, aydınlatma veya oyun alanı arızası varsa sorun ve konum ayrıca kaydedilir.",
+      "start": 0,
+      "end": 365,
+      "source": "beldesk://synthetic/YV-D015",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D016#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D016",
+      "passage_id": "YV-D016#scope",
+      "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+      "title_en": "Playground Equipment Fault Report Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi\nPlayground Equipment Fault Report Guide\nKapsam ve veri niteliği\nplayground swing seesaw salıncak tahterevalli\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D016",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D016#details:0-341:3af2590e90",
+      "doc_id": "YV-D016",
+      "passage_id": "YV-D016#details",
+      "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+      "title_en": "Playground Equipment Fault Report Guide",
+      "heading": "Arıza bilgileri",
+      "text": "Oyun alanı bildirimi için park adı veya mahalle ve sokak, arızalı ekipmanın türü ve görülen hasar belirtilir. Ekipmanın kullanım dışı olup olmadığı vatandaşın bildirdiği haliyle kaydedilir; bildirilmemiş bir yaralanma veya kullanım durumu uydurulmaz. Bir mesajda hem salıncak hem aydınlatma sorunu bulunursa bunlar ayrı arıza olarak korunur.",
+      "search_text": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi\nPlayground Equipment Fault Report Guide\nArıza bilgileri\nplayground swing seesaw salıncak tahterevalli\nOyun alanı bildirimi için park adı veya mahalle ve sokak, arızalı ekipmanın türü ve görülen hasar belirtilir. Ekipmanın kullanım dışı olup olmadığı vatandaşın bildirdiği haliyle kaydedilir; bildirilmemiş bir yaralanma veya kullanım durumu uydurulmaz. Bir mesajda hem salıncak hem aydınlatma sorunu bulunursa bunlar ayrı arıza olarak korunur.",
+      "start": 0,
+      "end": 341,
+      "source": "beldesk://synthetic/YV-D016",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D016#limits:0-380:74ebf8bfca",
+      "doc_id": "YV-D016",
+      "passage_id": "YV-D016#limits",
+      "title": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi",
+      "title_en": "Playground Equipment Fault Report Guide",
+      "heading": "Taslak ve öncelik sınırı",
+      "text": "Asistan parktaki ekipmanı denetlediğini veya güvenli hale getirdiğini söylemez. Öncelik, kabul edilen proje politikasındaki somut tehlike ve işlev kaybı ölçütleriyle belirlenir; sırf oyun alanında olduğu için her olay aynı sınıfa konulmaz. Bu rehber onarım tarihi, yedek parça stoğu veya ekip ataması içermez. Böyle bilgiler gerektiğinde mevcut olmadıkları açıkça belirtilmelidir.",
+      "search_text": "Yeşilvadi Çocuk Oyun Alanı Arızası Bildirimi\nPlayground Equipment Fault Report Guide\nTaslak ve öncelik sınırı\nplayground swing seesaw salıncak tahterevalli\nAsistan parktaki ekipmanı denetlediğini veya güvenli hale getirdiğini söylemez. Öncelik, kabul edilen proje politikasındaki somut tehlike ve işlev kaybı ölçütleriyle belirlenir; sırf oyun alanında olduğu için her olay aynı sınıfa konulmaz. Bu rehber onarım tarihi, yedek parça stoğu veya ekip ataması içermez. Böyle bilgiler gerektiğinde mevcut olmadıkları açıkça belirtilmelidir.",
+      "start": 0,
+      "end": 380,
+      "source": "beldesk://synthetic/YV-D016",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D017#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D017",
+      "passage_id": "YV-D017#scope",
+      "title": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi",
+      "title_en": "Library Membership Information",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi\nLibrary Membership Information\nKapsam ve veri niteliği\nlibrary membership borrow kütüphane üyelik kitap\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D017",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D017#details:0-377:840d0b4dbf",
+      "doc_id": "YV-D017",
+      "passage_id": "YV-D017#details",
+      "title": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi",
+      "title_en": "Library Membership Information",
+      "heading": "Üyelik hakkında bilgi",
+      "text": "Yeşilvadi test senaryosunda kütüphane üyeliği hakkında yönlendirme için hangi kütüphanenin sorulduğu ve ilk üyelik mi üyelik güncellemesi mi istendiği öğrenilir. Asistan üyelik kaydı oluşturmaz. Vatandaşın kimlik numarası veya belge fotoğrafı sohbetten istenmez. Kütüphane kuralları veya ödünç alma şartları kaynakta açıkça yer almadıkça başka kurumlardan alınarak uygulanamaz.",
+      "search_text": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi\nLibrary Membership Information\nÜyelik hakkında bilgi\nlibrary membership borrow kütüphane üyelik kitap\nYeşilvadi test senaryosunda kütüphane üyeliği hakkında yönlendirme için hangi kütüphanenin sorulduğu ve ilk üyelik mi üyelik güncellemesi mi istendiği öğrenilir. Asistan üyelik kaydı oluşturmaz. Vatandaşın kimlik numarası veya belge fotoğrafı sohbetten istenmez. Kütüphane kuralları veya ödünç alma şartları kaynakta açıkça yer almadıkça başka kurumlardan alınarak uygulanamaz.",
+      "start": 0,
+      "end": 377,
+      "source": "beldesk://synthetic/YV-D017",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D017#limits:0-387:877e624bc7",
+      "doc_id": "YV-D017",
+      "passage_id": "YV-D017#limits",
+      "title": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi",
+      "title_en": "Library Membership Information",
+      "heading": "Canlı bilgi sınırı",
+      "text": "Bu rehber bir kitabın rafta olduğunu, rezervasyon durumunu veya mevcut ödünç listesini içermez. Belirli bir kitabın bulunup bulunmadığını söylemek için katalog erişimi gerekir. Çalışma saatleri ve üyelik ücreti de bu metinde verilmemiştir. Beldesk kayıt açıldığı, kitap ayrıldığı veya bir gecikme borcunun silindiği iddiasında bulunamaz; yalnızca mevcut kaynaklara dayalı açıklama yapar.",
+      "search_text": "Yeşilvadi Kütüphane Üyeliği Bilgilendirmesi\nLibrary Membership Information\nCanlı bilgi sınırı\nlibrary membership borrow kütüphane üyelik kitap\nBu rehber bir kitabın rafta olduğunu, rezervasyon durumunu veya mevcut ödünç listesini içermez. Belirli bir kitabın bulunup bulunmadığını söylemek için katalog erişimi gerekir. Çalışma saatleri ve üyelik ücreti de bu metinde verilmemiştir. Beldesk kayıt açıldığı, kitap ayrıldığı veya bir gecikme borcunun silindiği iddiasında bulunamaz; yalnızca mevcut kaynaklara dayalı açıklama yapar.",
+      "start": 0,
+      "end": 387,
+      "source": "beldesk://synthetic/YV-D017",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D018#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D018",
+      "passage_id": "YV-D018#scope",
+      "title": "Yeşilvadi Kültür Merkezi Etkinlik Bilgisi",
+      "title_en": "Cultural Centre Event Information",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Kültür Merkezi Etkinlik Bilgisi\nCultural Centre Event Information\nKapsam ve veri niteliği\ncultural centre Atatürk Saturday kültür merkezi cumartesi\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D018",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D018#details:0-350:55a746f2f9",
+      "doc_id": "YV-D018",
+      "passage_id": "YV-D018#details",
+      "title": "Yeşilvadi Kültür Merkezi Etkinlik Bilgisi",
+      "title_en": "Cultural Centre Event Information",
+      "heading": "Tesis ve etkinliği ayırma",
+      "text": "Kültür merkezi sorusunda tesis adı ile etkinlik adı birbirinden ayrılır. Bir etkinliğin saati, binanın genel açık olduğu saatle aynı bilgi değildir. Kullanıcı Atatürk Kültür Merkezi hakkında soruyorsa hangi gün ve hangi hizmeti kastettiği gerekirse netleştirilir. Bu rehber yalnızca bilgi talebinin nasıl hazırlanacağını açıklayan sentetik içeriktir.",
+      "search_text": "Yeşilvadi Kültür Merkezi Etkinlik Bilgisi\nCultural Centre Event Information\nTesis ve etkinliği ayırma\ncultural centre Atatürk Saturday kültür merkezi cumartesi\nKültür merkezi sorusunda tesis adı ile etkinlik adı birbirinden ayrılır. Bir etkinliğin saati, binanın genel açık olduğu saatle aynı bilgi değildir. Kullanıcı Atatürk Kültür Merkezi hakkında soruyorsa hangi gün ve hangi hizmeti kastettiği gerekirse netleştirilir. Bu rehber yalnızca bilgi talebinin nasıl hazırlanacağını açıklayan sentetik içeriktir.",
+      "start": 0,
+      "end": 350,
+      "source": "beldesk://synthetic/YV-D018",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D018#limits:0-355:7d691fb743",
+      "doc_id": "YV-D018",
+      "passage_id": "YV-D018#limits",
+      "title": "Yeşilvadi Kültür Merkezi Etkinlik Bilgisi",
+      "title_en": "Cultural Centre Event Information",
+      "heading": "Takvim ve bilet sınırı",
+      "text": "Bu sürüm Atatürk Kültür Merkezi cumartesi kapanış saatini ve güncel etkinlik takvimini yayımlamaz. Beldesk bilet ayırmaz, koltuk uygunluğu söylemez ve etkinliğin iptal edilmediğini doğrulamaz. Program bilgisi için etkinliğe özel kaynak gerekir. Kaynak bulunamadığında kullanıcıya rastgele bir saat veya başka bir kültür merkezinin programı verilmemelidir.",
+      "search_text": "Yeşilvadi Kültür Merkezi Etkinlik Bilgisi\nCultural Centre Event Information\nTakvim ve bilet sınırı\ncultural centre Atatürk Saturday kültür merkezi cumartesi\nBu sürüm Atatürk Kültür Merkezi cumartesi kapanış saatini ve güncel etkinlik takvimini yayımlamaz. Beldesk bilet ayırmaz, koltuk uygunluğu söylemez ve etkinliğin iptal edilmediğini doğrulamaz. Program bilgisi için etkinliğe özel kaynak gerekir. Kaynak bulunamadığında kullanıcıya rastgele bir saat veya başka bir kültür merkezinin programı verilmemelidir.",
+      "start": 0,
+      "end": 355,
+      "source": "beldesk://synthetic/YV-D018",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D019#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D019",
+      "passage_id": "YV-D019#scope",
+      "title": "Yeşilvadi Erişilebilirlik ve Engelli Erişimi Bildirimi",
+      "title_en": "Accessibility and Disabled Access Report Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Erişilebilirlik ve Engelli Erişimi Bildirimi\nAccessibility and Disabled Access Report Guide\nKapsam ve veri niteliği\naccessibility wheelchair ramp erişilebilirlik rampa\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D019",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D019#details:0-355:eb0722801d",
+      "doc_id": "YV-D019",
+      "passage_id": "YV-D019#details",
+      "title": "Yeşilvadi Erişilebilirlik ve Engelli Erişimi Bildirimi",
+      "title_en": "Accessibility and Disabled Access Report Guide",
+      "heading": "Erişim engelini açıklama",
+      "text": "Erişilebilirlik bildiriminde etkilenen giriş, kaldırım veya geçiş noktası ve engelin ne olduğu sorulur. Rampa eksikliği, bozuk yüzey ve geçişi kapatan bir nesne aynı sorun değildir. Kullanıcı bir araçla geçemediğini anlatıyorsa bu etki kaydedilir; sağlık raporu, tanı veya engellilik belgesi istenmez. Olayın konumu kişinin ikamet adresinden ayrı tutulur.",
+      "search_text": "Yeşilvadi Erişilebilirlik ve Engelli Erişimi Bildirimi\nAccessibility and Disabled Access Report Guide\nErişim engelini açıklama\naccessibility wheelchair ramp erişilebilirlik rampa\nErişilebilirlik bildiriminde etkilenen giriş, kaldırım veya geçiş noktası ve engelin ne olduğu sorulur. Rampa eksikliği, bozuk yüzey ve geçişi kapatan bir nesne aynı sorun değildir. Kullanıcı bir araçla geçemediğini anlatıyorsa bu etki kaydedilir; sağlık raporu, tanı veya engellilik belgesi istenmez. Olayın konumu kişinin ikamet adresinden ayrı tutulur.",
+      "start": 0,
+      "end": 355,
+      "source": "beldesk://synthetic/YV-D019",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D019#limits:0-370:f9717c1a6c",
+      "doc_id": "YV-D019",
+      "passage_id": "YV-D019#limits",
+      "title": "Yeşilvadi Erişilebilirlik ve Engelli Erişimi Bildirimi",
+      "title_en": "Accessibility and Disabled Access Report Guide",
+      "heading": "Mevcut etki ve öneri farkı",
+      "text": "Hâlihazırda kullanılamayan bir geçiş ile yeni bir rampa yapılması önerisi ayrılır. Öncelik yalnızca talebin başlığına göre değil, açıklanan işlev kaybı ve tehlikeye göre değerlendirilir. Beldesk bir yapının erişilebilirlik mevzuatına uygun olduğunu onaylamaz ve uygulama tarihi vermez. Yetkili birim incelemesi gerektiren değerlendirmeler bu rehberin kapsamı dışındadır.",
+      "search_text": "Yeşilvadi Erişilebilirlik ve Engelli Erişimi Bildirimi\nAccessibility and Disabled Access Report Guide\nMevcut etki ve öneri farkı\naccessibility wheelchair ramp erişilebilirlik rampa\nHâlihazırda kullanılamayan bir geçiş ile yeni bir rampa yapılması önerisi ayrılır. Öncelik yalnızca talebin başlığına göre değil, açıklanan işlev kaybı ve tehlikeye göre değerlendirilir. Beldesk bir yapının erişilebilirlik mevzuatına uygun olduğunu onaylamaz ve uygulama tarihi vermez. Yetkili birim incelemesi gerektiren değerlendirmeler bu rehberin kapsamı dışındadır.",
+      "start": 0,
+      "end": 370,
+      "source": "beldesk://synthetic/YV-D019",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D020#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D020",
+      "passage_id": "YV-D020#scope",
+      "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+      "title_en": "Pothole and Road Surface Fault Reporting",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi\nPothole and Road Surface Fault Reporting\nKapsam ve veri niteliği\npothole road surface çukur asfalt\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D020",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D020#details:0-352:0711912893",
+      "doc_id": "YV-D020",
+      "passage_id": "YV-D020#details",
+      "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+      "title_en": "Pothole and Road Surface Fault Reporting",
+      "heading": "Gerekli konum ve etki",
+      "text": "Çukur bildirimi için mahalle, sokak veya cadde, yakın konum tarifi ve mevcut etki alınır. Kullanıcı ölçü vermediyse derinlik santimetre cinsinden uydurulmaz. Araçların kaçınma hareketi veya bildirilen bir ramak kala durumu varsa anlatıldığı gibi kaydedilir. Fotoğraf bulunması yardımcı olabilir ancak sınıflandırma için kişisel kimlik bilgisi gerekmez.",
+      "search_text": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi\nPothole and Road Surface Fault Reporting\nGerekli konum ve etki\npothole road surface çukur asfalt\nÇukur bildirimi için mahalle, sokak veya cadde, yakın konum tarifi ve mevcut etki alınır. Kullanıcı ölçü vermediyse derinlik santimetre cinsinden uydurulmaz. Araçların kaçınma hareketi veya bildirilen bir ramak kala durumu varsa anlatıldığı gibi kaydedilir. Fotoğraf bulunması yardımcı olabilir ancak sınıflandırma için kişisel kimlik bilgisi gerekmez.",
+      "start": 0,
+      "end": 352,
+      "source": "beldesk://synthetic/YV-D020",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D020#limits:0-340:0457a2a009",
+      "doc_id": "YV-D020",
+      "passage_id": "YV-D020#limits",
+      "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi",
+      "title_en": "Pothole and Road Surface Fault Reporting",
+      "heading": "İşlem ve zaman sınırı",
+      "text": "Asistan yolu gördüğünü, çukuru ölçtüğünü veya asfalt ekibi gönderdiğini söylemez. Sıradan çukur ile somut tehlike bildiren olayın önceliği aynı olmak zorunda değildir; proje öncelik belgesi kullanılır. Bu rehber onarımın hangi gün biteceğini içermez. Bir bildirimin öncelik alması, onarımın başlamış veya tamamlanmış olduğu anlamına gelmez.",
+      "search_text": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi\nPothole and Road Surface Fault Reporting\nİşlem ve zaman sınırı\npothole road surface çukur asfalt\nAsistan yolu gördüğünü, çukuru ölçtüğünü veya asfalt ekibi gönderdiğini söylemez. Sıradan çukur ile somut tehlike bildiren olayın önceliği aynı olmak zorunda değildir; proje öncelik belgesi kullanılır. Bu rehber onarımın hangi gün biteceğini içermez. Bir bildirimin öncelik alması, onarımın başlamış veya tamamlanmış olduğu anlamına gelmez.",
+      "start": 0,
+      "end": 340,
+      "source": "beldesk://synthetic/YV-D020",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D021#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D021",
+      "passage_id": "YV-D021#scope",
+      "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+      "title_en": "Sidewalk Damage and Blocked Passage Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi\nSidewalk Damage and Blocked Passage Guide\nKapsam ve veri niteliği\nsidewalk pavement kaldırım geçiş\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D021",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D021#details:0-347:6d20925516",
+      "doc_id": "YV-D021",
+      "passage_id": "YV-D021#details",
+      "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+      "title_en": "Sidewalk Damage and Blocked Passage Guide",
+      "heading": "Hasar ve geçiş bilgileri",
+      "text": "Kaldırım sorunu anlatılırken mahalle ve sokak, hasarın türü ve geçişin tamamen mi kısmen mi engellendiği öğrenilir. Küçük yüzey çatlağı ile çökmüş kaldırım tek bir genel etiketle geçiştirilmez. Bebek arabası veya yaya geçişi üzerindeki etki vatandaşın bildirdiği biçimde kaydedilir; olay yerindeki bütün insanların durumu hakkında tahmin yapılmaz.",
+      "search_text": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi\nSidewalk Damage and Blocked Passage Guide\nHasar ve geçiş bilgileri\nsidewalk pavement kaldırım geçiş\nKaldırım sorunu anlatılırken mahalle ve sokak, hasarın türü ve geçişin tamamen mi kısmen mi engellendiği öğrenilir. Küçük yüzey çatlağı ile çökmüş kaldırım tek bir genel etiketle geçiştirilmez. Bebek arabası veya yaya geçişi üzerindeki etki vatandaşın bildirdiği biçimde kaydedilir; olay yerindeki bütün insanların durumu hakkında tahmin yapılmaz.",
+      "start": 0,
+      "end": 347,
+      "source": "beldesk://synthetic/YV-D021",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D021#limits:0-359:5108c84840",
+      "doc_id": "YV-D021",
+      "passage_id": "YV-D021#limits",
+      "title": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi",
+      "title_en": "Sidewalk Damage and Blocked Passage Guide",
+      "heading": "Taslak ve sınırlar",
+      "text": "Ayrı bir tehlike anlatılıyorsa bu bilgi öncelik değerlendirmesinde korunur. Kullanıcı yalnızca estetik bir düzenleme istiyorsa mevcut hasar veya erişim kaybı varmış gibi yazılmaz. Beldesk yolu kapatamaz, güvenlik bariyeri koyamaz ve tazminat onaylayamaz. Bu kaynak onarım tarihi ve sorumluluk hakkında hukuki karar içermez; yalnızca bildirim hazırlığı sağlar.",
+      "search_text": "Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi\nSidewalk Damage and Blocked Passage Guide\nTaslak ve sınırlar\nsidewalk pavement kaldırım geçiş\nAyrı bir tehlike anlatılıyorsa bu bilgi öncelik değerlendirmesinde korunur. Kullanıcı yalnızca estetik bir düzenleme istiyorsa mevcut hasar veya erişim kaybı varmış gibi yazılmaz. Beldesk yolu kapatamaz, güvenlik bariyeri koyamaz ve tazminat onaylayamaz. Bu kaynak onarım tarihi ve sorumluluk hakkında hukuki karar içermez; yalnızca bildirim hazırlığı sağlar.",
+      "start": 0,
+      "end": 359,
+      "source": "beldesk://synthetic/YV-D021",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D022#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D022",
+      "passage_id": "YV-D022#scope",
+      "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+      "title_en": "Street Lighting Outage Report Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi\nStreet Lighting Outage Report Guide\nKapsam ve veri niteliği\nstreet lighting lamp dark street aydınlatma lamba\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D022",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D022#details:0-361:8aa4a4cd18",
+      "doc_id": "YV-D022",
+      "passage_id": "YV-D022#details",
+      "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+      "title_en": "Street Lighting Outage Report Guide",
+      "heading": "Kapsamı ayırma",
+      "text": "Bir lamba mı, sokağın bir bölümü mü yoksa bütün aydınlatma mı etkileniyor öğrenilir. Lambaların yanmaması ile evlere ve işyerlerine elektrik gelmemesi farklı olaylardır. Kullanıcının verdiği süre, sorunun başlangıcına ilişkin bildirilen bilgi olarak saklanır; başvurunun uygulamada bekleme süresiyle karıştırılmaz. Mahalle ve sokak eksikse konum ayrıca sorulur.",
+      "search_text": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi\nStreet Lighting Outage Report Guide\nKapsamı ayırma\nstreet lighting lamp dark street aydınlatma lamba\nBir lamba mı, sokağın bir bölümü mü yoksa bütün aydınlatma mı etkileniyor öğrenilir. Lambaların yanmaması ile evlere ve işyerlerine elektrik gelmemesi farklı olaylardır. Kullanıcının verdiği süre, sorunun başlangıcına ilişkin bildirilen bilgi olarak saklanır; başvurunun uygulamada bekleme süresiyle karıştırılmaz. Mahalle ve sokak eksikse konum ayrıca sorulur.",
+      "start": 0,
+      "end": 361,
+      "source": "beldesk://synthetic/YV-D022",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D022#limits:0-353:5e8707acc1",
+      "doc_id": "YV-D022",
+      "passage_id": "YV-D022#limits",
+      "title": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi",
+      "title_en": "Street Lighting Outage Report Guide",
+      "heading": "Sıralama ve işlem sınırı",
+      "text": "Ek tehlike bulunmayan aydınlatma örneklerinin önceliği ve sınıf içi sırası kabul edilen proje politikasından gelir. Sadece talepte acil yazması veya sürenin uzaması otomatik sınıf yükseltme kuralı değildir. Model harici kuruluşun adını tahmin etmez, onarım süresi vermez ve elektrik ekibine ulaştığını söylemez. Bu rehber fiziksel arıza kontrolü yapmaz.",
+      "search_text": "Yeşilvadi Sokak Aydınlatması Arızası Bildirimi\nStreet Lighting Outage Report Guide\nSıralama ve işlem sınırı\nstreet lighting lamp dark street aydınlatma lamba\nEk tehlike bulunmayan aydınlatma örneklerinin önceliği ve sınıf içi sırası kabul edilen proje politikasından gelir. Sadece talepte acil yazması veya sürenin uzaması otomatik sınıf yükseltme kuralı değildir. Model harici kuruluşun adını tahmin etmez, onarım süresi vermez ve elektrik ekibine ulaştığını söylemez. Bu rehber fiziksel arıza kontrolü yapmaz.",
+      "start": 0,
+      "end": 353,
+      "source": "beldesk://synthetic/YV-D022",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D023#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D023",
+      "passage_id": "YV-D023#scope",
+      "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+      "title_en": "Traffic Signal Fault Report Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Trafik Sinyali Arızası Bildirimi\nTraffic Signal Fault Report Guide\nKapsam ve veri niteliği\ntraffic signal crossing trafik lambası sinyal\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D023",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D023#details:0-339:1ec4657a0e",
+      "doc_id": "YV-D023",
+      "passage_id": "YV-D023#details",
+      "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+      "title_en": "Traffic Signal Fault Report Guide",
+      "heading": "Sinyal konumu ve davranışı",
+      "text": "Trafik sinyali için kavşak veya yaya geçidi, etkilenen yön ve vatandaşın gözlemlediği ışık davranışı sorulur. Bir ışığın sönük olması ile araç ve yaya fazlarının çakışması aynı durum olarak yazılmaz. Asistan gözlem yapılmayan yönler için çalışıyor ya da çalışmıyor diyemez. Birden fazla ayrı sinyal arızası varsa her olayın konumu korunur.",
+      "search_text": "Yeşilvadi Trafik Sinyali Arızası Bildirimi\nTraffic Signal Fault Report Guide\nSinyal konumu ve davranışı\ntraffic signal crossing trafik lambası sinyal\nTrafik sinyali için kavşak veya yaya geçidi, etkilenen yön ve vatandaşın gözlemlediği ışık davranışı sorulur. Bir ışığın sönük olması ile araç ve yaya fazlarının çakışması aynı durum olarak yazılmaz. Asistan gözlem yapılmayan yönler için çalışıyor ya da çalışmıyor diyemez. Birden fazla ayrı sinyal arızası varsa her olayın konumu korunur.",
+      "start": 0,
+      "end": 339,
+      "source": "beldesk://synthetic/YV-D023",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D023#limits:0-362:144fc6bf0d",
+      "doc_id": "YV-D023",
+      "passage_id": "YV-D023#limits",
+      "title": "Yeşilvadi Trafik Sinyali Arızası Bildirimi",
+      "title_en": "Traffic Signal Fault Report Guide",
+      "heading": "Güvenlik ve araç sınırı",
+      "text": "Bu rehber trafiği yönetme veya sinyal programını değiştirme yetkisi vermez. Asistan bir sinyalin düzeltildiğini veya ulaşım ekibinin yola çıktığını söylemez. Somut tehlike bilgisi sınıflandırmada kaybedilmemeli; bilinmeyen bilgiler sorulmalıdır. Onarım zamanı bu kaynakta yoktur. Bildirim metni ve bulunan kaynak bir operasyonel müdahale sonucu olarak sunulamaz.",
+      "search_text": "Yeşilvadi Trafik Sinyali Arızası Bildirimi\nTraffic Signal Fault Report Guide\nGüvenlik ve araç sınırı\ntraffic signal crossing trafik lambası sinyal\nBu rehber trafiği yönetme veya sinyal programını değiştirme yetkisi vermez. Asistan bir sinyalin düzeltildiğini veya ulaşım ekibinin yola çıktığını söylemez. Somut tehlike bilgisi sınıflandırmada kaybedilmemeli; bilinmeyen bilgiler sorulmalıdır. Onarım zamanı bu kaynakta yoktur. Bildirim metni ve bulunan kaynak bir operasyonel müdahale sonucu olarak sunulamaz.",
+      "start": 0,
+      "end": 362,
+      "source": "beldesk://synthetic/YV-D023",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D024#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D024",
+      "passage_id": "YV-D024#scope",
+      "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+      "title_en": "Water Leak and Sewer Overflow Report Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi\nWater Leak and Sewer Overflow Report Guide\nKapsam ve veri niteliği\nsewer overflow water leak kanalizasyon su kaçağı\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D024",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D024#details:0-351:15f3baae0e",
+      "doc_id": "YV-D024",
+      "passage_id": "YV-D024#details",
+      "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+      "title_en": "Water Leak and Sewer Overflow Report Guide",
+      "heading": "Sorunu ayırma",
+      "text": "Su kaçağı bildirimi ile kanalizasyon taşması ayrılır; vatandaş hangisini bildiğini açıklayabilir. Mahalle, sokak, akışın yeri ve yol veya yaya geçişine bildirilen etki kaydedilir. Kaynağı bilinmeyen sıvının türü model tarafından kesinleştirilmez. Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur.",
+      "search_text": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi\nWater Leak and Sewer Overflow Report Guide\nSorunu ayırma\nsewer overflow water leak kanalizasyon su kaçağı\nSu kaçağı bildirimi ile kanalizasyon taşması ayrılır; vatandaş hangisini bildiğini açıklayabilir. Mahalle, sokak, akışın yeri ve yol veya yaya geçişine bildirilen etki kaydedilir. Kaynağı bilinmeyen sıvının türü model tarafından kesinleştirilmez. Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur.",
+      "start": 0,
+      "end": 351,
+      "source": "beldesk://synthetic/YV-D024",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D024#limits:0-353:4e0bb2db56",
+      "doc_id": "YV-D024",
+      "passage_id": "YV-D024#limits",
+      "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi",
+      "title_en": "Water Leak and Sewer Overflow Report Guide",
+      "heading": "Gözlem ve müdahale sınırı",
+      "text": "Beldesk vanayı kapattığını, numune aldığını veya ekip yönlendirdiğini söylemez. Kesintinin ne zaman biteceği ya da suyun kullanılabilirliği hakkında bu rehberde veri yoktur. Kullanıcı kesin bir servis saati sorarsa tahmin yapılmaz. Açık bir tehlike anlatılıyorsa ilgili proje yönlendirmesi korunur; kayıt veya sevk işleminin gerçekleştiği iddia edilmez.",
+      "search_text": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi\nWater Leak and Sewer Overflow Report Guide\nGözlem ve müdahale sınırı\nsewer overflow water leak kanalizasyon su kaçağı\nBeldesk vanayı kapattığını, numune aldığını veya ekip yönlendirdiğini söylemez. Kesintinin ne zaman biteceği ya da suyun kullanılabilirliği hakkında bu rehberde veri yoktur. Kullanıcı kesin bir servis saati sorarsa tahmin yapılmaz. Açık bir tehlike anlatılıyorsa ilgili proje yönlendirmesi korunur; kayıt veya sevk işleminin gerçekleştiği iddia edilmez.",
+      "start": 0,
+      "end": 353,
+      "source": "beldesk://synthetic/YV-D024",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D025#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D025",
+      "passage_id": "YV-D025#scope",
+      "title": "Yeşilvadi Gürültü ve Çevresel Rahatsızlık Bildirimi",
+      "title_en": "Noise and Environmental Nuisance Report Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Gürültü ve Çevresel Rahatsızlık Bildirimi\nNoise and Environmental Nuisance Report Guide\nKapsam ve veri niteliği\nnoise construction gürültü inşaat\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D025",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D025#details:0-351:93fff8bb77",
+      "doc_id": "YV-D025",
+      "passage_id": "YV-D025#details",
+      "title": "Yeşilvadi Gürültü ve Çevresel Rahatsızlık Bildirimi",
+      "title_en": "Noise and Environmental Nuisance Report Guide",
+      "heading": "Bildirim bilgileri",
+      "text": "Gürültü hakkında konum, kaynağın kullanıcı tarafından bilinen türü, görüldüğü gün veya saat aralığı ve tekrar edip etmediği sorulur. Kullanıcı ölçüm yapmadıysa desibel değeri üretilmez. İnşaat, işletme ve geçici etkinlik kaynaklı durumlar ayrılabilir. Şikâyet edilen kişinin adı veya özel iletişim bilgisi genel bildirim taslağı için zorunlu değildir.",
+      "search_text": "Yeşilvadi Gürültü ve Çevresel Rahatsızlık Bildirimi\nNoise and Environmental Nuisance Report Guide\nBildirim bilgileri\nnoise construction gürültü inşaat\nGürültü hakkında konum, kaynağın kullanıcı tarafından bilinen türü, görüldüğü gün veya saat aralığı ve tekrar edip etmediği sorulur. Kullanıcı ölçüm yapmadıysa desibel değeri üretilmez. İnşaat, işletme ve geçici etkinlik kaynaklı durumlar ayrılabilir. Şikâyet edilen kişinin adı veya özel iletişim bilgisi genel bildirim taslağı için zorunlu değildir.",
+      "start": 0,
+      "end": 351,
+      "source": "beldesk://synthetic/YV-D025",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D025#limits:0-358:d1baa88762",
+      "doc_id": "YV-D025",
+      "passage_id": "YV-D025#limits",
+      "title": "Yeşilvadi Gürültü ve Çevresel Rahatsızlık Bildirimi",
+      "title_en": "Noise and Environmental Nuisance Report Guide",
+      "heading": "Hukuki sonuç ve işlem sınırı",
+      "text": "Bu sentetik rehber yasal sessizlik saatleri veya para cezası tutarları belirlemez. Asistan komşunun suç işlediğini, ceza kesildiğini ya da zabıtanın yola çıktığını söylemez. Bir başvurunun sonucu ancak ilgili işlem verisiyle bilinebilir; bu sürümde o araç yoktur. Kaynak bulunmayan mevzuat yorumları ve kesin yaptırım vaatleri yerine kapsam sınırı açıklanır.",
+      "search_text": "Yeşilvadi Gürültü ve Çevresel Rahatsızlık Bildirimi\nNoise and Environmental Nuisance Report Guide\nHukuki sonuç ve işlem sınırı\nnoise construction gürültü inşaat\nBu sentetik rehber yasal sessizlik saatleri veya para cezası tutarları belirlemez. Asistan komşunun suç işlediğini, ceza kesildiğini ya da zabıtanın yola çıktığını söylemez. Bir başvurunun sonucu ancak ilgili işlem verisiyle bilinebilir; bu sürümde o araç yoktur. Kaynak bulunmayan mevzuat yorumları ve kesin yaptırım vaatleri yerine kapsam sınırı açıklanır.",
+      "start": 0,
+      "end": 358,
+      "source": "beldesk://synthetic/YV-D025",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D026#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D026",
+      "passage_id": "YV-D026#scope",
+      "title": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı",
+      "title_en": "Stray Animal Report and Request Types",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı\nStray Animal Report and Request Types\nKapsam ve veri niteliği\nstray animal lost pet sokak hayvanı saldırgan\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D026",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D026#details:0-345:40bba7f14a",
+      "doc_id": "YV-D026",
+      "passage_id": "YV-D026#details",
+      "title": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı",
+      "title_en": "Stray Animal Report and Request Types",
+      "heading": "Talebin türünü ayırma",
+      "text": "Sokak hayvanı bildirimi, kayıp evcil hayvan araması ve evcil hayvan kaydı farklı taleplerdir. Saha bildirimi için konum ve kullanıcının gözlemlediği davranış sorulur. Hayvanın türü belirtilmediyse kesinleştirilmez. Saldırganlık veya yaralanma bildirimi varsa kullanıcı anlatımı korunur; model fotoğraftan kesin teşhis veya niyet çıkarımı yapmaz.",
+      "search_text": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı\nStray Animal Report and Request Types\nTalebin türünü ayırma\nstray animal lost pet sokak hayvanı saldırgan\nSokak hayvanı bildirimi, kayıp evcil hayvan araması ve evcil hayvan kaydı farklı taleplerdir. Saha bildirimi için konum ve kullanıcının gözlemlediği davranış sorulur. Hayvanın türü belirtilmediyse kesinleştirilmez. Saldırganlık veya yaralanma bildirimi varsa kullanıcı anlatımı korunur; model fotoğraftan kesin teşhis veya niyet çıkarımı yapmaz.",
+      "start": 0,
+      "end": 345,
+      "source": "beldesk://synthetic/YV-D026",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D026#limits:0-346:ef919ef50b",
+      "doc_id": "YV-D026",
+      "passage_id": "YV-D026#limits",
+      "title": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı",
+      "title_en": "Stray Animal Report and Request Types",
+      "heading": "Operasyon sınırı",
+      "text": "Beldesk hayvan toplama ekibini yönlendiremez, barınakta yer ayıramaz veya bir hayvanın alındığını doğrulayamaz. Bu rehber veteriner tedavisi, yakalama veya müdahale talimatı vermez. İlgili birime bildirim için taslak hazırlanabilir; ancak taslak kayıt değildir. Hizmetin kesin geliş saati, barınak adresi ve mevcut kapasite bu kaynakta yer almaz.",
+      "search_text": "Yeşilvadi Sokak Hayvanı Bildirimi ve Konu Ayrımı\nStray Animal Report and Request Types\nOperasyon sınırı\nstray animal lost pet sokak hayvanı saldırgan\nBeldesk hayvan toplama ekibini yönlendiremez, barınakta yer ayıramaz veya bir hayvanın alındığını doğrulayamaz. Bu rehber veteriner tedavisi, yakalama veya müdahale talimatı vermez. İlgili birime bildirim için taslak hazırlanabilir; ancak taslak kayıt değildir. Hizmetin kesin geliş saati, barınak adresi ve mevcut kapasite bu kaynakta yer almaz.",
+      "start": 0,
+      "end": 346,
+      "source": "beldesk://synthetic/YV-D026",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D027#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D027",
+      "passage_id": "YV-D027#scope",
+      "title": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri",
+      "title_en": "Duplicate Reports and Updates Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri\nDuplicate Reports and Updates Guide\nKapsam ve veri niteliği\nduplicate update tekrar bildirim güncelleme\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D027",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D027#details:0-350:c758f0be76",
+      "doc_id": "YV-D027",
+      "passage_id": "YV-D027#details",
+      "title": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri",
+      "title_en": "Duplicate Reports and Updates Guide",
+      "heading": "Tekrar ile yeni olay ayrımı",
+      "text": "Aynı olaya ilişkin yeni mesaj, başka bir arıza olduğu varsayımıyla otomatik yeni kayıt sayılmaz. Varsa önceki referans ve olayın konumu öğrenilir. Bildirimlerin aynı olay olduğuna karar vermek için veritabanı ve uygulama kuralları gerekir; bu sürüm bunlara sahip değildir. Tek kişinin tekrar yazması daha fazla kişinin etkilendiğinin kanıtı değildir.",
+      "search_text": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri\nDuplicate Reports and Updates Guide\nTekrar ile yeni olay ayrımı\nduplicate update tekrar bildirim güncelleme\nAynı olaya ilişkin yeni mesaj, başka bir arıza olduğu varsayımıyla otomatik yeni kayıt sayılmaz. Varsa önceki referans ve olayın konumu öğrenilir. Bildirimlerin aynı olay olduğuna karar vermek için veritabanı ve uygulama kuralları gerekir; bu sürüm bunlara sahip değildir. Tek kişinin tekrar yazması daha fazla kişinin etkilendiğinin kanıtı değildir.",
+      "start": 0,
+      "end": 350,
+      "source": "beldesk://synthetic/YV-D027",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D027#limits:0-374:c3701a3853",
+      "doc_id": "YV-D027",
+      "passage_id": "YV-D027#limits",
+      "title": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri",
+      "title_en": "Duplicate Reports and Updates Guide",
+      "heading": "Zaman ve yeni kanıt",
+      "text": "Birleştirme ileride uygulanırsa ilk kayıt zamanı korunmalı, güncelleme geçmişi kaybolmamalıdır. Yeni tehlike veya daha geniş etki bildirilmesi ise yeniden değerlendirmeye konu olabilir. Beldesk mevcut sürümde kayıt birleştirdiğini, sınıfı sistemde yükselttiğini veya önceki kaydı bulduğunu söylemez. Süre metni tek başına doğrulanmış bir takvim tarihi olarak sunulmamalıdır.",
+      "search_text": "Yeşilvadi Tekrarlanan Bildirim ve Güncelleme İlkeleri\nDuplicate Reports and Updates Guide\nZaman ve yeni kanıt\nduplicate update tekrar bildirim güncelleme\nBirleştirme ileride uygulanırsa ilk kayıt zamanı korunmalı, güncelleme geçmişi kaybolmamalıdır. Yeni tehlike veya daha geniş etki bildirilmesi ise yeniden değerlendirmeye konu olabilir. Beldesk mevcut sürümde kayıt birleştirdiğini, sınıfı sistemde yükselttiğini veya önceki kaydı bulduğunu söylemez. Süre metni tek başına doğrulanmış bir takvim tarihi olarak sunulmamalıdır.",
+      "start": 0,
+      "end": 374,
+      "source": "beldesk://synthetic/YV-D027",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D028#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D028",
+      "passage_id": "YV-D028#scope",
+      "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+      "title_en": "Ticket Status and Ownership Boundary",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı\nTicket Status and Ownership Boundary\nKapsam ve veri niteliği\nticket status ownership şikâyet durumu kayıt sorgulama\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D028",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D028#details:0-355:da9f4a3df7",
+      "doc_id": "YV-D028",
+      "passage_id": "YV-D028#details",
+      "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+      "title_en": "Ticket Status and Ownership Boundary",
+      "heading": "Referans ve sahiplik",
+      "text": "Kurgusal kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir. Yanlış biçimli bir numara model tarafından tahminle düzeltilmez. İleride durum sorgusunda kayıt referansı ile telefonun son dört hanesi istenebilir; bunlar tek başına güçlü sahiplik kanıtı değildir. Başkasına ait olduğunu söyleyen kullanıcıya eşleşen bilgiler verse bile kayıt detayı açıklanmaz.",
+      "search_text": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı\nTicket Status and Ownership Boundary\nReferans ve sahiplik\nticket status ownership şikâyet durumu kayıt sorgulama\nKurgusal kayıt referansı biçimi YV-YYYY-NNNNNN şeklindedir. Yanlış biçimli bir numara model tarafından tahminle düzeltilmez. İleride durum sorgusunda kayıt referansı ile telefonun son dört hanesi istenebilir; bunlar tek başına güçlü sahiplik kanıtı değildir. Başkasına ait olduğunu söyleyen kullanıcıya eşleşen bilgiler verse bile kayıt detayı açıklanmaz.",
+      "start": 0,
+      "end": 355,
+      "source": "beldesk://synthetic/YV-D028",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D028#limits:0-345:8a3e45c96d",
+      "doc_id": "YV-D028",
+      "passage_id": "YV-D028#limits",
+      "title": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı",
+      "title_en": "Ticket Status and Ownership Boundary",
+      "heading": "Canlı sorgu sınırı",
+      "text": "Week 3 sürümünde kayıt veritabanı bağlantısı yoktur. Bu nedenle herhangi bir kaydın açık, kapalı veya incelemede olduğu söylenemez. Asistan kaydı kontrol ettim diyemez; bir referansın biçimini açıklamak o kaydın gerçekten var olduğunu doğrulamaz. Ekip geliş zamanı ve kişisel kayıt geçmişi doküman aramasıyla elde edilmiş gibi gösterilmemelidir.",
+      "search_text": "Yeşilvadi Şikâyet Durumu Sorgulama ve Sahiplik Sınırı\nTicket Status and Ownership Boundary\nCanlı sorgu sınırı\nticket status ownership şikâyet durumu kayıt sorgulama\nWeek 3 sürümünde kayıt veritabanı bağlantısı yoktur. Bu nedenle herhangi bir kaydın açık, kapalı veya incelemede olduğu söylenemez. Asistan kaydı kontrol ettim diyemez; bir referansın biçimini açıklamak o kaydın gerçekten var olduğunu doğrulamaz. Ekip geliş zamanı ve kişisel kayıt geçmişi doküman aramasıyla elde edilmiş gibi gösterilmemelidir.",
+      "start": 0,
+      "end": 345,
+      "source": "beldesk://synthetic/YV-D028",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D029#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D029",
+      "passage_id": "YV-D029#scope",
+      "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+      "title_en": "Municipal Service Scope and Referral Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi\nMunicipal Service Scope and Referral Guide\nKapsam ve veri niteliği\njurisdiction referral yetki alanı kurum\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D029",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D029#details:0-375:5108dd7032",
+      "doc_id": "YV-D029",
+      "passage_id": "YV-D029#details",
+      "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+      "title_en": "Municipal Service Scope and Referral Guide",
+      "heading": "Konuya göre yönlendirme",
+      "text": "Beldesk belediye hizmetleri hakkında doküman temelli açıklama yapar ve saha arızaları için taslak hazırlayabilir. Bir arızanın başka bir kuruluşla ilişkili olabileceği, sorunun önceliğinden ayrı değerlendirilir. Elektrik kesintisi örneğinde dağıtım şirketinin adı model tarafından tahmin edilmez. Kurumun kimliği uygulamanın doğrulanmış yönlendirme verisiyle belirlenmelidir.",
+      "search_text": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi\nMunicipal Service Scope and Referral Guide\nKonuya göre yönlendirme\njurisdiction referral yetki alanı kurum\nBeldesk belediye hizmetleri hakkında doküman temelli açıklama yapar ve saha arızaları için taslak hazırlayabilir. Bir arızanın başka bir kuruluşla ilişkili olabileceği, sorunun önceliğinden ayrı değerlendirilir. Elektrik kesintisi örneğinde dağıtım şirketinin adı model tarafından tahmin edilmez. Kurumun kimliği uygulamanın doğrulanmış yönlendirme verisiyle belirlenmelidir.",
+      "start": 0,
+      "end": 375,
+      "source": "beldesk://synthetic/YV-D029",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D029#limits:0-349:2fe1e67c22",
+      "doc_id": "YV-D029",
+      "passage_id": "YV-D029#limits",
+      "title": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi",
+      "title_en": "Municipal Service Scope and Referral Guide",
+      "heading": "Kapsam dışı işlemler",
+      "text": "Ödeme yapma, hukuki karar verme, siyasi görüş bildirme, vatandaş adına resmî başvuru gönderme ve gerçek ekip sevki bu sürümün kapsamı dışındadır. Kullanıcı böyle bir işlem isterse Beldesk neyi açıklayabildiğini ve hangi işlemi gerçekleştiremediğini belirtir. Bir sorunun kapsam dışı olması, özel veri veya kurum içi belge paylaşılmasına izin vermez.",
+      "search_text": "Yeşilvadi Belediye Hizmeti ve Yetki Alanı Rehberi\nMunicipal Service Scope and Referral Guide\nKapsam dışı işlemler\njurisdiction referral yetki alanı kurum\nÖdeme yapma, hukuki karar verme, siyasi görüş bildirme, vatandaş adına resmî başvuru gönderme ve gerçek ekip sevki bu sürümün kapsamı dışındadır. Kullanıcı böyle bir işlem isterse Beldesk neyi açıklayabildiğini ve hangi işlemi gerçekleştiremediğini belirtir. Bir sorunun kapsam dışı olması, özel veri veya kurum içi belge paylaşılmasına izin vermez.",
+      "start": 0,
+      "end": 349,
+      "source": "beldesk://synthetic/YV-D029",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D030#scope:0-278:9d611cf5ae",
+      "doc_id": "YV-D030",
+      "passage_id": "YV-D030#scope",
+      "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+      "title_en": "Unavailable Information and Future Dates Guide",
+      "heading": "Kapsam ve veri niteliği",
+      "text": "Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "search_text": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları\nUnavailable Information and Future Dates Guide\nKapsam ve veri niteliği\nunknown answer crew arrival bilinmeyen bilgi ekip geliş\nBu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.",
+      "start": 0,
+      "end": 278,
+      "source": "beldesk://synthetic/YV-D030",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D030#details:0-324:66ddb13f4f",
+      "doc_id": "YV-D030",
+      "passage_id": "YV-D030#details",
+      "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+      "title_en": "Unavailable Information and Future Dates Guide",
+      "heading": "Bilgi yokluğu",
+      "text": "Bir rehberin konu bakımından ilgili olması, sorunun cevabını mutlaka içerdiği anlamına gelmez. Ekip yarın kaçta gelir, başkanın maaşı nedir veya gelecekte hangi ihale kazanılır gibi sorular bu corpus sürümünde yanıtlanamaz. Asistan benzer bir paragraf bulduğunu gerekçe göstererek sayı, saat veya kesin sonuç uydurmamalıdır.",
+      "search_text": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları\nUnavailable Information and Future Dates Guide\nBilgi yokluğu\nunknown answer crew arrival bilinmeyen bilgi ekip geliş\nBir rehberin konu bakımından ilgili olması, sorunun cevabını mutlaka içerdiği anlamına gelmez. Ekip yarın kaçta gelir, başkanın maaşı nedir veya gelecekte hangi ihale kazanılır gibi sorular bu corpus sürümünde yanıtlanamaz. Asistan benzer bir paragraf bulduğunu gerekçe göstererek sayı, saat veya kesin sonuç uydurmamalıdır.",
+      "start": 0,
+      "end": 324,
+      "source": "beldesk://synthetic/YV-D030",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D030#limits:0-367:035aaade71",
+      "doc_id": "YV-D030",
+      "passage_id": "YV-D030#limits",
+      "title": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları",
+      "title_en": "Unavailable Information and Future Dates Guide",
+      "heading": "Kaynaklı cevap sınırı",
+      "text": "Cevaptaki her doğrulanabilir iddia, gerçekten verilen kaynak parçasıyla desteklenmelidir. Bir cümlenin sonuna kaynak numarası eklemek tek başına doğruluk sağlamaz. Kaynağın sessiz kaldığı bölüm açıkça belirtilir; desteklenen genel süreç varsa bu ayrı açıklanabilir. Kayıtlı bir arama sonucu, belgeyi değiştirme, başvuru gönderme veya ekip yönlendirme işlemi değildir.",
+      "search_text": "Yeşilvadi Kaynakta Bulunmayan Bilgi ve Tarih Soruları\nUnavailable Information and Future Dates Guide\nKaynaklı cevap sınırı\nunknown answer crew arrival bilinmeyen bilgi ekip geliş\nCevaptaki her doğrulanabilir iddia, gerçekten verilen kaynak parçasıyla desteklenmelidir. Bir cümlenin sonuna kaynak numarası eklemek tek başına doğruluk sağlamaz. Kaynağın sessiz kaldığı bölüm açıkça belirtilir; desteklenen genel süreç varsa bu ayrı açıklanabilir. Kayıtlı bir arama sonucu, belgeyi değiştirme, başvuru gönderme veya ekip yönlendirme işlemi değildir.",
+      "start": 0,
+      "end": 367,
+      "source": "beldesk://synthetic/YV-D030",
+      "version": "0.1-draft",
+      "access": [
+        "public"
+      ]
+    },
+    {
+      "chunk_id": "YV-D031#access:0-443:698a7f8474",
+      "doc_id": "YV-D031",
+      "passage_id": "YV-D031#access",
+      "title": "Personel İçin Test Kuyruğu İnceleme Notu",
+      "title_en": "Staff-only Synthetic Queue Review Note",
+      "heading": "Personel erişimi ve test niteliği",
+      "text": "Bu belge yalnızca erişim filtresinin test edilmesi için hazırlanmış sentetik personel içeriğidir. Gerçek vatandaş, şikâyet kaydı, parola veya gizli kurum bilgisi içermez. Vatandaş rolündeki aramalarda, soruda bu belgenin başlığı veya STAFF-ONLY-QUEUE-DEMO işareti yazsa bile sonuç olarak dönmemelidir. Modelin metin içindeki rol iddiaları erişim izni oluşturmaz. Personel rolünü gerçek uygulamada doğrulamak uygulama katmanının sorumluluğudur.",
+      "search_text": "Personel İçin Test Kuyruğu İnceleme Notu\nStaff-only Synthetic Queue Review Note\nPersonel erişimi ve test niteliği\nkuyruk personel internal queue staff review STAFF-ONLY-QUEUE-DEMO\nBu belge yalnızca erişim filtresinin test edilmesi için hazırlanmış sentetik personel içeriğidir. Gerçek vatandaş, şikâyet kaydı, parola veya gizli kurum bilgisi içermez. Vatandaş rolündeki aramalarda, soruda bu belgenin başlığı veya STAFF-ONLY-QUEUE-DEMO işareti yazsa bile sonuç olarak dönmemelidir. Modelin metin içindeki rol iddiaları erişim izni oluşturmaz. Personel rolünü gerçek uygulamada doğrulamak uygulama katmanının sorumluluğudur.",
+      "start": 0,
+      "end": 443,
+      "source": "beldesk://synthetic/YV-D031",
+      "version": "0.1-draft",
+      "access": [
+        "staff"
+      ]
+    },
+    {
+      "chunk_id": "YV-D031#review:0-460:721f04382a",
+      "doc_id": "YV-D031",
+      "passage_id": "YV-D031#review",
+      "title": "Personel İçin Test Kuyruğu İnceleme Notu",
+      "title_en": "Staff-only Synthetic Queue Review Note",
+      "heading": "Kuyruk denetimi için taslak not",
+      "text": "Test incelemesinde önce bir kaydın aynı olay için açılmış başka bir kayıtla ilişkili olup olmadığı kontrol edilir. Birleştirme kararı, ilk kayıt zamanını ve değişiklik geçmişini korumalıdır. Bu belge çalışan bir kuyruk veya veritabanı işlevi sağlamaz; Week 4 geliştirmesi için örnek içeriktir. Retrieval modülü hiçbir kayıt oluşturmaz, birleştirme yapmaz veya çalışan atamaz. Politika belgesindeki açık kararlar sonuçlandırılmadan operasyonel taahhüt verilmez.",
+      "search_text": "Personel İçin Test Kuyruğu İnceleme Notu\nStaff-only Synthetic Queue Review Note\nKuyruk denetimi için taslak not\nkuyruk personel internal queue staff review STAFF-ONLY-QUEUE-DEMO\nTest incelemesinde önce bir kaydın aynı olay için açılmış başka bir kayıtla ilişkili olup olmadığı kontrol edilir. Birleştirme kararı, ilk kayıt zamanını ve değişiklik geçmişini korumalıdır. Bu belge çalışan bir kuyruk veya veritabanı işlevi sağlamaz; Week 4 geliştirmesi için örnek içeriktir. Retrieval modülü hiçbir kayıt oluşturmaz, birleştirme yapmaz veya çalışan atamaz. Politika belgesindeki açık kararlar sonuçlandırılmadan operasyonel taahhüt verilmez.",
+      "start": 0,
+      "end": 460,
+      "source": "beldesk://synthetic/YV-D031",
+      "version": "0.1-draft",
+      "access": [
+        "staff"
+      ]
+    }
+  ]
+}

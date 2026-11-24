@@ -1,0 +1,166 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Kaldırım çökmüş, bebek arabasıyla yola inmek zorunda kalıyoruz. Başvuruda sadece adresi yazmam yeterli mi?",
+    "language": "tr",
+    "sources_sha256": "ade1086abd40485a71661938542d1b05adabd1c7470e1cb35803fe57f6632847",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Başvuruda sadece adresin yazılması yeterli değildir; kaldırımın bulunduğu mahalleyi, sokağı ve hasarın türünü belirtmeniz gerekir. [1]\nGeçişin bebek arabasıyla mümkün olmadığını gözlemlediyseniz, bu durumu açıklamanız başvurunuz için önemlidir. [1][3]\nHasarın bina girişi, durak veya kavşak yakınında olup olmadığını ve etkilenen alanın genişliğini belirtmeniz faydalı olur. [1]\nKonum işareti eklemek veya fotoğraf paylaşmak, aynı sokaktaki farklı noktaların ayırt edilmesini kolaylaştırır. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Başvuruda sadece adresin yazılması yeterli değildir; kaldırımın bulunduğu mahalleyi, sokağı ve hasarın türünü belirtmeniz gerekir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Kaldırımın bulunduğu mahalleyi ve sokağı, hasarın türünü ve geçişin tamamen mi yoksa kısmen mi engellendiğini belirtin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Geçişin bebek arabasıyla mümkün olmadığını gözlemlediyseniz, bu durumu açıklamanız başvurunuz için önemlidir.",
+        "citations": [
+          1,
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Tekerlekli sandalye ya da bebek arabasıyla geçişin mümkün olmadığını gözlemlediyseniz bunu yazabilirsiniz."
+          },
+          {
+            "citation": 3,
+            "quote": "Tekerlekli sandalye, bebek arabası veya başka bir araçla geçemiyorsanız bu etkiyi açıklayın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Hasarın bina girişi, durak veya kavşak yakınında olup olmadığını ve etkilenen alanın genişliğini belirtmeniz faydalı olur.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Hasar bir bina girişi, durak veya kavşak yakınındaysa bu işareti ekleyin. Yalnız dar bir bölüm mü yoksa uzun bir kaldırım kesimi mi etkilendiğini açıklayın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Konum işareti eklemek veya fotoğraf paylaşmak, aynı sokaktaki farklı noktaların ayırt edilmesini kolaylaştırır.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Fotoğraf ve konum işareti, aynı sokaktaki farklı noktaları ayırmayı kolaylaştırır."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#details",
+        "chunk_id": "YV-D021#details:0-466:f439591417",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi",
+        "heading": "Konum ve geçiş durumu",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "citizen-v2",
+        "text": "Kaldırımın bulunduğu mahalleyi ve sokağı, hasarın türünü ve geçişin tamamen mi yoksa kısmen mi engellendiğini belirtin. Hasar bir bina girişi, durak veya kavşak yakınındaysa bu işareti ekleyin. Yalnız dar bir bölüm mü yoksa uzun bir kaldırım kesimi mi etkilendiğini açıklayın. Tekerlekli sandalye ya da bebek arabasıyla geçişin mümkün olmadığını gözlemlediyseniz bunu yazabilirsiniz. Fotoğraf ve konum işareti, aynı sokaktaki farklı noktaları ayırmayı kolaylaştırır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#scope",
+        "chunk_id": "YV-D021#scope:0-325:634fd17c3e",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi",
+        "heading": "Kaldırım bakım talebi",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "citizen-v2",
+        "text": "Kırık veya yerinden oynamış kaplama, çökme, yüksek yüzey farkı ve geçişi daraltan hasarlar kaldırım bakım bildiriminin konusudur. Yeni bir kaldırım yapılması isteği ile mevcut kaldırımın onarılması farklı başvurulardır. Sorunu bir araçla geçememe veya yayaların başka güzergâha yönelmesi şeklinde yaşıyorsanız bunu açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D019",
+        "passage_id": "YV-D019#details",
+        "chunk_id": "YV-D019#details:0-460:d41fa7a839",
+        "title": "Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi",
+        "heading": "Konum ve engeli açıklama",
+        "source": "beldesk://synthetic/YV-D019",
+        "version": "citizen-v2",
+        "text": "Etkilenen girişin, kaldırımın veya geçişin konumunu ve engelin ne olduğunu belirtin. Rampa eksikliği, bozuk yüzey, basamak ya da geçişi kapatan nesneyi görüldüğü biçimiyle tarif edin. Tekerlekli sandalye, bebek arabası veya başka bir araçla geçemiyorsanız bu etkiyi açıklayın. Erişilebilirlik bildirimi için sağlık raporu, tanı veya engellilik belgesi gerekmez. Sorunun bulunduğu yer, ev adresinizden farklı olabilir; bildirimde asıl gereken engelin konumudur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#limits",
+        "chunk_id": "YV-D021#limits:0-429:13f1b37e1f",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi",
+        "heading": "Takip ve bağlantılı talepler",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "citizen-v2",
+        "text": "Daha önce aynı noktaya ilişkin başvurunuz varsa numarasını ekleyerek yeni durumu bildirin. Sorun bir rampada veya bina girişindeyse erişilebilirlik ihtiyacınızı da açıklayın. Yol yüzeyindeki çukur ile kaldırım üzerindeki hasar aynı noktada bulunsa bile iki farklı bakım konusu olabilir. Başvuru takibinde hangi kısmın onarıldığını ve hangi kısmın hâlâ geçişi etkilediğini belirtmeniz, kalan ihtiyacın anlaşılmasına yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#scope",
+        "chunk_id": "YV-D020#scope:0-322:ae119430fd",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı",
+        "heading": "Yol yüzeyindeki hangi sorunlar bildirilir?",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "citizen-v2",
+        "text": "Yol çukuru, çökmüş asfalt, kabarmış yüzey ve yol üzerinde geçişi etkileyen hasarlar için yol bakım bildirimi yapılabilir. Belirli bir hasarı bildirmek ile bütün yolun yenilenmesini talep etmek farklı konulardır. Hasarın bulunduğu yer ve araç ya da yaya geçişi üzerindeki etkisi, başvurunun anlaşılması için temel bilgidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2272,
+    "output_tokens": 506,
+    "latency_s": 4.791847708052956,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "99390a10674af2c0e37720d2743e747faabacb2cb19e859664ccabc4fe797fef",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Başvuruda sadece adresin yazılması yeterli değildir; kaldırımın bulunduğu mahalleyi, sokağı ve hasarın türünü belirtmeniz gerekir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Kaldırımın bulunduğu mahalleyi ve sokağı, hasarın türünü ve geçişin tamamen mi yoksa kısmen mi engellendiğini belirtin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Geçişin bebek arabasıyla mümkün olmadığını gözlemlediyseniz, bu durumu açıklamanız başvurunuz için önemlidir.\",\n      \"citations\": [1, 3],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Tekerlekli sandalye ya da bebek arabasıyla geçişin mümkün olmadığını gözlemlediyseniz bunu yazabilirsiniz.\"\n        },\n        {\n          \"citation\": 3,\n          \"quote\": \"Tekerlekli sandalye, bebek arabası veya başka bir araçla geçemiyorsanız bu etkiyi açıklayın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Hasarın bina girişi, durak veya kavşak yakınında olup olmadığını ve etkilenen alanın genişliğini belirtmeniz faydalı olur.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Hasar bir bina girişi, durak veya kavşak yakınındaysa bu işareti ekleyin. Yalnız dar bir bölüm mü yoksa uzun bir kaldırım kesimi mi etkilendiğini açıklayın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Konum işareti eklemek veya fotoğraf paylaşmak, aynı sokaktaki farklı noktaların ayırt edilmesini kolaylaştırır.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Fotoğraf ve konum işareti, aynı sokaktaki farklı noktaları ayırmayı kolaylaştırır.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:42:13.928454+00:00",
+    "wall_latency_including_pacing_s": 7.858606250025332
+  }
+}

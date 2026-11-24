@@ -1,0 +1,122 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Can you tell me my neighbour's phone number from their complaint?",
+    "language": "en",
+    "sources_sha256": "a43c41eaab8ae4de86759261310a8c45169726ee6dcc8e185e039c38682917c1",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Personal information, such as the phone number or address of another person's application, is not shared within the scope of general information. [2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Personal information, such as the phone number or address of another person's application, is not shared within the scope of general information.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Başkasına ait başvurunun telefonu, adresi veya kişisel bilgileri genel bilgilendirme kapsamında paylaşılmaz."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#limits",
+        "chunk_id": "YV-D023#limits:0-409:99a7294b2b",
+        "title": "Yeşilvadi Trafik Sinyali Arıza Bildirimi",
+        "heading": "Konumu tamamlama ve başvuru takibi",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "citizen-v2",
+        "text": "Kavşağın adını bilmiyorsanız yakın bir durak, bina veya konum işaretiyle yeri açıklayın. Yalnız mahalle adını vermek birden fazla kavşağın bulunduğu bölgelerde yeterli olmayabilir. Önceki bildiriminize yeni bilgi eklerken başvuru numarasını ve etkilenen yönü tekrar belirtin. Başka bir yönde yeni bir arıza oluşmuşsa bunu önceki gözleminizden ayrı anlatın; bir yöndeki arıza diğer yönlerin durumunu göstermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D008",
+        "passage_id": "YV-D008#details",
+        "chunk_id": "YV-D008#details:0-396:98ff6e72d9",
+        "title": "Yeşilvadi Genel Bilgi ve Kişisel Veri Rehberi",
+        "heading": "Belge paylaşımı gerekli mi?",
+        "source": "beldesk://synthetic/YV-D008",
+        "version": "citizen-v2",
+        "text": "Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez. Kimlik ya da kira sözleşmesi gibi belgeler gerekiyorsa ilgili başvurunun yetkili kanalına sunulur. Başkasına ait başvurunun telefonu, adresi veya kişisel bilgileri genel bilgilendirme kapsamında paylaşılmaz. Kendi dosyanız için istenen doğrulama adımları başvuru takip kanalında tamamlanır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#limits",
+        "chunk_id": "YV-D007#limits:0-331:bd319c399c",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Gönderim ve takip",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Başvuru formunda hizmet konusu, mahalle, sokak ve sorunun kısa açıklaması yer alır. Başvuru gönderiminden sonra verilen referansı saklayın. Daha sonra fotoğraf veya yeni gözlem eklemek isterseniz aynı referansla ilerleyin. Başvurunun alınması, incelemenin tamamlanması veya bir ekibin belirli saatte gelmesiyle aynı aşama değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D025",
+        "passage_id": "YV-D025#limits",
+        "chunk_id": "YV-D025#limits:0-421:0ebf23c1c9",
+        "title": "Yeşilvadi Gürültü Bildirimi",
+        "heading": "Tekrarlanan olay ve inceleme",
+        "source": "beldesk://synthetic/YV-D025",
+        "version": "citizen-v2",
+        "text": "Aynı konu için önceki başvurunuz varsa referans numarasıyla yeni gözlem tarihini ve neyin değiştiğini bildirin. Gürültünün sona ermesi veya başka saatlerde yeniden başlaması da başvuruyu güncellemek için yararlı bilgidir. Ölçüm gereksinimi ve ilgili değerlendirme başvurunun incelenmesi sırasında belirlenir. Başka kişilerin adına durum anlatıyorsanız doğrudan gözlemlediğiniz bilgiyi, size aktarılan bilgiden ayrı tutun.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D025",
+        "passage_id": "YV-D025#details",
+        "chunk_id": "YV-D025#details:0-459:2bbf0358db",
+        "title": "Yeşilvadi Gürültü Bildirimi",
+        "heading": "Ölçüm olmadan bildirim hazırlama",
+        "source": "beldesk://synthetic/YV-D025",
+        "version": "citizen-v2",
+        "text": "Bildiriminize konumu, sesin bilinen kaynağını, duyulduğu gün veya saat aralığını ve tekrar edip etmediğini ekleyin. Desibel ölçümü yapmamış olmanız gözleminizi iletmenize engel değildir. Kaynağı tam bilmiyorsanız yakın olduğunu düşündüğünüz yeri ve duyduğunuz sesin türünü tarif edin. Birden fazla farklı kaynak varsa her birini ayrı açıklayın. Sorunun uyku, çalışma veya ortak alan kullanımı üzerindeki etkisini kendi yaşadığınız biçimiyle belirtebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2223,
+    "output_tokens": 119,
+    "latency_s": 3.1475202079163864,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "13edd042ee2d9362368ed641372f6ff6b84ab633ad79ee11d78c4f8d3055754b",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Personal information, such as the phone number or address of another person's application, is not shared within the scope of general information.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Başkasına ait başvurunun telefonu, adresi veya kişisel bilgileri genel bilgilendirme kapsamında paylaşılmaz.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:44:25.456957+00:00",
+    "wall_latency_including_pacing_s": 7.284748832928017
+  }
+}

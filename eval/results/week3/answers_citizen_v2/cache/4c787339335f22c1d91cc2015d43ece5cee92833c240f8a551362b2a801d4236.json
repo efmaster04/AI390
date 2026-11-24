@@ -1,0 +1,56 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Water is coming from a broken pipe, but I do not think it is sewage. Which kind of problem should I report?",
+    "language": "en",
+    "sources_sha256": "a4b3629ccb3f2d23047d9adee1857fd54d235a58d96edc71f9b4b3e31f7ccc1a",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "a92a3d069ad16ab246cdac7e98a3854ab26c73b8070c6d4ae29f19e3db9bf67c",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly lists visible pipe failures and water leaks on the road as valid subjects for an infrastructure report."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source instructs the user to specify the neighborhood, street, and the point where the water or overflow is observed."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source advises including information about whether the flow is coming from a pipe, manhole, or another location."
+      },
+      {
+        "claim_id": "C4",
+        "label": "supported",
+        "reason": "The source explicitly lists these details (duration, continuity, and impact on roads/sidewalks/entrances) as required information for the report."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the provided sources regarding how to report infrastructure issues like pipe failures.",
+    "attempts": 1,
+    "input_tokens": 2365,
+    "output_tokens": 273,
+    "latency_s": 3.563918956904672,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "dfab2331d97dd5939721fa4c52809d540536900e5a986f0eadd5bd2fb1054e3c",
+    "wall_latency_including_pacing_s": 6.785034165950492
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Belediyeye yüz yüze başvuru yapacağım. Boşuna gidip dönmemek için gelmeden önce neleri hazırlamalıyım?",
+    "language": "tr",
+    "sources_sha256": "74a6db91cc5f0f99be4bd9044e1e3420bd1ac1310dbb22d15f3915295dfd3153",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Hizmet noktasına gitmeden önce yapmak istediğiniz işlemi ve hangi hizmet hakkında bilgi aradığınızı belirleyin. [1]\nBelge teslimi için ziyaret edecekseniz hizmete ait güncel belge listesini kontrol edin. [4]\nDaha önce başvuru yaptıysanız veya eksik evrak bildirimi aldıysanız, ilgili başvuru referansını yanınızda bulundurun. [4]\nSaha sorunu bildiriminde bulunacaksanız, olayın yerini ve ne gördüğünüzü kısa ve anlaşılır cümlelerle açıklayacak şekilde hazırlanın. [3]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Hizmet noktasına gitmeden önce yapmak istediğiniz işlemi ve hangi hizmet hakkında bilgi aradığınızı belirleyin.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Hizmet noktasına gitmeden önce yapmak istediğiniz işlemi ve hangi hizmet hakkında bilgi aradığınızı belirleyin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Belge teslimi için ziyaret edecekseniz hizmete ait güncel belge listesini kontrol edin.",
+        "citations": [
+          4
+        ],
+        "evidence": [
+          {
+            "citation": 4,
+            "quote": "Belge teslimi için ziyaret edecekseniz hizmete ait güncel belge listesini kontrol edin"
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Daha önce başvuru yaptıysanız veya eksik evrak bildirimi aldıysanız, ilgili başvuru referansını yanınızda bulundurun.",
+        "citations": [
+          4
+        ],
+        "evidence": [
+          {
+            "citation": 4,
+            "quote": "daha önce başvuru yaptıysanız referansını yanınıza alın. Eksik evrak bildirimi aldıysanız bildirimin hangi dosyaya ve hangi belgeye ait olduğunu hazırlayın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Saha sorunu bildiriminde bulunacaksanız, olayın yerini ve ne gördüğünüzü kısa ve anlaşılır cümlelerle açıklayacak şekilde hazırlanın.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Saha sorunu bildiriminde olayın yerini ve ne gördüğünüzü kısa, anlaşılır cümlelerle açıklayın."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D009",
+        "passage_id": "YV-D009#summary",
+        "chunk_id": "YV-D009#summary:0-299:e6dab8372f",
+        "title": "Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı",
+        "heading": "Görüşmeye hazırlık",
+        "source": "beldesk://synthetic/YV-D009",
+        "version": "citizen-v2",
+        "text": "Hizmet noktasına gitmeden önce yapmak istediğiniz işlemi ve hangi hizmet hakkında bilgi aradığınızı belirleyin. Bir arıza bildirmek, belge teslim etmek ve önceki başvuruyu takip etmek için hazırlık farklıdır. Yalnız genel bilgi almak istiyorsanız işlemi kısaca açıklamanızla yönlendirme yapılabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#limits",
+        "chunk_id": "YV-D007#limits:0-331:bd319c399c",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Gönderim ve takip",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Başvuru formunda hizmet konusu, mahalle, sokak ve sorunun kısa açıklaması yer alır. Başvuru gönderiminden sonra verilen referansı saklayın. Daha sonra fotoğraf veya yeni gözlem eklemek isterseniz aynı referansla ilerleyin. Başvurunun alınması, incelemenin tamamlanması veya bir ekibin belirli saatte gelmesiyle aynı aşama değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#summary",
+        "chunk_id": "YV-D007#summary:0-295:9cbce4cbb6",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Doğru başvuru konusu",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Belediye hizmeti hakkında bilgi istemek, bir saha sorununu bildirmek ve mevcut başvuruyu takip etmek farklı ihtiyaçlardır. Saha sorunu bildiriminde olayın yerini ve ne gördüğünüzü kısa, anlaşılır cümlelerle açıklayın. Önceki bir bildirime yeni bilgi ekliyorsanız başvuru referansını da paylaşın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D009",
+        "passage_id": "YV-D009#details",
+        "chunk_id": "YV-D009#details:0-395:572fe850aa",
+        "title": "Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı",
+        "heading": "Yanınızda ne bulunmalı?",
+        "source": "beldesk://synthetic/YV-D009",
+        "version": "citizen-v2",
+        "text": "Belge teslimi için ziyaret edecekseniz hizmete ait güncel belge listesini kontrol edin; daha önce başvuru yaptıysanız referansını yanınıza alın. Eksik evrak bildirimi aldıysanız bildirimin hangi dosyaya ve hangi belgeye ait olduğunu hazırlayın. Genel bilgi görüşmesi için kişisel belgelerin bütününü getirmeniz gerekmez. Hizmet konusu ve başvuru aşaması doğru masaya yönlendirmeyi kolaylaştırır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#details",
+        "chunk_id": "YV-D007#details:0-401:771256ab0f",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Birden fazla sorun",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır. Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın. Bir sorunun bilgilerini diğerinin yerine kullanmak, ilgili birimin olayları ayırmasını güçleştirir. İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2142,
+    "output_tokens": 435,
+    "latency_s": 4.93942737497855,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "496760640022d377e415565f65ec3c109343284433b7c3b0133d7a71c7809051",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Hizmet noktasına gitmeden önce yapmak istediğiniz işlemi ve hangi hizmet hakkında bilgi aradığınızı belirleyin.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Hizmet noktasına gitmeden önce yapmak istediğiniz işlemi ve hangi hizmet hakkında bilgi aradığınızı belirleyin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Belge teslimi için ziyaret edecekseniz hizmete ait güncel belge listesini kontrol edin.\",\n      \"citations\": [4],\n      \"evidence\": [\n        {\n          \"citation\": 4,\n          \"quote\": \"Belge teslimi için ziyaret edecekseniz hizmete ait güncel belge listesini kontrol edin\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Daha önce başvuru yaptıysanız veya eksik evrak bildirimi aldıysanız, ilgili başvuru referansını yanınızda bulundurun.\",\n      \"citations\": [4],\n      \"evidence\": [\n        {\n          \"citation\": 4,\n          \"quote\": \"daha önce başvuru yaptıysanız referansını yanınıza alın. Eksik evrak bildirimi aldıysanız bildirimin hangi dosyaya ve hangi belgeye ait olduğunu hazırlayın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Saha sorunu bildiriminde bulunacaksanız, olayın yerini ve ne gördüğünüzü kısa ve anlaşılır cümlelerle açıklayacak şekilde hazırlanın.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Saha sorunu bildiriminde olayın yerini ve ne gördüğünüzü kısa, anlaşılır cümlelerle açıklayın.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:40:41.277975+00:00",
+    "wall_latency_including_pacing_s": 8.841669791960157
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "I have a ticket for an evening event at the cultural centre. Does the event time also tell me when the building opens?",
+    "language": "en",
+    "sources_sha256": "ceb04a21ad2b52e8c3700b8a38f5d8db1932df4f4ec3e011693a2c6503dcd0c1",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "c6e6ea015942f957a173126638f115d3ac33672a785be913faae4ada1791081c",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that the event time in the program is not the same as the building's general opening and closing hours."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer directly addresses the user's question by confirming that event times and building hours are distinct, supported by the provided source.",
+    "attempts": 1,
+    "input_tokens": 1948,
+    "output_tokens": 119,
+    "latency_s": 2.939862456987612,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "32fc05ef4f140622ee1dc96517660b08fef79fdb9a4c542f8d6bb68166aed8ab",
+    "wall_latency_including_pacing_s": 5.88812441600021
+  }
+}

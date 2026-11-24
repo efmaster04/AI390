@@ -1,0 +1,122 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Can I ask about municipal services without giving my identity number or uploading a photo of my ID?",
+    "language": "en",
+    "sources_sha256": "063a33e121e90180bd0f718b2b7307ef4aad721ea12e6d21223ece4d568aecf0",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "You do not need to share your identity number, bank details, or document images to ask a general service question. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "You do not need to share your identity number, bank details, or document images to ask a general service question.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D008",
+        "passage_id": "YV-D008#details",
+        "chunk_id": "YV-D008#details:0-396:98ff6e72d9",
+        "title": "Yeşilvadi Genel Bilgi ve Kişisel Veri Rehberi",
+        "heading": "Belge paylaşımı gerekli mi?",
+        "source": "beldesk://synthetic/YV-D008",
+        "version": "citizen-v2",
+        "text": "Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez. Kimlik ya da kira sözleşmesi gibi belgeler gerekiyorsa ilgili başvurunun yetkili kanalına sunulur. Başkasına ait başvurunun telefonu, adresi veya kişisel bilgileri genel bilgilendirme kapsamında paylaşılmaz. Kendi dosyanız için istenen doğrulama adımları başvuru takip kanalında tamamlanır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#limits",
+        "chunk_id": "YV-D007#limits:0-331:bd319c399c",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Gönderim ve takip",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Başvuru formunda hizmet konusu, mahalle, sokak ve sorunun kısa açıklaması yer alır. Başvuru gönderiminden sonra verilen referansı saklayın. Daha sonra fotoğraf veya yeni gözlem eklemek isterseniz aynı referansla ilerleyin. Başvurunun alınması, incelemenin tamamlanması veya bir ekibin belirli saatte gelmesiyle aynı aşama değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#summary",
+        "chunk_id": "YV-D007#summary:0-295:9cbce4cbb6",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Doğru başvuru konusu",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Belediye hizmeti hakkında bilgi istemek, bir saha sorununu bildirmek ve mevcut başvuruyu takip etmek farklı ihtiyaçlardır. Saha sorunu bildiriminde olayın yerini ve ne gördüğünüzü kısa, anlaşılır cümlelerle açıklayın. Önceki bir bildirime yeni bilgi ekliyorsanız başvuru referansını da paylaşın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#details",
+        "chunk_id": "YV-D027#details:0-559:6136882651",
+        "title": "Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip",
+        "heading": "Ek bilgi gönderirken gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "citizen-v2",
+        "text": "Önceki başvuru numaranızı, sorunun konumunu ve ilk bildiriminizi ne zaman yaptığınızı biliyorsanız ekleyin. Sorun aynı şekilde devam ediyorsa bunu belirtin; büyüme, başka bir noktaya yayılma veya geçişin daha fazla etkilenmesi varsa değişikliği açıklayın. Önceki başvuru numarasını bulamıyorsanız ilk bildirimin tarihi, konusu ve yeri başvuru noktasına durumu anlatmanıza yardımcı olur. Aynı bilgiyi tekrar yazmak yerine yeni gözlem veya değişiklik varsa onu ekleyin. Yeni bir fotoğrafınız varsa mevcut durumu göstermek için önceki referansla iletebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#details",
+        "chunk_id": "YV-D007#details:0-401:771256ab0f",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Birden fazla sorun",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır. Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın. Bir sorunun bilgilerini diğerinin yerine kullanmak, ilgili birimin olayları ayırmasını güçleştirir. İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2205,
+    "output_tokens": 119,
+    "latency_s": 3.0221245830180123,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "924095664d2d09474a48583b3531a29e4c2e5db78e867f5779f79948c1a35297",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"You do not need to share your identity number, bank details, or document images to ask a general service question.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:40:34.540895+00:00",
+    "wall_latency_including_pacing_s": 6.156498791999184
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Yeni taşındığım evde kiracıyım. Su aboneliğini üzerime almak için ne hazırlamalıyım? Önceki abone numarasını bilmiyorum.",
+    "language": "tr",
+    "sources_sha256": "6b3b271c8c5e899c6f91bf879cb462fb0ff3b1d329c092fe34a1bb342da1fbb0",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Yeni su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kira sözleşmesi hazırlamanız gerekmektedir. [1]\nEski abone numarasını bilmiyorsanız, kullanım adresi ve diğer belgelerle başvuru yapmaya devam edebilirsiniz. [1]\nSu aboneliği başvurunuzu Su ve Kanalizasyon başvuru birimine yapmalısınız. [2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Yeni su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kira sözleşmesi hazırlamanız gerekmektedir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi hazırlanır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Eski abone numarasını bilmiyorsanız, kullanım adresi ve diğer belgelerle başvuru yapmaya devam edebilirsiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Eski abone numarasını bilmiyorsanız kullanım adresi ve diğer belgelerle başvuruya hazırlanmaya devam edebilirsiniz."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Su aboneliği başvurunuzu Su ve Kanalizasyon başvuru birimine yapmalısınız.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Yeni bir kullanım yeri için su aboneliği başvurusu Su ve Kanalizasyon başvuru birimine yapılır."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#requirements",
+        "chunk_id": "YV-D003#requirements:0-375:737e0cc0a8",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Hazırlanacak belgeler",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "citizen-v2",
+        "text": "Yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi hazırlanır. Aynı kullanım yerinde önceki abonelik varsa eski abone numarası başvurunun eşleştirilmesine yardımcı olur. Eski abone numarasını bilmiyorsanız kullanım adresi ve diğer belgelerle başvuruya hazırlanmaya devam edebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#scope",
+        "chunk_id": "YV-D003#scope:0-283:5e6e42922b",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Yeni abonelik",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "citizen-v2",
+        "text": "Yeni bir kullanım yeri için su aboneliği başvurusu Su ve Kanalizasyon başvuru birimine yapılır. Önce mülk sahibi mi kiracı mı olduğunuzu belirleyin. Mevcut bir aboneliğin bilgilerini değiştirmek ile yeni abonelik açtırmak farklı işlemlerdir; başvuru türünü dosyanın başında belirtin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#procedure",
+        "chunk_id": "YV-D003#procedure:0-371:56cb0adfd8",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Başvuru ve takip",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "citizen-v2",
+        "text": "Belgelerinizi ilgili başvuru kanalına sunun; kimlik veya kira sözleşmesi görüntüsünü genel bilgi sohbetine yüklemeniz gerekmez. Dosya incelemesinin ardından eksik belge varsa tamamlanır. Başvuru referansını saklayın ve daha sonraki görüşmelerde bu referansı kullanın. Ücret, bağlantı tarihi ve randevu bilgileri başvurunuza ait güncel değerlendirmeyle birlikte öğrenilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#limits",
+        "chunk_id": "YV-D024#limits:0-425:1899affe76",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması",
+        "heading": "Değişiklikleri bildirme ve izleme",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "citizen-v2",
+        "text": "Daha önce aynı taşma veya kaçak için başvurduysanız referans numarasını ekleyin. Akış durmuş ancak yüzeyde su birikmişse mevcut durumu açıklayın; yeni bir taşma oluştuysa ne zaman başladığını belirtin. Bir hizmet talebinin durumunu öğrenirken hangi arızaya ilişkin bilgi istediğinizi açıkça yazın. Aynı mesajda bulunan aydınlatma sorunu için altyapı başvurusunun tamamlanmış olması, ikinci sorunun da giderildiğini göstermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D027",
+        "passage_id": "YV-D027#details",
+        "chunk_id": "YV-D027#details:0-559:6136882651",
+        "title": "Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip",
+        "heading": "Ek bilgi gönderirken gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D027",
+        "version": "citizen-v2",
+        "text": "Önceki başvuru numaranızı, sorunun konumunu ve ilk bildiriminizi ne zaman yaptığınızı biliyorsanız ekleyin. Sorun aynı şekilde devam ediyorsa bunu belirtin; büyüme, başka bir noktaya yayılma veya geçişin daha fazla etkilenmesi varsa değişikliği açıklayın. Önceki başvuru numarasını bulamıyorsanız ilk bildirimin tarihi, konusu ve yeri başvuru noktasına durumu anlatmanıza yardımcı olur. Aynı bilgiyi tekrar yazmak yerine yeni gözlem veya değişiklik varsa onu ekleyin. Yeni bir fotoğrafınız varsa mevcut durumu göstermek için önceki referansla iletebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2233,
+    "output_tokens": 336,
+    "latency_s": 1.4340740001061931,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "c0ef875ec3987c219fe394455376f7d481049880b63781f3a4282f0b109aae3b",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Yeni su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kira sözleşmesi hazırlamanız gerekmektedir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi hazırlanır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Eski abone numarasını bilmiyorsanız, kullanım adresi ve diğer belgelerle başvuru yapmaya devam edebilirsiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Eski abone numarasını bilmiyorsanız kullanım adresi ve diğer belgelerle başvuruya hazırlanmaya devam edebilirsiniz.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Su aboneliği başvurunuzu Su ve Kanalizasyon başvuru birimine yapmalısınız.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Yeni bir kullanım yeri için su aboneliği başvurusu Su ve Kanalizasyon başvuru birimine yapılır.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:39:54.425734+00:00",
+    "wall_latency_including_pacing_s": 7.158189916051924
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "We want to hold a neighbourhood fair with a few temporary stalls. What should we prepare before applying for permission?",
+    "language": "en",
+    "sources_sha256": "551a029c8e6933e3cfc92d02925a14962b8a7b25f78dee043176f3e5e1dccc24",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "To apply for a neighbourhood fair or temporary stalls, you must prepare the event type, planned location, date range, and estimated number of participants. [3]\nYou should specify in your application if you require a sound system, temporary installations, or accessible entrances. [3]\nYou may include an alternative date proposal for the same location in your application file. [3]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "To apply for a neighbourhood fair or temporary stalls, you must prepare the event type, planned location, date range, and estimated number of participants.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "You should specify in your application if you require a sound system, temporary installations, or accessible entrances.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "You may include an alternative date proposal for the same location in your application file.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#summary",
+        "chunk_id": "YV-D006#summary:0-284:69caf95330",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant Başvurusu",
+        "heading": "Başvuru konusu",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "citizen-v2",
+        "text": "Mahalle şenliği, park etkinliği veya geçici stant için alan kullanım talebi ilgili etkinlik birimine iletilir. Kamuya açık bir alanı kullanmak ile yalnızca bir etkinliğe katılmak farklı taleplerdir. Alan kullanımında etkinliğin kapsamı ve alandaki ihtiyaçlar birlikte değerlendirilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#limits",
+        "chunk_id": "YV-D006#limits:0-403:59babf41e0",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant Başvurusu",
+        "heading": "Değerlendirme ve değişiklik",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "citizen-v2",
+        "text": "Alan uygunluğu ve izin sonucu ilgili birimin incelemesinden sonra kesinleşir. Yer, tarih veya katılımcı sayısında değişiklik olduğunda mevcut başvuru referansını kullanarak değişikliği bildirin. Etkinlik sonrasında atık toplama veya eşya alımı gerekiyorsa ilgili hizmet için ayrıca talep iletin. Erişimi engelleyen mevcut bir kaldırım veya giriş sorunu, erişilebilirlik bildirimi olarak da iletilebilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#details",
+        "chunk_id": "YV-D006#details:0-376:2342ac112a",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant Başvurusu",
+        "heading": "Etkinlik dosyası",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "citizen-v2",
+        "text": "Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır. Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir. Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz. Bu bilgiler alan ve hizmet ihtiyacının değerlendirilmesine yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D019",
+        "passage_id": "YV-D019#limits",
+        "chunk_id": "YV-D019#limits:0-409:14862e1fde",
+        "title": "Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi",
+        "heading": "Mevcut sorun ve yeni düzenleme isteği",
+        "source": "beldesk://synthetic/YV-D019",
+        "version": "citizen-v2",
+        "text": "Daha önce kullanılabilen bir geçişin kapanması durumunda ne zamandan beri kapalı olduğunu ekleyin. Yeni bir rampa ya da giriş düzenlemesi öneriyorsanız mevcut güzergâhı ve hangi noktada alternatif gerektiğini açıklayın. Fotoğraf veya konum işareti başvuruya ek bilgi sağlayabilir. Aynı yer için önceki başvurunuz varsa referansını kullanarak sorunun sürüp sürmediğini veya değişen koşulları bildirebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#limits",
+        "chunk_id": "YV-D002#limits:0-363:7fd60daf21",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Başvuru Rehberi",
+        "heading": "Dosyanın izlenmesi",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "citizen-v2",
+        "text": "Başvuru sonrası eksik evrak bildirimi ile nihai değerlendirme sonucu ayrı aşamalardır. Başvurunuza belge ekleyeceğinizde dosya referansını kullanın. Yapının özellikleri veya kullanım amacı değişiyorsa bunu İmar ve Ruhsat birimine bildirin; farklı dosyaların belge listeleri birbirinin yerine kullanılmaz. Dosyanın güncel durumu başvuru takip kanalından öğrenilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2153,
+    "output_tokens": 301,
+    "latency_s": 4.120256584021263,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "bb322153320138c1202664c1aa83914a097e4cb2e327948306cb8b9665a0610e",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"To apply for a neighbourhood fair or temporary stalls, you must prepare the event type, planned location, date range, and estimated number of participants.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Etkinlik veya geçici stant başvurusu için etkinlik türü, planlanan yer, tarih aralığı ve tahmini katılımcı sayısı hazırlanır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You should specify in your application if you require a sound system, temporary installations, or accessible entrances.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Ses sistemi, geçici kurulum veya erişilebilir giriş ihtiyacı varsa dosyada ayrıca belirtilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"You may include an alternative date proposal for the same location in your application file.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Aynı alan için alternatif bir tarih öneriniz bulunuyorsa bunu da ekleyebilirsiniz.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:40:18.708791+00:00",
+    "wall_latency_including_pacing_s": 8.076576541992836
+  }
+}

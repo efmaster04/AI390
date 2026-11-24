@@ -1,0 +1,51 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Rainwater keeps pooling beside a clogged street drain. How do I request it to be cleared?",
+    "language": "en",
+    "sources_sha256": "3406539d3b521bfebbedfdf83f304969cb9b9e64fd8c652598ee98f1f1d1f2b8",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "e7e839a683c4eb41379c46994e6cf472e18660779be96b9a4986eade460925a0",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The claim accurately reflects the instructions in source 1 regarding the information required for reporting a clogged drain."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The claim correctly paraphrases the requirements in source 1 to specify the timing of the issue and any visible debris."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The claim accurately summarizes the guidance in source 1 regarding describing the impact of the water and providing landmarks or photos."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer provides a complete and accurate summary of the reporting requirements for a clogged drain as specified in the provided source.",
+    "attempts": 1,
+    "input_tokens": 2285,
+    "output_tokens": 189,
+    "latency_s": 2.3608966250903904,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "e6c3d14a001b7654f371d15ddd730b6df14a5aaa72c1b7c7428ce3051dabf882",
+    "wall_latency_including_pacing_s": 7.550233917078003
+  }
+}

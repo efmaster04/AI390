@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D021","title":"Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi","title_en":"Sidewalk Damage and Blocked Passage Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D021","access":["public"],"synthetic":true,"review_status":"draft","keywords":["sidewalk","pavement","kaldırım","geçiş"]}
+{"doc_id":"YV-D021","title":"Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi","title_en":"Damaged Pavements and Pedestrian Access","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D021","access":["public"],"synthetic":true,"review_status":"draft","keywords":["sidewalk","pavement","blocked path","kaldırım","yaya geçişi","bozuk yüzey"]}
 ---
 
-# Yeşilvadi Kaldırım Hasarı ve Geçiş Engeli Bildirimi
+# Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi
 
-## Kapsam ve veri niteliği {#scope}
+## Kaldırım bakım talebi {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Kırık veya yerinden oynamış kaplama, çökme, yüksek yüzey farkı ve geçişi daraltan hasarlar kaldırım bakım bildiriminin konusudur. Yeni bir kaldırım yapılması isteği ile mevcut kaldırımın onarılması farklı başvurulardır. Sorunu bir araçla geçememe veya yayaların başka güzergâha yönelmesi şeklinde yaşıyorsanız bunu açıklayın.
 
-## Hasar ve geçiş bilgileri {#details}
+## Konum ve geçiş durumu {#details}
 
-Kaldırım sorunu anlatılırken mahalle ve sokak, hasarın türü ve geçişin tamamen mi kısmen mi engellendiği öğrenilir. Küçük yüzey çatlağı ile çökmüş kaldırım tek bir genel etiketle geçiştirilmez. Bebek arabası veya yaya geçişi üzerindeki etki vatandaşın bildirdiği biçimde kaydedilir; olay yerindeki bütün insanların durumu hakkında tahmin yapılmaz.
+Kaldırımın bulunduğu mahalleyi ve sokağı, hasarın türünü ve geçişin tamamen mi yoksa kısmen mi engellendiğini belirtin. Hasar bir bina girişi, durak veya kavşak yakınındaysa bu işareti ekleyin. Yalnız dar bir bölüm mü yoksa uzun bir kaldırım kesimi mi etkilendiğini açıklayın. Tekerlekli sandalye ya da bebek arabasıyla geçişin mümkün olmadığını gözlemlediyseniz bunu yazabilirsiniz. Fotoğraf ve konum işareti, aynı sokaktaki farklı noktaları ayırmayı kolaylaştırır.
 
-## Taslak ve sınırlar {#limits}
+## Takip ve bağlantılı talepler {#limits}
 
-Ayrı bir tehlike anlatılıyorsa bu bilgi öncelik değerlendirmesinde korunur. Kullanıcı yalnızca estetik bir düzenleme istiyorsa mevcut hasar veya erişim kaybı varmış gibi yazılmaz. Beldesk yolu kapatamaz, güvenlik bariyeri koyamaz ve tazminat onaylayamaz. Bu kaynak onarım tarihi ve sorumluluk hakkında hukuki karar içermez; yalnızca bildirim hazırlığı sağlar.
+Daha önce aynı noktaya ilişkin başvurunuz varsa numarasını ekleyerek yeni durumu bildirin. Sorun bir rampada veya bina girişindeyse erişilebilirlik ihtiyacınızı da açıklayın. Yol yüzeyindeki çukur ile kaldırım üzerindeki hasar aynı noktada bulunsa bile iki farklı bakım konusu olabilir. Başvuru takibinde hangi kısmın onarıldığını ve hangi kısmın hâlâ geçişi etkilediğini belirtmeniz, kalan ihtiyacın anlaşılmasına yardımcı olur.

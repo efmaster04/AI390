@@ -1,0 +1,161 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Water is coming from a broken pipe, but I do not think it is sewage. Which kind of problem should I report?",
+    "language": "en",
+    "sources_sha256": "a4b3629ccb3f2d23047d9adee1857fd54d235a58d96edc71f9b4b3e31f7ccc1a",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "You can prepare an infrastructure report for water leaks on the road, visible pipe failures, manhole overflows, and sewage-related flows. [2]\nWhen reporting, specify the neighborhood, street, and the exact point where the water flow is observed. [1]\nIf you know the flow is coming from a pipe, manhole, or another specific location, include this information in your report. [1]\nDescribe how long the issue has been ongoing, whether the flow is continuous, and if it affects roads, sidewalks, or building entrances. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "You can prepare an infrastructure report for water leaks on the road, visible pipe failures, manhole overflows, and sewage-related flows.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Yoldaki su kaçağı, görünen boru arızası, rögar taşması ve kanalizasyon kaynaklı akış için altyapı bildirimi hazırlanabilir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "When reporting, specify the neighborhood, street, and the exact point where the water flow is observed.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Mahalle, sokak ve suyun ya da taşmanın görüldüğü noktayı belirtin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "If you know the flow is coming from a pipe, manhole, or another specific location, include this information in your report.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Akışın boru, rögar veya başka bir yerden geldiğini biliyorsanız yazın"
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Describe how long the issue has been ongoing, whether the flow is continuous, and if it affects roads, sidewalks, or building entrances.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Sorunun ne zamandır sürdüğünü, akışın devam edip etmediğini ve yol, kaldırım veya bina girişini etkileyip etkilemediğini açıklayın."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#details",
+        "chunk_id": "YV-D024#details:0-466:80576ab47b",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması",
+        "heading": "Altyapı sorununda gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve suyun ya da taşmanın görüldüğü noktayı belirtin. Akışın boru, rögar veya başka bir yerden geldiğini biliyorsanız yazın; kaynağı belli değilse görülen yeri tarif edin. Sorunun ne zamandır sürdüğünü, akışın devam edip etmediğini ve yol, kaldırım veya bina girişini etkileyip etkilemediğini açıklayın. Birden fazla ayrı arıza varsa her arızanın konumunu ve gözlemini ayrı bildirin. Fotoğraf ve yakın bir işaret, noktanın bulunmasına yardımcı olabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#scope",
+        "chunk_id": "YV-D024#scope:0-346:5fa52cebd4",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması",
+        "heading": "Su kaçağı ve taşma başvurusu",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "citizen-v2",
+        "text": "Yoldaki su kaçağı, görünen boru arızası, rögar taşması ve kanalizasyon kaynaklı akış için altyapı bildirimi hazırlanabilir. İçme suyu hattına ilişkin kaçak ile kanalizasyon taşması farklı konulardır. Aynı yerde başka bir belediye hizmetinde de sorun bulunuyorsa, örneğin sokak aydınlatması çalışmıyorsa, bu ikinci sorunun türünü ayrıca açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#limits",
+        "chunk_id": "YV-D024#limits:0-425:1899affe76",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması",
+        "heading": "Değişiklikleri bildirme ve izleme",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "citizen-v2",
+        "text": "Daha önce aynı taşma veya kaçak için başvurduysanız referans numarasını ekleyin. Akış durmuş ancak yüzeyde su birikmişse mevcut durumu açıklayın; yeni bir taşma oluştuysa ne zaman başladığını belirtin. Bir hizmet talebinin durumunu öğrenirken hangi arızaya ilişkin bilgi istediğinizi açıkça yazın. Aynı mesajda bulunan aydınlatma sorunu için altyapı başvurusunun tamamlanmış olması, ikinci sorunun da giderildiğini göstermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#scope",
+        "chunk_id": "YV-D030#scope:0-336:f189c22a89",
+        "title": "Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi",
+        "heading": "Yağmur suyu sorununun konusu",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "citizen-v2",
+        "text": "Yağmur sırasında suyun yol veya kaldırım üzerinde birikmesi, yağmur suyu ızgarasının tıkanması ve ızgara çevresinde yaprak ya da atık birikmesi drenaj bildiriminin konusudur. Yağışla birlikte oluşan yüzey suyu, sürekli akan bir su kaçağı veya rögar taşmasıyla aynı sorun olmayabilir. Bildiriminizde hangisini gözlemlediğinizi açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#limits",
+        "chunk_id": "YV-D030#limits:0-451:5e86719567",
+        "title": "Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi",
+        "heading": "Tekrarlanan birikim ve takip",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "citizen-v2",
+        "text": "Aynı yerde her yağışta sorun oluşuyorsa hangi günlerde gördüğünüzü ve önceki başvuru referansınızı paylaşabilirsiniz. Temizlik yapılmış ancak su hâlâ birikiyorsa mevcut durumu açıklayın. Başka bir noktadaki yeni birikimin yerini ayrı belirtin. Yağmur bittikten sonra yalnız suyun kalmasıyla yeni bir akışın sürmesi farklı gözlemlerdir; takip mesajında neyin devam ettiğini açıkça yazmanız incelemenin doğru konum üzerinden yürütülmesine yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2277,
+    "output_tokens": 432,
+    "latency_s": 10.148278208100237,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "fbd9639008ea772f97c3e456ebfcaa6b86d9b438958682c81cb932abd8137914",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"You can prepare an infrastructure report for water leaks on the road, visible pipe failures, manhole overflows, and sewage-related flows.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Yoldaki su kaçağı, görünen boru arızası, rögar taşması ve kanalizasyon kaynaklı akış için altyapı bildirimi hazırlanabilir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"When reporting, specify the neighborhood, street, and the exact point where the water flow is observed.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Mahalle, sokak ve suyun ya da taşmanın görüldüğü noktayı belirtin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"If you know the flow is coming from a pipe, manhole, or another specific location, include this information in your report.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Akışın boru, rögar veya başka bir yerden geldiğini biliyorsanız yazın\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Describe how long the issue has been ongoing, whether the flow is continuous, and if it affects roads, sidewalks, or building entrances.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sorunun ne zamandır sürdüğünü, akışın devam edip etmediğini ve yol, kaldırım veya bina girişini etkileyip etkilemediğini açıklayın.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:42:34.384352+00:00",
+    "wall_latency_including_pacing_s": 15.274381292052567
+  }
+}

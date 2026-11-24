@@ -1,0 +1,161 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "A driver almost hit a cyclist while swerving around a pothole outside our building. How can I report the hole and the near miss?",
+    "language": "en",
+    "sources_sha256": "609e47c044f95893097562d1f216328c00d3a88c9f9a606e8a7c9ee249224239",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "You can report a pothole by providing the neighborhood, street, or avenue, the direction of the damage, and a nearby landmark. [1]\nWhen reporting the pothole, you should describe observations such as vehicles swerving to avoid it, narrowed passage, or near-miss incidents. [1]\nInclude the time you observed the incident and specify whether the damage is at a single point or extends along the road. [1]\nProviding a photograph can assist in identifying the location of the damage. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "You can report a pothole by providing the neighborhood, street, or avenue, the direction of the damage, and a nearby landmark.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Mahalle, sokak veya caddeyi, hasarın yolun hangi yönünde bulunduğunu ve yakındaki belirgin bir noktayı yazın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "When reporting the pothole, you should describe observations such as vehicles swerving to avoid it, narrowed passage, or near-miss incidents.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Araçların çukurdan kaçmak için yön değiştirmesi, geçişin daralması veya bir ramak kala yaşanması gibi gözlemlerinizi açıklayın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Include the time you observed the incident and specify whether the damage is at a single point or extends along the road.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Olayı ne zaman gördüğünüzü ve hasarın bir noktada mı yoksa yol boyunca mı sürdüğünü belirtin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Providing a photograph can assist in identifying the location of the damage.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Fotoğraf konumu ayırt etmeye yardımcı olabilir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#details",
+        "chunk_id": "YV-D020#details:0-463:a2f23a8d78",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı",
+        "heading": "Çukuru ve etkisini tarif etme",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak veya caddeyi, hasarın yolun hangi yönünde bulunduğunu ve yakındaki belirgin bir noktayı yazın. Yaklaşık büyüklüğü biliniyorsa ekleyin; ölçmediyseniz kesin ölçü vermeniz gerekmez. Araçların çukurdan kaçmak için yön değiştirmesi, geçişin daralması veya bir ramak kala yaşanması gibi gözlemlerinizi açıklayın. Olayı ne zaman gördüğünüzü ve hasarın bir noktada mı yoksa yol boyunca mı sürdüğünü belirtin. Fotoğraf konumu ayırt etmeye yardımcı olabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#scope",
+        "chunk_id": "YV-D020#scope:0-322:ae119430fd",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı",
+        "heading": "Yol yüzeyindeki hangi sorunlar bildirilir?",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "citizen-v2",
+        "text": "Yol çukuru, çökmüş asfalt, kabarmış yüzey ve yol üzerinde geçişi etkileyen hasarlar için yol bakım bildirimi yapılabilir. Belirli bir hasarı bildirmek ile bütün yolun yenilenmesini talep etmek farklı konulardır. Hasarın bulunduğu yer ve araç ya da yaya geçişi üzerindeki etkisi, başvurunun anlaşılması için temel bilgidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D020",
+        "passage_id": "YV-D020#limits",
+        "chunk_id": "YV-D020#limits:0-408:08e51bbcfd",
+        "title": "Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı",
+        "heading": "Önceki bildirim ve yeni hasar",
+        "source": "beldesk://synthetic/YV-D020",
+        "version": "citizen-v2",
+        "text": "Aynı noktayı daha önce bildirdiyseniz başvuru numarasını kullanarak hasarın devam ettiğini iletin. Çukur büyümüşse veya yeni bir yüzey çökmesi oluşmuşsa neyin değiştiğini belirtin. Aynı caddedeki başka bir çukurun yerini ayrı tarif edin; yalnız cadde adının aynı olması bütün hasarların aynı noktada olduğu anlamına gelmez. Bakım programı ya da işlem durumu için ilgili başvuruya ait güncel bilgiye başvurun.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#details",
+        "chunk_id": "YV-D023#details:0-471:d24dd12a3d",
+        "title": "Yeşilvadi Trafik Sinyali Arıza Bildirimi",
+        "heading": "Kavşağı ve ışığı tarif etme",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "citizen-v2",
+        "text": "Kavşağın veya yaya geçidinin yerini, kesişen yolları ve etkilenen yönü bildirin. Örneğin hangi sokaktan kavşağa yaklaşırken sorunu gördüğünüzü açıklayabilirsiniz. Işığın tamamen sönük, sürekli aynı renkte veya kesintili yanar durumda olduğunu gözleminize göre belirtin. Yaya ve araç ışıklarında birlikte bir sorun gördüyseniz her birini ayrı tarif edin. Gözlem zamanını ve sorunun devamlı mı aralıklı mı olduğunu ekleyin; fotoğraf varsa konumu anlamaya yardımcı olabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#limits",
+        "chunk_id": "YV-D021#limits:0-429:13f1b37e1f",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi",
+        "heading": "Takip ve bağlantılı talepler",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "citizen-v2",
+        "text": "Daha önce aynı noktaya ilişkin başvurunuz varsa numarasını ekleyerek yeni durumu bildirin. Sorun bir rampada veya bina girişindeyse erişilebilirlik ihtiyacınızı da açıklayın. Yol yüzeyindeki çukur ile kaldırım üzerindeki hasar aynı noktada bulunsa bile iki farklı bakım konusu olabilir. Başvuru takibinde hangi kısmın onarıldığını ve hangi kısmın hâlâ geçişi etkilediğini belirtmeniz, kalan ihtiyacın anlaşılmasına yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2291,
+    "output_tokens": 411,
+    "latency_s": 4.101424542022869,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "aa7595901f8a307adb1726cb57d65e0e9c16d3efdf3f16b0c59132a2873bbde4",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"You can report a pothole by providing the neighborhood, street, or avenue, the direction of the damage, and a nearby landmark.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Mahalle, sokak veya caddeyi, hasarın yolun hangi yönünde bulunduğunu ve yakındaki belirgin bir noktayı yazın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"When reporting the pothole, you should describe observations such as vehicles swerving to avoid it, narrowed passage, or near-miss incidents.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Araçların çukurdan kaçmak için yön değiştirmesi, geçişin daralması veya bir ramak kala yaşanması gibi gözlemlerinizi açıklayın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Include the time you observed the incident and specify whether the damage is at a single point or extends along the road.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Olayı ne zaman gördüğünüzü ve hasarın bir noktada mı yoksa yol boyunca mı sürdüğünü belirtin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Providing a photograph can assist in identifying the location of the damage.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Fotoğraf konumu ayırt etmeye yardımcı olabilir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:42:07.782022+00:00",
+    "wall_latency_including_pacing_s": 5.809535291977227
+  }
+}

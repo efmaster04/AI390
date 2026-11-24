@@ -1,0 +1,153 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Kiracı olarak su aboneliğine başvuracağım. Hangi belgeleri hazırlamalıyım, ilk bilgi alırken kimliğimin fotoğrafını da göndermem gerekiyor mu?",
+    "language": "tr",
+    "sources_sha256": "b486b6898f31c43f4e43bdd0d6e26fba8846142c4c152e4f7ff8b3deb40e0d0e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Kiracı olarak su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kira sözleşmesi hazırlamanız gerekmektedir. [1]\nİlk bilgi alma aşamasında kimlik veya kira sözleşmesi gibi belgelerin görüntülerini genel bilgi sohbetine yüklemeniz gerekmez. [2][4]\nGerekli belgeler, başvurunun yetkili kanalına sunulmalıdır. [4]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Kiracı olarak su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kira sözleşmesi hazırlamanız gerekmektedir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi hazırlanır."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "İlk bilgi alma aşamasında kimlik veya kira sözleşmesi gibi belgelerin görüntülerini genel bilgi sohbetine yüklemeniz gerekmez.",
+        "citations": [
+          2,
+          4
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "kimlik veya kira sözleşmesi görüntüsünü genel bilgi sohbetine yüklemeniz gerekmez."
+          },
+          {
+            "citation": 4,
+            "quote": "Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Gerekli belgeler, başvurunun yetkili kanalına sunulmalıdır.",
+        "citations": [
+          4
+        ],
+        "evidence": [
+          {
+            "citation": 4,
+            "quote": "Kimlik ya da kira sözleşmesi gibi belgeler gerekiyorsa ilgili başvurunun yetkili kanalına sunulur."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#requirements",
+        "chunk_id": "YV-D003#requirements:0-375:737e0cc0a8",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Hazırlanacak belgeler",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "citizen-v2",
+        "text": "Yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi hazırlanır. Aynı kullanım yerinde önceki abonelik varsa eski abone numarası başvurunun eşleştirilmesine yardımcı olur. Eski abone numarasını bilmiyorsanız kullanım adresi ve diğer belgelerle başvuruya hazırlanmaya devam edebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#procedure",
+        "chunk_id": "YV-D003#procedure:0-371:56cb0adfd8",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Başvuru ve takip",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "citizen-v2",
+        "text": "Belgelerinizi ilgili başvuru kanalına sunun; kimlik veya kira sözleşmesi görüntüsünü genel bilgi sohbetine yüklemeniz gerekmez. Dosya incelemesinin ardından eksik belge varsa tamamlanır. Başvuru referansını saklayın ve daha sonraki görüşmelerde bu referansı kullanın. Ücret, bağlantı tarihi ve randevu bilgileri başvurunuza ait güncel değerlendirmeyle birlikte öğrenilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D003",
+        "passage_id": "YV-D003#scope",
+        "chunk_id": "YV-D003#scope:0-283:5e6e42922b",
+        "title": "Yeşilvadi Su Aboneliği Başvuru Rehberi",
+        "heading": "Yeni abonelik",
+        "source": "beldesk://synthetic/YV-D003",
+        "version": "citizen-v2",
+        "text": "Yeni bir kullanım yeri için su aboneliği başvurusu Su ve Kanalizasyon başvuru birimine yapılır. Önce mülk sahibi mi kiracı mı olduğunuzu belirleyin. Mevcut bir aboneliğin bilgilerini değiştirmek ile yeni abonelik açtırmak farklı işlemlerdir; başvuru türünü dosyanın başında belirtin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D008",
+        "passage_id": "YV-D008#details",
+        "chunk_id": "YV-D008#details:0-396:98ff6e72d9",
+        "title": "Yeşilvadi Genel Bilgi ve Kişisel Veri Rehberi",
+        "heading": "Belge paylaşımı gerekli mi?",
+        "source": "beldesk://synthetic/YV-D008",
+        "version": "citizen-v2",
+        "text": "Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez. Kimlik ya da kira sözleşmesi gibi belgeler gerekiyorsa ilgili başvurunun yetkili kanalına sunulur. Başkasına ait başvurunun telefonu, adresi veya kişisel bilgileri genel bilgilendirme kapsamında paylaşılmaz. Kendi dosyanız için istenen doğrulama adımları başvuru takip kanalında tamamlanır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D001",
+        "passage_id": "YV-D001#limits",
+        "chunk_id": "YV-D001#limits:0-325:5ce268e7f2",
+        "title": "Yeşilvadi Nikâh Başvurusu Rehberi",
+        "heading": "Özel durumlar ve takip",
+        "source": "beldesk://synthetic/YV-D001",
+        "version": "citizen-v2",
+        "text": "Yabancı uyruk veya önceki evlilik gibi özel bir durum varsa bunu ilk görüşmede belirtin; durumunuza uygun ek belge listesini birimden alın. Sağlık belgesi koşulu, fotoğraf sayısı ve güncel başvuru ücreti için başvuruya özgü liste gerekir. Belgelerin asıllarını hangi aşamada sunacağınızı da bu görüşmede netleştirebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2161,
+    "output_tokens": 383,
+    "latency_s": 6.209177374956198,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "b9a94e7b2eca18fe473043c2b76a75b12a2de15e432ff16e1905480034da282e",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Kiracı olarak su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kira sözleşmesi hazırlamanız gerekmektedir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi hazırlanır.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"İlk bilgi alma aşamasında kimlik veya kira sözleşmesi gibi belgelerin görüntülerini genel bilgi sohbetine yüklemeniz gerekmez.\",\n      \"citations\": [2, 4],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"kimlik veya kira sözleşmesi görüntüsünü genel bilgi sohbetine yüklemeniz gerekmez.\"\n        },\n        {\n          \"citation\": 4,\n          \"quote\": \"Genel hizmet sorusu sormak için kimlik numarası, banka bilgisi veya belge görüntüsü paylaşmanız gerekmez.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Gerekli belgeler, başvurunun yetkili kanalına sunulmalıdır.\",\n      \"citations\": [4],\n      \"evidence\": [\n        {\n          \"citation\": 4,\n          \"quote\": \"Kimlik ya da kira sözleşmesi gibi belgeler gerekiyorsa ilgili başvurunun yetkili kanalına sunulur.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:43:42.294975+00:00",
+    "wall_latency_including_pacing_s": 14.504162083962001
+  }
+}

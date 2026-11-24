@@ -1,0 +1,46 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Kedim zaten kayıtlı, ama iletişim bilgilerim değişti. Yeni kayıt mı açtırmalıyım, yoksa mevcut kaydı güncelleyebilir miyim?",
+    "language": "tr",
+    "sources_sha256": "c1e30a8d83fc2bc3752dddcdeb204dce7d2e1b0744bf381e73c4788214c22f19",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "0d1b004cebaeabfb7be828129f394eb583b982c13314390957b15f064612dc65",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "Source 1 confirms that if updating existing registration information, one should specify the changed information, implying a new registration is not required."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "Source 2 explicitly states that initial registration and updating contact information are separate requests."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the provided sources regarding the process for updating pet registration information.",
+    "attempts": 1,
+    "input_tokens": 2045,
+    "output_tokens": 156,
+    "latency_s": 3.7538432490546256,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "5a1e2954cf1c0a1195a8a86edf5924dc2782ae09c701d835bd8dc0540ca16b33",
+    "wall_latency_including_pacing_s": 7.470742832985707
+  }
+}

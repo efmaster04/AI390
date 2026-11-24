@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D020","title":"Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi","title_en":"Pothole and Road Surface Fault Reporting","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D020","access":["public"],"synthetic":true,"review_status":"draft","keywords":["pothole","road surface","çukur","asfalt"]}
+{"doc_id":"YV-D020","title":"Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı","title_en":"Potholes and Road Surface Damage","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D020","access":["public"],"synthetic":true,"review_status":"draft","keywords":["pothole","road damage","near miss","çukur","yol hasarı","ramak kala"]}
 ---
 
-# Yeşilvadi Yol Çukuru ve Yol Yüzeyi Bildirimi
+# Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı
 
-## Kapsam ve veri niteliği {#scope}
+## Yol yüzeyindeki hangi sorunlar bildirilir? {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Yol çukuru, çökmüş asfalt, kabarmış yüzey ve yol üzerinde geçişi etkileyen hasarlar için yol bakım bildirimi yapılabilir. Belirli bir hasarı bildirmek ile bütün yolun yenilenmesini talep etmek farklı konulardır. Hasarın bulunduğu yer ve araç ya da yaya geçişi üzerindeki etkisi, başvurunun anlaşılması için temel bilgidir.
 
-## Gerekli konum ve etki {#details}
+## Çukuru ve etkisini tarif etme {#details}
 
-Çukur bildirimi için mahalle, sokak veya cadde, yakın konum tarifi ve mevcut etki alınır. Kullanıcı ölçü vermediyse derinlik santimetre cinsinden uydurulmaz. Araçların kaçınma hareketi veya bildirilen bir ramak kala durumu varsa anlatıldığı gibi kaydedilir. Fotoğraf bulunması yardımcı olabilir ancak sınıflandırma için kişisel kimlik bilgisi gerekmez.
+Mahalle, sokak veya caddeyi, hasarın yolun hangi yönünde bulunduğunu ve yakındaki belirgin bir noktayı yazın. Yaklaşık büyüklüğü biliniyorsa ekleyin; ölçmediyseniz kesin ölçü vermeniz gerekmez. Araçların çukurdan kaçmak için yön değiştirmesi, geçişin daralması veya bir ramak kala yaşanması gibi gözlemlerinizi açıklayın. Olayı ne zaman gördüğünüzü ve hasarın bir noktada mı yoksa yol boyunca mı sürdüğünü belirtin. Fotoğraf konumu ayırt etmeye yardımcı olabilir.
 
-## İşlem ve zaman sınırı {#limits}
+## Önceki bildirim ve yeni hasar {#limits}
 
-Asistan yolu gördüğünü, çukuru ölçtüğünü veya asfalt ekibi gönderdiğini söylemez. Sıradan çukur ile somut tehlike bildiren olayın önceliği aynı olmak zorunda değildir; proje öncelik belgesi kullanılır. Bu rehber onarımın hangi gün biteceğini içermez. Bir bildirimin öncelik alması, onarımın başlamış veya tamamlanmış olduğu anlamına gelmez.
+Aynı noktayı daha önce bildirdiyseniz başvuru numarasını kullanarak hasarın devam ettiğini iletin. Çukur büyümüşse veya yeni bir yüzey çökmesi oluşmuşsa neyin değiştiğini belirtin. Aynı caddedeki başka bir çukurun yerini ayrı tarif edin; yalnız cadde adının aynı olması bütün hasarların aynı noktada olduğu anlamına gelmez. Bakım programı ya da işlem durumu için ilgili başvuruya ait güncel bilgiye başvurun.

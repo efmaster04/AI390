@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D010","title":"Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı","title_en":"2026 Synthetic Fee Information Scope","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D010","access":["public"],"synthetic":true,"review_status":"draft","keywords":["fees","tariff","price","ücret","tarife"]}
+{"doc_id":"YV-D010","title":"Yeşilvadi Ödeme Belgesi ve Ücret Bilgisi Rehberi","title_en":"Payment Receipt and Fee Enquiries","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D010","access":["public"],"synthetic":true,"review_status":"draft","keywords":["Ödeme Belgesi ve Ücret Bilgisi Rehberi","Payment Receipt and Fee Enquiries","başvuru","bilgi","service"]}
 ---
 
-# Yeşilvadi 2026 Sentetik Ücret Bilgisi Kapsamı
+# Yeşilvadi Ödeme Belgesi ve Ücret Bilgisi Rehberi
 
-## Kapsam ve veri niteliği {#scope}
+## Ödeme belgenizi kontrol edin {#summary}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Belediye hizmetiyle ilgili ödemenizi araştırırken ödeme belgesini veya dekontu saklayın. Bir ücretin hangi hizmete ait olduğunu anlamak için yalnız toplam tutara bakmak yeterli olmayabilir. Aynı gün farklı hizmetler için yapılmış ödemeler ayrı işlem referanslarıyla izlenebilir.
 
-## Yayımlanmış ücret sınırı {#details}
+## İşlemi tanımlayan bilgiler {#details}
 
-Bu taslak veri sürümünde nikâh, evcil hayvan kaydı, su aboneliği ve etkinlik izni için onaylanmış sayısal ücret kalemleri yayımlanmamıştır. Bu nedenle asistan bu hizmetlerin ücretsiz olduğunu da belirli bir tutar gerektirdiğini de söyleyemez. Bir ücret sorusu cevaplanırken hizmet adı ve geçerlilik yılı eşleşen açık bir tarife kalemi gerekir.
+Dekontta hizmetin veya işlemin adı, ödeme tarihi, tutar ve işlem referansı kontrol edilir. Ödemenin hangi hizmete ait olduğunu belirleyemiyorsanız bu bilgileri tahsilat birimine iletin. Başvuru referansı ile ödeme işlem referansı aynı bilgi olmayabilir; belgenizdeki iki referansı birbirine karıştırmayın. Banka kartınızın bütün numarasını genel bilgi mesajına yazmanız gerekmez.
 
-## Gelecekte tarife ekleme {#limits}
+## Güncel ücret ve itiraz {#limits}
 
-Ekip ileride kurgusal ücret kalemi eklerse hizmet kodu, tutar, para birimi, geçerlilik tarihi ve sentetik kaynak sürümü birlikte kaydedilir. Ücretin kaynakta bulunması ödeme yapılabileceği anlamına gelmez; Beldesk ödeme almaz. Eski sürüm ile yeni tarife çelişirse sessizce birini seçmek yerine sürüm ve geçerlilik denetimi gerekir. Bu doküman fiyatları uydurarak cevap üretmeyi önlemek için vardır.
+Yeni bir başvuru için ücret soruyorsanız hizmetin adını ve başvuru türünü belirtin. Güncel tarife, daha önceki bir ödemenin tutarıyla aynı olmak zorunda değildir. Yanlış hizmete ödeme yaptığınızı düşünüyorsanız dekontla tahsilat biriminden işlem incelemesi isteyin. İnceleme talebinin alınması tek başına iade yapıldığı veya başvuru ücretinin değiştiği anlamına gelmez.

@@ -128,56 +128,57 @@ All Week 2 numbers come from `eval/results/week2/` ([report](reports/week-2.md))
 - `cost_per_task_usd` is the list-price equivalent from `config/prices.json`, not actual spend; the free tier bills 0 USD.
 - W2.6 human labels: see [eval/human_labels/HOW_TO_LABEL.md](eval/human_labels/HOW_TO_LABEL.md).
 
-## Week 3: local retrieval
+## Week 3: citizen service RAG
 
-This Week 3 branch adds hybrid retrieval, source-cited answer generation and a claim-level judge; the integrated commands and measurement limits appear below. The 31 synthetic documents and the gold labels are drafts requiring human review. See [the step-by-step explanation, results and handoff](docs/retrieval_week3.md).
+The active **citizen-v2** corpus contains **30 citizen-facing service guides** and one staff-only access-control fixture. The guides explain applications, required preparation, service routing and complaint follow-up. They are declared **fictional project data**, not real municipal regulations. Internal assistant instructions belong in prompts/code, outside the public knowledge corpus.
 
-Use Python 3.13 and an isolated environment. These optional packages do not replace the Week 1/2 requirements. The first model download is about 1 GB, in addition to dependencies. After downloading, search and retrieval evaluation run locally without a Gemini key or inference API charge.
+The main test set contains **32 resident questions (16 TR / 16 EN)** and **6 unavailable-information/privacy controls (3 TR / 3 EN)**. Examples include checking a payment receipt, following up an unresolved lamp report, reporting a household power outage and clearing a clogged rain drain. Developer/schema/citation-proof questions were removed from citizen scoring. See [the revision](docs/week3_benchmark_revision.md), [the questions](eval/testsets/week3_retrieval.jsonl) and [the frozen source/label manifest](eval/testsets/week3_citizen_v2_manifest.json).
+
+### Local retrieval
+
+Use an isolated Python 3.13 environment. Optional retrieval dependencies do not replace Week 1/2 requirements. The first model download is approximately 1 GB; later retrieval runs locally without a Gemini key.
 
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-retrieval.lock.txt
 .venv/bin/python -m src.rag.cli download
-.venv/bin/python -m src.rag.cli search "Kiracıyım, su aboneliği için hangi belgeler gerekiyor?" --k 3
-.venv/bin/python -m eval.retrieval_week3 --out-dir /tmp/beldesk-week3-retrieval
+.venv/bin/python -m src.rag.cli search "Kiracıyım, su aboneliği için ne hazırlamalıyım?" --k 3
+.venv/bin/python -m eval.retrieval_week3 --out-dir eval/results/week3/retrieval
+.venv/bin/python -m eval.retrieval_stats_week3
 ```
 
-The benchmark measures hit@1/3/5/10 and MRR@10 on 32 answerable questions, with 6 separate unanswerable controls and two one-change ablations. Results in `eval/results/week3/retrieval/` are provisional, not generated-answer accuracy. Never expose the CLI's staff-role switch as citizen-controlled authorization. Do not commit model downloads, `.venv` or `.cache`.
+Measured citizen-v2 hybrid results: **hit@5 32/32**, **all-required-facets@5 31/32**, **MRR@10 0.7589**. A hit on one half of a multi-service question does not prove complete evidence coverage. Canonical/alternative evidence groups were fixed before scoring. Dense versus hybrid and reranker on/off use the same frozen questions. These are small, synthetic draft-set measurements, not generated-answer accuracy or a guarantee on unseen citizen questions.
 
-## Weekly submission
-
-The full Week 1 report should use the commit that will be tagged `week-1` and the exact scripts, data, and commands from that commit (R8). No real personal data is allowed (R10); writes are sandbox only (R11), and API keys must never enter the repository (R13). Weekly reports go in `reports/week-N.md` and are due at least 24 hours before class with a `week-N` tag (R4).
-
-## Week 3: integrated review branch
-
-The local presentation is `docs/week3/index.html` (open the HTML file in a browser; no hosting change). The full draft report is `reports/week-3.md`. Generation uses the original Gemini3.1Flash-Lite at the user's direction; actual service failures are retained.
+### Source-cited answers and classroom demo
 
 ```sh
-.venv/bin/python -m eval.answer_week3 --provider gemini --model gemini-3.1-flash-lite --out-dir /tmp/beldesk-w3-answers --transport-retries 2 --backoff-s 5 --stage-retries 0 --defer-judge --max-calls 150 --rpm 8 --timeout-s 30 --deadline-s 1500
-.venv/bin/python -m eval.answer_week3 --out-dir eval/results/week3/answers --recompute-only
-.venv/bin/python -m tools.week3_review.server --sheet eval/results/week3/calibration/human_sheet.csv --port 8767
+.venv/bin/python -m scripts.try_rag
+.venv/bin/python -m scripts.try_rag --search-only
+.venv/bin/python -m scripts.try_rag --replay W3-R003
+```
+
+The first command calls Gemini 3.1 Flash-Lite at temperature 0 with bounded attempts. `--search-only` is live local retrieval without generation. `--replay` explicitly labels a saved example; it is not a fresh model response. Each question is independent and only public evidence is searched. The staff-role CLI switch is a test surface, not citizen-controlled authorization.
+
+For a fresh answer/judge experiment, use a separate output directory:
+
+```sh
+.venv/bin/python -m eval.answer_week3 --provider gemini --model gemini-3.1-flash-lite --out-dir /tmp/beldesk-citizen-v2 --transport-retries 1 --stage-retries 1 --defer-judge --max-calls 120 --rpm 8 --timeout-s 30 --deadline-s 1200
 .venv/bin/python -m scripts.run_week3_calibration --recompute-only
 .venv/bin/python -m scripts.build_week3_report
 .venv/bin/python scripts/build_week3_presentation.py
 ```
 
-No push/deployment is part of these commands. Human labels must be entered by the real reviewer, never auto-filled from model verdicts. The historical calibration stress set is separate from current RAG quality. Two genuine customer interviews remain pending; see `docs/product_interviews_week3.md`. Speaking draft: `docs/week3_speaking_script.md`; Doruk's learning guide: `docs/week3_doruk_study.md`.
+`eval/results/week3/active_answer_run.json` identifies the actual recorded answer run used by the report. Report generation rejects source/question hashes that do not match citizen-v2. Semantic source support is measured claim by claim, separately from answer completeness and fixed-refusal behavior. Unknown billing stays unknown; saved-token price equivalents are not actual spend.
 
+### Historical evidence and reviews
 
-The original answer run stays in `eval/results/week3/answers/`; the recovery run is separate in `answers_retry_v2/`. Successful stages may be historical cache hits, recorded explicitly per row and in the summary. `active_answer_run.json` identifies the report input. Retry uses bounded exponential backoff, jitter and server `Retry-After`; it keeps Gemini 3.1 Flash-Lite and does not change quota or billing settings.
+Old v1 results are preserved in `eval/results/week3/archive/v1-meta-benchmark/`; old questions are in `eval/testsets/archive/`. **Do not present the old 31/32 or old model responses as citizen-v2 results.** The two benchmarks are not a like-for-like improvement experiment. Retired internal questions are unscored examples in `eval/testsets/week3_internal_policy_cases.jsonl`; they are outside citizen retrieval metrics.
 
-Doruk's 13 actual human labels are preserved. The remaining seven suggestions and an audit of the first thirteen are in [Tamamlayıcı inceleme](eval/results/week3/calibration/supplementary_review.md). The local read-only route is `http://127.0.0.1:8767/supplementary`. Supplementary suggestions are excluded from human–judge agreement. To retry the real calibration judge in small checkpointed batches, run `.venv/bin/python -m scripts.retry_week3_calibration` **after** any answer run, so the two processes do not independently use the same request budget.
+The team's **20 adjudicated human labels** and **two interview records** are preserved. Historical judge calibration (κ≈0.771) uses embedded **v1 source snapshots** and is not direct human grading of the new citizen-v2 answers. Earlier supplementary notes are retained under `calibration/history/`. Rewritten public guides reset to draft; an approval of older text is not approval of its replacement.
 
+See [the technical guide](docs/retrieval_week3.md), [weekly report](reports/week-3.md), [speaking script](docs/week3_speaking_script.md), [Doruk's study guide](docs/week3_doruk_study.md) and [team interview notes](docs/product_interviews_week3.md). The self-contained deck is [docs/week3/index.html](docs/week3/index.html): download and open the HTML locally. Branch: [week3](https://github.com/efmaster04/AI390/tree/week3). This branch does not change the current Week 2 GitHub Pages home.
 
-### Week 3 classroom demo
+## Weekly submission
 
-Start the bounded interactive source-cited assistant from the repository root:
+The full Week 1 report should use the commit that will be tagged `week-1` and the exact scripts, data, and commands from that commit (R8). No real personal data is allowed (R10); writes are sandbox only (R11), and API keys must never enter the repository (R13). Weekly reports go in `reports/week-N.md` and are due at least 24 hours before class with a `week-N` tag (R4).
 
-```sh
-.venv/bin/python -m scripts.try_rag
-```
-
-For a live local-search demonstration without any API call, use `--search-only`. For a saved example, use `--replay W3-R019`; the terminal explicitly labels it as recorded. Replay is a backup, not a live model response. Each live question is independent, and only public sources are searched. This Week 3 entry point uses bounded 30-second transport attempts and one transient-error retry.
-
-
-Week 3 review branch: [`week3`](https://github.com/efmaster04/AI390/tree/week3). The complete self-contained deck is [`docs/week3/index.html`](docs/week3/index.html): download the HTML and open it in a browser. The current GitHub Pages home remains the Week 2 presentation; this branch publication does not claim a Week 3 deployment or release tag.

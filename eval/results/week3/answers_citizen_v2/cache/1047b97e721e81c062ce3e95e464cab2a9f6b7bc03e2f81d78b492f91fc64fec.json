@@ -1,0 +1,108 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Yarın bizim sokaktaki su borusu için ekip saat kaçta gelecek?",
+    "language": "tr",
+    "sources_sha256": "31b9b8c46872ed5dbbb53788d54698976c0bcbdd02dadf61777eb5caca7cdc51",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Bu sorunun yanıtı erişebildiğim belgelerde bulunmuyor. Güvenilir bir yanıt vermek için yeterli kaynak yok.",
+    "claims": [],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#details",
+        "chunk_id": "YV-D030#details:0-448:f2a0058108",
+        "title": "Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi",
+        "heading": "Izgara ve birikimi tarif etme",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve suyun biriktiği veya ızgaranın bulunduğu noktayı yazın. Sorunun yağmur sırasında mı yoksa yağmur bittikten sonra da mı sürdüğünü belirtin. Izgara üzerinde yaprak, çöp veya başka bir kapanma görünüyorsa bunu ekleyin. Birikimin yolu, kaldırım geçişini veya bina girişini etkileyip etkilemediğini açıklayın. Yakındaki kavşak, durak veya bina gibi bir işaret ve varsa fotoğraf, aynı sokaktaki farklı ızgaraları ayırmaya yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#details",
+        "chunk_id": "YV-D024#details:0-466:80576ab47b",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması",
+        "heading": "Altyapı sorununda gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve suyun ya da taşmanın görüldüğü noktayı belirtin. Akışın boru, rögar veya başka bir yerden geldiğini biliyorsanız yazın; kaynağı belli değilse görülen yeri tarif edin. Sorunun ne zamandır sürdüğünü, akışın devam edip etmediğini ve yol, kaldırım veya bina girişini etkileyip etkilemediğini açıklayın. Birden fazla ayrı arıza varsa her arızanın konumunu ve gözlemini ayrı bildirin. Fotoğraf ve yakın bir işaret, noktanın bulunmasına yardımcı olabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D011",
+        "passage_id": "YV-D011#schedule",
+        "chunk_id": "YV-D011#schedule:0-416:b5941b335b",
+        "title": "Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi",
+        "heading": "Toplama takvimi ve başvuruyu izleme",
+        "source": "beldesk://synthetic/YV-D011",
+        "version": "citizen-v2",
+        "text": "Belirli bir sokağın toplama gününü öğrenmek için o bölgeye ait güncel temizlik takvimini isteyin. Mahalle adıyla birlikte sokak bilgisini vermek, aynı mahalledeki farklı güzergâhların karıştırılmasını önler. Daha önce aynı nokta için başvurduysanız önceki başvuru numarasını ekleyerek birikimin devam ettiğini bildirebilirsiniz. Toplama yapıldığında yalnızca bir kısmı alınmışsa kalan atığın yerini ayrıca açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D007",
+        "passage_id": "YV-D007#details",
+        "chunk_id": "YV-D007#details:0-401:771256ab0f",
+        "title": "Yeşilvadi Talep ve Şikâyet Başvurusu",
+        "heading": "Birden fazla sorun",
+        "source": "beldesk://synthetic/YV-D007",
+        "version": "citizen-v2",
+        "text": "Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır. Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın. Bir sorunun bilgilerini diğerinin yerine kullanmak, ilgili birimin olayları ayırmasını güçleştirir. İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#limits",
+        "chunk_id": "YV-D022#limits:0-428:dce3b9735c",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Yeni bilgi ve takip",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Daha önce başvurduysanız eski başvuru numarasını kullanarak lambanın hâlâ yanmadığını veya yeni bir bölümün de etkilendiğini iletin. Gündüz görülen bir direk hasarıyla gece görülen aydınlatma sorununu ayrı açıklayabilirsiniz. Ev ve işyerlerine de elektrik gelmiyorsa konut kesintisi için ilgili dağıtım hizmetinden bilgi alınması gerekir. Aydınlatma bildiriminin sonucunu öğrenirken ilk başvurudaki konumu ve referansı kullanın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": true,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2286,
+    "output_tokens": 17,
+    "latency_s": 3.0739640410756692,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "f4c9a27ea4b528f606e816e9837dd5fefb83d15c7dc70152dff9d9af05a81d38",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": false,\n  \"claims\": []\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:44:18.409262+00:00",
+    "wall_latency_including_pacing_s": 6.753810541005805
+  }
+}

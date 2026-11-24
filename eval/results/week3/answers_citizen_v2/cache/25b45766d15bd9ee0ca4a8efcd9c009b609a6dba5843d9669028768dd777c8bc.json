@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Our house is finished and we already have a building permit. Do we still need a separate occupancy application?",
+    "language": "en",
+    "sources_sha256": "7a96e9564c62673dab0877206834d56cf570b1bd6f84cc38c24b28829373266d",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Yes, you still need to apply for occupancy because it is a separate evaluation from the building permit. [1]\nHaving a building permit does not mean that the occupancy process has been completed. [1]\nA building permit is for the construction phase, while an occupancy application is for the use of the completed structure. [2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Yes, you still need to apply for occupancy because it is a separate evaluation from the building permit.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Yapı ruhsatı, inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Having a building permit does not mean that the occupancy process has been completed.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Bu nedenle bir yapı için ruhsat bulunması, iskân işleminin de tamamlandığını göstermez."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "A building permit is for the construction phase, while an occupancy application is for the use of the completed structure.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "İnşaata başlamaya yönelik izin için yapı ruhsatı, tamamlanan yapının kullanımına ilişkin işlem için iskân başvurusu yapılır."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#summary",
+        "chunk_id": "YV-D002#summary:0-288:c7ce46de46",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Başvuru Rehberi",
+        "heading": "İki farklı işlem",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "citizen-v2",
+        "text": "Yapı ruhsatı, inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir. Bu nedenle bir yapı için ruhsat bulunması, iskân işleminin de tamamlandığını göstermez. Hangi aşamada olduğunuzu belirlemek, doğru başvuru dosyasını hazırlamanızı sağlar.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#details",
+        "chunk_id": "YV-D002#details:0-366:2b99ec8a55",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Başvuru Rehberi",
+        "heading": "Hangi başvuru yapılmalı?",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "citizen-v2",
+        "text": "İnşaata başlamaya yönelik izin için yapı ruhsatı, tamamlanan yapının kullanımına ilişkin işlem için iskân başvurusu yapılır. İlk görüşmede yapının adresi, parsel bilgisi biliniyorsa bu bilgi ve başvuru türü belirtilir. Daha önce açılmış dosya varsa dosya referansını hazırlayın. Teknik çizimler ve ek belgeler, ilgili başvuru türünün belge listesine göre tamamlanır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D002",
+        "passage_id": "YV-D002#limits",
+        "chunk_id": "YV-D002#limits:0-363:7fd60daf21",
+        "title": "Yeşilvadi Yapı Ruhsatı ve İskân Başvuru Rehberi",
+        "heading": "Dosyanın izlenmesi",
+        "source": "beldesk://synthetic/YV-D002",
+        "version": "citizen-v2",
+        "text": "Başvuru sonrası eksik evrak bildirimi ile nihai değerlendirme sonucu ayrı aşamalardır. Başvurunuza belge ekleyeceğinizde dosya referansını kullanın. Yapının özellikleri veya kullanım amacı değişiyorsa bunu İmar ve Ruhsat birimine bildirin; farklı dosyaların belge listeleri birbirinin yerine kullanılmaz. Dosyanın güncel durumu başvuru takip kanalından öğrenilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D013",
+        "passage_id": "YV-D013#scope",
+        "chunk_id": "YV-D013#scope:0-370:d8884cf39c",
+        "title": "Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama",
+        "heading": "Geri dönüşüm bilgisini seçme",
+        "source": "beldesk://synthetic/YV-D013",
+        "version": "citizen-v2",
+        "text": "Geri dönüştürülebilir atıklar için toplama günü, bırakma noktası ve kabul edilen malzeme türü hakkında bilgi alınabilir. Evde biriktirilen ambalaj atığı ile büyük miktardaki işyeri atığı aynı toplama düzenine tabi olmayabilir. Başvurunuzda evsel kullanım mı işyeri faaliyeti mi olduğunu ve yaklaşık miktarı açıklamanız, uygun hizmet bilgisinin bulunmasını kolaylaştırır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D006",
+        "passage_id": "YV-D006#limits",
+        "chunk_id": "YV-D006#limits:0-403:59babf41e0",
+        "title": "Yeşilvadi Etkinlik ve Geçici Stant Başvurusu",
+        "heading": "Değerlendirme ve değişiklik",
+        "source": "beldesk://synthetic/YV-D006",
+        "version": "citizen-v2",
+        "text": "Alan uygunluğu ve izin sonucu ilgili birimin incelemesinden sonra kesinleşir. Yer, tarih veya katılımcı sayısında değişiklik olduğunda mevcut başvuru referansını kullanarak değişikliği bildirin. Etkinlik sonrasında atık toplama veya eşya alımı gerekiyorsa ilgili hizmet için ayrıca talep iletin. Erişimi engelleyen mevcut bir kaldırım veya giriş sorunu, erişilebilirlik bildirimi olarak da iletilebilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2171,
+    "output_tokens": 303,
+    "latency_s": 1.4656181250466034,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "62da95758d85c3fa49586ed8c85baf05437b0535765d0159c9bbaae608a9f13c",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Yes, you still need to apply for occupancy because it is a separate evaluation from the building permit.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Yapı ruhsatı, inşaata ilişkin izin sürecidir; iskân ise tamamlanan yapının kullanımına ilişkin ayrı değerlendirmedir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Having a building permit does not mean that the occupancy process has been completed.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Bu nedenle bir yapı için ruhsat bulunması, iskân işleminin de tamamlandığını göstermez.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"A building permit is for the construction phase, while an occupancy application is for the use of the completed structure.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"İnşaata başlamaya yönelik izin için yapı ruhsatı, tamamlanan yapının kullanımına ilişkin işlem için iskân başvurusu yapılır.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:39:47.133959+00:00",
+    "wall_latency_including_pacing_s": 6.976407582988031
+  }
+}

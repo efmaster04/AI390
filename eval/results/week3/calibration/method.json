@@ -5,5 +5,9 @@
   "evidence": "assigned post hoc from current Week3 sources, not original baseline citations",
   "human_labels": "blank until real reviewer enters them",
   "selection": "purposeful mix of factual requirements, unavailable figures and system boundaries; not representative random RAG sample",
-  "code_sha256": "6bcd2cfe1abf88eacda27a1c2178dc5f94061184a5d06c1f3ac123a9620a850a"
+  "code_sha256": "6bcd2cfe1abf88eacda27a1c2178dc5f94061184a5d06c1f3ac123a9620a850a",
+  "source_snapshot_git_commit": "be14fc0dbfb402b144eba5b6c5e055c1bd66758c",
+  "source_snapshot_version": "week3-v1",
+  "current_citizen_benchmark_version": "citizen-v2",
+  "comparison_scope": "Historical rubric calibration against embedded v1 source snapshots; not current citizen-v2 accuracy. Team labels from22577a6 preserved."
 }

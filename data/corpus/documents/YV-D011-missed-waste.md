@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D011","title":"Yeşilvadi Alınmayan Evsel Atık Bildirimi","title_en":"Missed Household Waste Collection Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D011","access":["public"],"synthetic":true,"review_status":"draft","keywords":["çöp","atık","temizlik","missed waste collection","rubbish","garbage","container"]}
+{"doc_id":"YV-D011","title":"Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi","title_en":"Missed Rubbish Collection and Container Reports","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D011","access":["public"],"synthetic":true,"review_status":"draft","keywords":["missed collection","rubbish","garbage","container","çöp alınmadı","konteyner","temizlik"]}
 ---
 
-# Yeşilvadi Alınmayan Evsel Atık Bildirimi
+# Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi
 
-## Kapsam ve veri niteliği {#scope}
+## Alınmayan çöp ve taşan konteyner {#scope}
 
-Bu sentetik rehber Beldesk ders projesinde alınmayan evsel atık bildirimini açıklamak için hazırlanmıştır. Resmî bir belediye hizmet standardı değildir ve ekip incelemesi bekler. Soru yalnızca toplama gününü öğrenmek için sorulmuşsa bilgi isteği olarak ele alınır; çöpün alınmadığını bildiren mesaj ise saha sorunu taslağına konu olabilir. İkisi birbirine karıştırılmamalıdır.
+Evsel çöplerin alınmaması, konteynerin taşması, konteyner çevresinde atık birikmesi ve toplama noktasına erişilememesi için temizlik bildirimi yapılabilir. Toplama gününü öğrenmek isteyenler ile planlanan toplamanın yapılmadığını bildirenler farklı bilgiye ihtiyaç duyar. Bildiriminizde sorunun hangisi olduğunu açıklamanız, temizlik biriminin doğru yeri ve hizmeti belirlemesine yardımcı olur.
 
-## Bildirim için gereken bilgiler {#reporting}
+## Bildiriminizde bulunması gerekenler {#reporting}
 
-Mahalle, sokak, konteynerin yeri, sorunun ne zamandır sürdüğü ve tek konteynerin mi yoksa bütün sokağın mı etkilendiği sorulur. Taşma, kaldırım geçişinin kapanması veya başka bir olumsuz etki varsa vatandaşın anlattığı şekilde kaydedilir; etkilenen kişi sayısı uydurulmaz. Asistan bildirim için vatandaşın ev adresini veya telefon numarasını zorunlu tutmaz. Hazırlanan taslak, kullanıcıdan onay istenerek gösterilir; bu aşamada kayıt açılmış olmaz.
+Bildiriminize mahalle, sokak, konteynerin bulunduğu nokta ve çöpün ne zamandır alınmadığını ekleyin. Sorunun tek konteynerde mi, birden fazla noktada mı yoksa bütün sokakta mı görüldüğünü belirtin. Taşma nedeniyle kaldırımın kapanması veya konuta girişin zorlaşması gibi mevcut etkileri açıklayın. Konteynerin üzerindeki numara okunuyorsa yazabilir, numara yoksa yakındaki bina ya da köşe gibi bir tarif kullanabilirsiniz. Fotoğraf yerin ve birikimin anlaşılmasını kolaylaştırabilir.
 
-## Toplama günü ve işlem sınırı {#schedule}
+## Toplama takvimi ve başvuruyu izleme {#schedule}
 
-Bu belge Çamlık veya başka bir mahallenin güncel çöp toplama günü ve saatini içermez. Toplama takvimi sorusu için ayrıca yayımlanmış bir takvim kaynağı gerekir. Asistan gün veya saat tahmin etmez, ekip gönderildiğini söylemez ve bir temizlik işleminin tamamlandığını doğrulamaz. Risk sınıflandırması gerekiyorsa yürürlükte kabul edilen proje öncelik belgesi esas alınır; burada yeni bir P1–P4 kuralı tanımlanmamıştır.
+Belirli bir sokağın toplama gününü öğrenmek için o bölgeye ait güncel temizlik takvimini isteyin. Mahalle adıyla birlikte sokak bilgisini vermek, aynı mahalledeki farklı güzergâhların karıştırılmasını önler. Daha önce aynı nokta için başvurduysanız önceki başvuru numarasını ekleyerek birikimin devam ettiğini bildirebilirsiniz. Toplama yapıldığında yalnızca bir kısmı alınmışsa kalan atığın yerini ayrıca açıklayın.

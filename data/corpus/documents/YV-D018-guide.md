@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D018","title":"Yeşilvadi Kültür Merkezi Etkinlik Bilgisi","title_en":"Cultural Centre Event Information","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D018","access":["public"],"synthetic":true,"review_status":"draft","keywords":["cultural centre","Atatürk","Saturday","kültür merkezi","cumartesi"]}
+{"doc_id":"YV-D018","title":"Yeşilvadi Kültür Merkezi ve Etkinlik Katılımı","title_en":"Cultural Centre Visits and Event Attendance","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D018","access":["public"],"synthetic":true,"review_status":"draft","keywords":["cultural centre","event attendance","registration","opening hours","kültür merkezi","etkinlik","katılım"]}
 ---
 
-# Yeşilvadi Kültür Merkezi Etkinlik Bilgisi
+# Yeşilvadi Kültür Merkezi ve Etkinlik Katılımı
 
-## Kapsam ve veri niteliği {#scope}
+## Mekân ve etkinlik bilgisini ayırma {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Kültür merkezinde yapılacak bir etkinliğe katılmak, bir atölyeye kaydolmak ve binanın ziyaret koşullarını öğrenmek farklı bilgi talepleridir. Aynı binada birden fazla salon veya program bulunabilir. Sorunuzu etkinliğin adı ya da kullanmak istediğiniz salonla birlikte iletmeniz, genel bina bilgisi yerine doğru programın bulunmasına yardımcı olur.
 
-## Tesis ve etkinliği ayırma {#details}
+## Katılım için hangi bilgileri aramalısınız? {#details}
 
-Kültür merkezi sorusunda tesis adı ile etkinlik adı birbirinden ayrılır. Bir etkinliğin saati, binanın genel açık olduğu saatle aynı bilgi değildir. Kullanıcı Atatürk Kültür Merkezi hakkında soruyorsa hangi gün ve hangi hizmeti kastettiği gerekirse netleştirilir. Bu rehber yalnızca bilgi talebinin nasıl hazırlanacağını açıklayan sentetik içeriktir.
+Etkinlik katılımı için etkinlik adı, düzenleneceği kültür merkezi, tarih, başlangıç saati ve kayıt gerekip gerekmediği kontrol edilir. Programda belirtilen etkinlik saati, binanın genel açılış ve kapanış saatleriyle aynı değildir. Atölye başvurularında program adı ve katılmak istediğiniz grup veya oturum belirtilir. Erişilebilir giriş, refakatçi düzeni ya da oturma alanıyla ilgili ihtiyacınız varsa bunu katılım bilgisiyle birlikte sorabilirsiniz.
 
-## Takvim ve bilet sınırı {#limits}
+## Değişiklik ve ziyaret saatleri {#limits}
 
-Bu sürüm Atatürk Kültür Merkezi cumartesi kapanış saatini ve güncel etkinlik takvimini yayımlamaz. Beldesk bilet ayırmaz, koltuk uygunluğu söylemez ve etkinliğin iptal edilmediğini doğrulamaz. Program bilgisi için etkinliğe özel kaynak gerekir. Kaynak bulunamadığında kullanıcıya rastgele bir saat veya başka bir kültür merkezinin programı verilmemelidir.
+Belirli bir cumartesi veya pazar günü ziyaret edecekseniz kültür merkezinin adını ve tarihi açıkça belirtin. Hafta sonu saatleri ile tek bir etkinliğin bitiş saatini birbirinin yerine kullanmayın. Etkinliğin ertelenip ertelenmediği ve boş yer bulunup bulunmadığı için tarihli program duyurusu veya kayıt durumunu kontrol edin. Daha önce kayıt yaptırdıysanız değişiklik sorusunda kayıt referansınızı paylaşabilirsiniz; başkasının katılımcı bilgilerini istemeyin.

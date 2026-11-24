@@ -1,0 +1,41 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Can I ask about municipal services without giving my identity number or uploading a photo of my ID?",
+    "language": "en",
+    "sources_sha256": "063a33e121e90180bd0f718b2b7307ef4aad721ea12e6d21223ece4d568aecf0",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "75211e9e3007d5875b07607353f7c13dcbbbebc220d13d3869f472547d002633",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly states that sharing identity numbers, bank details, or document images is not required for general service inquiries."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the source material regarding the non-requirement of personal documents for general service inquiries.",
+    "attempts": 1,
+    "input_tokens": 1939,
+    "output_tokens": 110,
+    "latency_s": 3.4785251239081845,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "7ac56dbe8c3c37bbf49b619dbb2cfc83bb30c653cf1b4ee7b98f489d6e693dae",
+    "wall_latency_including_pacing_s": 7.663141415920109
+  }
+}

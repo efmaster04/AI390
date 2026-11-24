@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D024","title":"Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi","title_en":"Water Leak and Sewer Overflow Report Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D024","access":["public"],"synthetic":true,"review_status":"draft","keywords":["sewer overflow","water leak","kanalizasyon","su kaçağı"]}
+{"doc_id":"YV-D024","title":"Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması","title_en":"Water Leaks and Sewer Overflows","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D024","access":["public"],"synthetic":true,"review_status":"draft","keywords":["water leak","sewer overflow","pipe","su kaçağı","kanalizasyon","rögar","boru"]}
 ---
 
-# Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması Bildirimi
+# Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması
 
-## Kapsam ve veri niteliği {#scope}
+## Su kaçağı ve taşma başvurusu {#scope}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Yoldaki su kaçağı, görünen boru arızası, rögar taşması ve kanalizasyon kaynaklı akış için altyapı bildirimi hazırlanabilir. İçme suyu hattına ilişkin kaçak ile kanalizasyon taşması farklı konulardır. Aynı yerde başka bir belediye hizmetinde de sorun bulunuyorsa, örneğin sokak aydınlatması çalışmıyorsa, bu ikinci sorunun türünü ayrıca açıklayın.
 
-## Sorunu ayırma {#details}
+## Altyapı sorununda gerekli bilgiler {#details}
 
-Su kaçağı bildirimi ile kanalizasyon taşması ayrılır; vatandaş hangisini bildiğini açıklayabilir. Mahalle, sokak, akışın yeri ve yol veya yaya geçişine bildirilen etki kaydedilir. Kaynağı bilinmeyen sıvının türü model tarafından kesinleştirilmez. Bir mesajda hem taşma hem lamba arızası bulunursa bunlar kendi kategorileriyle ayrı taslaklarda korunur.
+Mahalle, sokak ve suyun ya da taşmanın görüldüğü noktayı belirtin. Akışın boru, rögar veya başka bir yerden geldiğini biliyorsanız yazın; kaynağı belli değilse görülen yeri tarif edin. Sorunun ne zamandır sürdüğünü, akışın devam edip etmediğini ve yol, kaldırım veya bina girişini etkileyip etkilemediğini açıklayın. Birden fazla ayrı arıza varsa her arızanın konumunu ve gözlemini ayrı bildirin. Fotoğraf ve yakın bir işaret, noktanın bulunmasına yardımcı olabilir.
 
-## Gözlem ve müdahale sınırı {#limits}
+## Değişiklikleri bildirme ve izleme {#limits}
 
-Beldesk vanayı kapattığını, numune aldığını veya ekip yönlendirdiğini söylemez. Kesintinin ne zaman biteceği ya da suyun kullanılabilirliği hakkında bu rehberde veri yoktur. Kullanıcı kesin bir servis saati sorarsa tahmin yapılmaz. Açık bir tehlike anlatılıyorsa ilgili proje yönlendirmesi korunur; kayıt veya sevk işleminin gerçekleştiği iddia edilmez.
+Daha önce aynı taşma veya kaçak için başvurduysanız referans numarasını ekleyin. Akış durmuş ancak yüzeyde su birikmişse mevcut durumu açıklayın; yeni bir taşma oluştuysa ne zaman başladığını belirtin. Bir hizmet talebinin durumunu öğrenirken hangi arızaya ilişkin bilgi istediğinizi açıkça yazın. Aynı mesajda bulunan aydınlatma sorunu için altyapı başvurusunun tamamlanmış olması, ikinci sorunun da giderildiğini göstermez.

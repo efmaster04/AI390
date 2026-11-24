@@ -1,0 +1,61 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "I need to get rid of an old sofa. How do I request bulky waste collection, and what should I tell you about it?",
+    "language": "en",
+    "sources_sha256": "05e6d3144a8998dcaad35cc2c42702cf2f33b6dfd3d580598c0fc420c1dabfcc",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "eb214040947e157c9a86dc349b7e63d77d7fad2c971fd04c06f59d5a44a8b273",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "label": "supported",
+        "reason": "The source explicitly lists these requirements for bulky waste collection."
+      },
+      {
+        "claim_id": "C2",
+        "label": "supported",
+        "reason": "The source requires specifying access conditions if inside or location if outside."
+      },
+      {
+        "claim_id": "C3",
+        "label": "supported",
+        "reason": "The source states to include the date from which the item can be handed over."
+      },
+      {
+        "claim_id": "C4",
+        "label": "supported",
+        "reason": "The source instructs to state the item type and the requested service at the start."
+      },
+      {
+        "claim_id": "C5",
+        "label": "supported",
+        "reason": "The source confirms that showing only the items to be collected in a photo is sufficient."
+      }
+    ],
+    "unlisted_claims": [],
+    "coverage_complete": true,
+    "reason": "The answer accurately reflects the requirements for bulky waste collection as stated in the provided sources.",
+    "attempts": 1,
+    "input_tokens": 2436,
+    "output_tokens": 281,
+    "latency_s": 7.509176833089441,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "a9e41938c42cce38ceddfd8b9f37432c34e8ee77c218dc7a8f93ebf981ebabca",
+    "wall_latency_including_pacing_s": 9.594403958064504
+  }
+}

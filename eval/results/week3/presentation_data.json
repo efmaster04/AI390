@@ -1,6 +1,7 @@
 {
   "status_date": "2026-11-24",
-  "tests_passed": 279,
+  "dataset_version": "citizen-v2",
+  "tests_passed": 283,
   "deliverables": {
     "W3.1": {
       "status": "done",
@@ -15,8 +16,8 @@
       "note": ""
     },
     "W3.4": {
-      "status": "done",
-      "note": "Cited-answer code and fixed fallback tested; 38/38 valid saved responses, with cached/fresh provenance; service failures recorded."
+      "status": "partial",
+      "note": "36/38 valid citizen-v2 responses; actual fixed-refusal results retained."
     },
     "W3.5": {
       "status": "done",
@@ -24,7 +25,7 @@
     },
     "W3.6": {
       "status": "done",
-      "note": "Claim support measured; 20/20 matched human–judge pairs completed and adjudicated (κ=0.771, observed agreement=0.85)."
+      "note": "Current claim support measured; 20 historical human–judge pairs using preserved v1 sources. Not direct human grading of v2 answers."
     },
     "W3.7": {
       "status": "done",
@@ -44,27 +45,27 @@
       "script": null
     },
     "abstention_correct": {
-      "value": 1.0,
+      "value": 0.8333333333333334,
       "n": 6,
-      "numerator": 6,
+      "numerator": 5,
       "definition": "valid fixed-fallback response on unavailable-information controls"
     },
     "unsupported_claims": {
-      "value": 0.0,
-      "n": 61,
-      "numerator": 0,
+      "value": 0.02197802197802198,
+      "n": 91,
+      "numerator": 2,
       "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
     },
     "hit_at_5": {
-      "value": 0.96875,
+      "value": 1.0,
       "n": 32,
       "script": "eval/retrieval_week3.py"
     },
     "mrr": {
-      "value": 0.953125,
+      "value": 0.7588541666666667,
       "n": 32,
-      "script": "eval/retrieval_week3.py",
-      "cutoff": 10
+      "cutoff": 10,
+      "script": "eval/retrieval_week3.py"
     },
     "task_success": {
       "value": null,
@@ -83,63 +84,71 @@
       "script": null
     },
     "cost_per_task_usd": null,
-    "latency_p50_s": 2.521084417006932,
+    "latency_p50_s": 4.72438522905577,
     "spend_week_usd": null,
     "spend_total_usd": null
   },
   "availability": {
-    "selected_directory": "answers_retry_v3",
-    "initial_valid": 2,
-    "initial_processed": 38,
-    "retry_valid": 38,
+    "selected_directory": "answers_citizen_v2_complete",
+    "dataset_version": "citizen-v2",
+    "retry_valid": 36,
     "retry_processed": 38,
-    "cache_hits": 36,
-    "fresh_valid": 2,
-    "model": "gemini-3.1-flash-lite"
+    "cache_hits": 35,
+    "fresh_valid": 1,
+    "model": "gemini-3.1-flash-lite",
+    "comparable_to_retired_v1": false
+  },
+  "multi_facet_count": 3,
+  "cross_service_count": 2,
+  "retrieval_failure": {
+    "case_id": "W3-R032",
+    "question": "We are organising a small fair in a park, but wheelchair users cannot get through the entrance. What do we need for permission, and how can we report the access problem?",
+    "variant": "hybrid_rerank",
+    "diagnosis": "A required answer facet is missing from top 5",
+    "evidence_label": "YV-D006#details",
+    "note": "gold_in_candidates_but_below_top5. Finding one relevant passage does not cover every requested part; all-facet@5 = 0.969."
   },
   "human_review": {
-    "supplementary_review_completed": 7,
-    "approved_documents": 1,
+    "approved_documents": 0,
     "total_documents": 31,
     "claim_labels_completed": 20,
     "claim_labels_target": 20,
-    "observed_agreement": 0.85,
     "matched_human_judge_pairs": 20,
-    "automatic_claim_labels": 20,
+    "observed_agreement": 0.85,
+    "kappa": 0.7709923664122137,
     "calibration_status": "complete",
-    "calibration_origin": "Historical model claims; current evidence assigned post hoc; not current-RAG accuracy.",
-    "kappa": 0.7709923664122137
+    "calibration_origin": "Historical claims with embedded v1 evidence; not current citizen-v2 answer accuracy."
   },
   "product": {
     "interviews_completed": 2,
-    "summary": "2/2 interviews completed (Beyaz Masa supervisor & municipal IT coordinator): need cited FAQ checklists, local ACL-filtered RAG, and confirmation-gated writes."
+    "summary": "Two team-recorded interviews: citizen-relations desk supervisor and municipal IT coordinator; original notes preserved."
   },
   "demo": {
-    "question_tr": "Tekerlekli sandalye ile kaldırımdan geçemiyorum. Bildirimde sağlık raporum gerekir mi, hangi bilgiler gerekli?",
-    "question_en": "Are a building permit and an occupancy permit the same process in the project guide?",
-    "answer": "Erişilebilirlik bildiriminde sağlık raporu, tanı veya engellilik belgesi istenmemektedir. [1]\nBildirimde etkilenen giriş, kaldırım veya geçiş noktası ile engelin ne olduğu belirtilmelidir. [1]\nKaldırım sorunu bildirilirken mahalle, sokak, hasarın türü ve geçişin tamamen mi yoksa kısmen mi engellendiği bilgileri gereklidir. [3]",
-    "source_excerpt": "sağlık raporu, tanı veya engellilik belgesi istenmez.",
-    "source_label": "YV-D019#details",
-    "abstain_question": "No authorized source was supplied (software contract check).",
+    "question_tr": "Yeni taşındığım evde kiracıyım. Su aboneliğini üzerime almak için ne hazırlamalıyım? Önceki abone numarasını bilmiyorum.",
+    "question_en": "Our house is finished and we already have a building permit. Do we still need a separate occupancy application?",
+    "answer": "Yeni su aboneliği başvurusu için kimlik belgesi, kullanım adresini gösteren bir belge ve kira sözleşmesi hazırlamanız gerekmektedir. [1]\nEski abone numarasını bilmiyorsanız, kullanım adresi ve diğer belgelerle başvuru yapmaya devam edebilirsiniz. [1]\nSu aboneliği başvurunuzu Su ve Kanalizasyon başvuru birimine yapmalısınız. [2]",
+    "source_excerpt": "Yeni su aboneliği için kimlik belgesi, kullanım adresini gösteren bir belge ve mülk sahibi için tapu örneği veya kiracı için kira sözleşmesi hazırlanır.",
+    "source_label": "YV-D003#requirements",
+    "abstain_question": "No authorized sources supplied (software contract check).",
     "abstain_answer": "The documents I can access do not contain the answer to this question. There is not enough evidence to give a reliable answer.",
-    "run_label": "Recorded Gemini 3.1 response / 24 Nov 2026"
+    "run_label": "Recorded citizen-v2 Gemini 3.1 response / 24 Nov 2026"
   },
   "generation": {
-    "summary": "38/38 valid saved answers; cached and fresh calls distinguished.",
-    "unsupported_claims": 0.0,
-    "claims_total": 61,
+    "summary": "36/38 valid citizen-v2 responses; 35 judged; v1 excluded.",
+    "unsupported_claims": 0.02197802197802198,
+    "claims_total": 91,
     "kappa": 0.7709923664122137,
-    "errors": 0
+    "errors": 2
   },
   "failures": {
     "generation": {
-      "question": "Gemini3.1 live availability",
-      "answer": "Initial run: 2/38. Selected recovery: 38/38 valid saved responses (36 cached, 2 fresh in that pass). Earlier errors remain recorded.",
-      "diagnosis": "Provider/validation failures; distinct from retrieval misses and unsupported-claim estimates."
+      "question": "Fresh model run on citizen-v2 sources and questions",
+      "answer": "36/38 valid responses; 1 fresh and 35 reused within this version. Retired v1 answers do not count.",
+      "diagnosis": "Retrieval coverage, provider availability and claim support are distinct measurements."
     },
     "evaluation": {
-      "title": "Check what the cited source actually supports.",
-      "detail": "A contact detail may be valid if its authorized source provides it. Invented contacts, unperformed actions and instructions embedded in documents still fail the evidence check."
+      "title": "Check what the cited service guide actually supports.",
+      "detail": "Public guides explain citizen services. Output schemas, authority limits and citation-validation rules belong in prompts and code, outside the public knowledge corpus."
     }
   }
 }

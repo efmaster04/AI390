@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Rainwater keeps pooling beside a clogged street drain. How do I request it to be cleared?",
+    "language": "en",
+    "sources_sha256": "3406539d3b521bfebbedfdf83f304969cb9b9e64fd8c652598ee98f1f1d1f2b8",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "To report a clogged drain, provide the neighborhood, street, and specific location of the pooling water or the drain. [1]\nSpecify if the issue occurs only during rain or persists after it stops, and note any visible debris like leaves or trash blocking the drain. [1]\nDescribe whether the water accumulation affects road, sidewalk, or building access, and include nearby landmarks or photos to help identify the exact location. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "To report a clogged drain, provide the neighborhood, street, and specific location of the pooling water or the drain.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Mahalle, sokak ve suyun biriktiği veya ızgaranın bulunduğu noktayı yazın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Specify if the issue occurs only during rain or persists after it stops, and note any visible debris like leaves or trash blocking the drain.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Sorunun yağmur sırasında mı yoksa yağmur bittikten sonra da mı sürdüğünü belirtin. Izgara üzerinde yaprak, çöp veya başka bir kapanma görünüyorsa bunu ekleyin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Describe whether the water accumulation affects road, sidewalk, or building access, and include nearby landmarks or photos to help identify the exact location.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Birikimin yolu, kaldırım geçişini veya bina girişini etkileyip etkilemediğini açıklayın. Yakındaki kavşak, durak veya bina gibi bir işaret ve varsa fotoğraf, aynı sokaktaki farklı ızgaraları ayırmaya yardımcı olur."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#details",
+        "chunk_id": "YV-D030#details:0-448:f2a0058108",
+        "title": "Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi",
+        "heading": "Izgara ve birikimi tarif etme",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve suyun biriktiği veya ızgaranın bulunduğu noktayı yazın. Sorunun yağmur sırasında mı yoksa yağmur bittikten sonra da mı sürdüğünü belirtin. Izgara üzerinde yaprak, çöp veya başka bir kapanma görünüyorsa bunu ekleyin. Birikimin yolu, kaldırım geçişini veya bina girişini etkileyip etkilemediğini açıklayın. Yakındaki kavşak, durak veya bina gibi bir işaret ve varsa fotoğraf, aynı sokaktaki farklı ızgaraları ayırmaya yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#scope",
+        "chunk_id": "YV-D030#scope:0-336:f189c22a89",
+        "title": "Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi",
+        "heading": "Yağmur suyu sorununun konusu",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "citizen-v2",
+        "text": "Yağmur sırasında suyun yol veya kaldırım üzerinde birikmesi, yağmur suyu ızgarasının tıkanması ve ızgara çevresinde yaprak ya da atık birikmesi drenaj bildiriminin konusudur. Yağışla birlikte oluşan yüzey suyu, sürekli akan bir su kaçağı veya rögar taşmasıyla aynı sorun olmayabilir. Bildiriminizde hangisini gözlemlediğinizi açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D030",
+        "passage_id": "YV-D030#limits",
+        "chunk_id": "YV-D030#limits:0-451:5e86719567",
+        "title": "Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi",
+        "heading": "Tekrarlanan birikim ve takip",
+        "source": "beldesk://synthetic/YV-D030",
+        "version": "citizen-v2",
+        "text": "Aynı yerde her yağışta sorun oluşuyorsa hangi günlerde gördüğünüzü ve önceki başvuru referansınızı paylaşabilirsiniz. Temizlik yapılmış ancak su hâlâ birikiyorsa mevcut durumu açıklayın. Başka bir noktadaki yeni birikimin yerini ayrı belirtin. Yağmur bittikten sonra yalnız suyun kalmasıyla yeni bir akışın sürmesi farklı gözlemlerdir; takip mesajında neyin devam ettiğini açıkça yazmanız incelemenin doğru konum üzerinden yürütülmesine yardımcı olur.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D021",
+        "passage_id": "YV-D021#scope",
+        "chunk_id": "YV-D021#scope:0-325:634fd17c3e",
+        "title": "Yeşilvadi Kaldırım Hasarı ve Yaya Geçişi",
+        "heading": "Kaldırım bakım talebi",
+        "source": "beldesk://synthetic/YV-D021",
+        "version": "citizen-v2",
+        "text": "Kırık veya yerinden oynamış kaplama, çökme, yüksek yüzey farkı ve geçişi daraltan hasarlar kaldırım bakım bildiriminin konusudur. Yeni bir kaldırım yapılması isteği ile mevcut kaldırımın onarılması farklı başvurulardır. Sorunu bir araçla geçememe veya yayaların başka güzergâha yönelmesi şeklinde yaşıyorsanız bunu açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D024",
+        "passage_id": "YV-D024#details",
+        "chunk_id": "YV-D024#details:0-466:80576ab47b",
+        "title": "Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması",
+        "heading": "Altyapı sorununda gerekli bilgiler",
+        "source": "beldesk://synthetic/YV-D024",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve suyun ya da taşmanın görüldüğü noktayı belirtin. Akışın boru, rögar veya başka bir yerden geldiğini biliyorsanız yazın; kaynağı belli değilse görülen yeri tarif edin. Sorunun ne zamandır sürdüğünü, akışın devam edip etmediğini ve yol, kaldırım veya bina girişini etkileyip etkilemediğini açıklayın. Birden fazla ayrı arıza varsa her arızanın konumunu ve gözlemini ayrı bildirin. Fotoğraf ve yakın bir işaret, noktanın bulunmasına yardımcı olabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2276,
+    "output_tokens": 364,
+    "latency_s": 4.925686832983047,
+    "language": "en",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "3c6012448fc9d38d71eca771971b6b326d323fb6266207946fbb6311a6513f01",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"To report a clogged drain, provide the neighborhood, street, and specific location of the pooling water or the drain.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Mahalle, sokak ve suyun biriktiği veya ızgaranın bulunduğu noktayı yazın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Specify if the issue occurs only during rain or persists after it stops, and note any visible debris like leaves or trash blocking the drain.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sorunun yağmur sırasında mı yoksa yağmur bittikten sonra da mı sürdüğünü belirtin. Izgara üzerinde yaprak, çöp veya başka bir kapanma görünüyorsa bunu ekleyin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Describe whether the water accumulation affects road, sidewalk, or building access, and include nearby landmarks or photos to help identify the exact location.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Birikimin yolu, kaldırım geçişini veya bina girişini etkileyip etkilemediğini açıklayın. Yakındaki kavşak, durak veya bina gibi bir işaret ve varsa fotoğraf, aynı sokaktaki farklı ızgaraları ayırmaya yardımcı olur.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:43:34.882920+00:00",
+    "wall_latency_including_pacing_s": 7.1033569580176845
+  }
+}

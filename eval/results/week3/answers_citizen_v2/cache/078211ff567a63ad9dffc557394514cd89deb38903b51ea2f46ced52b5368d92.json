@@ -1,0 +1,174 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Çocuğumla mahallemizdeki parka gitmek istiyorum. Oyun alanı ve giriş bilgilerini sorarken hangi park olduğunu nasıl belirtmeliyim?",
+    "language": "tr",
+    "sources_sha256": "b95a81cebc85054178da172b927ca939f2b0cca3a33d32ff25da4664d05a2a7e",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Park bilgisini bulabilmek için parkın adını ve bulunduğu mahalleyi yazmanız gerekmektedir. [1]\nParkın adını bilmiyorsanız, girişin bulunduğu sokağı, yakındaki okulu veya diğer belirgin yerleri belirtebilirsiniz. [1]\nAynı mahallede birden fazla park olabileceği için sadece mahalle adı yeterli olmayabilir. [1]\nÇocuk oyun alanı gibi özel bir tesis arıyorsanız, bunu talebinize eklemelisiniz. [1]\nZiyaret gününüzü belirtmek, genel tesis bilgisi ile tarihli etkinlik bilgisini ayırmanızı kolaylaştırır. [1]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Park bilgisini bulabilmek için parkın adını ve bulunduğu mahalleyi yazmanız gerekmektedir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Park bilgisini bulabilmek için parkın adını ve bulunduğu mahalleyi yazın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Parkın adını bilmiyorsanız, girişin bulunduğu sokağı, yakındaki okulu veya diğer belirgin yerleri belirtebilirsiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Adını bilmiyorsanız girişin bulunduğu sokak, yakındaki okul veya başka bir belirgin yer yardımcı olur."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Aynı mahallede birden fazla park olabileceği için sadece mahalle adı yeterli olmayabilir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Aynı mahallede birden fazla park bulunabildiği için yalnız mahalle adı her zaman yeterli değildir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Çocuk oyun alanı gibi özel bir tesis arıyorsanız, bunu talebinize eklemelisiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Çocuk oyun alanı, otopark, erişilebilir giriş veya belirli bir tesis arıyorsanız bunu da ekleyin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C5",
+        "text": "Ziyaret gününüzü belirtmek, genel tesis bilgisi ile tarihli etkinlik bilgisini ayırmanızı kolaylaştırır.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Ziyaret gününüzü belirtmek, tarihli etkinlik bilgisiyle genel tesis bilgisini ayırmayı kolaylaştırır."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D015",
+        "passage_id": "YV-D015#details",
+        "chunk_id": "YV-D015#details:0-475:ecb9dde0ff",
+        "title": "Yeşilvadi Park Ziyareti ve Tesis Bilgisi",
+        "heading": "Doğru parkı belirleme",
+        "source": "beldesk://synthetic/YV-D015",
+        "version": "citizen-v2",
+        "text": "Park bilgisini bulabilmek için parkın adını ve bulunduğu mahalleyi yazın. Adını bilmiyorsanız girişin bulunduğu sokak, yakındaki okul veya başka bir belirgin yer yardımcı olur. Aynı mahallede birden fazla park bulunabildiği için yalnız mahalle adı her zaman yeterli değildir. Çocuk oyun alanı, otopark, erişilebilir giriş veya belirli bir tesis arıyorsanız bunu da ekleyin. Ziyaret gününüzü belirtmek, tarihli etkinlik bilgisiyle genel tesis bilgisini ayırmayı kolaylaştırır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#details",
+        "chunk_id": "YV-D016#details:0-446:a6c1de0f08",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızaları",
+        "heading": "Arızalı ekipmanı tarif etme",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "citizen-v2",
+        "text": "Parkın adını veya mahallesiyle birlikte bulunduğu sokağı, arızalı ekipmanın türünü ve görünen hasarı bildirin. Birden fazla salıncak ya da kaydırak varsa hangisi olduğunu renk, konum veya yanındaki donatıyla ayırt edin. Gevşek parça, kırık yüzey veya zemin çukuru gibi gözleminizi açıklayın. Aynı sorun başka bir ekipmanda da görülüyorsa onu ayrıca belirtin. Fotoğrafınız varsa ekipmanın bütünüyle hasarlı bölümün anlaşılmasına yardımcı olabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D015",
+        "passage_id": "YV-D015#scope",
+        "chunk_id": "YV-D015#scope:0-346:eb2dc7e558",
+        "title": "Yeşilvadi Park Ziyareti ve Tesis Bilgisi",
+        "heading": "Park hakkında hangi bilgiler alınabilir?",
+        "source": "beldesk://synthetic/YV-D015",
+        "version": "citizen-v2",
+        "text": "Parkın konumu, girişleri, yürüyüş alanı, oturma yeri, oyun alanı ve erişilebilir geçişleri hakkında bilgi istenebilir. Bir parkın içindeki spor alanı ya da işletmenin kullanım koşulları parkın genel kullanımından farklı olabilir. İstediğiniz bilginin bütün parka mı, belirli bir tesise mi yoksa o gün yapılacak etkinliğe mi ait olduğunu belirtin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D016",
+        "passage_id": "YV-D016#limits",
+        "chunk_id": "YV-D016#limits:0-421:dbe282a4a3",
+        "title": "Yeşilvadi Çocuk Oyun Alanı Arızaları",
+        "heading": "Bildirimden sonra yeni bilgi ekleme",
+        "source": "beldesk://synthetic/YV-D016",
+        "version": "citizen-v2",
+        "text": "Önceki bildiriminiz varsa başvuru numarasını kullanarak durum değişikliğini iletebilirsiniz. Onarım yapılmış ancak bir parça hâlâ kullanılamıyorsa kalan sorunu tarif edin. Parkın farklı bir bölümünde yeni bir arıza görmeniz durumunda yeni yer bilgisini ayrıca verin. İnceleme ve bakımın hangi aşamada olduğu, ilgili başvurunun durum bilgisi üzerinden öğrenilir; ilk gönderilen fotoğraf tek başına güncel durumu göstermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D015",
+        "passage_id": "YV-D015#limits",
+        "chunk_id": "YV-D015#limits:0-431:d5930bc5f7",
+        "title": "Yeşilvadi Park Ziyareti ve Tesis Bilgisi",
+        "heading": "Saat bilgisi ve bakım bildirimi",
+        "source": "beldesk://synthetic/YV-D015",
+        "version": "citizen-v2",
+        "text": "Açılış ya da kapanış saati sorarken parkın veya tesisin adını ve gitmek istediğiniz günü belirtin. Etkinlik programındaki saat, parkın bütün gün açık kaldığı saatlerle aynı bilgi değildir. Ziyaret sırasında kırık donatı veya kapalı geçiş görürseniz park adı, bulunduğu bölüm ve sorunun fotoğrafıyla bakım bildirimi yapabilirsiniz. Yeni bir tesis isteği için mevcut arızadan farklı olarak önerinizi ve kullanım ihtiyacını açıklayın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2241,
+    "output_tokens": 502,
+    "latency_s": 4.672890499001369,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "542e3e002d5f5854cf4bc87ea7e4e419786f2ba0f70521a5797624a06d516b38",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Park bilgisini bulabilmek için parkın adını ve bulunduğu mahalleyi yazmanız gerekmektedir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Park bilgisini bulabilmek için parkın adını ve bulunduğu mahalleyi yazın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Parkın adını bilmiyorsanız, girişin bulunduğu sokağı, yakındaki okulu veya diğer belirgin yerleri belirtebilirsiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Adını bilmiyorsanız girişin bulunduğu sokak, yakındaki okul veya başka bir belirgin yer yardımcı olur.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Aynı mahallede birden fazla park olabileceği için sadece mahalle adı yeterli olmayabilir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Aynı mahallede birden fazla park bulunabildiği için yalnız mahalle adı her zaman yeterli değildir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Çocuk oyun alanı gibi özel bir tesis arıyorsanız, bunu talebinize eklemelisiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Çocuk oyun alanı, otopark, erişilebilir giriş veya belirli bir tesis arıyorsanız bunu da ekleyin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Ziyaret gününüzü belirtmek, genel tesis bilgisi ile tarihli etkinlik bilgisini ayırmanızı kolaylaştırır.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Ziyaret gününüzü belirtmek, tarihli etkinlik bilgisiyle genel tesis bilgisini ayırmayı kolaylaştırır.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:41:30.474569+00:00",
+    "wall_latency_including_pacing_s": 6.16306341602467
+  }
+}

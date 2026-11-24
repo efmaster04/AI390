@@ -1,0 +1,8 @@
+{
+  "source_git_commit": "be14fc0dbfb402b144eba5b6c5e055c1bd66758c",
+  "superseded_by": "citizen-v2 corpus and benchmark",
+  "reason": "V1 mixed developer-policy questions and internal instructions with citizen service guidance. V1 metrics must not be presented as citizen-v2 results.",
+  "corpus_at_commit": "data/corpus/documents",
+  "questions_at_commit": "eval/testsets/week3_retrieval.jsonl",
+  "calibration": "Separate historical source snapshots retained in active calibration/; later team labels from22577a6 preserved."
+}

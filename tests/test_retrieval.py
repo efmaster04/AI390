@@ -189,3 +189,41 @@ def test_model_snapshot_resolution_is_strictly_local(monkeypatch):
     monkeypatch.setattr(hub, "snapshot_download", resolve)
     assert local_snapshot("example/model", "pinned-revision") == "/local/pinned/snapshot"
     assert observed == {"model_id": "example/model", "revision": "pinned-revision", "local_files_only": True}
+
+
+def test_alternative_evidence_satisfies_its_facet_without_becoming_an_extra_requirement():
+    from eval.retrieval_week3 import score_retrieval
+    a = {"passage_id": "A", "quote": "tenant documents"}
+    alt_a = {"passage_id": "A-alt", "quote": "rental documents"}
+    b = {"passage_id": "B", "quote": "no ID photo for an enquiry"}
+    rows = [{"rank": 1, "passage_id": "A-alt", "text": "rental documents"},
+            {"rank": 4, "passage_id": "B", "text": "no ID photo for an enquiry"}]
+    result = score_retrieval(rows, [a,b], gold_groups=[[a,alt_a],[b]])
+    assert result["hit"]["1"] and result["all_gold_hit_at_5"]
+    assert not score_retrieval(rows[:1], [a,b], gold_groups=[[a,alt_a],[b]])["all_gold_hit_at_5"]
+    assert not score_retrieval([dict(rows[0], text="different fact")], [a], gold_groups=[[a,alt_a]])["hit"]["5"]
+
+
+def test_internal_policy_cases_cannot_be_scored_as_citizen_retrieval(tmp_path):
+    from eval.retrieval_week3 import read_cases
+    row = {"id":"policy", "split":"test", "lang":"en", "role":"public", "text":"What schema should developers use?",
+           "answerable":False, "gold":[], "review_status":"draft", "audience":"developer"}
+    path = tmp_path/'policy.jsonl';path.write_text(json.dumps(row)+'\n')
+    with pytest.raises(ValueError, match="Internal policy"):
+        read_cases(path, load_corpus())
+
+
+def test_active_citizen_dataset_is_frozen_for_its_actual_source_version():
+    from src.rag.corpus import ROOT, corpus_hash, digest
+    frozen = json.loads((ROOT/'eval/testsets/week3_citizen_v2_manifest.json').read_text())
+    cases_path = ROOT/'eval/testsets/week3_retrieval.jsonl'
+    cases = [json.loads(x) for x in cases_path.read_text().splitlines()]
+    assert frozen['cases_sha256'] == digest(cases_path.read_bytes())
+    assert frozen['corpus_sha256'] == corpus_hash(load_corpus())
+    assert len(cases) == 38 and sum(c['answerable'] for c in cases) == 32
+    assert sum(c['lang']=='tr' for c in cases) == sum(c['lang']=='en' for c in cases) == 19
+    assert all(c['audience']=='citizen' and c['dataset_version']=='citizen-v2' for c in cases)
+    for d in load_corpus():
+        if 'public' in d.access:
+            body = ' '.join(p.text for p in d.passages).casefold()
+            assert all(token not in body for token in ('asistan','week 3','test senaryosu','prompt','schema'))

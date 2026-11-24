@@ -1,0 +1,135 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Kedim zaten kayıtlı, ama iletişim bilgilerim değişti. Yeni kayıt mı açtırmalıyım, yoksa mevcut kaydı güncelleyebilir miyim?",
+    "language": "tr",
+    "sources_sha256": "c1e30a8d83fc2bc3752dddcdeb204dce7d2e1b0744bf381e73c4788214c22f19",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Kedinizin mevcut kayıt bilgilerini güncelleyebilir, yeni bir kayıt açtırmanıza gerek kalmadan değişen bilgiyi belirtebilirsiniz. [1]\nEvcil hayvan kaydı için ilk kayıt ve iletişim bilgisi güncelleme işlemleri ayrı talepler olarak değerlendirilmektedir. [2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Kedinizin mevcut kayıt bilgilerini güncelleyebilir, yeni bir kayıt açtırmanıza gerek kalmadan değişen bilgiyi belirtebilirsiniz.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Kedinizin mevcut kayıt bilgilerini güncelleyecekseniz değişen bilgiyi ayrıca belirtin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Evcil hayvan kaydı için ilk kayıt ve iletişim bilgisi güncelleme işlemleri ayrı talepler olarak değerlendirilmektedir.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "İlk kayıt, mevcut kayda bilgi ekleme ve iletişim bilgisi güncelleme ayrı taleplerdir."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#details",
+        "chunk_id": "YV-D005#details:0-359:9676da9df7",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi",
+        "heading": "Hazırlanacak bilgiler",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "citizen-v2",
+        "text": "İlk görüşme için hayvanın türünü, varsa kimliklendirme referansını ve talebin yeni kayıt mı bilgi güncelleme mi olduğunu hazırlayın. Kedinizin mevcut kayıt bilgilerini güncelleyecekseniz değişen bilgiyi ayrıca belirtin. Kimliklendirme referansını bilmiyorsanız bunu açıkça söyleyip hangi belgeyle ilerleyebileceğinizi Veteriner İşleri birimine sorabilirsiniz.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#summary",
+        "chunk_id": "YV-D005#summary:0-279:56607db6cc",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi",
+        "heading": "Kayıt ve bilgi güncelleme",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "citizen-v2",
+        "text": "Evcil hayvan kaydı hakkında bilgi Veteriner İşleri biriminden alınır. İlk kayıt, mevcut kayda bilgi ekleme ve iletişim bilgisi güncelleme ayrı taleplerdir. Kayıp bir hayvanı arama veya sokak hayvanı bildirimi için kullanılan süreç, sahipli hayvanın kayıt işlemiyle aynı değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D017",
+        "passage_id": "YV-D017#details",
+        "chunk_id": "YV-D017#details:0-477:c03a5cad95",
+        "title": "Yeşilvadi Kütüphane Üyeliği",
+        "heading": "Üyelik başvurusuna hazırlık",
+        "source": "beldesk://synthetic/YV-D017",
+        "version": "citizen-v2",
+        "text": "Başvuracağınız kütüphanenin adını ve ilk üyelik mi yoksa mevcut üyelikte bilgi güncellemesi mi istediğinizi belirtin. İlk üyelikte kimlik belgesi ve üyelik formu başvuru noktasına sunulur. Mevcut üyeler, üye numarası biliniyorsa bu referansı kullanarak değişecek iletişim bilgisini bildirebilir. Üye numaranızı bilmiyorsanız kaydolduğunuz kütüphaneyi ve yapmak istediğiniz işlemi danışmaya açıklayın. Belge görüntüleri genel bilgi sorusu sırasında paylaşılmak zorunda değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D017",
+        "passage_id": "YV-D017#scope",
+        "chunk_id": "YV-D017#scope:0-399:f9b8ae3511",
+        "title": "Yeşilvadi Kütüphane Üyeliği",
+        "heading": "Üyelik ve kütüphane hizmetleri",
+        "source": "beldesk://synthetic/YV-D017",
+        "version": "citizen-v2",
+        "text": "Kütüphane üyeliği, ödünç alma hizmetleri ve mevcut üye bilgilerinin güncellenmesi için ilgili kütüphanenin üyelik danışmasına başvurulur. İlk kez üye olmak isteyen bir kişi ile mevcut üyeliğindeki iletişim bilgisini değiştirmek isteyen kişi farklı işlem için başvurur. Çalışma alanı kullanımı veya belirli bir etkinliğe katılım sorusu soruyorsanız, üyelik başvurusu yerine o hizmetin adını belirtin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D005",
+        "passage_id": "YV-D005#limits",
+        "chunk_id": "YV-D005#limits:0-367:2053181b57",
+        "title": "Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi",
+        "heading": "İşlem öncesi kontrol",
+        "source": "beldesk://synthetic/YV-D005",
+        "version": "citizen-v2",
+        "text": "Talebinize uygun belge listesini ve varsa güncel ücret bilgisini birimden teyit edin. Genel bilgilendirme görüşmesi sırasında hayvanın sağlık durumuna ilişkin belge veya kişisel belge görüntüsü paylaşmanız gerekmez. Başvuru oluşturulduğunda verilen referansı saklayın; sonraki bilgi güncellemelerini bu referansla ilişkilendirmeniz dosyanın bulunmasını kolaylaştırır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2197,
+    "output_tokens": 213,
+    "latency_s": 3.2511594579555094,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "7ca2c9f107a43815a4aea9c4cd1d9db482b090aefbed228a4d8d0c2b1932e299",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Kedinizin mevcut kayıt bilgilerini güncelleyebilir, yeni bir kayıt açtırmanıza gerek kalmadan değişen bilgiyi belirtebilirsiniz.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Kedinizin mevcut kayıt bilgilerini güncelleyecekseniz değişen bilgiyi ayrıca belirtin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Evcil hayvan kaydı için ilk kayıt ve iletişim bilgisi güncelleme işlemleri ayrı talepler olarak değerlendirilmektedir.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"İlk kayıt, mevcut kayda bilgi ekleme ve iletişim bilgisi güncelleme ayrı taleplerdir.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:40:11.380269+00:00",
+    "wall_latency_including_pacing_s": 7.030918707954697
+  }
+}

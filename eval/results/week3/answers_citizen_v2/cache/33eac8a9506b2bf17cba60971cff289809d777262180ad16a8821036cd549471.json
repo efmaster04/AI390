@@ -1,0 +1,148 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "İlk kez belediye kütüphanesine üye olacağım. Başvuruya nereden başlamalıyım?",
+    "language": "tr",
+    "sources_sha256": "9bd8edcd56e35ada05837c89ca53c7e6703f8d5bfc5588405185436d06b47999",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Kütüphane üyeliği başvurusu için ilgili kütüphanenin üyelik danışmasına başvurmanız gerekmektedir. [1]\nBaşvuru sırasında kütüphane adını ve ilk kez üye olduğunuzu belirtmeniz yeterlidir. [2]\nİlk üyelik başvurusu için yanınızda kimlik belgenizi ve üyelik formunu bulundurarak başvuru noktasına sunmalısınız. [2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Kütüphane üyeliği başvurusu için ilgili kütüphanenin üyelik danışmasına başvurmanız gerekmektedir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Kütüphane üyeliği, ödünç alma hizmetleri ve mevcut üye bilgilerinin güncellenmesi için ilgili kütüphanenin üyelik danışmasına başvurulur."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Başvuru sırasında kütüphane adını ve ilk kez üye olduğunuzu belirtmeniz yeterlidir.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Başvuracağınız kütüphanenin adını ve ilk üyelik mi yoksa mevcut üyelikte bilgi güncellemesi mi istediğinizi belirtin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "İlk üyelik başvurusu için yanınızda kimlik belgenizi ve üyelik formunu bulundurarak başvuru noktasına sunmalısınız.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "İlk üyelikte kimlik belgesi ve üyelik formu başvuru noktasına sunulur."
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D017",
+        "passage_id": "YV-D017#scope",
+        "chunk_id": "YV-D017#scope:0-399:f9b8ae3511",
+        "title": "Yeşilvadi Kütüphane Üyeliği",
+        "heading": "Üyelik ve kütüphane hizmetleri",
+        "source": "beldesk://synthetic/YV-D017",
+        "version": "citizen-v2",
+        "text": "Kütüphane üyeliği, ödünç alma hizmetleri ve mevcut üye bilgilerinin güncellenmesi için ilgili kütüphanenin üyelik danışmasına başvurulur. İlk kez üye olmak isteyen bir kişi ile mevcut üyeliğindeki iletişim bilgisini değiştirmek isteyen kişi farklı işlem için başvurur. Çalışma alanı kullanımı veya belirli bir etkinliğe katılım sorusu soruyorsanız, üyelik başvurusu yerine o hizmetin adını belirtin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D017",
+        "passage_id": "YV-D017#details",
+        "chunk_id": "YV-D017#details:0-477:c03a5cad95",
+        "title": "Yeşilvadi Kütüphane Üyeliği",
+        "heading": "Üyelik başvurusuna hazırlık",
+        "source": "beldesk://synthetic/YV-D017",
+        "version": "citizen-v2",
+        "text": "Başvuracağınız kütüphanenin adını ve ilk üyelik mi yoksa mevcut üyelikte bilgi güncellemesi mi istediğinizi belirtin. İlk üyelikte kimlik belgesi ve üyelik formu başvuru noktasına sunulur. Mevcut üyeler, üye numarası biliniyorsa bu referansı kullanarak değişecek iletişim bilgisini bildirebilir. Üye numaranızı bilmiyorsanız kaydolduğunuz kütüphaneyi ve yapmak istediğiniz işlemi danışmaya açıklayın. Belge görüntüleri genel bilgi sorusu sırasında paylaşılmak zorunda değildir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D017",
+        "passage_id": "YV-D017#limits",
+        "chunk_id": "YV-D017#limits:0-427:a924a8034a",
+        "title": "Yeşilvadi Kütüphane Üyeliği",
+        "heading": "Ödünç alma ve tarihli bilgiler",
+        "source": "beldesk://synthetic/YV-D017",
+        "version": "citizen-v2",
+        "text": "Ödünç verme süresi, iade tarihi ve uzatma koşulları için ilgili kütüphanenin güncel ödünç alma bilgisine başvurun. Belirli bir kitabın şu anda rafta olup olmadığı, üyelik koşullarından ayrı bir katalog sorusudur. Açılış saatini öğrenmek için hangi şubeyi ve hangi günü sorduğunuzu ekleyin. Bir rezervasyon veya üyelik işleminin tamamlandığını öğrenmek için başvuru noktasından verilen sonuç ya da alındı bilgisini kontrol edin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D009",
+        "passage_id": "YV-D009#summary",
+        "chunk_id": "YV-D009#summary:0-299:e6dab8372f",
+        "title": "Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı",
+        "heading": "Görüşmeye hazırlık",
+        "source": "beldesk://synthetic/YV-D009",
+        "version": "citizen-v2",
+        "text": "Hizmet noktasına gitmeden önce yapmak istediğiniz işlemi ve hangi hizmet hakkında bilgi aradığınızı belirleyin. Bir arıza bildirmek, belge teslim etmek ve önceki başvuruyu takip etmek için hazırlık farklıdır. Yalnız genel bilgi almak istiyorsanız işlemi kısaca açıklamanızla yönlendirme yapılabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D009",
+        "passage_id": "YV-D009#details",
+        "chunk_id": "YV-D009#details:0-395:572fe850aa",
+        "title": "Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı",
+        "heading": "Yanınızda ne bulunmalı?",
+        "source": "beldesk://synthetic/YV-D009",
+        "version": "citizen-v2",
+        "text": "Belge teslimi için ziyaret edecekseniz hizmete ait güncel belge listesini kontrol edin; daha önce başvuru yaptıysanız referansını yanınıza alın. Eksik evrak bildirimi aldıysanız bildirimin hangi dosyaya ve hangi belgeye ait olduğunu hazırlayın. Genel bilgi görüşmesi için kişisel belgelerin bütününü getirmeniz gerekmez. Hizmet konusu ve başvuru aşaması doğru masaya yönlendirmeyi kolaylaştırır.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2224,
+    "output_tokens": 344,
+    "latency_s": 3.548638250096701,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "e798233665224d2de2e7c00f232ad8393beab04b08e2164ea8a8abf25d566269",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Kütüphane üyeliği başvurusu için ilgili kütüphanenin üyelik danışmasına başvurmanız gerekmektedir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Kütüphane üyeliği, ödünç alma hizmetleri ve mevcut üye bilgilerinin güncellenmesi için ilgili kütüphanenin üyelik danışmasına başvurulur.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Başvuru sırasında kütüphane adını ve ilk kez üye olduğunuzu belirtmeniz yeterlidir.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Başvuracağınız kütüphanenin adını ve ilk üyelik mi yoksa mevcut üyelikte bilgi güncellemesi mi istediğinizi belirtin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"İlk üyelik başvurusu için yanınızda kimlik belgenizi ve üyelik formunu bulundurarak başvuru noktasına sunmalısınız.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"İlk üyelikte kimlik belgesi ve üyelik formu başvuru noktasına sunulur.\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:41:45.145141+00:00",
+    "wall_latency_including_pacing_s": 5.378384542069398
+  }
+}

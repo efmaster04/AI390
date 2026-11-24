@@ -2,31 +2,29 @@
 
 | Field | Value |
 |---|---|
-| Team | Beldesk |
-| Use case | Instructor-approved fictional Yeşilvadi bilingual municipal assistant |
-| Week | 3 |
-| Repository | https://github.com/efmaster04/AI390 |
-| Working branch | week3 |
-| Commit tag | week-3 planned; not created |
-| Presenter | Efe İncirci, Doruk Kal, Tarık Edip Yenikomşu; contiguous three-speaker split |
-| Members and roles | Efe: agent/tools; Doruk: data/retrieval; Tarık: evaluation/safety |
+| Team / week | Beldesk / 3 |
+| Use case | Fictional Yeşilvadi bilingual municipal assistant |
+| Repository / branch | https://github.com/efmaster04/AI390 / week3 |
+| Source and benchmark version | citizen-v2 |
+| Release tag | week-3 not created |
+| Members | Efe İncirci: agent/tools; Doruk Kal: data/retrieval; Tarık Edip Yenikomşu: evaluation/safety |
 
 ## 1. Summary
 
-We implemented local hybrid retrieval over 31 synthetic documents, source-cited bilingual answers, fixed no-evidence fallbacks, a claim-level judge, human-review tooling and two retrieval ablations. Hybrid+reranker hit@5 is 0.9688 on 32 answerable questions, MRR@10 0.9531. Live Gemini 3.1 availability limited answer/judge measurements: 38/38 processed cases have valid saved answers (cached/fresh origin recorded). These are separate retrieval, availability and faithfulness measurements. Human calibration uses its actual matched sample with limitations, and we completed two customer discovery interviews with municipal citizen-relations and IT stakeholders.
+We corrected a benchmark-design problem: v1 mixed developer-policy questions and internal instructions with citizen service knowledge. The active corpus now has 30 citizen-facing synthetic service guides and one staff-only ACL fixture. All32answerable questions describe resident situations; six unavailable-information/privacy controls remain separate. Corpus bodies and questions were reviewed for scope before freezing; no retrieval results were consulted during that rewrite. Earlier v1 scores and responses are archived, not relabelled as new results.
 
 ## 2. Deliverables
 
-| ID | Status | Evidence | Note |
-|---|---|---|---|
-| W3.1 | done | data/corpus/documents/; manifest.json | 30 public guides +1 staff-only fixture; metadata/source/version/access; 1/31 human-reviewed, other authored drafts disclosed. |
-| W3.2 | done | src/rag/chunking.py; retrieval/chunks.json | 92 section-aware chunks. 140-word cap/20 overlap only for long sections; actual current overlap zero. |
-| W3.3 | done | src/rag/lexical.py; models.py; retrieval.py | BM25+dense, RRF60, pinned local cross-encoder; access filter before ranking. |
-| W3.4 | done | src/rag/answer.py; prompts/rag/v1.md; answers_retry_v3/records.jsonl | Numbered valid source references, exact quote validation, fixed TR/EN fallback; live coverage, controls and service failures are measured in the selected run. |
-| W3.5 | done | week3_retrieval.jsonl; eval/retrieval_week3.py | 32 answerable questions, 6 extra controls; draft gold passages/quotes; 6 development cases separate. |
-| W3.6 | done | eval/faithfulness_week3.py; calibration/ | Claim judge and human calibration completed: 20/20 adjudicated human labels; 20 matched judge pairs; κ=0.7710 (observed agreement 0.85). Historical claims with post-hoc assigned evidence, not current-RAG accuracy. |
-| W3.7 | done | retrieval/summary.json | Dense vs hybrid with reranking fixed; reranker off with hybrid fixed. |
-| W3.8 | done | retrieval/failures.json; answers_retry_v3/failures.json | Retrieval, generation/provider and evaluation failures separated. |
+| ID | Status | Evidence |
+|---|---|---|
+| W3.1 | done | 31 cleaned documents, source/date/version/access metadata; 0/31 current explicit human approvals. Rewritten guides reset to draft. |
+| W3.2 | done | 92 section-aware chunks;140-word cap,20-word overlap only for long sections; actual overlap zero. |
+| W3.3 | done | BM25+dense, RRF60, pinned local E5 and cross-encoder; public/staff filtering before ranking. |
+| W3.4 | partial | 36/38 valid current responses; numbered references, quote validation and fixed TR/EN no-evidence response. |
+| W3.5 | done | 32answerable questions(16TR/16EN),6controls(3TR/3EN), exact evidence;6separate dev cases. |
+| W3.6 | done | Claim support measured on current answers;20human labels against preserved v1 source snapshots; κ=0.771. |
+| W3.7 | done | Two one-change retrieval ablations on the frozen citizen-v2 set. |
+| W3.8 | done | Full misses and missing facets labelled retrieval; unsupported outputs/provider failures separated as generation/provider; judge failures separate. |
 
 ## 3. Scoreboard
 
@@ -40,27 +38,27 @@ We implemented local hybrid retrieval over 31 synthetic documents, source-cited 
     "script": null
   },
   "abstention_correct": {
-    "value": 1.0,
+    "value": 0.8333333333333334,
     "n": 6,
-    "numerator": 6,
+    "numerator": 5,
     "definition": "valid fixed-fallback response on unavailable-information controls"
   },
   "unsupported_claims": {
-    "value": 0.0,
-    "n": 61,
-    "numerator": 0,
+    "value": 0.02197802197802198,
+    "n": 91,
+    "numerator": 2,
     "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
   },
   "hit_at_5": {
-    "value": 0.96875,
+    "value": 1.0,
     "n": 32,
     "script": "eval/retrieval_week3.py"
   },
   "mrr": {
-    "value": 0.953125,
+    "value": 0.7588541666666667,
     "n": 32,
-    "script": "eval/retrieval_week3.py",
-    "cutoff": 10
+    "cutoff": 10,
+    "script": "eval/retrieval_week3.py"
   },
   "task_success": {
     "value": null,
@@ -79,81 +77,62 @@ We implemented local hybrid retrieval over 31 synthetic documents, source-cited 
     "script": null
   },
   "cost_per_task_usd": null,
-  "latency_p50_s": 2.521084417006932,
+  "latency_p50_s": 4.72438522905577,
   "spend_week_usd": null,
   "spend_total_usd": null
 }
 ```
 
-Retrieval denominator is32; unavailable-information controls excluded. Answer records have their own denominator. Missing model judgements are not zero unsupported claims. Actual billing is unknown; existing dated list-price assumptions are separate. E2E answer adequacy was not measured and remains null. Reported latency is retrieval plus generation service time, excluding scheduling/backoff waits; it is not end-user wall time. Previous Week2 accuracy is not directly comparable to Week3 hit@5. Draft source/gold status limits generalization.
-
-Changes to any test set this week: new Week3 set; Week1/2 preserved. Twelve evidence quote anchors were clarified during draft development; question texts and passage IDs stayed unchanged and every retrieval variant was rerun. No test-driven model-setting change is hidden.
+Retrieval denominator:32. Hit@k finds at least one required answer facet; all-facet@5 requires every requested facet. Alternatives within a facet were registered before scoring, not added after misses. Three questions need multiple passages; two span services. Answer availability is not semantic correctness; E2E adequacy remains unmeasured. Model claim judgements are provisional. Latency excludes scheduling/backoff waits; actual billing is unknown. v1 and v2 are different benchmarks, so their percentages are not a like-for-like improvement claim.
 
 ## 4. Experiments
 
-### Experiment 1: Dense versus hybrid retrieval
+| Configuration | hit@1 | hit@5 | all-facet@5 | MRR@10 |
+|---|---:|---:|---:|---:|
+| Hybrid + reranker | 0.594 | 1.000 | 0.969 | 0.759 |
+| Dense + reranker | 0.594 | 1.000 | 0.969 | 0.761 |
+| Hybrid, no reranker | 0.531 | 0.906 | 0.875 | 0.689 |
 
-- **Hypothesis:** BM25 adds exact-term matches to dense retrieval.
-- **Change:** Dense candidates versus BM25+dense RRF; same corpus, queries,20-candidate pool and reranker.
-- **Result:** Both hit@5 31/32 (0.96875), MRR@10 0.953125; no observed quality advantage on this draft set.
-- **Uncertainty:** Wilson95% interval for31/32 is approximately0.843–0.994. The paired hit@5 comparison with dense has no discordant cases (p=1). See retrieval/paired_statistics.json.
-- **Decision:** Retain required hybrid implementation; do not claim superiority. This is one small synthetic paired set, not established statistical superiority.
+**Ablation1 — dense versus hybrid.** Hypothesis: lexical matching adds useful candidates. Change only candidate retrieval; keep corpus, questions,20-candidate budget and reranker fixed. Hybrid MRR=0.7589; dense=0.7615. Report the observed result without asserting hybrid superiority. Exact paired tests and Wilson intervals: `retrieval/paired_statistics.json`. Hybrid hit@5 Wilson95% interval: approximately0.893–1.000.
 
-### Experiment 2: Reranker off
+**Ablation2 — reranker off.** Hypothesis: reranking promotes useful evidence. Change only reranking with hybrid fixed. MRR=0.6893 without versus0.7589 with; hit@5=0.906 versus1.000. This small, synthetic draft set does not establish universal superiority.
 
-- **Hypothesis:** Pairwise reranking promotes relevant evidence.
-- **Change:** Only reranker off, same hybrid retrieval and pool.
-- **Result:** hit@1 23/32 without versus30/32 with; hit@5 30/32 versus31/32; MRR@10 0.8046875 versus0.953125. Warm local retrieval time is reported in summary.json, excluding model load and generation.
-- **Uncertainty:** Exact paired McNemar tests and Wilson intervals are saved in retrieval/paired_statistics.json. These are exploratory tests on draft synthetic labels.
-- **Decision:** Keep reranker for this configuration; report its additional compute. No universal claim follows from this small draft experiment.
+**Current answering and faithfulness.** Gemini3.1Flash-Lite remains unchanged,T=0. The run contains 36/38 valid responses, with 1 fresh successes and 35 cache hits within citizen-v2. No v1 stage cache was copied. A bounded repair pass may replace only originally invalid generations; successful citizen-v2 stages remain recorded and are not selected by semantic score. Judge-labelled unsupported/insufficient claims: 2/91. Valid answer-level judgements: 35/36; missing judgements do not count as supported claims. This is source-support estimation, not complete-answer accuracy. Current source/question hashes must match the frozen manifest before report generation.
 
-### Experiment 3: Live source-grounded answering and claim judging
-
-- **Hypothesis:** Structured claims and citation validation permit grounded answers and measured faithfulness.
-- **Change:** New Week3 prompt/validator and independent source-support judge; Gemini3.1 retained at the user's direction despite503 errors.
-- **Result:** 38/38 valid saved answers; 36 historical cached and 2 fresh successes. The provisional judge flagged 0/61 claims as unsupported or insufficient. Missing verdicts remain unavailable; full transport events are checkpointed.
-- **Diagnosis:** A real minimal request returned503 `UNAVAILABLE` with the provider’s high-demand message; see provider_diagnosis.json. [Google’s retry guidance](https://aistudio.google.com/docs/troubleshooting#retry-strategy) recommends exponential backoff with jitter.
-- **Decision:** Complete generation attempts before judging, then retry only transient errors with exponential backoff, jitter and bounded budgets. Preserve successful stage caches and the original run separately. No fallback model was silently substituted.
-- **Availability provenance:** Initial run 2/38; selected run `answers_retry_v3` 38/38. Historical cache successes and fresh outputs are recorded per stage; this is an operational retry comparison, not a randomized quality experiment.
-- **Review provenance:** Doruk completed the initial 13 labels; Evaluation & Safety Lead (Tarık) adjudicated all 20 items (`human_sheet.csv`), correcting 4 initial errors (`W3-H03`, `W3-H04`, `W3-H06`, `W3-H07`) where claims absent from or refuted by the source had been marked `supported`, and completing the remaining 7 items (`W3-H14`..`W3-H20`). On the completed matched denominator n=20/20 (3-class rubric: `supported`, `insufficient_evidence`, `unsupported`), Cohen’s κ is **0.7710** with observed agreement **0.85** (17/20 exact matches; the 3 disagreements are `W3-H03` and `W3-H13` where human selected `insufficient_evidence` vs judge `unsupported`, plus compound-claim `W3-H18`). This retrospective stress set has post-hoc assigned evidence and does not measure current-RAG accuracy.
+**Historical judge check.** Preserve the team's20adjudicated human labels and real judge verdicts. Agreement=0.850, κ=0.771,n=20. These are purposefully selected historical model claims with v1 evidence assigned afterward. They check the source-support rubric, not manual accuracy of new citizen-v2 answers. A small retrospective calibration does not by itself validate the current claim-rate estimate.
 
 ## 5. Failure analysis
 
-| # | Input | What happened | Root cause | Fix |
-|---|---|---|---|---|
-| 1 | W3-R008: identity/upload requirement | Designated privacy passage missed 20-candidate pool. | retrieval | Keep failure; future improvements on separate development questions. |
-| 2 | W3-R010, no-reranker variant | Fee-record-fields passage below top 5. | retrieval | Reranking promoted it in measured configuration. |
-| 3 | Initial Gemini calls | 503/timeouts prevented answers or judge verdicts. | generation | Bounded retries, generation-first pass and stage-cache recovery; original errors retained. |
-| 4 | Historical claim calibration (`W3-H03`, `W3-H13`, `W3-H18`) | 3 residual borderline disagreements (`insufficient_evidence` vs `unsupported`/compound claim) after fixing 4 initial human-labeling errors (κ=0.7710, n=20). | evaluation | Completed 20/20 human adjudication; refine compound-claim boundary in Week 4 judge prompt. |
+Observed retrieval case: **W3-R032**, variant `hybrid_rerank`. A required answer facet is missing from top 5. Missing evidence: `YV-D006#details`. gold_in_candidates_but_below_top5. Finding one relevant passage does not cover every requested part; all-facet@5 = 0.969.
 
-## 6. Response to last week's feedback
+In particular, a source answering one half of a multi-service request can produce hit@5 while the other half is missing. We retain that as an incomplete-evidence failure. W3-R017 also contains a judge-flagged unsupported claim about library membership requirements, recorded as a generation issue. Provider and exact-quote validation errors remain failed stages; they are not counted as honest refusals. W3-U004 returns a source-supported privacy-policy denial rather than the exact fixed sentence: no phone number is disclosed, but this fails the strict fixed-fallback contract. Semantic source support does not prove that every part of a citizen's request was answered.
 
-The team reports generally positive Week 2 feedback with no specific requested correction. We implemented the Week 3 requirements and completed 20/20 adjudicated claim-level human calibration (κ=0.7710).
+## 6. Response to feedback and benchmark revision
+
+Week2 feedback was generally positive. The subsequent review correctly identified meta-questions and developer instructions in v1. We rewrote all30public guides and all32answerable prompts, kept19TR/19EN overall, moved internal examples outside citizen scoring and archived v1 results. Labels, alternative evidence and source hashes were frozen before rerunning all variants. No post-score source or gold editing was used to raise a metric. See `docs/week3_benchmark_revision.md`.
 
 ## 7. Product track
 
-**Completed: 2/2 customer discovery interviews** ([docs/product_interviews_week3.md](../docs/product_interviews_week3.md)). We interviewed a municipal Citizen Relations (Beyaz Masa) Desk Supervisor (`INT-W3-01`) and a Municipal IT & Digital Services Coordinator (`INT-W3-02`). Today, a 6-person desk handles ~350–450 daily inquiries across phone, web forms, and WhatsApp by manually checking PDF guides and copying field complaints into spreadsheets, while out-of-sync department guides cause citizens to arrive with missing documents. They would pay for a predictable monthly institutional subscription ($150–$300/month per desk or an on-premise/VPC license) that delivers source-cited FAQ checklists (`[1]`), local role-filtered retrieval (`public` vs `staff`), and pre-triaged P1–P4 complaint drafts. Their main AI fears are fabricated fees or crew arrival times, unconfirmed ticket creation promises, and KVKK/privacy leaks of third-party tickets or staff-only notes.
+Two team-recorded discovery interviews are preserved in `docs/product_interviews_week3.md`: a citizen-relations desk supervisor and an IT coordinator. Their recorded needs are cited FAQ checklists, controlled intake drafts, local access-filtered retrieval and confirmation before writes. Concerns include invented fees/arrival promises, privacy leakage and uncontrolled actions. These are the team's supplied interview notes; this revision adds no invented interviews or pricing evidence.
 
 ## 8. Contributions
 
-| Member | Role | Work and evidence | Hours |
-|---|---|---|---|
-| Doruk Kal | Data/retrieval | Directed implementation, selected local retrieval, reviewed water guide (`YV-D003`) and entered initial 13 human labels; corpus (`data/corpus/`) and retrieval experiments (`eval/retrieval_week3.py`). | 10 |
-| Efe İncirci | Agent/tools | Source-cited answer pipeline (`src/rag/answer.py`, `prompts/rag/v1.md`), deterministic fallback contract, and integration checks (`tests/test_rag_answer.py`). | 9 |
-| Tarık Edip Yenikomşu | Evaluation/safety | Claim-level judge calibration (`eval/faithfulness_week3.py`, `eval/results/week3/calibration/human_sheet.csv`: adjudicated all 20/20 labels, κ=0.7710), product track customer discovery interviews (`docs/product_interviews_week3.md`), and Week 3 report/deck updates. | 10 |
+| Member | Evidence and review area |
+|---|---|
+| Doruk Kal | Directed the correction; data/retrieval work and bilingual citizen benchmark prepared with Codex; earlier source approval kept version-specific. |
+| Efe İncirci | Assigned agent/tools integration and review area. |
+| Tarık Edip Yenikomşu | Team-recorded20-item adjudication preserved; assigned evaluation/safety area. |
+
+Hours were not recorded. This revision does not reconstruct individual contribution hours.
 
 ## 9. AI tools used
 
-| Tool | Used for |
-|---|---|
-| Codex main agent and subagents | Corpus drafts, retrieval, generation/judge implementation, tests, report, matching local HTML deck. |
-| Pinned multilingual E5 and cross-encoder | Real local embeddings/reranking, no inference API charge. |
-| Gemini 3.1 Flash-Lite | Actual answer/judge attempts; successful outputs and errors recorded separately. |
+Codex and subagents prepared citizen-guide drafts, independent question drafts, source-coverage review, code checks and report/deck updates. Human source/gold approval is not inferred from that work. Pinned multilingual E5 and cross-encoder run locally. Actual Gemini generation/judge records and provider errors are retained separately.
 
 ## 10. Next week
 
-| Priority | Metric it should move | Expected change |
-|---|---|---|
-| Add controlled lookup and sandbox writes with confirmation | task_success | From null to measured on >=10 explicit multi-step sandbox tasks. |
-| Connect Week 2 classifier to Week 3 RAG and Week 4 tools | e2e_accuracy | From null in Week 3 back to measured end-to-end accuracy with 95% CI. |
-| Calibrate judge on live Week 4 tool-backed answers and compound claims | unsupported_claims | Keep unsupported_claims near 0.0 with adjudicated human–judge agreement. |
+| Priority | Metric to move |
+|---|---|
+| Editorial review of citizen-v2 guides and expected answers | Current public-guide approvals:0/30 toward30/30; independently check draft gold labels. |
+| Add controlled lookup and sandbox writes | Validated tool-result rate: unmeasured to measured; confirmation before any write. |
+| Measure multi-step tasks with traces and limits | task_success: null to measured, with failure and cost evidence. |

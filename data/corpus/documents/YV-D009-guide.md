@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D009","title":"Yeşilvadi Acil Durum ve Belediye İşlem Sınırı","title_en":"Emergency Redirection and Service Boundary","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D009","access":["public"],"synthetic":true,"review_status":"draft","keywords":["emergency","112","acil","dispatch"]}
+{"doc_id":"YV-D009","title":"Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı","title_en":"Preparing for a Service Desk Visit","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D009","access":["public"],"synthetic":true,"review_status":"draft","keywords":["Hizmet Noktasına Başvuru Hazırlığı","Preparing for a Service Desk Visit","başvuru","bilgi","service"]}
 ---
 
-# Yeşilvadi Acil Durum ve Belediye İşlem Sınırı
+# Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı
 
-## Kapsam ve veri niteliği {#scope}
+## Görüşmeye hazırlık {#summary}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Hizmet noktasına gitmeden önce yapmak istediğiniz işlemi ve hangi hizmet hakkında bilgi aradığınızı belirleyin. Bir arıza bildirmek, belge teslim etmek ve önceki başvuruyu takip etmek için hazırlık farklıdır. Yalnız genel bilgi almak istiyorsanız işlemi kısaca açıklamanızla yönlendirme yapılabilir.
 
-## Acil yönlendirme sınırı {#details}
+## Yanınızda ne bulunmalı? {#details}
 
-Proje senaryosunda açık bir acil durum anlatıldığında belediye bildirim taslağı, acil yardımın yerine geçmez. Beldesk gerektiğinde 112 yönlendirmesi yapabilir; ancak acil servise ulaştığını, ekip gönderdiğini veya bir kişinin güvenliğini doğruladığını söylemez. Bu rehber olay yerinde uzman değerlendirmesi veya kişiye özgü tıbbi yönlendirme sağlamaz.
+Belge teslimi için ziyaret edecekseniz hizmete ait güncel belge listesini kontrol edin; daha önce başvuru yaptıysanız referansını yanınıza alın. Eksik evrak bildirimi aldıysanız bildirimin hangi dosyaya ve hangi belgeye ait olduğunu hazırlayın. Genel bilgi görüşmesi için kişisel belgelerin bütününü getirmeniz gerekmez. Hizmet konusu ve başvuru aşaması doğru masaya yönlendirmeyi kolaylaştırır.
 
-## Öncelik politikasına bağlantı {#limits}
+## Ziyaretin planlanması {#limits}
 
-P1–P4 sınıfları ve sınıf içi sıralama için ekip tarafından kabul edilen öncelik politikası kullanılmalıdır. Depodaki v0.3 belgesi halen taslak olarak işaretlidir; bu rehber ona sessizce yeni kurallar veya süre taahhütleri eklemez. Belediye dışı acil durum ile belediye saha arızası farklı taleplerdir. Arama sonucunda bu metnin bulunması bir kayıt veya operasyonel müdahale oluşturmaz.
+Randevu gerekip gerekmediğini ilgili hizmetin başvuru kanalından öğrenin. Bir hizmet için alınan randevu, başka bir hizmetin dosyasını teslim etme randevusu yerine geçmeyebilir. Görüşme sonunda verilen başvuru referansını ve tamamlamanız istenen belgeleri not edin. Çalışma saatleri ve ziyaret adresi için hizmet noktasının güncel duyurusu kullanılır.

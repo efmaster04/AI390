@@ -1,17 +1,17 @@
 ---
-{"doc_id":"YV-D007","title":"Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci","title_en":"Field Complaint Draft and Confirmation Guide","language":"tr","version":"0.1-draft","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D007","access":["public"],"synthetic":true,"review_status":"draft","keywords":["complaint","draft","confirmation","şikâyet","onay"]}
+{"doc_id":"YV-D007","title":"Yeşilvadi Talep ve Şikâyet Başvurusu","title_en":"Municipal Requests and Complaints Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D007","access":["public"],"synthetic":true,"review_status":"draft","keywords":["complaint","application","report","şikâyet","başvuru"]}
 ---
 
-# Yeşilvadi Saha Bildirimi Taslağı ve Onay Süreci
+# Yeşilvadi Talep ve Şikâyet Başvurusu
 
-## Kapsam ve veri niteliği {#scope}
+## Doğru başvuru konusu {#summary}
 
-Bu doküman, AIC390 Beldesk projesindeki kurgusal Yeşilvadi için ekip tarafından incelenmek üzere hazırlanmış sentetik taslaktır. Gerçek belediye mevzuatı veya hizmet taahhüdü değildir. Bu belgenin okunması herhangi bir kayıt, ödeme, rezervasyon ya da saha müdahalesi oluşturmaz.
+Belediye hizmeti hakkında bilgi istemek, bir saha sorununu bildirmek ve mevcut başvuruyu takip etmek farklı ihtiyaçlardır. Saha sorunu bildiriminde olayın yerini ve ne gördüğünüzü kısa, anlaşılır cümlelerle açıklayın. Önceki bir bildirime yeni bilgi ekliyorsanız başvuru referansını da paylaşın.
 
-## Taslak ile kayıt farkı {#details}
+## Birden fazla sorun {#details}
 
-Vatandaş bir saha sorunu anlattığında Beldesk sorun türünü, konumu ve bildirilen etkiyi toparlayarak bir taslak sunabilir. Taslak hazırlanması belediye sisteminde kayıt oluşturulduğu anlamına gelmez. Aynı mesajda ayrı arızalar varsa her arıza ayrı taslak olarak gösterilir. Örneğin kanalizasyon taşması ile lamba arızası tek bir ortak öncelik altında birleştirilmez.
+Bir su veya kanalizasyon arızası ile sokak aydınlatması arızası farklı hizmet başlıklarında bildirilir. Her hizmet için ayrı başvuru yapılır. Aynı yerde görülmüş olsalar bile her sorun için konum ve gözlenen etkiyi ayrı açıklayın. Bir sorunun bilgilerini diğerinin yerine kullanmak, ilgili birimin olayları ayırmasını güçleştirir. İki başvuru birbiriyle ilişkiliyse açıklamanıza bunu ekleyebilirsiniz.
 
-## Onay ve araç sınırı {#limits}
+## Gönderim ve takip {#limits}
 
-Kullanıcı taslağı kontrol edip düzeltebilir. Onay alınsa bile Week 3 sürümünde yazma aracı bulunmadığı için kayıt numarası üretilemez ve kayıt açıldığı söylenemez. Kayıt oluşturma yalnızca ilerideki sandbox araç aşamasında doğrulanmış işlem sonucuyla mümkün olacaktır. Ekip gönderme, kişiye mesaj atma ve arızayı giderme de bu rehberi okumakla gerçekleşmez.
+Başvuru formunda hizmet konusu, mahalle, sokak ve sorunun kısa açıklaması yer alır. Başvuru gönderiminden sonra verilen referansı saklayın. Daha sonra fotoğraf veya yeni gözlem eklemek isterseniz aynı referansla ilerleyin. Başvurunun alınması, incelemenin tamamlanması veya bir ekibin belirli saatte gelmesiyle aynı aşama değildir.

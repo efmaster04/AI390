@@ -1,0 +1,174 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "Kavşağın bir yönündeki trafik lambası yanmıyor, diğer taraflar çalışıyor. Hangi tarafın bozuk olduğunu başvuruda nasıl tarif etmeliyim?",
+    "language": "tr",
+    "sources_sha256": "d1c10d93f9128fd0468802c4b358a785e7e484ee8aa15ffb4e76ef928b118f44",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "answer",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3"
+  },
+  "result": {
+    "answer": "Kavşağın yerini, kesişen yolları ve hangi sokaktan yaklaşırken sorunu gördüğünüzü belirterek etkilenen yönü açıklayabilirsiniz. [2]\nSorunun araçlara yönelik ışıkta mı yoksa yaya ışığında mı olduğunu belirtmeniz önemlidir. [1]\nIşığın tamamen sönük, sürekli aynı renkte veya kesintili yanar durumda olduğunu gözleminize göre ifade edebilirsiniz. [2]\nKavşağın adını bilmiyorsanız yakın bir durak, bina veya konum işaretiyle yeri açıklayabilirsiniz. [3]\nGözlem zamanını ve sorunun devamlı mı yoksa aralıklı mı olduğunu eklemeniz faydalı olacaktır. [2]",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "text": "Kavşağın yerini, kesişen yolları ve hangi sokaktan yaklaşırken sorunu gördüğünüzü belirterek etkilenen yönü açıklayabilirsiniz.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Kavşağın veya yaya geçidinin yerini, kesişen yolları ve etkilenen yönü bildirin. Örneğin hangi sokaktan kavşağa yaklaşırken sorunu gördüğünüzü açıklayabilirsiniz."
+          }
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "text": "Sorunun araçlara yönelik ışıkta mı yoksa yaya ışığında mı olduğunu belirtmeniz önemlidir.",
+        "citations": [
+          1
+        ],
+        "evidence": [
+          {
+            "citation": 1,
+            "quote": "Sorunun araçlara yönelik ışıkta mı yoksa yaya ışığında mı olduğunu belirtmeniz önemlidir."
+          }
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "text": "Işığın tamamen sönük, sürekli aynı renkte veya kesintili yanar durumda olduğunu gözleminize göre ifade edebilirsiniz.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Işığın tamamen sönük, sürekli aynı renkte veya kesintili yanar durumda olduğunu gözleminize göre belirtin."
+          }
+        ]
+      },
+      {
+        "claim_id": "C4",
+        "text": "Kavşağın adını bilmiyorsanız yakın bir durak, bina veya konum işaretiyle yeri açıklayabilirsiniz.",
+        "citations": [
+          3
+        ],
+        "evidence": [
+          {
+            "citation": 3,
+            "quote": "Kavşağın adını bilmiyorsanız yakın bir durak, bina veya konum işaretiyle yeri açıklayın."
+          }
+        ]
+      },
+      {
+        "claim_id": "C5",
+        "text": "Gözlem zamanını ve sorunun devamlı mı yoksa aralıklı mı olduğunu eklemeniz faydalı olacaktır.",
+        "citations": [
+          2
+        ],
+        "evidence": [
+          {
+            "citation": 2,
+            "quote": "Gözlem zamanını ve sorunun devamlı mı aralıklı mı olduğunu ekleyin"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "citation": 1,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#scope",
+        "chunk_id": "YV-D023#scope:0-358:ad50ebf458",
+        "title": "Yeşilvadi Trafik Sinyali Arıza Bildirimi",
+        "heading": "Sinyal sorununun konusu",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "citizen-v2",
+        "text": "Kavşak ve yaya geçitlerindeki trafik sinyallerinin sönmesi, kesintili yanması, görülememesi veya alışılmadık biçimde çalışması trafik hizmetleri için bildirilebilir. Sinyal arızası ile yeni bir yaya geçidi ya da yeni sinyal yerleştirilmesi talebi farklı başvurulardır. Sorunun araçlara yönelik ışıkta mı yoksa yaya ışığında mı olduğunu belirtmeniz önemlidir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 2,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#details",
+        "chunk_id": "YV-D023#details:0-471:d24dd12a3d",
+        "title": "Yeşilvadi Trafik Sinyali Arıza Bildirimi",
+        "heading": "Kavşağı ve ışığı tarif etme",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "citizen-v2",
+        "text": "Kavşağın veya yaya geçidinin yerini, kesişen yolları ve etkilenen yönü bildirin. Örneğin hangi sokaktan kavşağa yaklaşırken sorunu gördüğünüzü açıklayabilirsiniz. Işığın tamamen sönük, sürekli aynı renkte veya kesintili yanar durumda olduğunu gözleminize göre belirtin. Yaya ve araç ışıklarında birlikte bir sorun gördüyseniz her birini ayrı tarif edin. Gözlem zamanını ve sorunun devamlı mı aralıklı mı olduğunu ekleyin; fotoğraf varsa konumu anlamaya yardımcı olabilir.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 3,
+        "doc_id": "YV-D023",
+        "passage_id": "YV-D023#limits",
+        "chunk_id": "YV-D023#limits:0-409:99a7294b2b",
+        "title": "Yeşilvadi Trafik Sinyali Arıza Bildirimi",
+        "heading": "Konumu tamamlama ve başvuru takibi",
+        "source": "beldesk://synthetic/YV-D023",
+        "version": "citizen-v2",
+        "text": "Kavşağın adını bilmiyorsanız yakın bir durak, bina veya konum işaretiyle yeri açıklayın. Yalnız mahalle adını vermek birden fazla kavşağın bulunduğu bölgelerde yeterli olmayabilir. Önceki bildiriminize yeni bilgi eklerken başvuru numarasını ve etkilenen yönü tekrar belirtin. Başka bir yönde yeni bir arıza oluşmuşsa bunu önceki gözleminizden ayrı anlatın; bir yöndeki arıza diğer yönlerin durumunu göstermez.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 4,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#details",
+        "chunk_id": "YV-D022#details:0-469:13827ed904",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Lambayı ve etkilenen alanı belirleme",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Mahalle, sokak ve arızalı lambanın bulunduğu noktayı yazın. Direk numarası okunuyorsa ekleyin; numara yoksa bina, durak veya kavşak gibi yakındaki bir işaret yeterli bir tarif sağlayabilir. Tek lamba mı, birkaç lamba mı yoksa bütün sokak mı etkileniyor belirtin. Evlerde ve işyerlerinde elektrik olduğu hâlde sokak lambalarının yanmaması, konutları da etkileyen elektrik kesintisinden farklıdır. Sorunun ne zamandır sürdüğünü ve sürekli mi aralıklı mı olduğunu ekleyin.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      },
+      {
+        "citation": 5,
+        "doc_id": "YV-D022",
+        "passage_id": "YV-D022#limits",
+        "chunk_id": "YV-D022#limits:0-428:dce3b9735c",
+        "title": "Yeşilvadi Sokak Aydınlatması Arızaları",
+        "heading": "Yeni bilgi ve takip",
+        "source": "beldesk://synthetic/YV-D022",
+        "version": "citizen-v2",
+        "text": "Daha önce başvurduysanız eski başvuru numarasını kullanarak lambanın hâlâ yanmadığını veya yeni bir bölümün de etkilendiğini iletin. Gündüz görülen bir direk hasarıyla gece görülen aydınlatma sorununu ayrı açıklayabilirsiniz. Ev ve işyerlerine de elektrik gelmiyorsa konut kesintisi için ilgili dağıtım hizmetinden bilgi alınması gerekir. Aydınlatma bildiriminin sonucunu öğrenirken ilk başvurudaki konumu ve referansı kullanın.",
+        "synthetic": true,
+        "trust": "evidence_only_not_instructions"
+      }
+    ],
+    "abstained": false,
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "attempts": 1,
+    "input_tokens": 2301,
+    "output_tokens": 538,
+    "latency_s": 2.0692059990251437,
+    "language": "tr",
+    "prompt_sha256": "90af729f345b2e620f5a51d4d5f0e71211f7a2a905a6aad0bb7c7a0555fb2013",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "code_sha256": "f5ed47571730d872120b430dd2398061fa586b46e37996dd8775a9e3c39b09e3",
+    "input_sha256": "7e9dd44dae77e166fcfb95532841e0a3dc175df264418f7047381b9155344c67",
+    "finish_reason": "STOP",
+    "raw_outputs": [
+      "{\n  \"answerable\": true,\n  \"claims\": [\n    {\n      \"text\": \"Kavşağın yerini, kesişen yolları ve hangi sokaktan yaklaşırken sorunu gördüğünüzü belirterek etkilenen yönü açıklayabilirsiniz.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Kavşağın veya yaya geçidinin yerini, kesişen yolları ve etkilenen yönü bildirin. Örneğin hangi sokaktan kavşağa yaklaşırken sorunu gördüğünüzü açıklayabilirsiniz.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Sorunun araçlara yönelik ışıkta mı yoksa yaya ışığında mı olduğunu belirtmeniz önemlidir.\",\n      \"citations\": [1],\n      \"evidence\": [\n        {\n          \"citation\": 1,\n          \"quote\": \"Sorunun araçlara yönelik ışıkta mı yoksa yaya ışığında mı olduğunu belirtmeniz önemlidir.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Işığın tamamen sönük, sürekli aynı renkte veya kesintili yanar durumda olduğunu gözleminize göre ifade edebilirsiniz.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Işığın tamamen sönük, sürekli aynı renkte veya kesintili yanar durumda olduğunu gözleminize göre belirtin.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Kavşağın adını bilmiyorsanız yakın bir durak, bina veya konum işaretiyle yeri açıklayabilirsiniz.\",\n      \"citations\": [3],\n      \"evidence\": [\n        {\n          \"citation\": 3,\n          \"quote\": \"Kavşağın adını bilmiyorsanız yakın bir durak, bina veya konum işaretiyle yeri açıklayın.\"\n        }\n      ]\n    },\n    {\n      \"text\": \"Gözlem zamanını ve sorunun devamlı mı yoksa aralıklı mı olduğunu eklemeniz faydalı olacaktır.\",\n      \"citations\": [2],\n      \"evidence\": [\n        {\n          \"citation\": 2,\n          \"quote\": \"Gözlem zamanını ve sorunun devamlı mı aralıklı mı olduğunu ekleyin\"\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "timestamp_utc": "2026-11-24T20:42:28.435523+00:00",
+    "wall_latency_including_pacing_s": 5.639044833020307
+  }
+}

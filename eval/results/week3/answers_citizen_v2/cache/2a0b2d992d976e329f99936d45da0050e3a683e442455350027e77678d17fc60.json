@@ -1,0 +1,48 @@
+{
+  "key": {
+    "provider": "gemini",
+    "model": "gemini-3.1-flash-lite",
+    "corpus": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "index": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "question": "We are organising a small fair in a park, but wheelchair users cannot get through the entrance. What do we need for permission, and how can we report the access problem?",
+    "language": "en",
+    "sources_sha256": "8164fec23457b6b288139e01d602bb3561cc13fd9642116f05b6d19c3650e538",
+    "config_sha256": "c618deb0eb0898b2beee2d983758e4079359d10ee6dc6ab5ed599c55d61311ea",
+    "temperature": 0,
+    "seed": 42,
+    "validation_retries": 0,
+    "stage": "judge",
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "answer_sha256": "1acf7a8761e6b6bac9a0f2e9b2bd53518e64de7fb66732a2cb1b278a0c88d790",
+    "code_sha256": "19b53ecd8259627734c6bcec575a6561d845d4b1e40cca917fba49851ad2d59b"
+  },
+  "result": {
+    "valid": true,
+    "error": null,
+    "errors": [],
+    "claims": [],
+    "unlisted_claims": [
+      {
+        "text": "The documents I can access do not contain the answer to this question.",
+        "citations": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "label": "unsupported",
+        "reason": "The sources provide information on how to report accessibility issues (YV-D019) and mention that event applications are subject to unit review (YV-D006), which partially addresses the user's question."
+      }
+    ],
+    "coverage_complete": false,
+    "reason": "The model incorrectly claimed the documents contained no information, despite sources explaining how to report accessibility issues and how event permissions are processed.",
+    "attempts": 1,
+    "input_tokens": 1921,
+    "output_tokens": 177,
+    "latency_s": 16.914900250034407,
+    "prompt_sha256": "cd1e47422affbd7fe9430215085568a2b2f5194788605ad463e16f1630f429d6",
+    "judge_input_sha256": "44905eea025d0ad519fd36c8f49d07d5cc534d2535d0e0a676be11c02413a2d3",
+    "wall_latency_including_pacing_s": 16.914900250034407
+  }
+}

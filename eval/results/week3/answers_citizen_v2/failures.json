@@ -1,0 +1,48 @@
+[
+  {
+    "case_id": "W3-R004",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "validation_retries_exhausted"
+  },
+  {
+    "case_id": "W3-R017",
+    "stage": "generation",
+    "kind": "unsupported_or_insufficient_claim",
+    "note": "According to provisional automatic claim judge; inspect cited evidence"
+  },
+  {
+    "case_id": "W3-R019",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "validation_retries_exhausted"
+  },
+  {
+    "case_id": "W3-R020",
+    "stage": "evaluation",
+    "kind": "judge_error_or_invalid"
+  },
+  {
+    "case_id": "W3-R027",
+    "stage": "generation",
+    "kind": "generation_or_provider_error",
+    "error": "validation_retries_exhausted"
+  },
+  {
+    "case_id": "W3-R032",
+    "stage": "generation",
+    "kind": "abstained_on_answerable_question",
+    "gold_found": true
+  },
+  {
+    "case_id": "W3-R032",
+    "stage": "generation",
+    "kind": "unsupported_or_insufficient_claim",
+    "note": "According to provisional automatic claim judge; inspect cited evidence"
+  },
+  {
+    "case_id": "W3-U004",
+    "stage": "generation",
+    "kind": "answered_unavailable_information_control"
+  }
+]
