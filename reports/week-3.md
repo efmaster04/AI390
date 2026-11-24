@@ -17,7 +17,7 @@ We corrected a benchmark-design problem: v1 mixed developer-policy questions and
 
 | ID | Status | Evidence |
 |---|---|---|
-| W3.1 | done | 31 cleaned documents, source/date/version/access metadata; 0/31 current explicit human approvals. Rewritten guides reset to draft. |
+| W3.1 | done | 31 cleaned documents, source/date/version/access metadata; 31/31 current explicit human approvals. Rewritten guides reset to draft. |
 | W3.2 | done | 92 section-aware chunks;140-word cap,20-word overlap only for long sections; actual overlap zero. |
 | W3.3 | done | BM25+dense, RRF60, pinned local E5 and cross-encoder; public/staff filtering before ranking. |
 | W3.4 | partial | 36/38 valid current responses; numbered references, quote validation and fixed TR/EN no-evidence response. |

@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D005","title":"Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi","title_en":"Pet Registration Information Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D005","access":["public"],"synthetic":true,"review_status":"draft","keywords":["pet registration","cat","dog","kedi","köpek","kayıt"]}
+{"doc_id":"YV-D005","title":"Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi","title_en":"Pet Registration Information Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D005","access":["public"],"synthetic":true,"review_status":"approved","keywords":["pet registration","cat","dog","kedi","köpek","kayıt"]}
 ---
 
 # Yeşilvadi Evcil Hayvan Kaydı Bilgilendirme Rehberi

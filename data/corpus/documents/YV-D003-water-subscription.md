@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D003","title":"Yeşilvadi Su Aboneliği Başvuru Rehberi","title_en":"Water Subscription Application Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D003","access":["public"],"synthetic":true,"review_status":"draft","keywords":["su aboneliği","water subscription","application","required documents","kiracı","tenant"]}
+{"doc_id":"YV-D003","title":"Yeşilvadi Su Aboneliği Başvuru Rehberi","title_en":"Water Subscription Application Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D003","access":["public"],"synthetic":true,"review_status":"approved","keywords":["su aboneliği","water subscription","application","required documents","kiracı","tenant"]}
 ---
 
 # Yeşilvadi Su Aboneliği Başvuru Rehberi

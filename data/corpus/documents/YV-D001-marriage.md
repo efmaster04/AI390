@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D001","title":"Yeşilvadi Nikâh Başvurusu Rehberi","title_en":"Marriage Application Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D001","access":["public"],"synthetic":true,"review_status":"draft","keywords":["nikâh","nikah","evlilik","marriage","appointment","randevu"]}
+{"doc_id":"YV-D001","title":"Yeşilvadi Nikâh Başvurusu Rehberi","title_en":"Marriage Application Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D001","access":["public"],"synthetic":true,"review_status":"approved","keywords":["nikâh","nikah","evlilik","marriage","appointment","randevu"]}
 ---
 
 # Yeşilvadi Nikâh Başvurusu Rehberi

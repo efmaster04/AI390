@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D013","title":"Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama","title_en":"Recycling and Separate Waste Collection","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D013","access":["public"],"synthetic":true,"review_status":"draft","keywords":["recycling","paper","plastic","glass","drop-off","geri dönüşüm","kağıt","plastik","cam"]}
+{"doc_id":"YV-D013","title":"Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama","title_en":"Recycling and Separate Waste Collection","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D013","access":["public"],"synthetic":true,"review_status":"approved","keywords":["recycling","paper","plastic","glass","drop-off","geri dönüşüm","kağıt","plastik","cam"]}
 ---
 
 # Yeşilvadi Geri Dönüşüm ve Ayrı Atık Toplama

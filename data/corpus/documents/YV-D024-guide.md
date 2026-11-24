@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D024","title":"Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması","title_en":"Water Leaks and Sewer Overflows","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D024","access":["public"],"synthetic":true,"review_status":"draft","keywords":["water leak","sewer overflow","pipe","su kaçağı","kanalizasyon","rögar","boru"]}
+{"doc_id":"YV-D024","title":"Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması","title_en":"Water Leaks and Sewer Overflows","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D024","access":["public"],"synthetic":true,"review_status":"approved","keywords":["water leak","sewer overflow","pipe","su kaçağı","kanalizasyon","rögar","boru"]}
 ---
 
 # Yeşilvadi Su Kaçağı ve Kanalizasyon Taşması

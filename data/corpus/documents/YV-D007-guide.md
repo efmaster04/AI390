@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D007","title":"Yeşilvadi Talep ve Şikâyet Başvurusu","title_en":"Municipal Requests and Complaints Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D007","access":["public"],"synthetic":true,"review_status":"draft","keywords":["complaint","application","report","şikâyet","başvuru"]}
+{"doc_id":"YV-D007","title":"Yeşilvadi Talep ve Şikâyet Başvurusu","title_en":"Municipal Requests and Complaints Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D007","access":["public"],"synthetic":true,"review_status":"approved","keywords":["complaint","application","report","şikâyet","başvuru"]}
 ---
 
 # Yeşilvadi Talep ve Şikâyet Başvurusu

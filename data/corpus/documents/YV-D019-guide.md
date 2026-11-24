@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D019","title":"Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi","title_en":"Accessibility and Obstructed Access Reports","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D019","access":["public"],"synthetic":true,"review_status":"draft","keywords":["accessibility","wheelchair","ramp","entrance","erişilebilirlik","rampa","tekerlekli sandalye"]}
+{"doc_id":"YV-D019","title":"Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi","title_en":"Accessibility and Obstructed Access Reports","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D019","access":["public"],"synthetic":true,"review_status":"approved","keywords":["accessibility","wheelchair","ramp","entrance","erişilebilirlik","rampa","tekerlekli sandalye"]}
 ---
 
 # Yeşilvadi Erişilebilirlik ve Geçiş Engeli Bildirimi

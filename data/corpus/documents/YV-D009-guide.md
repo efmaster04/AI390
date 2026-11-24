@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D009","title":"Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı","title_en":"Preparing for a Service Desk Visit","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D009","access":["public"],"synthetic":true,"review_status":"draft","keywords":["Hizmet Noktasına Başvuru Hazırlığı","Preparing for a Service Desk Visit","başvuru","bilgi","service"]}
+{"doc_id":"YV-D009","title":"Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı","title_en":"Preparing for a Service Desk Visit","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D009","access":["public"],"synthetic":true,"review_status":"approved","keywords":["Hizmet Noktasına Başvuru Hazırlığı","Preparing for a Service Desk Visit","başvuru","bilgi","service"]}
 ---
 
 # Yeşilvadi Hizmet Noktasına Başvuru Hazırlığı

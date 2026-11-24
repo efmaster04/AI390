@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D025","title":"Yeşilvadi Gürültü Bildirimi","title_en":"Noise Complaint Guidance","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D025","access":["public"],"synthetic":true,"review_status":"draft","keywords":["noise complaint","construction","time","gürültü","inşaat","ses"]}
+{"doc_id":"YV-D025","title":"Yeşilvadi Gürültü Bildirimi","title_en":"Noise Complaint Guidance","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D025","access":["public"],"synthetic":true,"review_status":"approved","keywords":["noise complaint","construction","time","gürültü","inşaat","ses"]}
 ---
 
 # Yeşilvadi Gürültü Bildirimi

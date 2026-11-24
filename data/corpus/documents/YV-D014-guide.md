@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D014","title":"Yeşilvadi Tanımlanamayan Atık Bildirimi","title_en":"Reporting Unidentified Waste","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D014","access":["public"],"synthetic":true,"review_status":"draft","keywords":["unidentified waste","dumping","container","etiket","bilinmeyen atık","varil"]}
+{"doc_id":"YV-D014","title":"Yeşilvadi Tanımlanamayan Atık Bildirimi","title_en":"Reporting Unidentified Waste","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D014","access":["public"],"synthetic":true,"review_status":"approved","keywords":["unidentified waste","dumping","container","etiket","bilinmeyen atık","varil"]}
 ---
 
 # Yeşilvadi Tanımlanamayan Atık Bildirimi

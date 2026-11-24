@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D018","title":"Yeşilvadi Kültür Merkezi ve Etkinlik Katılımı","title_en":"Cultural Centre Visits and Event Attendance","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D018","access":["public"],"synthetic":true,"review_status":"draft","keywords":["cultural centre","event attendance","registration","opening hours","kültür merkezi","etkinlik","katılım"]}
+{"doc_id":"YV-D018","title":"Yeşilvadi Kültür Merkezi ve Etkinlik Katılımı","title_en":"Cultural Centre Visits and Event Attendance","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D018","access":["public"],"synthetic":true,"review_status":"approved","keywords":["cultural centre","event attendance","registration","opening hours","kültür merkezi","etkinlik","katılım"]}
 ---
 
 # Yeşilvadi Kültür Merkezi ve Etkinlik Katılımı

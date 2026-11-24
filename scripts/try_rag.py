@@ -25,6 +25,7 @@ def main(argv=None):
     group = p.add_mutually_exclusive_group()
     group.add_argument('--replay', metavar='CASE_ID', help='Show a saved example; no API call')
     group.add_argument('--search-only', action='store_true', help='Live local retrieval; no generation/API call')
+    p.add_argument('--no-classify', action='store_true', help='Skip Week 2 classifier stage and call RAG directly')
     args = p.parse_args(argv)
     if args.replay:
         base = ROOT/'eval/results/week3'
@@ -48,23 +49,33 @@ def main(argv=None):
         provider = BoundedProvider(TimedGeminiProvider('gemini-3.1-flash-lite', key, timeout_s=30),
             max_calls=20, rpm=8, deadline_s=600, transport_retries=1)
     print('LIVE LOCAL RETRIEVAL — no API generation' if args.search_only else
-          'LIVE RAG · Gemini 3.1 Flash-Lite · temperature 0 · public sources only')
+          'LIVE CLASSIFIER -> RAG · Gemini 3.1 Flash-Lite · temperature 0 · public sources only')
     print('Turkish or English. Each question is independent. Empty line or Ctrl+C exits.')
     try:
         while True:
             question = input('\ncitizen> ').strip()
             if not question:
                 break
-            found = retriever.search(question, role='public', k=5)
-            sources = source_context(found)
             if args.search_only:
+                found = retriever.search(question, role='public', k=5)
+                sources = source_context(found)
                 for source in sources[:3]:
                     print(f"\n[{source['citation']}] {source['passage_id']}\n{source['text']}")
                 continue
-            from src.rag.answer import answer_with_sources
-            provider.case_id, provider.stage = 'interactive_demo', 'answer'
-            result = answer_with_sources(question, provider, sources, max_retries=0)
-            show(result, sources)
+            if args.no_classify:
+                found = retriever.search(question, role='public', k=5)
+                sources = source_context(found)
+                from src.rag.answer import answer_with_sources
+                provider.case_id, provider.stage = 'interactive_demo', 'answer'
+                result = answer_with_sources(question, provider, sources, max_retries=0)
+                show(result, sources)
+            else:
+                from src.rag.pipeline import handle_citizen_request
+                provider.case_id, provider.stage = 'interactive_demo', 'classifier_then_rag'
+                outcome = handle_citizen_request(question, provider, retriever, role='public', k=5, rag_retries=0)
+                cls_res = outcome['classification'].get('result') or {}
+                print(f"[classifier] intent={cls_res.get('intent')} · lang={outcome['language']} · route={outcome['route']}")
+                show(outcome['generation'], outcome['sources'])
             if provider.exhausted:
                 print('Demo request/time budget reached. Exit and restart if needed.')
                 break

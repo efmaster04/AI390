@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D022","title":"Yeşilvadi Sokak Aydınlatması Arızaları","title_en":"Street Lighting Faults","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D022","access":["public"],"synthetic":true,"review_status":"draft","keywords":["street lighting","lamp","dark street","aydınlatma","sokak lambası","direk"]}
+{"doc_id":"YV-D022","title":"Yeşilvadi Sokak Aydınlatması Arızaları","title_en":"Street Lighting Faults","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D022","access":["public"],"synthetic":true,"review_status":"approved","keywords":["street lighting","lamp","dark street","aydınlatma","sokak lambası","direk"]}
 ---
 
 # Yeşilvadi Sokak Aydınlatması Arızaları

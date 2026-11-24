@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D029","title":"Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme","title_en":"Household and Business Power Outage Enquiries","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D029","access":["public"],"synthetic":true,"review_status":"draft","keywords":["power outage","electricity distribution","household","building","elektrik kesintisi","dağıtım şirketi","konut"]}
+{"doc_id":"YV-D029","title":"Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme","title_en":"Household and Business Power Outage Enquiries","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D029","access":["public"],"synthetic":true,"review_status":"approved","keywords":["power outage","electricity distribution","household","building","elektrik kesintisi","dağıtım şirketi","konut"]}
 ---
 
 # Yeşilvadi Konut ve İşyeri Elektrik Kesintisinde Yönlendirme

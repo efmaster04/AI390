@@ -109,7 +109,7 @@
     "note": "gold_in_candidates_but_below_top5. Finding one relevant passage does not cover every requested part; all-facet@5 = 0.969."
   },
   "human_review": {
-    "approved_documents": 0,
+    "approved_documents": 31,
     "total_documents": 31,
     "claim_labels_completed": 20,
     "claim_labels_target": 20,

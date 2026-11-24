@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D015","title":"Yeşilvadi Park Ziyareti ve Tesis Bilgisi","title_en":"Park Visits and Facilities","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D015","access":["public"],"synthetic":true,"review_status":"draft","keywords":["park","opening hours","facilities","entrance","park adı","ziyaret","tesis"]}
+{"doc_id":"YV-D015","title":"Yeşilvadi Park Ziyareti ve Tesis Bilgisi","title_en":"Park Visits and Facilities","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D015","access":["public"],"synthetic":true,"review_status":"approved","keywords":["park","opening hours","facilities","entrance","park adı","ziyaret","tesis"]}
 ---
 
 # Yeşilvadi Park Ziyareti ve Tesis Bilgisi

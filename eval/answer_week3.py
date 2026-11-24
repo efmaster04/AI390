@@ -378,7 +378,7 @@ def run(*, provider_name, model, out_dir=DEFAULT_OUT, cases_path=DEFAULT_CASES,
     if type(validation_retries) is not int or validation_retries not in (0, 1):
         raise ValueError("validation_retries must be 0 or 1")
     code_files = [ROOT/"src/rag/answer.py", ROOT/"eval/faithfulness_week3.py", Path(__file__)]
-    code_hashes = {str(p.relative_to(ROOT)): digest(p.read_bytes()) for p in code_files}
+    code_hashes = {p.relative_to(ROOT).as_posix(): digest(p.read_bytes()) for p in code_files}
     config_path = ROOT/"config/rag_answer.json"
     config = json.loads(config_path.read_text())
     prompt_path = ROOT/config["prompt_path"]

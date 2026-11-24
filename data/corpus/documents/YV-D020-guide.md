@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D020","title":"Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı","title_en":"Potholes and Road Surface Damage","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D020","access":["public"],"synthetic":true,"review_status":"draft","keywords":["pothole","road damage","near miss","çukur","yol hasarı","ramak kala"]}
+{"doc_id":"YV-D020","title":"Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı","title_en":"Potholes and Road Surface Damage","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D020","access":["public"],"synthetic":true,"review_status":"approved","keywords":["pothole","road damage","near miss","çukur","yol hasarı","ramak kala"]}
 ---
 
 # Yeşilvadi Yol Çukuru ve Yol Yüzeyi Hasarı

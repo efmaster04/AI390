@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D012","title":"Yeşilvadi Hacimli Atık ve Eski Mobilya Toplama","title_en":"Bulky Waste and Old Furniture Collection","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D012","access":["public"],"synthetic":true,"review_status":"draft","keywords":["bulky waste","sofa","furniture","collection","eski koltuk","hacimli atık","mobilya"]}
+{"doc_id":"YV-D012","title":"Yeşilvadi Hacimli Atık ve Eski Mobilya Toplama","title_en":"Bulky Waste and Old Furniture Collection","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D012","access":["public"],"synthetic":true,"review_status":"approved","keywords":["bulky waste","sofa","furniture","collection","eski koltuk","hacimli atık","mobilya"]}
 ---
 
 # Yeşilvadi Hacimli Atık ve Eski Mobilya Toplama

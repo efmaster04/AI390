@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D011","title":"Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi","title_en":"Missed Rubbish Collection and Container Reports","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D011","access":["public"],"synthetic":true,"review_status":"draft","keywords":["missed collection","rubbish","garbage","container","çöp alınmadı","konteyner","temizlik"]}
+{"doc_id":"YV-D011","title":"Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi","title_en":"Missed Rubbish Collection and Container Reports","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D011","access":["public"],"synthetic":true,"review_status":"approved","keywords":["missed collection","rubbish","garbage","container","çöp alınmadı","konteyner","temizlik"]}
 ---
 
 # Yeşilvadi Alınmayan Çöp ve Konteyner Bildirimi

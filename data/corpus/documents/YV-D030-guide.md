@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D030","title":"Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi","title_en":"Blocked Storm Drains and Rainwater Pooling","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D030","access":["public"],"synthetic":true,"review_status":"draft","keywords":["storm drain","rainwater","blocked grate","flooding","yağmur suyu","ızgara","su birikmesi"]}
+{"doc_id":"YV-D030","title":"Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi","title_en":"Blocked Storm Drains and Rainwater Pooling","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D030","access":["public"],"synthetic":true,"review_status":"approved","keywords":["storm drain","rainwater","blocked grate","flooding","yağmur suyu","ızgara","su birikmesi"]}
 ---
 
 # Yeşilvadi Yağmur Suyu Izgarası ve Su Birikmesi

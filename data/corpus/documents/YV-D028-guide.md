@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D028","title":"Yeşilvadi Başvuru Numarası ve Durum Sorgusu","title_en":"Report References and Status Enquiries","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D028","access":["public"],"synthetic":true,"review_status":"draft","keywords":["ticket reference","report number","status","receipt","başvuru numarası","durum sorgusu","alındı"]}
+{"doc_id":"YV-D028","title":"Yeşilvadi Başvuru Numarası ve Durum Sorgusu","title_en":"Report References and Status Enquiries","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D028","access":["public"],"synthetic":true,"review_status":"approved","keywords":["ticket reference","report number","status","receipt","başvuru numarası","durum sorgusu","alındı"]}
 ---
 
 # Yeşilvadi Başvuru Numarası ve Durum Sorgusu

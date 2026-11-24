@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D027","title":"Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip","title_en":"Following Up and Updating an Existing Report","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D027","access":["public"],"synthetic":true,"review_status":"draft","keywords":["follow up","existing report","update","reference","başvuru takibi","ek bilgi","tekrar bildirim"]}
+{"doc_id":"YV-D027","title":"Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip","title_en":"Following Up and Updating an Existing Report","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D027","access":["public"],"synthetic":true,"review_status":"approved","keywords":["follow up","existing report","update","reference","başvuru takibi","ek bilgi","tekrar bildirim"]}
 ---
 
 # Yeşilvadi Mevcut Başvuruya Ek Bilgi ve Takip

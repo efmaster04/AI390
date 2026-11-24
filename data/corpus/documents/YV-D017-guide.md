@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D017","title":"Yeşilvadi Kütüphane Üyeliği","title_en":"Library Membership and Member Updates","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D017","access":["public"],"synthetic":true,"review_status":"draft","keywords":["library membership","register","renew","kütüphane","üyelik","iletişim güncelleme"]}
+{"doc_id":"YV-D017","title":"Yeşilvadi Kütüphane Üyeliği","title_en":"Library Membership and Member Updates","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D017","access":["public"],"synthetic":true,"review_status":"approved","keywords":["library membership","register","renew","kütüphane","üyelik","iletişim güncelleme"]}
 ---
 
 # Yeşilvadi Kütüphane Üyeliği

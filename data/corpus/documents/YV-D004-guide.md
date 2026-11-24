@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D004","title":"Yeşilvadi Sosyal Yardım Başvuru Rehberi","title_en":"Social Assistance Application Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D004","access":["public"],"synthetic":true,"review_status":"draft","keywords":["social aid","assistance","gelir","yardım"]}
+{"doc_id":"YV-D004","title":"Yeşilvadi Sosyal Yardım Başvuru Rehberi","title_en":"Social Assistance Application Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D004","access":["public"],"synthetic":true,"review_status":"approved","keywords":["social aid","assistance","gelir","yardım"]}
 ---
 
 # Yeşilvadi Sosyal Yardım Başvuru Rehberi

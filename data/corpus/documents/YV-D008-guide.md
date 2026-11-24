@@ -1,5 +1,5 @@
 ---
-{"doc_id":"YV-D008","title":"Yeşilvadi Genel Bilgi ve Kişisel Veri Rehberi","title_en":"General Enquiries and Personal Data Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D008","access":["public"],"synthetic":true,"review_status":"draft","keywords":["privacy","personal data","gizlilik","kişisel veri"]}
+{"doc_id":"YV-D008","title":"Yeşilvadi Genel Bilgi ve Kişisel Veri Rehberi","title_en":"General Enquiries and Personal Data Guide","language":"tr","version":"citizen-v2","updated_at":"2026-11-24","source":"beldesk://synthetic/YV-D008","access":["public"],"synthetic":true,"review_status":"approved","keywords":["privacy","personal data","gizlilik","kişisel veri"]}
 ---
 
 # Yeşilvadi Genel Bilgi ve Kişisel Veri Rehberi
