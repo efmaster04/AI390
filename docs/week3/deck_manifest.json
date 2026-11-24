@@ -417,6 +417,6 @@
     "w3-q-corpus"
   ],
   "source_data": "eval/results/week3/presentation_data.json",
-  "reference": "docs/index.html (read only)",
+  "reference": "docs/week2/index.html (read only)",
   "note": "Generated file. Numbers are read from recorded result files at build time; missing values print as null."
 }

@@ -12,7 +12,7 @@ Outputs
 Options
   --composition-dir DIR   also write the raw composition as DIR/index.html for `hyperframes check/snapshot`
 
-The Week 2 deck (docs/index.html) supplies the player, runtime, fonts, design kit and mascot art; it is read,
+The Week 2 deck (docs/week2/index.html) supplies the player, runtime, fonts, design kit and mascot art; it is read,
 never edited. Slide content lives in scripts/week3_deck/ (data.py, scenes.py, deck.css, deck.js).
 """
 from __future__ import annotations
@@ -100,7 +100,7 @@ def qa_slides(d):
 
 
 def build(composition_dir=None, data_override=None, out=OUT, manifest=MANIFEST, script=SCRIPT):
-    reference = (ROOT / 'docs/index.html').read_text(encoding='utf-8')
+    reference = (ROOT / 'docs/week2/index.html').read_text(encoding='utf-8')
     m = re.search(r'atob\("([A-Za-z0-9+/=]+)"\)', reference)
     if not m:
         raise ValueError('Week 2 composition payload not found')
@@ -201,6 +201,8 @@ def build(composition_dir=None, data_override=None, out=OUT, manifest=MANIFEST, 
     output = re.sub(r'atob\("[A-Za-z0-9+/=]+"\)', lambda _: f'atob("{payload}")', output, count=1)
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     Path(out).write_text(output, encoding='utf-8')
+    if Path(out) == OUT:  # the GitHub Pages root shows the current week's deck
+        (ROOT / 'docs/index.html').write_text(output, encoding='utf-8')
     if composition_dir:
         cd = Path(composition_dir)
         cd.mkdir(parents=True, exist_ok=True)
@@ -223,7 +225,7 @@ def build(composition_dir=None, data_override=None, out=OUT, manifest=MANIFEST, 
                        'seconds': s['seconds'], 'narration_words': words(s['notes']), 'fragments_local': s['fragments_local'], 'window_s': s['window'],
                        'recorded_run': s['id'] in RECORDED, 'notes': s['notes'], 'repo': s.get('repo', '')}
                       for i, s in enumerate(scenes, 1)],
-           'qa_branches': [q[0] for q in qa], 'source_data': str(deckdata.DATA.relative_to(ROOT)), 'reference': 'docs/index.html (read only)',
+           'qa_branches': [q[0] for q in qa], 'source_data': str(deckdata.DATA.relative_to(ROOT)), 'reference': 'docs/week2/index.html (read only)',
            'note': 'Generated file. Numbers are read from recorded result files at build time; missing values print as null.'}
     Path(manifest).write_text(json.dumps(man, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     lines = ['# Beldesk Week 3 — seven-minute speaking script', '',

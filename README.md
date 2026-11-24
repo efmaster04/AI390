@@ -32,7 +32,8 @@ Instructor: Huseyin Ulusoy. Course reference: *Prompt Engineering Project Handbo
 
 | Week | Open in the browser | File |
 |---|---|---|
-| Week 2 (current) | **[efmaster04.github.io/AI390](https://efmaster04.github.io/AI390/)** | [`docs/index.html`](docs/index.html) |
+| Week 3 (current) | **[efmaster04.github.io/AI390](https://efmaster04.github.io/AI390/)** | [`docs/index.html`](docs/index.html) (same file as [`docs/week3/index.html`](docs/week3/index.html)) |
+| Week 2 | [efmaster04.github.io/AI390/week2](https://efmaster04.github.io/AI390/week2/) | [`docs/week2/index.html`](docs/week2/index.html) |
 | Week 1 | [efmaster04.github.io/AI390/week1](https://efmaster04.github.io/AI390/week1/) | [`docs/week1/index.html`](docs/week1/index.html) |
 
 No terminal or installation required. Use the arrow keys to navigate, or choose Present. The Week 2 deck has 20 slides and 3 question branches; its numbers come from `eval/results/week2/` at tag `week-2`.
