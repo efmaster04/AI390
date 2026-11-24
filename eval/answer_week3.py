@@ -24,7 +24,7 @@ from urllib.parse import quote
 
 from src.baseline.providers import GeminiProvider, ProviderError, make_provider
 from src.rag.corpus import ROOT, digest
-from .faithfulness_week3 import (PROMPT, calibrate_human, flattened_claims,
+from .faithfulness_week3 import (PROMPT, calibrate_human, flattened_claims, is_validated_fixed_refusal,
                                  judge_claims, summarize_faithfulness, write_human_sheet)
 
 DEFAULT_OUT = ROOT/"eval/results/week3/answers"
@@ -279,6 +279,29 @@ def summarize_answers(rows, meta):
         costs[stage] = ((values["input_tokens"]*price["price_in_per_1m_usd"]+
                          values["output_tokens"]*price["price_out_per_1m_usd"])/1e6
                         if price and all(v is not None for v in values.values()) else None)
+    per_task = [((r["generation"].get("input_tokens"), r["generation"].get("output_tokens"))) for r in rows]
+    cost_per_task = (statistics.fmean(i*price["price_in_per_1m_usd"]/1e6+o*price["price_out_per_1m_usd"]/1e6
+                                      for i, o in per_task)
+                     if price and rows and all(type(i) is int and type(o) is int for i, o in per_task) else None)
+    composed = bool(meta.get("components"))
+    first_run = meta["components"][0]["directory"] if composed else None
+
+    def stage_cache_hit(row, key):
+        # A composed run copies records from its component runs; that is not a
+        # stage-cache hit (old composer versions labelled retained rows as cached).
+        return False if composed else bool(row.get(key, False))
+    retained = sum(r.get("source_run") == first_run for r in valid) if composed else None
+    provenance = {"composed_from_components": composed,
+                  "first_pass_valid": retained if composed else len(valid), "n": n,
+                  "after_repair_valid": len(valid) if composed else None,
+                  "valid_retained_from_first_pass": retained,
+                  "valid_replaced_by_repair": len(meta.get("replaced_case_ids", [])) if composed else None,
+                  "repair_retried_cases": (n - retained) if composed else None,
+                  "repaired_case_ids": meta.get("replaced_case_ids", []) if composed else [],
+                  "note": ("First pass used validation_retries=%s; only its invalid cases were retried once with "
+                           "validation_retries=%s. Retained first-pass records are earlier calls of the same run, "
+                           "not cache hits." % (meta.get("original_validation_retries"), meta.get("repair_validation_retries"))
+                           if composed else "Single run.")}
     answer_latencies = [r["generation"]["latency_s"] for r in valid]
     rag_latencies = [r["generation"]["latency_s"]+r["retrieval"]["timings_s"]["total"] for r in valid]
     current_calls = meta.get("provider_calls_this_invocation", 0)
@@ -299,45 +322,73 @@ def summarize_answers(rows, meta):
             "unsupported_claims": faith["unsupported_claims"], "faithfulness": faith,
             "generation_latency_p50_s": statistics.median(answer_latencies) if answer_latencies else None,
             "latency_p50_s": statistics.median(rag_latencies) if rag_latencies else None,
-            "latency_note": "retrieval plus generation service time; judge and scheduler/backoff waits excluded, not end-user wall time; cached rows retain historical generation timings",
+            "latency_note": "median over valid answers of retrieval plus answer-generation service time; classifier, judge and scheduler/backoff waits excluded, not end-user wall time; retained or cached rows keep the timing of the call that produced them",
             "e2e_accuracy": {"value": None, "n": None, "reason": "No independent answer-adequacy rubric measured; claim faithfulness is not question completion"},
             "tokens": tokens,
             "tokens_scope": "Known usage in saved stage results, including historical cache hits; failed transport-attempt usage may be unavailable",
             "list_price_equivalent_usd": costs,
             "list_price_scope": "Equivalent price of known saved-stage tokens, not current-invocation API consumption or actual billed spend",
             "transport_attempt_usage_complete": meta.get("transport_errors", 0) == 0,
-            "historical_cache_attempt_usage_unknown": meta.get("cache_hits", 0) > 0,
-            "cost_incomplete": (any(v is None for v in costs.values()) or meta.get("transport_errors", 0) > 0 or meta.get("cache_hits", 0) > 0),
+            "historical_cache_attempt_usage_unknown": meta.get("cache_hits", 0) > 0 and not composed,
+            "cost_incomplete": (any(v is None for v in costs.values()) or meta.get("transport_errors", 0) > 0
+                                or any(c.get("transport_errors", 0) for c in meta.get("components", []))
+                                or (meta.get("cache_hits", 0) > 0 and not composed)),
             "actual_spend_usd": None, "billing_note": "No billing evidence collected; list prices are dated assumptions, not actual spend",
             "provider_calls_this_invocation": current_calls,
-            "valid_answers_from_cache": sum(r.get("generation_from_cache", False) for r in valid),
-            "valid_answers_fresh": sum(not r.get("generation_from_cache", False) for r in valid),
-            "valid_judgements_from_cache": sum(r.get("judgement_from_cache", False) for r in judged),
-            "valid_judgements_fresh": sum(not r.get("judgement_from_cache", False) for r in judged),
+            "generation_cost_per_task_list_usd": cost_per_task,
+            "generation_cost_per_task_definition": ("mean over all planned cases of the final record's answer-generation tokens "
+                                                    "at the dated list price; judge, classifier and local retrieval excluded; "
+                                                    "usage of failed transport attempts is unknown and not included; not billed spend"),
+            "answer_provenance": provenance,
+            "valid_answers_from_cache": sum(stage_cache_hit(r, "generation_from_cache") for r in valid),
+            "valid_answers_fresh": sum(not stage_cache_hit(r, "generation_from_cache") for r in valid),
+            "valid_judgements_from_cache": sum(stage_cache_hit(r, "judgement_from_cache") for r in judged),
+            "valid_judgements_fresh": sum(not stage_cache_hit(r, "judgement_from_cache") for r in judged),
             "provisional": True, "provisional_reason": "Synthetic draft corpus/test labels and human judge calibration pending or limited"}
 
 
-def failure_analysis(rows):
+def _facet_coverage(row):
+    """Which required answer facets (gold_groups) have evidence in the answer context."""
+    results = row["retrieval"]["results"]
+    groups = row.get("gold_groups") or [[g] for g in row.get("gold", [])]
+    found = [any(g["passage_id"] == r["passage_id"] and g["quote"] in r["text"] for g in group for r in results)
+             for group in groups]
+    return groups, found
+
+
+def failure_analysis(rows, fallback=None):
+    """Stage attribution. With multi-facet gold, missing any required facet from
+    the supplied context is a retrieval failure, even if another facet was found."""
     output = []
     for row in rows:
         if not row["generation"].get("valid"):
             output.append({"case_id": row["case_id"], "stage": "generation", "kind": "generation_or_provider_error",
                            "error": row["generation"].get("error")})
             continue
-        results = row["retrieval"]["results"]
-        gold = [g for group in row.get("gold_groups", [[g] for g in row.get("gold", [])]) for g in group]
-        gold_found = any(g["passage_id"] == r["passage_id"] and g["quote"] in r["text"] for g in gold for r in results)
-        if row["expected_answerable"] and not gold_found:
+        groups, found = _facet_coverage(row)
+        any_found, all_found = any(found), bool(groups) and all(found)
+        missing = [group[0]["passage_id"] for group, ok in zip(groups, found) if not ok]
+        coverage = f"{sum(found)}/{len(groups)}"
+        if row["expected_answerable"] and not any_found:
             output.append({"case_id": row["case_id"], "stage": "retrieval", "kind": "designated_gold_missing_from_context",
+                           "gold_facets_in_context": coverage, "missing_facets": missing,
                            "note": "Alternative valid evidence may exist; draft gold needs human review"})
         if row["expected_answerable"] and row["generation"].get("abstained"):
-            output.append({"case_id": row["case_id"], "stage": "generation" if gold_found else "retrieval",
-                           "kind": "abstained_on_answerable_question", "gold_found": gold_found})
+            output.append({"case_id": row["case_id"], "stage": "generation" if all_found else "retrieval",
+                           "kind": "abstained_on_answerable_question", "gold_found": any_found,
+                           "all_required_facets_found": all_found, "gold_facets_in_context": coverage,
+                           "missing_facets": missing})
+        elif row["expected_answerable"] and any_found and not all_found:
+            output.append({"case_id": row["case_id"], "stage": "retrieval", "kind": "required_facet_missing_from_context",
+                           "gold_facets_in_context": coverage, "missing_facets": missing})
         if not row["expected_answerable"] and not row["generation"].get("abstained"):
             output.append({"case_id": row["case_id"], "stage": "generation", "kind": "answered_unavailable_information_control"})
         judge = row.get("judgement") or {}
         if not judge.get("valid"):
-            output.append({"case_id": row["case_id"], "stage": "evaluation", "kind": "judge_error_or_invalid"})
+            output.append({"case_id": row["case_id"], "stage": "evaluation", "kind": "judge_error_or_invalid",
+                           "unjudged_claims": len(row["generation"].get("claims") or [])})
+        elif is_validated_fixed_refusal(row, fallback):
+            continue  # The rubric excludes fixed refusals from claim verdicts.
         elif any(c["label"] != "supported" for c in [*judge["claims"], *judge["unlisted_claims"]]):
             output.append({"case_id": row["case_id"], "stage": "generation", "kind": "unsupported_or_insufficient_claim",
                            "note": "According to provisional automatic claim judge; inspect cited evidence"})

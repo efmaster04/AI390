@@ -20,7 +20,8 @@
   {
     "case_id": "W3-R020",
     "stage": "evaluation",
-    "kind": "judge_error_or_invalid"
+    "kind": "judge_error_or_invalid",
+    "unjudged_claims": 4
   },
   {
     "case_id": "W3-R027",
@@ -30,15 +31,14 @@
   },
   {
     "case_id": "W3-R032",
-    "stage": "generation",
+    "stage": "retrieval",
     "kind": "abstained_on_answerable_question",
-    "gold_found": true
-  },
-  {
-    "case_id": "W3-R032",
-    "stage": "generation",
-    "kind": "unsupported_or_insufficient_claim",
-    "note": "According to provisional automatic claim judge; inspect cited evidence"
+    "gold_found": true,
+    "all_required_facets_found": false,
+    "gold_facets_in_context": "1/2",
+    "missing_facets": [
+      "YV-D006#details"
+    ]
   },
   {
     "case_id": "W3-U004",

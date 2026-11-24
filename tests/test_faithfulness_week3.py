@@ -371,3 +371,77 @@ def test_historical_calibration_keeps_v1_sources_after_citizen_corpus_revision()
     assert any('kaynak numarası' in p.text for p in old['YV-D030'].passages)
     assert new['YV-D030'].version == 'citizen-v2'
     assert any('ızgara' in p.text for p in new['YV-D030'].passages)
+
+
+from src.rag.corpus import ROOT
+FALLBACK_EN = json.loads((ROOT/"config/rag_answer.json").read_text())["fallback"]["en"]
+
+
+def refusal_row(answer=FALLBACK_EN, label="unsupported"):
+    generation = {"valid": True, "answer": answer, "abstained": True, "claims": []}
+    judgement = {"valid": True, "claims": [], "coverage_complete": False, "reason": "Judge called the refusal false.",
+                 "unlisted_claims": [{"text": answer.split(".")[0]+".", "citations": [1], "label": label,
+                                      "reason": "Sources partly answer the question."}]}
+    return {"case_id": "W3-R032", "lang": "en", "question": "Two-part question?", "sources": [SOURCE],
+            "generation": generation, "judgement": judgement}
+
+
+def test_validated_fixed_refusal_contributes_zero_claims_and_old_rate_is_kept():
+    rows = [row("supported", "1"), row("unsupported", "2"), refusal_row()]
+    summary = summarize_faithfulness(rows)
+    assert summary["unsupported_claims"]["numerator"] == 1 and summary["unsupported_claims"]["n"] == 2
+    old = summary["unsupported_claims_before_audit_correction"]
+    assert (old["numerator"], old["n"]) == (2, 3)
+    assert [x["case_id"] for x in summary["fixed_refusal_verdicts_excluded"]] == ["W3-R032"]
+
+
+def test_refusal_wording_that_differs_from_the_fixed_sentence_is_still_scored():
+    summary = summarize_faithfulness([row("supported", "1"), refusal_row(answer="I cannot answer; the office is closed.")])
+    assert summary["unsupported_claims"]["n"] == 2 and summary["unsupported_claims"]["numerator"] == 1
+
+
+def test_claims_of_answers_without_a_valid_judgement_are_listed_as_unjudged():
+    failed = dict(row("supported", "W3-R020"), judgement={"valid": False, "error": "judge failed"})
+    summary = summarize_faithfulness([failed])
+    assert [c["claim_id"] for c in summary["unjudged_claims"]] == ["C1"]
+    assert summary["unsupported_claims"]["n"] == 0
+
+
+def _stage_row(found_passages, abstained):
+    gold_a = {"passage_id": "A#x", "quote": "fact a"}
+    gold_b = {"passage_id": "B#x", "quote": "fact b"}
+    results = [{"passage_id": p, "text": f"fact {p[0].lower()}"} for p in found_passages]
+    generation = {"valid": True, "abstained": abstained, "claims": [],
+                  "answer": FALLBACK_EN if abstained else "Answer. [1]"}
+    return {"case_id": "W3-R032", "lang": "en", "expected_answerable": True, "gold": [gold_a, gold_b],
+            "gold_groups": [[gold_a], [gold_b]], "retrieval": {"results": results}, "sources": [],
+            "generation": generation, "judgement": {"valid": True, "claims": [], "unlisted_claims": []}}
+
+
+def test_refusal_with_a_required_facet_missing_is_a_retrieval_failure():
+    from eval.answer_week3 import failure_analysis
+    partial = failure_analysis([_stage_row(["B#x"], abstained=True)])
+    assert [(f["stage"], f["kind"]) for f in partial] == [("retrieval", "abstained_on_answerable_question")]
+    assert partial[0]["missing_facets"] == ["A#x"] and partial[0]["gold_facets_in_context"] == "1/2"
+    complete = failure_analysis([_stage_row(["A#x", "B#x"], abstained=True)])
+    assert [(f["stage"], f["kind"]) for f in complete] == [("generation", "abstained_on_answerable_question")]
+    answered = failure_analysis([_stage_row(["B#x"], abstained=False)])
+    assert [(f["stage"], f["kind"]) for f in answered] == [("retrieval", "required_facet_missing_from_context")]
+
+
+def test_recorded_citizen_run_gives_corrected_claim_rate_and_stage():
+    from eval.answer_week3 import failure_analysis, read_jsonl, summarize_answers
+    base = ROOT/"eval/results/week3/answers_citizen_v2_complete"
+    rows = read_jsonl(base/"records.jsonl")
+    summary = summarize_answers(rows, json.loads((base/"run_meta.json").read_text()))
+    rate = summary["unsupported_claims"]
+    assert (rate["numerator"], rate["n"]) == (1, 90)
+    old = summary["faithfulness"]["unsupported_claims_before_audit_correction"]
+    assert (old["numerator"], old["n"]) == (2, 91)
+    assert len(summary["faithfulness"]["unjudged_claims"]) == 4
+    stages = {(f["case_id"], f["kind"]): f["stage"] for f in failure_analysis(rows)}
+    assert stages[("W3-R032", "abstained_on_answerable_question")] == "retrieval"
+    assert ("W3-R032", "unsupported_or_insufficient_claim") not in stages
+    provenance = summary["answer_provenance"]
+    assert (provenance["first_pass_valid"], provenance["after_repair_valid"], provenance["n"]) == (35, 36, 38)
+    assert summary["valid_answers_from_cache"] == 0

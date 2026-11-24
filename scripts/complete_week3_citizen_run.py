@@ -99,8 +99,12 @@ def main():
             replaced.append(row['case_id'])
         else:
             row = deepcopy(original)
-            row['generation_from_cache'] = bool(row['generation'].get('valid'))
-            row['judgement_from_cache'] = bool(row['judgement'].get('valid'))
+            # Retained first-pass records are earlier calls of this run, not
+            # stage-cache hits. (The recorded answers_citizen_v2_complete was
+            # composed before this fix and marks them generation_from_cache;
+            # eval.answer_week3.summarize_answers ignores that flag for
+            # composed runs and counts them by source_run instead.)
+            row['retained_from_first_pass'] = True
             row['source_run'] = ORIGINAL.name
         composed.append(row)
     now = datetime.now(timezone.utc).isoformat()
@@ -115,6 +119,7 @@ def main():
         'provider_calls_this_invocation': 0, 'provider_events': [], 'transport_errors': 0,
         'component_provider_calls_total': meta['provider_calls_this_invocation']+repair_meta['provider_calls_this_invocation'],
         'cache_hits': sum(r['generation_from_cache']+r['judgement_from_cache'] for r in composed),
+        'retained_first_pass_records': sum(r.get('retained_from_first_pass', False) for r in composed),
         'cached_results_are_historical_model_calls': True,
         'actual_spend_usd': None, 'cached_consumption_unknown': True,
         'prices_snapshot': meta.get('prices_snapshot')}

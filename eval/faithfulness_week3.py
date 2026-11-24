@@ -1,6 +1,7 @@
 """Claim-level source faithfulness and genuinely blind human-label calibration.
 
 Unsupported rate = (unsupported + insufficient_evidence) / valid judged claims.
+A validated fixed refusal contributes zero factual claims (judge rubric).
 Invalid or errored judgements are excluded and counted separately, never passed.
 Human labels are never auto-filled from model labels or deterministic audits.
 """
@@ -133,18 +134,62 @@ def flattened_claims(rows):
     return flat
 
 
-def summarize_faithfulness(rows):
-    claims = flattened_claims(rows)
+ANSWER_CONFIG = ROOT/"config/rag_answer.json"
+OLD_DEFINITION = "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+DEFINITION = ("unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims; "
+              "a validated fixed refusal contributes zero factual claims (judge rubric prompts/judge/week3_v1.md)")
+
+
+def fixed_refusal_texts(config_path=ANSWER_CONFIG):
+    return json.loads(Path(config_path).read_text(encoding="utf-8"))["fallback"]
+
+
+def is_validated_fixed_refusal(row, fallback=None):
+    """A valid abstention whose displayed answer is exactly the configured fixed sentence.
+
+    The judge rubric says a fixed abstention sentence is not a factual claim, so
+    any verdict the judge attached to it is not counted in the claim rate.
+    """
+    generation = row.get("generation") or {}
+    fallback = fallback or fixed_refusal_texts()
+    language = row.get("lang") or generation.get("language")
+    return (generation.get("valid") is True and generation.get("abstained") is True
+            and not generation.get("claims") and language in fallback
+            and generation.get("answer") == fallback[language])
+
+
+def _rate(claims, definition):
+    n = len(claims)
+    bad = sum(c["judge_label"] in {"unsupported", "insufficient_evidence"} for c in claims)
+    return {"value": bad/n if n else None, "n": n, "numerator": bad, "definition": definition}
+
+
+def summarize_faithfulness(rows, fallback=None):
+    fallback = fallback or fixed_refusal_texts()
+    raw = flattened_claims(rows)
+    refusals = {r["case_id"] for r in rows if is_validated_fixed_refusal(r, fallback)}
+    claims = [c for c in raw if c["case_id"] not in refusals]
     n = len(claims)
     counts = {label: sum(c["judge_label"] == label for c in claims) for label in sorted(LABELS)}
     valid_judgements = [r for r in rows if (r.get("judgement") or {}).get("valid")]
     missing = sum(c["unlisted"] for c in claims)
+    unjudged = [{"case_id": r["case_id"], "claim_id": c["claim_id"], "text": c["text"]}
+                for r in rows if (r.get("generation") or {}).get("valid") and not (r.get("judgement") or {}).get("valid")
+                and r["case_id"] not in refusals for c in (r["generation"].get("claims") or [])]
     return {"valid_judged_claims": n, "labels": counts,
-            "unsupported_claims": {"value": (counts["unsupported"]+counts["insufficient_evidence"])/n if n else None,
-                                   "n": n, "numerator": counts["unsupported"]+counts["insufficient_evidence"],
-                                   "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"},
+            "unsupported_claims": _rate(claims, DEFINITION),
+            "unsupported_claims_before_audit_correction": _rate(raw, OLD_DEFINITION),
+            "metric_definition_corrected_after_audit": (
+                "Fixed-refusal verdicts excluded from the claim rate, as the judge rubric already required."),
+            "fixed_refusal_verdicts_excluded": [
+                {"case_id": c["case_id"], "claim_id": c["claim_id"], "claim_text": c["claim_text"],
+                 "judge_label": c["judge_label"]} for c in raw if c["case_id"] in refusals],
+            "validated_fixed_refusals": sorted(refusals),
+            "unjudged_claims": unjudged,
             "claim_coverage": {"unlisted_factual_claims": missing,
-                               "answers_with_complete_claim_coverage": sum(r["judgement"]["coverage_complete"] is True for r in valid_judgements),
+                               "answers_with_complete_claim_coverage": sum(
+                                   r["judgement"]["coverage_complete"] is True or r["case_id"] in refusals
+                                   for r in valid_judgements),
                                "n_valid_judgements": len(valid_judgements)},
             "generation_errors": sum(not (r.get("generation") or {}).get("valid") for r in rows),
             "judge_errors_or_skipped": sum(not (r.get("judgement") or {}).get("valid") for r in rows),

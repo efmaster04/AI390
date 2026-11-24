@@ -1,0 +1,200 @@
+{
+  "stage": "retrieval_rescore_from_recorded_rankings",
+  "is_fresh_model_run": false,
+  "note": "Metrics recomputed offline from the recorded rankings with the committed scoring code and test set; no retrieval model was run. The rankings themselves come from the run described in summary.json.",
+  "ranking_run": {
+    "git": {
+      "commit": "22577a65e4851eef633a32961e09fa5debcdcf8e",
+      "dirty": true
+    },
+    "started_utc": "2026-11-24T20:40:31.671257+00:00",
+    "corpus_sha256": "f8f706f4e1915290f41e8ab8c79b8513ba520b8e3a1ca6e38ce8573ab0d6fbfe",
+    "cases_sha256": "a767cb5c7bbd3aa6b063e12d41f4783de85a2d16390a4ab161502b55cb112d18",
+    "index_sha256": "0f96eb9cf006de4eb91a9e2730aac75d343c817732939839aab616e129761049",
+    "config_sha256": "d1325843654bd03f363f834385f2bf82f13badd7f556a1691f967973bcdced32",
+    "summary_sha256": "d0610c4b7c3111462de60b35a34a4ab0dce152cf56d6e3609ab4ec0fa1d9e37c"
+  },
+  "open_issue": "Rankings were produced from a working tree with uncommitted changes (dirty=true) at 22577a6, before the citizen-v2 commit; rerun eval/retrieval_week3.py with the pinned local models at a clean tagged commit to close this.",
+  "scoring_inputs": {
+    "cases_sha256": "7b4834aec2a8db1f06523416218f6c47a70826070ab6d428670875111f1335c4",
+    "cases_content_sha256": "8682a4a1c171c1a8b4b237846eb3ac5c9c2c16aac0e35f89e38643ece13494d4",
+    "scoring_code_sha256": "bf59323f1a866b3658c9cc1e4cd78e402465de242a5c7b8b4a0b66e4f5594891",
+    "rescore_code_sha256": "a4b4e9a67988b8aa90d606f0f32508766ce2c6f9a459eb1c63a7ad2d7c801b58"
+  },
+  "checks": {
+    "hybrid_rerank": {
+      "recorded_gold_equals_committed_gold": true,
+      "recorded_case_metrics_reproduced": true,
+      "recorded_summary_reproduced": true,
+      "rankings_sha256": "97aa15525c5b0e51bd248687b57ac62f4cde1cdc7c12866467fc83bb7e40dbde"
+    },
+    "dense_rerank": {
+      "recorded_gold_equals_committed_gold": true,
+      "recorded_case_metrics_reproduced": true,
+      "recorded_summary_reproduced": true,
+      "rankings_sha256": "0fe1abbb00d242aa795b25a55a711ee6af47dca8919f60383d40a8ea06ef3cab"
+    },
+    "hybrid_no_rerank": {
+      "recorded_gold_equals_committed_gold": true,
+      "recorded_case_metrics_reproduced": true,
+      "recorded_summary_reproduced": true,
+      "rankings_sha256": "a36d0bab570199d0d0b5997937a89f48da727281a9bff7f3fc1843f5ebc72b4a"
+    }
+  },
+  "all_checks_pass": true,
+  "summaries": {
+    "hybrid_rerank": {
+      "n_answerable": 32,
+      "n_unanswerable_controls": 6,
+      "hit_at_k": {
+        "1": 0.59375,
+        "3": 0.9375,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr_at_10": 0.7588541666666667,
+      "all_gold_hit_at_5": 0.96875,
+      "by_language": {
+        "en": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.6895833333333333
+        },
+        "tr": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.828125
+        }
+      },
+      "query_latency_p50_s": 0.41659829195123166,
+      "wilson_95": {
+        "hit_at_1": [
+          0.4225972657298823,
+          0.744805975196862
+        ],
+        "hit_at_3": [
+          0.7985253275199642,
+          0.9826897968048427
+        ],
+        "hit_at_5": [
+          0.8928172849426366,
+          1.0
+        ],
+        "hit_at_10": [
+          0.8928172849426366,
+          1.0
+        ],
+        "all_gold_hit_at_5": [
+          0.8425539219962727,
+          0.9944622826374491
+        ]
+      },
+      "counts": {
+        "hit_at_5": 32,
+        "all_gold_hit_at_5": 31
+      }
+    },
+    "dense_rerank": {
+      "n_answerable": 32,
+      "n_unanswerable_controls": 6,
+      "hit_at_k": {
+        "1": 0.59375,
+        "3": 0.96875,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "mrr_at_10": 0.7614583333333333,
+      "all_gold_hit_at_5": 0.96875,
+      "by_language": {
+        "en": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.6979166666666666
+        },
+        "tr": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.825
+        }
+      },
+      "query_latency_p50_s": 0.4146280829445459,
+      "wilson_95": {
+        "hit_at_1": [
+          0.4225972657298823,
+          0.744805975196862
+        ],
+        "hit_at_3": [
+          0.8425539219962727,
+          0.9944622826374491
+        ],
+        "hit_at_5": [
+          0.8928172849426366,
+          1.0
+        ],
+        "hit_at_10": [
+          0.8928172849426366,
+          1.0
+        ],
+        "all_gold_hit_at_5": [
+          0.8425539219962727,
+          0.9944622826374491
+        ]
+      },
+      "counts": {
+        "hit_at_5": 32,
+        "all_gold_hit_at_5": 31
+      }
+    },
+    "hybrid_no_rerank": {
+      "n_answerable": 32,
+      "n_unanswerable_controls": 6,
+      "hit_at_k": {
+        "1": 0.53125,
+        "3": 0.84375,
+        "5": 0.90625,
+        "10": 0.96875
+      },
+      "mrr_at_10": 0.6893229166666667,
+      "all_gold_hit_at_5": 0.875,
+      "by_language": {
+        "en": {
+          "n": 16,
+          "hit_at_5": 0.8125,
+          "mrr_at_10": 0.5609375
+        },
+        "tr": {
+          "n": 16,
+          "hit_at_5": 1.0,
+          "mrr_at_10": 0.8177083333333334
+        }
+      },
+      "query_latency_p50_s": 0.01629522949224338,
+      "wilson_95": {
+        "hit_at_1": [
+          0.3644923793257382,
+          0.6913087009831766
+        ],
+        "hit_at_3": [
+          0.6824550744643347,
+          0.9313568089337279
+        ],
+        "hit_at_5": [
+          0.7578150066422116,
+          0.9675990373736805
+        ],
+        "hit_at_10": [
+          0.8425539219962727,
+          0.9944622826374491
+        ],
+        "all_gold_hit_at_5": [
+          0.7193135021517204,
+          0.950299461555257
+        ]
+      },
+      "counts": {
+        "hit_at_5": 29,
+        "all_gold_hit_at_5": 28
+      }
+    }
+  }
+}

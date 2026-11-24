@@ -23,27 +23,72 @@
     "definition": "valid fixed-fallback response on unavailable-information controls"
   },
   "unsupported_claims": {
-    "value": 0.02197802197802198,
-    "n": 91,
-    "numerator": 2,
-    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+    "value": 0.011111111111111112,
+    "n": 90,
+    "numerator": 1,
+    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims; a validated fixed refusal contributes zero factual claims (judge rubric prompts/judge/week3_v1.md)"
   },
   "faithfulness": {
-    "valid_judged_claims": 91,
+    "valid_judged_claims": 90,
     "labels": {
       "insufficient_evidence": 0,
       "supported": 89,
-      "unsupported": 2
+      "unsupported": 1
     },
     "unsupported_claims": {
+      "value": 0.011111111111111112,
+      "n": 90,
+      "numerator": 1,
+      "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims; a validated fixed refusal contributes zero factual claims (judge rubric prompts/judge/week3_v1.md)"
+    },
+    "unsupported_claims_before_audit_correction": {
       "value": 0.02197802197802198,
       "n": 91,
       "numerator": 2,
       "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
     },
+    "metric_definition_corrected_after_audit": "Fixed-refusal verdicts excluded from the claim rate, as the judge rubric already required.",
+    "fixed_refusal_verdicts_excluded": [
+      {
+        "case_id": "W3-R032",
+        "claim_id": "U1",
+        "claim_text": "The documents I can access do not contain the answer to this question.",
+        "judge_label": "unsupported"
+      }
+    ],
+    "validated_fixed_refusals": [
+      "W3-R032",
+      "W3-U001",
+      "W3-U002",
+      "W3-U003",
+      "W3-U005",
+      "W3-U006"
+    ],
+    "unjudged_claims": [
+      {
+        "case_id": "W3-R020",
+        "claim_id": "C1",
+        "text": "You can report a pothole by providing the neighborhood, street, or avenue, the direction of the damage, and a nearby landmark."
+      },
+      {
+        "case_id": "W3-R020",
+        "claim_id": "C2",
+        "text": "When reporting the pothole, you should describe observations such as vehicles swerving to avoid it, narrowed passage, or near-miss incidents."
+      },
+      {
+        "case_id": "W3-R020",
+        "claim_id": "C3",
+        "text": "Include the time you observed the incident and specify whether the damage is at a single point or extends along the road."
+      },
+      {
+        "case_id": "W3-R020",
+        "claim_id": "C4",
+        "text": "Providing a photograph can assist in identifying the location of the damage."
+      }
+    ],
     "claim_coverage": {
-      "unlisted_factual_claims": 1,
-      "answers_with_complete_claim_coverage": 34,
+      "unlisted_factual_claims": 0,
+      "answers_with_complete_claim_coverage": 35,
       "n_valid_judgements": 35
     },
     "generation_errors": 2,
@@ -52,7 +97,7 @@
   },
   "generation_latency_p50_s": 4.397254520445131,
   "latency_p50_s": 4.72438522905577,
-  "latency_note": "retrieval plus generation service time; judge and scheduler/backoff waits excluded, not end-user wall time; cached rows retain historical generation timings",
+  "latency_note": "median over valid answers of retrieval plus answer-generation service time; classifier, judge and scheduler/backoff waits excluded, not end-user wall time; retained or cached rows keep the timing of the call that produced them",
   "e2e_accuracy": {
     "value": null,
     "n": null,
@@ -75,15 +120,30 @@
   },
   "list_price_scope": "Equivalent price of known saved-stage tokens, not current-invocation API consumption or actual billed spend",
   "transport_attempt_usage_complete": true,
-  "historical_cache_attempt_usage_unknown": true,
+  "historical_cache_attempt_usage_unknown": false,
   "cost_incomplete": true,
   "actual_spend_usd": null,
   "billing_note": "No billing evidence collected; list prices are dated assumptions, not actual spend",
   "provider_calls_this_invocation": 0,
-  "valid_answers_from_cache": 35,
-  "valid_answers_fresh": 1,
-  "valid_judgements_from_cache": 34,
-  "valid_judgements_fresh": 1,
+  "generation_cost_per_task_list_usd": 0.0010428355263157895,
+  "generation_cost_per_task_definition": "mean over all planned cases of the final record's answer-generation tokens at the dated list price; judge, classifier and local retrieval excluded; usage of failed transport attempts is unknown and not included; not billed spend",
+  "answer_provenance": {
+    "composed_from_components": true,
+    "first_pass_valid": 35,
+    "n": 38,
+    "after_repair_valid": 36,
+    "valid_retained_from_first_pass": 35,
+    "valid_replaced_by_repair": 1,
+    "repair_retried_cases": 3,
+    "repaired_case_ids": [
+      "W3-R004"
+    ],
+    "note": "First pass used validation_retries=0; only its invalid cases were retried once with validation_retries=1. Retained first-pass records are earlier calls of the same run, not cache hits."
+  },
+  "valid_answers_from_cache": 0,
+  "valid_answers_fresh": 36,
+  "valid_judgements_from_cache": 0,
+  "valid_judgements_fresh": 35,
   "provisional": true,
   "provisional_reason": "Synthetic draft corpus/test labels and human judge calibration pending or limited"
 }

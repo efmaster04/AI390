@@ -26,7 +26,7 @@
     "value": 0.0,
     "n": 4,
     "numerator": 0,
-    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
+    "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims; a validated fixed refusal contributes zero factual claims (judge rubric prompts/judge/week3_v1.md)"
   },
   "faithfulness": {
     "valid_judged_claims": 4,
@@ -39,8 +39,18 @@
       "value": 0.0,
       "n": 4,
       "numerator": 0,
+      "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims; a validated fixed refusal contributes zero factual claims (judge rubric prompts/judge/week3_v1.md)"
+    },
+    "unsupported_claims_before_audit_correction": {
+      "value": 0.0,
+      "n": 4,
+      "numerator": 0,
       "definition": "unsupported plus insufficient_evidence divided by valid judged claims, including unlisted claims"
     },
+    "metric_definition_corrected_after_audit": "Fixed-refusal verdicts excluded from the claim rate, as the judge rubric already required.",
+    "fixed_refusal_verdicts_excluded": [],
+    "validated_fixed_refusals": [],
+    "unjudged_claims": [],
     "claim_coverage": {
       "unlisted_factual_claims": 0,
       "answers_with_complete_claim_coverage": 1,
@@ -52,7 +62,7 @@
   },
   "generation_latency_p50_s": 11.024434708990157,
   "latency_p50_s": 11.026997209060937,
-  "latency_note": "retrieval plus generation service time; judge and scheduler/backoff waits excluded, not end-user wall time; cached rows retain historical generation timings",
+  "latency_note": "median over valid answers of retrieval plus answer-generation service time; classifier, judge and scheduler/backoff waits excluded, not end-user wall time; retained or cached rows keep the timing of the call that produced them",
   "e2e_accuracy": {
     "value": null,
     "n": null,
@@ -80,6 +90,19 @@
   "actual_spend_usd": null,
   "billing_note": "No billing evidence collected; list prices are dated assumptions, not actual spend",
   "provider_calls_this_invocation": 7,
+  "generation_cost_per_task_list_usd": 0.002359833333333333,
+  "generation_cost_per_task_definition": "mean over all planned cases of the final record's answer-generation tokens at the dated list price; judge, classifier and local retrieval excluded; usage of failed transport attempts is unknown and not included; not billed spend",
+  "answer_provenance": {
+    "composed_from_components": false,
+    "first_pass_valid": 1,
+    "n": 3,
+    "after_repair_valid": null,
+    "valid_retained_from_first_pass": null,
+    "valid_replaced_by_repair": null,
+    "repair_retried_cases": null,
+    "repaired_case_ids": [],
+    "note": "Single run."
+  },
   "valid_answers_from_cache": 0,
   "valid_answers_fresh": 1,
   "valid_judgements_from_cache": 0,
