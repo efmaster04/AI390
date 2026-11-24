@@ -181,4 +181,3 @@ See [the technical guide](docs/retrieval_week3.md), [weekly report](reports/week
 ## Weekly submission
 
 The full Week 1 report should use the commit that will be tagged `week-1` and the exact scripts, data, and commands from that commit (R8). No real personal data is allowed (R10); writes are sandbox only (R11), and API keys must never enter the repository (R13). Weekly reports go in `reports/week-N.md` and are due at least 24 hours before class with a `week-N` tag (R4).
-
