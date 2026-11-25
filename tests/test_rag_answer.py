@@ -167,3 +167,72 @@ def test_invalid_source_numbers_language_and_input_are_reported_without_a_call()
         result = answer_with_sources(text, p, sources, language=lang)
         assert not result["valid"] and result["error"].startswith("input_or_config_error")
         assert not p.calls
+
+
+# --- evidence-quote validator v2: elided quotes (rule widened after the Week 3 results) ---
+from src.rag.answer import QUOTE_RULE, VALIDATOR_VERSION, quote_segments
+
+ELIDED_SOURCE = "First verbatim sentence here. Some text in between. Second verbatim sentence here."
+
+
+@pytest.mark.parametrize("separator", [" ... ", "...", " … ", " . . "])
+def test_elided_quote_with_two_ordered_verbatim_segments_is_accepted(separator):
+    quote = "First verbatim sentence here." + separator + "Second verbatim sentence here."
+    if separator == " . . ":
+        quote = "First verbatim sentence here. . . Second verbatim sentence here."
+    assert quote_segments(quote, ELIDED_SOURCE) is not None
+    segments = quote_segments(quote, ELIDED_SOURCE)
+    assert len(segments) == 2 and all(s in ELIDED_SOURCE for s in segments)
+
+
+@pytest.mark.parametrize("quote", [
+    "Second verbatim sentence here. ... First verbatim sentence here.",       # reversed order
+    "First verbatim sentence here. ... A sentence that is not there.",       # segment absent
+    "First verbatim sentence here. ... here.",                                # segment under 8 characters
+    "First verbatim sentence here. ... sentence here. Some text",             # overlaps the first segment
+    "The first sentence, verbatim. ... Second verbatim sentence here.",       # paraphrase
+    "first verbatim sentence here. ... Second verbatim sentence here.",       # no case normalisation
+    "First verbatim  sentence here. ... Second verbatim sentence here.",      # no whitespace normalisation
+    "First verbatim sentence here; Second verbatim sentence here.",           # no ellipsis, not contiguous
+    "... Second verbatim sentence here.",                                     # empty leading segment
+])
+def test_elided_quote_violations_are_rejected(quote):
+    assert quote_segments(quote, ELIDED_SOURCE) is None
+
+
+def test_contiguous_quote_is_unchanged_and_elided_segments_are_recorded():
+    source = {"citation": 1, "text": ELIDED_SOURCE}
+    config = json.loads(Path(DEFAULT_CONFIG).read_text())
+    assert config["evidence_validator"] == VALIDATOR_VERSION
+    contiguous = {"answerable": True, "claims": [{"text": "A fact.", "citations": [1],
+                  "evidence": [{"citation": 1, "quote": "Some text in between."}]}]}
+    parsed = validate_output(json.dumps(contiguous), [source], config)
+    assert parsed["claims"][0]["evidence"] == [{"citation": 1, "quote": "Some text in between."}]
+    elided = {"answerable": True, "claims": [{"text": "A fact.", "citations": [1], "evidence": [
+        {"citation": 1, "quote": "First verbatim sentence here. ... Second verbatim sentence here."}]}]}
+    evidence = validate_output(json.dumps(elided), [source], config)["claims"][0]["evidence"][0]
+    assert evidence["quote"] == elided["claims"][0]["evidence"][0]["quote"]
+    assert evidence["segments"] == ["First verbatim sentence here.", "Second verbatim sentence here."]
+
+
+def test_retry_feedback_shows_the_offending_quote_and_the_rule():
+    bad = {"answerable": True, "claims": [{"text": "A fact.", "citations": [1],
+           "evidence": [{"citation": 1, "quote": "Second verbatim sentence here. ... First verbatim sentence here."}]}]}
+    good = {"answerable": True, "claims": [{"text": "A fact.", "citations": [1],
+            "evidence": [{"citation": 1, "quote": "Some text in between."}]}]}
+
+    class Provider:
+        def __init__(self):
+            self.users = []
+            self.outputs = [json.dumps(bad), json.dumps(good)]
+
+        def generate(self, system, user, *args, **kwargs):
+            self.users.append(user)
+            return {"output": self.outputs.pop(0), "input_tokens": 1, "output_tokens": 1}
+
+    provider = Provider()
+    report = answer_with_sources("What is the fact?", provider, [{"citation": 1, "text": ELIDED_SOURCE}],
+                                 language="en", max_retries=1)
+    assert report["valid"] and report["validator_version"] == VALIDATOR_VERSION
+    assert "Second verbatim sentence here. ... First verbatim sentence here." in provider.users[1]
+    assert QUOTE_RULE in provider.users[1]

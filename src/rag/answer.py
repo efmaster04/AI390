@@ -74,6 +74,47 @@ def _claim_action_error(text):
     return False
 
 
+VALIDATOR_VERSION = "evidence-quote-v2-elided-segments"
+PREVIOUS_VALIDATOR_VERSION = "evidence-quote-v1-contiguous"
+MIN_SEGMENT_CHARS = 8
+ELLIPSIS = re.compile(r"\s*(?:(?:\.\s){2,}\.|\.{3,}|\u2026)\s*")
+QUOTE_RULE = ("Each evidence quote must be copied verbatim from its cited source. To skip text inside one "
+              "source, write ... between verbatim segments; every segment must be at least 8 characters, "
+              "appear exactly in that source, and follow the source order without overlap.")
+
+
+class QuoteError(ValueError):
+    """Invalid evidence quote; carries the quote so the retry feedback can show it."""
+    def __init__(self, message, quote):
+        super().__init__(message)
+        self.quote = quote
+
+
+def quote_segments(quote, source_text):
+    """Verbatim segments of an evidence quote, or None if the quote is not supported.
+
+    v1 rule (unchanged): the whole quote is an exact substring of the source.
+    v2 addition: a quote containing ellipsis separators ("...", "\u2026" or ". . .",
+    surrounding whitespace absorbed) is split; every segment must be an exact
+    substring of at least MIN_SEGMENT_CHARS characters, and the segments must
+    occur in source order without overlapping. No case, whitespace or fuzzy
+    normalisation is applied. Returns [quote] for a contiguous match.
+    """
+    if quote in source_text:
+        return [quote]
+    parts = ELLIPSIS.split(quote)
+    if len(parts) < 2 or any(len(p.strip()) < MIN_SEGMENT_CHARS for p in parts):
+        return None
+    position = 0
+    for part in parts:
+        # Leftmost match after the previous segment is optimal for ordered, non-overlapping matching.
+        found = source_text.find(part, position)
+        if found < 0:
+            return None
+        position = found + len(part)
+    return parts
+
+
 def validate_output(output, sources, config):
     """Validate structure, known citations and exact quote provenance, not entailment."""
     try:
@@ -116,22 +157,27 @@ def validate_output(output, sources, config):
         evidence = claim["evidence"]
         if not isinstance(evidence, list) or not evidence:
             raise ValueError(f"Claim {index}: evidence is required")
-        referenced = set()
+        referenced, checked = set(), []
         for item in evidence:
             if not isinstance(item, dict) or set(item) != {"citation", "quote"}:
                 raise ValueError(f"Claim {index}: evidence needs citation and quote only")
             cid, quote = item["citation"], item["quote"]
             if type(cid) is not int or cid not in citations:
                 raise ValueError(f"Claim {index}: evidence citation must match a cited source")
-            if not isinstance(quote, str) or not 8 <= len(quote.strip()) <= config["max_evidence_characters"]:
-                raise ValueError(f"Claim {index}: evidence quote length is invalid")
-            if quote not in by_id[cid]["text"]:
-                raise ValueError(f"Claim {index}: quote is not an exact substring of source {cid}")
+            if not isinstance(quote, str) or not MIN_SEGMENT_CHARS <= len(quote.strip()) <= config["max_evidence_characters"]:
+                raise QuoteError(f"Claim {index}: evidence quote length is invalid", quote)
+            segments = quote_segments(quote, by_id[cid]["text"])
+            if segments is None:
+                raise QuoteError(f"Claim {index}: quote is not an exact substring of source {cid}", quote)
+            if len(segments) > 1:
+                # Elided quote: keep the model's quote and record the verified pieces.
+                item = {**item, "segments": segments}
             referenced.add(cid)
+            checked.append(item)
         if referenced != set(citations):
             raise ValueError(f"Claim {index}: every citation needs matching exact evidence")
         validated.append({"claim_id": f"C{index}", "text": text.strip(),
-                          "citations": citations, "evidence": evidence})
+                          "citations": citations, "evidence": checked})
     return {"answerable": value["answerable"], "claims": validated}
 
 
@@ -153,7 +199,7 @@ def answer_with_sources(text, provider, sources, *, language=None, config_path=N
               "error": None, "errors": [], "attempts": 0, "input_tokens": 0, "output_tokens": 0,
               "latency_s": 0.0, "language": None, "prompt_sha256": None, "config_sha256": None,
               "code_sha256": _hash(Path(__file__).read_bytes()), "input_sha256": None,
-              "finish_reason": None, "raw_outputs": [], "timestamp_utc": datetime.now(timezone.utc).isoformat()}
+              "finish_reason": None, "raw_outputs": [], "validator_version": VALIDATOR_VERSION, "timestamp_utc": datetime.now(timezone.utc).isoformat()}
     try:
         if not isinstance(text, str) or not text.strip():
             raise ValueError("Citizen message must be nonempty text")
@@ -162,6 +208,8 @@ def answer_with_sources(text, provider, sources, *, language=None, config_path=N
         raw_config = Path(config_path or DEFAULT_CONFIG).read_bytes()
         config = json.loads(raw_config)
         report["config_sha256"] = _hash(raw_config)
+        if config.get("evidence_validator", VALIDATOR_VERSION) != VALIDATOR_VERSION:
+            raise ValueError("config evidence_validator does not match the code's validator version")
         prompt_path = Path(config["prompt_path"])
         if not prompt_path.is_absolute():
             prompt_path = ROOT/prompt_path
@@ -203,7 +251,11 @@ def answer_with_sources(text, provider, sources, *, language=None, config_path=N
                 parsed = validate_output(raw, sources, config)
             except ValueError as exc:
                 report["errors"].append(str(exc))
-                feedback = "\n\nValidation feedback: " + str(exc) + ". Return corrected JSON only."
+                feedback = "\n\nValidation feedback: " + str(exc) + "."
+                if isinstance(exc, QuoteError):
+                    feedback += (" Offending quote: " + json.dumps(exc.quote, ensure_ascii=False)
+                                 + ". Rule: " + QUOTE_RULE)
+                feedback += " Return corrected JSON only."
                 continue
             report.update(claims=parsed["claims"], valid=True, abstained=not parsed["answerable"])
             report["answer"] = render_answer(parsed["claims"]) if parsed["answerable"] else config["fallback"][language]

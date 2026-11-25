@@ -1,5 +1,6 @@
 {
-  "version": "rag-answer-v1",
+  "version": "rag-answer-v1.1",
+  "evidence_validator": "evidence-quote-v2-elided-segments",
   "prompt_path": "prompts/rag/v1.md",
   "temperature": 0,
   "seed": 42,
