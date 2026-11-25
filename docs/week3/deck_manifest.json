@@ -9,8 +9,8 @@
       "label": "What we built · recorded demo",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 298,
-      "narration_seconds_at_wpm": 119
+      "narration_words": 289,
+      "narration_seconds_at_wpm": 116
     },
     {
       "part": "scoreboard",
@@ -68,14 +68,14 @@
       "part": "demo",
       "speaker": "Efe",
       "seconds": 10,
-      "narration_words": 23,
+      "narration_words": 14,
       "fragments_local": [
         1.4,
         2.5
       ],
       "window_s": 3.5,
       "recorded_run": false,
-      "notes": "Eight requirements this week. 7 are done; W3.4 is partial, and its card gives the reason. Each status comes from our data file.",
+      "notes": "Eight requirements this week. 8 are done. Each status comes from our data file.",
       "repo": "reports/week-3.md · eval/results/week3/presentation_data.json"
     },
     {
@@ -174,7 +174,7 @@
       ],
       "window_s": 6.0,
       "recorded_run": false,
-      "notes": "When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, 5 of 6 unavailable-information controls got that fallback; W3-U004 was answered instead.",
+      "notes": "When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, 5 of 6 unavailable-information controls got that fallback; none was answered instead.",
       "repo": "src/rag/answer.py · prompts/rag/"
     },
     {

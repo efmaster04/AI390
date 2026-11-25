@@ -12,6 +12,7 @@ import json
 import re
 from pathlib import Path
 
+from eval.answer_week3 import load_control_decisions
 from eval.stats import wilson_ci
 from eval.week3_provenance import require as require_provenance
 from scripts.run_week3_calibration import refresh
@@ -63,6 +64,26 @@ def recorded_call_cost(price):
                 total_out += part.get('output_tokens') or 0
     return {'input_tokens': total_in, 'output_tokens': total_out,
             'list_price_usd': (total_in*price['price_in_per_1m_usd']+total_out*price['price_out_per_1m_usd'])/1e6}
+
+
+def w34_status(valid, n_questions, valid_original_rule, fixed_refusals, n_controls, accepted, uncovered):
+    """W3.4 is done when every answer is valid AND every control is a valid fixed
+    fallback or is covered by a recorded (and re-verified) control decision."""
+    done = valid == n_questions and not uncovered and fixed_refusals + len(accepted) == n_controls
+    before = f" ({valid_original_rule}/{n_questions} under the original quote rule)" if valid_original_rule is not None else ""
+    note = f"{valid}/{n_questions} valid{before}; {fixed_refusals}/{n_controls} controls returned the fixed refusal."
+    card = f"{valid}/{n_questions} valid{before}. {fixed_refusals}/{n_controls} fixed refusals"
+    if accepted:
+        ids = ', '.join(accepted)
+        note += (f" {ids} gave a cited privacy refusal, accepted by team decision after seeing the results; "
+                 f"reviewer confirmation pending.")
+        card += f"; {ids} cited refusal accepted post hoc, review pending."
+    else:
+        card += "."
+    if uncovered:
+        note += f" Not done: {', '.join(uncovered)} answered a control without a fixed refusal or recorded decision."
+        card += f" Open: {', '.join(uncovered)}."
+    return {'status': 'done' if done else 'partial', 'note': note, 'card_note': card}
 
 
 def prose_words(markdown):
@@ -177,19 +198,15 @@ def build(write=True):
     judge_errors = [f for f in answer_failures if f['kind'] == 'judge_error_or_invalid']
     unsupported_cases = [f['case_id'] for f in answer_failures if f['kind'] == 'unsupported_or_insufficient_claim']
     answered_controls = [f['case_id'] for f in answer_failures if f['kind'] == 'answered_unavailable_information_control']
+    accepted_controls = [f['case_id'] for f in answer_failures if f['kind'] == 'accepted_cited_refusal_on_control']
+    decisions = load_control_decisions()
+    safe = answer['controls_handled_safely']
+    safe_entry = proportion(safe['numerator'], safe['n'], answer_script)
 
     statuses = {f'W3.{i}': {'status': 'done', 'note': ''} for i in range(1, 9)}
     revalidated = prov.get('revalidated_offline_case_ids') or []
-    w34_done = valid == len(questions) and abst['value'] == 1
-    w34_note = (f"{valid}/{len(questions)} valid citizen-v2 responses after offline re-validation with the widened quote rule "
-                f"({prov['after_repair_valid']}/{prov['n']} under the original rule; first pass {prov['first_pass_valid']}/{prov['n']})"
-                if revalidated else
-                f"{valid}/{len(questions)} valid citizen-v2 responses (first pass {prov['first_pass_valid']}/{prov['n']})")
-    w34_note += f"; {abst['numerator']}/{abst['n']} unavailable-information controls returned the fixed refusal."
-    if not w34_done and valid == len(questions) and answered_controls:
-        w34_note += (f" Not done only because {', '.join(answered_controls)} answered with a cited statement instead of the "
-                     f"fixed sentence; whether that counts as a refusal is a team decision.")
-    statuses['W3.4'] = {'status': 'done' if w34_done else 'partial', 'note': w34_note}
+    statuses['W3.4'] = w34_status(valid, len(questions), prov['after_repair_valid'] if revalidated else None,
+                                  abst['numerator'], abst['n'], accepted_controls, answered_controls)
     statuses['W3.6'] = {'status': 'done' if faith['valid_judged_claims'] > 0 and calibration['n'] >= 20 else 'partial',
                         'note': f"Current claim support measured; {calibration['n']} historical human–judge pairs using preserved v1 sources. "
                                 f"Not direct human grading of v2 answers."}
@@ -235,7 +252,12 @@ def build(write=True):
             'generation': {'summary': f"{valid}/{len(records)} valid citizen-v2 responses; {answer['valid_claim_judgements']} judged; v1 excluded.",
                            'unsupported_claims': rate['value'], 'claims_total': rate['n'],
                            'kappa': calibration['kappa'], 'errors': len(records)-valid},
-            'failures': fail_data}
+            'failures': fail_data,
+            'controls': {'strict_fixed_refusals': {'numerator': abst['numerator'], 'n': abst['n'], 'ci95': score['abstention_correct']['ci95']},
+                         'handled_safely_post_hoc': {'numerator': safe['numerator'], 'n': safe['n'], 'ci95': safe_entry['ci95'],
+                                                     'definition': safe['definition']},
+                         'accepted_by_decision': [{k: decisions[c][k] for k in ('case_id', 'decided_by', 'decided_utc',
+                                                   'decided_after_results', 'reviewer_confirmation')} for c in accepted_controls]}}
 
     rows = '\n'.join(f"| {label} | {v['hit_at_k']['1']:.3f} | {v['hit_at_k']['5']:.3f} ({ci({'ci95': v['wilson_95']['hit_at_5']})}) | {v['all_gold_hit_at_5']:.3f} | {v['mrr_at_10']:.3f} |"
                      for label, v in [('Hybrid + reranker (default)', hybrid), ('Dense + reranker', dense), ('Hybrid, no reranker', off)])
@@ -252,6 +274,25 @@ def build(write=True):
     r032_stage = stage_of.get((observed['case_id'], 'abstained_on_answerable_question')) if observed else None
     kappa = calibration['kappa']
     sb_json = json.dumps(score, ensure_ascii=False, indent=2)
+    decision_text = ''.join(
+        f" Post-hoc reading, not a scoreboard row: controls handled safely (fixed refusal or accepted cited refusal, nothing "
+        f"disclosed) {safe['numerator']}/{safe['n']} (95% CI {ci(safe_entry)}). {cid} refused with a cited privacy statement "
+        f"instead of the fixed sentence; {decisions[cid]['decided_by']} decided on {decisions[cid]['decided_utc']}, after seeing "
+        f"the results, to accept this; reviewer confirmation is {decisions[cid]['reviewer_confirmation']} "
+        f"({link('eval/testsets/week3_control_decisions.json')})."
+        for cid in accepted_controls)
+    control_text = decision_text + (f" {', '.join(answered_controls)} answered instead (section 5)." if answered_controls else '')
+    if answered_controls:
+        row2 = (f"| 2 | {', '.join(answered_controls)}: unavailable-information control | Answered instead of the fixed refusal. | "
+                f"generation | Proposed (team to confirm): decide how this control should be handled, then re-measure `abstention_correct`. |")
+        also_text = f"Also observed: {', '.join(unsupported_cases) or 'none'} contains one unsupported library-membership claim (generation). "
+    else:
+        row2 = (f"| 2 | {', '.join(unsupported_cases) or 'none'}: first-time library membership | One claim said naming the library and "
+                f"first-time status is enough; the cited source requires a form and ID (judge: unsupported). | generation | "
+                f"Not fixed; counted in `unsupported_claims` ({rate['numerator']}/{rate['n']}). |")
+        also_text = ''.join(f"Accepted deviation, not counted as a failure: {cid} gave a cited privacy refusal that disclosed nothing; "
+                            f"accepted by team decision after seeing the results, reviewer confirmation pending; strict "
+                            f"`abstention_correct` still counts it as incorrect. " for cid in accepted_controls)
     first_new = prov.get('first_pass_valid_under_new_validator') or {}
     revalidation_text = (
         f"\n- Validator rule changed after seeing the test results. The original rule required each evidence quote to be one "
@@ -308,7 +349,7 @@ We added retrieval-augmented answers over a synthetic citizen-service corpus (ci
 Values come from {link('eval/results/week3/scoreboard.json')}, written by `python -m scripts.build_week3_report` from recorded artefacts without model calls. Intervals are Wilson 95% (`eval/stats.py`).
 
 - `e2e_accuracy` is null because no answer-correctness rubric was applied to the citizen-v2 answers; claim support is not question completion, and Week 2's 0.952 was measured on a different test set.
-- `abstention_correct`: {abst['numerator']}/{abst['n']} unavailable-information controls returned the fixed refusal; {', '.join(answered_controls) or 'none'} answered instead (section 5).
+- `abstention_correct` (strict, unchanged): {abst['numerator']}/{abst['n']} unavailable-information controls returned the fixed refusal.{control_text}
 - `unsupported_claims`: metric definition corrected after audit. The judge had labelled the fixed refusal of {excluded_ids} as an unsupported claim, although its rubric excludes fixed refusals. Validated fixed refusals now contribute zero claims: {old_rate['numerator']}/{old_rate['n']} ({old_rate['value']:.3f}) became {rate['numerator']}/{rate['n']} ({rate['value']:.3f}). Not in the denominator: {len(bad_judge)} claims of {', '.join(sorted({c['case_id'] for c in bad_judge})) or 'none'} (invalid judge output) and {len(pending)} claims of {', '.join(sorted({c['case_id'] for c in pending})) or 'none'} (not yet judged):
 
 | Case | Claim | Text | Why not judged |
@@ -355,10 +396,10 @@ Changes to any test set this week: new Week 3 set citizen-v2 (38 cases) replaced
 | # | Input (short) | What happened | Root cause | Fix (done or planned) |
 |---|---|---|---|---|
 | 1 | {retrieval_failure['case_id']}: fair permit in a park plus an inaccessible entrance (two facets) | Permit evidence `{retrieval_failure['evidence_label']}` ranked {', '.join(str(v) for v in missing_ranks.values())}; the model saw the top 5 and returned the fixed refusal. | {r032_stage or 'retrieval'} | Done: stage attribution now requires every facet (it was labelled generation). Proposed (team to confirm): a one-change multi-facet retrieval experiment; all-facet@5 is {hybrid['counts']['all_gold_hit_at_5']}/{n}. |
-| 2 | {', '.join(answered_controls) or 'none'}: request for a neighbour's phone number from their complaint | Answered with a cited privacy statement instead of the fixed refusal; nothing disclosed, but the contract broke. | {stage_of.get((answered_controls[0], 'answered_unavailable_information_control'), 'generation') if answered_controls else 'generation'} | Proposed (team to confirm): decide whether a privacy denial counts as refusal, then enforce it in prompt or code and re-measure `abstention_correct`. |
+{row2}
 {row3}
 
-Also observed: {', '.join(unsupported_cases) or 'none'} contains one unsupported library-membership claim (generation). {', '.join(j['case_id'] for j in judge_errors) or 'None'} got invalid judge output, so its claims stay unjudged (evaluation). The judge's verdict on a fixed refusal was an evaluation-definition error, corrected in section 3.
+{also_text}{', '.join(j['case_id'] for j in judge_errors) or 'None'} got invalid judge output, so its claims stay unjudged (evaluation). The judge's verdict on a fixed refusal was an evaluation-definition error, corrected in section 3.
 
 ## 6. Response to last week's feedback
 

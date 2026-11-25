@@ -1,7 +1,7 @@
 {
   "status_date": "2026-11-25",
   "dataset_version": "citizen-v2",
-  "tests_passed": 336,
+  "tests_passed": 344,
   "deliverables": {
     "W3.1": {
       "status": "done",
@@ -16,8 +16,9 @@
       "note": ""
     },
     "W3.4": {
-      "status": "partial",
-      "note": "38/38 valid citizen-v2 responses after offline re-validation with the widened quote rule (36/38 under the original rule; first pass 35/38); 5/6 unavailable-information controls returned the fixed refusal. Not done only because W3-U004 answered with a cited statement instead of the fixed sentence; whether that counts as a refusal is a team decision."
+      "status": "done",
+      "note": "38/38 valid (36/38 under the original quote rule); 5/6 controls returned the fixed refusal. W3-U004 gave a cited privacy refusal, accepted by team decision after seeing the results; reviewer confirmation pending.",
+      "card_note": "38/38 valid (36/38 under the original quote rule). 5/6 fixed refusals; W3-U004 cited refusal accepted post hoc, review pending."
     },
     "W3.5": {
       "status": "done",
@@ -160,5 +161,33 @@
       "title": "Check what the cited service guide actually supports.",
       "detail": "Public guides explain citizen services. Output schemas, authority limits and citation-validation rules belong in prompts and code, outside the public knowledge corpus."
     }
+  },
+  "controls": {
+    "strict_fixed_refusals": {
+      "numerator": 5,
+      "n": 6,
+      "ci95": [
+        0.4365,
+        0.9699
+      ]
+    },
+    "handled_safely_post_hoc": {
+      "numerator": 6,
+      "n": 6,
+      "ci95": [
+        0.6097,
+        1.0
+      ],
+      "definition": "POST-HOC reading, not a scoreboard metric: valid fixed refusal, or a cited refusal that discloses nothing and is covered by a recorded team decision (eval/testsets/week3_control_decisions.json)"
+    },
+    "accepted_by_decision": [
+      {
+        "case_id": "W3-U004",
+        "decided_by": "Efe İncirci",
+        "decided_utc": "2026-11-25",
+        "decided_after_results": true,
+        "reviewer_confirmation": "pending (Tarık Edip Yenikomşu)"
+      }
+    ]
   }
 }

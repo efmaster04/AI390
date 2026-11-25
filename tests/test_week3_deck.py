@@ -61,7 +61,9 @@ def test_roadmap_statuses_not_blank(deck):
     comp = deck[2]
     road = comp[comp.index('id="w3-roadmap"'):comp.index('id="w3-gate"')]
     assert 'done: <' not in road and ':</span>' not in road
-    assert road.count('rm-chip') == 8 and 'partial' in road
+    assert road.count('rm-chip') == 8
+    statuses = json.loads((ROOT/'eval/results/week3/presentation_data.json').read_text())['deliverables']
+    assert ('partial' in road) == any(d['status'] == 'partial' for d in statuses.values())
 
 
 def test_recorded_runs_marked_and_script_generated(deck):
