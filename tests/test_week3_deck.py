@@ -49,7 +49,7 @@ def test_slideshow_contract(deck):
     assert starts == sorted(starts)
     hot = show['slides'][-1]['hotspots']
     seqs = {q['id'] for q in show['slideSequences']}
-    assert len(hot) == 4 and {h['target'] for h in hot} == seqs  # every Q&A branch is reachable
+    assert len(hot) == len(seqs) and {h['target'] for h in hot} == seqs  # every Q&A branch is reachable
     for s in show['slides']:
         assert s['fragments'] == sorted(s['fragments']) and s['notes'].strip()
     body = comp.split('<body>', 1)[1]
@@ -146,9 +146,9 @@ def test_approvals_and_next_week_from_files(deck):
     from week3_deck import data as dd
     d = dd.load()
     apv = d['approvals']
-    rev = _scene(comp, 'w3-reviews', 'w3-next')
+    rev = _scene(comp, 'w3-reviews', 'w3-system')
     assert f'{apv["docs"]} / {apv["docs_total"]}' in rev and f'{apv["cases"]} / {apv["cases_total"]}' in rev
-    nxt = _scene(comp, 'w3-next', 'w3-reproduce')
+    nxt = _scene(comp, 'w3-next', 'w3-questions')
     assert d['priorities'] and all(p['metric'] in nxt.replace('&#x27;', "'") for p in d['priorities'][:3])
 
 
@@ -231,3 +231,22 @@ def test_unknown_stage_and_kind_are_not_folded_into_generation(tmp_path, monkeyp
     other = d['stage_cases']['other']
     assert [c['id'] for c in other] == ['W3-X999'] and other[0]['kind'] == 'brand new kind'
     assert all(c['id'] != 'W3-X999' for c in d['stage_cases']['generation'])
+
+
+def test_system_map_names_only_real_files_and_config_models(deck):
+    man, html, comp, show, script = deck
+    from week3_deck import data as dd, system_map
+    f = system_map.facts(dd.load())
+    for group in ('channels', 'data', 'route', 'right', 'planned'):
+        for box in f[group]:
+            assert box['exists'], (group, box['name'], box['file'])  # a file named on the slide must exist
+    cfg = json.loads((ROOT / 'config/retrieval.json').read_text())
+    names = {b['name'] for b in f['right']}
+    assert cfg['embedding_model'].split('/')[-1] in names
+    assert all(b['kind'] == 'local' for b in f['right'] if 'no API' in b['line'])
+    assert [b['n'] for b in f['route']] == list(range(1, len(f['route']) + 1))
+    assert all(f['meta']['planned_open'].values())  # planned items are still open in the plan tracker
+    ids = [s['sceneId'] for s in show['slides']]
+    assert ids.index('w3-system') == ids.index('w3-next') - 1
+    sm = _scene(comp, 'w3-system', 'w3-next')
+    assert 'planned' in sm and 'sm-zone' in sm and 'border-style:dashed' in sm

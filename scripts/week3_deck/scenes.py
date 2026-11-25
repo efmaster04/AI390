@@ -9,6 +9,8 @@ from __future__ import annotations
 from html import escape
 import re
 
+from . import system_map
+
 STATIONS = ['Question', 'Access gate', 'BM25 | Embeddings', 'RRF', 'Reranker', 'Cited answer', 'Measured']
 RAIL_W = 1700
 
@@ -771,28 +773,16 @@ BK.slam(tl,".jc-scope",P.at[3]);''',
                   f'<p class="bk-label" style="margin-top:12px">metric it should move</p><span class="w3-tag w3-tag--sun" style="position:static;display:inline-block;white-space:normal;margin-top:6px">{h(pr_["metric"])}</span>'
                   f'<p class="bk-label" style="margin-top:12px">expected change</p><p>{h(pr_["expected"])}</p></section>')
     body += cards
-    add(id='w3-next', part='next', speaker='Tarık', seconds=35, title='Next week: three priorities, each tied to a metric', label='Next week / plan',
+    sm = system_map.scene(d)
+    add(**sm)
+
+    add(id='w3-next', part='next', speaker='Tarık', seconds=21, title='Next week: three priorities, each tied to a metric', label='Next week / plan',
         folio='BELDESK / NEXT WEEK', repo='reports/week-3.md · Next week', steps=[1.3, 1.1, 1.1], body=body,
         js='''BK.draw(tl,".nx-rail .w3-rail-line",0.2);BK.fade(tl,$(".nx-rail .w3-st.is-done"),0.3,{stagger:.03});BK.draw(tl,".nx-rail .w3-rail-done",0.4);
 BK.draw(tl,".nx-ext",0.55,{duration:.45});tl.fromTo($(".nx-new"),{opacity:0,scale:.5},{opacity:1,scale:1,duration:.28,stagger:.08,ease:BK.EASE.pop},0.75);
 var p=$(".nx-p");BK.slam(tl,p[0],P.at[1]);BK.slam(tl,p[1],P.at[2]);BK.slam(tl,p[2],P.at[3]);''',
-        notes=('These are plans, not results; each names the metric it should move. '
-               + ' '.join(f'{["First", "Second", "Third"][k]}: {re.sub(r"^[0-9]+[.] *", "", p_["priority"]).split(" (")[0].lower()}, for {p_["metric"].replace("_", " ")}.' for k, p_ in enumerate(pri[:3]))
-               + ' On the route, the new stations are tools, confirmation and an agent loop, and every station gets measured before we trust it.'))
-
-    # ------------------------------------------------------------ 18 reproduce
-    rm = d['retrieval_meta']
-    body = (f'<div class="bk-term w3-abs rp-term" style="left:96px;top:390px;width:1100px"><div class="bk-term-bar"><i></i><i></i><i></i><b>reproduce</b></div>'
-            f'<div class="bk-term-body" style="font-size:32px"><span class="bk-term-line">python -m eval.retrieval_week3</span><span class="bk-term-line">python -m eval.answer_week3</span>'
-            f'<span class="bk-term-line">python -m pytest -q</span><span class="bk-term-line">python scripts/build_week3_presentation.py</span></div></div>'
-            f'<div class="bk-panel w3-abs rp-h" style="left:1250px;top:390px;width:574px;padding:24px 28px"><span class="bk-tab">hashes travel with results</span>'
-            + ''.join(f'<p class="w3-mono" style="font-size:28px;margin-top:6px">{k}: {h((rm.get(k + "_sha256") or "null")[:12])}</p>' for k in ('corpus', 'index', 'cases', 'config')) +
-            f'<p class="w3-mono" style="font-size:28px;margin-top:10px">retrieval API calls: {fmt(rm.get("api_calls"))}</p></div>'
-            f'<div class="bk-panel w3-abs rp-t" style="left:96px;top:760px;width:1100px;padding:20px 28px"><span class="w3-big" style="font-size:64px">{fmt(D.get("tests_passed"))}</span><span class="w3-cap" style="margin-left:16px">tests passed (recorded in presentation_data.json)</span></div>')
-    add(id='w3-reproduce', part='next', speaker='Tarık', seconds=15, title='Every number traces back to a command and a hash', label='Next week / reproducibility',
-        folio='BELDESK / EVIDENCE', repo='README.md · eval/results/week3/', steps=[1.1], body=body,
-        js='''BK.slam(tl,".rp-term",0.3);BK.slam(tl,".rp-h",0.5);BK.slam(tl,".rp-t",P.at[1]);''',
-        notes='Every number in this deck is read from recorded result files when the deck is built, so a corrected metric updates every slide. Retrieval runs locally without an API key, and corpus, index and question hashes travel with the results.')
+        notes=('Next week, in order, and these are plans, not results. '
+               + ' '.join(f'{["First", "Second", "Third"][k]}: {re.sub(r"^[0-9]+[.] *", "", p_["priority"]).split(" (")[0].lower()}, for {p_["metric"].replace("_", " ")}.' for k, p_ in enumerate(pri[:3]))))
 
     return S
 

@@ -78,6 +78,7 @@ def qa_slides(d):
     rf = D.get('retrieval_failure', {})
     sb = D.get('scoreboard', {})
     cm, apv = d['claims'], d['approvals']
+    rm = d['retrieval_meta']
     rec = next((f for f in d['answer_failures'] if f.get('case_id') == rf.get('case_id')), {})
     counts = ', '.join(f'{name} {len(d["stage_cases"][key])}' for key, name in (('retrieval', 'retrieval'), ('generation', 'generation'), ('provider', 'provider'), ('judge', 'judge')))
     if d['stage_cases']['other']:
@@ -99,6 +100,10 @@ def qa_slides(d):
         ('w3-q-corpus', f'Why {fmt(d["n_docs"])} documents and {fmt(d["n_chunks"])} chunks?',
          f'<strong>Documents:</strong> {fmt(d["n_public_docs"])} public service guides and {len(d["staff_docs"])} staff-only fixture with source, version and access metadata. The fixture tests the access gate.',
          f'<strong>Chunks:</strong> sections stay whole; a {fmt(d["config"].get("max_words"))}-word cap with {fmt(d["config"].get("overlap_words"))}-word overlap applies only to long sections. Access filtering runs before ranking.'),
+        ('w3-q-reproduce', 'Can someone else reproduce these numbers?',
+         '<strong>Commands:</strong> <span class="w3-mono" style="font-size:32px">python -m eval.retrieval_week3 · python -m eval.answer_week3 · python -m pytest -q · python scripts/build_week3_presentation.py</span>',
+         '<strong>Hashes travel with the results:</strong> ' + h(' · '.join(f'{k} {(rm.get(k + "_sha256") or "null")[:12]}' for k in ('corpus', 'index', 'cases', 'config')))
+         + f'; retrieval API calls {fmt(rm.get("api_calls"))}; {fmt(D.get("tests_passed"))} tests passed (recorded).'),
     ]
 
 
@@ -121,13 +126,14 @@ def build(composition_dir=None, data_override=None, out=OUT, manifest=MANIFEST, 
 
     scenes = build_scenes(d, cover)
     qa = qa_slides(d)
-    tiles = ''.join(f'<section class="bk-panel w3-abs qs-t" style="left:{96 + i * 438}px;top:400px;width:400px;height:420px;padding:30px 26px;display:flex;flex-direction:column;justify-content:space-between">'
-                    f'<h3 style="font-family:var(--font-display);font-weight:900;font-size:40px;line-height:1.12">{h(t)}</h3><div><span class="w3-big" style="font-size:96px">0{i + 1}</span>'
+    tw = (1728 - 24 * (len(qa) - 1)) // len(qa)
+    tiles = ''.join(f'<section class="bk-panel w3-abs qs-t" style="left:{96 + i * (tw + 24)}px;top:400px;width:{tw}px;height:440px;padding:28px 22px;display:flex;flex-direction:column;justify-content:space-between">'
+                    f'<h3 style="font-family:var(--font-display);font-weight:900;font-size:36px;line-height:1.12">{h(t)}</h3><div><span class="w3-big" style="font-size:96px">0{i + 1}</span>'
                     f'<p class="bk-label">open answer →</p></div></section>' for i, (_, t, _, _) in enumerate(qa))
-    scenes.append(dict(id='w3-questions', part='next', speaker='Tarık', seconds=10, title='Four questions we expect', label='Questions and feedback',
+    scenes.append(dict(id='w3-questions', part='next', speaker='Tarık', seconds=10, title=f'{["No", "One", "Two", "Three", "Four", "Five", "Six"][len(qa)]} questions we expect', label='Questions and feedback',
                        folio='BELDESK / QUESTIONS', repo='Week 3 / Q&A', steps=[], body=tiles, pose=None,
                        js='BK.slam(tl,$(".qs-t"),0.3,{stagger:.1});',
-                       notes='Thank you. We are ready for your questions. Each of these four cards opens a prepared answer with the evidence behind it, so pick any of them.'))
+                       notes=f'Thank you. We are ready for your questions. Each of these {len(qa)} cards opens a prepared answer with the evidence behind it, so pick any of them.'))
     total = len(scenes)
     scenes[0]['raw'] = scenes[0]['raw'].replace('01 / 20', f'01 / {total:02d}')
     poses = parser.poses
@@ -153,7 +159,8 @@ def build(composition_dir=None, data_override=None, out=OUT, manifest=MANIFEST, 
         clock += s['seconds']
         meta = {'sceneId': sid, 'notes': full_note, 'fragments': frags}
         if sid == 'w3-questions':
-            meta['hotspots'] = [{'id': f'w3-h{i}', 'label': q[1], 'target': q[0], 'region': {'x': 5 + i * 22.8, 'y': 37, 'w': 20.8, 'h': 39}} for i, q in enumerate(qa)]
+            meta['hotspots'] = [{'id': f'w3-h{i}', 'label': q[1], 'target': q[0],
+                                 'region': {'x': round((96 + i * (tw + 24)) / 19.2, 2), 'y': 37, 'w': round(tw / 19.2, 2), 'h': 41}} for i, q in enumerate(qa)]
         metadata['slides'].append(meta)
         if sid == 'cover':
             stage = s['raw']

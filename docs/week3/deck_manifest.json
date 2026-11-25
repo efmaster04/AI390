@@ -33,8 +33,8 @@
       "label": "Next week",
       "target_seconds": 60,
       "planned_seconds": 60,
-      "narration_words": 146,
-      "narration_seconds_at_wpm": 58
+      "narration_words": 162,
+      "narration_seconds_at_wpm": 65
     }
   ],
   "speakers": {
@@ -356,13 +356,34 @@
     },
     {
       "no": 17,
+      "id": "w3-system",
+      "title": "Today a fixed route; the agent loop is still dashed",
+      "label": "System map · today vs planned",
+      "part": "next",
+      "speaker": "Tarık",
+      "seconds": 29,
+      "narration_words": 80,
+      "fragments_local": [
+        1.4,
+        2.8,
+        4.3,
+        5.7,
+        7.1
+      ],
+      "window_s": 8.0,
+      "recorded_run": false,
+      "notes": "Solid boxes run today; dashed ones are plans. A request follows seven fixed steps. Only steps 1 and 6 call the gemini-3.1-flash-lite API; the embedding model and the reranker run locally, with no API call. An emergency message stops at step two with the fixed 112 reply. Our evaluation harness starts at step three, so the classifier was not part of the scores. The agent loop and its tools are not built; they will plug in at the routing step.",
+      "repo": "src/rag/pipeline.py · scripts/try_rag.py"
+    },
+    {
+      "no": 18,
       "id": "w3-next",
       "title": "Next week: three priorities, each tied to a metric",
       "label": "Next week / plan",
       "part": "next",
       "speaker": "Tarık",
-      "seconds": 35,
-      "narration_words": 79,
+      "seconds": 21,
+      "narration_words": 55,
       "fragments_local": [
         1.4,
         2.7,
@@ -371,31 +392,13 @@
       ],
       "window_s": 5.5,
       "recorded_run": false,
-      "notes": "These are plans, not results; each names the metric it should move. First: clean rerun of retrieval and answers on the approved files at the tagged commit, for hit at 5, mrr, unsupported claims. Second: controlled lookup tool and sandbox writes with confirmation, for validated tool-result rate. Third: multi-step tasks with traces and limits, for task success. On the route, the new stations are tools, confirmation and an agent loop, and every station gets measured before we trust it.",
+      "notes": "Next week, in order, and these are plans, not results. First: clean rerun of retrieval and answers on the approved files at the tagged commit, for hit at 5, mrr, unsupported claims. Second: controlled lookup tool and sandbox writes with confirmation, for validated tool-result rate. Third: multi-step tasks with traces and limits, for task success.",
       "repo": "reports/week-3.md · Next week"
-    },
-    {
-      "no": 18,
-      "id": "w3-reproduce",
-      "title": "Every number traces back to a command and a hash",
-      "label": "Next week / reproducibility",
-      "part": "next",
-      "speaker": "Tarık",
-      "seconds": 15,
-      "narration_words": 40,
-      "fragments_local": [
-        1.4,
-        2.5
-      ],
-      "window_s": 3.5,
-      "recorded_run": false,
-      "notes": "Every number in this deck is read from recorded result files when the deck is built, so a corrected metric updates every slide. Retrieval runs locally without an API key, and corpus, index and question hashes travel with the results.",
-      "repo": "README.md · eval/results/week3/"
     },
     {
       "no": 19,
       "id": "w3-questions",
-      "title": "Four questions we expect",
+      "title": "Five questions we expect",
       "label": "Questions and feedback",
       "part": "next",
       "speaker": "Tarık",
@@ -406,7 +409,7 @@
       ],
       "window_s": 2.0,
       "recorded_run": false,
-      "notes": "Thank you. We are ready for your questions. Each of these four cards opens a prepared answer with the evidence behind it, so pick any of them.",
+      "notes": "Thank you. We are ready for your questions. Each of these 5 cards opens a prepared answer with the evidence behind it, so pick any of them.",
       "repo": "Week 3 / Q&A"
     }
   ],
@@ -414,7 +417,8 @@
     "w3-q-measurement",
     "w3-q-failure",
     "w3-q-priority",
-    "w3-q-corpus"
+    "w3-q-corpus",
+    "w3-q-reproduce"
   ],
   "source_data": "eval/results/week3/presentation_data.json",
   "reference": "docs/week2/index.html (read only)",
