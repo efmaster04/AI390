@@ -173,7 +173,10 @@ def summarize_faithfulness(rows, fallback=None):
     counts = {label: sum(c["judge_label"] == label for c in claims) for label in sorted(LABELS)}
     valid_judgements = [r for r in rows if (r.get("judgement") or {}).get("valid")]
     missing = sum(c["unlisted"] for c in claims)
-    unjudged = [{"case_id": r["case_id"], "claim_id": c["claim_id"], "text": c["text"]}
+    unjudged = [{"case_id": r["case_id"], "claim_id": c["claim_id"], "text": c["text"],
+                 "reason": ("not yet judged (answer accepted by offline re-validation)"
+                            if (r.get("judgement") or {}).get("error") == "not_judged_offline_revalidation"
+                            else "judge output invalid")}
                 for r in rows if (r.get("generation") or {}).get("valid") and not (r.get("judgement") or {}).get("valid")
                 and r["case_id"] not in refusals for c in (r["generation"].get("claims") or [])]
     return {"valid_judged_claims": n, "labels": counts,

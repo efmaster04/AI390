@@ -12,7 +12,7 @@
 
 ## 1. Summary
 
-We added retrieval-augmented answers over a synthetic citizen-service corpus (citizen-v2: 31 documents, 92 chunks) with hybrid search, a local reranker, numbered citations and a fixed refusal. Most important number: hit@5 = 1.00 (32/32, 95% CI 0.89–1.00), but only 31/32 questions had every required facet in the top 5. Gemini produced 36/38 valid answers; the judge marked 1/90 claims unsupported. An audit corrected the claim-rate definition and one stage label.
+We added retrieval-augmented answers over a synthetic citizen-service corpus (citizen-v2: 31 documents, 92 chunks) with hybrid search, a local reranker, numbered citations and a fixed refusal. Most important number: hit@5 = 1.00 (32/32, 95% CI 0.89–1.00), but only 31/32 questions had every required facet in the top 5. Gemini's recorded outputs give 38/38 valid answers after a quote-validator change made after seeing the results (36/38 before; no model re-called); the judge marked 1/90 claims unsupported. An audit corrected the claim-rate definition and one stage label.
 
 ## 2. Deliverables
 
@@ -21,11 +21,11 @@ We added retrieval-augmented answers over a synthetic citizen-service corpus (ci
 | W3.1 | done | [`data/corpus/documents/`](../data/corpus/documents/); [`data/corpus/manifest.json`](../data/corpus/manifest.json); [`data/corpus/review_log.jsonl`](../data/corpus/review_log.jsonl); [`src/rag/corpus.py`](../src/rag/corpus.py) | 31 synthetic documents (30 public guides, 1 staff-only access fixture) with source, date, version and access metadata. Approved: 31/31 documents and 38/38 test cases (Doruk Kal and Tarık Edip Yenikomşu, 2026-11-24), recorded after the evaluation run on unchanged content. |
 | W3.2 | done | [`src/rag/chunking.py`](../src/rag/chunking.py); [`eval/results/week3/retrieval/chunks.json`](../eval/results/week3/retrieval/chunks.json) | 92 section-aware chunks; 140-word cap with 20-word overlap only for long sections. |
 | W3.3 | done | [`src/rag/retrieval.py`](../src/rag/retrieval.py); [`src/rag/lexical.py`](../src/rag/lexical.py); [`config/retrieval.json`](../config/retrieval.json) | BM25 plus `multilingual-e5-small` dense search, reciprocal rank fusion (k = 60), local cross-encoder reranker; access filtering before ranking. |
-| W3.4 | partial | [`src/rag/answer.py`](../src/rag/answer.py); [`prompts/rag/v1.md`](../prompts/rag/v1.md); [`config/rag_answer.json`](../config/rag_answer.json); [`eval/results/week3/answers_citizen_v2_complete/`](../eval/results/week3/answers_citizen_v2_complete/) | 36/38 valid citizen-v2 responses (first pass 35/38); 5/6 unavailable-information controls returned the fixed refusal. |
+| W3.4 | partial | [`src/rag/answer.py`](../src/rag/answer.py); [`prompts/rag/v1.md`](../prompts/rag/v1.md); [`config/rag_answer.json`](../config/rag_answer.json); [`eval/revalidate_week3.py`](../eval/revalidate_week3.py); [`eval/results/week3/answers_citizen_v2_revalidated/`](../eval/results/week3/answers_citizen_v2_revalidated/) | 38/38 valid citizen-v2 responses after offline re-validation with the widened quote rule (36/38 under the original rule; first pass 35/38); 5/6 unavailable-information controls returned the fixed refusal. Not done only because W3-U004 answered with a cited statement instead of the fixed sentence; whether that counts as a refusal is a team decision. |
 | W3.5 | done | [`eval/testsets/week3_retrieval.jsonl`](../eval/testsets/week3_retrieval.jsonl); [`eval/testsets/week3_citizen_v2_manifest.json`](../eval/testsets/week3_citizen_v2_manifest.json); [`docs/week3_benchmark_revision.md`](../docs/week3_benchmark_revision.md) | 32 answerable questions (16 TR / 16 EN) and 6 controls (3 TR / 3 EN) with exact evidence quotes; 6 separate development cases. |
 | W3.6 | done | [`eval/faithfulness_week3.py`](../eval/faithfulness_week3.py); [`prompts/judge/week3_v1.md`](../prompts/judge/week3_v1.md); [`eval/results/week3/calibration/human_calibration.json`](../eval/results/week3/calibration/human_calibration.json) | Claim-level judge on current answers; κ = 0.771 on 20 historical claims (see limitation in section 4). |
 | W3.7 | done | [`eval/retrieval_week3.py`](../eval/retrieval_week3.py); [`eval/rescore_retrieval_week3.py`](../eval/rescore_retrieval_week3.py); [`eval/results/week3/retrieval/rescored_summary.json`](../eval/results/week3/retrieval/rescored_summary.json); [`eval/results/week3/retrieval/paired_statistics.json`](../eval/results/week3/retrieval/paired_statistics.json) | Two one-change retrieval ablations on the frozen set. |
-| W3.8 | done | [`eval/results/week3/retrieval/failures.json`](../eval/results/week3/retrieval/failures.json); [`eval/results/week3/answers_citizen_v2_complete/failures.json`](../eval/results/week3/answers_citizen_v2_complete/failures.json) | Failures labelled retrieval, generation or evaluation (section 5). |
+| W3.8 | done | [`eval/results/week3/retrieval/failures.json`](../eval/results/week3/retrieval/failures.json); [`eval/results/week3/answers_citizen_v2_revalidated/failures.json`](../eval/results/week3/answers_citizen_v2_revalidated/failures.json) | Failures labelled retrieval, generation or evaluation (section 5). |
 
 ## 3. Scoreboard
 
@@ -46,7 +46,7 @@ We added retrieval-augmented answers over a synthetic citizen-service corpus (ci
       0.9699
     ],
     "n": 6,
-    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete"
+    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_revalidated"
   },
   "unsupported_claims": {
     "value": 0.0111,
@@ -55,7 +55,7 @@ We added retrieval-augmented answers over a synthetic citizen-service corpus (ci
       0.0603
     ],
     "n": 90,
-    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete (eval/faithfulness_week3.py)"
+    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_revalidated (eval/faithfulness_week3.py)"
   },
   "hit_at_5": {
     "value": 1.0,
@@ -88,7 +88,7 @@ We added retrieval-augmented answers over a synthetic citizen-service corpus (ci
     "script": null
   },
   "cost_per_task_usd": 0.001043,
-  "latency_p50_s": 4.72,
+  "latency_p50_s": 5.05,
   "spend_week_usd": 0.0,
   "spend_total_usd": 0.0
 }
@@ -98,19 +98,25 @@ Values come from [`eval/results/week3/scoreboard.json`](../eval/results/week3/sc
 
 - `e2e_accuracy` is null because no answer-correctness rubric was applied to the citizen-v2 answers; claim support is not question completion, and Week 2's 0.952 was measured on a different test set.
 - `abstention_correct`: 5/6 unavailable-information controls returned the fixed refusal; W3-U004 answered instead (section 5).
-- `unsupported_claims`: metric definition corrected after audit. The judge had labelled the fixed refusal of W3-R032 as an unsupported claim, although its rubric excludes fixed refusals. Validated fixed refusals now contribute zero claims: 2/91 (0.022) became 1/90 (0.011). 1 answer (W3-R020) had no valid judgement, so its 4 claims are not in the denominator:
+- `unsupported_claims`: metric definition corrected after audit. The judge had labelled the fixed refusal of W3-R032 as an unsupported claim, although its rubric excludes fixed refusals. Validated fixed refusals now contribute zero claims: 2/91 (0.022) became 1/90 (0.011). Not in the denominator: 4 claims of W3-R020 (invalid judge output) and 5 claims of W3-R019, W3-R027 (not yet judged):
 
-| Case | Claim | Text (not judged) |
-|---|---|---|
-| W3-R020 | C1 | You can report a pothole by providing the neighborhood, street, or avenue, the direction of the damage, and a nearby landmark. |
-| W3-R020 | C2 | When reporting the pothole, you should describe observations such as vehicles swerving to avoid it, narrowed passage, or near-miss incidents. |
-| W3-R020 | C3 | Include the time you observed the incident and specify whether the damage is at a single point or extends along the road. |
-| W3-R020 | C4 | Providing a photograph can assist in identifying the location of the damage. |
+| Case | Claim | Text | Why not judged |
+|---|---|---|---|
+| W3-R019 | C1 | Erişilebilirlik bildirimi yapmak için herhangi bir sağlık raporu, tanı veya engellilik belgesi gerekmemektedir. | not yet judged (answer accepted by offline re-validation) |
+| W3-R019 | C2 | Bildiriminizde etkilenen kaldırımın veya geçişin konumunu, engelin ne olduğunu ve tekerlekli sandalye ile geçişin neden mümkün olmadığını detaylıca açıklamalısınız. | not yet judged (answer accepted by offline re-validation) |
+| W3-R019 | C3 | Sorunun yerinin daha iyi anlaşılması için fotoğraf veya konum işareti ekleyebilir, hangi güzergâhı kullanmak istediğinizi belirtebilirsiniz. | not yet judged (answer accepted by offline re-validation) |
+| W3-R020 | C1 | You can report a pothole by providing the neighborhood, street, or avenue, the direction of the damage, and a nearby landmark. | judge output invalid |
+| W3-R020 | C2 | When reporting the pothole, you should describe observations such as vehicles swerving to avoid it, narrowed passage, or near-miss incidents. | judge output invalid |
+| W3-R020 | C3 | Include the time you observed the incident and specify whether the damage is at a single point or extends along the road. | judge output invalid |
+| W3-R020 | C4 | Providing a photograph can assist in identifying the location of the damage. | judge output invalid |
+| W3-R027 | C1 | Daha önce yaptığınız başvuruyla ilgili yeni bilgi iletmek veya durumu takip etmek için ilk başvuruda size verilen referans numarasını kullanmalısınız. | not yet judged (answer accepted by offline re-validation) |
+| W3-R027 | C2 | Başvuru takibi sırasında, ilgili başvuruya ait güncel durum bilgisi üzerinden işlem aşamasını öğrenebilirsiniz. | not yet judged (answer accepted by offline re-validation) |
 
 - `hit_at_5` and `mrr` (MRR@10) use the 32 answerable questions. They were re-scored offline from the recorded rankings, reproducing the recorded metrics exactly. The rankings came from a working tree with uncommitted changes at `22577a6` (`"dirty": true`), so a clean rerun with the local models is still open.
-- Answers: first pass 35/38 valid (no validation retry). Only the 3 invalid cases were retried once with one validation retry; 1 recovered, giving 36/38. This retry was chosen after seeing failures, so 35/38 is the same-policy figure. The 35 retained answers are first-pass calls, not cache hits.
+- Answers: first pass 35/38 valid (no validation retry). Only the 3 invalid cases were retried once with one validation retry; 1 recovered, giving 38/38. This retry was chosen after seeing failures, so 35/38 is the same-policy figure. The 35 retained answers are first-pass calls, not cache hits.
+- Validator rule changed after seeing the test results. The original rule required each evidence quote to be one contiguous substring of its source; in W3-R019 and W3-R027 the model joined two verbatim sentences of the same source with an ellipsis, and the rejection repeated on retry. Now a quote may be split by `...`, `…` or `. . .` if every segment (at least 8 characters) appears verbatim in the cited source, in source order and without overlap; there is no other normalisation. `eval/revalidate_week3.py` re-validated the saved outputs offline; no model was re-called. Valid answers: 36/38 became 38/38; no previously valid answer changed. Under the new rule the first pass alone gives 38/38. The 5 claims of the re-validated answers are not yet judged and stay outside the claim-rate denominator.
 - `cost_per_task_usd` is a list-price estimate (Week 2 convention): answer-generation tokens per case at the dated Gemini 3.1 Flash-Lite list price (USD 0.25 input / 1.50 output per million tokens, checked 2026-11-09); judge and local retrieval excluded. All recorded generation and judge calls together are equivalent to $0.0752 (a lower bound: usage of 3 failed transport attempts is unknown). Actual spend is $0 (free tier); `spend_total_usd` adds Weeks 1 and 2, also $0.
-- `latency_p50_s`: median retrieval plus answer-generation service time over the 36 valid answers; excludes the classifier, the judge and rate-limit waits; not end-user wall time.
+- `latency_p50_s`: median retrieval plus answer-generation service time over the 38 valid answers (4.72 s over the 36 valid under the original rule); excludes the classifier, the judge and rate-limit waits; not end-user wall time.
 - Provenance: the runs read the files frozen with review status draft. Commit `576ef4b` later set the review fields to approved. `eval/week3_provenance.py` shows that restoring those fields reproduces the evaluated hashes exactly, so the measured content is unchanged.
 
 Changes to any test set this week: new Week 3 set citizen-v2 (38 cases) replaced the first v1 draft before scoring ([`docs/week3_benchmark_revision.md`](../docs/week3_benchmark_revision.md)); after scoring, only review metadata changed.
@@ -150,7 +156,7 @@ Changes to any test set this week: new Week 3 set citizen-v2 (38 cases) replaced
 |---|---|---|---|---|
 | 1 | W3-R032: fair permit in a park plus an inaccessible entrance (two facets) | Permit evidence `YV-D006#details` ranked 7; the model saw the top 5 and returned the fixed refusal. | retrieval | Done: stage attribution now requires every facet (it was labelled generation). Proposed (team to confirm): a one-change multi-facet retrieval experiment; all-facet@5 is 31/32. |
 | 2 | W3-U004: request for a neighbour's phone number from their complaint | Answered with a cited privacy statement instead of the fixed refusal; nothing disclosed, but the contract broke. | generation | Proposed (team to confirm): decide whether a privacy denial counts as refusal, then enforce it in prompt or code and re-measure `abstention_correct`. |
-| 3 | W3-R019, W3-R027: accessibility report; street-lamp follow-up | Quotes were not exact substrings of the source after one retry; no answer shown. | generation | Existing: shown as an error, not counted as a refusal. Proposed (team to confirm): better quote-validation feedback, measured as valid answers out of 38. |
+| 3 | W3-R019, W3-R027: accessibility report; street-lamp follow-up | Two verbatim sentences of one source were joined with an ellipsis; the contiguous-quote rule rejected both answers, also on retry. | generation | Done after seeing results: the validator accepts ordered verbatim segments; saved outputs re-validated offline (38/38 valid); retry feedback now shows the quote and the rule. Claims not yet judged. |
 
 Also observed: W3-R017 contains one unsupported library-membership claim (generation). W3-R020 got invalid judge output, so its claims stay unjudged (evaluation). The judge's verdict on a fixed refusal was an evaluation-definition error, corrected in section 3.
 

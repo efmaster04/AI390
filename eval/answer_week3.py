@@ -290,10 +290,14 @@ def summarize_answers(rows, meta):
         # A composed run copies records from its component runs; that is not a
         # stage-cache hit (old composer versions labelled retained rows as cached).
         return False if composed else bool(row.get(key, False))
-    retained = sum(r.get("source_run") == first_run for r in valid) if composed else None
+    revalidated = sorted(r["case_id"] for r in valid if r.get("revalidated_offline"))
+    retained = sum(r.get("source_run") == first_run and not r.get("revalidated_offline") for r in valid) if composed else None
     provenance = {"composed_from_components": composed,
                   "first_pass_valid": retained if composed else len(valid), "n": n,
-                  "after_repair_valid": len(valid) if composed else None,
+                  "after_repair_valid": len(valid)-len(revalidated) if composed else None,
+                  "after_offline_revalidation_valid": len(valid) if meta.get("revalidation") else None,
+                  "revalidated_offline_case_ids": revalidated,
+                  "first_pass_valid_under_new_validator": (meta.get("revalidation") or {}).get("first_pass_under_new_validator"),
                   "valid_retained_from_first_pass": retained,
                   "valid_replaced_by_repair": len(meta.get("replaced_case_ids", [])) if composed else None,
                   "repair_retried_cases": (n - retained) if composed else None,
@@ -306,6 +310,7 @@ def summarize_answers(rows, meta):
     rag_latencies = [r["generation"]["latency_s"]+r["retrieval"]["timings_s"]["total"] for r in valid]
     current_calls = meta.get("provider_calls_this_invocation", 0)
     deferred = sum((r.get("judgement") or {}).get("error") == "deferred_judgement" for r in rows)
+    not_judged = sum((r.get("judgement") or {}).get("error") == "not_judged_offline_revalidation" for r in rows)
     skipped = sum((r.get("judgement") or {}).get("error") == "skipped_generation_error" for r in rows)
     return {"week": 3, "stage": "rag_answer_and_claim_judge", "planned_cases": meta["planned_cases"],
             "processed_cases": n, "run_complete": n == meta["planned_cases"] and deferred == 0,
@@ -313,7 +318,8 @@ def summarize_answers(rows, meta):
             "valid_generated_answers": len(valid), "valid_claim_judgements": len(judged),
             "judgements_deferred_or_not_attempted": deferred,
             "judgements_skipped_generation_error": skipped,
-            "judgements_failed_or_invalid": n-len(judged)-deferred-skipped,
+            "judgements_not_attempted_offline_revalidation": not_judged,
+            "judgements_failed_or_invalid": n-len(judged)-deferred-skipped-not_judged,
             "answerability_accuracy": {"value": answerability/n if n else None, "n": n,
                                        "definition": "valid answer abstains iff fixed test flag says unanswerable; not semantic answer accuracy"},
             "abstention_correct": {"value": honest/len(abstention_rows) if abstention_rows else None,
@@ -384,7 +390,11 @@ def failure_analysis(rows, fallback=None):
         if not row["expected_answerable"] and not row["generation"].get("abstained"):
             output.append({"case_id": row["case_id"], "stage": "generation", "kind": "answered_unavailable_information_control"})
         judge = row.get("judgement") or {}
-        if not judge.get("valid"):
+        if judge.get("error") == "not_judged_offline_revalidation":
+            output.append({"case_id": row["case_id"], "stage": "evaluation", "kind": "claims_not_yet_judged",
+                           "unjudged_claims": len(row["generation"].get("claims") or []),
+                           "note": "Answer accepted by offline re-validation of a saved output; judge not called"})
+        elif not judge.get("valid"):
             output.append({"case_id": row["case_id"], "stage": "evaluation", "kind": "judge_error_or_invalid",
                            "unjudged_claims": len(row["generation"].get("claims") or [])})
         elif is_validated_fixed_refusal(row, fallback):

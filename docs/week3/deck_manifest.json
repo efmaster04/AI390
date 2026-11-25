@@ -25,8 +25,8 @@
       "label": "Failures and root causes",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 291,
-      "narration_seconds_at_wpm": 116
+      "narration_words": 292,
+      "narration_seconds_at_wpm": 117
     },
     {
       "part": "next",
@@ -233,7 +233,7 @@
       ],
       "window_s": 5.0,
       "recorded_run": false,
-      "notes": "Faithfulness has an explicit denominator. Of 38 cases, 36 produced valid answers and 35 were judged, giving 90 claims. 1 is unsupported, from W3-R017. An audit corrected the definition: a validated fixed refusal contributes no claims, so 2 of 91 became 1 of 90. This is a provisional automatic judge.",
+      "notes": "Faithfulness has an explicit denominator. Of 38 cases, 38 produced valid answers and 35 were judged, giving 90 claims. 1 is unsupported, from W3-R017. An audit corrected the definition: a validated fixed refusal contributes no claims, so 2 of 91 became 1 of 90. This is a provisional automatic judge.",
       "repo": "eval/results/week3/answers_citizen_v2_complete/summary.json"
     },
     {
@@ -252,7 +252,7 @@
       ],
       "window_s": 5.0,
       "recorded_run": false,
-      "notes": "The same thirteen rows as Week two, in the same order, now with n and intervals. Test set size is 38. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is 0.833 on only 6 controls, so its interval is wide. Unsupported claims are 0.011 on 90 claims. Hit at five and MRR are new this week. The rows task success, pass k, injection success stay null this week. Latency is 4.7 seconds without waits. Cost per task is a list-price estimate of 0.00104 dollars, not a bill; actual spend is 0 dollars. 9 of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.",
+      "notes": "The same thirteen rows as Week two, in the same order, now with n and intervals. Test set size is 38. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is 0.833 on only 6 controls, so its interval is wide. Unsupported claims are 0.011 on 90 claims. Hit at five and MRR are new this week. The rows task success, pass k, injection success stay null this week. Latency is 5.0 seconds without waits. Cost per task is a list-price estimate of 0.00104 dollars, not a bill; actual spend is 0 dollars. 9 of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.",
       "repo": "eval/results/week3/scoreboard.json"
     },
     {
@@ -303,7 +303,7 @@
       "part": "failures",
       "speaker": "Tarık",
       "seconds": 23,
-      "narration_words": 36,
+      "narration_words": 37,
       "fragments_local": [
         1.4,
         2.6,
@@ -312,7 +312,7 @@
       ],
       "window_s": 5.5,
       "recorded_run": false,
-      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: W3-R032. Generation: W3-R017, W3-U004. Provider: W3-R019, W3-R027. Judge: W3-R020. The cards show what each record is. Each stage points to a different fix.",
+      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: W3-R032. Generation: W3-R017, W3-U004. Provider: none. Judge: W3-R019, W3-R020, W3-R027. The cards show what each record is. Each stage points to a different fix.",
       "repo": "eval/results/week3/answers_citizen_v2_complete/failures.json"
     },
     {

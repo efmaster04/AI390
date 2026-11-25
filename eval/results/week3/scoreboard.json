@@ -14,7 +14,7 @@
       0.9699
     ],
     "n": 6,
-    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete"
+    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_revalidated"
   },
   "unsupported_claims": {
     "value": 0.0111,
@@ -23,7 +23,7 @@
       0.0603
     ],
     "n": 90,
-    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete (eval/faithfulness_week3.py)"
+    "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_revalidated (eval/faithfulness_week3.py)"
   },
   "hit_at_5": {
     "value": 1.0,
@@ -56,7 +56,7 @@
     "script": null
   },
   "cost_per_task_usd": 0.001043,
-  "latency_p50_s": 4.72,
+  "latency_p50_s": 5.05,
   "spend_week_usd": 0.0,
   "spend_total_usd": 0.0
 }

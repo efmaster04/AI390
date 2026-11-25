@@ -179,9 +179,17 @@ def build(write=True):
     answered_controls = [f['case_id'] for f in answer_failures if f['kind'] == 'answered_unavailable_information_control']
 
     statuses = {f'W3.{i}': {'status': 'done', 'note': ''} for i in range(1, 9)}
-    statuses['W3.4'] = {'status': 'done' if valid == len(questions) and abst['value'] == 1 else 'partial',
-                        'note': f"{valid}/{len(questions)} valid citizen-v2 responses (first pass {prov['first_pass_valid']}/{prov['n']}); "
-                                f"{abst['numerator']}/{abst['n']} unavailable-information controls returned the fixed refusal."}
+    revalidated = prov.get('revalidated_offline_case_ids') or []
+    w34_done = valid == len(questions) and abst['value'] == 1
+    w34_note = (f"{valid}/{len(questions)} valid citizen-v2 responses after offline re-validation with the widened quote rule "
+                f"({prov['after_repair_valid']}/{prov['n']} under the original rule; first pass {prov['first_pass_valid']}/{prov['n']})"
+                if revalidated else
+                f"{valid}/{len(questions)} valid citizen-v2 responses (first pass {prov['first_pass_valid']}/{prov['n']})")
+    w34_note += f"; {abst['numerator']}/{abst['n']} unavailable-information controls returned the fixed refusal."
+    if not w34_done and valid == len(questions) and answered_controls:
+        w34_note += (f" Not done only because {', '.join(answered_controls)} answered with a cited statement instead of the "
+                     f"fixed sentence; whether that counts as a refusal is a team decision.")
+    statuses['W3.4'] = {'status': 'done' if w34_done else 'partial', 'note': w34_note}
     statuses['W3.6'] = {'status': 'done' if faith['valid_judged_claims'] > 0 and calibration['n'] >= 20 else 'partial',
                         'note': f"Current claim support measured; {calibration['n']} historical human–judge pairs using preserved v1 sources. "
                                 f"Not direct human grading of v2 answers."}
@@ -204,7 +212,10 @@ def build(write=True):
     fail_data = {'generation': {'question': 'Model run on citizen-v2 sources and questions',
                                 'answer': (f"{prov['first_pass_valid']}/{prov['n']} valid on the first pass; the "
                                            f"{prov['repair_retried_cases']} invalid cases were retried once and "
-                                           f"{prov['valid_replaced_by_repair']} recovered: {valid}/{len(records)}. No cache hits; "
+                                           f"{prov['valid_replaced_by_repair']} recovered: {prov['after_repair_valid']}/{len(records)}. "
+                                           + (f"Offline re-validation of saved outputs with the widened quote rule (no model call): "
+                                              f"{valid}/{len(records)}. " if revalidated else "") +
+                                           f"No cache hits; "
                                            f"retired v1 answers do not count."),
                                 'diagnosis': 'Retrieval coverage, provider availability and claim support are distinct measurements.'},
                  'evaluation': {'title': 'Check what the cited service guide actually supports.',
@@ -232,12 +243,32 @@ def build(write=True):
     t_off5 = stats['paired_tests']['hybrid_rerank_vs_hybrid_no_rerank_hit5']
     off_hits = round(off['hit_at_k']['5']*n)
     reviewers = ' and '.join(review['reviewers']) or 'no recorded reviewer'
-    unjudged_rows = '\n'.join(f"| {c['case_id']} | {c['claim_id']} | {c['text']} |" for c in faith['unjudged_claims'])
+    unjudged_rows = '\n'.join(f"| {c['case_id']} | {c['claim_id']} | {c['text']} | {c.get('reason', 'judge output invalid')} |" for c in faith['unjudged_claims'])
+    pending = [c for c in faith['unjudged_claims'] if c.get('reason', '').startswith('not yet judged')]
+    bad_judge = [c for c in faith['unjudged_claims'] if c not in pending]
+    previous = read(BASE/meta['components'][-1]['directory']/'summary.json') if revalidated else answer
     excluded = faith['fixed_refusal_verdicts_excluded']
     excluded_ids = ', '.join(sorted({x['case_id'] for x in excluded})) or 'none'
     r032_stage = stage_of.get((observed['case_id'], 'abstained_on_answerable_question')) if observed else None
     kappa = calibration['kappa']
     sb_json = json.dumps(score, ensure_ascii=False, indent=2)
+    first_new = prov.get('first_pass_valid_under_new_validator') or {}
+    revalidation_text = (
+        f"\n- Validator rule changed after seeing the test results. The original rule required each evidence quote to be one "
+        f"contiguous substring of its source; in {' and '.join(revalidated)} the model joined two verbatim sentences of the same "
+        f"source with an ellipsis, and the rejection repeated on retry. Now a quote may be split by `...`, `…` or `. . .` if every "
+        f"segment (at least 8 characters) appears verbatim in the cited source, in source order and without overlap; there is no "
+        f"other normalisation. `eval/revalidate_week3.py` re-validated the saved outputs offline; no model was re-called. Valid "
+        f"answers: {prov['after_repair_valid']}/{prov['n']} became {valid}/{prov['n']}; no previously valid answer changed. Under "
+        f"the new rule the first pass alone gives {first_new.get('valid')}/{first_new.get('n')}. The {len(pending)} claims of the "
+        f"re-validated answers are not yet judged and stay outside the claim-rate denominator." if revalidated else '')
+    row3 = (f"| 3 | {', '.join(revalidated)}: accessibility report; street-lamp follow-up | Two verbatim sentences of one source "
+            f"were joined with an ellipsis; the contiguous-quote rule rejected both answers, also on retry. | generation | Done after "
+            f"seeing results: the validator accepts ordered verbatim segments; saved outputs re-validated offline ({valid}/{len(records)} "
+            f"valid); retry feedback now shows the quote and the rule. Claims not yet judged. |" if revalidated else
+            f"| 3 | {', '.join(generation_errors)}: accessibility report; street-lamp follow-up | Quotes were not exact substrings of "
+            f"the source after one retry; no answer shown. | generation | Existing: shown as an error, not counted as a refusal. "
+            f"Proposed (team to confirm): better quote-validation feedback, measured as valid answers out of 38. |")
 
     report = f'''# Weekly report
 
@@ -253,7 +284,7 @@ def build(write=True):
 
 ## 1. Summary
 
-We added retrieval-augmented answers over a synthetic citizen-service corpus (citizen-v2: {review['documents_total']} documents, {chunks['count']} chunks) with hybrid search, a local reranker, numbered citations and a fixed refusal. Most important number: hit@5 = {hybrid['hit_at_k']['5']:.2f} ({hybrid['counts']['hit_at_5']}/{n}, 95% CI {ci(score['hit_at_5'])}), but only {hybrid['counts']['all_gold_hit_at_5']}/{n} questions had every required facet in the top 5. Gemini produced {valid}/{len(records)} valid answers; the judge marked {rate['numerator']}/{rate['n']} claims unsupported. An audit corrected the claim-rate definition and one stage label.
+We added retrieval-augmented answers over a synthetic citizen-service corpus (citizen-v2: {review['documents_total']} documents, {chunks['count']} chunks) with hybrid search, a local reranker, numbered citations and a fixed refusal. Most important number: hit@5 = {hybrid['hit_at_k']['5']:.2f} ({hybrid['counts']['hit_at_5']}/{n}, 95% CI {ci(score['hit_at_5'])}), but only {hybrid['counts']['all_gold_hit_at_5']}/{n} questions had every required facet in the top 5. Gemini's recorded outputs give {valid}/{len(records)} valid answers{f" after a quote-validator change made after seeing the results ({prov['after_repair_valid']}/{len(records)} before; no model re-called)" if revalidated else ""}; the judge marked {rate['numerator']}/{rate['n']} claims unsupported. An audit corrected the claim-rate definition and one stage label.
 
 ## 2. Deliverables
 
@@ -262,7 +293,7 @@ We added retrieval-augmented answers over a synthetic citizen-service corpus (ci
 | W3.1 | {statuses['W3.1']['status']} | {link('data/corpus/documents/')}; {link('data/corpus/manifest.json')}; {link('data/corpus/review_log.jsonl')}; {link('src/rag/corpus.py')} | {review['documents_total']} synthetic documents ({review['public_documents_total']} public guides, 1 staff-only access fixture) with source, date, version and access metadata. Approved: {review['documents_approved']}/{review['documents_total']} documents and {review['cases_approved']}/{review['cases_total']} test cases ({reviewers}, {review['review_date']}), recorded after the evaluation run on unchanged content. |
 | W3.2 | {statuses['W3.2']['status']} | {link('src/rag/chunking.py')}; {link('eval/results/week3/retrieval/chunks.json')} | {chunks['count']} section-aware chunks; 140-word cap with 20-word overlap only for long sections. |
 | W3.3 | {statuses['W3.3']['status']} | {link('src/rag/retrieval.py')}; {link('src/rag/lexical.py')}; {link('config/retrieval.json')} | BM25 plus `multilingual-e5-small` dense search, reciprocal rank fusion (k = 60), local cross-encoder reranker; access filtering before ranking. |
-| W3.4 | {statuses['W3.4']['status']} | {link('src/rag/answer.py')}; {link('prompts/rag/v1.md')}; {link('config/rag_answer.json')}; {link('eval/results/week3/' + selection['directory'] + '/')} | {statuses['W3.4']['note']} |
+| W3.4 | {statuses['W3.4']['status']} | {link('src/rag/answer.py')}; {link('prompts/rag/v1.md')}; {link('config/rag_answer.json')}; {link('eval/revalidate_week3.py')}; {link('eval/results/week3/' + selection['directory'] + '/')} | {statuses['W3.4']['note']} |
 | W3.5 | {statuses['W3.5']['status']} | {link('eval/testsets/week3_retrieval.jsonl')}; {link('eval/testsets/week3_citizen_v2_manifest.json')}; {link('docs/week3_benchmark_revision.md')} | {n} answerable questions (16 TR / 16 EN) and {len(questions)-n} controls (3 TR / 3 EN) with exact evidence quotes; 6 separate development cases. |
 | W3.6 | {statuses['W3.6']['status']} | {link('eval/faithfulness_week3.py')}; {link('prompts/judge/week3_v1.md')}; {link('eval/results/week3/calibration/human_calibration.json')} | Claim-level judge on current answers; κ = {kappa:.3f} on 20 historical claims (see limitation in section 4). |
 | W3.7 | {statuses['W3.7']['status']} | {link('eval/retrieval_week3.py')}; {link('eval/rescore_retrieval_week3.py')}; {link('eval/results/week3/retrieval/rescored_summary.json')}; {link('eval/results/week3/retrieval/paired_statistics.json')} | Two one-change retrieval ablations on the frozen set. |
@@ -278,16 +309,16 @@ Values come from {link('eval/results/week3/scoreboard.json')}, written by `pytho
 
 - `e2e_accuracy` is null because no answer-correctness rubric was applied to the citizen-v2 answers; claim support is not question completion, and Week 2's 0.952 was measured on a different test set.
 - `abstention_correct`: {abst['numerator']}/{abst['n']} unavailable-information controls returned the fixed refusal; {', '.join(answered_controls) or 'none'} answered instead (section 5).
-- `unsupported_claims`: metric definition corrected after audit. The judge had labelled the fixed refusal of {excluded_ids} as an unsupported claim, although its rubric excludes fixed refusals. Validated fixed refusals now contribute zero claims: {old_rate['numerator']}/{old_rate['n']} ({old_rate['value']:.3f}) became {rate['numerator']}/{rate['n']} ({rate['value']:.3f}). {len(judge_errors)} answer ({', '.join(j['case_id'] for j in judge_errors)}) had no valid judgement, so its {len(faith['unjudged_claims'])} claims are not in the denominator:
+- `unsupported_claims`: metric definition corrected after audit. The judge had labelled the fixed refusal of {excluded_ids} as an unsupported claim, although its rubric excludes fixed refusals. Validated fixed refusals now contribute zero claims: {old_rate['numerator']}/{old_rate['n']} ({old_rate['value']:.3f}) became {rate['numerator']}/{rate['n']} ({rate['value']:.3f}). Not in the denominator: {len(bad_judge)} claims of {', '.join(sorted({c['case_id'] for c in bad_judge})) or 'none'} (invalid judge output) and {len(pending)} claims of {', '.join(sorted({c['case_id'] for c in pending})) or 'none'} (not yet judged):
 
-| Case | Claim | Text (not judged) |
-|---|---|---|
+| Case | Claim | Text | Why not judged |
+|---|---|---|---|
 {unjudged_rows}
 
 - `hit_at_5` and `mrr` (MRR@10) use the {n} answerable questions. They were re-scored offline from the recorded rankings, reproducing the recorded metrics exactly. The rankings came from a working tree with uncommitted changes at `22577a6` (`"dirty": true`), so a clean rerun with the local models is still open.
-- Answers: first pass {prov['first_pass_valid']}/{prov['n']} valid (no validation retry). Only the {prov['repair_retried_cases']} invalid cases were retried once with one validation retry; {prov['valid_replaced_by_repair']} recovered, giving {valid}/{len(records)}. This retry was chosen after seeing failures, so {prov['first_pass_valid']}/{prov['n']} is the same-policy figure. The {prov['valid_retained_from_first_pass']} retained answers are first-pass calls, not cache hits.
+- Answers: first pass {prov['first_pass_valid']}/{prov['n']} valid (no validation retry). Only the {prov['repair_retried_cases']} invalid cases were retried once with one validation retry; {prov['valid_replaced_by_repair']} recovered, giving {valid}/{len(records)}. This retry was chosen after seeing failures, so {prov['first_pass_valid']}/{prov['n']} is the same-policy figure. The {prov['valid_retained_from_first_pass']} retained answers are first-pass calls, not cache hits.{revalidation_text}
 - `cost_per_task_usd` is a list-price estimate (Week 2 convention): answer-generation tokens per case at the dated Gemini 3.1 Flash-Lite list price (USD {price['price_in_per_1m_usd']:.2f} input / {price['price_out_per_1m_usd']:.2f} output per million tokens, checked {price['checked_on']}); judge and local retrieval excluded. All recorded generation and judge calls together are equivalent to ${week_cost['list_price_usd']:.4f} (a lower bound: usage of 3 failed transport attempts is unknown). Actual spend is $0 (free tier); `spend_total_usd` adds Weeks 1 and 2, also $0.
-- `latency_p50_s`: median retrieval plus answer-generation service time over the {valid} valid answers; excludes the classifier, the judge and rate-limit waits; not end-user wall time.
+- `latency_p50_s`: median retrieval plus answer-generation service time over the {valid} valid answers{f" ({previous['latency_p50_s']:.2f} s over the {prov['after_repair_valid']} valid under the original rule)" if revalidated else ""}; excludes the classifier, the judge and rate-limit waits; not end-user wall time.
 - Provenance: the runs read the files frozen with review status draft. Commit `576ef4b` later set the review fields to approved. `eval/week3_provenance.py` shows that restoring those fields reproduces the evaluated hashes exactly, so the measured content is unchanged.
 
 Changes to any test set this week: new Week 3 set citizen-v2 (38 cases) replaced the first v1 draft before scoring ({link('docs/week3_benchmark_revision.md')}); after scoring, only review metadata changed.
@@ -325,7 +356,7 @@ Changes to any test set this week: new Week 3 set citizen-v2 (38 cases) replaced
 |---|---|---|---|---|
 | 1 | {retrieval_failure['case_id']}: fair permit in a park plus an inaccessible entrance (two facets) | Permit evidence `{retrieval_failure['evidence_label']}` ranked {', '.join(str(v) for v in missing_ranks.values())}; the model saw the top 5 and returned the fixed refusal. | {r032_stage or 'retrieval'} | Done: stage attribution now requires every facet (it was labelled generation). Proposed (team to confirm): a one-change multi-facet retrieval experiment; all-facet@5 is {hybrid['counts']['all_gold_hit_at_5']}/{n}. |
 | 2 | {', '.join(answered_controls) or 'none'}: request for a neighbour's phone number from their complaint | Answered with a cited privacy statement instead of the fixed refusal; nothing disclosed, but the contract broke. | {stage_of.get((answered_controls[0], 'answered_unavailable_information_control'), 'generation') if answered_controls else 'generation'} | Proposed (team to confirm): decide whether a privacy denial counts as refusal, then enforce it in prompt or code and re-measure `abstention_correct`. |
-| 3 | {', '.join(generation_errors)}: accessibility report; street-lamp follow-up | Quotes were not exact substrings of the source after one retry; no answer shown. | generation | Existing: shown as an error, not counted as a refusal. Proposed (team to confirm): better quote-validation feedback, measured as valid answers out of 38. |
+{row3}
 
 Also observed: {', '.join(unsupported_cases) or 'none'} contains one unsupported library-membership claim (generation). {', '.join(j['case_id'] for j in judge_errors) or 'None'} got invalid judge output, so its claims stay unjudged (evaluation). The judge's verdict on a fixed refusal was an evaluation-definition error, corrected in section 3.
 

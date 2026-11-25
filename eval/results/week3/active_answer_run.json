@@ -1,6 +1,6 @@
 {
-  "directory": "answers_citizen_v2_complete",
+  "directory": "answers_citizen_v2_revalidated",
   "dataset_version": "citizen-v2",
-  "reason": "Original successes retained; only originally invalid generations may be replaced by one bounded validity-repair pass. Not 38 independent new calls.",
+  "reason": "Original successes retained; only originally invalid generations may be replaced by one bounded validity-repair pass. Not 38 independent new calls. Then offline re-validation of the saved raw outputs of invalid records with the widened evidence-quote validator; no model call.",
   "comparable_to_v1_metrics": false
 }

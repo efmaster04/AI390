@@ -1,7 +1,7 @@
 {
   "status_date": "2026-11-25",
   "dataset_version": "citizen-v2",
-  "tests_passed": 305,
+  "tests_passed": 336,
   "deliverables": {
     "W3.1": {
       "status": "done",
@@ -17,7 +17,7 @@
     },
     "W3.4": {
       "status": "partial",
-      "note": "36/38 valid citizen-v2 responses (first pass 35/38); 5/6 unavailable-information controls returned the fixed refusal."
+      "note": "38/38 valid citizen-v2 responses after offline re-validation with the widened quote rule (36/38 under the original rule; first pass 35/38); 5/6 unavailable-information controls returned the fixed refusal. Not done only because W3-U004 answered with a cited statement instead of the fixed sentence; whether that counts as a refusal is a team decision."
     },
     "W3.5": {
       "status": "done",
@@ -52,7 +52,7 @@
         0.9699
       ],
       "n": 6,
-      "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete"
+      "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_revalidated"
     },
     "unsupported_claims": {
       "value": 0.0111,
@@ -61,7 +61,7 @@
         0.0603
       ],
       "n": 90,
-      "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_complete (eval/faithfulness_week3.py)"
+      "script": "eval/answer_week3.py --recompute-only --out-dir eval/results/week3/answers_citizen_v2_revalidated (eval/faithfulness_week3.py)"
     },
     "hit_at_5": {
       "value": 1.0,
@@ -94,17 +94,17 @@
       "script": null
     },
     "cost_per_task_usd": 0.001043,
-    "latency_p50_s": 4.72,
+    "latency_p50_s": 5.05,
     "spend_week_usd": 0.0,
     "spend_total_usd": 0.0
   },
   "availability": {
-    "selected_directory": "answers_citizen_v2_complete",
+    "selected_directory": "answers_citizen_v2_revalidated",
     "dataset_version": "citizen-v2",
-    "retry_valid": 36,
+    "retry_valid": 38,
     "retry_processed": 38,
     "cache_hits": 0,
-    "fresh_valid": 36,
+    "fresh_valid": 38,
     "model": "gemini-3.1-flash-lite",
     "comparable_to_retired_v1": false
   },
@@ -144,16 +144,16 @@
     "run_label": "Recorded citizen-v2 Gemini 3.1 response / 24 Nov 2026"
   },
   "generation": {
-    "summary": "36/38 valid citizen-v2 responses; 35 judged; v1 excluded.",
+    "summary": "38/38 valid citizen-v2 responses; 35 judged; v1 excluded.",
     "unsupported_claims": 0.011111111111111112,
     "claims_total": 90,
     "kappa": 0.7709923664122137,
-    "errors": 2
+    "errors": 0
   },
   "failures": {
     "generation": {
       "question": "Model run on citizen-v2 sources and questions",
-      "answer": "35/38 valid on the first pass; the 3 invalid cases were retried once and 1 recovered: 36/38. No cache hits; retired v1 answers do not count.",
+      "answer": "35/38 valid on the first pass; the 3 invalid cases were retried once and 1 recovered: 36/38. Offline re-validation of saved outputs with the widened quote rule (no model call): 38/38. No cache hits; retired v1 answers do not count.",
       "diagnosis": "Retrieval coverage, provider availability and claim support are distinct measurements."
     },
     "evaluation": {
