@@ -43,6 +43,11 @@ def value(item):
     return item.get('value') if isinstance(item, dict) else item
 
 
+def readable(name):
+    """snake_case identifier -> words, so an unknown kind never prints as null."""
+    return str(name).replace('_', ' ').strip() if name else 'unlabelled record'
+
+
 def wilson(k, n, z=1.959963984540054):
     """Wilson score interval; used only when a numerator and n are recorded."""
     if not isinstance(k, (int, float)) or not isinstance(n, (int, float)) or n <= 0:
@@ -218,7 +223,7 @@ def load(data_override=None):
 
     # Failure stages: the recorded failures.json "stage" field decides; generation_or_provider_error goes to
     # Provider and evaluation goes to Judge. Retrieval all-facet misses are added once per case.
-    stage_cases = {'retrieval': [], 'generation': [], 'provider': [], 'judge': []}
+    stage_cases = {'retrieval': [], 'generation': [], 'provider': [], 'judge': [], 'other': []}
     fail_ranks = {}
     for c in answerable:
         if c.get('metrics', {}).get('all_gold_hit_at_5') is False:
@@ -230,12 +235,17 @@ def load(data_override=None):
     # are kept apart, so they never appear in a failure stage.
     NOT_FAILURES = {'claims_not_yet_judged'}
     pending = [{'id': f.get('case_id'), 'claims': f.get('unjudged_claims'), 'note': f.get('note')} for f in answer_failures if f.get('kind') in NOT_FAILURES]
+    # Accepted deviations (a recorded team decision) are not failures either; they get their own strip.
+    deviations = [{'id': f.get('case_id'), 'kind': readable(f.get('kind')), 'decided_by': f.get('decided_by'),
+                   'after_results': f.get('decided_after_results'), 'reviewer': f.get('reviewer_confirmation'), 'raw': f}
+                  for f in answer_failures if f.get('stage') == 'accepted_deviation']
     for f in answer_failures:
         kind = f.get('kind')
-        if kind in NOT_FAILURES:
+        if kind in NOT_FAILURES or f.get('stage') == 'accepted_deviation':
             continue
-        stage = 'provider' if kind == 'generation_or_provider_error' else stage_of.get(f.get('stage'), 'generation')
-        text = kind_text.get(kind) or (f.get('error') or kind or 'null').replace('_', ' ')
+        # Unknown stages go to "other", never silently into generation.
+        stage = 'provider' if kind == 'generation_or_provider_error' else stage_of.get(f.get('stage'), 'other')
+        text = kind_text.get(kind) or (f.get('error') and readable(f['error'])) or readable(kind)
         if f.get('missing_facets'):
             j = fail_ranks.get(f.get('case_id'))
             rank = next((c.get('rerank') for c in (j or {}).get('cards', []) if c['pid'] in f['missing_facets']), None)
@@ -305,5 +315,6 @@ def load(data_override=None):
         'answer_summary': answer_summary, 'answer_failures': answer_failures, 'stage_cases': stage_cases,
         'calib': calib, 'pairs': pairs, 'claims': claims, 'approvals': approvals, 'priorities': priorities,
         'provenance_script': (ROOT / 'eval/week3_provenance.py').exists(),
-        'answer_dir': answer_dir.name,
+        'answer_dir': answer_dir.name, 'deviations': deviations,
+        'controls': data.get('controls') or {}, 'controls_safe': answer_summary.get('controls_handled_safely') or {},
     }

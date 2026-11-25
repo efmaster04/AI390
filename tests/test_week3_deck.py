@@ -181,3 +181,53 @@ def test_not_yet_judged_records_are_not_failures(deck):
         if st.get('status') != 'done' and st.get('note'):
             from week3_deck.scenes import reason_of, h
             assert h(reason_of(st['note'])) in road
+
+
+def _visible_text(html):
+    html = re.sub(r'<script.*?</script>|<style.*?</style>', '', html, flags=re.S)
+    return ' '.join(re.sub(r'<[^>]+>', ' ', re.sub(r'data:[^"]+', '', html)).split())
+
+
+def test_no_null_outside_scoreboard_and_planned_text(deck):
+    man, html, comp, show, script = deck
+    ids = [s['sceneId'] for s in show['slides']] + [q['id'] for q in show['slideSequences']]
+    for a, b in zip(ids, ids[1:] + [None]):
+        if a == 'scoreboard':
+            continue
+        start = comp.index(f'data-composition-file="scenes/{a}.html"')
+        end = comp.index(f'data-composition-file="scenes/{b}.html"', start) if b else comp.index('<script type="text/hf-after-fonts">')
+        text = _visible_text(comp[start:end])
+        text = re.sub(r'null to measured|stay null|from null', '', text)  # planned changes and titles about null rows
+        assert 'null' not in text, (a, text[:300])
+
+
+def test_roadmap_uses_card_note_and_deviation_strip(deck):
+    man, html, comp, show, script = deck
+    from week3_deck import data as dd
+    from week3_deck.scenes import h
+    d = dd.load()
+    road = _scene(comp, 'w3-roadmap', 'w3-gate')
+    for did, st in DATA['deliverables'].items():
+        if st.get('card_note'):
+            assert h(st['card_note']) in road
+    staged = {c['id'] for k, cases in d['stage_cases'].items() for c in cases}
+    for dv in d['deviations']:
+        assert dv['id'] not in staged
+        assert 'Accepted deviation' in _scene(comp, 'w3-stages', 'w3-judge')
+        assert dv['id'] in _scene(comp, 'w3-fallback', 'w3-retrieval')
+
+
+def test_unknown_stage_and_kind_are_not_folded_into_generation(tmp_path, monkeypatch):
+    from week3_deck import data as dd
+    real = dd.read_json
+
+    def fake(path, default=None):
+        out = real(path, default)
+        if str(path).endswith('failures.json') and isinstance(out, list) and 'answers_citizen' in str(path):
+            out = out + [{'case_id': 'W3-X999', 'stage': 'mystery_stage', 'kind': 'brand_new_kind'}]
+        return out
+    monkeypatch.setattr(dd, 'read_json', fake)
+    d = dd.load()
+    other = d['stage_cases']['other']
+    assert [c['id'] for c in other] == ['W3-X999'] and other[0]['kind'] == 'brand new kind'
+    assert all(c['id'] != 'W3-X999' for c in d['stage_cases']['generation'])

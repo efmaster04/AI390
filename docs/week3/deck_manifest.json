@@ -9,8 +9,8 @@
       "label": "What we built · recorded demo",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 289,
-      "narration_seconds_at_wpm": 116
+      "narration_words": 315,
+      "narration_seconds_at_wpm": 126
     },
     {
       "part": "scoreboard",
@@ -25,8 +25,8 @@
       "label": "Failures and root causes",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 307,
-      "narration_seconds_at_wpm": 123
+      "narration_words": 310,
+      "narration_seconds_at_wpm": 124
     },
     {
       "part": "next",
@@ -68,14 +68,14 @@
       "part": "demo",
       "speaker": "Efe",
       "seconds": 10,
-      "narration_words": 14,
+      "narration_words": 25,
       "fragments_local": [
         1.4,
         2.5
       ],
       "window_s": 3.5,
       "recorded_run": false,
-      "notes": "Eight requirements this week. 8 are done. Each status comes from our data file.",
+      "notes": "All eight requirements are done; W3.4 rests on a team decision about W3-U004 taken after seeing the results. Each status comes from our data file.",
       "repo": "reports/week-3.md · eval/results/week3/presentation_data.json"
     },
     {
@@ -85,7 +85,7 @@
       "label": "W3.1 / W3.2 · access gate",
       "part": "demo",
       "speaker": "Efe",
-      "seconds": 20,
+      "seconds": 18,
       "narration_words": 49,
       "fragments_local": [
         1.4,
@@ -104,7 +104,7 @@
       "label": "W3.3 · two lanes",
       "part": "demo",
       "speaker": "Efe",
-      "seconds": 20,
+      "seconds": 19,
       "narration_words": 46,
       "fragments_local": [
         1.4,
@@ -124,7 +124,7 @@
       "label": "W3.3 · fuse and rerank",
       "part": "demo",
       "speaker": "Efe",
-      "seconds": 20,
+      "seconds": 18,
       "narration_words": 46,
       "fragments_local": [
         1.4,
@@ -164,8 +164,8 @@
       "label": "W3.4 · fixed fallback",
       "part": "demo",
       "speaker": "Efe",
-      "seconds": 15,
-      "narration_words": 46,
+      "seconds": 20,
+      "narration_words": 61,
       "fragments_local": [
         1.4,
         2.5,
@@ -174,7 +174,7 @@
       ],
       "window_s": 6.0,
       "recorded_run": false,
-      "notes": "When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. In the recorded model run, 5 of 6 unavailable-information controls got that fallback; none was answered instead.",
+      "notes": "When nothing authorized is left, the code never calls the model and returns one fixed sentence; that is a deterministic check. In the recorded run, 5 of 6 unavailable-information controls got it; the scoreboard counts exactly that. W3-U004 gave a cited privacy refusal, accepted by the team after seeing the results, review pending. Post hoc, 6 of 6 were handled safely.",
       "repo": "src/rag/answer.py · prompts/rag/"
     },
     {
@@ -303,7 +303,7 @@
       "part": "failures",
       "speaker": "Tarık",
       "seconds": 23,
-      "narration_words": 52,
+      "narration_words": 55,
       "fragments_local": [
         1.4,
         2.6,
@@ -312,7 +312,7 @@
       ],
       "window_s": 5.5,
       "recorded_run": false,
-      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: W3-R032. Generation: W3-R017, W3-U004. Provider: none. Judge: W3-R020. The cards show what each record is. W3-R019 and W3-R027 are not failures: they were re-validated offline and their claims are not judged yet. Each stage points to a different fix.",
+      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: W3-R032. Generation: W3-R017. Provider: none. Judge: W3-R020. W3-R019 and W3-R027 are not failures: they were re-validated offline and their claims are not judged yet. W3-U004 is an accepted deviation by team decision, not a failure. Each stage points to a different fix.",
       "repo": "eval/results/week3/answers_citizen_v2_revalidated/failures.json"
     },
     {

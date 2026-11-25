@@ -165,8 +165,8 @@ def build_scenes(d, cover_html):
     for i, (did, name, default) in enumerate(names):
         st = deliv.get(did, {}) if isinstance(deliv.get(did), dict) else {}
         status = st.get('status') or 'null'
-        note = (st.get('note') or '').strip() or default
-        if status != 'done':  # an open item shows the sentence that says why it is open
+        note = (st.get('card_note') or '').strip() or (st.get('note') or '').strip() or default
+        if status != 'done' and not st.get('card_note'):  # an open item shows the sentence that says why it is open
             note = reason_of(note)
         col, row = i % 2, i // 2
         kind = 'teal' if status == 'done' else 'sun' if status == 'partial' else 'muted'
@@ -181,7 +181,11 @@ def build_scenes(d, cover_html):
         body=''.join(tiles),
         js='''var t=$(".rm-tile");BK.slam(tl,[t[0],t[1],t[2],t[3]],0.3,{stagger:0.08});BK.stamp(tl,[$(".rm-chip")[0],$(".rm-chip")[1],$(".rm-chip")[2],$(".rm-chip")[3]],0.8,{stagger:0.06,rotation:0});
 BK.slam(tl,[t[4],t[5],t[6],t[7]],P.at[1],{stagger:0.08});BK.stamp(tl,[$(".rm-chip")[4],$(".rm-chip")[5],$(".rm-chip")[6],$(".rm-chip")[7]],P.at[1]+0.4,{stagger:0.06,rotation:0});''',
-        notes=(f'Eight requirements this week. {8 - len(partial)} are done' + (''.join(f'; {p_} is {deliv[p_].get("status")}, and its card gives the reason.' for p_ in partial) if partial else '.') + ' Each status comes from our data file.'))
+        notes=(('All eight requirements are done' if not partial else f'Eight requirements this week. {8 - len(partial)} are done')
+               + ''.join(f'; {p_} is {deliv[p_].get("status")}, and its card gives the reason' for p_ in partial)
+               + ''.join(f'; {did} rests on a team decision about {dv["id"]} taken after seeing the results' for did, *_ in names for dv in d['deviations']
+                         if isinstance(deliv.get(did), dict) and dv['id'] in (deliv[did].get('note') or '') and dv.get('after_results'))
+               + '. Each status comes from our data file.'))
 
     # ------------------------------------------------------------ 3 gate
     q = dj['query'] if dj else demo.get('question_tr')
@@ -216,7 +220,7 @@ BK.slam(tl,[t[4],t[5],t[6],t[7]],P.at[1],{stagger:0.08});BK.stamp(tl,[$(".rm-chi
              f'<span class="bk-stamp bk-stamp--tomato w3-abs gt-stamp" style="left:{tray_x + 400}px;top:{tray_y - 6}px;font-size:28px;padding:2px 12px" data-layout-allow-overlap>removed before ranking</span>')
     body += (f'<div class="bk-panel w3-abs gt-left" style="left:96px;top:840px;width:820px;padding:18px 26px"><span class="w3-big gt-count" style="font-size:72px;color:var(--teal-ink)">{fmt(d["n_chunks"])}</span>'
              f'<span class="w3-cap" style="margin-left:14px">chunks may compete for a public question</span></div>')
-    add(id='w3-gate', part='demo', speaker='Efe', seconds=20, title='One question enters; staff-only text never competes', label='W3.1 / W3.2 · access gate',
+    add(id='w3-gate', part='demo', speaker='Efe', seconds=18, title='One question enters; staff-only text never competes', label='W3.1 / W3.2 · access gate',
         folio='THE JOURNEY · 1/4', repo='src/rag/retrieval.py · data/corpus/', steps=[1.3, 1.1], body=body,
         js=f'''W3.rail(tl,root,0.15);BK.slam(tl,".gt-bub",0.35);BK.fade(tl,".gt-case",0.7);
 BK.rise(tl,".gt-h",0.5,{{y:8}});tl.fromTo($(".gt-tile, .gt-staff"),{{opacity:0,scale:.6}},{{opacity:1,scale:1,duration:.25,stagger:{{each:.006,from:"start"}},ease:"power2.out"}},0.55);
@@ -253,7 +257,7 @@ BK.stamp(tl,".gt-stamp",P.at[2]);tl.fromTo($(".gt-tile"),{{backgroundColor:"#fff
     body += f'<svg class="w3-svg" viewBox="0 0 1920 1080">{"".join(links)}</svg>'
     body += f'<p class="bk-note bk-note--plain bk-note--ink w3-abs ln-foot" style="left:96px;top:940px;font-size:28px">Lane ranks recovered from the recorded RRF scores (k = {fmt(d["config"].get("rrf_constant"))}); dashed = a chunk not in the recorded top 10.</p>'
     both = len(links)
-    add(id='w3-lanes', part='demo', speaker='Efe', seconds=20, title='Two searches rank the same chunks differently', label='W3.3 · two lanes',
+    add(id='w3-lanes', part='demo', speaker='Efe', seconds=19, title='Two searches rank the same chunks differently', label='W3.3 · two lanes',
         folio='THE JOURNEY · 2/4', repo='src/rag/lexical.py · src/rag/retrieval.py', steps=[1.2, 1.2, 1.1], body=body,
         js='''W3.rail(tl,root,0.15);BK.slam(tl,".ln-hl, .ln-hr",0.35,{stagger:.1});
 tl.fromTo($(".ln-l"),{opacity:0,x:-60},{opacity:1,x:0,duration:.35,stagger:.12,ease:BK.EASE.settle},P.at[1]);
@@ -280,7 +284,7 @@ BK.string(tl,$(".ln-link"),P.at[3],{stagger:.12});BK.note(tl,".ln-foot",P.at[3]+
                f'<div class="bk-panel w3-abs fu-rr" style="left:96px;top:700px;width:490px;padding:22px 24px"><span class="bk-tab bk-tab--teal">Reranker</span>'
                f'<p class="w3-cap" style="margin-top:6px">A cross-encoder reads question + passage together. {h(jumper["pid"])} moves {fmt(jumper.get("fused"))} → {fmt(jumper.get("rerank"))}.</p></div>')
         body += fx_
-    add(id='w3-fuse', part='demo', speaker='Efe', seconds=20, title='RRF merges the lists; the reranker reads each passage', label='W3.3 · fuse and rerank',
+    add(id='w3-fuse', part='demo', speaker='Efe', seconds=18, title='RRF merges the lists; the reranker reads each passage', label='W3.3 · fuse and rerank',
         folio='THE JOURNEY · 3/4', repo='config/retrieval.json · src/rag/retrieval.py', steps=[1.3, 1.2], body=body,
         js=f'''W3.rail(tl,root,0.15);BK.slam(tl,".fu-fx",0.35);
 tl.fromTo($(".w3-card"),{{opacity:0,x:function(i){{return i%2?90:-90;}}}},{{opacity:1,x:0,duration:.4,stagger:.08,ease:BK.EASE.settle}},0.55);
@@ -351,21 +355,31 @@ BK.draw(tl,".fu-cut",P.at[2],{{duration:.5}});BK.slam(tl,".fu-model",P.at[2]+0.1
     num, den = ab.get('numerator'), ab.get('n')
     if not isinstance(num, int):  # the scoreboard dropped 'numerator'; the run summary still records it
         num = (d['answer_summary'].get('abstention_correct') or {}).get('numerator')
-    ctl_answered = [c['id'] for c in d['stage_cases']['generation'] if c['kind'] == 'answered a control']
+    devs = [dv for dv in d['deviations'] if dv['id'] in d['control_ids']]
     if isinstance(num, int) and isinstance(den, int):
-        for k in range(den):
-            dots += f'<i class="w3-abs fb-dot" style="left:{600 + k * 64}px;top:842px;width:46px;height:46px;border-radius:50%;border:3px solid var(--ink);background:{"var(--teal)" if k < num else "var(--tomato)"}"></i>'
+        kinds = ['ok'] * num + ['dev'] * min(len(devs), den - num)
+        kinds += ['bad'] * (den - len(kinds))
+        colour = {'ok': 'var(--teal)', 'dev': 'var(--sun)', 'bad': 'var(--tomato)'}
+        for k, kd in enumerate(kinds):
+            dots += f'<i class="w3-abs fb-dot" style="left:{560 + k * 64}px;top:842px;width:46px;height:46px;border-radius:50%;border:3px solid var(--ink);background:{colour[kd]}"></i>'
+    other_n = (den - num - len(devs)) if isinstance(num, int) and isinstance(den, int) else None
+    dev_txt = '; '.join(f'{dv["id"]} {dv["kind"]}' + (' (decided after results; review ' + (dv.get('reviewer') or 'null').split(' (')[0] + ')' if dv.get('after_results') else '') for dv in devs)
+    safe = d['controls'].get('handled_safely_post_hoc') or {}
     body += (f'<div class="bk-panel w3-abs fb-run" style="left:96px;top:800px;width:1728px;height:130px;padding:20px 26px"><span class="bk-tab bk-tab--teal">recorded model run</span>'
-             f'<p class="w3-cap" style="margin-top:8px;width:480px">{fmt(den)} unavailable-information controls</p>'
-             f'<p class="w3-cap" style="position:absolute;left:1030px;top:26px;width:680px">{fmt(num)} fixed fallback · {fmt((den - num) if isinstance(num, int) and isinstance(den, int) else None)} answered ({h(", ".join(ctl_answered) or "null")})</p></div>{dots}')
-    add(id='w3-fallback', part='demo', speaker='Efe', seconds=15, title='No authorized evidence: no model call, one fixed sentence', label='W3.4 · fixed fallback',
+             f'<p class="w3-cap" style="margin-top:8px;width:440px">{fmt(den)} unavailable-information controls</p>'
+             f'<p class="w3-cap" style="position:absolute;left:960px;top:18px;width:750px;line-height:1.15"><b>{fmt(num)} fixed refusals</b>'
+             + (f' · <span style="background:var(--sun-soft);padding:0 6px">{h(dev_txt)}</span>' if devs else '')
+             + (f' · {other_n} other' if other_n else '') + '</p></div>' + dots)
+    add(id='w3-fallback', part='demo', speaker='Efe', seconds=20, title='No authorized evidence: no model call, one fixed sentence', label='W3.4 · fixed fallback',
         folio='THE JOURNEY · FALLBACK', repo='src/rag/answer.py · prompts/rag/', steps=[1.1, 1.6, 1.1], body=body,
         js='''W3.rail(tl,root,0.15);BK.slam(tl,".fb-shelf",0.3);BK.fade(tl,$(".fb-slot"),0.5,{stagger:.05});BK.draw(tl,".fb-board",0.6);BK.fade(tl,".fb-zero",0.8);
 BK.slam(tl,".fb-model",P.at[1]);BK.stamp(tl,".fb-nocall",P.at[1]+0.35);
 BK.slam(tl,".fb-out",P.at[2]);BK.words(root.querySelector(".fb-text"));BK.stream(tl,".fb-text",P.at[2]+0.2,{wps:28});BK.stamp(tl,".fb-fixed",P.at[2]+1.05);
 BK.slam(tl,".fb-run",P.at[3]);tl.fromTo($(".fb-dot"),{scale:0},{scale:1,duration:.25,stagger:.06,ease:BK.EASE.pop},P.at[3]+0.2);''',
-        notes=(f'When no authorized passage is left, the shelf is empty and the code never calls the model. It returns one fixed sentence; this part is a deterministic software check. '
-               f'In the recorded model run, {fmt(num)} of {fmt(den)} unavailable-information controls got that fallback; {", ".join(ctl_answered) or "none"} was answered instead.'))
+        notes=(f'When nothing authorized is left, the code never calls the model and returns one fixed sentence; that is a deterministic check. '
+               f'In the recorded run, {fmt(num)} of {fmt(den)} unavailable-information controls got it; the scoreboard counts exactly that. '
+               + ''.join(f'{dv["id"]} gave a cited privacy refusal, accepted by the team' + (' after seeing the results, review pending' if dv.get('after_results') else '') + '. ' for dv in devs)
+               + (f'Post hoc, {fmt(safe.get("numerator"))} of {fmt(safe.get("n"))} were handled safely.' if devs and safe else '')))
 
     # ------------------------------------------------------------ 8 retrieval
     dots, rings, ring_ids = [], [], []
@@ -649,20 +663,29 @@ BK.stamp(tl,$(".fr-tag"),P.at[2]+0.3,{rotation:0,stagger:.15});BK.slam(tl,".fr-r
         body += f'<div class="w3-abs" style="left:{x}px;top:540px;display:flex;flex-direction:column;gap:10px">' + (''.join(
             f'<div class="w3-case sf-c{i}"><b>{h(c["id"])}</b>{h(c["kind"])}</div>' for c in cs[:4]) or
             f'<div class="w3-case sf-c{i}" style="border-style:dashed;background:transparent;color:var(--ink-2)">no failure in this run</div>') + '</div>'
+    strips = []
+    if d['deviations']:
+        strips.append('<b>Accepted deviation:</b> ' + h('; '.join(f'{dv["id"]} {dv["kind"]}, decided by {dv.get("decided_by") or "null"}' + (' after seeing results' if dv.get('after_results') else '') for dv in d['deviations'])))
+    if d['stage_cases']['other']:
+        strips.append('<b>Other stage:</b> ' + h('; '.join(f'{c["id"]} {c["kind"]} ({c["stage_raw"] or "no stage"})' for c in d['stage_cases']['other'])))
+    if strips:
+        body += (f'<div class="bk-panel w3-abs sf-dev" style="left:96px;top:{730 if cm["pending"] else 800}px;width:1728px;padding:12px 26px;box-shadow:none;background:var(--sun-soft)">'
+                 f'<p class="w3-cap" style="color:var(--ink)">{"<br>".join(strips)}</p></div>')
     pend = cm['pending']
     if pend:
         body += (f'<div class="bk-panel w3-abs sf-pend" style="left:96px;top:800px;width:1728px;padding:14px 26px;border-style:dashed;box-shadow:none;background:transparent">'
                  f'<p class="w3-cap" style="color:var(--ink)"><b>Not failures:</b> {h(", ".join(f"{p_['id']} ({p_['claims']} claims)" for p_ in pend))} re-validated offline, claims not yet judged.</p></div>')
-    body += f'<p class="bk-note bk-note--plain bk-note--ink w3-abs sf-foot" style="left:96px;top:948px;width:1728px;text-align:right;font-size:28px">{sum(len(v) for v in d["stage_cases"].values())} failure records: failures.json + retrieval all-facets@5 misses</p>'
+    body += f'<p class="bk-note bk-note--plain bk-note--ink w3-abs sf-foot" style="left:96px;top:948px;width:1728px;text-align:right;font-size:28px">{sum(len(v) for k, v in d["stage_cases"].items() if k != "other")} failure records: failures.json + retrieval all-facets@5 misses</p>'
     add(id='w3-stages', part='failures', speaker='Tarık', seconds=23, title='Every failure is assigned to one stage', label='Failure analysis / W3.8',
         folio='FAILURE · STAGES', repo=f'eval/results/week3/{d["answer_dir"]}/failures.json', steps=[1.2, 1.2, 1.1], body=body,
         js='''BK.draw(tl,".sf-pipe",0.3,{duration:.6});BK.slam(tl,$(".sf-box"),0.4,{stagger:.1});
 [0,1,2,3].forEach(function(i){var at=P.at[1+Math.floor(i/2)]+(i%2)*0.35;var b=root.querySelector(".sf-b"+i);if(b.classList.contains("sf-hit"))tl.fromTo(b,{backgroundColor:"#fff6e0"},{backgroundColor:"#f7b79a",duration:.25},at);BK.slam(tl,$(".sf-c"+i),at+0.15,{stagger:.08});});
-BK.note(tl,".sf-foot",P.at[3]);var pe=root.querySelector(".sf-pend");if(pe)BK.slam(tl,pe,P.at[3]+0.1);''',
+BK.note(tl,".sf-foot",P.at[3]);var pe=root.querySelector(".sf-pend");if(pe)BK.slam(tl,pe,P.at[3]+0.1);var dv=root.querySelector(".sf-dev");if(dv)BK.slam(tl,dv,P.at[3]+0.2);''',
         notes=('We assign every failure to the first stage where it went wrong. '
                + ' '.join(f'{name}: ' + (', '.join(c["id"] for c in d['stage_cases'][key]) or 'none') + '.' for key, name in stages)
-               + ' The cards show what each record is.'
                + (f' {" and ".join(p_["id"] for p_ in cm["pending"])} are not failures: they were re-validated offline and their claims are not judged yet.' if cm['pending'] else '')
+               + ''.join(f' {dv["id"]} is an accepted deviation by team decision, not a failure.' for dv in d['deviations'])
+               + (f' {len(d["stage_cases"]["other"])} record has an unrecognised stage and is shown separately.' if d['stage_cases']['other'] else '')
                + ' Each stage points to a different fix.'))
 
     # ------------------------------------------------------------ 15 judge calibration

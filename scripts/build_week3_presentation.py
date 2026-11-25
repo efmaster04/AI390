@@ -80,6 +80,9 @@ def qa_slides(d):
     cm, apv = d['claims'], d['approvals']
     rec = next((f for f in d['answer_failures'] if f.get('case_id') == rf.get('case_id')), {})
     counts = ', '.join(f'{name} {len(d["stage_cases"][key])}' for key, name in (('retrieval', 'retrieval'), ('generation', 'generation'), ('provider', 'provider'), ('judge', 'judge')))
+    if d['stage_cases']['other']:
+        counts += f', other {len(d["stage_cases"]["other"])}'
+    dev_note = (' ' + ', '.join(dv['id'] for dv in d['deviations']) + ' is an accepted deviation by team decision, not a failure.') if d['deviations'] else ''
     labels = 'approved after the run' if apv['after_run'] else 'with their recorded review status'
     pri = d['priorities']
     return [
@@ -89,7 +92,7 @@ def qa_slides(d):
          f'<strong>Limits:</strong> one small synthetic set, {fmt(apv["cases"])}/{fmt(apv["cases_total"])} cases {labels}; Wilson intervals stay wide (n = {fmt(n)}). Unsupported claims {fmt(cm["numerator"])} / {fmt(cm["n"])} come from a provisional judge.'),
         ('w3-q-failure', 'What failed, and do you know why?',
          f'<strong>{h(rf.get("case_id", "null"))} (root cause: {h(rec.get("stage") or "null")}):</strong> {h(rf.get("note") or rf.get("diagnosis") or "null")}',
-         f'<strong>Stages:</strong> {h(counts)} records, counted separately so each points at its own fix.'),
+         f'<strong>Stages:</strong> {h(counts)} records, counted separately so each points at its own fix.{h(dev_note)}'),
         ('w3-q-priority', 'Is next week’s plan the change that matters most?',
          (f'<strong>{h(pri[0]["priority"])}</strong> moves {h(pri[0]["metric"])}: {h(pri[0]["expected"])}.' if pri else 'null'),
          (' '.join(f'<strong>{h(p["priority"])}</strong> → {h(p["metric"])}.' for p in pri[1:3]) if len(pri) > 1 else 'null')),
