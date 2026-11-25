@@ -9,24 +9,24 @@
       "label": "What we built · recorded demo",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 301,
-      "narration_seconds_at_wpm": 120
+      "narration_words": 298,
+      "narration_seconds_at_wpm": 119
     },
     {
       "part": "scoreboard",
       "label": "Scoreboard",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 316,
-      "narration_seconds_at_wpm": 126
+      "narration_words": 312,
+      "narration_seconds_at_wpm": 125
     },
     {
       "part": "failures",
       "label": "Failures and root causes",
       "target_seconds": 120,
       "planned_seconds": 120,
-      "narration_words": 292,
-      "narration_seconds_at_wpm": 117
+      "narration_words": 307,
+      "narration_seconds_at_wpm": 123
     },
     {
       "part": "next",
@@ -68,14 +68,14 @@
       "part": "demo",
       "speaker": "Efe",
       "seconds": 10,
-      "narration_words": 21,
+      "narration_words": 23,
       "fragments_local": [
         1.4,
         2.5
       ],
       "window_s": 3.5,
       "recorded_run": false,
-      "notes": "Eight requirements this week. 7 are done; W3.4 is partial, as its card explains. Each status comes from our data file.",
+      "notes": "Eight requirements this week. 7 are done; W3.4 is partial, and its card gives the reason. Each status comes from our data file.",
       "repo": "reports/week-3.md · eval/results/week3/presentation_data.json"
     },
     {
@@ -144,7 +144,7 @@
       "part": "demo",
       "speaker": "Efe",
       "seconds": 25,
-      "narration_words": 67,
+      "narration_words": 62,
       "fragments_local": [
         1.4,
         3.1,
@@ -154,8 +154,8 @@
       ],
       "window_s": 8.0,
       "recorded_run": true,
-      "notes": "This is a recorded run, not a live call: Recorded citizen-v2 Gemini 3.1 response / 24 Nov 2026. The answer arrives claim by claim. Every claim carries a citation number, and each citation draws a line to the exact sentence it quotes. Our validator checks that each quote occurs in the cited source; the judge then rated 3 of 3 claims supported. The English lines are our translation.",
-      "repo": "eval/results/week3/answers_citizen_v2_complete/"
+      "notes": "This is a recorded run, not a live call: Recorded citizen-v2 Gemini 3.1 response / 24 Nov 2026. Every claim carries a citation number, and each citation draws a line to the exact sentence it quotes. Our validator checks each quote, including elided ones, against the cited source; the judge then rated 3 of 3 claims supported. The English lines are our translation.",
+      "repo": "eval/results/week3/answers_citizen_v2_revalidated/"
     },
     {
       "no": 7,
@@ -184,8 +184,8 @@
       "label": "Scoreboard / W3.5",
       "part": "scoreboard",
       "speaker": "Doruk",
-      "seconds": 32,
-      "narration_words": 84,
+      "seconds": 30,
+      "narration_words": 79,
       "fragments_local": [
         1.4,
         2.5,
@@ -195,7 +195,7 @@
       ],
       "window_s": 6.5,
       "recorded_run": false,
-      "notes": "I am Doruk, with the measurements. Each dot is one of 32 answerable questions, sixteen Turkish and sixteen English, and its number is the rank of the first registered evidence. At rank one, 19 light up; by rank three, 30; by rank five, 32. The whiskers are Wilson intervals: even a perfect score only bounds hit at five above 0.89. The 6 unanswerable controls are excluded. One ring matters: all required facets reach the top five for 31 / 32. MRR at ten is 0.759.",
+      "notes": "I am Doruk, with the measurements. Each dot is one of 32 answerable questions, and its number is the rank of the first registered evidence. At rank one, 19 light up; by rank three, 30; by rank five, 32. The whiskers are Wilson intervals: even a perfect score only bounds hit at five above 0.89. The 6 unanswerable controls are excluded. One ring matters: all required facets reach the top five for 31 / 32. MRR at ten is 0.759.",
       "repo": "eval/results/week3/retrieval/summary.json"
     },
     {
@@ -205,7 +205,7 @@
       "label": "Scoreboard / W3.7",
       "part": "scoreboard",
       "speaker": "Doruk",
-      "seconds": 28,
+      "seconds": 26,
       "narration_words": 67,
       "fragments_local": [
         1.4,
@@ -224,8 +224,8 @@
       "label": "Scoreboard / W3.6",
       "part": "scoreboard",
       "speaker": "Doruk",
-      "seconds": 18,
-      "narration_words": 50,
+      "seconds": 24,
+      "narration_words": 65,
       "fragments_local": [
         1.4,
         3.2,
@@ -233,8 +233,8 @@
       ],
       "window_s": 5.0,
       "recorded_run": false,
-      "notes": "Faithfulness has an explicit denominator. Of 38 cases, 38 produced valid answers and 35 were judged, giving 90 claims. 1 is unsupported, from W3-R017. An audit corrected the definition: a validated fixed refusal contributes no claims, so 2 of 91 became 1 of 90. This is a provisional automatic judge.",
-      "repo": "eval/results/week3/answers_citizen_v2_complete/summary.json"
+      "notes": "Of 38 cases, 38 answers are valid and 35 were judged: 90 claims, 1 unsupported, from W3-R017. After an audit a validated refusal counts zero claims, so 2 of 91 became 1 of 90. 9 claims stay out because they are unjudged. We widened the quote rule after seeing results and re-validated 2 saved answers offline, with no new model call. The judge is provisional.",
+      "repo": "eval/results/week3/answers_citizen_v2_revalidated/summary.json"
     },
     {
       "no": 11,
@@ -243,8 +243,8 @@
       "label": "Scoreboard / W3",
       "part": "scoreboard",
       "speaker": "Doruk",
-      "seconds": 42,
-      "narration_words": 115,
+      "seconds": 40,
+      "narration_words": 101,
       "fragments_local": [
         1.4,
         3.0,
@@ -252,7 +252,7 @@
       ],
       "window_s": 5.0,
       "recorded_run": false,
-      "notes": "The same thirteen rows as Week two, in the same order, now with n and intervals. Test set size is 38. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is 0.833 on only 6 controls, so its interval is wide. Unsupported claims are 0.011 on 90 claims. Hit at five and MRR are new this week. The rows task success, pass k, injection success stay null this week. Latency is 5.0 seconds without waits. Cost per task is a list-price estimate of 0.00104 dollars, not a bill; actual spend is 0 dollars. 9 of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.",
+      "notes": "The same thirteen rows as Week two, in the same order. Test set size is 38. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is 0.833 on only 6 controls, so its interval is wide. Unsupported claims are 0.011 on 90 claims. The rows task success, pass k, injection success stay null this week. Latency is 5.0 seconds without waits. Cost per task is a list-price estimate of 0.00104 dollars, not a bill; actual spend is 0 dollars. 9 of thirteen rows have a value. Week two used a different set, so this is not a like-for-like comparison.",
       "repo": "eval/results/week3/scoreboard.json"
     },
     {
@@ -293,7 +293,7 @@
       "window_s": 6.0,
       "recorded_run": true,
       "notes": "I am Tarık. The model received these five passages: the access facet at rank 3, but not the permit facet. It returned the fixed refusal, which our validator accepts as the fixed fallback, so it adds no claims to the claim rate. We record the root cause as retrieval: 1/2 required facets reached the context, and the missing one ranked 7.",
-      "repo": "eval/results/week3/answers_citizen_v2_complete/failures.json"
+      "repo": "eval/results/week3/answers_citizen_v2_revalidated/failures.json"
     },
     {
       "no": 14,
@@ -303,7 +303,7 @@
       "part": "failures",
       "speaker": "Tarık",
       "seconds": 23,
-      "narration_words": 37,
+      "narration_words": 52,
       "fragments_local": [
         1.4,
         2.6,
@@ -312,8 +312,8 @@
       ],
       "window_s": 5.5,
       "recorded_run": false,
-      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: W3-R032. Generation: W3-R017, W3-U004. Provider: none. Judge: W3-R019, W3-R020, W3-R027. The cards show what each record is. Each stage points to a different fix.",
-      "repo": "eval/results/week3/answers_citizen_v2_complete/failures.json"
+      "notes": "We assign every failure to the first stage where it went wrong. Retrieval: W3-R032. Generation: W3-R017, W3-U004. Provider: none. Judge: W3-R020. The cards show what each record is. W3-R019 and W3-R027 are not failures: they were re-validated offline and their claims are not judged yet. Each stage points to a different fix.",
+      "repo": "eval/results/week3/answers_citizen_v2_revalidated/failures.json"
     },
     {
       "no": 15,

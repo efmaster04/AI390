@@ -157,3 +157,25 @@ def test_no_null_counts_in_speaking_script():
     script = (Path(__file__).resolve().parents[1] / 'docs' / 'week3_speaking_script.md').read_text(encoding='utf-8')
     assert not re.search(r'\bnull (of|/) ?\d', script)
     assert '5 of 6 unavailable-information controls' in script
+
+
+def test_not_yet_judged_records_are_not_failures(deck):
+    man, html, comp, show, script = deck
+    from week3_deck import data as dd
+    d = dd.load()
+    pending = {f['case_id'] for f in d['answer_failures'] if f.get('kind') == 'claims_not_yet_judged'}
+    staged = {c['id'] for cases in d['stage_cases'].values() for c in cases}
+    assert not pending & staged
+    stages = _scene(comp, 'w3-stages', 'w3-judge')
+    for cid in pending:
+        assert 'Not failures' in stages and cid in stages
+    claims = _scene(comp, 'w3-claims', 'scoreboard')
+    s = d['answer_summary']
+    assert f'>{s["valid_generated_answers"]}<' in claims and f'{len(d["claims"]["unjudged"])} claims not in the denominator' in claims
+    if d['claims']['revalidated']:
+        assert 'under the original quote rule' in claims and 'no model call' in claims
+    road = _scene(comp, 'w3-roadmap', 'w3-gate')
+    for did, st in DATA['deliverables'].items():
+        if st.get('status') != 'done' and st.get('note'):
+            from week3_deck.scenes import reason_of, h
+            assert h(reason_of(st['note'])) in road

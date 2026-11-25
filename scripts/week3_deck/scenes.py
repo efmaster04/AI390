@@ -60,6 +60,13 @@ GLOSS = {
 FACET_PHRASES = {'YV-D006': 'What do we need for permission', 'YV-D019': 'how can we report the access problem'}
 
 
+def reason_of(note):
+    """The sentence of a status note that explains why an item is open (else the whole note)."""
+    parts = re.split(r'(?<=[.;])\s+(?=[A-Z])', note.strip())
+    hit = [p for p in parts if re.match(r'(Not done|Partial|Open|Pending)', p)]
+    return (hit[-1] if hit else note).strip()
+
+
 def rail(at, came_from=None, bad=None, bub_bad=False, extra=''):
     xs = [14 + i * RAIL_W / 6 for i in range(7)]
     out = ['<div class="w3-rail"><i class="w3-rail-line"></i>']
@@ -159,6 +166,8 @@ def build_scenes(d, cover_html):
         st = deliv.get(did, {}) if isinstance(deliv.get(did), dict) else {}
         status = st.get('status') or 'null'
         note = (st.get('note') or '').strip() or default
+        if status != 'done':  # an open item shows the sentence that says why it is open
+            note = reason_of(note)
         col, row = i % 2, i // 2
         kind = 'teal' if status == 'done' else 'sun' if status == 'partial' else 'muted'
         tiles.append(f'<section class="bk-panel w3-abs rm-tile" style="left:{96 + col * 880}px;top:{268 + row * 174}px;width:848px;height:168px;padding:10px 24px">'
@@ -172,7 +181,7 @@ def build_scenes(d, cover_html):
         body=''.join(tiles),
         js='''var t=$(".rm-tile");BK.slam(tl,[t[0],t[1],t[2],t[3]],0.3,{stagger:0.08});BK.stamp(tl,[$(".rm-chip")[0],$(".rm-chip")[1],$(".rm-chip")[2],$(".rm-chip")[3]],0.8,{stagger:0.06,rotation:0});
 BK.slam(tl,[t[4],t[5],t[6],t[7]],P.at[1],{stagger:0.08});BK.stamp(tl,[$(".rm-chip")[4],$(".rm-chip")[5],$(".rm-chip")[6],$(".rm-chip")[7]],P.at[1]+0.4,{stagger:0.06,rotation:0});''',
-        notes=(f'Eight requirements this week. {8 - len(partial)} are done' + (f'; {", ".join(partial)} is {deliv[partial[0]].get("status")}, as its card explains.' if partial else '.') + ' Each status comes from our data file.'))
+        notes=(f'Eight requirements this week. {8 - len(partial)} are done' + (''.join(f'; {p_} is {deliv[p_].get("status")}, and its card gives the reason.' for p_ in partial) if partial else '.') + ' Each status comes from our data file.'))
 
     # ------------------------------------------------------------ 3 gate
     q = dj['query'] if dj else demo.get('question_tr')
@@ -321,9 +330,9 @@ BK.draw(tl,".fu-cut",P.at[2],{{duration:.5}});BK.slam(tl,".fu-model",P.at[2]+0.1
                f'BK.string(tl,$(".an-p{i}"),e+0.1,{{stagger:.1,duration:.45}});BK.scan(tl,$(".an-q{i}"),e+0.4,{{duration:.4}});}})();\n')
     js += f'BK.rise(tl,".an-meta",P.at[{n_claims + 1}],{{y:8}});'
     add(id='w3-answer', part='demo', speaker='Efe', seconds=25, title='The recorded answer points to the sentence it used', label='W3.4 · recorded demo',
-        folio='THE JOURNEY · 4/4', repo='eval/results/week3/answers_citizen_v2_complete/', steps=steps, body=body, js=js,
-        notes=(f'This is a recorded run, not a live call: {demo.get("run_label", "null")}. The answer arrives claim by claim. '
-               f'Every claim carries a citation number, and each citation draws a line to the exact sentence it quotes. Our validator checks that each quote occurs in the cited source; '
+        folio='THE JOURNEY · 4/4', repo=f'eval/results/week3/{d["answer_dir"]}/', steps=steps, body=body, js=js,
+        notes=(f'This is a recorded run, not a live call: {demo.get("run_label", "null")}. '
+               f'Every claim carries a citation number, and each citation draws a line to the exact sentence it quotes. Our validator checks each quote, including elided ones, against the cited source; '
                f'the judge then rated {sup} of {len(labels)} claims supported. The English lines are our translation.'))
 
     # ------------------------------------------------------------ 7 fallback
@@ -392,14 +401,14 @@ BK.slam(tl,".fb-run",P.at[3]);tl.fromTo($(".fb-dot"),{scale:0},{scale:1,duration
             f'<p class="w3-cap w3-abs rt-ctl-l" style="left:{176 + d["n_controls"] * 60 + 16}px;top:840px">{fmt(d["n_controls"])} controls · outside hit@k</p>' + bars +
             f'<div class="bk-panel w3-abs rt-mrr" style="left:1050px;top:836px;width:774px;padding:14px 24px"><span class="w3-mono" style="font-size:30px;font-weight:700">MRR@10 {fmt(mrr)} · all facets@5 {ratio(allc, n)}</span><br><span class="w3-cap" style="color:var(--tomato-ink)">ring: {h(", ".join(ring_ids) or "none")} misses a required facet</span></div>'
             f'<p class="bk-note bk-note--plain bk-note--ink w3-abs rt-foot" style="left:96px;top:930px;font-size:28px">Whiskers: Wilson 95% interval, n = {fmt(n)}.</p>')
-    add(id='w3-retrieval', part='scoreboard', speaker='Doruk', seconds=32, title=f'Evidence in the top five for {ratio(hitc["5"], n)} questions', label='Scoreboard / W3.5',
+    add(id='w3-retrieval', part='scoreboard', speaker='Doruk', seconds=30, title=f'Evidence in the top five for {ratio(hitc["5"], n)} questions', label='Scoreboard / W3.5',
         folio='BELDESK / SCOREBOARD', repo='eval/results/week3/retrieval/summary.json', steps=[1.1, 1.1, 1.1, 1.1], body=body, pose=None,
         js='''tl.fromTo($(".rt-dot"),{opacity:0,scale:.5},{opacity:1,scale:1,duration:.25,stagger:.015,ease:BK.EASE.pop},0.3);BK.fade(tl,$(".rt-ctl"),0.7,{stagger:.04});BK.fade(tl,".rt-ctl-l",0.9);
 var tiers=[[".rt-k1"],[".rt-k3"],[".rt-k5",".rt-k10"]];
 for(var s=0;s<3;s++){var at=P.at[s+1];tl.fromTo(root.querySelectorAll(tiers[s].join(",")),{scale:0},{scale:1,duration:.3,stagger:.02,ease:BK.EASE.pop},at);
  var ix=s<2?[s]:[2,3];ix.forEach(function(i){BK.fade(tl,$(".rt-bl"+i+", .rt-b"+i+", .rt-v"+i),at);var f=root.querySelector(".rt-f"+i);W3.morph(tl,f,0,parseFloat(f.getAttribute("data-v")),at+0.05,true);var nn=root.querySelector(".rt-n"+i);var v=parseInt(nn.textContent,10);if(!isNaN(v))BK.count(tl,nn,v,at+0.05,{duration:.6});var ci=root.querySelector(".rt-ci"+i);if(ci)BK.draw(tl,ci,at+0.5,{duration:.3});});}
 tl.fromTo($(".rt-ring"),{opacity:0,scale:1.6},{opacity:1,scale:1,duration:.35,ease:BK.EASE.settle},P.at[4]);BK.slam(tl,".rt-mrr",P.at[4]+0.1);BK.note(tl,".rt-foot",P.at[4]+0.3);''',
-        notes=(f'I am Doruk, with the measurements. Each dot is one of {fmt(n)} answerable questions, sixteen Turkish and sixteen English, and its number is the rank of the first registered evidence. '
+        notes=(f'I am Doruk, with the measurements. Each dot is one of {fmt(n)} answerable questions, and its number is the rank of the first registered evidence. '
                f'At rank one, {fmt(hitc["1"])} light up; by rank three, {fmt(hitc["3"])}; by rank five, {fmt(hitc["5"])}. The whiskers are Wilson intervals: even a perfect score only bounds hit at five above {fmt(wil.get("5", [None, None])[1], 2)}. '
                f'The {fmt(d["n_controls"])} unanswerable controls are excluded. One ring matters: all required facets reach the top five for {ratio(allc, n)}. MRR at ten is {fmt(mrr)}.'))
 
@@ -436,7 +445,7 @@ tl.fromTo($(".rt-ring"),{opacity:0,scale:1.6},{opacity:1,scale:1,duration:.35,ea
     js += 'tl.fromTo(".ab-k2",{left:5},{left:66,duration:.35,ease:BK.EASE.slam,immediateRender:false},P.at[2]);tl.fromTo(".ab-k1",{left:66},{left:5,duration:.35,ease:BK.EASE.slam},P.at[2]+0.15);W3.flip(tl,".ab-c1",".ab-c2",P.at[2]+0.3);'
     js += ''.join(f'W3.morph(tl,".ab-f{m}",{f[m][1]},{f[m][2]},P.at[2]+0.35);W3.flip(tl,".ab-v{m}-1",".ab-v{m}-2",P.at[2]+0.4);' for m in range(3))
     js += 'BK.slam(tl,".ab-t2",P.at[2]+0.55);'
-    add(id='w3-ablations', part='scoreboard', speaker='Doruk', seconds=28, title='Two ablations, one switch at a time', label='Scoreboard / W3.7',
+    add(id='w3-ablations', part='scoreboard', speaker='Doruk', seconds=26, title='Two ablations, one switch at a time', label='Scoreboard / W3.7',
         folio='BELDESK / SCOREBOARD', repo='eval/retrieval_week3.py · retrieval/paired_statistics.json', steps=[1.4, 1.4], body=body, js=js,
         notes=(f'We changed one component at a time on the same {fmt(n)} questions. Switching the reranker off drops hit at five from {fmt(hit["5"])} to {fmt(nrr.get("hit_at_k", {}).get("5"))} and MRR from {fmt(mrr)} to {fmt(nrr.get("mrr_at_10"))}: '
                f'{fmt(rr5.get("a_only"))} questions gained evidence with the reranker and {fmt(rr5.get("b_only"))} lost it; the exact test gives p = {fmt(rr5.get("p_exact"), 2)}. '
@@ -455,31 +464,39 @@ tl.fromTo($(".rt-ring"),{opacity:0,scale:1.6},{opacity:1,scale:1,duration:.35,ea
             x, y = 96 + (k % per) * 52, 392 + (k // per) * 52
             is_bad = isinstance(bad, int) and k >= nc - bad
             sq += f'<i class="w3-cell cl-{"bad" if is_bad else "ok"}{" bad" if is_bad else ""}" style="left:{x}px;top:{y}px;width:42px;height:42px"></i>'
-    fp = f' (first pass {fmt(cm["first_pass_valid"])})' if cm['first_pass_valid'] is not None else ''
+    if cm['revalidated'] and cm['valid_original_rule'] is not None:
+        fp = f' ({fmt(cm["valid_original_rule"])} under the original quote rule; first pass {fmt(cm["first_pass_valid"])})'
+    else:
+        fp = f' (first pass {fmt(cm["first_pass_valid"])})' if cm['first_pass_valid'] is not None else ''
     funnel = [('cases', fa_sum.get('planned_cases')), (f'valid answers{fp}', fa_sum.get('valid_generated_answers')),
               ('judged answers', fa_sum.get('valid_claim_judgements')), ('claims judged', nc)]
     fun = ''.join(f'<div class="bk-panel w3-abs cl-fun" style="left:{900 + i * 40}px;top:{384 + i * 92}px;width:{880 - i * 80}px;height:78px;padding:10px 24px;display:flex;align-items:center;gap:20px">'
-                  f'<span class="w3-big" style="font-size:52px">{fmt(v)}</span><span class="w3-cap">{h(lbl)}</span></div>' for i, (lbl, v) in enumerate(funnel))
+                  f'<span class="w3-big" style="font-size:52px">{fmt(v)}</span><span class="w3-cap" style="line-height:1.08">{h(lbl)}</span></div>' for i, (lbl, v) in enumerate(funnel))
     bf = cm['before']
     corr = ''
     if bf and bf.get('n') is not None:
         corr = (f'<div class="bk-panel bk-panel--sun w3-abs cl-corr" style="left:96px;top:266px;width:1728px;padding:14px 26px 12px"><p class="w3-cap" style="color:var(--ink)">'
                 f'Corrected after audit: <s>{fmt(bf.get("numerator"))} / {fmt(bf.get("n"))}</s> → <b>{fmt(bad)} / {fmt(nc)}</b> · {h(cm["correction"] or "metric definition corrected")}</p></div>')
     unj = len(cm['unjudged'])
-    unj_ids = sorted({u.get('case_id') for u in cm['unjudged']})
+    groups = {}
+    for u in cm['unjudged']:
+        groups.setdefault(u.get('reason') or 'unjudged', {}).setdefault(u.get('case_id'), 0)
+        groups[u.get('reason') or 'unjudged'][u.get('case_id')] += 1
+    unj_txt = '; '.join(' + '.join(f'{k} {cid}' for cid, k in sorted(ids.items())) + f' ({re.sub(r" [(].*", "", reason)})' for reason, ids in groups.items())
+    rule_txt = (f' Quote rule widened after seeing results; {", ".join(cm["revalidated"])} re-validated offline from saved outputs, no model call.' if cm['revalidated'] else '')
     body = corr + sq + fun + (f'<div class="bk-panel bk-panel--tomato w3-abs cl-bad-l" style="left:900px;top:768px;width:924px;padding:14px 24px"><span class="w3-mono" style="font-size:30px;font-weight:700">'
                        f'{fmt(bad)} / {fmt(nc)} unsupported = {fmt(cm["value"])} · {h(", ".join(bad_ids) or "null")}</span></div>'
-                       f'<p class="bk-note bk-note--plain bk-note--ink w3-abs cl-foot" style="left:96px;top:880px;width:1728px;font-size:28px;white-space:normal;line-height:1.25">Provisional automatic judge. Not in the denominator: {fmt(cm["gen_errors"])} answers with generation errors, '
-                       f'{fmt(cm["judge_errors"])} invalid judgement ({unj} claims unjudged{": " + ", ".join(unj_ids) if unj_ids else ""}); none counted as passes.</p>')
-    add(id='w3-claims', part='scoreboard', speaker='Doruk', seconds=18, title=f'{fmt(cm["supported"])} of {fmt(nc)} claims match their cited source', label='Scoreboard / W3.6',
-        folio='BELDESK / SCOREBOARD', repo='eval/results/week3/answers_citizen_v2_complete/summary.json', steps=[1.8, 1.1], body=body,
+                       f'<p class="bk-note bk-note--plain bk-note--ink w3-abs cl-foot" style="left:96px;top:880px;width:1728px;font-size:28px;white-space:normal;line-height:1.25">{unj} claims not in the denominator: {h(unj_txt or "none")}; none counted as passes.' + (f' {fmt(cm["gen_errors"])} answers with generation errors.' if cm['gen_errors'] else '') + f'{h(rule_txt)}</p>')
+    add(id='w3-claims', part='scoreboard', speaker='Doruk', seconds=24, title=f'{fmt(cm["supported"])} of {fmt(nc)} claims match their cited source', label='Scoreboard / W3.6',
+        folio='BELDESK / SCOREBOARD', repo=f'eval/results/week3/{d["answer_dir"]}/summary.json', steps=[1.8, 1.1], body=body,
         js='''BK.slam(tl,".cl-corr",0.3);BK.slam(tl,$(".cl-fun"),0.4,{stagger:.12});
 tl.fromTo($(".cl-ok, .cl-bad"),{opacity:0,scale:.4},{opacity:1,scale:1,duration:.2,stagger:.012,ease:BK.EASE.pop},P.at[1]);
 tl.fromTo($(".cl-bad"),{scale:1},{scale:1.25,duration:.25,ease:BK.EASE.pop,immediateRender:false},P.at[2]);BK.slam(tl,".cl-bad-l",P.at[2]+0.1);BK.note(tl,".cl-foot",P.at[2]+0.3);''',
-        notes=(f'Faithfulness has an explicit denominator. Of {fmt(fa_sum.get("planned_cases"))} cases, {fmt(fa_sum.get("valid_generated_answers"))} produced valid answers and {fmt(fa_sum.get("valid_claim_judgements"))} were judged, giving {fmt(nc)} claims. '
-               f'{fmt(bad)} {"is" if bad == 1 else "are"} unsupported, from {", ".join(bad_ids) or "null"}. '
-               + (f'An audit corrected the definition: a validated fixed refusal contributes no claims, so {fmt(bf.get("numerator"))} of {fmt(bf.get("n"))} became {fmt(bad)} of {fmt(nc)}. ' if bf and bf.get('n') is not None else '')
-               + 'This is a provisional automatic judge.'))
+        notes=(f'Of {fmt(fa_sum.get("planned_cases"))} cases, {fmt(fa_sum.get("valid_generated_answers"))} answers are valid and {fmt(fa_sum.get("valid_claim_judgements"))} were judged: {fmt(nc)} claims, {fmt(bad)} unsupported, from {", ".join(bad_ids) or "null"}. '
+               + (f'After an audit a validated refusal counts zero claims, so {fmt(bf.get("numerator"))} of {fmt(bf.get("n"))} became {fmt(bad)} of {fmt(nc)}. ' if bf and bf.get('n') is not None else '')
+               + (f'{unj} claims stay out because they are unjudged. ' if unj else '')
+               + (f'We widened the quote rule after seeing results and re-validated {len(cm["revalidated"])} saved answers offline, with no new model call. ' if cm['revalidated'] else '')
+               + 'The judge is provisional.'))
 
     # ------------------------------------------------------------ 11 scoreboard (Week 2 layout)
     old = d['old']
@@ -532,7 +549,7 @@ tl.fromTo($(".cl-bad"),{scale:1},{scale:1.25,duration:.25,ease:BK.EASE.pop,immed
             '<span id="sb-stamp" class="bk-stamp">null =<br>not measured</span>'
             '<p id="sb-foot" class="bk-note bk-note--plain bk-note--ink">[ ] = 95% interval (recorded, else Wilson) · n = denominator · W2 and W3 sets differ: no like-for-like claim.<br>'
             f'Latency: retrieval + generation, waits excluded · {h(cost_note)}<br>Judge-based rows are provisional.</p>')
-    add(id='scoreboard', part='scoreboard', speaker='Doruk', seconds=42, title=f'{measured} rows measured; the rest stay null', label='Scoreboard / W3',
+    add(id='scoreboard', part='scoreboard', speaker='Doruk', seconds=40, title=f'{measured} rows measured; the rest stay null', label='Scoreboard / W3',
         folio='BELDESK / SCOREBOARD', repo='eval/results/week3/scoreboard.json', steps=[1.6, 1.4], body=body, pose='dusunen', scoreboard=True,
         js='''BK.slam(tl,"#sb-table",0.25,{duration:.42});BK.rise(tl,".sb-head",0.35,{y:8,duration:.3});BK.fade(tl,$(".sb-col"),0.4,{duration:.3});
 var groups=[".sb-g0",".sb-g1",".sb-g2"],ats=[0.35,P.at[1],P.at[2]];
@@ -540,9 +557,9 @@ groups.forEach(function(g,i){var rs=$(g);tl.fromTo(rs,{opacity:0,x:-30},{opacity
  rs.forEach(function(r,j){var m=r.querySelectorAll(".sb-mk");BK.formula(tl,m,ats[i]+j*.1+.1,{stagger:.05});var l=r.querySelector(".sb-link");if(l)BK.draw(tl,l,ats[i]+j*.1+.15,{duration:.2});});});
 BK.slam(tl,"#sb-tally",P.at[2]+0.5,{duration:.4});BK.count(tl,"#sb-7",parseInt(root.querySelector("#sb-7").textContent,10)||0,P.at[2]+0.55,{duration:.45});
 BK.stamp(tl,"#sb-stamp",P.at[2]+0.8);BK.note(tl,"#sb-foot",P.at[2]+0.7);BK.rise(tl,"#sb-cap",0.4,{y:8});''',
-        notes=(f'The same thirteen rows as Week two, in the same order, now with n and intervals. '
+        notes=(f'The same thirteen rows as Week two, in the same order. '
                f'Test set size is {fmt(sb.get("test_set_size"))}. End-to-end accuracy stays null: we have no answer-adequacy rubric yet. Abstention is {fmt((sb.get("abstention_correct") or {}).get("value") if isinstance(sb.get("abstention_correct"), dict) else None)} on only {fmt(ab.get("n"))} controls, so its interval is wide. '
-               f'Unsupported claims are {fmt(cm["value"])} on {fmt(nc)} claims. Hit at five and MRR are new this week. The rows {", ".join(k.replace("_", " ") for k in null_rows if k not in ("e2e_accuracy", "cost_per_task_usd", "spend_week_usd", "spend_total_usd")) or "No other row"} stay null this week. '
+               f'Unsupported claims are {fmt(cm["value"])} on {fmt(nc)} claims. The rows {", ".join(k.replace("_", " ") for k in null_rows if k not in ("e2e_accuracy", "cost_per_task_usd", "spend_week_usd", "spend_total_usd")) or "No other row"} stay null this week. '
                f'Latency is {fmt(value_of(sb.get("latency_p50_s")), 1)} seconds without waits. '
                + (f'Cost per task is a list-price estimate of {fmt(cost_v, 5)} dollars, not a bill' if cost_v is not None else 'Cost stays null')
                + (f'; actual spend is {spend_v:g} dollars. ' if spend_v is not None else '; spend stays null. ')
@@ -613,7 +630,7 @@ BK.draw(tl,".rf-cut",P.at[3],{duration:.6});var below=[];$(".w3-card").forEach(f
     body += (f'<div class="bk-panel w3-abs fr-root" style="left:96px;top:850px;width:1728px;padding:16px 26px"><p class="w3-cap" style="color:var(--ink)">'
              f'<b>Root cause: {h(stage)}.</b> Missing facet {h(", ".join(rec.get("missing_facets") or (missing["pids"] if missing else ["null"])))} ranked {fmt(missing["rank"] if missing else None)}; the model saw only the top 5.</p></div>')
     add(id='w3-r032-answer', part='failures', speaker='Tarık', seconds=23, title='Five passages in, a fixed refusal out', label=f'Failure analysis / {stage}',
-        folio='FAILURE · REPLAY', repo='eval/results/week3/answers_citizen_v2_complete/failures.json', steps=[1.6, 1.1, 1.1], body=body,
+        folio='FAILURE · REPLAY', repo=f'eval/results/week3/{d["answer_dir"]}/failures.json', steps=[1.6, 1.1, 1.1], body=body,
         js='''W3.rail(tl,root,0.15);BK.slam(tl,".fr-ctx",0.3);BK.rise(tl,$(".fr-slot"),0.5,{y:8,stagger:.08});BK.slam(tl,".fr-term",0.6);
 BK.words(root.querySelector(".fr-ans"));BK.stream(tl,".fr-ans",P.at[1],{wps:22});
 BK.slam(tl,".fr-judge",P.at[2]);
@@ -628,18 +645,24 @@ BK.stamp(tl,$(".fr-tag"),P.at[2]+0.3,{rotation:0,stagger:.15});BK.slam(tl,".fr-r
     for i, (key, name) in enumerate(stages):
         x = 96 + i * 446
         cs = d['stage_cases'][key]
-        body += f'<div class="w3-stagebox sf-box sf-b{i}" style="left:{x}px"><h4>{h(name)}</h4><div class="w3-n">{len(cs)} record{"s" if len(cs) != 1 else ""}</div></div>'
-        body += f'<div class="w3-abs" style="left:{x}px;top:540px;display:flex;flex-direction:column;gap:10px">' + ''.join(
-            f'<div class="w3-case sf-c{i}"><b>{h(c["id"])}</b>{h(c["kind"])}</div>' for c in cs[:4]) + '</div>'
-    body += f'<p class="bk-note bk-note--plain bk-note--ink w3-abs sf-foot" style="left:1000px;top:948px;font-size:28px">all-facets@5 misses + {len(d["answer_failures"])} records in failures.json</p>'
+        body += f'<div class="w3-stagebox sf-box sf-b{i}{" sf-hit" if cs else ""}" style="left:{x}px"><h4>{h(name)}</h4><div class="w3-n">{len(cs)} record{"s" if len(cs) != 1 else ""}</div></div>'
+        body += f'<div class="w3-abs" style="left:{x}px;top:540px;display:flex;flex-direction:column;gap:10px">' + (''.join(
+            f'<div class="w3-case sf-c{i}"><b>{h(c["id"])}</b>{h(c["kind"])}</div>' for c in cs[:4]) or
+            f'<div class="w3-case sf-c{i}" style="border-style:dashed;background:transparent;color:var(--ink-2)">no failure in this run</div>') + '</div>'
+    pend = cm['pending']
+    if pend:
+        body += (f'<div class="bk-panel w3-abs sf-pend" style="left:96px;top:800px;width:1728px;padding:14px 26px;border-style:dashed;box-shadow:none;background:transparent">'
+                 f'<p class="w3-cap" style="color:var(--ink)"><b>Not failures:</b> {h(", ".join(f"{p_['id']} ({p_['claims']} claims)" for p_ in pend))} re-validated offline, claims not yet judged.</p></div>')
+    body += f'<p class="bk-note bk-note--plain bk-note--ink w3-abs sf-foot" style="left:96px;top:948px;width:1728px;text-align:right;font-size:28px">{sum(len(v) for v in d["stage_cases"].values())} failure records: failures.json + retrieval all-facets@5 misses</p>'
     add(id='w3-stages', part='failures', speaker='Tarık', seconds=23, title='Every failure is assigned to one stage', label='Failure analysis / W3.8',
-        folio='FAILURE · STAGES', repo='eval/results/week3/answers_citizen_v2_complete/failures.json', steps=[1.2, 1.2, 1.1], body=body,
+        folio='FAILURE · STAGES', repo=f'eval/results/week3/{d["answer_dir"]}/failures.json', steps=[1.2, 1.2, 1.1], body=body,
         js='''BK.draw(tl,".sf-pipe",0.3,{duration:.6});BK.slam(tl,$(".sf-box"),0.4,{stagger:.1});
-[0,1,2,3].forEach(function(i){var at=P.at[1+Math.floor(i/2)]+(i%2)*0.35;tl.fromTo(root.querySelector(".sf-b"+i),{backgroundColor:"#fff6e0"},{backgroundColor:"#f7b79a",duration:.25},at);BK.slam(tl,$(".sf-c"+i),at+0.15,{stagger:.08});});
-BK.note(tl,".sf-foot",P.at[3]);''',
+[0,1,2,3].forEach(function(i){var at=P.at[1+Math.floor(i/2)]+(i%2)*0.35;var b=root.querySelector(".sf-b"+i);if(b.classList.contains("sf-hit"))tl.fromTo(b,{backgroundColor:"#fff6e0"},{backgroundColor:"#f7b79a",duration:.25},at);BK.slam(tl,$(".sf-c"+i),at+0.15,{stagger:.08});});
+BK.note(tl,".sf-foot",P.at[3]);var pe=root.querySelector(".sf-pend");if(pe)BK.slam(tl,pe,P.at[3]+0.1);''',
         notes=('We assign every failure to the first stage where it went wrong. '
                + ' '.join(f'{name}: ' + (', '.join(c["id"] for c in d['stage_cases'][key]) or 'none') + '.' for key, name in stages)
                + ' The cards show what each record is.'
+               + (f' {" and ".join(p_["id"] for p_ in cm["pending"])} are not failures: they were re-validated offline and their claims are not judged yet.' if cm['pending'] else '')
                + ' Each stage points to a different fix.'))
 
     # ------------------------------------------------------------ 15 judge calibration

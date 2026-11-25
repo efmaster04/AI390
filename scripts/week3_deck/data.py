@@ -226,8 +226,14 @@ def load(data_override=None):
     stage_of = {'retrieval': 'retrieval', 'generation': 'generation', 'evaluation': 'judge', 'judge': 'judge', 'provider': 'provider'}
     kind_text = {'unsupported_or_insufficient_claim': 'unsupported claim', 'abstained_on_answerable_question': 'refused an answerable question',
                  'answered_unavailable_information_control': 'answered a control', 'judge_error_or_invalid': 'judge output invalid'}
+    # Records that are not failures (e.g. an answer re-validated offline whose claims are not judged yet)
+    # are kept apart, so they never appear in a failure stage.
+    NOT_FAILURES = {'claims_not_yet_judged'}
+    pending = [{'id': f.get('case_id'), 'claims': f.get('unjudged_claims'), 'note': f.get('note')} for f in answer_failures if f.get('kind') in NOT_FAILURES]
     for f in answer_failures:
         kind = f.get('kind')
+        if kind in NOT_FAILURES:
+            continue
         stage = 'provider' if kind == 'generation_or_provider_error' else stage_of.get(f.get('stage'), 'generation')
         text = kind_text.get(kind) or (f.get('error') or kind or 'null').replace('_', ' ')
         if f.get('missing_facets'):
@@ -258,6 +264,9 @@ def load(data_override=None):
               'excluded_refusals': [x.get('case_id') for x in faith.get('fixed_refusal_verdicts_excluded') or []],
               'unjudged': faith.get('unjudged_claims') or [],
               'gen_errors': answer_summary.get('judgements_skipped_generation_error'),
+              'pending': pending,
+              'valid_original_rule': (answer_summary.get('answer_provenance') or {}).get('after_repair_valid'),
+              'revalidated': (answer_summary.get('answer_provenance') or {}).get('revalidated_offline_case_ids') or [],
               'judge_errors': answer_summary.get('judgements_failed_or_invalid'),
               'first_pass_valid': (answer_summary.get('answer_provenance') or {}).get('first_pass_valid')}
 
@@ -296,4 +305,5 @@ def load(data_override=None):
         'answer_summary': answer_summary, 'answer_failures': answer_failures, 'stage_cases': stage_cases,
         'calib': calib, 'pairs': pairs, 'claims': claims, 'approvals': approvals, 'priorities': priorities,
         'provenance_script': (ROOT / 'eval/week3_provenance.py').exists(),
+        'answer_dir': answer_dir.name,
     }
