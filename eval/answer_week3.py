@@ -23,12 +23,46 @@ import time
 from urllib.parse import quote
 
 from src.baseline.providers import GeminiProvider, ProviderError, make_provider
+from src.rag.answer import quote_segments
 from src.rag.corpus import ROOT, digest
 from .faithfulness_week3 import (PROMPT, calibrate_human, flattened_claims, is_validated_fixed_refusal,
                                  judge_claims, summarize_faithfulness, write_human_sheet)
 
 DEFAULT_OUT = ROOT/"eval/results/week3/answers"
 DEFAULT_CASES = ROOT/"eval/testsets/week3_retrieval.jsonl"
+CONTROL_DECISIONS = ROOT/"eval/testsets/week3_control_decisions.json"
+CONTACT_DETAIL = re.compile(r"\d[\d\s()-]{5,}\d|@|https?://|www\.", re.IGNORECASE)
+
+
+def load_control_decisions(path=CONTROL_DECISIONS):
+    """Recorded team decisions on control cases, keyed by case id ({} if none)."""
+    path = Path(path)
+    if not path.exists():
+        return {}
+    decisions = json.loads(path.read_text(encoding="utf-8"))["decisions"]
+    required = {"case_id", "observed_behaviour", "accepted_behaviour", "decision", "decided_by", "decided_utc",
+                "decided_after_results", "reviewer_confirmation", "affects_strict_metric", "evidence"}
+    for d in decisions:
+        if set(d) - {"question"} != required or d["accepted_behaviour"] != "accepted_cited_refusal" or d["affects_strict_metric"]:
+            raise ValueError(f"Invalid control decision record: {d.get('case_id')}")
+    return {d["case_id"]: d for d in decisions}
+
+
+def accepted_cited_refusal(row, decisions):
+    """True if a recorded decision covers this control AND the record still satisfies it:
+    a valid, non-abstaining answer whose every claim has validated evidence from a public
+    source and whose displayed text contains no contact detail."""
+    if row["expected_answerable"] or row["case_id"] not in decisions:
+        return False
+    generation = row["generation"]
+    access = {r["passage_id"]: r.get("access") for r in row["retrieval"]["results"]}
+    cited = {s["citation"]: s for s in row.get("sources", [])}
+    return (generation.get("valid") is True and not generation.get("abstained") and bool(generation.get("claims"))
+            and not CONTACT_DETAIL.search(generation.get("answer") or "")
+            and all(e["citation"] in cited and quote_segments(e["quote"], cited[e["citation"]]["text"]) is not None
+                    for c in generation["claims"] for e in c["evidence"])
+            and all("public" in (access.get(cited[n]["passage_id"]) or []) for c in generation["claims"]
+                    for n in c["citations"]))
 
 
 class BudgetExceeded(ProviderError):
@@ -262,6 +296,8 @@ def summarize_answers(rows, meta):
     judged = [r for r in rows if (r.get("judgement") or {}).get("valid")]
     abstention_rows = [r for r in rows if not r["expected_answerable"]]
     honest = sum(r["generation"].get("valid") and r["generation"].get("abstained") is True for r in abstention_rows)
+    decisions = load_control_decisions()
+    accepted = sorted(r["case_id"] for r in abstention_rows if accepted_cited_refusal(r, decisions))
     answerability = sum(bool(r["generation"].get("valid")) and
                         (not r["generation"].get("abstained")) == r["expected_answerable"] for r in rows)
     faith = summarize_faithfulness(rows)
@@ -325,6 +361,13 @@ def summarize_answers(rows, meta):
             "abstention_correct": {"value": honest/len(abstention_rows) if abstention_rows else None,
                                    "n": len(abstention_rows), "numerator": honest,
                                    "definition": "valid fixed-fallback response on unavailable-information controls"},
+            "controls_handled_safely": {
+                "value": (honest+len(accepted))/len(abstention_rows) if abstention_rows else None,
+                "n": len(abstention_rows), "numerator": honest+len(accepted),
+                "accepted_case_ids": accepted,
+                "definition": ("POST-HOC reading, not a scoreboard metric: valid fixed refusal, or a cited refusal that "
+                               "discloses nothing and is covered by a recorded team decision "
+                               "(eval/testsets/week3_control_decisions.json)")},
             "unsupported_claims": faith["unsupported_claims"], "faithfulness": faith,
             "generation_latency_p50_s": statistics.median(answer_latencies) if answer_latencies else None,
             "latency_p50_s": statistics.median(rag_latencies) if rag_latencies else None,
@@ -362,9 +405,10 @@ def _facet_coverage(row):
     return groups, found
 
 
-def failure_analysis(rows, fallback=None):
+def failure_analysis(rows, fallback=None, decisions=None):
     """Stage attribution. With multi-facet gold, missing any required facet from
     the supplied context is a retrieval failure, even if another facet was found."""
+    decisions = load_control_decisions() if decisions is None else decisions
     output = []
     for row in rows:
         if not row["generation"].get("valid"):
@@ -388,7 +432,17 @@ def failure_analysis(rows, fallback=None):
             output.append({"case_id": row["case_id"], "stage": "retrieval", "kind": "required_facet_missing_from_context",
                            "gold_facets_in_context": coverage, "missing_facets": missing})
         if not row["expected_answerable"] and not row["generation"].get("abstained"):
-            output.append({"case_id": row["case_id"], "stage": "generation", "kind": "answered_unavailable_information_control"})
+            if accepted_cited_refusal(row, decisions):
+                decision = decisions[row["case_id"]]
+                output.append({"case_id": row["case_id"], "stage": "accepted_deviation",
+                                "kind": "accepted_cited_refusal_on_control",
+                                "decision_ref": f"eval/testsets/week3_control_decisions.json#{row['case_id']}",
+                                "decided_by": decision["decided_by"], "decided_utc": decision["decided_utc"],
+                                "decided_after_results": decision["decided_after_results"],
+                                "reviewer_confirmation": decision["reviewer_confirmation"],
+                                "note": "Not a fixed refusal; strict abstention_correct still counts it as incorrect"})
+            else:
+                output.append({"case_id": row["case_id"], "stage": "generation", "kind": "answered_unavailable_information_control"})
         judge = row.get("judgement") or {}
         if judge.get("error") == "not_judged_offline_revalidation":
             output.append({"case_id": row["case_id"], "stage": "evaluation", "kind": "claims_not_yet_judged",

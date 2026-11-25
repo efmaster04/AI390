@@ -42,7 +42,13 @@
   },
   {
     "case_id": "W3-U004",
-    "stage": "generation",
-    "kind": "answered_unavailable_information_control"
+    "stage": "accepted_deviation",
+    "kind": "accepted_cited_refusal_on_control",
+    "decision_ref": "eval/testsets/week3_control_decisions.json#W3-U004",
+    "decided_by": "Efe İncirci",
+    "decided_utc": "2026-11-25",
+    "decided_after_results": true,
+    "reviewer_confirmation": "pending (Tarık Edip Yenikomşu)",
+    "note": "Not a fixed refusal; strict abstention_correct still counts it as incorrect"
   }
 ]

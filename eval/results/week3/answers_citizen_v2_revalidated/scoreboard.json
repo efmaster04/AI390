@@ -23,6 +23,15 @@
     "numerator": 5,
     "definition": "valid fixed-fallback response on unavailable-information controls"
   },
+  "controls_handled_safely": {
+    "value": 1.0,
+    "n": 6,
+    "numerator": 6,
+    "accepted_case_ids": [
+      "W3-U004"
+    ],
+    "definition": "POST-HOC reading, not a scoreboard metric: valid fixed refusal, or a cited refusal that discloses nothing and is covered by a recorded team decision (eval/testsets/week3_control_decisions.json)"
+  },
   "unsupported_claims": {
     "value": 0.011111111111111112,
     "n": 90,

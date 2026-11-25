@@ -10,6 +10,7 @@
   "valid_claim_judgements": 34,
   "judgements_deferred_or_not_attempted": 0,
   "judgements_skipped_generation_error": 3,
+  "judgements_not_attempted_offline_revalidation": 0,
   "judgements_failed_or_invalid": 1,
   "answerability_accuracy": {
     "value": 0.868421052631579,
@@ -21,6 +22,15 @@
     "n": 6,
     "numerator": 5,
     "definition": "valid fixed-fallback response on unavailable-information controls"
+  },
+  "controls_handled_safely": {
+    "value": 1.0,
+    "n": 6,
+    "numerator": 6,
+    "accepted_case_ids": [
+      "W3-U004"
+    ],
+    "definition": "POST-HOC reading, not a scoreboard metric: valid fixed refusal, or a cited refusal that discloses nothing and is covered by a recorded team decision (eval/testsets/week3_control_decisions.json)"
   },
   "unsupported_claims": {
     "value": 0.011627906976744186,
@@ -68,22 +78,26 @@
       {
         "case_id": "W3-R020",
         "claim_id": "C1",
-        "text": "You can report a pothole by providing the neighborhood, street, or avenue, the direction of the damage, and a nearby landmark."
+        "text": "You can report a pothole by providing the neighborhood, street, or avenue, the direction of the damage, and a nearby landmark.",
+        "reason": "judge output invalid"
       },
       {
         "case_id": "W3-R020",
         "claim_id": "C2",
-        "text": "When reporting the pothole, you should describe observations such as vehicles swerving to avoid it, narrowed passage, or near-miss incidents."
+        "text": "When reporting the pothole, you should describe observations such as vehicles swerving to avoid it, narrowed passage, or near-miss incidents.",
+        "reason": "judge output invalid"
       },
       {
         "case_id": "W3-R020",
         "claim_id": "C3",
-        "text": "Include the time you observed the incident and specify whether the damage is at a single point or extends along the road."
+        "text": "Include the time you observed the incident and specify whether the damage is at a single point or extends along the road.",
+        "reason": "judge output invalid"
       },
       {
         "case_id": "W3-R020",
         "claim_id": "C4",
-        "text": "Providing a photograph can assist in identifying the location of the damage."
+        "text": "Providing a photograph can assist in identifying the location of the damage.",
+        "reason": "judge output invalid"
       }
     ],
     "claim_coverage": {
@@ -132,6 +146,9 @@
     "first_pass_valid": 35,
     "n": 38,
     "after_repair_valid": null,
+    "after_offline_revalidation_valid": null,
+    "revalidated_offline_case_ids": [],
+    "first_pass_valid_under_new_validator": null,
     "valid_retained_from_first_pass": null,
     "valid_replaced_by_repair": null,
     "repair_retried_cases": null,
